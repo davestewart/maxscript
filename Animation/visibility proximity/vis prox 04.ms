@@ -20,12 +20,12 @@ rollout roProx "Visibility by Proximity" width:192 height:176
 	-- functions
 	
 		fn assign=
-			(
+		(
 			local dist=spnDist.value
 			local prox=pckObj.name
 			local ctrl
 			for obj in $ do 
-				(
+			(
 				-- string
 					local str=""
 					str+="obj1=$"+prox.name+"\n"
@@ -36,13 +36,13 @@ rollout roProx "Visibility by Proximity" width:192 height:176
 					obj.visibility.controller=float_script()
 					ctrl=obj.visibility.controller
 					ctrl.script=str
-				)
 			)
+		)
 	
 		fn convert=
-			(
+		(
 			for obj in $ do
-				(
+			(
 				-- get controller
 					local ctrl = obj.visibility.controller
 			
@@ -51,57 +51,57 @@ rollout roProx "Visibility by Proximity" width:192 height:176
 			
 				-- loop through time and get existing values from script controller
 					for t = animationRange.start to animationRange.end do
-						(
+					(
 						at time t if ctrl.value == 1 then
-							(
+						(
 							if keytime == 0 then keyTime = t
 							exit
-							)
 						)
+					)
 			
 				-- assign new controller, keys and values
 					ctrl=obj.visibility.controller=bezier_float()
 					if keyTime > 0 then
-						(
+					(
 						addnewkey ctrl keyTime
 						addnewkey ctrl (keyTime+spnFade.value)
 						ctrl.keys[1].value=0
 						ctrl.keys[2].value=1
-						)
-				)
-			)	
+					)
+			)
+		)	
 	
 	---------------------------------------------------------------------------
 	-- handlers
 	
 		on pckObj picked object do
-			(
+		(
 			pckObj.text = object.name
-			) 
+		) 
 
 		on btnAssign pressed do
-			(
+		(
 			try
-				(
+			(
 				assign()
-				)
-			catch err
-				(
-				Messagebox "Failed to assign script controllers..."
-				)
 			)
+			catch err
+			(
+				Messagebox "Failed to assign script controllers..."
+			)
+		)
 		
 		on btnConvert pressed do
-			(
+		(
 			try
-				(
+			(
 				convert()
-				)
-			catch err
-				(
-				Messagebox "Failed to convert script controllers..."
-				)
 			)
+			catch err
+			(
+				Messagebox "Failed to convert script controllers..."
+			)
+		)
 
 )
 destroydialog roProx

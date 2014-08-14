@@ -90,117 +90,117 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn toon_error = 
-	(
+(
 	MessageBox "You do not have Blur's Toon Shader installed. Please go to http://www.blur.com/blurbeta download it and install it." title:"MaterialConverter"
-	)
+)
 
 fn sub_toon a =
-	(
+(
 	if toon_assistant_test() == true then 
-		(
+	(
 		b = Toon_Assistant()
 		sub_number = a.names.count
 		b.materialList.count = sub_number
 		b.name = a.name
 		for i = 1 to sub_number do
-			(
+		(
 			b.materialList[i] = a.materialList[i]
 			b.mapEnabled[i] = a.mapEnabled[i]
 			if a.names[i] != undefined then b.names[i] = a.names[i]
-			)
-		return b
 		)
+		return b
+	)
 	else
-		(
+	(
 		toon_error()
 		return meditMaterials[toslot_value]		
-		)
 	)
+)
 
 fn toon_sub a =
-	(
+(
 	sub_number = a.names.count
 	b = Multimaterial()
 	b.materialList.count = sub_number
 	b.name = a.name
 	for i = 1 to sub_number do
-		(
+	(
 		b.materialList[i] = a.materialList[i]
 		b.mapEnabled[i] = a.mapEnabled[i]
 		if a.names[i] != undefined then b.names[i] = a.names[i]
-		)
-	return b
 	)
+	return b
+)
 
 fn stand_ink a =
-	(
+(
 	if ink_n_paint_test() == true then 
-		(
+	(
 		b = Ink__n_Paint ()
 		b.name = a.name
 		b.paint_color = a.diffuse
 		b.shade_color = a.Ambient
 		return b
-		)
+	)
 	else
-		(
+	(
 		toon_error()
 		return meditMaterials[toslot_value]		
-		)
 	)
+)
 
 fn ray_ink a =
-	(
+(
 	if ink_n_paint_test() == true then 
-		(
+	(
 		b = Ink__n_Paint ()
 		b.name = a.name
 		b.paint_color = a.diffuse
 		b.shade_color = a.Ambient
 		return b
-		)
+	)
 	else
-		(
+	(
 		toon_error()
 		return meditMaterials[toslot_value]		
-		)
 	)
+)
 
 fn ink_stand a =
-	(
+(
 	b = Standardmaterial ()
 	b.name = a.name
 	b.diffuse = a.paint_color
 	b.Ambient = a.shade_color
 	meditMaterials[toslot_value] = b
-	)
+)
 
 fn ink_ray a =
-	(
+(
 	try
-		(
+	(
 		b = RaytraceMaterial ()
-		)
+	)
 	catch
-		(
+	(
 		b = Raytrace ()
-		)
+	)
 	b.name = a.name
 	b.diffuse = a.paint_color
 	b.Ambient = a.shade_color
 	return b
-	)
+)
 
 fn stand_ray a = 
-	(
+(
 	try
-		(
+	(
 		b = RaytraceMaterial ()
-		)
+	)
 	catch
-		(
+	(
 		b = Raytrace ()
-		)
+	)
 	b.name = a.name
 
 --	a.shaderType
@@ -280,10 +280,10 @@ fn stand_ray a =
 	b.Sliding_Friction = a.slidingFriction
 
 	return b
-	)
+)
 	
 fn ray_stand a = 
-	(
+(
 	b = Standard ()
 	b.name = a.name
 
@@ -362,36 +362,36 @@ fn ray_stand a =
 	b.slidingFriction = a.Sliding_Friction
 
 	return b
-	)
+)
 	
 fn mc_conv_sub cur_mat =
-	(
+(
 	if classof cur_mat == Multimaterial or classof cur_mat == Toon_Assistant then 
-		(
+	(
 		sub_number = cur_mat.names.count
 		if classof cur_mat == Multimaterial then b = Multimaterial ()
 		if classof cur_mat == Toon_Assistant then 
-			(
+		(
 			if toon_assistant_test() == true then 
-				(
+			(
 				b = Toon_Assistant()
-				)
+			)
 			else 
-				(
+			(
 				toon_error()
 				return meditMaterials[toslot_value]
-				)
 			)
+		)
 		b.materialList.count = sub_number
 		b.name = cur_mat.name
 		for i = 1 to sub_number do
-			(
+		(
 			b.materialList[i] = cur_mat.materialList[i]
 			b.mapEnabled[i] = cur_mat.mapEnabled[i]
 			if cur_mat.names[i] != undefined then b.names[i] = cur_mat.names[i]
-			)
+		)
 		for i = 1 to sub_number do
-			(
+		(
 			if conv_type == 1 and classof b.materialList[i] == Multimaterial then b.materialList[i] = sub_toon b.materialList[i]
 			if conv_type == 2 and classof b.materialList[i] == Toon_Assistant then b.materialList[i] = toon_sub b.materialList[i]
 			if conv_type == 3 and classof b.materialList[i] == StandardMaterial then b.materialList[i] = stand_ink b.materialList[i]
@@ -400,161 +400,161 @@ fn mc_conv_sub cur_mat =
 			if conv_type == 6 and classof b.materialList[i] == Ink__n_Paint then b.materialList[i] = ink_ray b.materialList[i]
 			if conv_type == 7 and classof b.materialList[i] == StandardMaterial then b.materialList[i] = stand_ray b.materialList[i]
 			if conv_type == 8 and classof b.materialList[i] == RaytraceMaterial then b.materialList[i] = ray_stand b.materialList[i]
-			)
-		meditMaterials[toslot_value] = b
 		)
-	else MessageBox "This slot is not a Multi/Sub-Object or Toon Assistant Material." title:"MaterialConverter"
+		meditMaterials[toslot_value] = b
 	)
+	else MessageBox "This slot is not a Multi/Sub-Object or Toon Assistant Material." title:"MaterialConverter"
+)
 
 fn mc_conv_org cur_mat =
-	(
+(
 	if conv_type == 1 then 
-		(
+	(
 		if classof cur_mat == Multimaterial then meditMaterials[toslot_value] = sub_toon cur_mat
 		else MessageBox "This slot is not a Multi/Sub-Object Material." title:"MaterialConverter"
-		)
+	)
 	if conv_type == 2 then 
-		(
+	(
 		if classof cur_mat == Toon_Assistant then meditMaterials[toslot_value] = toon_sub cur_mat
 		else MessageBox "This slot is not a ToonAssistant Material." title:"MaterialConverter"
-		)
+	)
 	if conv_type == 3 then
-		(
+	(
 		if classof cur_mat == Standard then meditMaterials[toslot_value] = stand_ink cur_mat
 		else MessageBox "This slot is not a Standard Material." title:"MaterialConverter"
-		)
+	)
 
 	if conv_type == 4 then
-		(
+	(
 		if classof cur_mat == RaytraceMaterial then meditMaterials[toslot_value] = ray_ink cur_mat
 		else MessageBox "This slot is not a Raytrace Material." title:"MaterialConverter"
-		)
+	)
 
 	if conv_type == 5 then
-		(
+	(
 		if classof cur_mat == Ink__n_Paint then meditMaterials[toslot_value] = ink_stand cur_mat
 		else MessageBox "This slot is not an Ink 'N Paint Material." title:"MaterialConverter"
-		)
+	)
 
 	if conv_type == 6 then
-		(
+	(
 		if classof cur_mat == Ink__n_Paint then meditMaterials[toslot_value] = ink_ray cur_mat
 		else MessageBox "This slot is not an Ink 'N Paint Material." title:"MaterialConverter"
-		)
+	)
 
 	if conv_type == 7 then 
-		(
+	(
 		if classof cur_mat == Standardmaterial then meditMaterials[toslot_value] = stand_ray cur_mat
 		else MessageBox "This slot is not a Standard Material." title:"MaterialConverter"
-		)
+	)
 
 	if conv_type == 8 then 
-		(
+	(
 		if classof cur_mat == Raytracematerial then meditMaterials[toslot_value] = ray_stand cur_mat
 		else MessageBox "This slot is not a Raytrace Material." title:"MaterialConverter"
-		)
 	)
+)
 
 fn mc_conv the_mat =
-	(
+(
 	if sub_value == true then mc_conv_sub the_mat
 	else mc_conv_org the_mat
-	)
+)
 
 -- Script
 
 rollout mc_rollout "MaterialConverter"
-	(
+(
 	group "Input Output:"
-	(
+(
 	spinner fromslot "Input Slot: " range:[1,24,1] type:#integer fieldWidth:27 align:#center across:2
 	spinner toslot "Output Slot: " range:[1,24,2] type:#integer fieldWidth:27 align:#center
-	)
+)
 
 	group ""
-	(
+(
 	button sub_toon_b "Multi/Sub-Object --> Toon Assistant" width:200 align:#center toolTip:"Multi/Sub-Object --> Toon Assistant"
 	button toon_sub_b "Toon Assistant --> Multi/Sub-Object" width:200 align:#center toolTip:"Toon Assistant --> Multi/Sub-Object"
-	)
+)
 
 	group ""
-	(
+(
 	button stand_ink_b "Standard --> Ink 'N Paint" width:200 align:#center toolTip:"Standard --> Ink 'N Paint"
 	button ray_ink_b "Raytraced --> Ink 'N Paint" width:200 align:#center toolTip:"Raytraced --> Ink 'N Paint"
 	button ink_stand_b "Ink 'N Paint --> Standard" width:200 align:#center toolTip:"Ink 'N Paint --> Standard"
 	button ink_ray_b "Ink 'N Paint --> Raytraced" width:200 align:#center toolTip:"Ink 'N Paint --> Raytraced"
-	)
+)
 
 	group ""
-	(
+(
 	button stand_ray_b "Standard --> Raytraced" width:200 align:#center toolTip:"Standard --> Raytraced"
 	button ray_stand_b "Raytraced --> Standard" width:200 align:#center toolTip:"Raytraced --> Standard"
-	)
+)
 	
 	group "Sub-Material Mode"
-	(
+(
 	checkbox sub_mode_check "Sub-Material Mode On **" align:#center
-	)
+)
 
 	on fromslot changed val do fromslot_value = val
 	on toslot changed val do toslot_value = val
 
 	on sub_toon_b pressed do 
-		(
+	(
 		conv_type = 1
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	on toon_sub_b pressed do 
-		(
+	(
 		conv_type = 2
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	on stand_ink_b pressed do 
-		(
+	(
 		conv_type = 3
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	on ray_ink_b pressed do 
-		(
+	(
 		conv_type = 4
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	on ink_stand_b pressed do 
-		(
+	(
 		conv_type = 5
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	on ink_ray_b pressed do 
-		(
+	(
 		conv_type = 6
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	on stand_ray_b pressed do 
-		(
+	(
 		conv_type = 7
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	on ray_stand_b pressed do 
-		(
+	(
 		conv_type = 8
 		mc_conv meditMaterials[fromslot_value]
-		)
+	)
 	
 	on sub_mode_check changed state do 
-		(
+	(
 		if sub_mode_check.checked == true then sub_value = true
 		else sub_value = false
-		)
 	)
+)
 
 rollout mc_info "**"
-	(
+(
 	label label1 "Input slot is a Multi/Sub-object or Toon" align:#left
 	label label2 "Assistant. Converts all instances of the" align:#left
 	label label3 "selected material type within the Multi/" align:#left
 	label label4 "Sub-object or Toon Assistant to the new" align:#left
 	label label5 "material type." align:#left
-	)
+)
 
 if mc_floater != undefined then CloseRolloutFloater mc_floater
 mc_floater = newRolloutFloater "MaterialConverter v1.30" 250 465

@@ -1,5 +1,5 @@
 fn filterFileTypes showExtension =
-	(
+(
 	-- Script by Dave Stewart
 	-- www.davestewart.co.uk
 
@@ -52,9 +52,9 @@ fn filterFileTypes showExtension =
 		
 	-- build format strings
 		for i = 1 to 3 do
-			(
+		(
 			for f in fileTypes[i] do all+= f[2] + "; "
-			)
+		)
 		for f in fileTypes[1] do anim+= f[2] + "; "
 		for f in fileTypes[2] do still+= f[2] + "; "
 		for f in fileTypes[3] do vector+= f[2] + "; "
@@ -67,7 +67,7 @@ fn filterFileTypes showExtension =
 		format ("All formats|" +all+ "|") to:str
 
 		for i = 1 to fileTypes.count do
-			(
+		(
 			-- Types heading...
 				if i  == 1 then format ("Animation formats..." +"|" + anim + "|") to:str
 				if i  == 2 then format ("Still formats..." +"|" + still + "|") to:str
@@ -75,18 +75,18 @@ fn filterFileTypes showExtension =
 			
 			-- Types individually
 				for f in filetypes[i] do
-					(
+				(
 					format ("      " + f[1])									to:str
 					if showExtension == false then format (" (" +f[2]+")")		to:str
 					format  ("|"+f[2] + "|")									to:str
-					)
+				)
 				
-			)
+		)
 		
 		format "Any file (*.*)|*.*" to:str
 	-- done	
 		return str
-	)
+)
 
 getSaveFileName types:(filterFileTypes true)
 

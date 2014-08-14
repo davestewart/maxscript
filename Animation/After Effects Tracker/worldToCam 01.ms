@@ -1,5 +1,5 @@
 fn worldToCam p c z:false =
-	(
+(
 	-- variables
 		local a, x, y, xf, yf, deletePoint = false
 	
@@ -9,10 +9,10 @@ fn worldToCam p c z:false =
 
 	-- node / position variables
 		if classof p == point3 then
-			(
+		(
 			p = point pos:p
 			deletePoint = true
-			)
+		)
 		
 		
 		forceCompleteRedraw()
@@ -52,4 +52,4 @@ fn worldToCam p c z:false =
 		return point3 x y 0
 		
 		return point2 x y
-	)
+)

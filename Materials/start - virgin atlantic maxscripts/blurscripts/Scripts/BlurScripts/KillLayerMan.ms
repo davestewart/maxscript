@@ -32,7 +32,7 @@
 -------------------------------------------------------------------------------
 (
 if (queryBox "Do you wish to wipe all Layerman data from your scene?" title:"KillLayerMan") == true then 
-	(
+(
 	-- kills layerman 2 info
 	
 	LM_Data = undefined
@@ -41,11 +41,11 @@ if (queryBox "Do you wish to wipe all Layerman data from your scene?" title:"Kil
 	
 	LID = getappdata globaltracks[1] 9901
 	if LID != undefined then
-		(
+	(
 		LM = undefined
 		execute (LID + " = undefined")
 		deleteappdata globaltracks[1] 9901
-		)
+	)
 		
 	-- kills layerman 2 and 3 change handlers
 	
@@ -60,18 +60,18 @@ if (queryBox "Do you wish to wipe all Layerman data from your scene?" title:"Kil
 	-- kills layerman floater
 	
 	if LM_Float != undefined then 
-		(
+	(
 		closeRolloutFloater LM_Float
 		LM_Float = Undefined
-		)
+	)
 	
 	-- kills appdata from objects
 	
 	for i in $* do
-		(
+	(
 		deleteappdata i 9901
 		deleteappdata i 9902
-		)
 	)
+)
 )
 -------------------------------------------------------------------------------

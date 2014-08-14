@@ -9,15 +9,15 @@ struct List(
 	-- funky code	
 		thisList=list,
 		fn addItem name value=
-			(
+		(
 			local names=getPropNames thisList
 			local values=for prop in names collect (thisList getProperty prop)
 			
 			append names name
 			append values value
 			thisList=makeStruct names values
-			)
-	)
+		)
+)
 
 list=List()
 

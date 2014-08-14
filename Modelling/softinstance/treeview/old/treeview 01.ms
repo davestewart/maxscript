@@ -1,5 +1,5 @@
 fn showHier obj d=
-	(
+(
 -- if this is the root then print the name
 	if d==1 then format "%\n" obj.name
 
@@ -10,14 +10,14 @@ fn showHier obj d=
 
 --print the hierarchy
 	for c in arr do
-		(
+	(
 		local str=""
 		if (getNodeByName c).isFrozen then str+=">"
 		for i = 1 to d do str+=" "
 		format "%\n" (str + c)
 		showHier (getNodeByName c) (d+1)
-		)
 	)
+)
 
 rollout test "test" (
 
@@ -37,12 +37,12 @@ rollout test "test" (
 		-- create nodes
 
 	for m = 1 to $.modifiers.count do
-		(
+	(
 		mNode = tv.nodes.add()
 		mNode.text = m.name as string
 		local propArr = getPropNames $.modifiers[2]
 		for p in propArr do
-			(
+		(
 			pNode = tv.nodes.add mNode.index 4 "" (p as string)
 --			pNode.text = p as string
 			if (execute(" classof $.modifiers["+m as string+"]."+p as string)==SubAnim) then
@@ -50,9 +50,9 @@ rollout test "test" (
 
 			
 
-			)
-		)		
-	)
+		)
+	)		
+)
 
 
 )

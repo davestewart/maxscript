@@ -3,41 +3,41 @@
 --=====================================================================================
 
 fn fileToString file=
-	(
+(
 	str=stringstream ""
 	strFile = openFile file
 	while not eof strFile do
-		(
+	(
 		format "%\n" (readline strFile) to:str
-		)
-	return str as string
 	)
+	return str as string
+)
 
 fn doTrans srcObj TrgObj p r s par=
-	(
+(
 	pushPrompt "Select target object..."
 	trgObj = pickObject filter:flt_isNotSameObj rubberBand:srcObj.pos
 
 	if p==1 then srcObj.pos=trgObj.pos
 	if r==1 then
-		(
+	(
 		in coordsys (transmatrix srcObj.transform.pos) 
 	    srcObj.rotation = trgObj.rotation as EulerAngles
-		)
+	)
 	if s==1 then srcObj.scale=trgObj.scale
 	if par==1 then srcObj.parent=trgObj
 
 	popPrompt()
-	)
+)
 
 fn flt_objects = (srcObj != undefined) -- objects filter 
 
 fn flt_isNotMultiMat =
-	(
+(
 	if srcObj.material != undefined then
 		srcObj.material != Multimaterial
 	else false
-	)
+)
 
 fn flt_isNotSameObj obj = obj!=SrcObj
 
@@ -48,7 +48,7 @@ fn flt_isNotSameObj obj = obj!=SrcObj
 
 
 fn buildStackMenu obj =
-	(
+(
 	------------------------------------------------------------
 	-- Stack values
 	------------------------------------------------------------
@@ -56,7 +56,7 @@ fn buildStackMenu obj =
 
 		-- Modifiers
 			for n = obj.modifiers.count to 1 by -1 do
-				(
+			(
 				local mStr=obj.modifiers[n].name as string
 				format "	subMenu \"%\"\n		(\n" mStr to:menuStr
 					local mEnable= (getPropNames obj.modifiers[n]).count>0
@@ -69,7 +69,7 @@ fn buildStackMenu obj =
 						format "		menuItem mi_Stack%_% \"%\"\n" n m (propArr[m] as string) to:menuStr
 
 				format "\n	)\n" to:menuStr
-				)
+			)
 
 
 		-- Base Object
@@ -88,11 +88,11 @@ fn buildStackMenu obj =
 			format "\n	)\n" to:menuStr
 
 	
-	)
+)
 
 
 fn buildTransMenu obj =
-	(
+(
 	------------------------------------------------------------
 	-- Transforms
 	------------------------------------------------------------
@@ -126,11 +126,11 @@ fn buildTransMenu obj =
 		-- handlers
 			local transHandlers = fileToString "transHandlers.ms"
 			format "%\n" transHandlers to:menuStr
-	)
+)
 
 
 fn buildMatMenu obj =
-	(
+(
 	------------------------------------------------------------
 	-- Material
 	------------------------------------------------------------
@@ -139,10 +139,10 @@ fn buildMatMenu obj =
 		format "	separator sep%\n" (sep+=1) to:menuStr
 		local matArr =#("Ambient","Diffuse","Specular / Glossiness","Shader","Opacity","Bump","Self Illumination","Reflection")
 		for n = 1 to matArr.count do
-			(
+		(
 			format "	menuItem mi_Mat% \"%\"\n" n matArr[n] to:menuStr
-			)
-	)
+		)
+)
 
 
 --=====================================================================================
@@ -155,7 +155,7 @@ global NewRCmenu
 
 
 fn buildMainMenu menuName obj mode=
-	(
+(
 	-- reset all vars
 		sep=0
 		menuStr= stringStream ""
@@ -163,7 +163,7 @@ fn buildMainMenu menuName obj mode=
 	format "rcmenu %(\n" menuName to:menuStr
 
 	if mode=="" then
-		(
+	(
 	
 			format "menuItem mi_Title \"Select property to replace...\" enabled:false\n" to:menuStr
 			format "separator sep%\n" (sep+=1) to:menuStr
@@ -213,9 +213,9 @@ fn buildMainMenu menuName obj mode=
 
 
 	
-		)
+	)
 	else
-		(
+	(
 		------------------------------------------------------------
 		-- Build Menus
 		------------------------------------------------------------
@@ -224,13 +224,13 @@ fn buildMainMenu menuName obj mode=
 			if mode=="trans" then buildTransMenu obj
 			if mode=="mat" then buildMatMenu obj
 	
-		)
+	)
 	format "\n)" to:menuStr
 
 
 	close menuStr
 	execute(menuStr as string)
-	)
+)
 
 
 --=====================================================================================

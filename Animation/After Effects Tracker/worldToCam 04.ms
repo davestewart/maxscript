@@ -7,7 +7,7 @@
 -- returns:			a matrix
 
 	fn getCameraTransform cam =
-		(
+	(
 		--this will return a camera transform matrix, ignoring perspective for now:
 			local ct	= cam.transform
 			local ctd	= cam.target_distance
@@ -22,7 +22,7 @@
 			local ctx	= inverse (matrix3 row1 row2 row3 p)
 			
 			return ctx
-		)
+	)
 
 
 --------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 -- returns:			a single camera-space Point2 value
 	
 	fn worldToCam pt3 cam ctx:undefined outputSize:[renderwidth, renderheight] =
-		(
+	(
 		-- get camera transform
 			if ctx == undefined then ctx = getCameraTransform cam
 		
@@ -56,7 +56,7 @@
 	
 		-- return
 			return pt2
-		)
+	)
 
 
 
@@ -75,29 +75,29 @@
 	--				array[time][point2]
 
 	fn getCamPointsArr arr start end =
-		(
+	(
 		with redraw off
-			(
+		(
 			for t = start to end do
-				(
+			(
 				local i			= t - start + 1
 				local arrVerts	= arr[i]
 				slidertime		= t
 				gw.setTransform(Matrix3 1)
 				for v = 1 to arrVerts.count do
-					(
+				(
 					arrVerts[v]	= gw.wTransPoint arrVerts[v]
-					)
-				arr[i]			= arrVerts
 				)
+				arr[i]			= arrVerts
 			)
+		)
 		slidertime = st
 		return arr
-		)
+	)
 
 
 fn testCam =
-	(
+(
 	cam = cameras[1]
 	pos = geometry[1].pos
 	pt2 = worldToCam pos cam
@@ -107,4 +107,4 @@ fn testCam =
 	gw.enlargeUpdateRect #whole
 	gw.wMarker pt3 #PlusSign color:white
 	gw.updateScreen()
-	)
+)

@@ -21,19 +21,19 @@
 	
 -- matching function
 	fn regexMatch source pattern options: =
-	(
+(
 		local groups
 		local results	= #()
 		local rx		= dotNetClass "System.Text.RegularExpressions.RegEx"
 		local matches	= if options == unsupplied then rx.match source pattern else rx.match source pattern options
 		while matches.Success do
-		(
+	(
 			groups		= for i = 1 to matches.Groups.count - 1 collect matches.groups.item[i].value
 			matches		= matches.nextMatch()
 			append results groups
-		)
-		results
 	)
+		results
+)
 
 -- match
 	pattern		= "(\w+)\s+\"?([^\"\n]+)\"?"

@@ -44,7 +44,7 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 			#view_none, 
 			#view_spot, 
 			#view_shape
-			)
+		)
 
 		local vptOptions = #(
 			#(#layout_4,	"4 viewports - all same size"),
@@ -65,7 +65,7 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 			#(#layout_2hb,	"2 viewports - horizontal split, top larger"),
 			#(undefined,	"--------------------------------------------------------------------------------------"),
 			#(#layout_1,	"1 viewport")
-			)
+		)
 	/*
 	*/
 		local vptDefaults = #(
@@ -82,22 +82,22 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 			#(#layout_2h,	#view_left,		#view_persp_user	),
 			#(#layout_2ht,	#view_left,		#view_persp_user	),
 			#(#layout_2hb,	#view_top,		#view_left			),
-			#(#layout_1,	#view_persp_user	)
-			)
+			#(#layout_1,	#view_persp_user)
+		)
 	
 	--------------------------------------------------------------------------------------------
 	-- callbacks
 	--------------------------------------------------------------------------------------------
 
 		fn checkVptBgState =
-			(
+		(
 			--print viewport.activeViewport
 			if viewport.activeViewport != activeVpt then
-				(
+			(
 				ckbBg.state = viewport.DispBkgImage
 				InvalidateAllBackgrounds()
-				)
 			)
+		)
 
 		fn vptManager_cb = checkVptBgState()
 
@@ -107,32 +107,32 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 	--------------------------------------------------------------------------------------------
 
 		function updateDropdown layout =
-			(
+		(
 			local index = 0
 			while index == 0 do
-				(
+			(
 				for i = 1 to vptOptions.count do
-					(
+				(
 					if vptOptions[i][1] == layout then index = i
 					exit
-					)
 				)
-			ddlLayouts.selection = index
 			)
+			ddlLayouts.selection = index
+		)
 			
 		fn resetLayout =
-			(
+		(
 			-- get default views
 				local layoutName = viewport.getLayout()
 				local arrViews
 				for arr in vptDefaults where arr[1] == layoutName do
-					(
+				(
 					arrViews = copy arr #nomap
 					deleteItem arrViews 1
-					)
+				)
 			-- reset views
 				for i = 1 to viewport.numViews do
-					(
+				(
 					-- view
 						viewport.activeViewport = i
 						
@@ -141,29 +141,29 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 					
 					-- other settings
 						if arrViews[i] == #view_persp_user then 
-							(
+						(
 							viewport.setRenderLevel #smoothhighlights
 							--viewport.setTM defaultTM
-							)
+						)
 						else
-							(
+						(
 							viewport.setRenderLevel #wireFrame
-							)
+						)
 						
 						viewport.DispBkgImage 	= false
 						displaySafeFrames 		= false
-					)
-			)
+				)
+		)
 			
 		function saveSettings =
-			(
+		(
 			-- variables
 				local layout		= viewport.getLayout()
 				local oldActiveVpt = viewport.activeViewport
 				
 			-- get views
 				for i = 1 to viewport.numViews do
-					(
+				(
 					-- view
 						viewport.activeViewport = i
 						
@@ -187,16 +187,16 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 						
 					-- ini setting
 						setINISetting iniFile layout (i as string) iniString
-					)
+				)
 			-- ini setting
 				setINISetting iniFile layout "activeVpt" (oldActiveVpt as string)
 
 			-- cleanup
 				viewport.activeViewport = oldActiveVpt
-			)
+		)
 
 		function loadSettings =
-			(
+		(
 			
 			-- variables
 				local layout		= viewport.getLayout()
@@ -209,7 +209,7 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 */
 			-- get views
 				for i = 1 to viewport.numViews do
-					(
+				(
 					-- view
 						viewport.activeViewport = i
 						
@@ -220,32 +220,32 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 					-- view type
 						vpt			= iniArr[1]
 						if vpt != undefined AND vpt != "" then
-							(
+						(
 							if finditem allowableViews (vpt as name) != 0 then viewport.settype (vpt as name)
 							else
-								(
+							(
 								local cam = getNodeByName vpt
 								if cam != undefined then viewport.setCamera cam
-								)
 							)
+						)
 					--messagebox (vpt as string)
 						
 					-- other settings
 						if iniArr[2] != undefined AND iniArr[2] != "" then viewport.setRenderLevel(iniArr[2] as name)
 						if iniArr[3] != undefined AND iniArr[3] != "" then
-							(
+						(
 							if getFileSize iniArr[3] != 0 then backgroundImageFileName = iniArr[3]
-							)
+						)
 						if iniArr[4] != undefined AND iniArr[4] != "" then viewport.DispBkgImage = if iniArr[4] == "1" then true else false
 						if iniArr[5] != undefined AND iniArr[5] != "" then displaySafeFrames = if iniArr[5] == "1" then true else false
 						if iniArr[6] != undefined AND iniArr[6] != "" then
-							(
+						(
 							execute ("vptMatrix = " + iniArr[6])
 							try(viewport.setTM vptMatrix)
 							catch(
 								format "Could not set viewport matrix...\n"
-								)
 							)
+						)
 /*
 					-- debug
 --						format "\n view: %\n" i
@@ -256,7 +256,7 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 						format "	safeframe:	%\n" iniArr[5]
 						format "	viewTM:		%\n" iniArr[6]
 */
-					)
+				)
 					
 			-- cleanup
 				local oldActiveVpt = getINISetting iniFile layout "activeVpt"
@@ -264,7 +264,7 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 				checkVptBgState()
 				activeVpt = viewport.activeViewport
 				checkVptBgState()
-			)
+		)
 		
 
 	--------------------------------------------------------------------------------------------
@@ -272,39 +272,39 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 	--------------------------------------------------------------------------------------------
 
 		on ddlLayouts selected index do
-			(
+		(
 			if vptOptions[index][1] != undefined then
-				(
+			(
 				saveSettings()
 				viewport.setLayout vptOptions[index][1]
 				loadSettings()
 				viewport.SetRenderLevel (viewport.getRenderLevel())
-				)
+			)
 			else updateDropdown (viewport.getLayout())
 
 			enableSceneRedraw()
 			forcecompleteredraw()
 			redrawViews()
-			)
+		)
 			
 		on btnReset pressed do
-			(
+		(
 			resetLayout()
-			)
+		)
 	
 		on ckbBg changed state do
-			(
+		(
 			viewport.DispBkgImage = state
 			InvalidateAllBackgrounds()
-			)
+		)
 	
 		on btnCfg pressed do
-			(
+		(
 			actionMan.executeAction 0 "40095"  -- Views: Viewport Background
-			)
+		)
 
 		on roViewportLayout open do
-			(
+		(
 			-- dropdown
 				ddlLayouts.items = for a in vptOptions collect a[2]
 				updateDropdown (viewport.getLayout())
@@ -313,14 +313,14 @@ rollout roViewportLayout "Viewport Layout Manager" width:314 height:40
 			-- vpt matrix
 				global vptMatrix = defaultTM
 
-			)
+		)
 			
 		on roViewportLayout close do
-			(
+		(
 			unregisterRedrawViewsCallback vptManager_cb
-			)
+		)
 			
-	)
+)
 createdialog roViewportLayout style:#(#style_titlebar, #style_border, #style_sysmenu)
 cui.RegisterDialogBar roViewportLayout style:#(#cui_dock_top, #cui_dock_bottom, #cui_floatable)
 

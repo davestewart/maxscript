@@ -24,7 +24,7 @@
 -- animation
 	animationRange = interval 0 (tStep * (pMax-1))
 	for i = 1 to pMax do
-		(
+	(
 		-- variables
 			d = (pow pStep i)
 			t = (pMax*tStep)- (tStep*i)
@@ -40,7 +40,7 @@
 			k.outTangentType = #auto
 	
 			c.farclip = d
-		)
+	)
 
 -- setup
 	c.showTrajectory = on

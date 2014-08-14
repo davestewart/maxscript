@@ -37,8 +37,8 @@
 -------------------------------------------------------------------------------
 (
 if selection.count != 0 then
-	(
+(
 	if selection[1].material != undefined then meditmaterials[medit.GetActiveMtlSlot()] = selection[1].material
-	)
+)
 )
 -------------------------------------------------------------------------------

@@ -1,10 +1,10 @@
 fn flt_objects = (srcObj != undefined) -- objects filter 
 fn flt_isNotMultiMat =
-	(
+(
 	if srcObj.material != undefined then
 		srcObj.material != Multimaterial
 	else false
-	)
+)
 
 
 srcObj =pickObject()
@@ -49,11 +49,11 @@ sep=0
 
 		format "subMenu \"Stack values...\"\n	(\n" to:menuStr
 			for n = srcObj.modifiers.count to 1 by -1 do
-				(
+			(
 				mStr=classof srcObj.modifiers[n] as string
 				mStr=srcObj.modifiers[n].name as string
 				format "	menuItem mi_Stack% \"%\"\n" n mStr to:menuStr
-				)
+			)
 			format "	separator sep%\n" (sep+=1) to:menuStr
 			mStr= srcObj.baseObject as string
 			format "	menuItem mi_Stack0 \"%\"\n" mStr to:menuStr
@@ -68,9 +68,9 @@ sep=0
 		format "subMenu \"Material...\" filter:flt_isNotMultiMat\n	(\n" to:menuStr
 			matArr =#("Ambient","Diffuse","Specular / Glossiness","Shader","Opacity","Bump","Self Illumination","Reflection")
 			for n = 1 to matArr.count do
-				(
+			(
 				format "	menuItem mi_Mat% \"%\"\n" n matArr[n] to:menuStr
-				)
+			)
 			format "	separator sep%\n" (sep+=1) to:menuStr
 			format "	menuItem mi_MatAll \"All\"" to:menuStr
 

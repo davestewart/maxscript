@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------
 
 rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
-	(
+(
 	----------------------------------------------------------------------------------
 	-- UI
 	
@@ -17,9 +17,9 @@ rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
 	-- fns
 	
 		fn getType prop =
-			(
+		(
 			case (classof prop) of
-				(
+			(
 				String: 0		--String
 				Integer: 1		--Number
 				BooleanClass: 2	--Bool
@@ -32,21 +32,21 @@ rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
 				Array: 9		--Enum
 				"Category": 10
 				default: -1
-				)
-			)	
+			)
+		)	
 
 		fn setType str type =
-			(
+		(
 			type = case type of
-				(
+			(
 				"String":		str as String
 				"Integer":		str as Integer
 				"BooleanClass":	str as BooleanClass
 				"Color":
-					(
+				(
 					local arr = filterstring str ";"
 					color (arr[1] as float) (arr[2] as float) (arr[3] as float) 
-					)
+				)
 				"Font":			4
 				"Float":		str as Float
 				"Date":			6
@@ -54,8 +54,8 @@ rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
 				"Array": 		str as Array
 				"Category":		10
 				default: -1
-				)
-			)	
+			)
+		)	
 
 	
 	
@@ -63,7 +63,7 @@ rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
 	-- functions
 	
 		fn test1 = 
-			(
+		(
 			--   .AddCategory Title:string
 			local cat	= ax1.AddCategory "New Category"
 	
@@ -81,30 +81,30 @@ rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
 							#PropertyItemCategory)
 	
 			for i = 1 to arr.count do
-				(
+			(
 				local type	= i - 1
 				local label	= (arr[i] as string)
 				local value	= (random 0 100) as string
 				local item	= cat.AddChildItem type label value
 				
 				if label == "PropertyItemEnum" do
-					(
+				(
 					item.Constraints.Add "1-point"
 					item.Constraints.Add "2-point"
 					item.Constraints.Add "4-corner pin"
-					)
-	
 				)
+	
 			)
+		)
 			
 		
 		local obj
 			
 			
 		fn test2 =
-			(
+		(
 			if $ != undefined then
-				(
+			(
 				obj = $
 				local cat	= ax1.AddCategory $.name
 				cat.expanded = true
@@ -114,54 +114,54 @@ rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
 					catApp.expanded = true
 					local props = #(#material,#wirecolor)
 					for prop in props do
-						(
+					(
 						local label	= prop as string
 						local value	= getProperty obj prop
 						local type	= getType value
 						
 						local item	= catApp.AddChildItem type label (value as string)
 						item.tag	= (classof value) as string
-						)
+					)
 	
 				-- properties
 					local catProps	= cat.AddChildItem 10 "Properties"
 					catProps.expanded = true
 					local props = getpropnames $
 					for prop in props do
-						(
+					(
 						local label	= prop as string
 						local value	= getProperty obj prop
 						local type	= getType value
 						
 						local item	= catProps.AddChildItem type label (value as string)
 						item.tag	= (classof value) as string
-						)
+					)
 						
-				)
 			)
+		)
 		----------------------------------------------------------------------------------
 	-- handlers
 	
 		on ro1 open do
-			(
+		(
 			test2()
-			)
+		)
 			
 		  on ax1 RequestEdit Item Cancel do
-		  	(
+		  (
 			enableAccellerators = false
 			print "edit: " + Item.caption
-		  	)
+		  )
 	
 		  on ax1 AfterEdit Item strValue Cancel do
-		  	(
+		  (
 			enableAccellerators = true
 			local prop	= Item.caption
 			local value	= setType strValue Item.tag
 			setproperty obj prop value
-		  	)
+		  )
 	
-	)
+)
 createdialog ro1
 
 

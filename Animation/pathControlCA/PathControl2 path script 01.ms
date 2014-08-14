@@ -5,10 +5,10 @@
 
 -- setup position list
 	if (classof $.position.controller != position_list) then
-		(
+	(
 		$.position.controller = (position_list())
 		$.position.controller.available.controller=Path_Constraint()
-		)
+	)
 	
 -- setup path controller
 	$.position.controller["Path_Constraint"].percent.controller=float_script()
@@ -20,9 +20,9 @@ dependsOn mod
 
 path=(getNodeByName obj).position.controller[\"Path_Constraint\"].path
 if (path != undefined) then
-	(
+(
 	length= amax (getSegLengths path 1)
 	dist=mod.dist
 	dist/length
-	)
+)
 else 	0"

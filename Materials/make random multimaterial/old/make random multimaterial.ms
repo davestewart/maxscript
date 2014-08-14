@@ -1,17 +1,17 @@
 rollout components "Components" width:210 height:432
-	(
-	)
+(
+)
 
 
 
 
 rollout matOptions "Options" width:210 height:432
-	(
+(
 
 	on matOptions open do
-		(
+	(
 		max mtledit
-		)
+	)
 
 	GroupBox grp1 "Material Names" pos:[8,8] width:144 height:96
 	edittext nameMain "Main" pos:[16,24] width:128 height:16 text:"MultiMaterial"
@@ -63,7 +63,7 @@ rollout matOptions "Options" width:210 height:432
 
 	fn randomColor =
 		-- assign random colors
-		( 
+	( 
 			base = random 1 255
 			offset = 20
 			
@@ -72,35 +72,35 @@ rollout matOptions "Options" width:210 height:432
 			z = base + random -offset offset
 			
 			return (color x y z)
-		)
+	)
 
 	fn checkSlot slot =
 		-- check if material in slot is in scene
-		(
+	(
 		for i = 1 to sceneMaterials.count do
-			(
+		(
 			print sceneMaterials[i].name
 			print meditMaterials[i].name
-			)
 		)
+	)
 
 
 	fn createMaterial slot =
 		-- make the materials
-		(
+	(
 		checkSlot slot
 
 		matTop = meditMaterials[slot] = Multimaterial ()
 		matTop.numSubs = amtSubs.value
 
 		for i = 1 to amtSubs.value do
-			(
+		(
 			matSub = meditMaterials[slot].materialList[i]
 			matSub.name = "Grey" + i as String
 			matSub.adLock = off
 			matSub.diffuse = randomColor()
-			)
 		)
+	)
 
 
 ---------------------------------------------------------------------------------------------------
@@ -141,8 +141,8 @@ rollout matOptions "Options" width:210 height:432
 ---------------------------------------------------------------------------------------------------
 
 if multiMat != undefined do
-				(
+			(
 				closerolloutfloater multiMat 
-				)		
+			)		
 multiMat = newRolloutFloater "Random Multi Material" 200 500 
 addRollout matOptions multiMat

@@ -4,14 +4,14 @@
 
 	-- function
 		function makeStruct str=
-			(
+		(
 			arr=filterstring str " "
 			str = ""
 			for i = 2 to arr.count do str+=arr[i]+", "
 			str=substring str 1 (str.count-2)
 			local s=execute ("struct "+arr[1]+"("+str+")")
 			print s
-			)
+		)
 		
 		arr=#(
 		"residents cream amnesia since the opening the last three",
@@ -39,11 +39,11 @@
 ----------------------------------------------------------------------------------
 	-- initialize
 		test=undefined
-		(
+	(
 		local test
 		struct test(var1,var2,var3)
 		result=test()
-		)
+	)
 	-- results
 		format "test is: %\n" test
 		format "result is: %\n" result
@@ -72,6 +72,6 @@
 			"Blur",
 			#("Amount",100),
 			#("Fade",0)
-			)
+		)
 
 	-- 

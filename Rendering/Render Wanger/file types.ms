@@ -1,5 +1,5 @@
 fn filterFileTypes =
-	(
+(
 	-- Script by Dave Stewart
 	-- www.davestewart.co.uk
 
@@ -44,14 +44,14 @@ fn filterFileTypes =
 		format ("All formats|" +allTypes+ "|") to:str
 		
 		for i = 1 to fileTypes.count do
-			(
+		(
 			for f in filetypes[i] do format  (f +"|") to:str
-			)
+		)
 		
 		format "Any file (*.*)|*.*" to:str
 	-- done	
 		return str
-	)
+)
 
 getSaveFileName types:(filterFileTypes())
 

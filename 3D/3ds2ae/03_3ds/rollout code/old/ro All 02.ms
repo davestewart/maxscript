@@ -3,7 +3,7 @@ clearListener()
 -- rollouts
 
 	rollout roFlash "Control Panel"
-		( 
+	( 
 
 	-- includes
 
@@ -25,7 +25,7 @@ clearListener()
 	-- functions
 
 		function flashClick n =
-			(
+		(
 			-- rollout information
 				local numRollouts=subRo.rollouts.count
 				roHeights=for ro in subRo.rollouts collect ro.height
@@ -42,7 +42,7 @@ clearListener()
 			-- rollout open/close
 				for i = 2 to numRollouts do subRo.rollouts[i].open=false
 				subRo.rollouts[n].open=true
-			)
+		)
 
 	-- handlers
 		-- flash
@@ -50,32 +50,32 @@ clearListener()
 			on ax OnProgress n do format "handler: OnProgress : %\n" n 
 		
 			on ax FSCommand n arg2 do 
-				(
+			(
 				setFocus ax
 				n=n as Number
 				flashClick n
-				) 
+			) 
 		
 			on roFlash open do 
-				(
+			(
 				local f=(openfile "flashUI.swf")
 				local fStr
 				if f!= undefined then
-					(
+				(
 					flush f; close f
 			
 					fStr=f as string
 					fStr = substring fStr 7 (fStr.count-7)
 					fStr=replaceAll fStr "\\" "/"
 					
-					)
+				)
 				else messageBox "Interface file not found..."
 	
 				ax.movie = fStr--path+file 
 				ax.BackgroundColor=((colorMan.getColor #background)*255)as color
 				ax.menu=false
-				)
-		)
+			)
+	)
 
 	fileIn "settings/ro settings 02.ms"
 /*
@@ -90,10 +90,10 @@ clearListener()
 	
 	destroyDialog max2aeFloater
 	rollout max2aeFloater "3ds2ae" width:450 height:400
-		(
+	(
 		subrollout container "Rollouts" height:400
 		on max2aeFloater resized size do max2aeFloater.container.height=size[2]-10
-		) 
+	) 
 
 	createdialog max2aeFloater 450 128 10 10 style:#(#style_titlebar,#style_resizing,#style_minimizebox,#style_sysmenu) lockWidth:true
 	

@@ -1,6 +1,6 @@
 -- this script has been altered to work with the circle's pos controller
 fn moveCirc=
-	(
+(
 
 
 	-- objects
@@ -58,5 +58,5 @@ fn moveCirc=
 			y=-(opp/2)+(yf*opp)
 
 			in coordsys circ.parent circ.pos=[x,y,0]
-	)
+)
 	

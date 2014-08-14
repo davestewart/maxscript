@@ -1,12 +1,12 @@
 fn printObject obj=
-	(
+(
 	-- variables
 		local nullSize=50
 		local jsxStr=stringstream ""
 	
 	-- start
 	if classof obj != Targetobject then
-		(
+	(
 		--format "Exporting %\n" obj.name
 		format "var obj= new Object()\n" to: jsxStr
 
@@ -57,20 +57,20 @@ fn printObject obj=
 		
 		-- lights
 			if superclassof obj == Light then
-				(
+			(
 				format "	obj.intensity=%\n" (getKeyArray obj #multiplier) to:jsxStr
 				format "	obj.color=%\n" (getKeyArray obj #color) to:jsxStr
 				if hasProperty obj "falloff" then
-					(
+				(
 					format "	obj.coneAngle=%\n" (getKeyArray obj #falloff) to:jsxStr
 					format "	obj.coneFeather=%\n" (getKeyArray obj #hotspot) to:jsxStr
-					)
 				)
+			)
 
 
 	-- end
 		format "objArr.push(obj)\n\n" to: jsxStr
-		)
+	)
 
 		return (jsxStr as string)
 	)

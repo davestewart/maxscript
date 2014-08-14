@@ -1,44 +1,44 @@
 (
 
 fn getControllerRange ctrl =
-	(
+(
 	local arrTime	= #()
 	fn getControllerTimes ctrl =
-		(
+	(
 		for i = 1 to ctrl.numSubs do
-			(
+		(
 			local range = getTimeRange ctrl[i].controller
 			if range.start - range.end != 0f then
-				(
+			(
 				append arrTime range.start
 				append arrTime range.end
-				)
-			getControllerTimesRec ctrl[i]
 			)
+			getControllerTimesRec ctrl[i]
 		)
+	)
 	getControllerTimes ctrl
 	return interval (aMin arrTime) (aMax arrTime) 
-	)
+)
 
 
 
 fn createFolder path =
-	(
+(
 	local arrPath = filterString path "/"
 	local path = ""
 	local state = true
 	
 	for i = 1 to arrPath.count do
-		(
+	(
 		path += arrPath[i] + "/"
 		
 		if doesFileExist path then state = true
 		else state = makeDir path
 
 		if state == false then return false
-		)
-	return true
 	)
+	return true
+)
 
 
 local cam		= viewport.getCamera()

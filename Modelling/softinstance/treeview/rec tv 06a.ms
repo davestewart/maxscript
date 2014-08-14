@@ -2,9 +2,9 @@ fileIn "bmpArr.ms"
 fileIn "classArr.ms"
 
 if  (getCurrentSelection()).count==0 then
-	(
+(
 	if (NOT isvalidnode b) then
-		(
+	(
 		b=box()
 		addModifier b (Bend ())
 	/*
@@ -29,14 +29,14 @@ if  (getCurrentSelection()).count==0 then
 		b.material = meditmaterials[1]
 	*/
 		select b
-		)
 	)
+)
 if test!=undefined then destroydialog test
 	
 --------------------------------------------------------
 
 	rcMenu ensMenu
-	( 
+( 
 		local clone_node, is_cut		
 		menuItem mi_rename		"Rename (F2)"
 		menuItem mi_cut			"Cut (Ctrl+X)"
@@ -56,14 +56,14 @@ if test!=undefined then destroydialog test
 		menuItem mi_query		""
 		menuItem mi_findNext	"Find Next (Ctrl+G)"
 		
-	)	
+)	
 
 
 --------------------------------------------------------
 
 
 	rollout test "Copy Properties" width:512 height:584
-		(
+	(
 
 -- declarations
 
@@ -93,15 +93,15 @@ if test!=undefined then destroydialog test
 
 -- utility functions
 		fn pad num padLength =
-			(
+		(
 			num=num as string
 			while num.count < padLength do num = ("0"+num)
 			return num
-			)
+		)
 	
 
 		fn replaceAll str outStr inStr =
-			(
+		(
 			-- str the original string
 			-- the string/character to replace
 			-- the replacement string/character
@@ -110,19 +110,19 @@ if test!=undefined then destroydialog test
 			while ((n=findstring str outStr) != undefined) do str = replace str n inStr.count inStr
 			if str != undefined then return str
 			else return origStr
-			)
+		)
 
 
 		fn reverseArray inArr =
-			(
+		(
 			local outArr = #()
 			while inArr.count > 0 do
-				(
+			(
 				append outArr inArr[inArr.count]
 				deleteItem inArr inArr.count
-				)
-			return outArr
 			)
+			return outArr
+		)
 
 
 
@@ -130,7 +130,7 @@ if test!=undefined then destroydialog test
 -- treeview functions
 
 		fn initImageList=
-			(
+		(
 			--messageBox "initImageList()"
 			-- set variables
 				local bmpRel ="icons\\final\\"
@@ -138,7 +138,7 @@ if test!=undefined then destroydialog test
 				local iconStr=""
 			-- start the loop
 				for i = 1 to libraryClassArr.count do
-					(
+				(
 					try (
 					-- get and load the bitmap file
 						local bmpFile =bmpRel + libraryBmpArr[i]
@@ -149,17 +149,17 @@ if test!=undefined then destroydialog test
 
 					-- update ebug info
 						iconStr+=(pad j 3) +" | "+ libraryClassArr[i] +" | "+ libraryBmpArr[i] +"\n"
-						)
-					catch(j-=1)
 					)
+					catch(j-=1)
+				)
 			-- write debug info
 				--format "%" iconStr to:(win=newScript())
 				--format "libraryClassArr.count:%\nj:%\n" libraryClassArr.count j to:win
-			)
+		)
 
 
 		fn initTreeView tv singleSel=
-			(
+		(
 			-- linestyles
 				tv.lineStyle = #tvwRootLines
 				tv.lineStyle = #tvwTreeLines
@@ -184,7 +184,7 @@ if test!=undefined then destroydialog test
 				tv.oleDragMode = #ccOLEDragAutomatic
 				tv.oleDropMode = #ccOLEDropManual
 
-			)
+		)
 
 
 
@@ -193,22 +193,22 @@ if test!=undefined then destroydialog test
 
 
 	fn getClassFromSAString SAStr =
-		(
-		)
+	(
+	)
 
 
 	fn getSAStringFromNode tvNode =
-		(
+	(
 		-- set up variables
 			local nodeArr=#()
 			local saStr="$"
 
 		-- work up tree and add index to array
 			while tvNode.parent!=undefined do
-				(
+			(
 				append nodeArr (tvNode.tag as Integer)
 				tvNode=tvNode.parent
-				)
+			)
 		
 		-- reverse, convert and return Array
 
@@ -218,25 +218,25 @@ if test!=undefined then destroydialog test
 			--format"%\n" saStr
 			return saStr
 
-		)
+	)
 
 
 	fn getIconIndex sa i=
-		(
+	(
 		local iconIndex, lastIcon, class
 		lastIcon = axImgList.ListImages.Count
 		iconIndex=lastIcon 
-		try	(
+		try(
 			class=(classof (getSubAnim sa i).object) as string
 			--format "%\n" sa as string
 			iconIndex= findItem classArr class
 			if iconIndex==0 then iconIndex=lastIcon 
 			return iconIndex
-			)
+		)
 		catch(
 			return iconIndex
-			)
 		)
+	)
 
 
 
@@ -245,10 +245,10 @@ if test!=undefined then destroydialog test
 -- main recursive function
 
 		fn recurseSubAnims sa tv tvNode d=
-			(
+		(
 			d+=1
 			for i = 1 to sa.numSubs do
-				(
+			(
 
 			 -- flag if not visibility, transform, modified object or material
 				local oktoBuild=true
@@ -256,7 +256,7 @@ if test!=undefined then destroydialog test
 
 			-- build the nodes
 				if oktobuild == true then
-					(
+				(
 				-- build the node
 					newNode = tv.nodes.add tvNode.index 4 ""
 
@@ -284,9 +284,9 @@ if test!=undefined then destroydialog test
 
 				-- do children
 					recurseSubAnims sa[i] tv newNode d
-					)
 				)
 			)
+		)
 
 
 /*
@@ -302,19 +302,19 @@ if test!=undefined then destroydialog test
 	local t1=0,t2=0
 
 	fn timeIt type =
-		(
+	(
 		if type==0 then t1=timeStamp()
 		else
-			(
+		(
 			t2=timestamp()
 			local t=(t2-t1)/1000 as float
 			format "Processing took % seconds\n" t
-			)
 		)
+	)
 
 
 	fn populate tv obj =
-		(
+	(
 		-- Time it...
 			timeIt 0
 		-- clear
@@ -341,13 +341,13 @@ if test!=undefined then destroydialog test
 			timeIt 1
 			--tv1.MouseIcon = (LoadPicture "E:\\2_Current_Jobs\\softinstance\\treeview\\icons\\final\\AtmosApp_01.BMP")
 
-		)
+	)
 
 
 -- rollout handlers
 	
 	on test open do
-		(
+	(
 
 		-- Time it...
 			timeIt 0
@@ -373,11 +373,11 @@ if test!=undefined then destroydialog test
 		-- Time it...
 			timeIt 1
 	-- END
-		)
+	)
 
 
 	on tv1 NodeClick tvNode do
-		(
+	(
 		-- interface
 			-- update variables
 				prevNode=curNode
@@ -413,52 +413,52 @@ if test!=undefined then destroydialog test
 					format "  ctrl             %\n" sa.controller
 					format "  ctrl class:      %\n" (classof sa.controller)
 					format "  ctrl superclass: %\n\n" (superclassof sa.controller)
-					)
+				)
 				catch()
 		
-		)
+	)
 
 	on btnUpdate pressed do populate tv1 $
 	on btnNew pressed do populate tv1 (pickObject())
 
 	-- right-click menu stuff
 		on tv1 MouseUp btn shift x y do
-		(
+	(
 			enableAccelerators = false			
 			--local sel = obj
 			--fUpdateTools()
 --			if btn == 2 and sel != undefined do
 			if btn == 2 do
-			(
+		(
 				--vTVSets.selectedItem = sel
 				popupmenu ensMenu pop:[x, y] rollout:test
-			)
 		)
+	)
 
 -- dragging stuff
 
 		local dropNode, dragNode
 
 		fn getHitNode tv= 
-			(
+		(
 			local p = getCursorPos tv
 			tv.hitTest (p.x*15) (p.y*15)
 
-			)
+		)
 
 		on tv2 OLEStartDrag data effects do
-		(
+	(
 			dragNode = getHitNode tv2
 			format "%\n" dragNode.text
 			if dragNode == undefined or dragNode.parent == undefined then return()
 			--mouseIcon = tv1.mouseIcon
 			--tv1.mouseIcon = loadPicture (iconDir + "tvSet.ico")--ilTv.listImages[drag_node.image].picture
 			dragNode.createDragImage()
-		)
+	)
 		on tv1 OLEDragOver data Effect Button Shift x y State do
-			(
+		(
 			try
-			(
+		(
 				--setFocus tv1
 				--tv1.nodes[1].EnsureVisible()
 				dropNode = getHitNode tv1
@@ -466,7 +466,7 @@ if test!=undefined then destroydialog test
 				--format "%\n" dropNode.text
 				--if dropNode != undefined and isSelSet drop_node.tag then
 				if dropNode != undefined then
-					(
+				(
 					tv1.selectedItem = dropNode --dropHighlight
 					/*
 					if dropNode.text != dragNode.parent.text then
@@ -477,19 +477,19 @@ if test!=undefined then destroydialog test
 				  tv1.MousePointer=#ccNoDrop
 
 
-					)
 				)
-			catch()
 			)
+			catch()
+		)
 
 		on tv1 OLEDragDrop data Effect btn key x y do
-		(
+	(
 --			if drop_node != undefined and (isSelSet drop_node.tag) then tvClone drag_node (key != kCtrl)
 			local cPos =mouse.screenpos
 			--if drop_node != undefined then	
 			popupmenu ensMenu pop:[cPos.x, cPos.y] rollout:test
 
-		)
+	)
 
 
 
@@ -499,6 +499,6 @@ if test!=undefined then destroydialog test
 
 on btnFocus pressed do setFocus tv1
 	
-	)
+)
 
 createdialog test 410 650 50 50 style:#(#style_minimizebox,#style_titlebar, #style_border, #style_sysmenu,#style_resizing)

@@ -16,72 +16,72 @@
 ----------------------------------------------------------------------------------------------
 
 		function round n points =
-			(
+		(
 			if points == 0 then
-				(
+			(
 				n += 0.5
 				n = n as integer
-				)
+			)
 			else
-				(
+			(
 				local exp = pow 10 points
 				n *= exp
 				n = floor n
 				n /= exp
-				)
-			n
 			)
+			n
+		)
 			
 		function printData str =
-			(
+		(
 			format "var animation_array:Array = [\n[],\n\n%\n];\n\n" (str as string) to:(newScript())
-			)
+		)
 
 		function saveData str filename =
-			(
+		(
 			local fs = createFile (filename + ".as")
 			format "var animation_array:Array = [\n[],\n\n%\n];\n\n" (str as string) to:fs
 			flush fs
 			close fs
-			)
+		)
 		
 ----------------------------------------------------------------------------------------------
 -- trajectory functions
 ----------------------------------------------------------------------------------------------
 
 		function trajectoryToSpline arr =
-			(
+		(
 			-- spline
 				local ss = SplineShape pos:arr[1]
 				addNewSpline ss
 				
 			-- knots
 				for i = 1 to arr.count do
-					(
+				(
 					addKnot ss 1 #corner #line arr[i]
-					)
+				)
 				updateShape ss
 				
 			-- return
 				ss
-			)
+		)
 		
 		function objectTrajectoryToArray obj =
-			(
+		(
 			local arr	= for t = 0 to animationrange.end collect at time t obj.pos
 			arr
-			)
+		)
 
 		function particleTrajectoryToArray pf index =
-			(
+		(
 			local arr	= #()
 			for t = 0 to animationrange.end do
-				(
+			(
 				pf.updateParticles pf t
 				append arr (pf.getParticlePositionById index)-- 
-				)
-			arr
 			)
+			arr
+		)
 
 
 ----------------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@
 ----------------------------------------------------------------------------------------------
 
 		function getAllParticleData numParticles:#all =
-			(
+		(
 			-- variables
 				local pos, rot, tm
 	
@@ -99,17 +99,17 @@
 			-- create initial arrays
 				local arr = #()
 				for p = 1 to numParticles do
-					(
+				(
 					arr[p] = #()
-					)
+				)
 		
 			-- loop through time
 				for t = 0 to animationrange.end do
-					(
+				(
 					pf.updateParticles pf t
 					--gc()
 					for p = 1 to numParticles do
-						(
+					(
 						--pf.particleIndex	= p
 						--pos	= pf.particlePosition - origin.pos
 						--rot	= pf.particleOrientation / Pi * 180
@@ -118,13 +118,13 @@
 						rot	= (pf.getParticleOrientationById p)-- / Pi * 180
 
 						append arr[p] (pData pos:pos rot:rot)
-						)
 					)
+				)
 			arr
-			)
+		)
 
 		function getParticleData p =
-			(
+		(
 			-- variables
 				local pos
 				local rot
@@ -139,7 +139,7 @@
 			-- loop through time
 				pf.particleIndex	= p
 				for t = 0 to animationrange.end do
-					(
+				(
 					pf.updateParticles pf t
 					--slidertime = t
 
@@ -147,40 +147,40 @@
 					rot	= pf.particleOrientation / Pi * 180
 
 					append arr (pData pos:pos rot:rot)
-					)
+				)
 					
 			-- return
 				arr
-			)
+		)
 			
 			
 		function getCameraData =
-			(
+		(
 			-- variables
 				local tm	= $ExposeTMCamera01
 				local arr = #()
 				
 			-- loop	
 				for t = 0 to animationRange.end do
-					(
+				(
 					at time t
-						(
+					(
 						pos	= tm.localPosition-- - origin.pos
 						rot	= tm.localEuler / pi * 180 -- convert to degrees
 						append arr (pData pos:pos rot:rot)
-						)
 					)
+				)
 					
 			-- return
 				arr
-			)
+		)
  
 ----------------------------------------------------------------------------------------------
 -- export functions
 ----------------------------------------------------------------------------------------------
 
 		function getASArrayFromPData data =
-			(
+		(
 			
 			-- stringstream
 				local str = stringstream ""
@@ -208,11 +208,11 @@
 				
 			-- return
 				str as string
-			)
+		)
 
 
 		function exportCamera arr =
-			(
+		(
 			-- variables
 				local strAll = stringstream ""
 				local str = stringstream ""
@@ -220,18 +220,18 @@
 				
 			-- loop	
 				for i = 1 to arr.count do
-					(
+				(
 					str = getASArrayFromPData arr[i]
 					format "%" str to:strAll
 					if i < 131 do format ",\n" to:strAll
-					)
+				)
 			
 			-- output
 				strAll
-			)
+		)
 	
 		function exportParticles arr =
-			(
+		(
 			-- variables
 				local cam			= $camera01
 				local tm			= $ExposeTMCamera01
@@ -242,10 +242,10 @@
 				
 			-- loop	
 				for b = 1 to arr.count do
-					(
+				(
 					strBox = stringstream ""
 					for t = 1 to arr[b].count do
-						(
+					(
 						-- object
 							str = getASArrayFromPData arr[b][t]							
 							
@@ -253,15 +253,15 @@
 							format "%" str to:strBox
 							if t < arr[b].count do format "," to:strBox
 				
-						)
+					)
 					-- output
 						format "[%]" (strBox as string) to:strAll
 						if b < arr.count do format ",\n" to:strAll
-					)
+				)
 			
 			-- output
 				strAll
-			)
+		)
 
 	
 ----------------------------------------------------------------------------------------------
@@ -271,14 +271,14 @@
 	particleData	= getAllParticleData numParticles:#all
 /*
 	(
-	actionscript	= exportParticles particleData
-	saveData(actionscript, "tiles")
+		actionscript	= exportParticles particleData
+		saveData(actionscript, "tiles")
 	)
 	
-	cameraData	= getCameraData()
+		cameraData	= getCameraData()
 	(
-	actionscript	= exportCamera cameraData
-	saveData actionscript "camera"
+		actionscript	= exportCamera cameraData
+		saveData actionscript "camera"
 	)
 	
 
@@ -296,11 +296,11 @@ cameraData
 
 cameraData[94].rot
 	for i = 1 to particleData.count do
-		(
+	(
 		b = particleData[i]
 		arr = for d in b collect d.pos
 		trajectoryToSpline arr
-		)
+	)
 		
 	paths = 	$shape* as array
 	

@@ -9,24 +9,24 @@
 --=====================================================================================
 
 fn fileToString file=
-	(
+(
 	str=stringstream ""
 	strFile = openFile file
 	while not eof strFile do
-		(
+	(
 		format "%\n" (readline strFile) to:str
-		)
-	return str as string
 	)
+	return str as string
+)
 
 fn flt_objects = (srcObj != undefined) -- objects filter 
 
 fn flt_isNotMultiMat =
-	(
+(
 	if srcObj.material != undefined then
 		srcObj.material != Multimaterial
 	else false
-	)
+)
 
 fn flt_isNotSameObj obj = obj!=SrcObj
 
@@ -41,9 +41,9 @@ fn flt_isNotSameObj obj = obj!=SrcObj
 
 
 fn helpBox =
-	(
+(
 	rollout ro1 "Options" width:162 height:311
-		(
+	(
 		---------------------------------------------------------------------------------------------------
 		-- declarations
 		---------------------------------------------------------------------------------------------------
@@ -67,16 +67,16 @@ fn helpBox =
 		---------------------------------------------------------------------------------------------------
 	
 	
-		)
+	)
 	
 	if myFloater != undefined then closerolloutfloater myFloater
 		myFloater = newRolloutFloater "My Floater" 188 500 
 	addRollout ro1 myFloater	
-	)
+)
 
 fn optionsBox =
-	(
-	)
+(
+)
 
 --=====================================================================================
 -- Sub Menu functions
@@ -84,26 +84,26 @@ fn optionsBox =
 
 
 fn doTrans p r s par=
-	(
+(
 	pushPrompt "Select target object..."
 	trgObj = pickObject filter:flt_isNotSameObj rubberBand:srcObj.pos
 
 	if p==1 then srcObj.pos=trgObj.pos
 	if r==1 then
-		(
+	(
 		-- rotate without messing with position
 		in coordsys (transmatrix srcObj.transform.pos) 
 	    srcObj.rotation = trgObj.rotation as EulerAngles
-		)
+	)
 	if s==1 then srcObj.scale=trgObj.scale
 	if par==1 then srcObj.parent=trgObj
 
 	popPrompt()
-	)
+)
 
 
 fn doStack obj prop=
-	(
+(
 
 	messageBox (obj as string +" | "+ prop as string)
 
@@ -111,7 +111,7 @@ fn doStack obj prop=
 	trgObj = pickObject filter:flt_isNotSameObj rubberBand:srcObj.pos
 
 	popPrompt()
-	)
+)
 
 --=====================================================================================
 -- Main Menu functions
@@ -119,7 +119,7 @@ fn doStack obj prop=
 
 
 fn buildStackLevelMenu obj level=
-	(
+(
 	local mStr=""
 	if superclassof obj == modifier then mStr= obj.name as string
 	else mStr = obj as string
@@ -137,25 +137,25 @@ fn buildStackLevelMenu obj level=
 	-- Individual properties
 		local propArr=getPropNames obj
 		for m = 1 to propArr.count do
-			(
+		(
 			-- menu items
 				format "		menuItem mi_Stack%_% \"%\"\n" level m (propArr[m] as string) to:menuStr
 
 			-- handlers
 				format "	on mi_Stack%_% picked do doStack % %\n" level m level propArr[m] to:handlerStr
 				
-			)
+		)
 /*
 */		
 
 	format "\n		)\n" to:menuStr
-	)
+)
 
 
 
 
 fn buildTransMenu obj =
-	(
+(
 	------------------------------------------------------------
 	-- Transforms
 	------------------------------------------------------------
@@ -191,11 +191,11 @@ fn buildTransMenu obj =
 			format "%\n" transHandlers to:menuStr
 /*
 */
-	)
+)
 
 
 fn buildMatMenu obj =
-	(
+(
 	------------------------------------------------------------
 	-- Material
 	------------------------------------------------------------
@@ -204,10 +204,10 @@ fn buildMatMenu obj =
 		format "	separator sep%\n" (sep+=1) to:menuStr
 		local matArr =#("Ambient","Diffuse","Specular / Glossiness","Shader","Opacity","Bump","Self Illumination","Reflection")
 		for n = 1 to matArr.count do
-			(
+		(
 			format "	menuItem mi_Mat% \"%\"\n" n matArr[n] to:menuStr
-			)
-	)
+		)
+)
 
 
 --=====================================================================================
@@ -217,14 +217,14 @@ fn buildMatMenu obj =
 
 
 fn buildMainMenu obj =
-	(
+(
 	-- reset all vars
 		sep=0
 		--menuStr = stringstream "\n "
 	
 	format "rcmenu myRCMenu (\n" to:menuStr
 
-		(
+	(
 	
 			format "menuItem mi_Title \"Select property to replace...\" enabled:false\n" to:menuStr
 			format "separator sep%\n" (sep+=1) to:menuStr
@@ -240,9 +240,9 @@ fn buildMainMenu obj =
 				format "subMenu \"Stack values...\"\n	(\n" to:menuStr
 					-- mods
 						for n = 1 to obj.modifiers.count do
-							(
+						(
 							buildStackLevelMenu obj.modifiers[n] n
-							)
+						)
 						format "	separator sep%\n" (sep+=1) to:menuStr
 					-- base object
 						buildStackLevelMenu obj.baseObject 0
@@ -288,13 +288,13 @@ fn buildMainMenu obj =
 
 
 	
-		)
+	)
 	format "\n)" to:menuStr
 
 
 	close menuStr
 	execute(menuStr as string)
-	)
+)
 
 
 --=====================================================================================

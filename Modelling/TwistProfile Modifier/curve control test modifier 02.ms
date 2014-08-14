@@ -3,24 +3,24 @@
 plugin simpleMod ccTest
 name:"CurveControl Tester"
 classID:#(0x2d60fac1, 0x2d0524a6)
-	(
+(
 	
 	local roCC 
 	local firstRun = true
 	
 	parameters main rollout:params
-		(
+	(
 		twist 			type:#float ui:spnTwist default:20
 		val 			type:#float ui:spnVal default:20
 
 		twistVals		type:#point3Tab tabSizeVariable:true
 		twistValsIn		type:#point3Tab tabSizeVariable:true
 		twistValsOut	type:#point3Tab tabSizeVariable:true
-		)
+	)
 /*
 */
 	rollout roCC "Curve Control"
-		(
+	(
 	
 		-- interface
 		
@@ -41,22 +41,22 @@ classID:#(0x2d60fac1, 0x2d0524a6)
 		-- handlers
 		
 			on ccTwist ptChanged ci pi do
-				(
+			(
 				local val = ccTwist.curves[ci].points[pi].value[2]
 				format "> % % %\n" ci pi val
 				this.twist = val
-				)
+			)
 				
 			on roCC open do
-				(
+			(
 				zoom ccTwist #all
 				removeRollout roCC
-				)
+			)
 		
-		)
+	)
 		
 	rollout params "Parameters"
-		(
+	(
 		button btn1 "Edit profile" width:160 height:20 align:#center
 		button btn2 "Check values" width:160 height:20 align:#center
 		
@@ -67,23 +67,23 @@ classID:#(0x2d60fac1, 0x2d0524a6)
 		spinner spnVal 	"Value : " type:#float range:[-2000,2000,20] fieldWidth:50 align:#right
 
 		on btn1 pressed do
-			(
+		(
 			createdialog roCC 820 440
 			destroydialog roCC
 			createdialog roCC 820 440
-			)
+		)
 			
 		on btn2 pressed do
-			(
+		(
 			local val = getValue roCC.ccTwist.curves[1] 0 750
 			print val
-			)
 		)
+	)
 
 
 
 	on map i p do
-		(
+	(
 		-- ratio of how far along geometry the point is
 			local iy	= p.y / extent.y
 --			print this.twist
@@ -100,6 +100,6 @@ classID:#(0x2d60fac1, 0x2d0524a6)
 			p.z = cos(val) * z + sin(val) * x
 */
 			p
-		)
-
 	)
+
+)

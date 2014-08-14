@@ -1,11 +1,11 @@
 try(
 	destroyDialog roAETracker
-	)
+)
 catch()
 
 
 rollout roAETracker "After Effects Tracker" width:192 height:352
-	(
+(
 
 
 	-------------------------------------------------------------------------------------------
@@ -101,7 +101,7 @@ rollout roAETracker "After Effects Tracker" width:192 height:352
 	
 	
 		fn arrayToBmp arr fg:black bg:white =
-			(
+		(
 			
 			--------------------------------------------------------------------------
 			-- converts a 2D array of 0s and 1s (white:off / black:on) to a bitmap
@@ -111,52 +111,52 @@ rollout roAETracker "After Effects Tracker" width:192 height:352
 			local y		= 0
 			
 			for row in arr do
-				(
+			(
 				local pixels = for pixel in row collect (if pixel == 1 then fg else bg)
 				setPixels b [0,y] pixels
 				y += 1
-				)
-
-			return b
 			)
 
+			return b
+		)
+
 		fn getVertexOrder i =
-			(
+		(
 			if objTracker != undefined then
-				(
+			(
 				fn showVertsCb = showVertexOrder objTracker
 				registerRedrawViewsCallback showVertsCb 
 				btnCornerDown = i
 				popupMenu rcMenuVertList
-				)
 			)
+		)
 
 		fn setVertexOrder i v =
-			(
+		(
 			local iOld = finditem vertexOrder v
 			if iOld != 0 then
-				(
+			(
 				arrCorners[iOld].text = arrCorners[i].text
 				vertexOrder[iOld] = arrCorners[iOld].text as number
-				)
+			)
 			arrCorners[i].text = v as string
 			vertexOrder[i] = v
 			unRegisterRedrawViewsCallback showVertsCb
 			completeRedraw()
-			)
+		)
 
 		fn resetVertexOrder =
-			(
+		(
 			vertexOrder = copy defaultVertexOrder #nomap
 			for i = 1 to arrCorners.count do arrCorners[i].text = vertexOrder[i] as string
-			)
+		)
 	
 		function setAEKeyframeCode =
-			(
-			)
+		(
+		)
 	
 		function doTrack =
-			(
+		(
 
 			local obj	= objTracker
 			local t1	= timeSegment.start
@@ -170,74 +170,74 @@ rollout roAETracker "After Effects Tracker" width:192 height:352
 			format "%\n" (getAEAnchor undefined t1 t2)
 			format "%\n" (getAECornerPin obj t1 t2 drawMarkers:true)
 			format "%\n" (getAEEnd())
-			)
+		)
 			
 		fn setTrackerObject obj =
-			(
+		(
 			if getnumverts obj.baseobject.mesh != 4 then
-				(
+			(
 				if querybox "In order to use this object for tracking, it needs to have 4 vertices. Would you like to make the adjustment automatically?" then
-					(
+				(
 					try
-						(
+					(
 						obj.lengthsegs	= 1
 						obj.widthsegs	= 1
-						)
+					)
 					catch(
 						return false
-						)
 					)
-				else return false
 				)
+				else return false
+			)
 			objTracker = obj
 			pckTrackerObject.text = "Tracker: " + objTracker.name
-			)
+		)
 
 		fn getTrackerObject =
-			(
+		(
 			local obj, sel = getCurrentSelection()
 			if sel.count == 1 then
-				(
+			(
 				obj = sel[1]
 				if filterIsPlane obj then setTrackerObject obj
-				)
+			)
 			else
-				(
+			(
 				obj = for i = 1 to objects.count do if filterIsPlane objects[i] then exit with objects[i]
 				if obj != undefined then setTrackerObject obj
-				)
 			)
+		)
 
 		fn getRenderSize =
-			(
+		(
 			local w = spnMainWidth.value = renderWidth
 			local h = spnMainHeight.value = renderHeight
 			renderSize = [w,h]
-			)
+		)
 			
 		fn getTrackSize =
-			(
+		(
 			if isValidNode objTracker then
-				(
+			(
 				local w = spnTrackWidth.value = objTracker.baseObject.width
 				local h = spnTrackHeight.value =  objTracker.baseObject.length
 				trackerSize = [w,h]
-				)
 			)
+		)
 	
 		fn setTimeSegment =
-			(
+		(
 			timeSegment = interval spnTimeStart.value spnTimeEnd.value
-			)
+		)
 	
 		fn getTimeSegment =
-			(
+		(
 			spnTimeStart.value = timeSegment.start
 			spnTimeEnd.value = timeSegment.end
-			)
+		)
 			
 		fn setButtons =
-			(
+		(
 			local b					= arrayToBmp bmpRefresh
 			local bImages			= #(b, b, 1, 1, 1, 1, 1)
 			btnResetVerts.images	= bImages
@@ -249,7 +249,7 @@ rollout roAETracker "After Effects Tracker" width:192 height:352
 			local bImages			= #(b, b, 1, 1, 1, 1, 1)
 			btnResetTracker.images	= bImages
 			
-			)
+		)
 	
 	-------------------------------------------------------------------------------------------
 	-- handlers
@@ -274,25 +274,25 @@ rollout roAETracker "After Effects Tracker" width:192 height:352
 		
 		
 		on btnCalculate pressed do
-			(
+		(
 			setTimeSegment()
 			doTrack()
-			)
+		)
 
 		on roAETracker open do
-			(
+		(
 			setButtons()
 			getTrackerObject()
 			getTrackSize()
 			getRenderSize()
 			timeSegment = interval 150 300
 			getTimeSegment()
-			)
-	)
+		)
+)
 
 
 rcmenu rcMenuVertList
-	(
+(
 	
 	menuItem mi1 "1" checked:false enabled:true
 	menuItem mi2 "2" checked:false enabled:true
@@ -303,25 +303,25 @@ rcmenu rcMenuVertList
 	local ro	= roAETracker
 	
 	on rcMenuVertList open do
-		(
+	(
 		index	= ro.btnCornerDown
 		vert	= ro.vertexOrder[index]
 		
 		arrMi	= #(mi1, mi2, mi3, mi4)
 		arrMi[vert].checked = true
 		arrMi[vert].enabled = false
-		)
+	)
 
 	on rcMenuVertList close do
-		(
+	(
 		print "Closed!"
-		)
+	)
 		
 	on mi1 picked do ro.setVertexOrder index 1
 	on mi2 picked do ro.setVertexOrder index 2
 	on mi3 picked do ro.setVertexOrder index 3
 	on mi4 picked do ro.setVertexOrder index 4
-	)	
+)	
 
 createDialog roAETracker
 

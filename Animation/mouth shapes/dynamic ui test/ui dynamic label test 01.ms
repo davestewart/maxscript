@@ -14,11 +14,11 @@ rollout ro2 "Options" width:160 height:311
 	local getString
 
 	fn getString =
-		(
+	(
 		str = ""
 		for i = 1 to 10 do str += i as string + " "
 		str
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -28,13 +28,13 @@ rollout ro2 "Options" width:160 height:311
 
 
 	group "test"
-		(
+	(
 		--local mylbl = "editText edt1 " + getString() as string
 		--execute mylbl
 		--editText edt1 " + getString() as string
 		edittext ed1 text:(text1 as string) enabled:false
 		label lbl1
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Functions

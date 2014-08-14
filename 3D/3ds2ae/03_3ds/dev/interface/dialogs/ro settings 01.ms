@@ -1,7 +1,7 @@
 try(destroyDialog roSettings);catch()
 
 rollout roSettings "Settings" width:316 height:340
-	(
+(
 
 	GroupBox grpAfter "After Effects" pos:[8,8] width:304 height:128
 		label lblAfter "After Effects executable file (afterfx.exe)" pos:[16,24] width:288 height:16
@@ -26,11 +26,11 @@ rollout roSettings "Settings" width:316 height:340
 
 
 	on btnOpen pressed do
-		(
+	(
 		local str=getopenfilename caption:"Select After Effects application file (AfterFX.exe)..." types:"Application (*.exe)|AfterFX.exe"
 		if str!=undefined then edtFile.text=str
-		)
 	)
+)
 
 
 createDialog roSettings

@@ -27,19 +27,19 @@ rollout ro1 "Apply this code to the selected objects..." width:392 height:184
 
 
 fn doCode=
-	(
+(
 	cmd=edt1.text
 	for obj in selection do (
-		try	(
+		try(
 			tempObj = obj.name
 			execute("$" + tempObj + "." + cmd)
 			--lblStatus.text = "OK"
-			)
+		)
 		catch (
 			--lblStatus.text = "Error!"
-			)
 		)
 	)
+)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

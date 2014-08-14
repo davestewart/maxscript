@@ -9,9 +9,9 @@
 		--print obj.modifiers[mod].name as String
 		/*
 		for prop in mod do
-			(
+		(
 			
-			)
+		)
 		*/
 
 

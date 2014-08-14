@@ -94,13 +94,13 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 		-- structs
 		
 			struct progressBarUpdater
-				(
+			(
 				pb			= undefined,
 				value		= 0,
 				step		= 0,
 				
 				fn init _pb v1 v2 =
-					(
+				(
 					if amax v1 v2 == v1 do swap v1 v2
 					step		= 100.0 / ((v2 - v1) + 1)
 					value		= 0
@@ -109,20 +109,20 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					),
 					
 				fn update =
-					(
+				(
 					value		+= step
 					pb.value	= value
 					),
 					
 				fn reset =
-					(
+				(
 					value		= 0
 					pb.value	= 0
-					)
 				)
+			)
 				
 			struct timeStamper
-				(
+			(
 				t1			= 0,
 				t2			= undefined,
 				duration	= 0,
@@ -131,7 +131,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 				fn end		= (t2 = timestamp();duration = t2 - t1; t2),
 				fn print	= (if t2 == undefined do end(); format "Processing % took % seconds\n" _task (duration / 1000.0)),
 				fn prompt	= (if t2 == undefined do end(); displayTempPrompt ("Processing " +_task+ " took " +(duration / 1000.0) as string + " seconds") 3000)
-				)
+			)
 
 	
 	-------------------------------------------------------------------------------------------------------------------------------
@@ -144,27 +144,27 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 		----------------------------------------------------------------------------------------------
 		
 				fn round n points =
-					(
+				(
 					if points == 0 then
-						(
+					(
 						n += 0.5
 						n = n as integer
-						)
+					)
 					else
-						(
+					(
 						local exp = pow 10 points
 						n *= exp
 						n = floor n
 						n /= exp
-						)
-					n
 					)
+					n
+				)
 					
 				fn getUIColorAsInteger colorName =
-					(
+				(
 					local col = colorMan.getColor #background
 					((col.x * 65536) + (col.y * 256) + col.z) * 255
-					)
+				)
 				
 					
 		----------------------------------------------------------------------------------------------
@@ -172,7 +172,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 		----------------------------------------------------------------------------------------------
 		
 				function arrayToSpline arr redrawInterval: segmentType:#line =
-					(
+				(
 					-- spline
 						local ss = SplineShape pos:arr[1]
 						addNewSpline ss
@@ -180,52 +180,52 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					-- curve types
 						local vertexType, segmentType
 						if segmentType == #line then
-							(
+						(
 							vertexType	= #corner
 							segmentType	= #line
-							)
+						)
 						else(
 							vertexType	= #smooth
 							segmentType	= #curve
-							)
+						)
 							
 					-- knots
 						for i = 1 to arr.count do
-							(
+						(
 							addKnot ss 1 vertexType segmentType arr[i]
 							/*
 							if redrawInterval != unsupplied do
-								(
+							(
 								if mod i redrawInterval == 0 do
-									(
+								(
 									if i > 2 do updateShape ss
 									redrawViews()
-									)
 								)
-							*/
 							)
+							*/
+						)
 						updateShape ss
 						
 					-- return
 						ss
-					)
+				)
 		
 				function objectTrajectoryToArray obj start:0 end:animationrange.end step:1 =
-					(
+				(
 					local arr	= for t = start to end by step collect at time t obj.pos
 					arr
-					)
+				)
 		
 				function particleTrajectoryToArray pf pIndex start:0 end:animationrange.end step:1 =
-					(
+				(
 					local arr	= #()
 					for t = start to end by step do
-						(
+					(
 						pf.updateParticles pf t
 						append arr (pf.getParticlePositionById pIndex)
-						)
-					arr
 					)
+					arr
+				)
 		
 		
 		----------------------------------------------------------------------------------------------
@@ -233,7 +233,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 		----------------------------------------------------------------------------------------------
 		
 				function getAllParticleData numParticles:#all frames:#all degrees:true =
-					(
+				(
 					-- variables
 						local pos, rot, tm
 						local rotScalar	= if degrees then 180.0 / Pi else 1
@@ -247,9 +247,9 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					-- create initial arrays
 						local arr = #()
 						for pIndex = 1 to numParticles do
-							(
+						(
 							arr[pIndex] = #()
-							)
+						)
 				
 					-- get time variables
 						local exportInterval	= getExportInterval()
@@ -257,23 +257,23 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						local tEnd				= exportInterval.end
 						local tStep				= 1
 						if btnTimeReverse.state == true do
-							(
+						(
 							swap tStart tEnd
 							tStep = -1
-							)
+						)
 						
 					-- loop through time
 						local pb		= progressBarUpdater()
 						pb.init pbExport tStart tEnd
 						for t = tStart to tEnd by tStep do
-							(
+						(
 							--print ("Time " + t as string)
 							
 							pb.update()
 							
 							pf.updateParticles pf t
 							for pIndex = 1 to numParticles do
-								(
+							(
 								mxPart		= pf.getParticleTMById pIndex
 								mxPartYUp	= mxPart * mxYUp
 		
@@ -281,14 +281,14 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 								rot	= mxPartYUp.rotation as eulerangles
 								
 								append arr[pIndex] (pData pos:pos rot:rot)
-								)
 							)
+						)
 						pbExport.value = 0
 					arr
-					)
+				)
 		
 				function getParticleData pIndex frames:#all degrees:true =
-					(
+				(
 					-- variables
 						local pos, rot, tm
 						local rotScalar	= if degrees then 180.0 / Pi else 1
@@ -302,29 +302,29 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						local tEnd				= exportInterval.end
 						local tStep				= 1
 						if btnTimeReverse.state == true do
-							(
+						(
 							swap tStart tEnd
 							tStep = -1
-							)
+						)
 						
 					-- loop through time
 						for t = tStart to tEnd by tStep do
-							(
+						(
 							pf.updateParticles pf t
 		
 							pos	= (pf.getParticlePositionById pIndex)
 							rot	= (pf.getParticleOrientationById pIndex) * rotScalar
 		
 							append arr (pData pos:pos rot:rot)
-							)
+						)
 							
 					-- return
 						arr
-					)
+				)
 					
 					
 				function getCameraData frames:#all degrees:true =
-					(
+				(
 					-- variables
 						local r, rot, pos
 						local mxCam, mxCamYUp
@@ -339,19 +339,19 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						local tEnd				= exportInterval.end
 						local tStep				= 1
 						if btnTimeReverse.state == true do
-							(
+						(
 							swap tStart tEnd
 							tStep = -1
-							)
+						)
 							
 					-- loop through time
 						local pb		= progressBarUpdater()
 						pb.init pbExport tStart tEnd
 
 						for t = tStart to tEnd by tStep do
-							(
+						(
 							at time t
-								(
+							(
 								
 								pb.update()
 								
@@ -362,13 +362,13 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 								rot			= mxCamRot.rotation as eulerangles
 		
 								append arr (pData pos:pos rot:rot)
-								)
 							)
+						)
 						pb.reset()
 							
 					-- return
 						arr
-					)
+				)
 		
 		----------------------------------------------------------------------------------------------
 		-- export functions
@@ -377,7 +377,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 		--local exportInterval	= getExportInterval()
 
 				function exportParticles arr frames:#all =
-					(
+				(
 					-- variables
 						local str			= stringstream ""
 						local strBox		= stringstream ""
@@ -386,10 +386,10 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					-- loop	
 						frames = if frames == #all then arr.count else frames
 						for b = 1 to frames do
-							(
+						(
 							strBox = stringstream ""
 							for t = 1 to arr[b].count do
-								(
+							(
 								-- object
 									str = getASArrayFromPData arr[b][t]	type:"normal"						
 									
@@ -397,18 +397,18 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 									format "%" str to:strBox
 									if t < arr[b].count do format "," to:strBox
 						
-								)
+							)
 							-- output
 								format "[%]" (strBox as string) to:strAll
 								if b < frames do format ",\n" to:strAll
-							)
+						)
 					
 					-- output
 						strAll
-					)
+				)
 		
 				function exportCamera arr frames:#all =
-					(
+				(
 					-- variables
 						local strAll		= stringstream ""
 						local str			= stringstream ""
@@ -416,15 +416,15 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					-- loop	
 						frames = if frames == #all then arr.count else frames
 						for i = 1 to frames do
-							(
+						(
 							str = getASArrayFromPData arr[i] type:"camera"
 							format "%" str to:strAll
 							if i < frames do format ",\n" to:strAll
-							)
+						)
 					
 					-- output
 						strAll
-					)
+				)
 			
 		
 		----------------------------------------------------------------------------------------------
@@ -432,28 +432,28 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 		----------------------------------------------------------------------------------------------
 		
 				fn printASData str =
-					(
+				(
 					format "var animation_array:Array = [\n%\n];\n\n" (str as string) to:(newScript())
-					)
+				)
 		
 				fn saveASData str type =
-					(
+				(
 					-- filename
 						local filename
 						local exportPath	= getExportPath()
 						local exportFile	= getExportFile()
 						
 						if exportPath == undefined do
-							(
+						(
 							messagebox "No export path set. Aborting script."
 							return false
-							)
+						)
 						
 						if exportFile == undefined do
-							(
+						(
 							messagebox "No export filename set. Aborting script."
 							return false
-							)
+						)
 						
 					-- filepath
 						if type == "camera" then
@@ -469,11 +469,11 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						
 					-- print 
 						format "Exported to file: %\n" filename
-					)
+				)
 				
 		
 				function getASArrayFromPData data type: =
-					(
+				(
 					
 					-- stringstream
 						local str = stringstream ""
@@ -493,10 +493,10 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						--local type = "camera"
 		
 						case type of
-							(
+						(
 							
 							"object":
-								(
+							(
 								fpx	= mpx
 								fpy	= mpy
 								fpz	= mpz
@@ -504,10 +504,10 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 								frx	= mrx
 								fry	= mry
 								frz	= mrz
-								)
+							)
 								
 							"camera":
-								(
+							(
 								fpx	= mpx
 								fpy	= -mpy
 								fpz	= mpz
@@ -515,10 +515,10 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 								frx	= mrx
 								fry	= -mry
 								frz	= mrz
-								)
+							)
 								
 							default:
-								(
+							(
 								fpx	= mpx
 								fpy	= -mpy
 								fpz	= mpz
@@ -527,8 +527,8 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 								fry	= mry
 								frz	= mrz
 		
-								)
 							)
+						)
 		
 						
 					-- output
@@ -536,7 +536,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						
 					-- return
 						str as string
-					)
+				)
 
 	
 	
@@ -547,68 +547,68 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 			-- settings
 			
 				fn saveSetting key value =
-					(
+				(
 					setinisetting (getdir #plugcfg + "\pv3d_exporter.ini") "settings" key (value as string)
-					)
+				)
 					
 				fn loadSetting key =
-					(
+				(
 					getinisetting (getdir #plugcfg + "\pv3d_exporter.ini") "settings" key
-					)
+				)
 
 			-- objects
 			
 				fn setCamera =
-					(
+				(
 					local camName = ddlCamera.selected
 					cam = if camName != undefined then getNodeByName camName else undefined
-					)
+				)
 					
 				fn setParticles =
-					(
+				(
 					local pfName = ddlParticles.selected
 					pf = if pfName != undefined then getNodeByName pfName else undefined
 					updateSplineTotal()
-					)
+				)
 			
 				fn updateCameraItems =
-					(
+				(
 					local arr = for obj in objects where superclassof obj == Camera collect obj.name
 					ddlCamera.items = arr
 					if ddlCamera.selected == undefined do ddlCamera.selection = 1
 					setCamera()
-					)
+				)
 					
 				fn updateParticleItems =
-					(
+				(
 					local arr = for obj in objects where classof obj == PF_Source collect obj.name
 					ddlParticles.items = arr
 					if ddlParticles.selected == undefined do ddlParticles.selection = 1
 					setParticles()
-					)
+				)
 					
 			-- time
 			
 				fn getExportInterval =
-					(
+				(
 					local range	= case ddlTimeRange.selection of
-						(
+					(
 						1: animationrange
 						2: interval slidertime slidertime
 						3: interval spnTimeFrom.value spnTimeTo.value
-						)
-					range
 					)
+					range
+				)
 					
 				fn setExportInterval =
-					(
+				(
 					spnTimeFrom.value	= animationrange.start
 					spnTimeTo.value		= animationrange.end
 					updateTimeRange()
-					)
+				)
 					
 				fn updateTimeRange =
-					(
+				(
 					-- dropdown state
 						local index		= ddlTimeRange.selection
 						local state		= index == 3
@@ -626,24 +626,24 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						
 					-- update group caption
 						grpTime.text = "Time (" +t1+ " - " +t2+ ")"
-					)
+				)
 					
 				fn updateTimeSpinners spn1 spn2 index offset:0 =
-					(
+				(
 					if index == 1 then
-						(
+					(
 						if spn1.value >= spn2.value do spn2.value = spn1.value + offset
-						)
+					)
 					else(
 						if spn2.value <= spn1.value do spn1.value = spn2.value - offset
-						)
-					updateTimeRange()
 					)
+					updateTimeRange()
+				)
 				
 			-- visualize
 			
 				fn updateSplineTotal =
-					(
+				(
 					
 					if pf == undefined do return false
 					
@@ -653,55 +653,55 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					
 					local n
 					n = case ddlVisParticles.selection of
-						(
+					(
 						
 						1: pf.numParticles() / spnVisParticleId.value -- Every Nth
 						2: pf.numParticles() -- All
 						3: pf.Selected_Particles.count -- Selected
 						4: 1 -- Single
-						)
+					)
 					
 					--if ddlVisParticles.selection == 1 AND n < pf.numParticles() do n += 1
 					grpVisualise.text = "Visualise (" +n as string+ " splines)"
-					)
+				)
 
 				fn updateVisParticleId index =
-					(
+				(
 					state = index == 1 OR index == 4
 					lblVisParticleId.enabled	= state
 					spnVisParticleId.enabled	= state
 					
 					if state do lblVisParticleId.text = if index == 1 then "Every" else "Particle Id"
 					updateSplineTotal()
-					)
+				)
 					
 				fn updateAccuracy =
-					(
+				(
 					local val	= sldAccuracy.value
 					local text	= case val of
-						(
+					(
 						5: "Exact (every frame)"
 						4: "Good (every 5 frames)"
 						3: "Quick (every 10 frames)"
 						2: "Draft (every 15 frames)"
 						1: "Rough (every 25 frames)"
-						)
+					)
 					sldAccuracy.text = "Accuracy: " + text
 					
 					local frames = case val of
-						(
+					(
 						5: 1
 						4: 5
 						3: 10
 						2: 15
 						1: 25
-						)
+					)
 						
 					return frames
-					)
+				)
 				
 				fn createSplines =
-					(
+				(
 					-- timestamping
 						local ts = timeStamper()
 						ts.start task:"Spline Creation"
@@ -713,26 +713,26 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					-- set particle system
 						setParticles()
 						if pf == undefined do
-							(
+						(
 							messagebox "Can't create splines, as no particle system has been created / selected"
 							updateParticleItems()
 							return false
-							)
+						)
 						
 					-- get selected particles
 						particleIds = case ddlVisParticles.selection of
-							(
+						(
 							1:	for i = 1 to pf.numParticles() by spnVisParticleId.value collect i  -- Every Nth
 							2:	for i = 1 to pf.numParticles() collect i -- All
 							3:	pf.Selected_Particles -- Selected
 							4:	#(spnVisParticleId.value) -- Single
-							)
+						)
 	
 					-- create splines
 						local pb		= progressBarUpdater()
 						pb.init pbCreateSplines 1 particleIds.count
 						for i = 1 to particleIds.count do
-							(
+						(
 							pb.update()
 
 							local particleId		= particleIds[i]
@@ -746,7 +746,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 							forcecompleteredraw()
 							
 							if keyboard.escPressed do if querybox "Do you wish to abort visualisation?" do exit
-							)
+						)
 
 						pbCreateSplines.value = 0
 						
@@ -754,46 +754,46 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						ts.end()
 						ts.print()
 						ts.prompt()
-					)
+				)
 					
 			-- export
 			
 				fn setPath =
-					(
+				(
 					local s	= getsavepath()
 					if s != undefined then
-						(
+					(
 						edtPath.text = s
 						saveSetting "path" s
-						)
 					)
+				)
 					
 				fn getPath =
-					(
+				(
 					s = loadSetting "path"
 					if s != undefined do edtPath.text = s
-					)
+				)
 					
 				fn setFilename =
-					(
+				(
 					local arr			= filterstring maxfilename " .,"
 					edtFilename.text	= if arr.count > 0 then arr[1] else ""
-					)
+				)
 					
 				fn getExportPath =
-					(
+				(
 					local exportPath = edtPath.text
 					if doesFileExist exportPath == true then exportPath else undefined
-					)
+				)
 					
 				fn getExportFile =
-					(
+				(
 					local exportFile = edtFilename.text
 					if exportFile != "" then exportFile else undefined
-					)
+				)
 					
 				fn processParticles =
-					(
+				(
 					-- timestamping
 						local ts = timeStamper()
 						ts.start task:"Particle Export"
@@ -801,11 +801,11 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 					-- set particle system
 						setParticles()
 						if pf == undefined do
-							(
+						(
 							messagebox "Can't export, as no particle system has been created / selected"
 							updateParticleItems()
 							return false
-							)
+						)
 
 					-- process
 						local particleData	= getAllParticleData()
@@ -816,28 +816,28 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						ts.print()
 						ts.prompt()
 
-					)
+				)
 					
 				fn processCamera =
-					(
+				(
 					-- set particle system
 						setcamera()
 						if cam == undefined do
-							(
+						(
 							messagebox "Can't export, as no camera has been created / selected"
 							updateCameraItems()
 							return false
-							)
+						)
 
 					-- process
 						local cameraData	= getCameraData()
 						local actionscript	= exportCamera cameraData
 						saveASData actionscript "camera"
-					)
+				)
 					
 			-- about
 				fn initAbout =
-					(
+				(
 					roPVExporter.axFlash.BackgroundColor = getUIColorAsInteger #background
 					try(
 						local mov		= "http://www.davestewart.co.uk/images/web/davestewart.swf"
@@ -847,7 +847,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 						axFlash.Menu	= false
 						);
 					catch()
-					)
+				)
 
 
 	-------------------------------------------------------------------------------------------------------------------------------
@@ -855,7 +855,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 	-------------------------------------------------------------------------------------------------------------------------------
 	
 		on roPVExporter open do
-			(
+		(
 			escapeEnable = true
 			SetDialogPos roPVExporter (execute (loadSetting "pos"))
 			initAbout()
@@ -867,7 +867,7 @@ rollout roPVExporter "PaperVision3D Exporter" width:224 height:536
 			setExportInterval()
 			getPath()
 			setFilename()
-			)
+		)
 			
 		on btnUpdateParticles pressed do updateParticleItems()
 		on btnUpdateCameras pressed do updateCameraItems()

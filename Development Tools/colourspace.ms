@@ -16,7 +16,7 @@ rollout ro1 "Rollout 1" width:162 height:200
 	---------------------------------------------------------------------------------------------------
 
 		fn hsv2rgb H S V =
-		(
+	(
 			Hp	= (H/255.)*360
 			Hex	= Hp/60
 			pri	= Hex as integer
@@ -30,21 +30,21 @@ rollout ro1 "Rollout 1" width:162 height:200
 			bP	= b*255
 			cP	= c*255
 			case pri of
-			(
+		(
 				1:			(R = bP; G =  V; B = aP)
 				2:			(R = aP; G =  V; B = cP)
 				3:			(R = aP; G = bP; B =  V)
 				4:			(R = cP; G = aP; B =  V)
 				5:			(R =  V; G = aP; B = bP)
 				default:	(R =  V; G = cP; B = aP)
-			)
+		)
 			struct rgbStruct (r,g,b)
 			return rgbStruct r:R g:G b:B
-		)
+	)
 	
 	
 	fn updateColor =
-		(
+	(
 		h = spnH.value
 		s = spnS.value
 		v = spnV.value
@@ -52,14 +52,14 @@ rollout ro1 "Rollout 1" width:162 height:200
 		newCol = hsv2rgb h s v
 		
 		cp1.color = [newCol.R, newCol.G, newCol.B]
-		)
+	)
 		
 	fn updateSpinners color =
-		(
+	(
 		spnH.value = color.h
 		spnS.value = color.s
 		spnV.value = color.v
-		)
+	)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

@@ -22,7 +22,7 @@ rollout expandOptions "Expand Options" width:140 height:189
 
 	on expandOptions open do
 		for c in expandOptions.controls do
-			(
+		(
 			try(
 				state = getINISetting iniFile "Expand" (c as string)
 				--format ">>%\n" state
@@ -30,21 +30,21 @@ rollout expandOptions "Expand Options" width:140 height:189
 				if state=="true" then c.checked=true
 				else c.checked=false
 				
-				)
-			catch(/*format "Failed to update %\n" c*/)
 			)
+			catch(/*format "Failed to update %\n" c*/)
+		)
 
 
 
 	on expandOptions oktoclose do
 		for c in expandOptions.controls do
-			(
+		(
 			try(
 				--format "%\n" c.state
 				setINISetting iniFile "Expand" (c as string) (c.state as string)
-				)
-			catch(/*format "failed\n"*/)
 			)
+			catch(/*format "failed\n"*/)
+		)
 
 )
 

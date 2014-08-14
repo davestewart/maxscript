@@ -44,19 +44,19 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Script
 
 for i in selection do
-	(
+(
 	if classof i.baseobject == Editable_Poly then 
-		(
+	(
 		disableSceneRedraw()
 		try
-			(
+		(
 			if i.surfSubdivide == off then i.surfSubdivide = on
 			i.iterations += 1
-			)
+		)
 		catch ()
 		enableSceneRedraw()
 		completeRedraw()
-		)
 	)
+)
 )
 -------------------------------------------------------------------------------

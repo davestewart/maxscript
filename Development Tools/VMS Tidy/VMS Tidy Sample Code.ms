@@ -89,5 +89,5 @@
 	button btnHelp \"Help\" pos:[836,24] width:60 height:16
 	button btnWeb \"Report bugs\" pos:[896,24] width:76 height:16"
 
-	)
+)
 

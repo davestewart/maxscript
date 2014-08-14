@@ -6,10 +6,10 @@ rollout roReplaceWithBitmap "Replace object" width:150 height:80
 	-----------------------------------------------------------------------------------------------
 
 	group "Maps"
-		(
+	(
 		button btnPath ">" pos:[8,24] width:16 height:16 toolTip:"Path to save bitmaps"
 		edittext edtPath "" pos:[24,24] width:116 height:16 --enabled:false
-		)
+	)
 	button btnReplace "Replace"  width:140 height:16
 	
 --)createdialog roReplaceWithBitmap 
@@ -21,23 +21,23 @@ rollout roReplaceWithBitmap "Replace object" width:150 height:80
 		local savePath = "E:\\02_Current_Jobs\\2006-06 - LittleFire, Borders Conference\\2 - 3d\\maps\\text\\"
 		
 		function replaceTextWithMap sel =
-			(
+		(
 		
 		
 			if sel == undefined then
-				(
+			(
 				messagebox "Nothing selected!"
 				return false
-				)
+			)
 			if classof sel == ObjectSet then
-				(
+			(
 				sel = sel as array
 				obj = sel[1]
-				)
+			)
 			else
-				(
+			(
 				obj = sel
-				)
+			)
 			
 			-- get text
 				local t		= obj
@@ -59,18 +59,18 @@ rollout roReplaceWithBitmap "Replace object" width:150 height:80
 				
 				-- workings
 					if NOT ortho then
-						(
+					(
 						fov		= 45
 						a		= fov / 2
 						y		= w / 2
 						x		= y / (tan a)
-						)
+					)
 					else
-						(
+					(
 						fov		= 90
 						y		= w / 2
 						x		= if h > w then (h / (h/w) / 2) else w / 2
-						)
+					)
 						
 				
 			-- create camera
@@ -116,7 +116,7 @@ rollout roReplaceWithBitmap "Replace object" width:150 height:80
 				select #(t,p)
 		/*	
 		*/
-			)
+		)
 		
 		--arr = $'Bg text'* as array
 		--for obj in arr do replaceTextWithMap obj
@@ -126,33 +126,33 @@ rollout roReplaceWithBitmap "Replace object" width:150 height:80
 		
 		
 		fn setSavePath str =
-			(
+		(
 			if str != undefined then
-				(
+			(
 				savePath		= str
 				edtPath.text	= str
 				btnPath.tooltip	= str
-				)
 			)
+		)
 		
 	-----------------------------------------------------------------------------------------------
 	-- handlers
 	-----------------------------------------------------------------------------------------------
 
 	on btnReplace pressed do
-		(
+	(
 		replaceTextWithMap $
-		)
+	)
 		
 	on btnPath pressed do
-		(
+	(
 		setSavePath (getSavePath initialDir:savePath)
-		)
+	)
 		
 	on roReplaceWithBitmap open do
-		(
+	(
 		setSavePath savePath
-		)
+	)
 
 )
 

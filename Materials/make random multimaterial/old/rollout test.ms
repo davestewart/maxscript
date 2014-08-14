@@ -1,7 +1,7 @@
 rollout info "Info & Instructions" width:210 height:432 category: 1
-	(
+(
 	
-	)
+)
 
 rollout components "Components" width:210 height:432 category: 2
 (
@@ -16,37 +16,37 @@ rollout components "Components" width:210 height:432 category: 2
 
 	
 	on chk1 changed state do
-	(
+(
 	case chk1.checked of
-		(
+	(
 		true: addRollout matColor multiMat
 		false: removeRollout matColor multiMat
-		)
 	)
+)
 	on chk2 changed state do
-	(
+(
 	case chk2.checked of
-		(
+	(
 		true: addRollout matSpec multiMat
 		false: removeRollout matSpec multiMat
-		)
 	)
+)
 	on chk3 changed state do
-	(
+(
 	case chk3.checked of
-		(
+	(
 		true: addRollout matOpac multiMat
 		false: removeRollout matOpac multiMat
-		)
 	)
+)
 	on chk4 changed state do
-	(
+(
 	case chk4.checked of
-		(
+	(
 		true: addRollout matOther multiMat
 		false: removeRollout matOther multiMat
-		)
 	)
+)
 )
 
 
@@ -85,47 +85,47 @@ rollout matColor "Color Options" width:208 height:600 category: 3
 
 
 	on matOptions open do
-		(
+	(
 		max mtledit
-		)
+	)
 
 	on cpBase changed value do
-		(
+	(
 		cpBaseR.color = color cpBase.color.r 0 0
-		)
+	)
 
 	on spnVarR changed value do
-		(
+	(
 		value = cpBase.color.r - spnVarR.value
 		cpVarR1.color = color value 0 0
 		lblVarR1.text = value as String
 
-		)
+	)
 )
 
 
 rollout matSpec "Specular Highlights" width:210 height:432 category: 4
-	(
+(
 	
-	)
+)
 
 rollout matOpac "Opacity" width:210 height:432 category: 5
-	(
+(
 	
-	)
+)
 
 rollout matOther "Other Options" width:210 height:432 category: 5
-	(
+(
 	
-	)
+)
 ---------------------------------------------------------------------------------------------------
 -- create the rollout window and add the rollouts
 ---------------------------------------------------------------------------------------------------
 
 if multiMat != undefined do
-				(
+			(
 				closerolloutfloater multiMat 
-				)		
+			)		
 multiMat = newRolloutFloater "Random Multi Material" 200 500 
 addRollout info multiMat rolledUp:true
 addRollout components multiMat

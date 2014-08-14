@@ -2,26 +2,26 @@ f=openfile "axcontrols.ms"
 arr=#()
 seek f 1
 while not eof f do
-	(
+(
 	s=readline f
 	if findstring s "grid" != undefined then
-		(
+	(
 		arr1=filterstring s "\""
 		arr2=#()
 		for a in arr1 do if a!= " " then append arr2 a
 		append arr arr2
 		format "%\n" s
-		)
 	)
+)
 arr
 
 for i=1 to arr.count do
-	(
+(
 	format "rollout rProp% \"%\" \n" i  arr[i][1]
 	format "	(\n "
 	format "	activeXControl ax \"%\" height:300 width:400 align:#left -- %\n" arr[i][3] arr[i][1]
 	format "	)\n\n"
-	)
+)
 
 "Microsoft Hierarchical FlexGrid Control 6.0 (SP4) (OLEDB)" "MSHierarchicalFlexGridLib.MSHFlexGrid.6" "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}" 
 "10Tec iGrid Control 2.51" "iGrid251_75B4A91C.iGrid" "{46FFC6B5-D62D-4C11-A97B-F1205AF6ABCF}" 

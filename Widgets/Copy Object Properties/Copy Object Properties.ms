@@ -19,7 +19,7 @@ macroScript CopyObjectProperties
 	category:"Tools"
 	buttonText:"Copy properties from another object..."
 	tooltip:"Copy Object Properties"
-	(
+(
 	-----------------------------------------------------------------------------------------------------
 	-- variables
 	
@@ -37,20 +37,20 @@ macroScript CopyObjectProperties
 	
 		-- do the copy
 			if objSrc != undefined AND selTrg != undefined do
-				(
+			(
 				local propNames	= getPropNames objSrc
 				for propName in propNames do
-					(
+				(
 					local propValue = getProperty objSrc propName
 					for objTrg in selTrg do
-						(
+					(
 						if isProperty objTrg propName do
-							(
+						(
 							setproperty objTrg propName propValue
-							)
 						)
 					)
 				)
+			)
 
-	)
+)
 

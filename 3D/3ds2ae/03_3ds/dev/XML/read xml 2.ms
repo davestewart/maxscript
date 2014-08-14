@@ -32,15 +32,15 @@ showmethods nodes.childNodes
 n.firstChild.nodeValue
 
 rollout r1 "xml rollout" width:200 height:200
-	(
+(
 	activeXControl ax  "MSXML.DOMDocument"--  setupEvents:false releaseOnClose:false
 	on r1 open do
-		(
+	(
 		ax.load "http://www.davestewart.co.uk/3dsmax/test.xml" 
 		nodes=ax.firstChild.nextSibling
 		str=nodes.childNodes[1].text
 		print str
-		)
 	)
+)
 	
 createdialog r1

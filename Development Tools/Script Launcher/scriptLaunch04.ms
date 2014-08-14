@@ -21,7 +21,7 @@ rollout roScriptDevScripts "Scripts" width:160 height:441
 	---------------------------------------------------------------------------------------------------
 
 	fn getPathImp =
-		(
+	(
 		try (
 			scriptFullPath = getOpenFileName caption:"Select *.ms Script File" types:"Script Files(*.ms)|*.ms" ()
 			scriptName = filenameFromPath scriptFullPath as String
@@ -31,14 +31,14 @@ rollout roScriptDevScripts "Scripts" width:160 height:441
 
 			edtPathImp.text = getFilenamePath scriptFullPath
 			lbxScripts.items = displayItems
-			)
+		)
 		catch ()
-		)	
+	)	
 
 	fn runScript item editScript= 
-		(
+	(
 		try
-			(
+		(
 			fileIn scriptDB[item]
 
 			-- Edit Name if script did contains errors, but is now fine
@@ -49,12 +49,12 @@ rollout roScriptDevScripts "Scripts" width:160 height:441
 
 			roScriptDevActions.lblStatus.text = "Script OK"
 
-			)
+		)
 
 		catch
-			(
+		(
 			if editScript==true then
-				(
+			(
 				-- open item for editing
 					edit scriptDB[item]
 		
@@ -68,52 +68,52 @@ rollout roScriptDevScripts "Scripts" width:160 height:441
 					-- messageBox "There appear to be errors in your script, \nso it has been opened for editing..." title:"Possible Script Error"
 				roScriptDevActions.lblStatus.text = "Script Error: Editing"
 
-				)
-			else roScriptDevActions.lblStatus.text = "Script Error: Stopping"
 			)
+			else roScriptDevActions.lblStatus.text = "Script Error: Stopping"
 		)
+	)
 
 
 	fn editScript item =
-		(
+	(
 		edit scriptDB[item]
 		roScriptDevActions.lblStatus.text = "Script: Editing"
-		)
+	)
 
 	fn deleteScript item =
-		(
+	(
 		deleteItem displayItems item
 		deleteItem scriptDB item
 		lbxScripts.items = displayItems
 
 		roScriptDevActions.lblStatus.text = "Script: Removed"
-		)
+	)
 
 	fn doAction item clicks =
-		(
+	(
 		if clicks == 2 AND roScriptDevActions.rdoAction.state == 4 then deleteScript item -- if user is in delete mode and doubleclicked...
 		else -- if user single clicked...
-			(
+		(
 			case roScriptDevActions.rdoAction.state of
-				(
+			(
 				1: runScript item false
 				2: runScript item true
 				3: editScript item
 				5: messageBox "Script: Moving"
-				)
 			)
 		)
+	)
 
 	fn SearchDir =
-		(
+	(
 		files = getFiles ((getFilenamePath scriptFullPath as String) + "*.ms")
 		for f in files do
-			(
+		(
 			append displayItems (filenameFromPath f as String)
 			append scriptDB f
-			)
-		lbxScripts.items = displayItems
 		)
+		lbxScripts.items = displayItems
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------

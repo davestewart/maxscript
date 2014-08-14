@@ -9,7 +9,7 @@ append materialList #("DiffuseMap", "GlossinessMap", "MetalnessMap", "OpacityMap
 
 
 rollout roMultiMaterialPropogator "MultiMaterial Propogator" width:168 height:40
-	(
+(
 	
 	-------------------------------------------------------------------------
 	-- interface
@@ -21,15 +21,15 @@ rollout roMultiMaterialPropogator "MultiMaterial Propogator" width:168 height:40
 	-- functions
 	
 	fn propogate mm=
-		(
+	(
 		mm.numSubs=1
 		mat = mm[1]
 		mat.name = mm.name + " sub 1"
 
 		for i = 1 to mat.maps.count do
-			(
+		(
 			if mat.maps[i] != undefined then
-				(
+			(
 				-- feedback
 					format "Updating: % (%)\n" mm[1].shaderByName materialList[mm[1].shaderType+1][i]
 				
@@ -44,39 +44,39 @@ rollout roMultiMaterialPropogator "MultiMaterial Propogator" width:168 height:40
 				
 				-- materials
 					for j = 2 to files.count do
-						(
+					(
 					-- copy material
 						--print j
 						if j > mm.numSubs then
-							(
+						(
 							mm.numSubs=j
 							mm[j] = copy mat
 							mm[j].name = mm.name + " sub " + (j as string)
-							)
+						)
 	
 					-- update maps
 						mm[j].maps[i].fileName = files[j]
-						)
+					)
 		
-				)
 			)
 		)
+	)
 	
 	-------------------------------------------------------------------------
 	-- handlers
 	
 		on ro1 open do
-			(
-			)
+		(
+		)
 			
 		on btn1 pressed do
-			(
+		(
 			local mm = meditmaterials[medit.GetActiveMtlSlot()]
 			if classof mm == MultiMaterial then
-				(
+			(
 				try(propogate mm)
 				catch()
-				)
 			)
-	)
+		)
+)
 createdialog roMultiMaterialPropogator

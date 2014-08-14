@@ -2,7 +2,7 @@ fileIn "bmpArr.ms"
 fileIn "classArr.ms"
 
 if (NOT isvalidnode b) OR $.count>0 then
-	(
+(
 	b=box()
 	addModifier b (Bend ())
 	addModifier b (Taper ())
@@ -27,14 +27,14 @@ if (NOT isvalidnode b) OR $.count>0 then
 	b.material = meditmaterials[1]
 */
 	select b
-	)
+)
 destroydialog test
 	
 --------------------------------------------------------
 
 
 	rollout test "Copy Properties" width:512 height:584
-		(
+	(
 
 	-- user interface 
 		ActiveXControl tv1 "MSComctlLib.TreeCtrl" pos:[5,5] width:400 height:590
@@ -58,15 +58,15 @@ destroydialog test
 
 -- utility functions
 		fn pad num padLength =
-			(
+		(
 			num=num as string
 			while num.count < padLength do num = ("0"+num)
 			return num
-			)
+		)
 	
 
 		fn replaceAll str outStr inStr =
-			(
+		(
 			-- str the original string
 			-- the string/character to replace
 			-- the replacement string/character
@@ -75,59 +75,59 @@ destroydialog test
 			while ((n=findstring str outStr) != undefined) do str = replace str n inStr.count inStr
 			if str != undefined then return str
 			else return origStr
-			)
+		)
 
 
 		fn reverseArray inArr =
-			(
+		(
 			local outArr = #()
 			while inArr.count > 0 do
-				(
+			(
 				append outArr inArr[inArr.count]
 				deleteItem inArr inArr.count
-				)
-			return outArr
 			)
+			return outArr
+		)
 
 
 
 -- advanced utility functions
 
 		fn getSubAnimArray nodeArr =
-			(
+		(
 			local str=""
 			for n in nodeArr do str+="["+n as string+"]"
 			return str
-			)
+		)
 
 
 		fn nodeArrToSaArr arr=
-			(
+		(
 			local str="$"
 			for n in arr do str+="["+n as string+"]"
 			return str
-			)
+		)
 
 -- treeview functions
 
 		fn setUpTreeView tv obj=
-			(
+		(
 			tv.nodes.Clear()
 			addToTreeView tv obj false
 			local n = tv.nodes[1].LastSibling.index
 			tv.selectedItem = tv.nodes[n]
-			)
+		)
 
 
 
 
 		fn addNode obj tv tvNode d i =
-			(
-			)
+		(
+		)
 
 
 		fn styleTreeView tv singleSel=
-			(
+		(
 				messagebox "styule"
 			-- linestyles
 				tv.lineStyle = #tvwRootLines
@@ -145,13 +145,13 @@ destroydialog test
 
 			-- bind imagelist 6o treeview
 				tv.imagelist = il
-			)
+		)
 
 
 -- main recursive function
 
 		fn recurseSubAnims obj tv tvNode d=
-			(
+		(
 			/*
 			*/
 			local iconIndex
@@ -161,24 +161,24 @@ destroydialog test
 				iconIndex = findItem classArr (class as string)
 				--iconIndex =localIcons [(findItem localIcons class)]
 				format "%\n" iconIndex
-				)
+			)
 			catch()
 			--iconIndex=50
 			n = obj.numSubs
 			d+=1
 			for i = 1 to n do
-				(
+			(
 			 -- flag if not visibility, transform, modified object or material
 				local oktoBuild=true
 --				if d==1 AND ((i>1 AND i<3) OR i>5) then
 				if d==1 AND (i<3 OR i>5) then
-					(
+				(
 					oktobuild=false
 					--format " stopping on %\n" (getSubAnimName obj i)
-					)
+				)
 			-- build the nodes
 				if oktobuild == true then
-					(
+				(
 --					addNode obj tv tvNode d i
 
 					--format "%\n" tvNode.text
@@ -201,9 +201,9 @@ destroydialog test
 					--newNode.image= random 1 37
 
 					recurseSubAnims obj[i] tv newNode d
-					)
 				)
 			)
+		)
 
 
 
@@ -217,7 +217,7 @@ destroydialog test
 -- rollout handlers
 	
 	on test open do
-		(
+	(
 	
 	-- INSERT IMAGES
 		-- set variables
@@ -226,7 +226,7 @@ destroydialog test
 			j=0
 		-- start the loop
 			for i = 1 to libraryClassArr.count do
-				(
+			(
 				try (
 				-- set the bitmap file
 					local bmpFile = libraryBmpArr[i]
@@ -234,9 +234,9 @@ destroydialog test
 					il.listimages.Add (j+=1) "" (LoadPicture bmpFile)
 					--format "%\n" libraryClassArr[i]
 					append classArr libraryClassArr[i]
-					)
-				catch(j-=1)
 				)
+				catch(j-=1)
+			)
 				
 			format "i:%\nj:%\n" i j
 	
@@ -280,18 +280,18 @@ destroydialog test
 	
 	
 	-- END
-		)
+	)
 
 	fn getMaxObject Node =
-		(
+	(
 		local inode = Node
 		local nodeArr=#()
 		
 		while inode.parent!=undefined do
-			(
+		(
 			append nodeArr (inode.tag as Integer)
 			inode=inode.parent
-			)
+		)
 		
 		nodeArr= reverseArray nodeArr
 		format "%\n" (nodeArrToSaArr nodeArr)
@@ -300,14 +300,14 @@ destroydialog test
  			local subAnimObj = execute("$"+subAnimArr)
 
 		format "%\n" (exprformaxobject subAnimObj)
-		)
+	)
 
 
 -- treeview handlers
 
 	
 	on tv1 NodeClick Node do
-		(
+	(
 			prevNode=curNode
 			curNode = tv1.selectedItem
 			
@@ -319,10 +319,10 @@ destroydialog test
 
 		-- get the max object
 	
-		)
+	)
 
 	
-	)
+)
 
 createdialog test 410 650 50 50 style:#(#style_minimizebox,#style_titlebar, #style_border, #style_sysmenu,#style_resizing)
 --show test.size

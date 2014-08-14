@@ -1,5 +1,5 @@
 	fn tabulate str tabStop=
-		(
+	(
 		-- make sure tabstop is on a multiple of 4
 			local tabLength	= 4.0
 			tabStop = ((tabStop/tabLength as integer)+1) * tabLength
@@ -18,18 +18,18 @@
 		
 		-- end
 			return str
-		)
+	)
 
 	str = ""
-	(
+(
 	for i = 1 to 60 do if mod i 4 == 1 then format ".	"
 	format "\n"
-	)
+)
 	for i = 1 to 20 do
-		(
+	(
 		str += (mod i 10 as integer) as string
 		format "%% %\n" (tabulate str 15) i (mod i 4.0)
-		)
+	)
 
 /*
 30.0/4
@@ -44,9 +44,9 @@
 
 
 for i = 0 to 20 do
-	(
+(
 	format "% - %\n" i (mod i 4.0)
-	)
+)
 */
 
 

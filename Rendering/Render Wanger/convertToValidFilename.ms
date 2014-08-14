@@ -22,15 +22,15 @@ rollout ro1 "Options" width:162 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 		fn convertToValidFilename str= 
-			(
+		(
 				newStr = ""
 				for i=1 to str.count do
-					(
+				(
 					if str[i] == "\\" then newStr += "\\\\"
 					else newStr += str[i]
-					)
+				)
 				return newStr
-			)
+		)
 
 
 

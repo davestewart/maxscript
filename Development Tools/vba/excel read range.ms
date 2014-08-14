@@ -1,6 +1,6 @@
 -- functions
 	fn xlOpenFile fileName =
-		(
+	(
 		-- variables
 			local xl, wb, ws
 			
@@ -11,15 +11,15 @@
 			
 		-- return
 			return wb
-		)
+	)
 		
 	fn xlCloseFile wb =
-		(
+	(
 		wb.close
-		)
+	)
 		
 	fn xlReadRange ws range: =
-		(
+	(
 		-- variables
 			local arr = #()
 			local x, y, w, h, row
@@ -35,22 +35,22 @@
 	
 		-- data		
 			for y = 1 to h do
-				(
+			(
 				row = #()
 				for x = 1 to w do
-					(
+				(
 					row[x] = (rng.cells y x).value
-					)
-				append arr row
 				)
+				append arr row
+			)
 		
 		-- return
 			return arr
-		)
+	)
 		
 		
 -- code
-	(
+(
 	-- varibales
 		local fileName		= "C:\\temp\\test 4.xls"
 	

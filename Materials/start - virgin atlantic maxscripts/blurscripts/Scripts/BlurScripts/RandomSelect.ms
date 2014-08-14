@@ -50,7 +50,7 @@ select_array = #()
 -- Functions
 
 fn select_random_objects objs selecttype = 
-	(
+(
 	select_array = #()
 		
 	if selecttype == 1 then select_array = choose_unique_by_weight objs weight_value
@@ -59,25 +59,25 @@ fn select_random_objects objs selecttype =
 		
 	select select_array
 	select_array = #()
-	)
+)
 	
 fn rs_filters selecttype =
-	(
+(
 	undo "RandomSelect" on
-		(
+	(
 		if selection.count == 0 then (MessageBox "Please select at least one object" title:"RandomSelect")
 		else
-			(
+		(
 			objs = for i in selection collect i
 			select_random_objects objs selecttype
-			)
 		)
 	)
+)
 
 -- Script
 
 rollout rs_rollout "RandomSelect"
-	(
+(
 	spinner weight_spinner "Weight:" range:[0,100,50] type:#integer fieldWidth:40 across:2 align:#right offset:[22,0] 
 	button do_weight "Select" width:65 toolTip:"Select" align:#right
 	spinner exact_number "Exact Number:" range:[0,9999999,0] type:#integer fieldWidth:40 across:2 align:#right offset:[22,0] 
@@ -92,7 +92,7 @@ rollout rs_rollout "RandomSelect"
 	on do_weight pressed do rs_filters 1
 	on do_num pressed do rs_filters 2
 	on do_per pressed do rs_filters 3
-	)
+)
 
 if rs_floater != undefined then CloseRolloutFloater rs_floater
 rs_floater = newRolloutFloater "RandomSelect v1.21" 250 148

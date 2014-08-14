@@ -36,21 +36,21 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn seber_get_kids i the_array = 
-	(
+(
 	if classof i == Biped_object then append the_array i
 	if i.children.count != 0 then
-		(
+	(
 		for w = 1 to i.children.count do
-			(
+		(
 			seber_get_kids i.children[w] the_array
-			)
 		)
 	)
+)
 
 -- The Script
 
 if selection.count == 1 and classof selection[1] == biped_object then
-	(
+(
 	seb_biped_array = #()
 	
 	-- Get root
@@ -61,15 +61,15 @@ if selection.count == 1 and classof selection[1] == biped_object then
 	
 	-- Remove Root
 	for i = 1 to seb_biped_array.count do
-		(
+	(
 		if seb_biped_array[i] == the_root then deleteItem seb_biped_array i
-		)
+	)
 	
 	-- Select Biped
 	disableSceneRedraw()
 	select seb_biped_array
 	enableSceneRedraw()
 	completeRedraw()
-	)
+)
 )
 -------------------------------------------------------------------------------

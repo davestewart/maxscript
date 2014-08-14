@@ -33,7 +33,7 @@ rollout roOpts "Options" width:338 height:241
 	on rdo1 changed stat do
 (
 	
-	)
+)
 )/*
 	if pmOptFloater != undefined then closerolloutfloater pmOptFloater
 		pmOptFloater = newRolloutFloater "Property Matcher Options" 188 200 

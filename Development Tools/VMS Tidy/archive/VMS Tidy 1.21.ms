@@ -47,7 +47,7 @@
 		
 -----------------------------------------------------------------------------------------------------*/
 	struct VMSTidySettings	(iniFile, str, size, height, tidyOpt)
-		(
+	(
 		-- ini file
 			local iniFile = (getDir #plugcfg)+"\VMSTidy.ini"
 	
@@ -55,15 +55,15 @@
 			global size = (getinisetting iniFile "settings" "size") as number
 			if size == 0 then size=2
 			local height=case size of
-				(
+			(
 				1:	400
 				2:	724
 				3:	1100
 				default:724
-				)
+			)
 		-- settings object
 			global VMSTidySettings = VMSTidySettings iniFile:iniFile str:"" size:size height:height tidyOpt:1
-		)
+	)
 
 	global VMSTidyFloater
 
@@ -71,7 +71,7 @@
 -- global declarations
 -------------------------------------------------------------------------------------------------------
 rollout VMSTidyVars "VMS Tidy - Variables" width:412 height:212
-	(
+(
 	-- interface
 		label lbl1 "If your rollout needs variables to run, you can enter them here..." pos:[8,8] width:400 height:16
 		edittext edtCode "" pos:[4,24] width:404 height:164
@@ -79,14 +79,14 @@ rollout VMSTidyVars "VMS Tidy - Variables" width:412 height:212
 
 	-- handlers
 		on btnDone pressed do
-			(
+		(
 			destroydialog VMSTidyVars 
-			)
-	)
+		)
+)
 
 
 rollout VMSTidyOptions "VMS Tidy - Options" width:208 height:300
-	(
+(
 	-- declarations
 		local controlTypeArr=#(
 			#("angle", "ang"),
@@ -117,7 +117,7 @@ rollout VMSTidyOptions "VMS Tidy - Options" width:208 height:300
 			#("subRollout", "sub subRoll"),
 			#("timer", "tmr"),
 			#("Custom", "")
-			)
+		)
 	
 	-- interface
 	
@@ -133,14 +133,14 @@ rollout VMSTidyOptions "VMS Tidy - Options" width:208 height:300
 	-- handlers
 /*
 	on VMSTidyOptions open do
-	(
+(
 	local str=""
 	for s in (getpropnames VMSTidy.VMSTidyControlList) do str+=((s as string) + "; ")
 	--edtRename.text=str
-	)
+)
 */
 		on VMSTidyOptions open do 
-			(
+		(
 			-- style
 				ax.MousePointer = #ccArrow 
 				ax.GridLines = true 
@@ -156,27 +156,27 @@ rollout VMSTidyOptions "VMS Tidy - Options" width:208 height:300
 			-- populate
 				list = ax.listItems
 				for i=1 to controlTypeArr.count do 
-					(
+				(
 					local itemHead, itemBody
 					itemHead = list.Add index:(controlTypeArr[i][2] as string)
 					itemBody = itemHead.listsubitems.add index:(controlTypeArr[i][1] as string)
-					) 
+				) 
 		
 			-- update interface
 				ax.columnHeaders[1].position=2
 				ax.refresh()
-			)
+		)
 	
 		on ax BeforeLabelEdit arg do enableAccelerators=false
 		on ax AfterLabelEdit arg1 arg2 do enableAccelerators=true
 		on btnDone pressed do
-			(
+		(
 			destroydialog VMSTidyOptions
-			)
-	)
+		)
+)
 
 rollout VMSTidy "Copy and paste rollout code below..." width:800 height:800 -- "VMS (Visual MaxScript) Tidy"
-	(
+(
 	---------------------------------------------------------------------------------------------------
 	-- declarations
 	---------------------------------------------------------------------------------------------------
@@ -216,7 +216,7 @@ rollout VMSTidy "Copy and paste rollout code below..." width:800 height:800 -- "
 		#spinner,
 		#subRollout,
 		#timer
-		)
+	)
 
 	struct VMSTidyControlList(
 		ax=0, act=0,
@@ -245,7 +245,7 @@ rollout VMSTidy "Copy and paste rollout code below..." width:800 height:800 -- "
 		spn=0,
 		sub=0, subRoll=0,
 		tmr=0
-		)
+	)
 /*
 */
 
@@ -295,34 +295,34 @@ rollout VMSTidy "Copy and paste rollout code below..." width:800 height:800 -- "
 	---------------------------------------------------------------------------------------------------
 
 	fn replaceAll str inStr outStr=
-		(
+	(
 		while (local i=findstring str inStr) != undefined do str=replace str i 1 outStr
 		--format ">%\n" str
 		return str
-		)
+	)
 
 	fn orderArray arr=
-		(
+	(
 		tmpArr=#()
 		for y = 1 to arr.count do
-			(
+		(
 			if arr[y]!=undefined then
-				(
+			(
 				for x = 1 to arr[y].count do
-					(
+				(
 					if arr[y][x]!=undefined then
-						(
+					(
 						append tmpArr arr[y][x]
 						--format "> %\n" arr[y][x]
-						)
 					)
 				)
 			)
-		return tmpArr
 		)
+		return tmpArr
+	)
 
 	fn stripWhiteSpace s=
-		(
+	(
 		-- start of line
 			while substring s 1 1 == "\t" do s=substring s 2 -1
 			while substring s 1 1 == " " do s=substring s 2 -1
@@ -331,43 +331,43 @@ rollout VMSTidy "Copy and paste rollout code below..." width:800 height:800 -- "
 			while substring s (s.count) 1 == " " do s=substring s 1 (s.count-1)
 		-- return
 			return s
-		)
+	)
 
 	fn stripIllegalChars str=
-		(
+	(
 		local legal="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 		local split=" "-- -/\|\t"
 		str=(filterstring str split)[1]
 		for i = str.count to 1 by -1 do
-			(
+		(
 			if findstring legal str[i] == undefined then
-				(
+			(
 				str=(substring str 1 (i-1))+(substring str (i+1) -1)
-				)
 			)
-		return str
 		)
+		return str
+	)
 	
 	---------------------------------------------------------------------------------------------------
 	-- UI Functions
 	---------------------------------------------------------------------------------------------------
 
 	fn isIn container item=
-		(
+	(
 		-- items should be uiItem structs
 		local c=container
 		local i = item
 		if c!= undefined AND i!=undefined then
-			(
+		(
 			local c=box2 c.x c.y c.w c.h
 			local i=point2 i.x i.y
 			return (contains c i)
-			)
-		else return false
 		)
+		else return false
+	)
 
 	fn createScript=
-		(
+	(
 		local w=int (roSize.x +4) as string
 		local h=int (roSize.y +4) as string
 		local str="--VMS Tidy test rollout\n\n"+
@@ -377,46 +377,46 @@ rollout VMSTidy "Copy and paste rollout code below..." width:800 height:800 -- "
 			edtCode.text as string+
 			"\n	)\n\n"
 		return str
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Undo Functions
 	---------------------------------------------------------------------------------------------------
 
 	fn setUndoStack =
-		(
+	(
 		--messagebox "set undo"
 		-- indexes
 			if undoIndex < undoMax then
-				(
+			(
 			-- index
 				undoIndex+=1
 			-- stack
 				if undoStack.count==undoMax then undoStack=deleteItem undoStack 1
 				append undoStack edtCode.text
 				undoStack.count=undoIndex
-				)
+			)
 		-- interface
 			btnUndo.tooltip="Undos left: "+(undoIndex-1) as string
 			btnRedo.tooltip="Redos left: "+(undoStack.count - undoIndex) as string
 			btnUndo.enabled=undoIndex>1
 			btnRedo.enabled=undoIndex<undoStack.count
-		)
+	)
 
 	fn getUndoStack v =
-		(
+	(
 		--format "undoIndex: %\n" undoIndex
 		-- index
 			if v<0 then
-				(
+			(
 	 			--undo
 				if undoIndex>1 then undoIndex-=1
-				)
+			)
 			else if v>0 then
-				(
+			(
 				-- redo
 				if undoIndex<undoStack.count then undoIndex+=1
-				)
+			)
 		-- stack
 			edtCode.text=replaceAll undoStack[undoIndex] "\r" ""
 		-- interface
@@ -424,25 +424,25 @@ rollout VMSTidy "Copy and paste rollout code below..." width:800 height:800 -- "
 			btnRedo.tooltip="Redos left: "+(undoStack.count - undoIndex) as string
 			btnUndo.enabled=undoIndex>1
 			btnRedo.enabled=undoIndex!=undoStack.count
-		)
+	)
 
 /*
 testUndo()
 
 fn testUndo=
-	(
+(
 	local undoStack=VMSTidy.undoStack
 
 	format "=======================================\n\nundoStack: "
 	for i = 1 to undoStack.count do
-		(
+	(
 		if undoStack[i] != undefined then str = (substring undoStack[i] 1 60)
 		else str="undefined"
 		format "%:[%]\n" i str
-		)
+	)
 	format "\nundoStack count: % " undoStack.count
 	format "\nundoIndex: %\n " VMSTidy.undoIndex
-	)
+)
 */
 
 	---------------------------------------------------------------------------------------------------
@@ -450,7 +450,7 @@ fn testUndo=
 	---------------------------------------------------------------------------------------------------
 
 	fn tidy reorder:true=
-		(
+	(
 		clearListener()
 		-----------------------------------------------------------------
 		--	variables
@@ -471,13 +471,13 @@ fn testUndo=
 		-----------------------------------------------------------------
 
 		for s in strArr do
-			(
+		(
 			---------------------------------------------------------
 			s = stripWhiteSpace s
 
 			try(
 				if s.count>0 then
-					(
+				(
 					---------------------------------------------------------
 					-- full string
 						itemString=s
@@ -500,10 +500,10 @@ fn testUndo=
 	
 							if comment == "--" then s = substring s 3 -1
 							else if  comment== "/*" then
-								(
+							(
 								append badLineArr s
 								continue
-								)
+							)
 	
 						-- item type
 							-- get substring
@@ -522,10 +522,10 @@ fn testUndo=
 	
 							-- parse substring
 								if findItem controlTypeArr itemType == 0 then
-									(
+								(
 									if logErrors then append badLineArr ("/* unsupported control type */ -- " +s)
 									continue
-									)
+								)
 	
 	
 	
@@ -568,10 +568,10 @@ fn testUndo=
 								local n=undefined
 								local numStr=itemName, nameStr=""
 								while (numStr as integer == undefined) do
-									(
+								(
 									numStr=((substring numStr 2 -1) as string)
 									print (classof (numStr as Integer))
-									)
+								)
 								format ">% - % - %\n" n nameStr numStr 
 								nameStr=substring itemName 1 (itemName.count-numStr.count)
 								if numStr != "" then n= numStr as number
@@ -580,25 +580,25 @@ fn testUndo=
 							-- Rename / renumber -----------------------------------
 							
 								if ddlTidyOpt.selection==2 then
-									(
+								(
 									-- autonumber
 										local prop=try(getproperty controlList nameStr);catch(undefined)
 										if prop != undefined then
-											(
+										(
 											setProperty controlList nameStr (prop+1)
 											local newItemName=nameStr+((prop+1)as string)
 											itemString = itemType as string + " " + newItemName + " \"" + itemLabel +"\" "+ s
-											)
-									)
+										)
+								)
 								else if ddlTidyOpt.selection==3 AND n != undefined then
-									(
+								(
 									-- autoName
 										if itemLabel != "" then
-											(
+										(
 											local newItemName=nameStr+(stripIllegalChars itemLabel)
 											itemString = itemType as string + " " + newItemName + " \"" + itemLabel +"\" "+ s
-											)
-									)
+										)
+								)
 										
 
 /*	
@@ -608,7 +608,7 @@ fn testUndo=
 						-- x,y
 							i=findstring s "pos:["
 							if i != undefined then
-								(
+							(
 								str=substring s (i+5) -1
 								str=(filterstring str "]")[1]
 								tmpArr=filterstring str ","
@@ -616,44 +616,44 @@ fn testUndo=
 								y=tmpArr[2] as integer
 								--format "x: % y: % \n" x y
 								if x==undefined OR y==undefined then
-									(
+								(
 									append badLineArr ("/* x/y property as undefined variable */ -- " +itemString)
 									continue
-									)
 								)
+							)
 							else
-								(
+							(
 								append badLineArr ("/* missing position property */ -- " +itemString)
 								continue
-								)
+							)
 	
 						-- width
 							i=findstring s "width:"
 							if i != undefined then
-								(
+							(
 								str=substring s (i+6) -1
 								str=(filterstring str " ")[1]
 								w=str as integer
 								--format "w: % \n" w
-								)
+							)
 		
 						-- height
 							i=findstring s "height:"
 							--format "i:% \n" i
 							if i != undefined then
-								(
+							(
 								str=substring s (i+7) -1
 								str=(filterstring str " ")[1]
 								h=str as integer
 								--format "h: % \n" h
-								)
+							)
 	
 						-- check for correct width and height						
 							if w==undefined OR h==undefined then
-								(
+							(
 								append badLineArr ("/* width/height property as undefined variable */ -- " +itemString)
 								continue
-								)
+							)
 		
 						-- line-break / comment
 							local linebreak= (substring s (s.count-1) 2)=="--"
@@ -671,10 +671,10 @@ fn testUndo=
 					--	set ro dimensions
 					
 						if(w!=undefined AND h!=undefined) then
-							(
+						(
 							if x+w > roSize.x then roSize.x=x+w
 							if y+h > roSize.y then roSize.y=y+h
-							)
+						)
 		
 		
 					---------------------------------------------------------
@@ -686,23 +686,23 @@ fn testUndo=
 							
 						-- create x entry (column)
 							if itemType==#groupBox then
-								(
+							(
 								-- add to ui array
 									if uiItemArr[y][x]==undefined then uiItemArr[y][x]=#(ui)
 								-- add to group lookup
 									if uiGroupArr[y]==undefined then uiGroupArr[y]=#()
 									if uiGroupArr[y][x]==undefined then uiGroupArr[y][x]=ui
-								)
+							)
 							else
-								(
+							(
 								-- add to ui array
 									uiItemArr[y][x]=ui
-								)
+							)
 					)-- end if
 				)-- end try
 			catch(
 				if logErrors then append badLineArr ("/* unknown error */ -- " +s)
-				)
+			)
 				
 			)-- end for loop
 			
@@ -714,7 +714,7 @@ fn testUndo=
 
 
 		if reorder then
-			(
+		(
 			uiGroupArr=orderArray uiGroupArr
 			--for i = 1 to uiGroupArr.count do format "%,% %\n" uiGroupArr[i].x uiGroupArr[i].y uiGroupArr[i].string
 	
@@ -728,29 +728,29 @@ fn testUndo=
 			-------------------------------------------------------------
 	
 			for y = 1 to uiItemArr.count do
-				(
+			(
 				if uiItemArr[y]!=undefined then
-					(
+				(
 					for x = 1 to uiItemArr[y].count do
-						(
+					(
 						if uiItemArr[y][x]!=undefined then
-							(
+						(
 							if classof uiItemArr[y][x] != Array then
-								(
+							(
 								for g = 1 to uiGroupArr.count do
-									(
+								(
 									if isIn uiGroupArr[g] uiItemArr[y][x] then
-										(
+									(
 										append uiItemArr[uiGroupArr[g].y][uiGroupArr[g].x] uiItemArr[y][x]
 										uiItemArr[y][x]=undefined
 										exit
-										)
 									)
 								)
 							)
 						)
 					)
 				)
+			)
 	
 			-------------------------------------------------------------
 			-- SECOND RUN THROUGH NEW ARRAY
@@ -766,43 +766,43 @@ fn testUndo=
 			local group=false
 			local y=0
 			for i = 1 to uiItemArr.count do
-				(
+			(
 				if classof uiItemArr[i] == Array then
-					(
+				(
 					str+="\n"
 					group=true
 					for j = 1 to uiItemArr[i].count do
-						(
+					(
 						if j == 1 then str+="	"+uiItemArr[i][j].string+"\n"
 						else
-							(
+						(
 							if uiItemArr[i][j].linebreak==true then str+="\n"
 							str+="		"+uiItemArr[i][j].string+"\n"
-							)
 						)
 					)
+				)
 				else(
 					if group==true then str+="\n"
 					if uiItemArr[i].linebreak==true then str+="\n"
 					str+="	"+uiItemArr[i].string+"\n"
 					group=false
-					)
-				)	
+				)
+			)	
 
 			if badLineArr.count > 0 then str+="\n\n"
 
 			for i = 1 to badLineArr.count do
-				(
+			(
 				str+="	"+badLineArr[i]+"\n"
-				)
+			)
 
 			edtCode.text=str
-			)
+		)
 		-- update interface / undo
 			--chkRenum.checked=false
 			ddlTidyOpt.selection=1
 			setUndoStack()
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -813,80 +813,80 @@ fn testUndo=
 	-- Tidy
 
 		on btnTidy pressed do
-			(
+		(
 			if edtCode.text.count>0 then
-				(
+			(
 				tidy()
 				--try();catch(messagebox errStr)
-				)
 			)
+		)
 	
 	-- Tidy Settings
 
 		on ddlTidyOpt selected item do
-			(
+		(
 			if item <= 3 then
-				(
+			(
 				VMSTidySettings.tidyOpt=item
-				)
+			)
 			else
-				(
+			(
 				ddlTidyOpt.selection=VMSTidySettings.tidyOpt
 				if item==5 then
-				 	(
+				 (
 					try(destroyDialog VMSTidyVars);catch()
 					createdialog VMSTidyOptions 246 336 modal:true
-					)
 				)
 			)
+		)
 	
 	------------------------------------------------------------------------------------------
 	-- Edit
 
 		fn setBtnEditText=
-			(
+		(
 			btnEdit.text=if edtCode.text.count==0 then "New..." else "Edit..."
-			)
+		)
 
 		on edtCode entered text do
-			(
+		(
 			format "-- undo created\n"
 			setUndoStack()
 			setBtnEditText()
-			)
+		)
 	
 		on edtCode changed text do
-			(
+		(
 			setBtnEditText()
-			)
+		)
 	
 		on btnCopy pressed do if edtCode.text.count>0 then setClipboardText edtCode.text
 	
 		on btnPaste pressed do
-			(
+		(
 			local str=replaceAll (getClipboardText()) "\r" "\n"
 			edtCode.text=str
 			setUndoStack()
 			setBtnEditText()
-			)
+		)
 	
 		on btnClear pressed do
-			(
+		(
 			edtCode.text=""
 			setBtnEditText()
-			)
+		)
 	
 		on btnUndo pressed do
-			(
+		(
 			getUndoStack -1
 			setBtnEditText()
-			)
+		)
 	
 		on btnRedo pressed do
-			(
+		(
 			getUndoStack 1
 			setBtnEditText()
-			)
+		)
 
 
 	------------------------------------------------------------------------------------------
@@ -894,17 +894,17 @@ fn testUndo=
 
 		global VMSTidyVars
 		on btnVars pressed do
-			(
+		(
 			try(destroyDialog VMSTidyVars);catch()
 			createdialog VMSTidyVars 416 212
-			)
+		)
 	
 	
 	------------------------------------------------------------------------------------------
 	-- Rollout testing
 
 		on btnEdit pressed do
-			(
+		(
 			-- tidy
 				try(tidy reorder:chkTidy.state);catch(messagebox errStr)
 			-- dump to new window
@@ -913,26 +913,26 @@ fn testUndo=
 				format "%\n" VMSTidyTestStr to:uiScriptWin
 				format "%\n" "createDialog VMSTidyTestRo\n" to:uiScriptWin
 		
-			)
+		)
 	
 		on btnTest pressed do
-			(
+		(
 			if edtCode.text.count>0 then
-				(
+			(
 				-- tidy
 					try(tidy reorder:chkTidy.state);catch()
 				-- create new rollout
 					global VMSTidyTestRo
-					try	(
+					try(
 						execute (createScript())
 						try (destroyDialog VMSTidyTestRo);catch()
 						try (createDialog VMSTidyTestRo);catch(messageBox errStr)
-						)
+					)
 					catch(
 						messageBox errStr
-						)
-				)
+					)
 			)
+		)
 
 	
 
@@ -941,12 +941,12 @@ fn testUndo=
 
 		global VMSTidyHelp
 		on btnHelp pressed do
-			(
+		(
 			try(destroyDialog VMSTidyHelp);catch()
 	
 			local f=(openfile "VMSTidy.html")
 			if f!= undefined then
-				(
+			(
 				flush f; close f
 		
 				helpStr=f as string
@@ -954,19 +954,19 @@ fn testUndo=
 				helpStr=replaceAll helpStr "\\" "/"
 				execute("rollout VMSTidyHelp \"VMS Tidy Help\"(activeXControl ax \"file://"+helpStr+"\" pos:[6,6] width:400 height:600)")
 				createdialog VMSTidyHelp 412 612
-				)
-			else messageBox "Help file not found..."
 			)
+			else messageBox "Help file not found..."
+		)
 		
 		on ddlSample selected item do
-			(
+		(
 			try(
 				edtCode.text = sampleArr[item]
 				setUndoStack()
 				setBtnEditText()
-				)
-			catch(messagebox "Sample Code file not found...")
 			)
+			catch(messagebox "Sample Code file not found...")
+		)
 
 
 
@@ -974,7 +974,7 @@ fn testUndo=
 	-- Resize
 
 		on ddlSize selected item do
-			(
+		(
 			-- get selection
 				local height=#(400,724,1100)[item]
 			-- set settings
@@ -989,13 +989,13 @@ fn testUndo=
 			-- sort text
 				--VMSTidyFloater.edtCode.text=VMSTidySettings.str
 	
-			)
+		)
 
 	------------------------------------------------------------------------------------------
 	-- Open
 		
 		on VMSTidy open do
-			(
+		(
 			-- insert text (if any)
 				local str=VMSTidySettings.str
 				str=replaceAll str "\r" ""
@@ -1012,7 +1012,7 @@ fn testUndo=
 				--edtCode.text = sampleArr[4]
 			-- undo
 				setUndoStack()
-			)
+		)
 
 )
 /*

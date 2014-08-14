@@ -31,19 +31,19 @@ c = color (random 0.0 255.0) (random 0.0 255.0) (random 0.0 255.0)"
 	-------------------
 	on btnGetListSel pressed do edtCode.text += getListenerSelText()
 	on btnGetListAll pressed do
-		(
+	(
 		edtCode.text +=
-			(
+		(
 			setListenerSel #(0,-1)
 			txt = getListenerSelText()
-			)
 		)
+	)
 
 	on btnDumpNew pressed do
-		(
+	(
 		newWin = newScript()
 		format (edtCode.text +"\n") to:newWin 
-		)
+	)
 
 	on btnDumpPrev pressed do format (edtCode.text +"\n") to:newWin
 
@@ -57,7 +57,7 @@ c = color (random 0.0 255.0) (random 0.0 255.0) (random 0.0 255.0)"
 		local INIfile = (getDir #plugcfg) + "\codeFloater.ini"
 	
 		fn writeSettings =
-			(
+		(
 			setINISetting INIfile "Floater" "pos" (codeFloater.pos as string)
 			setINISetting INIfile "Floater" "size" (codeFloater.size as string)
 	
@@ -65,11 +65,11 @@ c = color (random 0.0 255.0) (random 0.0 255.0) (random 0.0 255.0)"
 			setINISetting INIfile "Rollouts" "roObjectCode" (roObjectCode.open as string)
 			setINISetting INIfile "Rollouts" "roFinalCode" (roFinalCode.open as string)
 			setINISetting INIfile "Rollouts" "roCodeHelp" (roCodeHelp.open as string)
-			)
+		)
 	
 	
 		fn readSettings =
-			(
+		(
 			codeFloater.pos = execute (getINISetting INIfile "Floater" "pos") as Point2
 			codeFloater.size = execute (getINISetting INIfile "Floater" "size") as Point2
 
@@ -81,7 +81,7 @@ c = color (random 0.0 255.0) (random 0.0 255.0) (random 0.0 255.0)"
 			roObjectCode.open = execute (getINISetting INIfile "Rollouts" "roObjectCode")
 			roFinalCode.open = execute (getINISetting INIfile "Rollouts" "roFinalCode")
 			roCodeHelp.open = execute (getINISetting INIfile "Rollouts" "roCodeHelp")
-			)
+		)
 
 
 		on roConstants close do writeSettings()
@@ -114,13 +114,13 @@ $.wirecolor = c"
 	on btnGetListSel pressed do edtCode.text += getListenerSelText()
 
 	on btnGetListAll pressed do
-		(
+	(
 		edtCode.text +=
-			(
+		(
 			setListenerSel #(0,-1)
 			txt = getListenerSelText()
-			)
 		)
+	)
 
 
 )
@@ -144,13 +144,13 @@ rollout roExecuteCode "Step 3 : execute code" width:392 height:184
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn replaceAll strAll strOut strIn =
-		(
+	(
 		while ((i=findstring strAll strOut) != undefined) do
-			(
+		(
 			strAll = replace strAll i strOut.count strIn
-			)
-		return strAll
 		)
+		return strAll
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -159,7 +159,7 @@ rollout roExecuteCode "Step 3 : execute code" width:392 height:184
 
 
 	on btnDoCode pressed do
-		(
+	(
 		objCode = replaceAll roObjectCode.edtCode.text "$" "obj"
 
 		cmd = roConstants.edtCode.text + "
@@ -167,18 +167,18 @@ rollout roExecuteCode "Step 3 : execute code" width:392 height:184
 for obj in selection do (
 	try(
 		" + objCode + "
-	)
+)
 	catch(format \"Partial code failiure on : %\n\" obj.name)
 	)"
 
 		roFinalCode.edtFinal.text = cmd
 
 		undo "Apply code to multiple objects" on
-			(
+		(
 			try (execute cmd)
 			catch (displayTempPrompt "Error in code syntax..." 2000)
-			)
 		)
+	)
 )
 
 rollout roCodeHelp "Instructions" width:392 height:184

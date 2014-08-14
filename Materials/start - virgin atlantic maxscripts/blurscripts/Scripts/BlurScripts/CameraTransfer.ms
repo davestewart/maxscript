@@ -88,47 +88,47 @@ ct_in_file = undefined
 -- Functions
 
 fn camera_filter o = 
-	(
+(
 	superClassOf o == camera 
-	)
+)
 
 fn ct_linecount_in_file thefile = 
-	(
+(
 	m = openFile thefile
 	curcount = 0
 	mo = 0
 	if classof m == FileStream then
-		(
+	(
 		mo = ct_linecount_in_file_rec m curcount
-		)
+	)
 	close m
 	return (curcount + mo)
-	)
+)
 	
 -- required by ct_linecount_in_file, not to be used as a function by itself.
 fn ct_linecount_in_file_rec thefile thecount =
-	(
+(
 	if eof thefile == false then
-		(
+	(
 		readLine thefile
 		thecount += 1
 		ct_linecount_in_file_rec thefile thecount
-		)
-	else return thecount
 	)
+	else return thecount
+)
 	
 fn get_start_time = 
-	(
+(
 	if ct_time_value == 1 then
-		(
+	(
 		return animationRange.start
-		)
+	)
 	else if ct_time_value == 2 then
-		(
+	(
 		st = #()
 		c = ct_camera_out
 		if c.type == #target then
-			(
+		(
 			if c.pos.keys != undefined and c.pos.keys.count != 0 then append st c.pos.keys[1].time
 			if c.controller.rollangle.keys != undefined and c.controller.rollangle.keys.count != 0 then append st c.controller.rollangle.keys[1].time
 			if c.scale.keys != undefined and c.scale.keys.count != 0 then append st c.scale.keys[1].time
@@ -137,9 +137,9 @@ fn get_start_time =
 			
 			if st == #() then return animationRange.start
 			else return amin st
-			)
+		)
 		else 
-			(
+		(
 			if c.pos.keys != undefined and c.pos.keys.count != 0 then append st c.pos.keys[1].time
 			if c.rotation.keys != undefined and c.rotation.keys.count != 0 then append st c.rotation.keys[1].time
 			if c.scale.keys != undefined and c.scale.keys.count != 0 then append st c.scale.keys[1].time
@@ -147,26 +147,26 @@ fn get_start_time =
 			
 			if st == #() then return animationRange.start
 			else return amin st
-			)
-		)
-	else
-		(
-		return ct_start_time_value
 		)
 	)
+	else
+	(
+		return ct_start_time_value
+	)
+)
 	
 fn get_end_time = 
-	(
+(
 	if ct_time_value == 1 then
-		(
+	(
 		return animationRange.end
-		)
+	)
 	else if ct_time_value == 2 then
-		(
+	(
 		en = #()
 		c = ct_camera_out
 		if c.type == #target then
-			(
+		(
 			if c.pos.keys != undefined and c.pos.keys.count != 0 then append en c.pos.keys[c.pos.keys.count].time
 			if c.controller.rollangle.keys != undefined and c.controller.rollangle.keys.count != 0 then append en c.controller.rollangle.keys[c.controller.rollangle.keys.count].time
 			if c.scale.keys != undefined and c.scale.keys.count != 0 then append en c.scale.keys[c.scale.keys.count].time
@@ -175,9 +175,9 @@ fn get_end_time =
 			
 			if en == #() then return animationRange.end
 			else return amax en
-			)
+		)
 		else 
-			(
+		(
 			if c.pos.keys != undefined and c.pos.keys.count != 0 then append en c.pos.keys[c.pos.keys.count].time
 			if c.rotation.keys != undefined and c.rotation.keys.count != 0 then append en c.rotation.keys[c.rotation.keys.count].time
 			if c.scale.keys != undefined and c.scale.keys.count != 0 then append en c.scale.keys[c.scale.keys.count].time
@@ -185,16 +185,16 @@ fn get_end_time =
 			
 			if en == #() then return animationRange.end
 			else return amax en
-			)
-		)
-	else
-		(
-		return ct_end_time_value
 		)
 	)
+	else
+	(
+		return ct_end_time_value
+	)
+)
 
 fn write_cam_data = 
-	(
+(
 	disableSceneRedraw()
 	
 	old_slider_time = slidertime
@@ -207,15 +207,15 @@ fn write_cam_data =
 	-- Check To See If Camera Is Animated
 	givewarning = false
 	if s == undefined then 
-		(
+	(
 		s = animationRange.start
 		givewarning = true
-		)
+	)
 	if e == undefined then 
-		(
+	(
 		e = animationRange.end
 		givewarning = true
-		)
+	)
 	if givewarning == true then (MessageBox "An error occured getting the requested time range (possibly the camera is not animated), using active time segment instead." title:"CameraTransfer")
 	
 	if s != e then animationRange = interval s e else animationRange = interval s (e + 1)
@@ -232,13 +232,13 @@ fn write_cam_data =
 	format "|" to:ct_file_file
 
 	if ct_camera_out.type == #target then
-		(
+	(
 		format (ct_camera_out.target.name as string) to:ct_file_file
-		)
+	)
 	else
-		(
+	(
 		format (undefined as string) to:ct_file_file
-		)
+	)
 	format "|" to:ct_file_file
 
 	format (ct_camera_out.orthoProjection as string) to:ct_file_file
@@ -261,9 +261,9 @@ fn write_cam_data =
 	format "\n" to:ct_file_file
 
 	if ct_camera_out.type == #target then
-		(
+	(
 		for i = s to e do
-			(
+		(
 			slidertime = i
 			format (sliderTime as string) to:ct_file_file
 			format "|" to:ct_file_file
@@ -277,12 +277,12 @@ fn write_cam_data =
 			format "|" to:ct_file_file
 			format (ct_camera_out.target.pos as string) to:ct_file_file
 			format "\n" to:ct_file_file
-			)
 		)
+	)
 	else
-		(
+	(
 		for i = s to e do
-			(
+		(
 			slidertime = i
 			format (sliderTime as string) to:ct_file_file
 			format "|" to:ct_file_file
@@ -294,8 +294,8 @@ fn write_cam_data =
 			format "|" to:ct_file_file
 			format (ct_camera_out.fov as string) to:ct_file_file
 			format "\n" to:ct_file_file
-			)
 		)
+	)
 		
 	close ct_file_file
 
@@ -304,26 +304,26 @@ fn write_cam_data =
 	
 	enableSceneRedraw()
 	completeRedraw()
-	)
+)
 
 fn read_cam_data = 
-	(
+(
 	disableSceneRedraw()
 	if openFile ct_in_file != undefined then
-		(
+	(
 		numlines = ct_linecount_in_file ct_in_file
 		m = openFile ct_in_file
 		if numlines != 0 then
-			(
+		(
 			inputdata = readLine m
 			inputarray = filterString inputdata "|"
 			ct_camera_in.name = inputarray[1] as string
 			ct_camera_in.type = inputarray[2] as name
 			
 			if (inputarray[2] as name) == #target then
-			(
+		(
 			ct_camera_in.target.name = inputarray[3] as string
-			)
+		)
 			
 			ct_camera_in.orthoProjection = (execute inputarray[4])
 			ct_camera_in.showCone = (execute inputarray[5])
@@ -343,17 +343,17 @@ fn read_cam_data =
 			else read_file_free m curline numlines
 			
 			progressEnd()
-			)
-		close m
 		)
+		close m
+	)
 	enableSceneRedraw()
 	completeRedraw()
-	)
+)
 	
 fn read_file_target the_file a b = 
-	(
+(
 	if eof the_file == false then
-		(
+	(
 		a += 1
 		
 		inputdata = readLine the_file
@@ -368,13 +368,13 @@ fn read_file_target the_file a b =
 		progressUpdate curprog
 
 		read_file_target the_file a b
-		)
 	)
+)
 	
 fn read_file_free the_file a b = 
-	(
+(
 	if eof the_file == false then
-		(
+	(
 		a += 1
 		
 		inputdata = readLine the_file
@@ -389,135 +389,135 @@ fn read_file_free the_file a b =
 		progressUpdate curprog
 		
 		read_file_free the_file a b
-		)
 	)
+)
 
 -- The Script
 
 rollout ct_rollout_out "CameraTransfer Export"
-	(
+(
 	group "Camera To Export From"
-	(
+(
 	label what_camera_out "None" align:#center
 
 	pickbutton pickthecamera_out "Pick The Camera" width:200 align:#center toolTip:"Pick The Camera" filter:camera_filter
-	)
+)
 	on pickthecamera_out picked obj do 
-		(
+	(
 		ct_camera_out = obj
 		what_camera_out.text = obj.name
-		)
+	)
 		
 	group "Time"
-	(
+(
 	dropdownlist ct_time "" items:#("Active Time Segment", "Camera Animation", "Range") selection:2
 	spinner ct_start_time "Start: " range:[-9999999,9999999,0] type:#integer fieldWidth:50 align:#center across:2 enabled:false
 	spinner ct_end_time " End: " range:[-9999999,9999999,100] type:#integer fieldWidth:50 align:#center enabled:false
-	)
+)
 	
 	on ct_time selected i do
-		(
+	(
 		if i == 1 then 
-			(
+		(
 			ct_start_time.enabled = false
 			ct_end_time.enabled = false
 			ct_time_value = 1
-			)
+		)
 		else if i == 2 then 
-			(
+		(
 			ct_start_time.enabled = false
 			ct_end_time.enabled = false
 			ct_time_value = 2
-			)
+		)
 		else if i == 3 then 
-			(
+		(
 			ct_start_time.enabled = true
 			ct_end_time.enabled = true
 			ct_time_value = 3
-			)
 		)
+	)
 	on ct_start_time changed val do ct_start_time_value = val
 	on ct_end_time changed val do ct_end_time_value = val
 		
 	group "File To Export"
-	(
+(
 	button ct_getpath "Path" align:#left across:2
 	edittext ct_pathlabel "" fieldWidth:160 offset:[0,4] text:"undefined" align:#right
 	edittext ct_filename "Name: " fieldWidth:160 text:ct_out_filename align:#right
-	)
+)
 
 	on ct_getpath pressed do
-		(
+	(
 		ct_out_dir = getSavePath()
 		ct_pathlabel.text = (ct_out_dir as string)
-		)
+	)
 	on ct_pathlabel entered text do 
-		(
+	(
 		if ct_pathlabel.text == "undefined" then ct_out_dir = undefined
 		else ct_out_dir = ct_pathlabel.text
-		)
+	)
 	on ct_filename changed text do ct_out_filename = ct_filename.text
 			
 	button ct_export "Export" width:200 toolTip:"Export" align:#right
 	on ct_export pressed do 
-		(
+	(
 		if ct_camera_out != undefined then
-			(
+		(
 			if ct_out_dir != undefined then
-				(
+			(
 				if ct_out_dir[ct_out_dir.count] != "\\" then ct_out_dir = ct_out_dir + "\\"
 				write_cam_data()
 				ct_camera_out = undefined
 				what_camera_out.text = "None"
-				)
-			else (MessageBox "Please pick a valid Path" title:"CameraTransfer")
 			)
-		else (MessageBox "Please pick a camera to export from" title:"CameraTransfer")
+			else (MessageBox "Please pick a valid Path" title:"CameraTransfer")
 		)
+		else (MessageBox "Please pick a camera to export from" title:"CameraTransfer")
 	)
+)
 	
 rollout ct_rollout_in "CameraTransfer Import"
-	(
+(
 	group "Camera To Import To"
-	(
+(
 	label what_camera_in "None" align:#center
 
 	pickbutton pickthecamera_in "Pick The Camera" width:200 align:#center toolTip:"Pick The Camera" filter:camera_filter
-	)
+)
 	on pickthecamera_in picked obj do 
-		(
+	(
 		ct_camera_in = obj
 		what_camera_in.text = obj.name
-		)
+	)
 
 	group "File To Import"
-	(
+(
 	button ct_getinfile "File" align:#left across:2
 	label ct_pathinlabel "None" align:#left offset:[-59,4]
-	)
+)
 	on ct_getinfile pressed do
-		(
+	(
 		ct_in_file = getOpenFileName()
 		if ct_in_file == undefined then ct_pathinlabel.text = "None"
 		else ct_pathinlabel.text = ct_in_file
-		)
+	)
 
 	button ct_import "Import" width:200 toolTip:"Import" align:#right
 	on ct_import pressed do 
-		(
+	(
 		if ct_camera_in != undefined then
-			(
+		(
 			if ct_in_file != undefined then 
-				(
+			(
 				read_cam_data()
 				ct_camera_in = undefined
 				what_camera_in.text = "None"	
-				)
-			else (MessageBox "Please pick a valid File" title:"CameraTransfer")
 			)
-		else (MessageBox "Please pick a camera to import to" title:"CameraTransfer")
+			else (MessageBox "Please pick a valid File" title:"CameraTransfer")
 		)
+		else (MessageBox "Please pick a camera to import to" title:"CameraTransfer")
 	)
+)
 
 if ct_floater != undefined then CloseRolloutFloater ct_floater
 ct_floater = newRolloutFloater "CameraTransfer v1.12" 260 484

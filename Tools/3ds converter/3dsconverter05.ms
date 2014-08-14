@@ -33,18 +33,18 @@ rollout ro1 "Options" width:472 height:152
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 fn convertFiles =
-	(
+(
 
 	if (pathImp == "" OR pathExp== "") then
-		(
+	(
 		messageBox "You need to select directories first" title:"Directory Error" beep:true
-		)
+	)
 	else
-		(
+	(
 
 	-- Query
 		if queryBox "3dsmax will generate thumbnails by taking a \nscreen-grab of the viewport you last clicked in.\n\nIt would be wise to make sure it is set-up \nto get a good view of any objects imported, \nas well as ensuring no dialogue boxes or \nfloaters are obscuring it before continuing.\n\nDo you want to start the conversion process?" title:"Thumbnail generation advice" then
-			(
+		(
 			-- initial setup
 			 	i=0
 				for f in files do (
@@ -71,7 +71,7 @@ fn convertFiles =
 					if chkReGround.checked then(
 						select objects
 						selection.pos.z = - selection.min.z
-						)
+					)
 			
 				-- get ready for save
 					lblStatus.text = "Viewport setup... "
@@ -81,40 +81,40 @@ fn convertFiles =
 				-- save
 					lblStatus.text = "Saving... "
 					saveNodes objects (pathExp + "\\" + fileName + ".max")
-				)			
+			)			
 				grpProgress.text = "Progress"
 				lblStatus.text = "Ready..."
 				pb1.value = 0
-			)
+		)
 
 
+	)
+)
+
+	fn countFiles =
+	(
+		if files != undefined then
+		(
+			files = getFiles ((getFilenamePath pathImp) as String + "*.3ds")
+			grpProgress.text = "Progress: (0 of " + files.count as String + ")"
 		)
 	)
 
-	fn countFiles =
-		(
-		if files != undefined then
-			(
-			files = getFiles ((getFilenamePath pathImp) as String + "*.3ds")
-			grpProgress.text = "Progress: (0 of " + files.count as String + ")"
-			)
-		)
-
 	fn getPathImp =
-		(
+	(
 		fileImp = getOpenFileName caption:"Select first *.3ds file to import..." types:"3D Studio Mesh (*.3ds)|*.3ds" ()
 		pathImp =  getFilenamePath fileImp
 		format "pathImp= %" pathImp 
 		edtPathImp.text = pathImp as String
 		countFiles()
-		)	
+	)	
 	
 	fn getPathExp =
-		(
+	(
 		pathExp = getSavePath()
 		format "pathExp= %" pathExp
 		edtPathExp.text = pathExp as String
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -132,11 +132,11 @@ fn convertFiles =
 	on edtPathExp changed text do
 		pathExp = text
 	on ro1 open do
-		(
+	(
 		edtPathImp.text = pathImp as String
 		edtPathExp.text = pathExp as String
 		countFiles()
-		)
+	)
 )
 
 if Floater3dsConverter != undefined then closerolloutfloater Floater3dsConverter

@@ -71,38 +71,38 @@ qm_mat_names = #()
 -- Functions
 
 fn quickmat_update = 
-	(
+(
 	qm_mat_names = #()
 	mat_files = get_all_files_in_dir "$scripts/BlurMats/" false "mat"
 	if mat_files.count != 0 then
-		(
+	(
 		for i = 1 to mat_files.count do
-			(
+		(
 			the_name = (filenameFromPath mat_files[i])
 			append qm_mat_names (strip_file_extension the_name)
-			)
 		)
 	)
+)
 
 fn quickmat = 
-	(
+(
 	undo "QuickMaterial" on
-		(
+	(
 		m = get_blurmat (qm_mat_names[qm] as string)
 		if m != false then meditMaterials[medit.GetActiveMtlSlot()] = copy m
-		)
 	)
+)
 
 -- The Script
 
 rollout qm_rollout "QuickMaterial"
-	(
+(
 	dropdownlist qm_list "" items:qm_mat_names height:20
 	on qm_list selected i do qm = i
 		
 	button do_qm "Place Material In Selected Slot" width:200 align:#center toolTip:"Place Material In Selected Slot"
 	on do_qm pressed do quickmat()
-	)
+)
 	
 quickmat_update()
 

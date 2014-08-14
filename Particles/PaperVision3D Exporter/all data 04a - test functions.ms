@@ -1,14 +1,14 @@
 	
 with animate on
-	(
+(
 	for i = 1 to cameraData.count do
 		at time i
-			(
+		(
 			--$.pos = cameraData[i].pos
 			local rot = 
 			$.rotation = cameraData[i].rot
-			)
-	)
+		)
+)
 
 	t = currenttime as integer / ticksperframe
 	rot = cameraData[t].rot
@@ -40,11 +40,11 @@ cameraData
 
 cameraData[94].rot
 	for i = 1 to particleData.count do
-		(
+	(
 		b = particleData[i]
 		arr = for d in b collect d.pos
 		arrayToSpline arr
-		)
+	)
 		
 	paths = 	$shape* as array
 	

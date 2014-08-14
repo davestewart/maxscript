@@ -37,25 +37,25 @@ no_uvw = #()
 disableSceneRedraw()
 
 for i in selection do
-	(
+(
 	if superclassof i == GeometryClass then append sel i
-	)
+)
 
 for i in sel do
-	(
+(
 	if i.modifiers.count == 0 then continue
 	else
-		(
+	(
 		for j = 1 to i.modifiers.count do
-			(
+		(
 			if i.modifiers[j].name == "UVW Mapping" then 
-				(
+			(
 				append uvw i 
-				)
-			else continue
 			)
+			else continue
 		)
 	)
+)
 
 no_uvw = remove_from_array_by_items sel uvw
 select no_uvw

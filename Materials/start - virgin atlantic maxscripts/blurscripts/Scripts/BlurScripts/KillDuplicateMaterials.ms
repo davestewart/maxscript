@@ -31,19 +31,19 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn kill_dup_mats = 
-	(
+(
 	scene_mats = get_scene_materials()
 	scene_mats_names = for i in scene_mats collect i.name
 	
 	for i in $* do
-		(
+	(
 		if i.material != undefined then
-			(
+		(
 			w = finditem scene_mats_names i.material.name
 			i.material = scene_mats[w]
-			)
 		)
 	)
+)
 
 -- The Script
 

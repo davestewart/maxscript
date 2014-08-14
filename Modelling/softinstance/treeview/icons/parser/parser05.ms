@@ -1,5 +1,5 @@
 fn parseMacroscriptFile file =
-	(
+(
 -- set up
 	basepath="E:\\2_Current_Jobs\\softinstance\\treeview\\icons\\"
 	file = openfile (basepath+file)
@@ -15,22 +15,22 @@ fn parseMacroscriptFile file =
 	local iconStr, iconArr, start, end
 
 	while NOT (eof file) do
-		(
+	(
 		-- set up
 			line = readline file as string
 
 		-- find iconName
 			if findstring line "macroScript " != undefined then
-				(
+			(
 				data=#()
 				iconName = filterstring line " "
 				iconName = iconName[2]
 				append data iconName
-				)
+			)
 
 		-- find icon
 			if findstring line "icon:#(" != undefined then
-				(
+			(
 				start= (findstring line "icon:#(") + 7
 				end = line.count - start
 
@@ -41,20 +41,20 @@ fn parseMacroscriptFile file =
 				
 				append data iconFile
 				append data iconIndex
-				)
+			)
 
 		-- build the array
 			if data.count==3 then
-				(
+			(
 				format "	%,\n" data to:iconWin
 				iconName=undefined
 				iconFile=undefined
 				iconIndex=undefined
 				data=#()
-				)
-		)
---	format "%\n" data
+			)
 	)
+--	format "%\n" data
+)
 
 
 
@@ -73,7 +73,7 @@ mcrArr=#(
 	"Macro_SubObjectLevels.mcr",
 	"Macro_Systems.mcr",
 	"Reactor.mcr"
-	)
+)
 --parseMacroscriptFile mcrArr[4]
 
 iconWin = newScript()

@@ -6,10 +6,10 @@ rollout inet "internet control" width:800 height:800
 	editText edt1 "" pos:[8,24] width:144 height:168
 
 on inet open do
-	(
+(
 	--in1.Navigate "E:\\2_Current_Jobs\\pondskata\\index.html"
 	--tran1.
 
-	)
+)
 )
 createdialog inet

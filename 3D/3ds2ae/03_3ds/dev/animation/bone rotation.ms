@@ -5,7 +5,7 @@ planeArr=$plane* as array
 local oldP
 local i=0
 for b in boneArr do
-	(
+(
 	-- sort bone rotation
 		try(
 		trans = (b.transform * inverse b.parent.transform).rotation as eulerangles
@@ -13,7 +13,7 @@ for b in boneArr do
 		fk.rotation.controller[1].value = trans.x
 		fk.rotation.controller[2].value = trans.y
 		fk.rotation.controller[3].value = trans.z
-		)
+	)
 		catch()
 
 	-- create
@@ -49,7 +49,7 @@ for b in boneArr do
 		*/
 
 
-	)
+)
 )
 
 fn RotatePivotOnly obj rotation= (

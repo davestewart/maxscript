@@ -9,7 +9,7 @@
 		local glosCtrl = bezier_float()		-- setup instanced controller, for when needed
 
 	fn updateSpec =
-		(
+	(
 
 		-- set variables
 			specBas = spnSpecVal.value
@@ -26,34 +26,34 @@
 		-- update interface display
 			grpSpecParam.text = "Specular Level: (" + specMin as String + " - " + specMax as String + ")"
 
-		)
+	)
 
 	fn updateSpecDisplay =
-		(
+	(
 		case ckbSpecValInst.state of
-			(
+		(
 			true:
-				(
+			(
 				-- instance
 				spnSpecVarTemp = spnSpecVar.value
 				spnSpecVar.value = 0
 				spnSpecVar.enabled = false
 				updateSpec()
-				)
+			)
 			false:
-				(
+			(
 				-- copy
 				spnSpecVar.value = spnSpecVarTemp
 				spnSpecVar.enabled = true
 				updateSpec()
-				)
 			)
 		)
+	)
 
 
 
 	fn updateGlos =
-		(
+	(
 
 		-- set variables
 			glosBas = spnGlosVal.value
@@ -70,29 +70,29 @@
 		-- update interface display
 			grpGlosParam.text = "Glossiness: (" + glosMin as String + " - " + glosMax as String + ")"
 
-		)
+	)
 
 	fn updateGlosDisplay =
-		(
+	(
 		case ckbGlosValInst.state of
-			(
+		(
 			true:
-				(
+			(
 				-- instance
 				spnGlosVarTemp = spnGlosVar.value
 				spnGlosVar.value = 0
 				spnGlosVar.enabled = false
 				updateGlos()
-				)
+			)
 			false:
-				(
+			(
 				-- copy
 				spnGlosVar.value = spnGlosVarTemp
 				spnGlosVar.enabled = true
 				updateGlos()
-				)
 			)
 		)
+	)
 
 
 
@@ -102,10 +102,10 @@
 
 	-- Both
 		on matHigh open do
-			(
+		(
 			updateSpec(); print "Updating Spec"
 			updateGlos(); print "Updating Glos"
-			)
+		)
 
 
 	-- Specular Level

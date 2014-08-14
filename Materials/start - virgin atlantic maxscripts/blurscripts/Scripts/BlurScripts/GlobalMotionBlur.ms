@@ -73,67 +73,67 @@ excludeparticles_value = 1
 -- Functions
 
 fn changemotionblur w = 
-	(
+(
 	if gmb_type_value == 1 then w.motionblur = #none
 	else if gmb_type_value == 2 then w.motionblur = #object
 	else if gmb_type_value == 3 then w.motionblur = #image
-	)
+)
 
 fn gmb_start =
-	(
+(
 	for i in $* do
-		(
+	(
 		if i.ishidden == true and hiddenobjects_value == 0 then continue
 		else
-			(
+		(
 			if i.isfrozen == true and frozenobjects_value == 0 then continue
 			else
-				(
+			(
 				if excludeparticles_value == 0 then changemotionblur i
 				else
-					(
+				(
 					if particles_filter i == false then changemotionblur i
-					)
 				)
 			)
 		)
 	)
+)
 
 -- Script
 
 rollout gmb_rollout "GlobalMotionBlur"
-	(
+(
 	group "Motion Blur Type:"
-	(
+(
 	dropdownlist blurtype "" items:#("None", "Object", "Image") align:#left selection:3
-	)
+)
 	on blurtype selected i do gmb_type_value = i
 
 	group "Exclude / Include:"
-	(
+(
 	checkbox hiddenobjects "Include Hidden Objects" checked:true
 	checkbox frozenobjects "Include Frozen Objects" checked:true
 	checkbox excludeparticlesystems "Exclude Particle Systems" checked:true
-	)
+)
 	on hiddenobjects changed state do 
-		(
+	(
 		if hiddenobjects.checked == true then hiddenobjects_value = 1
 		else hiddenobjects_value = 0
-		)
+	)
 	on frozenobjects changed state do 
-		(
+	(
 		if frozenobjects.checked == true then frozenobjects_value = 1
 		else frozenobjects_value = 0
-		)
+	)
 	on excludeparticlesystems changed state do 
-		(
+	(
 		if excludeparticlesystems.checked == true then excludeparticles_value = 1
 		else excludeparticles_value = 0
-		)
+	)
 
 	button doit "Do it!" width:100 align:#center toolTip:"Do It!"
 	on doit pressed do gmb_start()
-	)
+)
 
 if gmb_floater != undefined then CloseRolloutFloater gmb_floater
 gmb_floater = newRolloutFloater "GlobalMotionBlur v1.32" 210 233

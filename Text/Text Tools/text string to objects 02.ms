@@ -5,12 +5,12 @@
 
 -- create text objects
 	for i = 1 to arr.count do 
-		(
+	(
 		t = text text:(arr[i] as string)font:"Times New Roman" name:("text-" + arr[i] as string)
 		t.size = 50
 		t.steps = 1
 		t.pos.z = i * 1
-		)
+	)
 	
 -- group and extrude
 	select $text*

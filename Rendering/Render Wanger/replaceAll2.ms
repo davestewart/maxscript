@@ -5,11 +5,11 @@ str
 replaceAll str "/" "###"
 
 	fn replaceAll str outStr inStr =
-		(
+	(
 		str = #(str,"")
 
 		while findstring str[1] outStr != undefined do
-			(
+		(
 		-- get variables
 			s1 = 1
 			s2 = (findstring str[1] outStr) + (-1)
@@ -21,7 +21,7 @@ replaceAll str "/" "###"
 			
 		-- reduce str[1]
 			str[1]= substring str[1] s3 str[1].count
-			)
+		)
 		str[2]+=str[1]
 		return str[2]
 		)

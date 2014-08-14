@@ -12,10 +12,10 @@ roAnimation.axObj.refresh()
 
 
 for li in roAnimation.axObj.ListItems do
-	(
+(
 	obj = getnodebyname (li.text)
 	format "%\n" obj.pos
- 	)
+ )
 
 show roAnimation.axObj.ListItems[1] to:sc
 (getnodebyname "GeoSphere01").pos

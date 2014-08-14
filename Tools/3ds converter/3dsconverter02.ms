@@ -29,13 +29,13 @@ rollout ro1 "Options" width:472 height:128
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 fn convertFiles =
-	(
+(
 	files = getFiles (pathImp as String + "*.3ds")
-	)
+)
 
 --for f in files do (
 --	importFile f #noPrompt
---	)
+--)
 
 
 
@@ -46,16 +46,16 @@ fn convertFiles =
 	---------------------------------------------------------------------------------------------------
 
 	on btnDirImp pressed do
-	(
+(
 	pathImp = getOpenFileName caption:"Select import directory (you must select a file)" types:"3D Studio Mesh (*.3ds)|*.3ds" ()
 	edtPathImp.text = pathImp as String
-	)
+)
 	on btnDirExp pressed do
-	(
+(
 	--pathExp = getSaveFileName caption:"Select output directory" types:"3ds max (*.max)|*.max" ()
 	pathExp = getSavePath
 	edtPathImp.text = pathExp as String
-	)
+)
 	on btnStart pressed do
 		convertFiles()
 )

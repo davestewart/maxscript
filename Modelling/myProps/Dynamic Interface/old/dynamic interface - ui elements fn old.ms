@@ -74,27 +74,27 @@ rollout ro1 "Interface Options" width:160 height:88
 	---------------------------------------------------------------------------------------------------
 
 	fn updateInterface state =
-		(
+	(
 	-- update globals arrays ONLY on first run...
 		if onOff_uiAll== undefined then
-			(
+		(
 		-- your interface selections go here...
 			global onOff_ui1= 	#(grp1, btn1) -- ui selection 1
 			global onOff_ui2= 	#(grp2, btn2) -- ui selection 2
 			global onOff_ui3= 	#(grp3, btn3) -- ui selection 3
 
 			global onOff_uiAll=	#(onOff_ui1, onOff_ui2, onOff_ui3) -- all ui selections
-			)
+		)
 
 	-- update interface...
 		for i = 1 to onOff_uiAll.count do
-			(
+		(
 			group = execute("onOff_ui" + i as String)
 			group.enabled = false
-			)
+		)
 			group = execute("onOff_ui" + state as String)
 			group.enabled = true
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

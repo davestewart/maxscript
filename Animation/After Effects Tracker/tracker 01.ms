@@ -2,7 +2,7 @@ obj1 = $
 mesh1 = obj.baseobject.mesh
 points = #()
 for i = 1 to getnumverts mesh1 do
-	(
+(
 	local p = getVert mesh1 i
 	p += obj.objectOffsetPos
 	p *= obj1.transform
@@ -13,7 +13,7 @@ for i = 1 to getnumverts mesh1 do
 	p = gw.wTransPoint p
 	gw.wText p ("Vert: " + i as string)
 	gw.wMarker p #plusSign 
-	)
+)
 	
 gw.enlargeUpdateRect #whole
 gw.updateScreen()
@@ -26,13 +26,13 @@ obj1.pos
 $.objectTransform 
 
 for t = 1 to 75 do
-	(
+(
 	at time t p = $.pos
 	gw.setTransform(Matrix3 1)
 	p = gw.wTransPoint p
 	format "[%,%]\n" p.x p.y
 	gw.wMarker p #circle
-	)
+)
 --gw.enlargeUpdateRect #whole
 --gw.updateScreen()
 

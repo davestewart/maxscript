@@ -33,10 +33,10 @@ rollout roSettings "Settings" width:536 height:584
 	checkbox chk6 "Generate Report" pos:[320,80] width:131 height:16
 
 	on btnOpen pressed do
-	(
+(
 	local str=getopenfilename caption:"Select After Effects application file (AfterFX.exe)..." types:"Application (*.exe)|AfterFX.exe"
 	if str!=undefined then edtFile.text=str
-	)
+)
 )
 
 createdialog roSettings

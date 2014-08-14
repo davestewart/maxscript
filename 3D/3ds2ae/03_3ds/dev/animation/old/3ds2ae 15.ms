@@ -4,10 +4,10 @@
 global ro1
 
 fn max2AESel =
-	(
+(
 	ro1.sel=(getcurrentselection())[1]
 	ro1.handleSelection()
-	)
+)
 
 rollout ro1 "Options" width:232 height:336
 (
@@ -61,64 +61,64 @@ rollout ro1 "Options" width:232 height:336
 	---------------------------------------------------------------------------------------------------
 
 	fn trimFloat val n=
-		(
+	(
 		local p=10^n
 		return floor(val*p)/p
-		)
+	)
 
 	fn getVal val=
-		(
+	(
 		val=trimFloat val 1
 		if abs val < 0.1 then val=0
 		return val
-		)
+	)
 
 	fn handleSelection=
-		(
+	(
 		if NOT btnLock.state then
-			(
+		(
 			obj=sel
 			if sel!=undefined then
-				(
+			(
 				lblObj.text=obj.name
 				objClass=superclassof obj
-				)
+			)
 			else(
 				lblObj.text="Pick an object, camera or light..."
-				)
+			)
 			chkLight.enabled= 	objClass==light
 			chkCam.enabled=	objClass==camera
 			btnExport.enabled=(obj!=undefined)
-			)
 		)
+	)
 
 
 	fn setAnimRange=
-		(
+	(
 		local animRange=#()
 		animRange=case rdoAnimRange.state of
-			(
+		(
 			1:	#(sliderTime,sliderTime)
 			2:	#(animationrange.start,animationrange.end)
 			3:	#(spnAnimFrom.value,spnAnimTo.value)
-			)
+		)
 		spnAnimFrom.value=animRange[1]
 		spnAnimTo.value=animRange[2]
-		)
+	)
 
 	fn setCompSize=
-		(
+	(
 		local xy=#()
 		xy=case ddCompPreset.selection of
-			(
+		(
 			1:	#(spnCompWidth.value,spnCompHeight.value)
 			2:	#(renderwidth,renderheight)
 			3:	#(720,576)
 			4:	#(1024,576)
-			)
+		)
 		spnCompWidth.value=xy[1]
 		spnCompHeight.value=xy[2]
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -128,7 +128,7 @@ rollout ro1 "Options" width:232 height:336
 -- 3dsmax
 
 	on ro1 open do 
-		(
+	(
 		callbacks.addScript #selectionSetChanged "max2AESel()" id:#max2aeCallback
 		ddCompPreset.selection=2
 		setCompSize()
@@ -138,7 +138,7 @@ rollout ro1 "Options" width:232 height:336
 		max2AESel()
 		--if setClipboardText!=undefined then btnExport.text="Copy data to clipboard..." 
 
-		)
+	)
 
 	on ro1 close do callbacks.removeScripts id:#max2aeCallback
 
@@ -159,21 +159,21 @@ rollout ro1 "Options" width:232 height:336
 	on rdoAnimRange changed state do setAnimRange()
 
 	on spnAnimFrom changed val do
-		(
+	(
 		rdoAnimRange.state=3
 		if spnAnimFrom.value >= spnAnimTo.value then spnAnimTo.value = spnAnimFrom.value
-		)
+	)
 
 	on spnAnimTo changed val do
-		(
+	(
 		rdoAnimRange.state=3
 		if spnAnimTo.value <= spnAnimFrom.value then spnAnimFrom.value = spnAnimTo.value
-		)
+	)
 
 -- Export
 
 	on btnExport pressed do
-		(
+	(
 
 	-- variables
 		local posData=stringstream ""
@@ -211,15 +211,15 @@ rollout ro1 "Options" width:232 height:336
 	-- query object
 
 		if isvalidnode obj then
-			(
+		(
 			for t = spnAnimFrom.value to spnAnimTo.value do
-				(
+			(
 				at time t
-					(
+				(
 					if (spnAnimTo.value-spnAnimFrom.value==0) OR rdoAnimRange.state==1 then f=""
 					else f=t
 					in coordsys #world
-						(
+					(
 
 				-------------------------------------------------------------------------------
 				-- object
@@ -227,19 +227,19 @@ rollout ro1 "Options" width:232 height:336
 					-------------------------------------------------------------------------------
 					-- position
 						if chkPos.checked then
-							(
+						(
 						-- data
 							px=getVal obj.pos.x
 							py=getVal obj.pos.y
 							pz=getVal obj.pos.z
 						-- format
 							format "	%	%	%	%\n" f px -pz py to:posData
-							)
+						)
 
 					-------------------------------------------------------------------------------
 					-- rotation
 						if chkRot.checked AND (classof obj)!=Targetcamera then
-							(
+						(
 						-- data
 							in coordsys mxYUP rot=obj.rotation as eulerangles
 							rx=getVal rot.x
@@ -247,19 +247,19 @@ rollout ro1 "Options" width:232 height:336
 							rz=getVal rot.z
 						-- format
 							format "	%	%	%	%\n" f -rx ry rz to:rotData
-							)
+						)
 
 					-------------------------------------------------------------------------------
 					-- scale
 						if chkScale.checked then
-							(
+						(
 						-- data
 							sx=getVal obj.scale.x
 							sy=getVal obj.scale.y
 							sz=getVal obj.scale.z
 						-- format
 							format "	%	%	%	%\n" f sx sz sy to:scaleData
-							)
+						)
 		
 				-------------------------------------------------------------------------------
 				-- camera data
@@ -267,26 +267,26 @@ rollout ro1 "Options" width:232 height:336
 					-------------------------------------------------------------------------------
 					-- FOV
 						if chkCam.checked AND (superclassof obj)==camera then
-							(
+						(
 						-- data
 							--fov=getVal obj.fov
 							fov=(spnCompHeight.value/2)/(tan (obj.fov/2))
 						-- format
 							format "	%	%\n" f fov to:FOVData
-							)
+						)
 
 				-------------------------------------------------------------------------------
 				-- targetted objects
 
 						if (chkCam.checked OR chkLight.checked) AND obj.target!=undefined then
-							(
+						(
 						-- data
 							px=getVal obj.target.pos.x
 							py=getVal obj.target.pos.y
 							pz=getVal obj.target.pos.z
 						-- format
 							format "	%	%	%	%\n" f px -pz py to:targData
-							)
+						)
 
 
 		
@@ -295,9 +295,9 @@ rollout ro1 "Options" width:232 height:336
 						-- data
 						-- format
 							--format "	%	%	%	%\n" f px -pz py to:lightData
-					)
 				)
 			)
+		)
 
 
 		-- final data gathering
@@ -325,15 +325,15 @@ End of Keyframe Data\n" ddAEVersion.selected framerate spnCompWidth.value spnCom
 --			format "%" (data as string)
 /*
 			if setClipboardText == undefined then
-				(
+			(
 				clearListener()
 				format "%" (str as string)
-				)
+			)
 			else setClipboardText (str as string)
 */
 
-			)
 		)
+	)
 
 
 )

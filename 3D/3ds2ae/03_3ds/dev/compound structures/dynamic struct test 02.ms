@@ -2,7 +2,7 @@ clearListener()
 
 
 function makeStruct names values=
-	(
+(
 	-- names
 		local str=""
 		for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -19,7 +19,7 @@ function makeStruct names values=
 
 	-- return
 		return s
-	)
+)
 	
 	mystruct=makeStruct #(#var1,#var2,#var3) #("One","Two","Three")
 	mystruct.var3
@@ -31,9 +31,9 @@ struct List (
 		values=#(),
 		
 		fn setVal str val=
-			(
-			)
+		(
 		)
+	)
 		
 test
 

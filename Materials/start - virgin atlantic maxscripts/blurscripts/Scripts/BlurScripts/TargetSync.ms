@@ -22,15 +22,15 @@ global target_sync_func
 -- Functions
 
 fn target_sync_func = 
-	(
+(
 	for i in $* do
-		(
+	(
 		if superclassof i == light or superclassof i == camera then
-			(
+		(
 			if i.target != undefined then i.target.name = i.name + ".Target"
-			)
 		)
 	)
+)
 
 -- The Script
 

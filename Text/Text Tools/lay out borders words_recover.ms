@@ -1,9 +1,9 @@
 fn pad strStr strPad:"0" length:2 =
-	(
+(
 	strStr = strStr as string
 	while strStr.count < length do strStr = strPad + strStr
 	return strStr
-	)
+)
 
 str="Borders UK Conference 2006 Delivering our Brand
 our vision
@@ -23,12 +23,12 @@ arr = filterstring str "\n"
 x = 0
 y = 0
 for i = 1 to arr.count do
-	(
+(
 	col = random (color 128 128 128) (color 200 200 200)
 	local arrWords = filterstring arr[i] " "
 	local arrObjects = #()
 	for j = 1 to arrWords.count do
-		(
+	(
 		-- text
 			tStr	= arrWords[j]
 			tName	= "text " + (pad i) + "," + (pad j) + " - "+tStr
@@ -41,13 +41,13 @@ for i = 1 to arr.count do
 			t.steps = 2
 		-- objects
 			append arrObjects t
-		)
+	)
 	local gName = "group " + (pad i) + " - " + arr[i]
 	local gGroup = group arrObjects name:gName 
 	setGroupOpen gGroup true
 	
 	y += -160
 	x = 0
-	)
+)
 	
 unhide objects

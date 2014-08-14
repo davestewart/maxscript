@@ -32,8 +32,8 @@ blm_mat_1 = get_blurmat "Default_Standard"
 -- Script
 
 for i in $* do
-	(
+(
 	i.material = blm_mat_1
-	)
+)
 )
 -------------------------------------------------------------------------------

@@ -73,13 +73,13 @@ History:			04 Jun 2008	- created
 -------------------------------------------------------------------------------------------------------------------------------
 
 	struct ListItem
-	(
+(
 		name = "", 
 		value = ""
-	)
+)
 
 	struct List
-	(
+(
 		------------------------------------------------------------------------------
 		-- properties
 		
@@ -89,16 +89,16 @@ History:			04 Jun 2008	- created
 		-- pre-declaration
 		
 			fn getIndex name =
-				(
+			(
 				local index = 0
 				for i = 1 to items.count do
-				(
+			(
 					if items[i].name == name do
-					(
+				(
 						index = i
 						exit
-					)
 				)
+			)
 				index
 				),
 			
@@ -106,14 +106,14 @@ History:			04 Jun 2008	- created
 		-- setters
 		
 			function addItem name value =
-			(
+		(
 				local index = getIndex name
 				if index == 0 do index = items.count + 1
 				items[index] = ListItem name value
 			),
 			
 			function setItem name value =
-			(
+		(
 				addItem name value
 			),
 			
@@ -121,17 +121,17 @@ History:			04 Jun 2008	- created
 		-- getters (single)
 		
 			function getItem name =
-			(
+		(
 				local index = getIndex name
 				if index != 0 do items[index]
 			),
 			function getValue name =
-			(
+		(
 				local index = getIndex name
 				if index != 0 do items[index].value
 			),
 			function getName value =
-			(
+		(
 				for i = 1 to items.count do if items[i].value == value do return items[i].name
 			),
 			
@@ -146,39 +146,39 @@ History:			04 Jun 2008	- created
 		-- clear or delete items
 		
 			fn clear =
-			(
+		(
 				items = #(); 
 				items
 			),
 			
 			function deleteItem name =
-			(
+		(
 				local index = getIndex name
 				if index != 0 then
-				(
+			(
 					deleteitem items index
 					true
-				)
+			)
 				else
-				(
+			(
 					false
-				)
+			)
 			),
 
 			function deleteIndex index =
-			(
+		(
 				if index < items.count do
-				(
+			(
 					deleteItem items index
 					true
-				)
+			)
 			),
 			
 		------------------------------------------------------------------------------
 		-- utilities
 		
 			fn sort order:#asc field:#name func: =
-			(
+		(
 				-- comparison functions
 					fn compareAsc v1 v2 = v1 > v2
 					fn compareDesc v1 v2 = v1 < v2
@@ -192,29 +192,29 @@ History:			04 Jun 2008	- created
 					
 				-- do the sort
 					while true do
-					(
+				(
 						local changed = false
 						for i = 1 to (items.count - 1) do
-						(
+					(
 							if func (getProperty items[i] field) (getProperty items[i+1] field) do
-							(
+						(
 								swap items[i] items[i+1]
 								changed = true
-							)
 						)
-						if not changed then exit
 					)
+						if not changed then exit
+				)
 					
 				-- return
 					if field == #value then getValues() else getNames()
 			),
 			
 			fn print =
-			(
+		(
 				for i = 1 to items.count do format "%:	%\n" items[i].name items[i].value
-			)
+		)
 		
-	)
+)
 
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -294,10 +294,10 @@ History:			04 Jun 2008	- created
 		-- so we can tell if the sorting has worked or not
 			
 			fn showSpheres =
-				(
+			(
 				local spheres = lst.getValues()
 				for s in spheres do (select s; sleep 0.2; redrawviews())
-				)
+			)
 
 			showSpheres()
 			

@@ -53,15 +53,15 @@ ss_distance = 100
 -- Functions
 
 fn perform_scatter = 
-	(
+(
 	if selection.count == 0 then (MessageBox "Please select at least one object to scatter." title:"SimpleScatter")
 	else
-		(
+	(
 		scatter_obj = #()
 		s_objs = #()
 		for i in selection do append s_objs i
 		for i = 1 to ss_num_duplicates do
-			(
+		(
 			m = instance s_objs[random 1 s_objs.count]
 			
 			m.scale *= (random 0.1 2)
@@ -75,44 +75,44 @@ fn perform_scatter =
 			m.pos.y += random ss_start ss_end
 			
 			append scatter_obj m
-			)
 		)
 	)
+)
 
 -- Rollouts
 
 rollout ss_rollout "SimpleScatter"
-	(
+(
 	group "Parameters"
-	(
+(
 	spinner num_dups "Duplicates:" fieldWidth:50 range:[1,99999,15] type:#integer
 	spinner dist "Distance:" fieldWidth:50 range:[0.001,99999999,100] type:#worldunits
-	)
+)
 	on num_dups changed val do ss_num_duplicates = val
 	on dist changed val do ss_distance = val
 	
 	group "Utilities"
-	(	
+(	
 	button clear_scatter "Delete Previous Scatter" width:150 align:#center toolTip:"Delete Previous Scatter"
 	button select_scatter "Select Previous Scatter" width:150 align:#center toolTip:"Select Previous Scatter"
-	)
+)
 	on clear_scatter pressed do 
-		(
+	(
 		try (for i in scatter_obj do delete i)
 		catch (MessageBox "This operation has failed. One of the scatter objects may have been deleted, or you may have restarted the script since your last scatter." title:"SimpleScatter")
-		)
+	)
 	on select_scatter pressed do 
-		(
+	(
 		disableSceneRedraw()
 		try (select scatter_obj)
 		catch (MessageBox "This operation has failed. One of the scatter objects may have been deleted, or you may have restarted the script since your last scatter." title:"SimpleScatter")
 		enableSceneRedraw()
 		completeRedraw()
-		)
+	)
 	
 	button do_scatter "Scatter" width:150 align:#center toolTip:"Scatter"
 	on do_scatter pressed do perform_scatter()
-	)
+)
 
 if ss_floater != undefined then CloseRolloutFloater ss_floater
 ss_floater = newRolloutFloater "SimpleScatter v1.10" 200 240

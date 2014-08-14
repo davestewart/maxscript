@@ -2,7 +2,7 @@
 
 try(
 	destroyDialog roAETracker
-	)
+)
 catch()
 
 rollout roAETracker "After Effects Tracker" width:192 height:352
@@ -71,76 +71,76 @@ rollout roAETracker "After Effects Tracker" width:192 height:352
 	-------------------------------------------------------------------------------------------
 	
 		function setAEKeyframeCode =
-			(
-			)
+		(
+		)
 	
 		function doTrack =
-			(
-			)
+		(
+		)
 			
 		fn setTrackerObject obj =
-			(
+		(
 			objTracker = obj
 			pckTrackerObject.text = "Tracker: " + objTracker.name
-			)
+		)
 
 		fn getTrackerObject =
-			(
+		(
 			local sel = getCurrentSelection()
 			if sel.count == 1 then
-				(
+			(
 				if filterIsPlane sel[1] then setTrackerObject sel[1]
-				)
 			)
+		)
 
 		fn getRenderSize =
-			(
+		(
 			local w = spnMainWidth.value = renderWidth
 			local h = spnMainHeight.value = renderHeight
 			renderSize = [w,h]
-			)
+		)
 			
 		fn getTrackSize =
-			(
+		(
 			if isValidNode objTracker then
-				(
+			(
 				local w = spnTrackWidth.value = objTracker.baseObject.width
 				local h = spnTrackHeight.value =  objTracker.baseObject.length
 				trackerSize = [w,h]
-				)
 			)
+		)
 	
 		fn setTimeSegment =
-			(
+		(
 			timeSegment = interval spnTimeStart.value spnTimeEnd.value
-			)
+		)
 	
 		fn getTimeSegment =
-			(
+		(
 			spnTimeStart.value = timeSegment.start
 			spnTimeEnd.value = timeSegment.end
-			)
+		)
 	
 	-------------------------------------------------------------------------------------------
 	-- handlers
 	-------------------------------------------------------------------------------------------
 
 		on pckTrackerObject picked obj do
-			(
+		(
 			setTrackerObject obj
-			)
+		)
 		
 		on btnCalculate pressed do doTrack()
 
 		on roAETracker open do
-			(
+		(
 			getTrackerObject()
 			getTrackSize()
 			getRenderSize()
 			timeSegment = animationRange
 			getTimeSegment()
-			)
-	)
+		)
+)
 	
 createDialog roAETracker
 

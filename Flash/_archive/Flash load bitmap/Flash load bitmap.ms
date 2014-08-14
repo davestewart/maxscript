@@ -12,19 +12,19 @@ rollout r1 "Flash Load Bitmap Test" width:312 height:344
 		
 	-- functions
 		fn flashLoadBitmap bmp =
-			(
+		(
 			ax.SetVariable "bitmap" (flashPath + bmp)
 			ax.TCallLabel "_root" "loadBitmap"
-			)
+		)
 	
 	-- handlers
 		on r1 open do
-			(
+		(
 			ax.movie		= flashPath + "loadBitmap.swf" -- flash movie
 			ax.Scale		= "NoScale" -- no scale
 			ax.SAlign		= "TL" -- top left
 			ax.Menu			= false
-			)
+		)
 
 		on btn1 pressed do flashLoadBitmap "bitmap1.jpg"
 		on btn2 pressed do flashLoadBitmap "bitmap2.jpg"

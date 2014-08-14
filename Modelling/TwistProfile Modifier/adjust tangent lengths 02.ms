@@ -25,7 +25,7 @@
 
 
 fn setTangentLength p r type:#in=
-	(
+(
 	-- original dimensions
 		local t		= if type == #in then p.inTangent else p.outTangent
 		local x1	= t.x
@@ -44,14 +44,14 @@ fn setTangentLength p r type:#in=
 	-- plot the point
 		if type == #in then 	p.inTangent = [-x2,-y2]
 		else 					p.outTangent = [x2,y2]
-	)
+)
 
 
 fn getTangentLengths cc ci type:#in =
-	(
+(
 	
 	return val
-	)
+)
 
 p = roCC.cc1.curves[1].points[2]
 setTangentLength p (random 50 200) type:#in

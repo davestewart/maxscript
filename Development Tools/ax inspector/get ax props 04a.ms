@@ -3,23 +3,23 @@
 -- Functions
 
 	fn split str char=
-		(
+	(
 		local n = findstring str char
 		if n != undefined then return #(substring str 1 (n-1), substring str n -1)
 		else return #(str)
-		)
+	)
 
 	fn getListenerText=
-		(
+	(
 		local str
 		setListenerSel #(0,-1)
 		str	= getListenerSelText()
 		setListenerSel #(-1,-1)
 		return str
-		)
+	)
 	
 	fn getAXProps ax dump:false=
-		(
+	(
 		clearlistener()
 		showproperties ax
 		local propStr=getListenerText()
@@ -27,30 +27,30 @@
 		
 		--if dump == true then format "%" propStr to:(newscript())
 		return propStr
-		)
+	)
 	
 	fn replaceAll str outStr inStr=
-		(
+	(
 		for i = str.count to 1 by -1 do
-			(
+		(
 			if str[i]==outStr then
-				(
+			(
 				local beg=substring str 1 (i-1)
 				local end=substring str (i+1) -1
 				str=beg+inStr+end
-				)
 			)
-		return str
 		)
+		return str
+	)
 
 	fn trim str =
-		(
+	(
 		return trimRight (trimLeft str)
-		)
+	)
 
 
 	fn tabulate str tabStop=
-		(
+	(
 		-- make sure tabstop is on a multiple of 4
 			local tabLength	= 4.0
 			tabStop = ((tabStop/tabLength as integer)+1) * tabLength
@@ -69,7 +69,7 @@
 		
 		-- end
 			return str
-		)
+	)
 
 
 -------------------------------------------------------------------
@@ -80,39 +80,39 @@
 	global ax, propArr
 	
 	function handleClass class=
-		(
+	(
 		case class of
-			(
+		(
 			"boolean" :
-				(
+			(
 				return "#(true , false)"
-				)
-			"integer" :
-				(
-				return ""
-				)
-			"OLE_COLOR" :
-				(
-				return ""
-				)
-			"OLE_HANDLE" :
-				(
-				return ""
-				)
-			"float" :
-				(
-				return ""
-				)
-			"string" :
-				(
-				return ""
-				)
-			default: return undefined
 			)
+			"integer" :
+			(
+				return ""
+			)
+			"OLE_COLOR" :
+			(
+				return ""
+			)
+			"OLE_HANDLE" :
+			(
+				return ""
+			)
+			"float" :
+			(
+				return ""
+			)
+			"string" :
+			(
+				return ""
+			)
+			default: return undefined
 		)
+	)
 
 	function convertPropString str=
-		(
+	(
 		
 		--	Example strings
 			--	.Arrange : ListArrangeConstants( #lvwNone | #lvwAutoLeft | #lvwAutoTop )
@@ -135,18 +135,18 @@
 
 			-- simple
 				if arrClassEnums.count == 1 then --< IColumnHeaders>
-					(
+				(
 					axProp.class	= trim arrClassEnums[1]
 					axProp.enums	= handleClass propClass
-					)
+				)
 			-- complex (enum)
 				else
-					(
+				(
 					axProp.class	= trim arrClassEnums[1]
 					axProp.enums	= arrClassEnums[2]
 					axProp.enums	= replaceAll axProp.enums "|" ","
 					axProp.enums	= execute ("#" + axProp.enums)
-					)
+				)
 				
 			-- get VALUE
 					axProp.value = getproperty ax axProp.name
@@ -155,37 +155,37 @@
 		-- return
 			return axProp
 			--#(propName,propValue,propEnums,propClass)
-		)
+	)
 	
 
 	function parsePropStr propStr=
-		(
+	(
 		local propStr	= propStr as stringstream
 		while not eof propStr do
-			(
+		(
 			local line = readline propStr
 			if findstring line "read-only" == undefined then
-				(
+			(
 				line = line as string
 				if line.count > 0 then
-					(
+				(
 					try
-						(
+					(
 						local props = convertPropString (line as string)
 						append propArr props
-						)
+					)
 					catch
-						(
+					(
 						format "-- Failed on line %\n" line
-						)
 					)
 				)
 			)
 		)
+	)
 
 
 	function printProps=
-		(
+	(
 		-- stringstream
 			ss = stringstream ""
 		
@@ -198,7 +198,7 @@
 
 		-- print props
 			for p in propArr do
-				(
+			(
 				-- name
 					nameStr = tabulate ("ax." + p.name) width
 					format "%" nameStr to:ss
@@ -209,23 +209,23 @@
 
 				-- enums
 					if p.enums == undefined then
-						(
+					(
 						if  p.class == "string" then format "= \"%\"" p.value to:ss
 						else format "= %" p.value to:ss
 
 						if p.value == undefined then format "	--%" p.class to:ss
 						format "\n" to:ss
-						)
+					)
 					else
-						(
+					(
 						local n = finditem p.enums p.value
 						format "= %[%]	--%\n" p.enums n p.class to:ss
-						)
-				)
+					)
+			)
 		-- format
 			w = newscript()
 			format "%" (ss as string) to:w
-		)
+	)
 (
 propArr = #()
 ax = ro1.ax

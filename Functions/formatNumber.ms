@@ -1,20 +1,20 @@
 fn formatNumber num mask:"###,###,###,###.##" =
-	(
+(
 	local nDec	= num - (num as int)
 	local nNum	= num as int
 	local sDec	= ""
 	local sNum	= ""
 	local j		= 1
 	for i = mask.count to 1 by -1 do 
-		(
+	(
 		if mask[i] == "#" do 
-			(
+		(
 			sNum = sNum + 
 			j += 1
-			)
 		)
-	return sNum + "." + sDec
 	)
+	return sNum + "." + sDec
+)
 	
 formatNumber 12300.34457
 

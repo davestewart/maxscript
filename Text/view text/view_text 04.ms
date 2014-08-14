@@ -15,21 +15,21 @@ rollout ro1 "Options" width:160 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn drawText = 
-	(
+(
 	-- set the obj names as an array
 		objList = #()
 		for obj in selection do append objList obj
 
 		if viewport.activeViewport != lastViewport do
-			(
+		(
 			completeredraw()
 			lastViewport = viewport.activeViewport 
-			)
+		)
 
 		for i = 1 to objList.count do
-			(
+		(
 			try 
-				(
+			(
 				if ro1.chk1.checked then local txt = (objList[i].name as String-- + ": " + objList[i].height as String)
 
 				gw.setTransform(Matrix3 1) 
@@ -41,13 +41,13 @@ rollout ro1 "Options" width:160 height:311
 				--gw.text pos viewtext color:(ro1.cp1.color)
 				
 				
-				)
-			catch ()
 			)
+			catch ()
+		)
 			print objList.count
 			gw.enlargeUpdateRect #whole 
 			gw.updateScreen() 
-	)
+)
 
 fn dtcb = drawText()
 
@@ -63,27 +63,27 @@ fn dtcb = drawText()
 
 
 	on ro1 close do
-	(
+(
 	unregisterRedrawViewsCallback dtcb
 	completeredraw()
-	)
+)
 	on chk1 changed state do
-	(
+(
 		if chk1.checked then
-			(
+		(
 			print "registering RedrawViewsCallback"
 			registerRedrawViewsCallback dtcb
-			)
+		)
 		else (
 			print "UN-registering RedrawViewsCallback"
 			unregisterRedrawViewsCallback dtcb
-			)
+		)
 		completeredraw()
-	)
+)
 	on cp1 changed val do
-	(
+(
 	completeredraw()
-	)
+)
 )
 
 if myFloater != undefined then closerolloutfloater myFloater

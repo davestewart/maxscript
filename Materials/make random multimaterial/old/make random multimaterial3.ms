@@ -17,37 +17,37 @@ Clearing a checkbox will delete any existing values!" pos:[8,104] width:192 heig
 
 	
 	on chkCol changed state do
-	(
+(
 	case chkCol.checked of
-		(
+	(
 		true: addRollout matColor multiMat
 		false: removeRollout matColor multiMat
-		)
 	)
+)
 	on chkSpec changed state do
-	(
+(
 	case chkSpec.checked of
-		(
+	(
 		true: addRollout matSpec multiMat
 		false: removeRollout matSpec multiMat
-		)
 	)
+)
 	on chkOpac changed state do
-	(
+(
 	case chkOpac.checked of
-		(
+	(
 		true: (print "Adding opacity options");	-- addRollout matOpac multiMat)
 		false: ( print "Removing opacity options");	-- removeRollout matOpac multiMat)
-		)
 	)
+)
 	on chkOther changed state do
-	(
+(
 	case chkOther.checked of
-		(
+	(
 		true: addRollout matOther multiMat
 		false: removeRollout matOther multiMat
-		)
 	)
+)
 )
 
 
@@ -108,7 +108,7 @@ rollout matColor "Color Options" width:210 height:600
 	---------------------------------------------------------------------------------------------------
 	
 	fn updateColor =
-		(
+	(
 		-- set variables
 			baseClr = cpClr.color
 			rVar = spnClrRedVar.value
@@ -157,12 +157,12 @@ rollout matColor "Color Options" width:210 height:600
 
 		-- update preview
 			for i = 1 to 10 do
-				(
+			(
 				swatch = execute("matColor.cpPrv" + i as String)
 				swatch.color = matGen.setColor i 10
-				)
+			)
 
-		)
+	)
 	
 	
 	---------------------------------------------------------------------------------------------------
@@ -202,18 +202,18 @@ rollout matGen "Material Generation" width:210 height:544
 	---------------------------------------------------------------------------------------------------
 	
 	fn setColor i j =
-		(
+	(
 		case matColor.rdoColGen.state of
-			(
+		(
 			1:
-				(
+			(
 				r = random rMin rMax
 				g = random gMin gMax
 				b = random bMin bMax
-				)
+			)
 
 			2:
-				(
+			(
 				r = rMin + (((rMax - rMin) / j) * i)
 					if r > 255 then r = 255
 					if r < 0 then r = 0
@@ -223,54 +223,54 @@ rollout matGen "Material Generation" width:210 height:544
 				b = bMin + (((gMax - gMin) / j) * i)
 					if b > 255 then b = 255
 					if b < 0 then b = 0
-				)
 			)
+		)
 		-- print ("r:" + r as String + " g:" + g as String + " b: " + b as String)
 		return (color r g b)
-		)
+	)
 
 	fn setOpac matSub i j =
-		(
+	(
 		case matOpac.rdoOpacCtrl.state of
-			(
+		(
 			1: -- copy
-				(
+			(
 				matSub.opacity = random opacMin opacMax
-				)
+			)
 
 			2: -- instance
-				(
+			(
 				matSub.opacity.controller = opacCtrl
 				opacCtrl.value = matOpac.spnOpacVal.value
-				)
 			)
-		if matOpac.chkOpac2Sided.checked then matSub.twoSided = true
 		)
+		if matOpac.chkOpac2Sided.checked then matSub.twoSided = true
+	)
 
 	fn setOpacMap matSub =
-		(
+	(
 		if matOpac.btnOpacMap.map != undefined then
-			(
+		(
 			case matOpac.rdoOpacMapCtrl.state of
-				(
+			(
 				1:
-					(
+				(
 					matSub.opacityMap = copy matOpac.btnOpacMap.map
 					matSub.opacityMap.name = matSub.opacityMap.name + " copy"
-					)
-				2:
-					(
-					matSub.opacityMap = matOpac.btnOpacMap.map
-					)
 				)
-			if matOpac.chkOpacAffectMap.checked then matSub.opacityMapAmount = random opacMin opacMax
+				2:
+				(
+					matSub.opacityMap = matOpac.btnOpacMap.map
+				)
 			)
+			if matOpac.chkOpacAffectMap.checked then matSub.opacityMapAmount = random opacMin opacMax
 		)
+	)
 
 
 
 	fn createMaterial slot =
-		(
+	(
 		max mtledit
 		global subs = amtSubs.value
 	
@@ -279,7 +279,7 @@ rollout matGen "Material Generation" width:210 height:544
 		matTop.numSubs = subs
 	
 		for i = 1 to subs do
-			(
+		(
 			matSub = meditMaterials[slot].materialList[i]
 			matSub.name = matName.text + " sub" + i as String
 
@@ -287,18 +287,18 @@ rollout matGen "Material Generation" width:210 height:544
 				if components.chkCol.checked then matSub.Diffuse = setColor i subs
 			-- opacity
 				if components.chkOpac.checked then
-					(
+				(
 					setOpac matSub i subs
 					setOpacMap matSub
-					)
-			)
+				)
+		)
 		activeMeditSlot = slot
 
 		-- set Material editor preferences as a <bitarray>
 		-- 1: MTL_BEING_EDITED, 2: BACKGROUND, 3: BACKLIGHT, 4: VIDEO_COLOR_CHECK
 			setMTLMEditFlags meditMaterials[slot] #{2,3}
 
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -332,7 +332,7 @@ rollout matOpac "Opacity" width:210 height:432
 	---------------------------------------------------------------------------------------------------
 
 	fn updateOpac =
-		(
+	(
 
 		-- set variables
 			opacBas = spnOpacVal.value
@@ -352,66 +352,66 @@ rollout matOpac "Opacity" width:210 height:432
 			opacCtrl.value = opacBas
 			print opacCtrl
 				
-		)
+	)
 
 
 	fn updateOpacDisplay =
-		(
+	(
 		case rdoOpacCtrl.state of
-			(
+		(
 			1:
-				(
+			(
 				-- copy
 				spnOpacVar.value = 10
 				spnOpacVar.enabled = true
 				rdoOpacMapCtrl.enabled = true
 				updateOpac()
-				)
+			)
 			2:
-				(
+			(
 				-- instance
 				spnOpacVar.value = 0
 				spnOpacVar.enabled = false
 				rdoOpacMapCtrl.enabled = false
 				rdoOpacMapCtrl.state = 2
 				updateOpac()
-				)
 			)
 		)
+	)
 
 
 	fn setOpacMapBtnDisplay =
-		(
+	(
 		if btnOpacMap.map != undefined then
-			(
+		(
 			name =  btnOpacMap.map.name as string
 			type = classof btnOpacMap.map as String
 			btnOpacMap.text= name + " (" + type + ")"
 			chkOpacAffectMap.enabled = true
-			)
+		)
 		else
-			(
+		(
 			btnOpacMap.text= "None"
 			chkOpacAffectMap.enabled = false
-			)
 		)
+	)
 
 	fn updateOpacMapCtrl =
-		(
+	(
 		case rdoOpacMapCtrl.state of
-			(
+		(
 			1:
-				(
+			(
 				print "Copy only"
-				)
+			)
 			2:
-				(
+			(
 				opacMapInst = btnOpacMap.map
 				print "instance"
 				print opacMapInst 
-				)
 			)
 		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- handlers
@@ -430,9 +430,9 @@ rollout matOpac "Opacity" width:210 height:432
 ---------------------------------------------------------------------------------------------------
 
 if multiMat != undefined do
-	(
+(
 	closerolloutfloater multiMat 
-	)		
+)		
 multiMat = newRolloutFloater "Random Multi Material" 230 800
 addRollout matGen multiMat
 addRollout components multiMat rolledup:true

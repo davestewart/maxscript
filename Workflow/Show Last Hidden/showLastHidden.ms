@@ -17,33 +17,33 @@
 
 	-- struct
 		struct showLastHidden
-			(
+		(
 			nodes = #(#())
 			,
 			fn addNode =
-				(
+			(
 				local obj = callbacks.notificationParam()
 				append nodes[nodes.count] obj
-				)
+			)
 			,
 			fn showLastHidden =
-				(
+			(
 				
 				if nodes.count > 0 then	
-					(
+				(
 					if nodes.count > 1 AND nodes[nodes.count].count == 0 then nodes.count = nodes.count - 1
 					unhide nodes[nodes.count]
 					nodes.count = nodes.count - 1
 					if nodes.count == 0 do nodes = #(#())
-					)
-				else nodes = #(#())
 				)
+				else nodes = #(#())
+			)
 			,
 			fn update =
-				(
+			(
 				if nodes[nodes.count].count > 0 do append nodes (#())
-				)
 			)
+		)
 			
 	-- instance
 		global hiddenList = showLastHidden()
@@ -69,12 +69,12 @@
 		tooltip:"Show Last Hidden Objects" 
 		buttontext:"Show Last Hidden" 
 		icon: #("ViewportNavigationControls",8)
-		(
+	(
 		if hiddenList == undefined then hiddenList = showLastHidden()
 		hiddenList.showLastHidden()
 		
 		--on isEnabled do hiddenList.nodes[1].count > 0
-		)
+	)
 	
 	/*
 	print hiddenList.nodes

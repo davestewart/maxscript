@@ -52,7 +52,7 @@ rollout ro1 "Options" width:232 height:336
 -- 3dsmax
 
 	on btnObj pressed do
-		(
+	(
 		obj=pickObject message:"Pick an object, light or camera..."
 		btnObj.text=obj.name
 		objClass=superclassof obj
@@ -60,24 +60,24 @@ rollout ro1 "Options" width:232 height:336
 		
 		chkLight.enabled= 	objClass==light
 		chkCam.enabled=	objClass==camera
-		)
+	)
 
 
 -- After Effects
 
 	on ddCompPreset selected item do
-		(
+	(
 		local xy=#()
 		xy=case ddCompPreset.selection of
-			(
+		(
 			1:	#(spnCompWidth.value,spnCompHeight.value)
 			2:	#(renderwidth,renderheight)
 			3:	#(720,576)
 			4:	#(1024,576)
-			)
+		)
 		spnCompWidth.value=xy[1]
 		spnCompHeight.value=xy[2]
-		)
+	)
 
 	on spnCompWidth changed val do ddCompPreset.selection=1
 	on spnCompHeight changed val do ddCompPreset.selection=1
@@ -86,49 +86,49 @@ rollout ro1 "Options" width:232 height:336
 -- Animation range
 
 	on ddAnimRange selected sel do
-		(
+	(
 		local animRange=#()
 		animRange=case ddAnimRange.selection of
-			(
+		(
 			1:	#(spnAnimFrom.value,spnAnimTo.value)
 			2:	#(animationrange.start,animationrange.end)
 			3:	#(sliderTime,sliderTime)
-			)
+		)
 		spnAnimFrom.value=animRange[1]
 		spnAnimTo.value=animRange[2]
-		)
+	)
 
 	on spnAnimFrom changed val do
-		(
+	(
 		ddAnimRange.selection=1
 		if spnAnimFrom.value >= spnAnimTo.value then spnAnimTo.value = spnAnimFrom.value
-		)
+	)
 
 	on spnAnimTo changed val do
-		(
+	(
 		ddAnimRange.selection=1
 		if spnAnimTo.value <= spnAnimFrom.value then spnAnimFrom.value = spnAnimTo.value
-		)
+	)
 
 -- Export
 
 	on btnExport pressed do
-		(
+	(
 		local posData, rotData, scaleData, camdata, lightData, str="" as stringstream
 		if isvalidnode obj then
-			(
+		(
 			-- position
 				if chkPos.checked then
-					(
+				(
 					str="\nPosition
 	Frame	X pixels	Y pixels	Z pixels\n"
 
 					for t = spnAnimFrom.value to spnAnimTo.value do
-						(
+					(
 						at time t
-							(
+						(
 							in coordsys #world
-								(
+							(
 								px=obj.pos.x
 								py=obj.pos.y
 								pz=obj.pos.z
@@ -138,13 +138,13 @@ rollout ro1 "Options" width:232 height:336
 								rx=rot.x
 								ry=rot.y
 								rz=rot.z
-								)
 							)
+						)
 
 						str+="	"+t as string+"	"+(-px) as string+"	"+(-pz) as string+"	"+py as string+"\n"
 			
-					)
 				)
+			)
 
 			-- rotation
 
@@ -170,8 +170,8 @@ Adobe After Effects 6.0 Keyframe Data
 				
 %
 End of Keyframe Data\n\n" framerate spnCompWidth.value spnCompHeight.value str
-			)
 		)
+	)
 )
 
 if AEFloater != undefined then closerolloutfloater AEFloater

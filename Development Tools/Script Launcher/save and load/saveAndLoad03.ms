@@ -7,41 +7,41 @@
 	global scriptMngr_INIPath = (getDir #scripts) + "\\new\\Script Launcher\\settings.ini"
 
 	fn scriptMngr_saveSet roName =
-		(
+	(
 		setINISetting scriptMngr_INIPath "Modelling" "keys" (ro1.lbxList.items.count as String)
 		for i = 1 to ro1.lbxList.items.count do
-			(
+		(
 			setINISetting scriptMngr_INIPath "Modelling" ("item_" + i as String) ro1.lbxList.items[i]
-			)
 		)
+	)
 
 	fn scriptMngr_LoadSet roName =
-		(
+	(
 		tempArray = #()
 		items = (getINISetting scriptMngr_INIPath "Modelling" "keys") as Integer
 		for i = 1 to items do
-			( 
+		( 
 			append tempArray (getINISetting scriptMngr_INIPath "Modelling" ("item_" + i as String))
-			)
-		ro1.lbxList.items = tempArray
 		)
+		ro1.lbxList.items = tempArray
+	)
 
 	fn scriptMngr_clearSet roName =
-		(
+	(
 		for i = 1 to ro1.lbxList.items.count do
-			(
+		(
 			setINISetting scriptMngr_INIPath "Modelling" ("item_" + i as String) ""
-			)
+		)
 		setINISetting scriptMngr_INIPath "Modelling" "keys" "0"
 		ro1.lbxList.items = #()
-		)
+	)
 
 	fn scriptMngr_itemCount roName=
-		(
+	(
 		x = execute (roName + ".lbxList.items.count as String")
 
 		return x
-		)
+	)
 
 
 rollout baseRollout "Base Rollout" width:160 height:311
@@ -62,13 +62,13 @@ rollout baseRollout "Base Rollout" width:160 height:311
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 	on btnInput pressed do
-		(
+	(
 		tempItems = ro1.lbxList.items
 		append tempItems edtInput.text
 		ro1.lbxList.items = tempItems
 		edtInput.text = ""
 		ro1.lblItems.text = scriptMngr_itemCount "ro1"
-		)
+	)
 )
 
 

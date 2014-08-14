@@ -1,10 +1,10 @@
 -- the function
 	function addArgs arg1 arg2 =
-		(
+	(
 		if classof arg1==String OR classof arg2==String then
 			return (arg1 as string + arg2 as string)
 		else return arg1+arg2
-		)
+	)
 
 -- exmaple
 	addArgs 1 6
@@ -13,9 +13,9 @@
 
 -- calling a functio with a keyword argument
 	function functionCaller thefunct arg1 arg2 =
-		(
+	(
 		theFunct arg1 arg2
-		)
+	)
 
 -- example
 	functionCaller addArgs 4 6

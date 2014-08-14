@@ -17,7 +17,7 @@ fn buildUICtrlDataStructArr rol =
 	cnt=0
 	UICtrlArr=
 	for c in rol.controls collect
-	(
+(
 		cnt		+=1
 		ss		 =stringstream ""
 		format "%" c to:ss
@@ -32,5 +32,5 @@ fn buildUICtrlDataStructArr rol =
 				cName:		fs[2]		\
 				cText:		c.text		\
 				enabled:	c.enabled
-	)
+)
 )

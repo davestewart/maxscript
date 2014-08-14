@@ -33,32 +33,32 @@ timeforward = 5
 -- Functions
 
 fn jiggle_the_tracks tv = 
-	(
+(
 	undo "RandomTrackTiming" on
-		(
+	(
 		if tv != undefined then
-			(
+		(
 			selected_tracks = #()
 			for i = 1 to tv.numSelTracks() do
-				(
+			(
 				append selected_tracks (tv.getSelected i)
-				)
+			)
 			if selected_tracks.count !=0 then
-				(
+			(
 				for w = 1 to selected_tracks.count do
-					(
+				(
 					the_amount = (random (-timeback) timeforward) as integer
 					try (movekeys selected_tracks[w] the_amount) catch ()
-					)
 				)
 			)
 		)
 	)
+)
 
 -- Script
 
 rollout rtt_rollout "RandomTrackTiming"
-	( 
+( 
 	button doit "Apply To Selected Tracks" width:155 align:#center toolTip:"Apply To Selected Tracks" 
 	on doit pressed do jiggle_the_tracks trackviews.currentTrackView
 
@@ -67,7 +67,7 @@ rollout rtt_rollout "RandomTrackTiming"
 
 	spinner forwardfromstart "Forward From Start " range:[0,9999999,5] fieldWidth:40 type:#integer
 	on forwardfromstart changed val do timeforward = val
-	)
+)
 
 if rtt_floater != undefined then CloseRolloutFloater rtt_floater
 rtt_floater = newRolloutFloater "RandomTrackTiming v1.00" 205 140

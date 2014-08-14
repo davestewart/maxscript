@@ -57,36 +57,36 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 	---------------------------------------------------------------------------------------------------
 
 	fn isIn container item=
-		(
+	(
 		-- items should be uiItem structs
 		local c=container
 		local i = item
 		local c=box2 c.x c.y c.w c.h
 		local i=point2 i.x i.y
 		return (contains c i)
-		)
+	)
 
 	fn orderArray arr=
-		(
+	(
 		tmpArr=#()
 		for y = 1 to arr.count do
-			(
+		(
 			if arr[y]!=undefined then
-				(
+			(
 				for x = 1 to arr[y].count do
-					(
+				(
 					if arr[y][x]!=undefined then
-						(
+					(
 						append tmpArr arr[y][x]
-						)
 					)
 				)
 			)
-		return tmpArr
 		)
+		return tmpArr
+	)
 
 	fn go=
-		(
+	(
 		-----------------------------------------------------------------
 		--	variables
 		
@@ -105,7 +105,7 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 		-----------------------------------------------------------------
 
 		for s in strArr do
-			(
+		(
 			---------------------------------------------------------
 			--	strip whitespace
 
@@ -124,35 +124,35 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 				-- x,y
 					i=findstring s "pos:["
 					if i != undefined then
-						(
+					(
 						str=substring s (i+5) -1
 						str=(filterstring str "]")[1]
 						arr=filterstring str ","
 						x=arr[1] as integer
 						y=arr[2] as integer
 						--format "x: % y: % \n" x y
-						)
+					)
 
 				-- width
 					i=findstring s "width:"
 					if i != undefined then
-						(
+					(
 						str=substring s (i+6) -1
 						str=(filterstring str " ")[1]
 						w=str as integer
 						--format "w: % \n" w
-						)
+					)
 
 				-- height
 					i=findstring s "height:"
 					--format "i:% \n" i
 					if i != undefined then
-						(
+					(
 						str=substring s (i+7) -1
 						str=(filterstring str " ")[1]
 						h=str as integer
 						--format "h: % \n" h
-						)
+					)
 
 
 			---------------------------------------------------------
@@ -170,16 +170,16 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 				local ui=uiItem type:type x:x y:y w:w h:h string:s
 
 				if type=="groupBox" then
-					(
+				(
 					if uiGroupArr[y]==undefined then uiGroupArr[y]=#()
 					if uiGroupArr[y][x]==undefined then uiGroupArr[y][x]=ui
-					)
+				)
 				else
-					(
+				(
 					if uiItemArr[y]==undefined then uiItemArr[y]=#()
 					if uiItemArr[y][x]==undefined then uiItemArr[y][x]=ui
-					)
-			)
+				)
+		)
 			
 
 
@@ -199,23 +199,23 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 		-------------------------------------------------------------
 		str = ""
 		for g = 1 to uiGroupArr.count do
-			(
+		(
 			--format "%\n" uiGroupArr[g].string
 			str+="	"+uiGroupArr[g].string+"\n"
 			
 			for i = 1 to uiItemArr.count do
-				(
+			(
 				if isIn uiGroupArr[g] uiItemArr[i] then
-					(
+				(
 					--format "%\n" uiItemArr[i].string
 					str+="		"+uiItemArr[i].string+"\n"
-					)
 				)
+			)
 			--format "\n"
 			str+="\n"
-			)
-			edt1.text=str
 		)
+			edt1.text=str
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -226,13 +226,13 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 	
 
 	on ro1 open do
-		(
+	(
 		edt1.text = uiStr
-		)
+	)
 	on btn1 pressed do
-		(
+	(
 		go()
-		)
+	)
 )
 
 if uiTidyFloater != undefined then closerolloutfloater uiTidyFloater

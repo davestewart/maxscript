@@ -1,7 +1,7 @@
 
 
 rollout roCC "Curve Control"
-	(
+(
 
 	-------------------------------------------------------------------------------------
 	-- interface
@@ -33,10 +33,10 @@ rollout roCC "Curve Control"
 
 	-- get
 		fn saveCurve m c = -- m:modifier, c:curve control
-			(
+		(
 			local p
 			for i = 1 to c.points.count do
-				(
+			(
 				p						= c.points[i].value
 				m.twistVals[i]			= point3 p.x p.y 0
 				
@@ -45,15 +45,15 @@ rollout roCC "Curve Control"
 			
 				p						= c.points[i].outTangent
 				m.twistValsOut[i]		= point3 p.x p.y 0
-			 	)
-			)
+			 )
+		)
 		
 	-- set
 		fn loadCurve m c = -- m:modifier, c:curve control
-			(
+		(
 			local p
 			for i = 1 to c.points.count do
-				(
+			(
 				p						= m.twistVals[i]
 				c.points[i].value		= point2 p.x p.y
 		
@@ -62,34 +62,34 @@ rollout roCC "Curve Control"
 		
 				p						= m.twistValsOut[i]
 				c.points[i].outTangent	= point2 p.x p.y
-			 	)
-			)
+			 )
+		)
 			
 			function updateModifier =
-				(
+			(
 				zoom cc1 #all
 				try($.modifiers[1].twist += 0)
 				catch()
-				)
+			)
 				
 			fn flattenTangents cc ci =	-- cc:curvecontrol, ci:curve index
-				(
+			(
 				local arrPoints = getSelectedPts cc.curves[ci]
 				for pi = 1 to arrPoints.count do
-					(
+				(
 					if arrPoints[pi] == true then
-						(
+					(
 						local p = getPoint cc.curves[ci] pi
 						p.inTangent = p.inTangent * [1,0]
 						p.outTangent = p.outTangent * [1,0]
 						print p.outTangent
-						)
 					)
-
 				)
+
+			)
 				
 			fn createTestCurve cc ci name:"Curve" col:black=
-				(
+			(
 				-- Initialize curve properties
 					local numPoints		= 10
 					local crv			= cc.curves[ci]
@@ -103,18 +103,18 @@ rollout roCC "Curve Control"
 					crv.numPoints		= numPoints
 					local span			= cc.x_range[2] / (numPoints - 1)
 					for i = 1 to numPoints do
-						(
+					(
 						local x			= span * (i - 1)
 						local y			= random -360 360
 						crv.points[i].value	= [x,y]
 						crv.points[i].bezier = true
 						crv.points[i].corner = false
-						)
+					)
 				-- stuff
 					--local del = (cc1.x_range.y - cc1.x_range.x)/(crv.numPoints-1)
 					-- format "del:%\n" del
 					-- Place intermediate points equally spaced
-				)
+			)
 
 	-------------------------------------------------------------------------------------
 	-- handlers
@@ -122,11 +122,11 @@ rollout roCC "Curve Control"
 	 	on btnFlatten pressed do flattenTangents cc1 1
 			
 		on roCC open do 
-			(
+		(
 			createTestCurve cc1 1 name:"Twist" col:red 
 			zoom cc1 #all
 			print "Opened: " + cc1.name
-			)
+		)
 	 
 	 
 		-- Curve control event handlers
@@ -141,7 +141,7 @@ rollout roCC "Curve Control"
 			on cc1 deleted ci pi do format "curve % deleted : %\n" ci pi
 			on cc1 reset ci do format "curve % resetted\n" ci
 		*/
-	)
+)
  
 createdialog roCC 820 440
 

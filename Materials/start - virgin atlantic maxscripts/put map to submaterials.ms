@@ -14,11 +14,11 @@ getFilenamePath
 files = getfiles (dir + "\\*." + ext)
 
 for i = 2 to mm.numsubs do
-	(
+(
 	m = meditmaterials[1][i] = copy mat
 	f = m.opacityMap.fileName 
 	m.opacityMap.fileName = files[i]
-	)
+)
 getfiles
 
  

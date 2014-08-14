@@ -21,11 +21,11 @@ files = getfiles (dir + "\\*." + ext)
 mm.numsubs = files.count
 
 for i = 2 to mm.numsubs do
-	(
+(
 	m = mm[i] = copy mat
 	m.name = "Material " + i as string
 	m.opacityMap.fileName = files[i]
-	)
+)
 	
 	mm[4].name
 	

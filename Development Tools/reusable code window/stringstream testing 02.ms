@@ -24,21 +24,21 @@ interface."
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	on btn1 pressed do
-		(
+	(
 
 		local txt1 = stringstream edt1.text
 		local txt2 = ""
 
 		while not (eof txt1) do
-			(
+		(
 			txt2 += "
 		" + (readLine txt1)
-			)
+		)
 
 		close txt1
 
 		edt2.text = txt2
-		)
+	)
 
 
 

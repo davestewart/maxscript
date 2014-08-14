@@ -2,15 +2,15 @@ viewport.setLayout #layout_3vl
 viewArr=#(#view_top,#view_camera,#view_persp_user)
 
 for i = 1 to viewArr.count do
-	(
+(
 	viewport.activeViewport=i
 	viewport.setType viewArr[i]
 	if viewArr[i] == #view_camera then 
-		(
+	(
 		displaySafeFrames = true
 		forcecompleteredraw()
-		)
 	)
+)
 max tool zoomextents all
 
 

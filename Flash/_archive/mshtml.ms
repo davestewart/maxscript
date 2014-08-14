@@ -27,16 +27,16 @@ rollout ro1 "Options" width:#cmdPanel height:311 -- #effectsDlg #mtlEditor
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 		on rFlash open do
-			( 
+		( 
 		--	axFlash.movie = "MSHTML:<HTML><BODY>Hello</BODY></HTML>" fullscreen:true
 --			axFlash.movie = flashFile  -- need to load 2nd time sometimes 
-			)
+		)
 
 		on btn1 pressed do
-			(
+		(
 			showProperties axWeb
 			axWeb.AddressBar = true
-			)
+		)
 
 )
 

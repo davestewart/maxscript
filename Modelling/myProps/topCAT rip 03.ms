@@ -4,13 +4,13 @@
 
 -- GET MODIFIER LIST
 	for m = 1 to $.modifiers.count do
-		(
+	(
 		append TopCAT_stack_props #($.modifiers[m], ("--" + $.modifiers[m].name as string))
 		get_all_prop_name = getSubAnimNames $.modifiers[m]
 
 	-- GO THOUGH MODIFIER LIST AND GET PROPERTIES
 		for i in get_all_prop_name do
-			(
+		(
 			 print $.modifiers[m][i].value
 
 				try

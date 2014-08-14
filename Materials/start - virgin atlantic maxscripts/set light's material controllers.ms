@@ -1,6 +1,6 @@
 multimat = meditMaterials["rgba"]
 for i = 2 to multimat.count do
-	(
+(
 	mat=multimat[1]
 	m=multimat[i]
 
@@ -23,6 +23,6 @@ for i = 2 to multimat.count do
 	m.opacity.controller = mat.opacity.controller = bezier_float()
 --	m.twoSided = mat.twoSided 
 
-	)
+)
 
 --select $LED*

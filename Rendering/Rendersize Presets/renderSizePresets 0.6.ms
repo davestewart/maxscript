@@ -47,7 +47,7 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 				#("PAL (Widescreen)", 1024, 576, 1),
 				#("HDTV", 1920, 1080, 1)
 				-- feel free to add more here
-			)
+		)
 			
 	----------------------------------------------------------------------------------------------------
 	-- variables
@@ -80,17 +80,17 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 	----------------------------------------------------------------------------------------------------
 	
 		function updateDialog =
-			(
+		(
 			if renderSceneDialog.isOpen() do renderSceneDialog.update()
-			)
+		)
 
 		function getTooltip str rWidth rHeight fraction =
-			(
+		(
 			str + " (" + ((rWidth * fraction) as integer) as string + " x " + ((rHeight * fraction) as integer) as string + ")"
-			)
+		)
 			
 		function setRenderFraction index fraction =
-			(
+		(
 			-- settings
 				rFraction			= fraction
 				renderWidth		= rWidth * fraction
@@ -106,14 +106,14 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 		
 			-- render
 				if chk1.checked do
-					(
+				(
 					try(undisplay rWindow);catch()
 					rWindow = render()
-					)
-			)
+				)
+		)
 			
 		function setRenderSize index =
-			(
+		(
 			-- check UI
 				local uiState	= index > 2
 				btn1.enabled 	= uiState
@@ -122,14 +122,14 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 				btn4.enabled 	= uiState
 
 				if NOT uiState do
-					(
+				(
 					btn1.tooltip			= ""
 					btn2.tooltip			= ""
 					btn3.tooltip			= ""
 					btn4.tooltip			= ""
 					ddlPresets.selection	= 1
 					return false
-					)
+				)
 			
 			-- settings
 				local preset	= presets[index - 2]
@@ -147,22 +147,22 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 				btn3.tooltip	= getTooltip "Set renderer to ½ size" rWidth rHeight 0.5
 				btn4.tooltip	= getTooltip "Set renderer to ¼ size" rWidth rHeight 0.25
 			
-			)
+		)
 		
 		function loadPresets =
-			(
+		(
 			local arr = #("Select render preset...","- - - - - - - - - - - - - - - - - - - - ")
 			for preset in presets do
-				(
+			(
 				append arr preset[1]
-				)
+			)
 			ddlPresets.items = arr
 			setRenderSize 1
-			)
+		)
 			
 		function savePresets =
-			(
-			)
+		(
+		)
 
 	----------------------------------------------------------------------------------------------------
 	-- interface 
@@ -176,7 +176,7 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 		on btn4 changed state do setRenderFraction 4 0.25
 		
 		on roRenderSizePresets open do
-			(
+		(
 			-- load presets
 				loadPresets()
 				
@@ -192,7 +192,7 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 				local mode = getCommandPanelTaskMode()
 				setCommandPanelTaskMode #utility
 				setCommandPanelTaskMode mode
-			)
+		)
 
 		on roRenderSizePresets close do savePresets()
 )

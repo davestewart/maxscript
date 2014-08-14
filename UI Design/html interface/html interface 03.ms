@@ -34,11 +34,11 @@ rollout ro1 "HTML Interface" width:316 height:650
 	---------------------------------------------------------------------------------------------------
 
 		fn replaceAll str outStr inStr =
-			(
+		(
 			local str = #(str,"")
 	
 			while findstring str[1] outStr != undefined do
-				(
+			(
 			-- get variables
 				local s1 = 1
 				local s2 = (findstring str[1] outStr) + (-1)
@@ -50,18 +50,18 @@ rollout ro1 "HTML Interface" width:316 height:650
 				
 			-- reduce str[1]
 				str[1]= substring str[1] s3 str[1].count
-				)
+			)
 			str[2]+=str[1]
 			return str[2]
-			)
+		)
 
 
 		fn checkUrl url =
-			(
+		(
 			local str, fnName, fnArgs
 			
 			if findstring url "maxscript:" != undefined AND findstring url ";void(0)" != undefined then
-				(
+			(
 				-- get the base command
 					url	= replaceAll url "javascript:" ""
 					url	= replaceAll url "maxscript:" ""
@@ -81,43 +81,43 @@ rollout ro1 "HTML Interface" width:316 height:650
 				*/
 				try(
 					execute (" " + url)
-					)
+				)
 				catch(
 					--if querybox "There was a syntax error in your passed maxscript command. Try again?" then execute (" " + url)
 					format "--html > max error:\n	%\n" url
-					)
 				)
 			)
+		)
 
 
 		fn setBgColor =
-			(
+		(
 			local col	= (colorMan.getColor #background) * 255
 			local colStr= "rgb(" +((col[1] as integer) as string)+ "," +((col[2] as integer) as string) + "," +((col[3] as integer) as string)+ ")"
 			local url	= "javascript:document.body.style.backgroundColor='"+colStr+"';void(0)"
 			
 			axWeb.Navigate url
 
-			)
+		)
 			
 		-- format "% %\n " "\"" "\\\""
 
 		fn addHtmlLink text link id:unsupplied class:unsupplied =
-			(
+		(
 			if class == unsupplied then class = ""
 			--link = replaceAll link "\"" "\\\""
 			local url	= "javascript:addLink('" +link+ "','" +text+ "')"
 			axWeb.Navigate url
-			)
+		)
 			
 			
 		fn addMaxLink text cmd id:unsupplied class:unsupplied =
-			(
+		(
 			if class == unsupplied then class = ""
 			--link = replaceAll link "\"" "\\\""
 			local url	= "javascript:addLink('javascript:maxCmd(\"" +cmd+ "\")','" +text+ "','"+class+"')"
 			axWeb.Navigate url
-			)
+		)
 			
 			
 			
@@ -126,18 +126,18 @@ rollout ro1 "HTML Interface" width:316 height:650
 	---------------------------------------------------------------------------------------------------
 
 		function test str =
-			(
+		(
 			messagebox (str as string)
-			)
+		)
 
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 		on ro1 open do
-			( 
+		( 
 			axWeb.Navigate ("file://" + urlForm)
-			)
+		)
 
 		on btnCmd pressed do addMaxLink edt1.text edt2.text
 
@@ -149,18 +149,18 @@ rollout ro1 "HTML Interface" width:316 height:650
 		on btnBg pressed do setBgColor()
 
 		on axWeb NavigateComplete2 pDisp url do
-			(
+		(
 			if urlForm == url then setBgColor()
-			)
+		)
 
 
 		on axWeb BeforeNavigate2 pDisp url Flags TargetFrameName PostData Headers Cancel do
-			(
+		(
 			--format " pDisp : %\n url : %\n Flags : %\n TargetFrameName : %\n PostData : %\n Headers : %\n Cancel : %\n " pDisp url Flags TargetFrameName PostData Headers Cancel 
 
 			checkUrl url
 			
-			)
+		)
 
 )
 

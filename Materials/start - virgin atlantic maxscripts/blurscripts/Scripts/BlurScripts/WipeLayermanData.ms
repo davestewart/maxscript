@@ -33,15 +33,15 @@
 if selection.count == 0 then
 		(MessageBox "Please select at least one object." title:"WipeLayermanData")
 	else
-		(
+	(
 		if (queryBox "Do you wish to wipe all Layerman data from your selected objects?" title:"WipeLayermanData") == true then 
-			(
+		(
 			for i in selection do
-				(
+			(
 				deleteappdata i 9901
 				deleteappdata i 9902
-				)
 			)
 		)
+	)
 )
 -------------------------------------------------------------------------------

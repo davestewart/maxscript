@@ -8,7 +8,7 @@
 	
 	
 	function createSpheres total chunkSize =
-		(
+	(
 		-- variables
 			--total		= 1000
 			--chunkSize	= 10
@@ -24,18 +24,18 @@
 		-- main loop
 			tsAll.start()
 			with undo off with redraw off
-				(
+			(
 				
 			-- create sphere groups loop
 				for i = 1 to pos.count / chunkSize do
-					(
+				(
 					tsCreate.start()
 					b = box()
 					converttomesh b
 					
 				-- create spheres loop
 					for j = 1 to chunkSize do
-						(
+					(
 						tsSphereAttach.start()
 						index = ((i - 1)* chunkSize) + j
 						s.pos = pos[index]
@@ -43,49 +43,49 @@
 						tsSphereAttach.end()
 						count += 1
 						if count >= total do exit
-						)
+					)
 					append meshes b
 					tsCreate.end()
 					if count == total do exit
-					)
 				)
+			)
 			
 			
 		-- attach sphere groups loop
 			with undo off with redraw off
-				(
+			(
 				tsGroupAttach.start()
 				for i = 2 to meshes.count do
-					(
+				(
 					meshop.attach meshes[1] meshes[i]
-					)
-				tsGroupAttach.end()
 				)
+				tsGroupAttach.end()
+			)
 		
 		-- stats
 			tsAll.end()
 			
 		format "%	%	%	%	%	%\n" total chunkSize ((ceil total / chunkSize as float) as integer) (tsAll.duration) (tsCreate.getTotal()) (tsGroupAttach.duration)
 		(gc())
-		)
+	)
 		
 		
 	function getCumulativeTimes =
-		(
+	(
 		durations = tsSphereAttach.durations
 		cumulative = 0
 		for i = 1 to durations.count by 100 do
-			(
+		(
 			local total = 0
 			for j = 1 to 100 do
-				(
+			(
 				total += durations[(i - 1) + j]
-				)
+			)
 			local avg = total / 100.0
 			cumulative += total
 			format "%	%	%	%\n" (i / 100) avg total cumulative
-			)
 		)
+	)
 
 
 

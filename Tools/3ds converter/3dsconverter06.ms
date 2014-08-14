@@ -42,18 +42,18 @@ rollout ro1 "Options" width:472 height:152
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 fn convertFiles =
-	(
+(
 
 	if (pathImp == "" OR pathExp== "") then
-		(
+	(
 		messageBox "You need to select Import / Export directories to convert files" title:"File I/O Error" beep:true
-		)
+	)
 	else
-		(
+	(
 
 	-- Query
 		if queryBox "3dsmax will generate thumbnails by taking a \nscreen-grab of the viewport you last clicked in.\n\nIt would be wise to make sure it is set-up \nto get a good view of any objects imported, \nas well as ensuring no dialogue boxes or \nfloaters are obscuring it before continuing.\n\nDo you want to start the conversion process?" title:"Thumbnail generation advice" then
-			(
+		(
 			-- initial setup
 			 	i=0
 				for f in files do (
@@ -80,7 +80,7 @@ fn convertFiles =
 					if chkReGround.checked then(
 						select objects
 						selection.pos.z = - selection.min.z
-						)
+					)
 			
 				-- get ready for save
 					lblStatus.text = "Viewport setup... "
@@ -90,27 +90,27 @@ fn convertFiles =
 				-- save
 					lblStatus.text = "Saving... "
 					saveNodes objects (pathExp + "\\" + fileName + ".max")
-				)			
+			)			
 				grpProgress.text = "Progress"
 				lblStatus.text = "Ready..."
 				pb1.value = 0
-			)
-
-
 		)
+
+
 	)
+)
 
 	fn countFiles =
-		(
-		try	(
+	(
+		try(
 			files = getFiles ((getFilenamePath pathImp) as String + "*.3ds")
 			grpProgress.text = "Progress: (0 of " + files.count as String + ")"
-			)
-		catch ()
 		)
+		catch ()
+	)
 
 	fn getPathImp =
-		(
+	(
 		fileImp = getOpenFileName caption:"Select first *.3ds file to import..." types:"3D Studio Mesh (*.3ds)|*.3ds" ()
 		pathImp =  getFilenamePath fileImp
 
@@ -118,20 +118,20 @@ fn convertFiles =
 		countFiles()
 
 		if pathExp == "" then
-			(
+		(
 			pathExp = pathImp
 			edtPathExp.text = pathExp as String
-			)
+		)
 
 
-		)	
+	)	
 	
 	fn getPathExp =
-		(
+	(
 		pathExp = getSavePath()
 		format "pathExp= %" pathExp
 		edtPathExp.text = pathExp as String
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -140,12 +140,12 @@ fn convertFiles =
 
 
 	on ro1 open do
-		(
+	(
 		edtPathImp.text = pathImp as String
 		edtPathExp.text = pathExp as String
 		countFiles()
 		
-		)
+	)
 
 	on ro1 close do setVPortBGColor(oldVPortBGColor)
 
@@ -154,26 +154,26 @@ fn convertFiles =
 	on btnDirExp pressed do	getPathExp()
 
 	on edtPathImp changed text do
-		(
+	(
 		pathImp = text
 		countFiles()
-		)
+	)
 	on edtPathExp changed text do pathExp = text
 
 	on cpVPColor changed col do --pos:[110,113]
-		(
+	(
 		setVPortBGColor col
 		cpVPColor.pos=[-110,113]
 		btnVPColorReset.pos=[114,113]
-		)
+	)
 
 	on btnVPColorReset pressed do --pos:[113,113]
-		(
+	(
 		cpVPColor.pos=[114,113]
 		btnVPColorReset.pos=[-113,113]
 		setVPortBGColor oldVPortBGColor
 		cpVPColor.color=(color 128 166 214)
-		)
+	)
 
 	on btnStart pressed do convertFiles()
 )

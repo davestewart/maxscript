@@ -1,5 +1,5 @@
 struct date
-	(
+(
 	-- PURPOSE:
 	-- create a new date object from a string.
 	
@@ -24,7 +24,7 @@ struct date
 		
 	-- methods
 		fn dateFromString str year:2000 =
-			(
+		(
 			-- error checking
 				if classof str != String do return false
 
@@ -49,7 +49,7 @@ struct date
 				return d
 			),
 		fn secondsElapsed &d year:2000 =
-			(
+		(
 			-- vars
 				local t				= if year > 1990 then 0 else 0.0
 				local secondsInDay	= 60 * 60 * 24
@@ -57,15 +57,15 @@ struct date
 
 			-- y, m, d		
 				for y = year to (d.y - 1) do
-					(
+				(
 					if mod y 4 == 0 then t += 366 * secondsInDay 
 					else t += 365 * secondsInDay 
-					)
+				)
 				
 				for m = 1 to (d.m - 1) do
-					(
+				(
 					t += daysInMonth[m] * secondsInDay
-					)
+				)
 				if (mod d.y 4 == 0) AND d.m >= 3 do t += secondsInDay -- leap year
 					
 				t += (d.d - 1)	* secondsInDay
@@ -77,8 +77,8 @@ struct date
 				
 			-- return
 				d.t = t
-			)
-	)
+		)
+)
 
 -- tests
 
@@ -92,28 +92,28 @@ local files	= getFiles "$max\\help\\*"
 local arr	= #()
 
 for f in files do
-	(
+(
 	local str	= getFileModDate f
 	local d		= date.dateFromString str
 	append arr #(d.t, str, f)
-	)
+)
 
 print arr
 	
 fn order v1 v2 order:#ascending =
-	(
+(
 	-- vars
 		local val
 		if order == #ascending then val = v1[1] - v2[1]
 		else val = v2[1] - v1[1]
 	-- calcs
 		case of
-			(
+		(
 			(val < 0): -1
 			(val > 0): 1
 			default: 0
-			)
-	)
+		)
+)
 
 qsort arr order order:#ascending
 
@@ -125,10 +125,10 @@ print arr
 
 /*
 for d in dates do
-	(
+(
 	d = date.dateFromString d
 	format "%\n" d.t
-	)
+)
 )
 
 2106744624.0 * 2

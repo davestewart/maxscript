@@ -12,7 +12,7 @@ rollout ro1 "Combo Test" width:344 height:324
 	local ddTypes = filterstring "Boolean,Float,Integer,String,Node" ","
 	
 	function initDD item=
-		(
+	(
 		local x			= (item.left / twip) + 8
 		local y			= (item.top / twip) + yOffset
 		local w			= (ro1.ax.columnheaders[1].width / twip)
@@ -29,11 +29,11 @@ rollout ro1 "Combo Test" width:344 height:324
 		setfocus ro2.ddl1
 		*/
 		
-		)
+	)
 	
 		
 	on ro1 open do 
-		(
+	(
 		chs			= ax.ColumnHeaders
 		
 		ch1			= chs.add()
@@ -46,40 +46,40 @@ rollout ro1 "Combo Test" width:344 height:324
 		ax.LabelEdit= #lvwManual
 		
 		for i = 1 to 10 do
-			(
+		(
 			local li	= ax.listitems.Add()
 			li.text		= "Item " + i as string
 			append ddItems	li.text
 			
 			lis = li.ListSubItems.add()
 			lis.text =  "String"
-			)
-		ddl1.items = ddItems
 		)
+		ddl1.items = ddItems
+	)
 		
 	on ax ItemClick item do
-		(
+	(
 		initDD item
 		activeCell = item
-		)
+	)
 
 	on ddl1 selected val do
-		(
+	(
 		activeCell.text = ddl1.items[val]
-		)
+	)
 		
 	on ax MouseUp button shift x y do
-		(
+	(
 		ax.DropHighlight= undefined
 		setfocus ddl1
-		)
+	)
 	/*
 	on ax MouseDown button shift x y do
-		(
+	(
 		format "% %\n" x y
 		ddl1.pos		=[x,y]+[8,8]
 		setfocus ddl1
-		)
+	)
 */
 )
 createDialog ro1 style:#(#style_titlebar, #style_border, #style_sysmenu,#style_resizing)

@@ -33,25 +33,25 @@ rollout billboard_ro1 "Options" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	Group "Rotation"
-		(
+	(
 		spinner spnOffset "Offset : " type:#integer range:[-360,360,90] align:#left
 		label lbl1 "Axis : " across:2 align:#left
 		radioButtons rdo1 "" labels:#("X", "Y", "Z") default:3 columns:3 align:#right
-		)
+	)
 
 	Group "Objects and Target"
-		(
+	(
 		pickbutton pkbNode "Pick Lookat Target..." width:144 height:16
 		button btnGet "Get Assigned objects" width:144 height:16
 		button btnAssign "Assign to selected..." width:144 height:16 enabled:false
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn makeScript lookAtObj thisObj=
-		(
+	(
 		offset = spnOffset.value as string
 
 str= "
@@ -62,33 +62,33 @@ x=thisObj.pos.x - lookAtObj.pos.x
 y=thisObj.pos.y - lookAtObj.pos.y
 a=atan(y/x)
 degToRad(a + " + offset + ")"
-		)
+	)
 
 	fn assignControllers lookAtObj objArray=
-		(
+	(
 		undo "Assign Scripted LookAt" on
-			(
+		(
 			axis = rdo1.state
 			for thisObj in objArray do
-				(
+			(
 				thisObj.rotation.controller = Euler_XYZ()
 				thisObj.rotation.controller[axis].controller = float_script()
 				thisObj.rotation.controller[axis].controller.script = (makeScript lookAtObj thisObj)
 
 /*
 				if thisObj != lookAtObj then
-					(
-					try	(
-						)
-					catch()
+				(
+					try(
 					)
-*/
+					catch()
 				)
+*/
 			)
 		)
+	)
 /*
 	fn getAssigned =
-		(
+	(
 		for obj in objects where
 			classOf obj.rotation.controller[3].controller == float_script()
 				collect obj objArray 
@@ -101,31 +101,31 @@ finish = findString x "dependsOn"
 41
 newString = substring x start (finish-start-1)
 
-		)
+	)
 */
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 	on pkbNode picked obj do
-		(
+	(
 		lookAtObj = obj
 		pkbNode.text = lookAtObj.name
 		btnAssign.enabled = true
-		)
+	)
 
 	on btnAssign pressed do
-		(
+	(
 		if (selection.count > 0) then assignControllers lookAtObj (getCurrentSelection())
 		else 
-			(
+		(
 			objArray = selectByName()
 			if objArray != undefined then assignControllers lookAtObj objArray
-			)
+		)
 
 		pkbNode.text = "Pick Lookat Object..."
 		btnAssign.enabled = false
 		objArray = #()
-		)
+	)
 	
 	on btnGet pressed do getAssigned()
 )

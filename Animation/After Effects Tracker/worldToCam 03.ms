@@ -1,5 +1,5 @@
 fn getCameraTransform cam =
-	(
+(
 	--this will return a camera transform matrix, ignoring perspective for now:
 		local ct	= cam.transform
 		local ctd	= cam.target_distance
@@ -14,11 +14,11 @@ fn getCameraTransform cam =
 		local ctx	= inverse (matrix3 row1 row2 row3 p)
 		
 		return ctx
-	)
+)
 
 
 fn worldToCam pt3 cam ctx:undefined outputSize:[renderwidth, renderheight] =
-	(
+(
 	-- get camera transform
 		if ctx == undefined then ctx = getCameraTransform cam
 	
@@ -37,10 +37,10 @@ fn worldToCam pt3 cam ctx:undefined outputSize:[renderwidth, renderheight] =
 
 	-- return
 		return pt2
-	)
+)
 
 fn test =
-	(
+(
 	cam = cameras[1]
 	pos = geometry[1].pos
 	pt2 = worldToCam pos cam
@@ -50,4 +50,4 @@ fn test =
 	gw.enlargeUpdateRect #whole
 	gw.wMarker pt3 #PlusSign color:white
 	gw.updateScreen()
-	)
+)

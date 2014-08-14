@@ -52,14 +52,14 @@ delete_org_value = true
 -- Functions
 
 fn replace_objects o = 
-	(
+(
 	disableSceneRedraw()
 	undo "ObjectReplacer" on
-		(
+	(
 		delete_array = #()
 		select_array = #()
 		for i in selection do
-			(
+		(
 			ob = o[random 1 o.count]
 			
 			if what_type_value == 1 then w = copy ob
@@ -74,45 +74,45 @@ fn replace_objects o =
 			
 			if delete_org_value == true then append delete_array i
 			append select_array w
-			)
+		)
 		if delete_array.count != 0 then delete delete_array
 		select select_array
-		)
+	)
 	enableSceneRedraw()
 	redrawViews()
-	)
+)
 	
 fn choose_objects = 
-	(
+(
 	if what_replacer_value == 1 then
-		(
+	(
 		if replacer_obj == undefined then (MessageBox "Please pick a replacer" title:"ObjectReplacer")
 		else
-			(
+		(
 			if isdeleted replacer_obj == true then (MessageBox "Your replacer object no longer seems to exist, please pick a new object" title:"ObjectReplacer")
 			else
-				(
+			(
 				if selection.count == 0 then (MessageBox "Please select some objects to be replaced" title:"ObjectReplacer")
 				else 
-					(
-					replace_objects #(replacer_obj)
-					)
-				)
-			)
-		)
-	else
-		(
-		if or_sel_sets_names.count == 0 then (MessageBox "Please pick a valid selectionset" title:"ObjectReplacer")
-		else
-			(
-			if selection.count == 0 then (MessageBox "Please select some objects to be replaced" title:"ObjectReplacer")
-			else 
 				(
-				replace_objects selectionSets[or_sel_sets_names[what_selectionset_value]]
+					replace_objects #(replacer_obj)
 				)
 			)
 		)
 	)
+	else
+	(
+		if or_sel_sets_names.count == 0 then (MessageBox "Please pick a valid selectionset" title:"ObjectReplacer")
+		else
+		(
+			if selection.count == 0 then (MessageBox "Please select some objects to be replaced" title:"ObjectReplacer")
+			else 
+			(
+				replace_objects selectionSets[or_sel_sets_names[what_selectionset_value]]
+			)
+		)
+	)
+)
 	
 -- Script
 
@@ -120,46 +120,46 @@ or_sel_sets_names = get_scene_ss_names()
 sort or_sel_sets_names
 
 rollout or_rollout "ObjectReplacer"
-	(
+(
 	group "Replacer"
-	(
+(
 	dropdownlist what_replacer "" items:#("Single Object", "SelectionSet") selection:1
 	label what_obj "None" align:#center
 	pickbutton pick_replacer "Pick The Object To Replace With" width:220 toolTip:"Pick The Object To Replace With" align:#center
 	dropdownlist what_selectionset "" items:or_sel_sets_names enabled:false selection:1
-	)
+)
 	
 	on what_replacer selected i do 
-		(
+	(
 		what_replacer_value = i
 		if i == 1 then 
-			(
+		(
 			pick_replacer.enabled = true
 			what_obj.enabled = true
 			what_selectionset.enabled = false
-			)
+		)
 		else
-			(
+		(
 			pick_replacer.enabled = false
 			what_obj.enabled = false
 			what_selectionset.enabled = true
-			)
 		)
+	)
 	on pick_replacer picked obj do 
-		(
+	(
 		replacer_obj = obj
 		what_obj.text = obj.name
-		)
+	)
 	on what_selectionset selected i do what_selectionset_value = i
 		
 	group "Match"
-	(
+(
 	checkbox match_position "Position?" checked:true
 	checkbox match_rotation "Rotation?" checked:true
 	checkbox match_scale "Scale?" checked:true
 	checkbox match_name "Name?" checked:true
 	checkbox match_mat "Material?" checked:true
-	)
+)
 	
 	on match_position changed state do match_position_value = state
 	on match_rotation changed state do match_rotation_value = state
@@ -168,16 +168,16 @@ rollout or_rollout "ObjectReplacer"
 	on match_mat changed state do match_mat_value = state
 	
 	group "Options"
-	(
+(
 	dropdownlist what_type "" items:#("Copy", "Instance", "Reference") selection:2
 	checkbox delete_org "Delete Originals?" checked:true
-	)
+)
 	on what_type selected i do what_type_value = i
 	on delete_org changed state do delete_org_value = delete_org.checked
 		
 	button doit "Replace Selected Objects with Replacer(s)" width:226 align:#center toolTip:"Replace Selected Objects with Replacer(s)"
 	on doit pressed do choose_objects()
-	)
+)
 
 if or_floater != undefined then CloseRolloutFloater or_floater
 or_floater = newRolloutFloater "ObjectReplacer v1.20" 270 416

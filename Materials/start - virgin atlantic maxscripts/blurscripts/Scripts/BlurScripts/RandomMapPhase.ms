@@ -48,32 +48,32 @@ global changephase
 -- Functions
 
 fn changephase onwhat = 
-	(
+(
 	undo "RandomMapPhase" on
-		(	
+	(	
 		if onwhat.numsubs != 0 then
-			(
+		(
 			for i = 1 to onwhat.numsubs do
-				(
+			(
 				if onwhat[i] != undefined then
-					(
+				(
 					if onwhat[i].numsubs != 0 then
-						(
+					(
 						for j = 1 to onwhat[i].numsubs do
-							(
+						(
 							if onwhat[i][j] != undefined then
-								(
+							(
 								if (getSubAnimNames onwhat[i])[j] == #phase then
 								onwhat[i].phase = random 0 1000
-								)
 							)
 						)
 					)
-				changephase onwhat[i]
 				)
+				changephase onwhat[i]
 			)
 		)
 	)
+)
 
 -- Script
 

@@ -2,25 +2,25 @@ str = "We weren’t even supposed to have one, it was just a puppy the Murdoch gir
 
 
 function wrapText str maxLength hyphenate:false=
-	(
+(
 	
 	if NOT hyphenate then
-		(
+	(
 		local para = ""
 		local line = ""
 		local word = ""
 		local str = str as stringstream
 		while peekToken str != undefined do
-			(
+		(
 			word = readToken str
 			line += word + " "
 			if line.count > maxLength then (
 				para += line + "\r"
 				line = ""
-				)
 			)
-		return para
 		)
+		return para
+	)
 	else(
 		para = ""
 		
@@ -29,14 +29,14 @@ function wrapText str maxLength hyphenate:false=
 		for a in arr do str += a + " "
 		
 		for i = 1 to str.count by maxLength do
-			(
+		(
 			para += substring str i maxLength
 			if substring para (para.count) 1 != " " then para += "-"
 			para += "\r"
-			)
-		return para
 		)
+		return para
 	)
+)
 	
 	
 

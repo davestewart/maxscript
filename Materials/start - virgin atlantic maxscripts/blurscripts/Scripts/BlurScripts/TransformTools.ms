@@ -130,56 +130,56 @@ negpos = 1
 -- Functions
 
 fn dorotation rotang rotax =
-	(
+(
 	undo "TransformTools" on
-		(
+	(
 		if selection.count == 0 then (MessageBox "Please Pick an Object" title:"TransformTools")
 		else axisRotate $ (angleaxis rotang rotax)
-		)
 	)
+)
 	
 fn cir_selected operation =
-	(
+(
 	undo "TransformTools" on
-		(
+	(
 		objs = #()
 		new_objs = #()
 		for i in selection do append objs i
 		for i in objs do
-			(
+		(
 			if operation == 1 then mo = copy i
 			else if operation == 2 then mo = instance i
 			else if operation == 3 then mo = reference i
 			
 			append new_objs mo
-			)
-		if new_objs.count != 0 then select new_objs
 		)
+		if new_objs.count != 0 then select new_objs
 	)
+)
 
 fn clear_pos_selected =
-	(
+(
 	undo "TransformTools" on
-		(
+	(
 		if selection.count == 0 then (MessageBox "Please Pick an Object" title:"TransformTools")
 		else
-			(	
+		(	
 			$.pos.x = 0
 			$.pos.y = 0
 			$.pos.z = 0
-			)
 		)
 	)
+)
 	
 fn clear_rot_selected =
-	(
+(
 	undo "TransformTools" on
-		(
+	(
 		if selection.count == 0 then (MessageBox "Please Pick an Object" title:"TransformTools")
 		else
-			(
+		(
 			for i in selection do
-				(
+			(
 				a = i.pos.x
 				b = i.pos.y
 				c = i.pos.z
@@ -189,29 +189,29 @@ fn clear_rot_selected =
 				i.pos.x = a
 				i.pos.y = b
 				i.pos.z = c
-				)
 			)
 		)
 	)
+)
 	
 fn clear_scale_selected =
-	(
+(
 	undo "TransformTools" on
-		(
+	(
 		if selection.count == 0 then (MessageBox "Please Pick an Object" title:"TransformTools")
 		else
-			(	
+		(	
 			$.scale.x = 1
 			$.scale.y = 1
 			$.scale.z = 1
-			)
 		)
 	)
+)
 
 -- Script
 
 rollout simplerotation_rollout "SimpleRotation"
-	(
+(
 	label axislabelx "X" align:#center across:3
 	label axislabely "Y" align:#center 
 	label axislabelz "Z" align:#center 
@@ -246,35 +246,35 @@ rollout simplerotation_rollout "SimpleRotation"
 
 	radiobuttons negpositive labels:#("Positive", "Negative")
 	on negpositive changed state do 
-		(
+	(
 		if negpositive.state == 1 then negpos = 1
 		else negpos = -1
-		)
+	)
 
 	button axischoicepreset1 "Local" width:80 align:#center toolTip:"Local"
 	on axischoicepreset1 pressed do 
-		(
+	(
 		setRefCoordSys #local
 		setCoordCenter #local
-		)
+	)
 
 	button axischoicepreset2 "World" width:80 align:#center toolTip:"World"
 	on axischoicepreset2 pressed do 
-		(
+	(
 		setRefCoordSys #world
 		setCoordCenter #system
-		)
+	)
 
 	button axischoicepreset3 "Local Center" width:80 align:#center toolTip:"Local Center"
 	on axischoicepreset3 pressed do 
-		(
+	(
 		setRefCoordSys #local
 		setCoordCenter #selection
-		)
 	)
+)
 
 rollout moremore_rollout "More...More..."
-	(
+(
 	button copyobject_but "C" width:25 across:3 align:#center toolTip:"Copy Object"
 	on copyobject_but pressed do cir_selected 1
 
@@ -283,10 +283,10 @@ rollout moremore_rollout "More...More..."
 
 	button referenceobject_but "R" width:25 align:#center toolTip:"Reference Object"
 	on referenceobject_but pressed do cir_selected 3
-	)
+)
 
 rollout clearrollout_rollout "Clear"
-	(
+(
 	button clearposition_but "P" width:25 across:3 align:#center toolTip:"Clear Position"
 	on clearposition_but pressed do clear_pos_selected()
 
@@ -295,7 +295,7 @@ rollout clearrollout_rollout "Clear"
 
 	button clearscale_but "S" width:25 align:#center toolTip:"Clear Scale"
 	on clearscale_but pressed do clear_scale_selected()
-	)
+)
 
 if tft_floater != undefined then CloseRolloutFloater tft_floater
 tft_floater = newRolloutFloater "TransformTools v1.33" 135 497

@@ -28,15 +28,15 @@
 -------------------------------------------------------------------------------
 (
 for t in 1 to Trackview.NumTrackViews() do
-	(
+(
 	If Trackview.GetTrackviewName T == "TrackviewReady" then 
-		(
+	(
 		trackviews.close "TrackviewReady"
-		)
-	else 
-		(
-		)
 	)
+	else 
+	(
+	)
+)
 TrackView.Open "TrackviewReady"
 TrackView.setFilter "TrackviewReady" #modifiedObjects #SelectedObjects #animatedTracks #curveX #curveY #curveZ #Objects #Hierarchy #Transforms #Position #Rotation #Scale #positionX #positionY #positionZ #rotationX #rotationY #rotationZ #scaleX #scaleY #scaleZ
 TrackView.zoomSelected "TrackviewReady"

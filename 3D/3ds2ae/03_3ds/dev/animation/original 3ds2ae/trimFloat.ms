@@ -1,10 +1,10 @@
 2.5382*(10^2)
 
 fn trimFloat val n=
-	(
+(
 	p=10^n
 	return ceil(val*p)/p
-	)
+)
 
 
 n=2

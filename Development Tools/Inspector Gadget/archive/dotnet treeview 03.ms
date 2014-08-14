@@ -53,37 +53,37 @@ rollout roProps "Property Debugger" width:300 height:324
 	-- Utilities
 	
 		fn testForProperties obj =
-		(
+	(
 			try
-			(
+		(
 				getPropNames obj
 				true
-			)
-			catch
-			(
-				false
-			)
 		)
+			catch
+		(
+				false
+		)
+	)
 		
 		fn testForArray obj =
-		(
+	(
 			return isKindOf obj Array
-		)
+	)
 		
 		fn testForChildren obj =
-		(
+	(
 			return obj.children > 1
-		)
+	)
 		
 		fn getObj =
-		(
+	(
 			(getCurrentSelection())[1]
-		)
+	)
 		
 		fn addDummyNode node =
-		(
+	(
 			node.nodes.add "<empty>"
-		)
+	)
 
 
 
@@ -102,14 +102,14 @@ rollout roProps "Property Debugger" width:300 height:324
 	-- Functions
 
 		fn addProperties node =
-		(
+	(
 			local property		= node.tag.value
 			local props			= getpropnames property
 			
 			for i = 1 to props.count do
-			(
+		(
 				try
-				(
+			(
 				-- properties
 					local propName		= props[i] as string
 					local propObject	= property[propName]
@@ -123,36 +123,36 @@ rollout roProps "Property Debugger" width:300 height:324
 					
 				-- node properties
 					try
-					(
+				(
 						newNode.tag			= prop
-					)
+				)
 					catch
-					(
+				(
 						try
-						(
+					(
 							newNode.tag			= dotNetMXSValue prop
-						)
+					)
 						catch
-						(
+					(
 							--newNode.tag			= prop
 							format "Could not add property '%:%'\n" property propName
-						)
 					)
+				)
 					
 				-- add a child node?
 					if testForProperties prop do addDummyNode newNode
-				)
+			)
 				catch
-				(
-				)
+			(
+			)
 					
 				-- expand
 					node.Expand()
-			)
 		)
+	)
 		
 		fn add obj =
-		(
+	(
 			print obj
 			-- add the node
 				local node			= tv.Nodes.add (obj as string)
@@ -161,7 +161,7 @@ rollout roProps "Property Debugger" width:300 height:324
 			-- add any children
 				if testForProperties obj do addDummyNode node
 				--else if
-		)
+	)
 		
  
 	-- ------------------------------------------------------------------------------------------------------------------------
@@ -178,9 +178,9 @@ rollout roProps "Property Debugger" width:300 height:324
 	-- Code
 
 		fn initTreeView tv =
-		(
+	(
 			tv.Indent = 20
-		)
+	)
 
 		
 	-- ------------------------------------------------------------------------------------------------------------------------
@@ -197,60 +197,60 @@ rollout roProps "Property Debugger" width:300 height:324
 	-- Handlers
 
 		on tv BeforeExpand evt do
-		(
+	(
 			local node = evt.node
 			if node.nodes.item[0].text == "<empty>" do
-			(
+		(
 				try
-				(
+			(
 					node.nodes.clear()
 					addProperties node
-				)
+			)
 				catch
-				(
+			(
 					format "Could not add properties to %\n" + (node as string)
-				)
 			)
 		)
+	)
 			
 		on tv DoubleClick arg do 
-		(
+	(
 			-- get the node
 				local node = tv.GetNodeAt (dotNetObject "System.Drawing.Point" arg.x arg.y)
 			
 			-- try to select the object stored as value in the .tag
 				if node != undefined AND node.nodes.count == 0 do
-				(
+			(
 					try
-					(
+				(
 						addProperties node
-					)
+				)
 					catch
-					(
+				(
 						--print (node as string)
 						format "Could not add properties to \n" node.tag.value
-					)
 				)
+			)
 			
-		)
+	)
 		
 		on btnObject pressed do
-		(
+	(
 			if (sel = getObj()) != undefined do add sel
-		)
+	)
 		 
 		on btnModifiers pressed do
-		(
+	(
 			if (sel = getObj()) != undefined do add sel
-		)
+	)
 		 
 		on btnMaterial pressed do
-		(
+	(
 			if (sel = getObj()) != undefined do add sel.material
-		)
+	)
 		 
 		on roProps resized size do
-		(
+	(
 			local w					= size[1]
 			local h					= size[2]
 			
@@ -259,12 +259,12 @@ rollout roProps "Property Debugger" width:300 height:324
 			btnObject.pos			= [btnObject.pos[1], h - 20]
 			btnModifiers.pos		= [btnModifiers.pos[1], h - 20]
 			btnMaterial.pos			= [btnMaterial.pos[1], h - 20]
-		)
+	)
 		
 		on roProps open do 
-		(
+	(
 			initTreeView tv 
-		)
+	)
 )
 
 createDialog roProps  style:#(#style_resizing,#style_minimizebox,#style_titlebar,#style_sysmenu,#style_toolwindow)
@@ -293,9 +293,9 @@ showmethods roProps.tv.nodes.item[0]--.nodes
 on tv AfterCheck arg do 
 (
 	try
-	(
+(
 		arg.node.tag.value.isHidden = NOT arg.node.checked
-	)
+)
 	catch()
 )
 

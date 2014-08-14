@@ -12,56 +12,56 @@ rollout ro1 "Animation Range" width:160 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn init =
-		(
+	(
 		spnTotalStart.value = animationRange.start
 		spnTotalEnd.value = animationRange.end
 		spnTotalLength.value = animationRange.end - animationRange.start
-		)
+	)
 
 	fn updateStart = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		spnTotalLength.value = end - start
 
 		if start >= end then
-			(
+		(
 			end = start + 1
 			spnTotalEnd.value = end
-			)
-
-		animationRange = (interval start end)
 		)
 
+		animationRange = (interval start end)
+	)
+
 	fn updateEnd = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		spnTotalLength.value = end - start
 
 		if end <= start then
-			(
+		(
 			start = end - 1
 			spnTotalStart.value = start
-			)
-
-		animationRange = (interval start end)
 		)
 
+		animationRange = (interval start end)
+	)
+
 	fn updateLength = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		length = spnTotalLength.value
 
 		if end <= start then
-			(
+		(
 			start = end - 1
 			spnTotalStart.value = start
-			)
+		)
 
 		animationRange = (interval start end)
-		)
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
@@ -74,10 +74,10 @@ rollout ro1 "Animation Range" width:160 height:311
 	on spnTotalLength changed val do updateLength()
 
 	on ro1 close do
-		(
+	(
 		unRegisterTimeCallback timeUpdateCB
 		animationRange = (interval spnTotalStart.value spnTotalEnd.value)
-		)
+	)
 	
 
 
@@ -114,45 +114,45 @@ rollout ro2 "Focus" width:160 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn time_cb =
-		(
+	(
 		print currentTime
 		ckbAuto.state = false
-		)
+	)
 
 	fn timeUpdateCB = time_cb() 
 
 	fn setRange = 
-		(
+	(
 	-- get spinner values as vars
 		foc = spnFocus.value
 		dur = spnDuration.value
 		
 	-- set spnFocus range (can't be higher or lower than the total animation time)
-		(	
+	(	
 		
 		start = ro1.spnTotalStart.value
 		end = ro1.spnTotalEnd.value
 		default = sliderTime
 		--spnFocus.range = [start,end,default]
-		)
+	)
 
 	-- when do you want the time to start ?
 		if rdoScope.state == 1 then
-			(
+		(
 			start = foc
 			end = foc + dur
-			)
+		)
 		else
-			(
+		(
 			start = foc-(dur/2)
 			end = foc+(dur/2)
-			)
+		)
 		
 
 
 	-- set the animation range
 		animationRange = (interval start end)
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------

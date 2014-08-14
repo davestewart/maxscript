@@ -1,5 +1,5 @@
 function multimaterialFromFolder folder: =
-	(
+(
 	-- get directory
 		if folder == unsupplied then
 			dir = getSavePath caption:"Browse for files" initialDir:(if dir != undefined then dir else "")
@@ -13,15 +13,15 @@ function multimaterialFromFolder folder: =
 	-- subs
 		local i = 0
 		for file in files do
-			(
+		(
 			-- check that file is a bitmap
 				try(
 					openBitMap file
 					i += 1
-					)
+				)
 				catch(
 					continue
-					)
+				)
 			-- make material
 				local mat	= m[i]
 				local map	= m[i].diffuseMap
@@ -31,9 +31,9 @@ function multimaterialFromFolder folder: =
 				mat.selfIllumAmount = 75
 				
 				showTextureMap mat true
-			)
+		)
 	-- clean up
 		m.numsubs = i
-	)
+)
 
 --multimaterialFromFolder()

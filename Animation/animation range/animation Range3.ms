@@ -12,56 +12,56 @@ rollout ro1 "Animation Range" width:160 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn init =
-		(
+	(
 		spnTotalStart.value = animationRange.start
 		spnTotalEnd.value = animationRange.end
 		spnTotalLength.value = animationRange.end - animationRange.start
-		)
+	)
 
 	fn updateStart = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		spnTotalLength.value = end - start
 
 		if start >= end then
-			(
+		(
 			end = start + 1
 			spnTotalEnd.value = end
-			)
-
-		animationRange = (interval start end)
 		)
 
+		animationRange = (interval start end)
+	)
+
 	fn updateEnd = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		spnTotalLength.value = end - start
 
 		if end <= start then
-			(
+		(
 			start = end - 1
 			spnTotalStart.value = start
-			)
-
-		animationRange = (interval start end)
 		)
 
+		animationRange = (interval start end)
+	)
+
 	fn updateLength = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		length = spnTotalLength.value
 
 		if end <= start then
-			(
+		(
 			start = end - 1
 			spnTotalStart.value = start
-			)
+		)
 
 		animationRange = (interval start end)
-		)
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
@@ -106,40 +106,40 @@ rollout ro2 "Focus" width:160 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn time_cb =
-		(
+	(
 		print currentTime
 		ckbAuto.state = false
-		)
+	)
 	fn timeUpdateCB = time_cb() 
 
 
 	fn setRange = 
-		(
+	(
 		foc = spnFocus.value
 		dur = spnDuration.value
 		
 		if rdoScope.state == 1 then
-			(
+		(
 			start = foc
 			end = foc + dur
-			)
+		)
 		else
-			(
+		(
 			start = foc-(dur/2)
 			end = foc+(dur/2)
-			)
+		)
 		
 			animationRange = (interval start end)
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 on ro2 open do
-	(
+(
 	registerTimeCallback timeUpdateCB
-	)
+)
 on spnFocus buttonDown do spnFocus.range = [ro1.spnTotalStart.value,ro1.spnTotalEnd.value,sliderTime]
 on spnFocus changed val do setRange()
 

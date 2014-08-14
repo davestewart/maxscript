@@ -15,10 +15,10 @@
 -------------------------------------------------------------------------------
 (
 for i in 1 to xrefs.getXRefFileCount() do 
-	(
+(
 	x = xrefs.getXRefFile i
 	if x.hidden == true then x.hidden = false
 	else x.hidden = true
-	)
+)
 )
 -------------------------------------------------------------------------------

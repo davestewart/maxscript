@@ -2,14 +2,14 @@ plugin modifier simpleMatMod
 	name:"SimpleMaterialMod" 
 	classID:#(0x79ce6e69, 0xa8933438) 
 	extends:Materialmodifier replaceUI:true version:0.5
-		( 
+	( 
 		parameters main rollout:params 
-			( 
+		( 
 			matID type:#integer animatable:true ui:spn1
 			on matID set val do updateBtnStates val
-			) 
+		) 
 		rollout params "Material" 
-			( 
+		( 
 			---------------------------------------------------------------------------------------------------
 			-- Interface
 			---------------------------------------------------------------------------------------------------
@@ -50,15 +50,15 @@ plugin modifier simpleMatMod
 			---------------------------------------------------------------------------------------------------
 		
 				fn updateBtnStates val =
-					(
+				(
 					ckb1.state = n==1
 					ckb2.state = n==1
 					ckb3.state = n==1
 					ckb4.state = n==1
-					)
+				)
 
 				fn btnChange btn num state =
-					(
+				(
 					-- check the object
 						--pushPrompt (($.modifiers[this.name][1][1].controller) as string)
 
@@ -80,16 +80,16 @@ plugin modifier simpleMatMod
 							--set tangent types
 								k.inTangentType = #step
 								k.outTangentType = #step					
-							)
+						)
 						catch()
-					)
+				)
 
 				fn makeMaterial =
-					(
+				(
 					m = multimaterial numsubs:4
 					for i = 1 to m.numsubs do m.material[i].diffuse = (color (random 0 255) (random 0 255)(random 0 255))
 					$.material = m
-					)
+				)
 					
 			---------------------------------------------------------------------------------------------------
 			-- Handlers
@@ -116,18 +116,18 @@ plugin modifier simpleMatMod
 
 				-- make the controllers instance each other
 					on params open do
-						(
+					(
 						delegate[1].controller = c
 						matID.controller = c
-						)
+					)
 						
 				-- setup the time callback
 					on params open do
-						(
+					(
 						when parameters this changes param do pushprompt "arse" --(param.controller as string)
-						)
+					)
 
 				-- tools
 					on btnMat1 pressed do makeMaterial()
-			) 
 		) 
+	) 

@@ -7,7 +7,7 @@ clearListener()
 	struct List(
 		thisList,
 		function makeStruct names values=
-			(
+		(
 			-- names
 				local str=""
 				for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -26,17 +26,17 @@ clearListener()
 				return s
 			),
 		fn addItem name value=
-			(
+		(
 			-- initialize
 				local names=#()
 				local values=#()
 	
 			-- collect the existing props
 				if items != undefined then
-					(
+				(
 					local names=getPropNames items
 					local values=for prop in names collect (getProperty items prop)
-					)
+				)
 			-- add the new props	
 				append names name
 				append values value
@@ -44,9 +44,9 @@ clearListener()
 			-- create a new items struct and replace
 				local tmpStruct=makeStruct names values
 				execute(thisList+"=tmpStruct")
-			)
-	
 		)
+	
+	)
 
 ---------------------------------------------------------------------------------
 -- example

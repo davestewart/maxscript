@@ -52,18 +52,18 @@ include "core/utility.ms"
 -- functions
 
 	fn loadOptions=
-		(
+	(
 		if iniFile == undefined then messagebox "The variable 'iniFile' is not defined"
 		else try(
 			local fStr=getIniSetting iniFile "After Effects" "appAE"
 			if doesFileExist fStr then edt_appAE.text=fStr
 			else edt_appAE.text="<AfterFX application not found>"
-			)
-		catch()
 		)
+		catch()
+	)
 
 	fn saveOptions=
-		(
+	(
 		format "Saving options...\n"
 		-- After Effects
 			--setIniSetting iniFile "After Effects" "app" edt_appAE.text
@@ -71,7 +71,7 @@ include "core/utility.ms"
 
 		destroyDialog roOptions
 
-		)
+	)
 
 
 -----------------------------------------------------------------
@@ -83,20 +83,20 @@ include "core/utility.ms"
 	on roOptions close do saveOptions()
 	
 	on btnOpen pressed do
-		(
+	(
 		appAE=getAppAE()
 		if appAE != undefined then
-			(
+		(
 			edt_appAE.text=appAE
 			setIniSetting iniFile "After Effects" "appAE" appAE
-			)
+		)
 		else 
-			(
+		(
 			edt_appAE.text="<AfterFX application not found>"
 			setIniSetting iniFile "After Effects" "appAE" "undefined"
 			--messagebox "AfterFX application not found."
-			)
 		)
+	)
 
 	on btnDone pressed do destroydialog roOptions
 

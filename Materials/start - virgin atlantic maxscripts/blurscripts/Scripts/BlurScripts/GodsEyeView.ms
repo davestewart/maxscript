@@ -51,42 +51,42 @@ prim_axis_value = 2
 -- Functions
 
 fn gev_func = 
-	(
+(
 	undo "GodsEyeView" on
-		(
+	(
 		w = get_scene_bbox()
 		myc = box_center w[1] w[2]
 		
 		if prim_axis_value == 1 then
-			(
+		(
 			c = Targetcamera pos:[myc.x,3*(w[2][2]),myc.z] target:(Targetobject transform:(matrix3 [1,0,0] [0,1,0] [0,0,1] [myc.x,0,myc.z]))
-			)
+		)
 		else if prim_axis_value == 2 then
-			(
+		(
 			c = Targetcamera pos:[myc.x,myc.y,3*(w[1][3])] target:(Targetobject transform:(matrix3 [1,0,0] [0,1,0] [0,0,1] [myc.x,myc.y,0]))
-			)
+		)
 		else
-			(
+		(
 			c = Targetcamera pos:[3*(w[2][1]),myc.y,myc.z] target:(Targetobject transform:(matrix3 [1,0,0] [0,1,0] [0,0,1] [0,myc.y,myc.z]))
-			)
+		)
 		c.target.name = c.name + ".Target"
 			
 		c.orthoProjection = true
 		viewport.setCamera c
 		displaySafeFrames = true
-		)
 	)
+)
 	
 fn gev_ok = 
-	(
+(
 	gev_func()
 	destroydialog gev_rollout
-	)
+)
 
 -- Rollouts
 
 rollout gev_rollout "GodsEyeView v1.02" 
-	(
+(
 	dropdownlist prim_axis items:#("Front View", "Top View", "Side View") selection:2
 
 	on prim_axis selected i do prim_axis_value = i
@@ -97,7 +97,7 @@ rollout gev_rollout "GodsEyeView v1.02"
 	
 	on button_ok pressed do gev_ok()
 	on button_cancel pressed do destroydialog gev_rollout
-	)
+)
 
 -- Script
 

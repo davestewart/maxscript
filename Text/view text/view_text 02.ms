@@ -17,13 +17,13 @@ rollout ro1 "Options" width:160 height:311
 
 	local lastViewport
 	fn drawText = 
-	(
+(
 		try 
-		(
+	(
 			if viewport.activeViewport != lastViewport do
 			(	completeredraw()
 				lastViewport = viewport.activeViewport 
-			)
+		)
 			viewtext = $.name as String
 			gw.setTransform(Matrix3 1) 
 			pos = $.position
@@ -31,25 +31,25 @@ rollout ro1 "Options" width:160 height:311
 			gw.text pos  viewtext  color:(color 0 0 0)
 			gw.enlargeUpdateRect #whole 
 			gw.updateScreen() 
-		)
-		catch ()
 	)
+		catch ()
+)
 
 fn displayText = drawText()
 
 on ro1 open do
-	(
+(
 	unregisterRedrawViewsCallback displayText
 	completeredraw()
-	)
+)
 
 
 on chk1 changed state do
-	(
+(
 		if chk1.checked then registerRedrawViewsCallback displayText
 		else unregisterRedrawViewsCallback displayText
 		completeredraw()
-	) 
+) 
 
 
 	---------------------------------------------------------------------------------------------------

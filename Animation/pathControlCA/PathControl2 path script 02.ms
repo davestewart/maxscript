@@ -1,19 +1,19 @@
 -- setup custom attributes
 	distCA = attributes Custom_Attributes
-		( 
+	( 
 		parameters main
-			( 
+		( 
 			distance type:#float default:0 animateable:true
-			) 
-		)
+		) 
+	)
 
 
 -- assign position list controller
 	if (classof $.position.controller != position_list) then
-		(
+	(
 		$.position.controller = (position_list())
 		$.position.controller.available.controller=Path_Constraint()
-		)
+	)
 
 
 -- assign CAs
@@ -33,9 +33,9 @@ dependsOn pathCtrl.distance.controller
 
 path=(getNodeByName obj).position.controller[\"Path_Constraint\"].path
 if (path != undefined) then
-	(
+(
 	length= amax (getSegLengths path 1)
 	dist=pathCtrl.distance
 	dist/length
-	)
+)
 else 	0"

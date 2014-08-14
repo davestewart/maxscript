@@ -13,9 +13,9 @@ superclassIcoArr
 */
 
 if  (getCurrentSelection()).count==0 then
-	(
+(
 	if (NOT isvalidnode b) then
-		(
+	(
 		b=box()
 		addModifier b (Bend ())
 		addModifier b (Taper ())
@@ -41,8 +41,8 @@ if  (getCurrentSelection()).count==0 then
 		b.material = meditmaterials[1]
 	*/
 		select b
-		)
 	)
+)
 if test!=undefined then destroydialog test
 global doCopy
 	
@@ -50,7 +50,7 @@ global doCopy
 
 
 	rcMenu copyMenu
-		( 
+	( 
 		--local clone_node, is_cut		
 		menuItem mi_Val					"Copy Value Only"
 		seperator sep1
@@ -65,11 +65,11 @@ global doCopy
 		on mi_Wire picked do			test.doCopy "wir"
 		on mi_Instance picked do		test.doCopy "ins"
 		on mi_SoftInstance picked do	test.doCopy "sof"
-		)	
+	)	
 
 
 	rcMenu nodeMenu
-		( 
+	( 
 		--local clone_node, is_cut		
 		menuItem mi_Copy				"Copy"
 		seperator sep1
@@ -81,27 +81,27 @@ global doCopy
 		menuItem mi_PasteSoftInstance	"Paste Soft Instance"
 		seperator sep3
 		subMenu "Controller..."
-			( 
+		( 
 			menuItem mi_CtrlDlg				"Controller Dialog..."
 			menuItem mi_TrackviewSelect		"Select in trackview..."
 			menuItem mi_AssignController	"Assign..."
-			)
+		)
 		seperator sep4
 		subMenu "Tree..."
-			( 
+		( 
 			menuItem mi_SelAllDown			"Select all downstream"
 			seperator sep5
 			menuItem mi_Options				"AutoExpand settings"
-			)
+		)
 		
 		on mi_CtrlDlg picked do			test.ctrlDiag()
 
-		)	
+	)	
 --------------------------------------------------------
 
 
 	rollout test "The Phat Controller" width:512 height:584
-		(
+	(
 
 ---------------------------------------------------------------------------------------------------------------------------
 -- declarations
@@ -172,15 +172,15 @@ global doCopy
 ---------------------------------------------------------------------------------------------------------------------------
 
 		function pad num padLength =
-			(
+		(
 			num=num as string
 			while num.count < padLength do num = ("0"+num)
 			return num
-			)
+		)
 	
 
 		function replaceAll str outStr inStr =
-			(
+		(
 			-- str the original string
 			-- the string/character to replace
 			-- the replacement string/character
@@ -189,32 +189,32 @@ global doCopy
 			while ((n=findstring str outStr) != undefined) do str = replace str n inStr.count inStr
 			if str != undefined then return str
 			else return origStr
-			)
+		)
 
 
 		function reverseArray inArr =
-			(
+		(
 			local outArr = #()
 			while inArr.count > 0 do
-				(
+			(
 				append outArr inArr[inArr.count]
 				deleteItem inArr inArr.count
-				)
-			return outArr
 			)
+			return outArr
+		)
 
 
 		local t1=0,t2=0
 		function timeIt type =
-			(
+		(
 			if type==0 then t1=timeStamp()
 			else
-				(
+			(
 				t2=timestamp()
 				local t=(t2-t1)/1000 as float
 				format "Processing took % seconds\n" t
-				)
 			)
+		)
 
 		function ctrlDiag = try(displayControlDialog (getSAFromNode selNode).controller "")catch()
 
@@ -224,7 +224,7 @@ global doCopy
 
 
 	fn doCopy type =
-		(
+	(
 		local src, trg
 		src= getSAFromNode dragNode
 		trg= getSAFromNode dropNode
@@ -232,24 +232,24 @@ global doCopy
 		format "% | %\n" src.object trg.object
 
 		undo "Property Copy" on
-			(
+		(
 			case type of
-				(
-				"val":	(
+			(
+				"val":(
 				-- values only
 					trg.value = src.value
-					)
-				"cop":	(
+				)
+				"cop":(
 				-- copy
 					if (NOT src.isAnimated OR src.controller==undefined) then trg.value = src.value
 					else trg.controller = copy src.controller
-					)
-				"ins":	(
+				)
+				"ins":(
 				-- instance
 					if src.controller==undefined then src.controller=bezier_float()
 					trg.controller = src.controller
-					)
-				"wir":	(
+				)
+				"wir":(
 				-- wire
 					--sa1=$sphere01[4][2]
 					--sa2=$teapot01[4][1]
@@ -257,20 +257,20 @@ global doCopy
 					local trgName=(filterstring (trg as string) ":")[2]
 	
 					paramWire.connect2Way src trg trgName srcName
-					)
-				"sof":	(
+				)
+				"sof":(
 				-- soft instance
 					-- popup new window with checkboxes
 					-- makes selection
 					-- instance recursively
-					)
-				default:messagebox "Unknown argument for doCopy()"
 				)
+				default:messagebox "Unknown argument for doCopy()"
+			)
 		--update icon
 			dragNode.image=getIconIndex src
 			dropNode.image=getIconIndex trg
-			)
 		)
+	)
 
 ---------------------------------------------------------------------------------------------------------------------------
 -- treeview functions
@@ -279,7 +279,7 @@ global doCopy
 
 
 		fn initImageList=
-			(
+		(
 			--messageBox "initImageList()"
 			-- set variables
 				local icoRel ="icons\\ico\\"
@@ -287,7 +287,7 @@ global doCopy
 				local iconStr=""
 			-- start the loop
 				for i = 1 to libraryClassArr.count do
-					(
+				(
 					try (
 					-- get and load the bitmap file
 						local icoFile =icoRel + libraryIcoArr[i]
@@ -298,17 +298,17 @@ global doCopy
 
 					-- update ebug info
 						iconStr+=(pad j 3) +" | "+ libraryClassArr[i] +" | "+ libraryIcoArr[i] +"\n"
-						)
-					catch(j-=1)
 					)
+					catch(j-=1)
+				)
 			-- write debug info
 				--format "%" iconStr to:(win=newScript())
 				--format "libraryClassArr.count:%\nj:%\n" libraryClassArr.count j to:win
-			)
+		)
 
 
 		fn initTreeView tv =
-			(
+		(
 			-- styling
 				tv.lineStyle = #tvwTreeLines
 				tv.style = #tvwTreelinesPlusMinusPictureText
@@ -334,86 +334,86 @@ global doCopy
 				tv.oleDragMode = #ccOLEDragAutomatic
 				tv.oleDropMode = #ccOLEDropManual
 
-			)
+		)
 
 
 
 	fn getSAStringFromNode tvNode =
-		(
+	(
 		-- set up variables
 			local saStr="$"+tvNode.root.key
 			local saArr=filterstring tvNode.tag ","
 			for n in saArr do saStr+="["+n as string+"]"
 			return saStr
-		)
+	)
 
 	fn getSAFromNode tvNode =
-		(
+	(
 		-- set up variables
 			local saStr="$"+tvNode.root.key
 			local saArr=filterstring tvNode.tag ","
 			for n in saArr do saStr+="["+n as string+"]"
 			return (execute(saStr))
-		)
+	)
 
 
 
 
 	fn getIconIndex sa =
-		(
+	(
 		local iconIndex, lastIcon, class
 		lastIcon = axImgList.ListImages.Count
-		try	(
+		try(
 		-- get class of object
 			class=classof sa.object as string
 			iconIndex= findItem classArr class
 			if iconIndex!=0 then
-				(
+			(
 				format "Found icon for % ...\n" class
 				return iconIndex
-				)
+			)
 			else
-				(
+			(
 			-- split the saSubAnim and try to extract the object
 			-- then compare it to one last array
 			-- if it's not in there, then it's just a property
 			-- so assign the subanim icon
 			-- get class of controller
-				try	(
+				try(
 					class= (filterstring (sa as string) ":")[2]
 					iconIndex= findItem classArr class
 					if iconIndex!=0 then 
-						(
+					(
 						format "Found icon for % ...\n" class
 						return iconIndex
-						)
+					)
 					else
-						(
+					(
 						--bugger...
 						format "Icon NOT found for $ ...\n" class
 						return lastIcon
-						)
-					)
-				catch
-					(
-					format "FAILIED on second icon pass\n"
-					return lastIcon
 					)
 				)
+				catch
+				(
+					format "FAILIED on second icon pass\n"
+					return lastIcon
+				)
 			)
+		)
 		catch(
 			format "FAILED on first icon pass\n"
 			return lastIcon
-			)
 		)
+	)
 
 -- main recursive function
 
 		fn recurseSubAnims sa tv tvNode d=
-			(
+		(
 			d+=1
 			for i = 1 to sa.numSubs do
-				(
+			(
 
 			 -- flag if not visibility, transform, modified object or material
 				local oktoBuild=true
@@ -421,7 +421,7 @@ global doCopy
 
 			-- build the nodes
 				if oktobuild == true then
-					(
+				(
 				-- build the node
 					newNode = tv.nodes.add tvNode.index 4 ""
 
@@ -436,13 +436,13 @@ global doCopy
 						if d<3 then expand=true
 						/*
 						if expandModifiers==true then
-							(
+						(
 							if(
 								try(superclassof sa.object == modifier)
 								catch(false)
-								)
-							then expand=true
 							)
+							then expand=true
+						)
 						*/
 						else if findItem collapseNodeArr nodeText != 0 then expand=false
 						newNode.expanded=expand
@@ -463,9 +463,9 @@ global doCopy
 
 				-- do children
 					recurseSubAnims sa[i] tv newNode d
-					)
 				)
 			)
+		)
 
 
 /*
@@ -480,7 +480,7 @@ global doCopy
 
 
 	fn populateTreeView tv obj =
-		(
+	(
 		-- Time it...
 			timeIt 0
 		-- clear
@@ -505,7 +505,7 @@ global doCopy
 			timeIt 1
 			--tv1.MouseIcon = (LoadPicture "E:\\2_Current_Jobs\\softinstance\\treeview\\icons\\ico\\AtmosApp_01.ico")
 
-		)
+	)
 
 
 
@@ -516,7 +516,7 @@ global doCopy
 
 	
 	on test open do
-		(
+	(
 
 		-- Time it...
 			timeIt 0
@@ -537,7 +537,7 @@ global doCopy
 			-- POPULATE TREEVIEWS
 				populateTreeView tv1 obj1
 				populateTreeView tv2 obj2
-				)
+			)
 			catch()
 
 		-- SET UP INTERFACE FOR CLICKS
@@ -547,10 +547,10 @@ global doCopy
 		-- Time it...
 			timeIt 1
 	-- END
-		)
+	)
 
 	on test resized size do
-		(
+	(
 		tv1.size.x = (size.x-15)/2
 		tv2.size.x = (size.x-15)/2
 
@@ -567,7 +567,7 @@ global doCopy
 
 		btnNew2.pos=	[((size.x/nTV)+5),(size.y-20)]
 		btnUpdate2.pos=	[((size.x/nTV)+105),(size.y-20)]
-		)
+	)
 
 
 	on btnNew1 pressed do populateTreeView tv1 (obj1=pickObject())
@@ -587,32 +587,32 @@ global doCopy
 
 	-- list all downstream...
 		fn getDownstreamNodes tv tvNode =
-			(
+		(
 			local nodeArr=#()
 			for i = tvNode.index+1 to tvNode.next.index-1 do append nodeArr tv.nodes[i]
 			return nodeArr
-			)
+		)
 		
 	
 	-- get all children
 	
 		fn getNodeChildren tvNode =
-			(
+		(
 			local nodeArr=#()
 			local c = tvNode.child
 			for i = 1 to tvNode.children do
-				(
+			(
 				append nodeArr c
 				c=c.next
-				)
+			)
 			if debug==true then (
 				format "% | " nodeArr.count
 				for n in nodeArr do format "%, " n.text
 				format "\n"
-				)
+			)
 
 			return nodeArr
-			)
+		)
 
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -622,73 +622,73 @@ global doCopy
 
 
 	fn tvGetHitNode tv = 
-		(
+	(
 		local p = getCursorPos tv
 		tv.hitTest (p.x*15) (p.y*15)
-		)
+	)
 
 	fn getMousePick tv=
-		(
+	(
 		mousePick=tvGetHitNode tv
 		if mousePick!= undefined then lbl2.text=mousePick.text
 		else lbl2.text=mousePick as string
-		)
+	)
 
 	
 	fn boldMousePick tv =
-		(
+	(
 		if mousePick != undefined then
-			(
+		(
 		-- add the new node and update interface
 			curNode=mousePick
 			curNode.bold=true
 			lbl3.text=curNode.text
 			insertItem curNode nodeBoldStack 1
-			)		
-		)
+		)		
+	)
 
 
 
 	fn unboldMousePicks =
-		(
+	(
 		try(
 		-- update any old nodes and delete from array
 			if nodeBoldStack.count > 1 then
-				(
+			(
 				for i = nodeBoldStack.count to 2 by -1 do
-					(
+				(
 					nodeBoldStack[i].bold=false
 					deleteItem nodeBoldStack i
-					)
 				)
 			)
-		catch()
 		)
+		catch()
+	)
 
 	fn highlightNode tvNode col=
-		(
+	(
 		try tvNode.backColor = col
 		catch()
-		)
+	)
 	
 
 	fn unhighlightNodes =
-		(
+	(
 		try(
 			for n in nodeHighlightStack do n.backColor=colOff
 			nodeHighlightStack=#()
-			)
-		catch(format"failed to decolor nodes...\n")
 		)
+		catch(format"failed to decolor nodes...\n")
+	)
 
 	fn resetExpandedNodes=
-		(
+	(
 		try(
 			for n in nodeExpandedStack do n.expanded=false
 			nodeExpandedStack=#()
-			)
-		catch()
 		)
+		catch()
+	)
 
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -697,7 +697,7 @@ global doCopy
 
 
 	fn tvNodeClick tv tvNode =
-		(
+	(
 		unboldMousePicks()
 		-- update the label
 			lbl1.text = tvNode.fullpath
@@ -721,17 +721,17 @@ global doCopy
 					format "  ctrl             %\n" sa.controller
 					format "  ctrl class:      %\n" (classof sa.controller)
 					format "  ctrl superclass: %\n\n" (superclassof sa.controller)
-					)
+				)
 				catch()
 /*
 				if superclassof sa.object == modifier then
-					(
+				(
 					format "IS MODIFIER!\n"
 					modPanel.setCurrentObject sa.object
-					)
+				)
 				else format "%\n" (superclassof sa.object)
 */
-		)
+	)
 
 	
 
@@ -739,45 +739,45 @@ global doCopy
 		-- mouse down
 		-------------
 		fn tvMouseDown tv btn shift x y =
-			(
+		(
 			--format "down\n"
 			getMousePick tv
 			if mousePick != undefined then
-				(
+			(
 				boldMousePick tv
 				selNode=mousePick
 				tv.selectedItem=selNode
 				lbl1.text = selNode.text
 				unboldMousePicks()
-				)
 			)
+		)
 
 
 		------------
 		-- mouse up
 		------------
 		fn tvMouseUp tv btn shift x y =
-			(
+		(
 			unboldMousePicks()
-			)
+		)
 
 
 		-------------
 		-- start drag
 		-------------
 			fn tvStartDrag tv data AllowedEffects=
-				(
+			(
 				--format "start drag\n"
 				-- get node array props
 					nodePropArr=getNodeChildren selNode
 				-- convert to text as opposed to nodes
 					for i = 1 to nodePropArr.count do nodePropArr[i] = nodePropArr[i].text
 --				lastNode.bold=false
-				)
+			)
 
 
 	fn checkNode =
-		(
+	(
 		-- unhighlight any previously coloured nodes
 			unhighlightNodes()
 			
@@ -796,52 +796,52 @@ global doCopy
 		
 		-- if compatible, hightlight
 			if dragNodeClass == dropNodeClass then
-				(
+			(
 				okToCopy=true
 				highlightNode curNode colNodeOK
 				append nodeHighlightStack curNode
-				)
+			)
 			else
-				(
+			(
 				okToCopy=false
-				)
-		)
+			)
+	)
 
 
 	fn checkNodeChildren =
-		(
+	(
 		local propsInCommon=false
 		try(
 		-- check for common subanims
 			nodeChildArr = getNodeChildren curNode
 			for n in nodeChildArr do
-				(
+			(
 				if finditem nodePropArr n.text != 0 then
-					(
+				(
 					propsInCommon=true
 					highlightNode n colChildOK
 					append nodeHighlightStack n
-					)
-				)
-		-- if there are properties in common, expand
-			if curNode.expanded==false AND propsInCommon==true then
-				(
-				curNode.expanded=true
-				append nodeExpandedStack curNode
 				)
 			)
-		catch(format"failed to check for common subAnims...\n")
+		-- if there are properties in common, expand
+			if curNode.expanded==false AND propsInCommon==true then
+			(
+				curNode.expanded=true
+				append nodeExpandedStack curNode
+			)
 		)
+		catch(format"failed to check for common subAnims...\n")
+	)
 
 
 		------------
 		-- drag over
 		------------
 			fn tvDragOver tv data Effect Button Shift x y State =
-				(
+			(
 				getMousePick tv
 				if mousePick!=undefined then
-					(
+				(
 				--get this and last nodes
 					lastNode=curNode
 					curNode=mousePick
@@ -856,10 +856,10 @@ global doCopy
 				-- if different RUN THE CODE!
 				-- (this ensures the code is only run once)
 					if curNode.index!=lastNode.index then
-						(
+					(
 						lbl5.text="PROCESSING!"
 					-- run code
-						try	(
+						try(
 						-- update interface
 							boldMousePick tv
 							--lastNode.bold=false
@@ -870,41 +870,41 @@ global doCopy
 							checkNodeChildren()
 	
 						-- END EXECUTABLE CODE -------------------------------------
-							)
-						catch()
 						)
+						catch()
+					)
 				-- udpate feedback
 					else
-						(
+					(
 						lbl5.text=""
 						--lastNode.bold=false
-						)
 					)
 				)
+			)
 
 		-------
 		-- drop
 		-------
 			fn tvDragDrop tv data Effect btn key x y =
-				(
+			(
 				--curNode.backColor=colOff
 				--curNode.bold=false
 				messagebox ""
 				unboldMousePicks()
-				)
+			)
 
 
 		-----------
 		-- complete
 		-----------
 			fn tvCompleteDrag tv Effect =
-				(
+			(
 				mousePick = selNode
 				boldMousePick tv
 				unboldMousePicks()
 				unhighlightNodes()
 				resetExpandedNodes()
-				)
+			)
 
  
 
@@ -938,6 +938,6 @@ global doCopy
 		on tv1 OLECompleteDrag effect do 							tvCompleteDrag tv1 effect
 		on tv2 OLECompleteDrag effect do 							tvCompleteDrag tv2 effect
 
-	)
+)
 
 createdialog test 615 600 50 50 style:#(#style_minimizebox,#style_titlebar, #style_border, #style_sysmenu,#style_resizing)--#style_maximizebox,

@@ -24,7 +24,7 @@ macroScript ViewportLayoutManager
 	tooltip:"Viewport Layout Manager"
 	icon:#("VPort_layout", 14)
 	
-	(
+(
 	
 		global roViewportLayout
 	
@@ -32,7 +32,7 @@ macroScript ViewportLayoutManager
 		catch(err)
 	
 		rollout roViewportLayout "Viewport Layout Manager" width:270 height:40
-			(
+		(
 		
 			--------------------------------------------------------------------------------------------
 			-- interface
@@ -83,7 +83,7 @@ macroScript ViewportLayoutManager
 					#view_none, 
 					#view_spot, 
 					#view_shape
-					)
+				)
 		
 				local vptOptions = #(
 					#(#layout_4,	"4 viewports - all same size"),
@@ -104,7 +104,7 @@ macroScript ViewportLayoutManager
 					#(#layout_2hb,	"2 viewports - horizontal split, top larger"),
 					#(undefined,	"--------------------------------------------------------------------------------------"),
 					#(#layout_1,	"1 viewport")
-					)
+				)
 			/*
 			*/
 				local vptDefaults = #(
@@ -121,8 +121,8 @@ macroScript ViewportLayoutManager
 					#(#layout_2h,	#view_left,		#view_persp_user	),
 					#(#layout_2ht,	#view_left,		#view_persp_user	),
 					#(#layout_2hb,	#view_top,		#view_left			),
-					#(#layout_1,	#view_persp_user	)
-					)
+					#(#layout_1,	#view_persp_user)
+				)
 			
 	
 			--------------------------------------------------------------------------------------------
@@ -130,32 +130,32 @@ macroScript ViewportLayoutManager
 			--------------------------------------------------------------------------------------------
 		
 				fn updateDropdown layout =
-					(
+				(
 					local index = 0
 					while index == 0 do
-						(
+					(
 						for i = 1 to vptOptions.count do
-							(
+						(
 							if vptOptions[i][1] == layout then index = i
 							exit
-							)
 						)
-					ddlLayouts.selection = index
 					)
+					ddlLayouts.selection = index
+				)
 					
 				fn resetLayout =
-					(
+				(
 					-- get default views
 						local layoutName = viewport.getLayout()
 						local arrViews
 						for arr in vptDefaults where arr[1] == layoutName do
-							(
+						(
 							arrViews = copy arr #nomap
 							deleteItem arrViews 1
-							)
+						)
 					-- reset views
 						for i = 1 to viewport.numViews do
-							(
+						(
 							-- view
 								viewport.activeViewport = i
 								
@@ -164,30 +164,30 @@ macroScript ViewportLayoutManager
 							
 							-- other settings
 								if arrViews[i] == #view_persp_user then 
-									(
+								(
 									viewport.setRenderLevel #smoothhighlights
 									viewport.setTM defaultTM
-									)
+								)
 								else
-									(
+								(
 									viewport.setRenderLevel #wireFrame
-									)
+								)
 								
 								viewport.DispBkgImage 	= false
 								displaySafeFrames 		= false
 								viewport.setGridVisibility i true
-							)
-					)
+						)
+				)
 					
 				function saveSettings =
-					(
+				(
 					-- variables
 						local layout		= viewport.getLayout()
 						local oldActiveVpt	= viewport.activeViewport
 						
 					-- get views
 						for i = 1 to viewport.numViews do
-							(
+						(
 							-- view
 								viewport.activeViewport = i
 								
@@ -213,16 +213,16 @@ macroScript ViewportLayoutManager
 								
 							-- ini setting
 								setINISetting iniFile layout (i as string) iniString
-							)
+						)
 					-- ini setting
 						setINISetting iniFile layout "activeVpt" (oldActiveVpt as string)
 		
 					-- cleanup
 						viewport.activeViewport = oldActiveVpt
-					)
+				)
 		
 				function loadSettings =
-					(
+				(
 					
 					-- variables
 						local layout		= viewport.getLayout()
@@ -235,7 +235,7 @@ macroScript ViewportLayoutManager
 		*/
 					-- get views
 						for i = 1 to viewport.numViews do
-							(
+						(
 
 							-- view
 								viewport.activeViewport = i
@@ -255,33 +255,33 @@ macroScript ViewportLayoutManager
 								
 							-- view type
 								if vpt != undefined AND vpt != "" then
-									(
+								(
 									if finditem allowableViews (vpt as name) != 0 then viewport.settype (vpt as name)
 									else
-										(
+									(
 										local cam = getNodeByName vpt
 										if cam != undefined then viewport.setCamera cam
-										)
 									)
+								)
 							--messagebox (vpt as string)
 								
 							-- other settings
 								if shading != undefined AND shading != "" then viewport.setRenderLevel(iniArr[2] as name)
 								if safeFrame != undefined AND safeFrame != "" then displaySafeFrames = if iniArr[5] == "1" then true else false
 								if bgImage != undefined AND bgImage != "" then
-									(
+								(
 									if doesfileexist bgImage then backgroundImageFileName = bgImage
-									)
+								)
 								if bgImageOn != undefined AND bgImageOn != "" then viewport.DispBkgImage = if iniArr[4] == "1" then true else false
 								if viewTM != undefined AND viewTM != "" then
-									(
+								(
 									print viewTM
 									execute ("vptMatrix = " + viewTM)
 									try(viewport.setTM vptMatrix)
 									catch(
 										format "Could not set viewport matrix...\n"
-										)
 									)
+								)
 		/*
 							-- debug
 		--						format "\n view: %\n" i
@@ -292,7 +292,7 @@ macroScript ViewportLayoutManager
 								format "	safeframe:	%\n" iniArr[5]
 								format "	viewTM:		%\n" iniArr[6]
 		*/
-							)
+						)
 							
 					-- cleanup
 						local oldActiveVpt = getINISetting iniFile layout "activeVpt"
@@ -304,19 +304,19 @@ macroScript ViewportLayoutManager
 					-- view
 						if objects.count == 0 then max tool zoomextents all
 
-					)
+				)
 				
 				function clearAllSettings force:false =
-					(
+				(
 					if querybox "This will delete all saved settings, for all viewport layouts. Are you sure this is what you want to do?" then
-						(
+					(
 						for option in vptOptions do
-							(
+						(
 							if option[1] != undefined then delIniSetting iniFile option[1]
-							)
 						)
-					resetLayout()
 					)
+					resetLayout()
+				)
 		
 
 			--------------------------------------------------------------------------------------------
@@ -327,92 +327,92 @@ macroScript ViewportLayoutManager
 			-- docking
 			
 				fn setDockDialog dp =
-					(
+				(
 					--messagebox "Set Dock"
 					if dp == #cui_dock_top then
-						(
+					(
 						mnViewportLayout.miDockTop.checked = true
 						mnViewportLayout.miDockBottom.checked = false
-						)
+					)
 					else
-						(
+					(
 						mnViewportLayout.miDockTop.checked = false
 						mnViewportLayout.miDockBottom.checked = true
-						)
+					)
 					dockPosition = dp
 					cui.DockDialogBar roViewportLayout (dockPosition as name)
 					--messagebox ("Set ini: " +(dockPosition as string))
 	
 					setIniSetting iniFile "Settings" "dockPosition" dockPosition
-					)
+				)
 					
 				fn getDockDialog =
-					(
+				(
 					--messagebox "Get Dock"
 					dp = getIniSetting iniFile "Settings" "dockPosition"
 					if dp == "" then dp = #cui_dock_top else dp = dp as name
 					setDockDialog dp
-					)
+				)
 			
 			-------------------------------------------------------------------------------------
 			-- autostart
 			
 				fn setAutoStart state =
-					(
+				(
 					messagebox (state as string)
 					mnViewportLayout.miAutoStart.checked = state
 					if state then
-						(
+					(
 						local f	= openfile autoStartFile mode:"w"
 						format autoStartString to:f
 						close f
-						)
+					)
 					else
-						(
+					(
 						deleteFile autoStartFile
-						)
-					)	
+					)
+				)	
 	
 				fn getAutoStart =
-					(
+				(
 					local files	= getFiles autoStartFile 
 					autoStart = files.count == 1
 					mnViewportLayout.miAutoStart.checked = autoStart
-					)	
+				)	
 		
 			-------------------------------------------------------------------------------------
 			-- clear settings
 			
 				fn getClearSettings =
-					(
+				(
 					local iniSetting = getIniSetting iniFile "settings" "clearSettingsOnStartup"
 					mnViewportLayout.miAutoClearSettings.checked = (iniSetting == "1")
 					if iniSetting == "0" then clearSettings prompt:false
-					)	
+				)	
 		
 				fn setClearSettings state =
-					(
+				(
 					mnViewportLayout.miAutoClearSettings.checked = state
 					setIniSetting iniFile "settings" "clearSettingsOnStartup" (if state then "1" else "0")
-					)
+				)
 
 			-------------------------------------------------------------------------------------
 			-- export settings
 
 				fn importSettingsFile =
-					(
+				(
 					-- open file
 						local iniCopy = getOpenFileName "Import Viewport Layout settings file" types:"Viewport Settings file(*.vpt.ini)|*.vpt.ini"
 						if iniCopy != undefined then
-							(
+						(
 							copyFile iniCopy iniFile
-							)
+						)
 					-- settings
 						loadSettings()
-					)
+				)
 					
 				fn exportSettingsFile =
-					(
+				(
 					-- settings
 						saveSettings()
 					-- get base name
@@ -420,10 +420,10 @@ macroScript ViewportLayoutManager
 						local fileName	= maxFileName
 						local badChars	= filterstring " ,0,1,2,3,4,5,6,7,9,8,9" ","
 						try
-							(
+						(
 							fileName = substring fileName 1 ((findstring fileName ".max") - 1)
 							while (finditem badChars (fileName[fileName.count]))> 0 do fileName = substring fileName 1 (fileName.count - 1)
-							)
+						)
 						catch()
 						fileName = fileName + "viewport settings"
 					-- get save file
@@ -431,20 +431,20 @@ macroScript ViewportLayoutManager
 						local iniCopy = getSaveFileName "Export Viewport Layout settings file" filename:fileName types:("Settings file(*" +ext+ ")|*" +ext)
 					-- edit name if double ".vpt.ini"
 						while (i = findstring iniCopy ext) != undefined do
-							(
+						(
 							iniCopy = replace iniCopy i ext.count ""
-							)
+						)
 						iniCopy += ext
 						if iniCopy != undefined then copyFile iniFile iniCopy
-					)
+				)
 
 			-------------------------------------------------------------------------------------
 			-- right click menu
 			
 				fn initRightClickMenu =
-					(
+				(
 					rcmenu mnViewportLayout
-						( 
+					( 
 					
 						-- interface
 							menuItem miVptDialog "Viewport Background..."
@@ -476,11 +476,11 @@ macroScript ViewportLayoutManager
 							on miAutoStart picked do			setAutoStart (NOT miAutoStart.checked)
 							on miAutoClearSettings picked do	setClearSettings (NOT miAutoClearSettings.checked)
 							
-						) 
+					) 
 					
 					-- register the rcmenu 
 						registerRightClickMenu mnViewportLayout
-					)
+				)
 	
 	
 			--------------------------------------------------------------------------------------------
@@ -488,36 +488,36 @@ macroScript ViewportLayoutManager
 			--------------------------------------------------------------------------------------------
 		
 				on ddlLayouts selected index do
-					(
+				(
 					if vptOptions[index][1] != undefined then
-						(
+					(
 						saveSettings()
 						viewport.setLayout vptOptions[index][1]
 						loadSettings()
 						viewport.SetRenderLevel (viewport.getRenderLevel())
-						)
+					)
 					else updateDropdown (viewport.getLayout())
 		
 					enableSceneRedraw()
 					forcecompleteredraw()
 					redrawViews()
-					)
+				)
 					
 				on btnBg pressed do
-					(
+				(
 					viewport.DispBkgImage = NOT viewport.DispBkgImage
 					InvalidateAllBackgrounds()
 					slidertime = slidertime -- hack to update bg
-					)
+				)
 			
 				on btnCfg pressed do
-					(
+				(
 					popUpMenu mnViewportLayout
-					)
+				)
 		
 		
 				on roViewportLayout open do
-					(
+				(
 					-- dropdown
 						ddlLayouts.items = for a in vptOptions collect a[2]
 						updateDropdown (viewport.getLayout())
@@ -528,17 +528,17 @@ macroScript ViewportLayoutManager
 					-- autostart
 						getAutoStart()
 						getClearSettings()
-					)
+				)
 					
 					
-			)
+		)
 		-- create
 			createdialog roViewportLayout style:#(#style_titlebar, #style_border, #style_sysmenu)
 			cui.RegisterDialogBar roViewportLayout style:#(#cui_dock_top, #cui_dock_bottom, #cui_floatable)
 		-- dock
 			roViewportLayout.getDockDialog()
 	
-	)
+)
 
 (
 macros.run "Views" "ViewportLayoutManager"

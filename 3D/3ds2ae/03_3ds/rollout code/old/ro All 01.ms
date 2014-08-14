@@ -18,7 +18,7 @@
 	fileIn "tools\\ro tools 01.ms"
 
 rollout rFlash "Interface" 
-	( 
+( 
 
 -- variables
 	local rollouts=#(roSettings,roAnim,roRend,roEffects,roTools)
@@ -33,7 +33,7 @@ rollout rFlash "Interface"
 		on axFlash OnProgress arg1 do format "handler: OnProgress : %\n" arg1 
 	
 		on axFlash FSCommand arg1 arg2 do 
-			(
+		(
 			-- messagebox
 				--rFlash.title=(arg1 + " " +arg2)
 				--messagebox (arg1 + " " +arg2)
@@ -48,30 +48,30 @@ rollout rFlash "Interface"
 			for i = 2 to 6 do max2aeFloater.rollouts[i].open=false
 			max2aeFloater.rollouts[(arg1 as Number)+1].open=true
 
-			) 
+		) 
 	
 		on rFlash open do 
-			(
+		(
 			local f=(openfile "flashUI.swf")
 			local fStr
 			if f!= undefined then
-				(
+			(
 				flush f; close f
 		
 				fStr=f as string
 				fStr = substring fStr 7 (fStr.count-7)
 				fStr=replaceAll fStr "\\" "/"
 				
-				)
+			)
 			else messageBox "Interface file not found..."
 
 			axFlash.movie = fStr--path+file 
 			axFlash.BackgroundColor=((colorMan.getColor #background)*255)as color
 			axFlash.menu=false
-			)
+		)
 
 
-	) 
+) 
 
 addRollout rFlash max2aeFloater
 addRollout roSettings max2aeFloater rolledUp:false

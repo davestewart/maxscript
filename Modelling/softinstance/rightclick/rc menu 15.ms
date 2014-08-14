@@ -31,24 +31,24 @@
 --=====================================================================================
 
 fn fileToString file=
-	(
+(
 	str=stringstream ""
 	strFile = openFile file
 	while not eof strFile do
-		(
+	(
 		format "%\n" (readline strFile) to:str
-		)
-	return str as string
 	)
+	return str as string
+)
 
 fn flt_objects obj = (obj != undefined) -- objects filter 
 
 fn flt_isNotMultiMat obj =
-	(
+(
 	if obj.material != undefined then
 		obj.material != Multimaterial
 	else false
-	)
+)
 
 
 
@@ -58,9 +58,9 @@ fn flt_isNotMultiMat obj =
 
 
 fn helpBox =
-	(
+(
 	rollout roHelp "Help" width:312 height:312
-		(
+	(
 		groupBox grp1 "Overview" pos:[8,8] width:296 height:136
 		label lbl1 "This script is designed to quickly and easily copy properties from one object to another using the familiar right-click menu tree structure.
 You can copy any property to any other property as just the value, a copy of the controller, or an instance of controller.
@@ -83,16 +83,16 @@ Easily instance rotation paramaters from a transform to a Gizmo's Transform
 		-- Handlers
 	
 	
-		)	
+	)	
 	if pmHelpFloater != undefined then closerolloutfloater pmHelpFloater
 		pmHelpFloater = newRolloutFloater "Property Matcher Help" 325 500
 	addRollout roHelp pmHelpFloater
-	)
+)
 
 fn optionsBox =
-	(
+(
 	rollout roOpts "Options" width:168 height:312
-		(
+	(
 		radiobuttons rdo1 "Copy property..." pos:[8,8] width:110 height:62 labels:#("Copy value only", "Copy controller", "Instance controller")
 		radiobuttons rdo2 "Copy method..." pos:[8,80] width:57 height:46 labels:#("By modifier index","By modifier name") columns:1
 --		checkbox chk1 "Auto-assign controllers" pos:[16,80] width:136 height:16
@@ -106,11 +106,11 @@ fn optionsBox =
 		-- Handlers
 	
 	
-		)
+	)
 	if pmOptFloater != undefined then closerolloutfloater pmOptFloater
 		pmOptFloater = newRolloutFloater "Property Matcher Options" 188 200 
 	addRollout roOpts pmOptFloater
-	)
+)
 
 
 
@@ -121,7 +121,7 @@ fn optionsBox =
 
 
 fn doStack level mProp saProp=
-	(
+(
 	--messageBox (obj as string +" | "+ prop1 as string +" | "+ prop2 as string)
 
 	-- work out the node from the data...
@@ -138,13 +138,13 @@ fn doStack level mProp saProp=
 
 
 		if level>0 then
-			(
+		(
 			srcNode=				srcObj.modifiers[level]
 			srcNodePropValue=		execute("$"+srcObj.name+".modifiers["+level as string+"]."+mProp as string)
 			srcNodePropController=	execute("$"+srcObj.name+".modifiers["+level as string+"]."+mProp as string+".controller")
 
 			--srcProp=srcNode[mProp]
-			)
+		)
 		else
 			srcNode=srcObj.baseObject[mProp as name]
 
@@ -152,22 +152,22 @@ fn doStack level mProp saProp=
 */
 
 	if cpMode=="src" then
-		(
+	(
 		cpSrcProps.mLevel=level
 		cpSrcProps.mProp=mProp
 		cpSrcProps.saProp=saProp
-		)
+	)
 	else if cpMode=="trg" then
-		(
+	(
 		cpTrgProps.mLevel=level
 		cpTrgProps.mProp=mProp
 		cpTrgProps.saProp=saProp
-		)
 	)
+)
 
 
 fn doTrans p r s par=
-	(
+(
 	trgObj = pickObject filter:flt_isNotSameObj rubberBand:srcObj.pos
 
 	-- position
@@ -175,23 +175,23 @@ fn doTrans p r s par=
 
 	-- rotation
 		if r==1 then
-			(
+		(
 			-- rotate without messing with position
 			in coordsys (transmatrix srcObj.transform.pos) 
 		    srcObj.rotation = trgObj.rotation as EulerAngles
-			)
+		)
 	-- scale
 		if s==1 then srcObj.scale=trgObj.scale
 
 	-- parent
 		if par==1 then srcObj.parent=trgObj
 
-	)
+)
 
 
 fn doMat obj prop =
-	(
-	)
+(
+)
 
 --=====================================================================================
 -- Sub Menu functions
@@ -199,7 +199,7 @@ fn doMat obj prop =
 
 
 fn buildStackLevelMenu obj level=
-	(
+(
 	local mStr=""
 	if superclassof obj == modifier then mStr= obj.name as string
 	else mStr = obj as string
@@ -220,18 +220,18 @@ fn buildStackLevelMenu obj level=
 	-- Individual properties of modifier/baseObject
 		local propArr=getPropNames obj
 		for m = 1 to propArr.count do
-			(
+		(
 		-- straight properties
 			if classof (getProperty obj propArr[m]) != SubAnim then
-				(
+			(
 			-- menu items
 				format "		menuItem mi_Stack%_% \"%\"\n" level m (propArr[m] as string) to:menuStr
 			-- handlers
 				format "	on mi_Stack%_% picked do doStack % % #null\n" level m level propArr[m] to:handlerStr
-				)
+			)
 		-- subanims
 			else
-				(
+			(
 				format "		subMenu \"%...\"\n			(\n" (propArr[m] as string) to:menuStr
 				-- All
 
@@ -245,7 +245,7 @@ fn buildStackLevelMenu obj level=
 				
 				-- individual properties
 					for p in (getSubAnimNames obj[propArr[m]]) do
-						(
+					(
 					-- menu items
 						format "			menuItem mi_Stack%_%_% \"%\"\n" level m (p as string) (p as string) to:menuStr
 						--format "menuItem cunt \"cunt\"\n" to:menuStr
@@ -253,20 +253,20 @@ fn buildStackLevelMenu obj level=
 						format "		on mi_Stack%_%_% picked do doStack % % %\n" level m (p as string) level propArr[m] p to:handlerStr
 /*
 */
-						)
+					)
 					format "\n			)\n" to:menuStr
-				)
-			
 			)
+			
+		)
 
 	format "\n		)\n" to:menuStr
-	)
+)
 
 
 
 
 fn buildTransMenu obj =
-	(
+(
 	------------------------------------------------------------
 	-- Transforms
 	------------------------------------------------------------
@@ -302,17 +302,17 @@ fn buildTransMenu obj =
 			format "%\n" transHandlers to:menuStr
 /*
 */
-	)
+)
 
 
 fn buildMatMenu obj =
-	(
+(
 	------------------------------------------------------------
 	-- Material
 	------------------------------------------------------------
 
 	if obj.material!=undefined then
-		(
+	(
 		format "subMenu \"Groups...\"\n	(\n" to:menuStr
 	
 			format "	menuItem mi_MatGroupAll \"All\"" to:menuStr
@@ -320,9 +320,9 @@ fn buildMatMenu obj =
 			format "	separator sep%\n" (sep+=1) to:menuStr
 			local matArr =#("Ambient","Diffuse","Specular / Glossiness","Shader","Opacity","Bump","Self Illumination","Reflection")
 			for n = 1 to matArr.count do
-				(
+			(
 				format "	menuItem mi_Mat% \"%\"\n" n matArr[n] to:menuStr
-				)
+			)
 		format "\n	)\n" to:menuStr
 
 		format "subMenu \"Individual...\"\n	(\n" to:menuStr
@@ -333,24 +333,24 @@ fn buildMatMenu obj =
 			format "	menuItem mi_MatIndAllExcept \"All Except...\"" to:menuStr
 			format "	separator sep%\n" (sep+=1) to:menuStr
 			for m = 1 to propArr.count do
-				(
+			(
 				-- menu items
 					format "		menuItem mi_MatInd% \"%\"\n" m (propArr[m] as string) to:menuStr
 	
 				-- handlers
 					--format "	on mi_mi_MatInd% picked do doMat % %\n" m level propArr[m] to:handlerStr
-				)
+			)
 
 		format "\n	)\n" to:menuStr
-		)
 	)
+)
 
 
 --=====================================================================================
 -- Main Menu
 --=====================================================================================
 fn buildMainMenu obj =
-	(
+(
 	-- reset all vars
 		sep=0
 		menuStr= "" as stringstream
@@ -370,7 +370,7 @@ fn buildMainMenu obj =
 	-- start menu strucure
 
 	format "rcmenu cpRCMenu (\n" to:menuStr
-		(
+	(
 			format "menuItem mi_Title \"%\" enabled:false\n" titleStr to:menuStr
 			format "separator sep%\n" (sep+=1) to:menuStr
 	
@@ -385,9 +385,9 @@ fn buildMainMenu obj =
 				format "subMenu \"Stack values...\"\n	(\n" to:menuStr
 					-- mods
 						for n = 1 to obj.modifiers.count do
-							(
+						(
 							buildStackLevelMenu obj.modifiers[n] n
-							)
+						)
 						format "	separator sep%\n" (sep+=1) to:menuStr
 					-- base object
 						buildStackLevelMenu obj.baseObject 0
@@ -405,14 +405,14 @@ fn buildMainMenu obj =
 		-- material
 		/*
 			if NOT flt_isNotMultiMat obj then
-				(
+			(
 			
 				format "	menuItem mi_Mat \"Material...\" enabled:false\n" to:menuStr
 		
 				format "subMenu \"Material...\" filter:flt_isNotMultiMat %\n	(\n" obj to:menuStr
 					buildMatMenu obj
 				format "\n	)\n" to:menuStr
-				)
+			)
 		*/
 
 		------------------------------------------------------------
@@ -436,13 +436,13 @@ fn buildMainMenu obj =
 
 
 	
-		)
+	)
 	format "\n)" to:menuStr
 
 
 	close menuStr
 	execute(menuStr as string)
-	)
+)
 
 
 --=====================================================================================
@@ -451,28 +451,28 @@ fn buildMainMenu obj =
 
 
 fn copyTypeDialogue =
-	(
+(
 	rollout roOpts "Options" width:128 height:88
-		(
+	(
 		button BtnCancel "Cancel" pos:[8,64] width:112 height:16
 		radiobuttons rdo1 "" pos:[8,8] width:111 height:48 labels:#("Copy values only", "Copy controller", "Instance Controller") default:0
 		on BtnCancel pressed do	DestroyDialog roOpts
 		on rdo1 changed state do
-			(
+		(
 			cpCopyType = case state of
-				(
+			(
 				1:	1
 				2:	2
 				3:	3
-				)
-				DestroyDialog roOpts
 			)
+				DestroyDialog roOpts
 		)
-	CreateDialog roOpts modal:true pos:(mouse.screenpos-[50,50])
 	)
+	CreateDialog roOpts modal:true pos:(mouse.screenpos-[50,50])
+)
 
 fn copyProps =
-	(
+(
 
 	copyTypeDialogue()
 	
@@ -510,19 +510,19 @@ setProperty <obj> <property_name> <value>
 -- get stack level
 	local srcProp
 	case of 
-		( 
+	( 
 		(cpSrcProps.mLevel == 0):	srcProp = cpSrcProps.obj.baseObject
 		(cpSrcProps.mLevel > 0):	srcProp = cpSrcProps.obj.modifiers[cpSrcProps.mLevel]
 		default: messageBox "Couldn't get stack level"
-		) 
+	) 
 
 	local trgProp
 	case of 
-		( 
+	( 
 		(cpTrgProps.mLevel == 0):	trgProp = cpTrgProps.obj.baseObject
 		(cpTrgProps.mLevel > 0):	trgProp = cpTrgProps.obj.modifiers[cpTrgProps.mLevel]
 		default: messageBox "Couldn't get stack level"
-		) 
+	) 
 
 	--messagebox (exprformaxobject srcProp as string+"\n"+exprformaxobject trgProp as string)
 	--messagebox (srcProp as string+"\n"+trgProp as string)
@@ -538,36 +538,36 @@ setProperty <obj> <property_name> <value>
 
 	-- start iterating and matching
 		for prop in propArr do
-			(
+		(
 			if (classof (getProperty srcProp prop)!=subAnim) then
-				(
+			(
 				local saInfo = getNumSubs
 				try (
 					local propVal = getProperty trgProp prop
 					setProperty srcProp prop propVal
 					format "mProp SUCCESS:  % >>> % >>> % >>> %\n" srcProp prop propVal saInfo
-					)
+				)
 				catch(
 					format "mProp FAIL:     % >>> % >>> % >>> %\n" srcProp prop propVal saInfo
-					)
 				)
+			)
 			else
-				(
+			(
 				try (
 					local propCtrl = getPropertyController trgProp prop
 					setPropertyController srcProp prop (copy propCtrl)
 					format "saProp SUCCESS: % >>> % >>> %\n" trgProp prop propCtrl
-					)
+				)
 				catch(
 					format "saProp FAIL:    % >>> % >>> %\n" trgProp prop propCtrl
-					)
 				)
+			)
 
-		)
+	)
 	enableSceneRedraw()
 	forceCompleteRedraw()
 	redrawViews()
-	)
+)
 
 --=====================================================================================
 -- Go!
@@ -624,9 +624,9 @@ pArr = getPropNames cpSrcProps.obj.modifiers[cpSrcProps.mLevel]
 for p in pArr do format "%\n" cpSrcProps.obj.modifiers[cpSrcProps.mLevel][p]
 
 for p = 1 to pArr.count do
-	(
+(
 	format "%\n" cpSrcProps.obj.modifiers[cpSrcProps.mLevel][pArr[p]]
-	)
+)
 
 classof cpSrcProps.obj.modifiers[cpSrcProps.mLevel].gizmo
 

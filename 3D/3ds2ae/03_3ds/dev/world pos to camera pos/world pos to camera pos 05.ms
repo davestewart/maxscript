@@ -1,7 +1,7 @@
 -- objects
 
 fn worldToCam p c=
-	(
+(
 	-- variables	
 		-- angle, or fov/2
 			a=c.fov/2	
@@ -31,7 +31,7 @@ fn worldToCam p c=
 		
 	-- return
 		return point2 x y
-	)
+)
 
 (
 )

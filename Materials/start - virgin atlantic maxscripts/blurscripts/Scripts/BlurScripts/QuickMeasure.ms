@@ -40,16 +40,16 @@ global qms_b = [0,0,0]
 tool quickmeasure
 (
 on mousePoint clickno do 
-	(
+(
 	if clickno == 2 then qms_a = worldPoint
 	else if clickno == 3 then
-		(
+	(
 		qms_b = worldPoint
 		to_print = "Distance: "+ ((units.formatvalue (distance qms_a qms_b)) as string) + "      "
 		MessageBox to_print title:"QuickMeasure"
 		#stop
-		)
 	)
+)
 )
 
 startTool quickmeasure

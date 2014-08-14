@@ -9,10 +9,10 @@ mySelection = objects as Array
 
 -- create stack info for each object
 for obj in mySelection do
-	(
+(
 	stackInfo
 	append myArrayLevel1 #()
-	)
+)
 
 
 

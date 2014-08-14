@@ -36,14 +36,14 @@ utility Credits5 "Simple Credits Maker 5" width:162 height:1000
 	------------------------------------------------------------------------------------------
 	
 	on btn1 pressed do
-	(
+(
 		tempNamesList = edt1.text
 		-- filterString namesList "\r" 
 
-	)
+)
 	
 	on btn2 pressed do
-	(
+(
 		
 		--sets the animation range
 			animationRange = interval 0 a.count
@@ -68,11 +68,11 @@ utility Credits5 "Simple Credits Maker 5" width:162 height:1000
 						displayText = names[i]
 						spaceIndex = findString displayText " " -- find any spaces
 						obj.text = replace displayText spaceIndex 1 "\r"
-					)
+				)
 					else
-						(
+					(
 						obj.text  = names[i]
-					)
+				)
 				
 		
 				-- Set up scaling
@@ -81,7 +81,7 @@ utility Credits5 "Simple Credits Maker 5" width:162 height:1000
 						targetScale = targetWidth / objWidth
 						addModifier obj (XForm())
 						obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
-					)
+				)
 		
 				
 		
@@ -97,6 +97,6 @@ utility Credits5 "Simple Credits Maker 5" width:162 height:1000
 					obj.pos.controller.Z_Position.controller.keys[2].value = 0
 					obj.pos.controller.Z_Position.controller.keys[3].value = -spacing
 			
-			)
 		)
+	)
 )

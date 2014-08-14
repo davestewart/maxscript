@@ -38,7 +38,7 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 
 
 	on RSro1 open do
-		(
+	(
 	-- SET UP AX OBJECT
 	--------------------------------------------------------
 		ax.MousePointer = #ccArrow 
@@ -70,21 +70,21 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 						"Camera")
 		
 		for i = 1 to colLabels.count  do
-			(
+		(
 			tmp = chs.Add Width:200
 			tmp.text=colLabels[i]
-			)
+		)
 		
 	-- ADD ITEMS
 	--------------------------------------------------------
 		for i = 1 to 8 do
-			(
+		(
 			-- VERTICAL
 				local li = ax.listItems.Add()
 				li.tooltiptext = "Double-click to render..."
 			-- HORIZONATAL
 				for j = 2 to colLabels.count do lsi = ax.ListItems[i].ListSubItems.add() --ForeColor:(128*128*128)
-			)
+		)
 
 
 	-- CHANGE COL WIDTHS
@@ -94,7 +94,7 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 		for i = 1 to colWidths.count do
 			windows.sendMessage ax.hwnd LVM_SETCOLUMNWIDTH (i-1) (colWidths[i])
 		ax.refresh()
-	)
+)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 	------------------------------------------------------------------------------------------------
 
 		fn convertToSMPTEString t =
-			(
+		(
 			-- input t to be seconds
 				
 			-- seconds
@@ -123,11 +123,11 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 			if h < 10 then h = "0" + h as string else h = h as string
 		
 			return (h+ ":" +m+ ":" +s)
-			)
+		)
 
 
 		fn updateUI =
-			(
+		(
 		-- Update Input UI
 		--------------------------------------------
 			obj=RSro2.RSArr[RSro2.index]
@@ -154,10 +154,10 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 
 			if obj[13] == true then RSro2.btnRend.text = "Production" else RSro2.btnRend.text = "Draft"
 			if obj[14] != "" then RSro2.pck1.text = obj[14] else RSro2.pck1.text = "Viewport"
-			)
+		)
 		
 		fn updateListColor=
-			(
+		(
 		-- Update List
 		--------------------------------------------
 			-- Normal
@@ -165,24 +165,24 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 				obj.bold=false
 				--obj.forecolor = color 0 0 0
 				for subObj in obj.ListSubItems do
-					(
+				(
 					subObj.bold=false
 					--subObj.forecolor = color 0 0 0
-					)
+				)
 	
 			-- Bold
 				obj=ax.ListItems[RSro2.index]
 				obj.bold=true
 				--obj.forecolor = color 0 0 255
 				for subObj in obj.ListSubItems do
-					(
+				(
 					subObj.bold=true
 					--subObj.forecolor = color 0 0 255
-					)
+				)
 				
 			--format "% %\n" RSro2.index RSro2.indexOld
 
-			)
+		)
 
 
 
@@ -191,7 +191,7 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 		local renderTime = #(0,0,"")
 
 		fn doRender obj =
-			(
+		(
 			-- get start time
 				renderTime[1] = timeStamp()
 
@@ -206,11 +206,11 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 			-- frameRange
 				local t
 				case obj[3] of
-					(
+				(
 					1: t= "frame:#current "
 					2: t= "framerange:#active "
 					3: t= "fromFrame:" +obj[4].x as String+ " toFrame:"+obj[4].y as String+ " "
-					)
+				)
 			
 				format "% "						t	to:rendStr
 	
@@ -225,10 +225,10 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 	
 			-- fileOutput
 				if obj[12]==true then
-					(
+				(
 					local str = RSRo3.replaceAll obj[11] "\\" "\\\\"
 					format "outputfile:\"%\" "	str 		to:rendStr
-					)
+				)
 				
 			-- Camera
 				local cam = getNodeByName obj[14]
@@ -262,66 +262,66 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 
 					
 				-- Open animation?
-					if 	(
+					if (
 						RSro3.chkAnim.checked AND
 						obj[3] > 1 AND
 						RSro2.chkSave.checked AND
 						(getFilenameType obj[11] == ".mov" OR getFilenameType obj[11] == ".avi")
-						)
+					)
 						then ShellLaunch (obj[11]) ""
 
 			--------------------------------------------------------
-			try	(
-				)
-			catch
-				(
-				MessageBox "Rendering interrupted!"
-				)
-			--------------------------------------------------------
+			try(
 			)
+			catch
+			(
+				MessageBox "Rendering interrupted!"
+			)
+			--------------------------------------------------------
+		)
 
 
 		fn checkForCamera obj =
-			(
+		(
 			local cam = obj[14]
 			if cam=="" then return true
 			else if (isValidNode (getNodeByName cam)) then return true
 				else
-					(
+				(
 					local vpType = substring (viewport.getType() as string) 6 20
 					local str = "The specified camera doesn't exist.\n\nDo you want to continue rendering through the active ("+vpType+ ") viewport?"
 					if queryBox str then return true else return false
-					) 
-			)
+				) 
+		)
 
 
 	-- EVENTS
 	--------------------------------------------------------
 
 		on ax Click do
-			(
+		(
 		  	RSro2.indexOld = RSro2.index
 			RSro2.index = ax.SelectedItem.index
 			updateUI()
 			updateListColor()
-			)
+		)
 
 		on ax DblClick do
-			(
+		(
 			-- update List
 				RSro2.initList RSro2.index
 			
 			-- check, then render
 				local obj=RSro2.RSArr[RSro2.index]
 				if (checkForCamera obj) then doRender obj
-			)
+		)
 
 		on ckbSize changed state do
-			(
+		(
 			case state of
-				(
+			(
 				true:
-					(
+				(
 				 -- make floater small
 					RSro2.open=false
 					RSro3.open=false
@@ -330,9 +330,9 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 					RSro1.scrollPos = 20
 					RSFloater.pos+=[0,8]
 
-					)
+				)
 				false:
-					(
+				(
 				 -- make floater big
 					RSro2.open=true
 					RSro3.open=true
@@ -340,9 +340,9 @@ rollout RSro1 "Presets  (Double-click to render)" width:984 height:180 --   ( Si
 					RSFloater.size = [1010,294]
 					RSro1.scrollPos = 0
 					RSFloater.pos+=[0,8]
-					)
 				)
 			)
+		)
 
 
 )
@@ -359,7 +359,7 @@ rollout RSro2 "Editor" width:984 height:192
 		global filterFileTypes
 	
 		fn filterFileTypes showExtension =
-			(
+		(
 			-- define filetypes
 				local i
 				local fileTypes=#(#(),#(),#())
@@ -394,9 +394,9 @@ rollout RSro2 "Editor" width:984 height:192
 				
 			-- build format strings
 				for i = 1 to 3 do
-					(
+				(
 					for f in fileTypes[i] do all+= f[2] + "; "
-					)
+				)
 				for f in fileTypes[1] do anim+= f[2] + "; "
 				for f in fileTypes[2] do still+= f[2] + "; "
 				for f in fileTypes[3] do vector+= f[2] + "; "
@@ -409,7 +409,7 @@ rollout RSro2 "Editor" width:984 height:192
 				format ("All formats|" +all+ "|") to:str
 		
 				for i = 1 to fileTypes.count do
-					(
+				(
 					-- Types heading...
 						if i  == 1 then format ("Animation formats..." +"|" + anim + "|") to:str
 						if i  == 2 then format ("Still formats..." +"|" + still + "|") to:str
@@ -417,18 +417,18 @@ rollout RSro2 "Editor" width:984 height:192
 					
 					-- Types individually
 						for f in filetypes[i] do
-							(
+						(
 							format ("      " + f[1])									to:str
 							if showExtension == false then format (" (" +f[2]+")")		to:str
 							format  ("|"+f[2] + "|")									to:str
-							)
+						)
 						
-					)
+				)
 				
 				format "Any file (*.*)|*.*" to:str
 			-- done	
 				return str
-			)
+		)
 	
 
 ----------------------------------------------------------------------------------------------------
@@ -498,30 +498,30 @@ rollout RSro2 "Editor" width:984 height:192
 	--------------------------------------------------------
 		-- Name
 			on edtName changed text do
-				(
+			(
 				RSArr[index][1] = text as String
 				initList index
-				)
+			)
 		
 		-- Output Size
 			on btnSizeLock changed state do
-				(
+			(
 				if state then setSizeLock()
-				)
+			)
 			
 			on spnWidth changed val do
-				(
+			(
 				if btnSizeLock.checked then spnHeight.value = val*(sizeLock[2]/sizeLock[1])
 				RSArr[index][2] = [val,spnHeight.value]
 				initList index
-				)
+			)
 		
 			on spnHeight changed val do
-				(
+			(
 				if btnSizeLock.checked then spnWidth.value = val*(sizeLock[1]/sizeLock[2])
 				RSArr[index][2] = [spnWidth.value,val]
 				initList index
-				)
+			)
 
 	
 		-- Time
@@ -530,7 +530,7 @@ rollout RSro2 "Editor" width:984 height:192
 				local rndArr=#("S","A","R"), rt=1
 				
 				fn updateTimeUI rt =
-					(
+				(
 					--RSArr[index][3]=rt.
 					btnRndType.text = rndArr[rt]
 			
@@ -538,47 +538,47 @@ rollout RSro2 "Editor" width:984 height:192
 						else	(spnRndFrom.enabled=true;spnRndTo.enabled=true)
 						
 					case rt of
-						(
+					(
 						1:	grpTime.text= "Time (Single)"
 						2:	grpTime.text= "Time (Active time)"
 						3:	grpTime.text= "Time (Range)"
-						)
-	
 					)
+	
+				)
 				on btnRndType pressed do
-					(
+				(
 					rt+=1
 					if rt > rndArr.count then rt = 1
 					RSArr[index][3]=rt
 					updateTimeUI rt
 					initList index
-					)
+				)
 	
 			-- From and To
 	
 				on spnRndFrom changed val do
-					(
+				(
 					if val >= spnRndTo.value then spnRndTo.value=val
 					RSArr[index][4] = [val,spnRndTo.value]
 					initList index
-					)
+				)
 			
 				on spnRndTo changed val do
-					(
+				(
 					if val <= spnRndFrom.value then spnRndFrom.value=val
 					RSArr[index][4] = [spnRndFrom.value,val]
 					initList index
-					)
+				)
 	
 	
 			
 		-- Scanline Options
 			
 			fn updateScanline i state =
-				(
+			(
 				RSArr[index][i]=state
 				initList index
-				)
+			)
 	
 			on chkAA changed state do updateScanline 5 state
 			on chkSH changed state do updateScanline 6 state
@@ -592,61 +592,61 @@ rollout RSro2 "Editor" width:984 height:192
 		-- Render Output
 				
 			on btnPath pressed do
-				(
+			(
 				path = getSaveFileName caption:"Choose output folder / filename" filename:edtPath.text types:(filterFileTypes true)
 				
 				if path != undefined then
-					(
+				(
 					edtPath.text = path
 					RSArr[index][11] = path
 					initList index
-					)
 				)
+			)
 	
 			on edtPath entered text do
-				(
+			(
 				RSArr[index][11] = text as String
 				initList index
-				)
+			)
 	
 			on chkSave changed state do
-				(
+			(
 				RSArr[index][12] = state
 				edtPath.enabled = state
 				initList index
-				)
+			)
 	
 	
 		-- renderer
 		
 			on btnRend pressed do
-				(
+			(
 				if RSArr[index][13]==true then RSArr[index][13]=false else RSArr[index][13]=true
 				btnRend.text = case RSArr[index][13] of 
-					( 
+				( 
 					false: "Draft"
 					true: "Production"
-					)
-				initList index
 				)
+				initList index
+			)
 		
 		-- camera
 		
 			on pck1 picked obj do
-				(
+			(
 				pck1.text = obj.name
 				cam=obj
 				RSArr[index][14] = cam.name
 				initList index
-				)
+			)
 	
 			on btnRC pressed do
-				(
+			(
 				pck1.text = "Viewport"
 				cam=undefined
 				RSArr[index][14] = ""
 				initList index
-				)
+			)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -657,7 +657,7 @@ rollout RSro2 "Editor" width:984 height:192
 	--------------------------------------------------------
 
 	fn initList i=
-		(
+	(
 		-- ListItem
 		-- name
 			cell = RSro1.ax.ListItems[i]
@@ -688,13 +688,13 @@ rollout RSro2 "Editor" width:984 height:192
 			local r = RSArr[i][j]
 
 			str = case ot of 
-				( 
+			( 
 				1: "Single" 
 				2: "Active time segment"
-				3: 	(
+				3: (
 					str = "Range: " + (r.x as Integer) as String + " to " + (r.y as Integer) as String 
-					)  
-				) 
+				)  
+			) 
 			cell.text = str
 			---------------------------------------------------------------------
 				rendStart = r.x as Integer
@@ -703,11 +703,11 @@ rollout RSro2 "Editor" width:984 height:192
 
 		-- Scanline Options
  			for j = 5 to 11 do
-				(
+			(
 				cell = RSro1.ax.ListItems[i].ListSubItems[j-2]
 				local opt = RSArr[i][j]
 				if opt==true then cell.text = "x" else cell.text = ""
-				)
+			)
 			---------------------------------------------------------------------
 				antiAliasing =	RSArr[i][5]
 				shadows =		RSArr[i][6]
@@ -758,7 +758,7 @@ rollout RSro2 "Editor" width:984 height:192
 			---------------------------------------------------------------------
 				--execute("renderer = #" + str)
 		
-		)
+	)
 )
 
 
@@ -804,7 +804,7 @@ rollout RSro3 "Tools" width:984 height:56
 	local copyArr, pasteArr
 
 fn initPlugin =
-		(
+	(
 		MessageBox "Setting default values..." title:"RenderWanger is initialising..."
 
 	-- Initial RSArr settings
@@ -854,7 +854,7 @@ fn initPlugin =
 	-- save INI settings
 		iniPresets = (getDir #scripts +"\\default.rs.ini")
 		savePresets()
-		)
+	)
 
 
 
@@ -865,11 +865,11 @@ fn initPlugin =
 
 
 	fn replaceAll str outStr inStr =
-		(
+	(
 		str = #(str,"")
 
 		while findstring str[1] outStr != undefined do
-			(
+		(
 		-- get variables
 			s1 = 1
 			s2 = (findstring str[1] outStr) + (-1)
@@ -881,26 +881,26 @@ fn initPlugin =
 			
 		-- reduce str[1]
 			str[1]= substring str[1] s3 str[1].count
-			)
+		)
 		str[2]+=str[1]
 		return str[2]
-		)
+	)
 
 
 	fn setGrpFileText =
-		(
+	(
 		
 		local str = (getFilenameFile iniPresets) as string
 		--messagebox ("setGrpFileText : "+str)
 		grpFile.text = "Preset: " + substring str 1 ((findstring str ".rs")-1)
-		)
+	)
 
 
 	------------------------------------------------------------------------------------------------
 
 
 	fn loadPresets =
-		(
+	(
 		--messagebox ("loadPresets: "+inipresets)
 		-- open preset file
 			local ln = 0
@@ -909,17 +909,17 @@ fn initPlugin =
 			fs = openFile tmpStr
 		-- read-in line by line
 			while not eof fs do
-				(
+			(
 				ln+=1
 				try(
 					str = readline fs
 					str =  replaceAll str "/" "\\\\"
 					format "%\n" str
-					)
+				)
 				catch()
 		-- set presets array
 				execute ("RSro2.RSArr["+ln as string+"]=" + str)
-				)
+			)
 			close fs
 
 		-- Update the UI, etc
@@ -933,75 +933,75 @@ fn initPlugin =
 				--messagebox "updating UI..."
 				setGrpFileText()
 
-				)
+			)
 			catch(
 				if (QueryBox "Error updating presets!\n\nWould you like to delete the ini file and try again?" title:"RenderWanger Error") then
 				deleteFile ((getDir #scripts) + "\\RenderWanger.ini")
 				deleteFile ((getDir #scripts) + "\\default.rs.ini")
-				)
 			)
+		)
 
 
 
 	fn savePresets =
-		(
-		try	(
+	(
+		try(
 			fs = createFile iniPresets
 			for arr in RSro2.RSArr do
-				(
+			(
 				format "arr in RSro2.RSArr is %\n" arr
 			-- save a validFileName copy to the stringstream
 				local tmpArr = arr
 				tmpArr[11] = replaceAll tmpArr[11] "\\" "/"
 				format "%\n" tmpArr to:fs
-				)
+			)
 			close fs
 			displayTempPrompt ("RenderWanger preset file saved: " + iniPresets as string) 2000
 			saveINI()
-			)
-		catch
-			(
-			MessageBox ("Error saving preset file: " + iniPresets as string)  title:"RenderWanger info..."
-			)
-			
 		)
+		catch
+		(
+			MessageBox ("Error saving preset file: " + iniPresets as string)  title:"RenderWanger info..."
+		)
+			
+	)
 
 
 	------------------------------------------------------------------------------------------------
 
 
 	fn saveINI =
-		(
+	(
 		setINISetting iniPrefs "Settings" "LastFileOpened" (replaceAll iniPresets "\\" "/")
 		setINISetting iniPrefs "Settings" "AutoOpenAnimations" (chkAnim.state as string)
 		setINISetting iniPrefs "Settings" "SaveOnClose" (chkSaveOnClose.state as string)
 		setGrpFileText()
-		)
+	)
 
 
 	fn loadINI =
-		(
+	(
 		iniPresets = getINISetting iniPrefs "Settings" "LastFileOpened"
 		--messagebox ("loadINI: " + inipresets)
 
 		-- if ini file exists
 			if ((iniPresets != "") AND (doesFileExist iniPresets)) then
-				(
+			(
 				displayTempPrompt ("RenderWanger: Loading Preset " + iniPresets as string) 2000
 
 			-- update the global settings boxes
 				if (getINISetting iniPrefs "Settings" "AutoOpenAnimations") == "false" then chkAnim.checked=false
 				if (getINISetting iniPrefs "Settings" "SaveOnClose") == "false" then chkSaveOnClose.checked=false				
 				return true
-				)
+			)
 			else
-				(
+			(
 				displayTempPrompt "RenderWanger: No preset file exists!" 3000
 				initPlugin()
 				saveINI()
 				return false
-				)
-		)
+			)
+	)
 
 
 
@@ -1012,14 +1012,14 @@ fn initPlugin =
 /*
 			try(
 
-				)
+			)
 			catch(
 			print "Failed to set global settings"
-				)
-		try(
 			)
+		try(
+		)
 		catch
-			(
+		(
 			MessageBox ("Failed to load Preset File\n\n" + iniPresets as string +"\n\nAttempting to load default Preset file")
 			format "%\n" ".. Error loading file! Loading default settings..."
 			iniPrefs = getDir #scripts + "\\default.rs.ini"
@@ -1034,40 +1034,40 @@ fn initPlugin =
 		on btnWeb pressed do ShellLaunch "http://www.davestewart.co.uk/mxs" ""
 		
 		on btnLoad pressed do
-			(
+		(
 			local f = getOpenFileName types:"RenderSettings(*.rs.ini)|*.rs.ini|All|*.*|"
 			if f != undefined then
-				(
+			(
 				iniPresets = f
 				loadPresets()
-				)
 			)
+		)
 
 		on btnSave pressed do
-			(
+		(
 			local f = getSaveFileName filename:".rs.ini" types:"RenderSettings(*.rs.ini)|*.rs.ini|All|*.*|"
 			if f != undefined then
-				(
+			(
 				if findstring f ".rs.ini" == undefined then f = f + ".rs.ini"
 				print f
 				iniPresets = f
 				savePresets()
-				)
 			)
+		)
 
 
 		on btnCopy pressed do
-			(
+		(
 			btnPaste.enabled=true
 			ddlCopyType.enabled=true
 			copyArr = RSro2.RSArr[RSro2.index]
 			format "%\n" copyArr
-			)
+		)
 
 		on btnPaste pressed do
-			(
+		(
 			pasteArr = case ddlCopyType.selection of 
-				( 
+			( 
 				1:	#(1,2,3,4,5,6,7,8,9,10,11,12,13)	--"All settings"
 				2:	#(2)				--"Output size"
 				3:	#(3,4)				--"Time"
@@ -1076,19 +1076,19 @@ fn initPlugin =
 				6:	#(13)				--"Renderer"
 				7:	#(14)				--"Camera"
 				default: #()
-				)
+			)
 			for i in pasteArr do
-				(
+			(
 				print i
 				RSro2.RSArr[RSro2.index][i] = copyArr[i]
-				)
-			RSro1.updateUI()
 			)
+			RSro1.updateUI()
+		)
 
 		on btnUp pressed do
-			(
+		(
 			if RSro2.index > 1 then
-				(
+			(
 				tmpArr = RSro2.RSArr[RSro2.index-1]
 	
 				RSro2.RSArr[RSro2.index-1] = RSro2.RSArr[RSro2.index]
@@ -1101,13 +1101,13 @@ fn initPlugin =
 				RSro2.initList RSro2.indexOld
 				
 				RSro1.updateListColor()
-				)
 			)
+		)
 
 		on btnDown pressed do
-			(
+		(
 			if RSro2.index < RSro2.RSArr.count then
-				(
+			(
 				tmpArr = RSro2.RSArr[RSro2.index+1]
 	
 				RSro2.RSArr[RSro2.index+1] = RSro2.RSArr[RSro2.index]
@@ -1120,11 +1120,11 @@ fn initPlugin =
 				RSro2.initList RSro2.indexOld
 				
 				RSro1.updateListColor()
-				)
 			)
+		)
 		
 		on btnHelp pressed do
-			(
+		(
 			str= "RenderWanger makes rendering quicker easier when you need to \nchange rendering configurations often.\n\n"
 			str+= "Store multiple configurations for:\n"
 			str+= "   - Different sizes, resolutions or quality.\n   - Different cameras or animation periods.\n   - Different output paths.\n\n"
@@ -1132,18 +1132,18 @@ fn initPlugin =
 			str+= "Edit Settings panel:\n   - Adjust individual settings using the controls provided.\n\n"
 			str+= "Tools panel:\n   - Copy, paste and move presets.\n   - Save and load Presets."
 			MessageBox str title:"RenderWanger Help"
-			)
+		)
 
 		on RSro3 oktoclose do
-			(
+		(
 			--saveINI()
 			--if chkSaveOnClose.checked then savePresets()
-			)
+		)
 
 		on RSro3 open do
-			(
+		(
 			if(loadINI())then loadPresets()
-			)
+		)
 
 )
 

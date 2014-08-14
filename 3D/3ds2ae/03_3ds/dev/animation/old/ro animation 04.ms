@@ -43,7 +43,7 @@ rollout roAnim "Animation" width:328 height:528
 
 
 	fn getIconFromBitmap thePath number =
-		(
+	(
 		tempBmp = openBitmap thePath
 		iconBmp = bitmap 15 15
 		for v = 0 to iconBmp.width-1 do
@@ -56,10 +56,10 @@ rollout roAnim "Animation" width:328 height:528
 		getDir #image +"/_temp.bmp"
 		/*
 		*/
-		)
+	)
 
 	fn initAXIcons=
-		(
+	(
 		ilGr.imagewidth = 16
 		ilGr.imageheight = 15
 		iconFile = "E:\\03_Scripting\\3ds2ae\\03_3ds\\animation\\icons.bmp"
@@ -73,12 +73,12 @@ rollout roAnim "Animation" width:328 height:528
 		axObj.Picture=roAnim.ilBg.ListImages[1].Picture
 		axObj.PictureAlignment=#lvwTile
 
-		) 
+	) 
 
 
 
 	on roAnim open do
-		(
+	(
 		-- icons
 			initAXIcons()
 			axObj.ColumnHeaderIcons=ilGr
@@ -123,35 +123,35 @@ rollout roAnim "Animation" width:328 height:528
 			list = axObj.listItems
 			local controlData=#("Sphere01","Box02","Point01", "Dummy01")
 			for i=1 to controlData.count do 
-				(
+			(
 				local itemHead, itemBody
 				itemHead = list.Add index:(controlData[i] as string)
 				--itemBody = itemHead.listsubitems.add index:"PRS Cam Mat Vis"
-				)
+			)
 			
 			axObj.refresh()
-		)
+	)
 
 	on axObj itemClick Item do
-		(
+	(
 		try(
 			--messagebox (Item.selected as string)
 			local obj=getnodebyname (Item.text)
 			if Item.selected then selectmore obj
 			else deselect obj
-			)
-		catch()
 		)
+		catch()
+	)
 
 	on btnAdd pressed do
-		(
+	(
 		for o in objects do
-			(
+		(
 			li=axObj.ListItems.Add index:o.name
 			--print li.ListSubItems.count
 			li.ListSubItems.Add text:(superclassof o as string)
-			)
 		)
+	)
 	
 
 

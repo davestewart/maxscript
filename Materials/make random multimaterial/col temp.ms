@@ -5,7 +5,7 @@
 	---------------------------------------------------------------------------------------------------
 	
 	fn updateColor =
-		(
+	(
 		-- set variables
 			baseClr = cpClr.color
 			rVar = spnClrRedVar.value
@@ -55,13 +55,13 @@
 
 		-- update preview
 			for i = 1 to 10 do
-				(
+			(
 				swatch = execute("matColor.cpPrv" + i as String)
 -- s*: Nxt line flagged on 1st run error.
 				swatch.color = matGen.setColor i 10
-				)
+			)
 
-		)
+	)
 	
 	
 	---------------------------------------------------------------------------------------------------

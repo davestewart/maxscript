@@ -59,47 +59,47 @@ rollout roCollapse "Collapse and Replace" width:176 height:560
 	--------------------------------------------------------------------------------------------------
 	
 		function safeCollapse sel duplicate:false name:#prompt moveTo:unsupplied moveBy:unsupplied replaceNode:unsupplied replaceMaterial:true =
-			(
+		(
 			-- error checking
 				function throwError n =
-					(
+				(
 					local str = #(
 						"function 'safeCollapse' requires parameter 1 to be a selection or, geometry, or array of geometry",
 						"function 'safeCollapse' requires that all objects can be converted to editable meshes"
-						)
-					throw str[n]
 					)
+					throw str[n]
+				)
 					
 				if NOT (classof sel == ObjectSet OR classof sel == Array OR superClassof sel == GeometryClass) do (throwError 1; return false)
 		
 			-- do it!
 				--undo "Safe-collpase to mesh" on
-					(
+				(
 					with redraw off
-						(
+					(
 						-- variables
 							local arr = #()
 							local objSrc, objTrg, objOld, objNew
 							
 						-- get rid of non mesh objects
 							if duplicate == false then
-								(
+							(
 								arr = sel
 								for i = sel.count to 1 do if NOT canConvertTo sel[i] Editable_mesh do deleteitem sel i
 								convertToMesh arr
 								sel = #()
-								)
+							)
 						-- copy objects and convert to mesh
 							else
-								(
+							(
 								for objOld in sel do
-									(
+								(
 									objNew = copy objOld
 									convertToMesh objNew
 									if classof objNew == Editable_mesh then append arr objNew
 									else delete objNew
-									)
 								)
+							)
 								
 						-- error check
 							if arr.count == 0 do (throwError 2; return false)
@@ -111,9 +111,9 @@ rollout roCollapse "Collapse and Replace" width:176 height:560
 						-- do the collapse
 							arr.count = arr.count - 1
 							for objTrg in arr do
-								(
+							(
 								meshop.attach objSrc objTrg attachMat:#MatToID condenseMat:true
-								)
+							)
 							arr = undefined
 								
 						-- move / delete
@@ -122,30 +122,30 @@ rollout roCollapse "Collapse and Replace" width:176 height:560
 							
 						-- select / replace
 							if replaceNode != unsupplied AND isValidNode replaceNode == true AND replaceNode != objSrc then
-								(
+							(
 								replaceNode.baseObject = objSrc
 								if replaceMaterial == true do replaceNode.material = objSrc.material
 								delete objSrc
-								)
+							)
 							else if duplicate == true then
-								(
+							(
 								select objSrc
-								)
+							)
 							else
-								(
+							(
 								if objSrc.parent == undefined do setGroupMember objSrc false
 								select objSrc
-								)
-						)
+							)
 					)
-			)
+				)
+		)
 
 	--------------------------------------------------------------------------------------------------
 	-- ui functions
 	--------------------------------------------------------------------------------------------------
 
 		fn initAbout =
-			(
+		(
 			local col = colorMan.getColor #background
 			axFlash.BackgroundColor = ((col.x * 65536) + (col.y * 256) + col.z) * 255
 			try(
@@ -156,100 +156,100 @@ rollout roCollapse "Collapse and Replace" width:176 height:560
 				axFlash.Menu	= false
 				);
 			catch()
-			)
+		)
 
 		fn checkGoButton =
-			(
+		(
 			-- vars
 				local index = rdoAction.state
 				
 			-- button text
 				case index of
-					(
-					1:	(
+				(
+					1:(
 						btnGo.text = "Collapse"
 						btnGo.enabled = arrSrc.count > 0
-						)
+					)
 							
-					2:	(
+					2:(
 						btnGo.text = "Create New"
 						btnGo.enabled = arrSrc.count > 0
-						)
+					)
 						
-					3:	(
+					3:(
 						btnGo.text = "Update Target"
 						btnGo.enabled = arrSrc.count > 0 AND isValidNode objTrg
 						if NOT isValidNode objTrg then btnTarget.text = "Pick..."
-						)
 					)
-			)
+				)
+		)
 			
 		fn setSourceObjects arr =
-			(
+		(
 			arrSrc = #()
 			for obj in arr do if canConvertTo obj Editable_mesh do append arrSrc obj
 			if arrSrc.count > 1 then
-				(
+			(
 				local items = for obj in arrSrc collect obj.name
 				lbxSource.items = items
-				)
+			)
 			else(
 				arrSrc = #()
-				)
 			)
+		)
 			
 		fn checkSourceObjects =
-			(
+		(
 			local objectsOK = true
 			for obj in arrSrc do
-				(
+			(
 				if NOT isValidNode obj do (objectsOK = false;exit)
-				)
+			)
 			if NOT objectsOK then
-				(
+			(
 				if (querybox "Objects have been deleted, or a new scene may have been opened / merged\nDo you want to attempt to recover the object references?") then
-					(
+				(
 					local arr = #()
 					for item in lbxSource.items do
-						(
+					(
 						local objTmp = getNodeByName item
 						if objTemp != undefined then append arr objTemp
-						)
-					setSourceObjects arr
 					)
-				return false
+					setSourceObjects arr
 				)
-			else return true
+				return false
 			)
+			else return true
+		)
 
 		fn pickFilter obj =
-			(
+		(
 			finditem arrSrc obj > 0
-			)
+		)
 
 		fn setBaseObject index: obj: =
-			(
+		(
 			-- variables
 				objSrc = undefined
 			
 			-- set correct base object
 				if arrSrc.count > 1 do
-					(
+				(
 					if index != unsupplied then
-						(
+					(
 						objSrc = getNodeByName lbxSource.items[index]
-						)
-					else if obj != unsupplied then
-						(
-						objSrc = if finditem lbxSource.items obj.name > 0 then obj else undefined
-						)
 					)
+					else if obj != unsupplied then
+					(
+						objSrc = if finditem lbxSource.items obj.name > 0 then obj else undefined
+					)
+				)
 
 			-- base object needs to be last for correct pivot position
 
 			-- update ui and variables
 				if objSrc != undefined then
-					(
+				(
 					-- array
 						local index = finditem arrSrc objSrc
 						deleteItem arrSrc index
@@ -260,88 +260,88 @@ rollout roCollapse "Collapse and Replace" width:176 height:560
 						lbxSource.selection = finditem lbxSource.items objSrc.name
 						flashnodes #(objSrc)
 						completeredraw()
-					)
+				)
 				else
-					(
+				(
 					pckPivot.text = "Pick pivot mesh..."
-					)
-			)
+				)
+		)
 	--------------------------------------------------------------------------------------------------
 	-- handlers
 	--------------------------------------------------------------------------------------------------
 	
 		on lbxSource doubleClicked index do
-			(
+		(
 			setBaseObject index:index
-			)
+		)
 		
 		on btnSource pressed do
-			(
+		(
 			lbxSource.items = #()
 			setSourceObjects (getCurrentSelection())
 			if objSrc == undefined do setBaseObject obj:arrSrc[1]
 			checkGoButton()
-			)
+		)
 			
 		on btnClear pressed do
-			(
+		(
 			arrSrc = #()
 			lbxSource.doubleClicked 0
 			lbxSource.items = #()
 			checkGoButton()
-			)
+		)
 			
 		on pckPivot picked obj do
-			(
+		(
 			setBaseObject obj:obj
-			)
+		)
 			
 		on rdoAction changed state do
-			(
+		(
 			checkGoButton()
-			)
+		)
 	
 		on btnTarget picked obj do
-			(
+		(
 			if isValidNode obj then
-				(
+			(
 				objTrg = obj
 				btnTarget.text = obj.name
 				rdoAction.state = 3
 				checkGoButton()
-				)
-			else
-				(
-				btnTarget.text = "Pick ..."
-				)
 			)
+			else
+			(
+				btnTarget.text = "Pick ..."
+			)
+		)
 	
 		on btnGo pressed do
-			(
+		(
 			if checkSourceObjects() == true then undo "Safe-collpase to mesh" on
-				(
+			(
 				max create mode
 				case rdoAction.state of
-					(
-					1:	(
+				(
+					1:(
 						safeCollapse arrSrc
 						lbxSource.items = #()
 						arrSrc = #()
-						)
-					2:	(
-						safeCollapse arrSrc duplicate:true
-						)
-					3:	safeCollapse arrSrc duplicate:true replaceNode:objTrg replaceMaterial:chkMaterial.checked
 					)
+					2:(
+						safeCollapse arrSrc duplicate:true
+					)
+					3:	safeCollapse arrSrc duplicate:true replaceNode:objTrg replaceMaterial:chkMaterial.checked
 				)
 			)
+		)
 	
 		on roCollapse open do
-			(
+		(
 			initAbout()
 			checkGoButton()
 			btnSource.pressed()
-			)
+		)
 )
 
 createDialog roCollapse 

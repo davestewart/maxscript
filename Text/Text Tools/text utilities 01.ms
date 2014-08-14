@@ -21,36 +21,36 @@ rollout roAll "Uber-Rollout" width:150 height:30
 	-----------------------------------------------------------------------------------------------
 
 		fn setAllLod state =
-			(
+		(
 			for obj in objects do
-				(
+			(
 				for m in obj.modifiers do
-					(
+				(
 					if m.name == "Level of Detail" then
-						(
+					(
 						--print (obj.name +" : "+m.arrNodes as string)
 						m.setLod state
-						)
 					)
 				)
 			)
+		)
 	
 	-----------------------------------------------------------------------------------------------
 	-- handlers
 	-----------------------------------------------------------------------------------------------
 
 		on btnCreate pressed do
-			(
+		(
 			roMakeSentence.btnSet.pressed()
 			roReplaceWithBitmap.btnReplace.pressed()
 			roLod.btnCreate.pressed()
-			)
+		)
 	
 		on btnSetLodLo pressed do
-			(
+		(
 			setAllLod #low
 			setAllLod #high
-			)
+		)
 	
 )
 

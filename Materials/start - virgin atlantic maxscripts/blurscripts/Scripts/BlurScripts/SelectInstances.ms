@@ -41,20 +41,20 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn select_instances myinput = 
-	(
+(
 	disableSceneRedraw()
 	iarray = get_instances myinput
 	append iarray $ 
 	select iarray
 	enableSceneRedraw()
 	completeRedraw()
-	)
+)
 	
 -- Script
 
 if selection.count == 1 then
-	(
+(
 	select_instances selection[1]
-	)
+)
 )
 -------------------------------------------------------------------------------

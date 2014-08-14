@@ -28,7 +28,7 @@ rollout r1 "Microsoft ListView Control, version 6.0"
 		#(#spinner, "spn"),
 		#(#subRollout, "sub subRoll"),
 		#(#timer, "tmr")
-		)
+	)
 
 	GroupBox grp1 "Auto-Rename / renumber" pos:[8,8] width:192 height:128
 	label lbl1 "Renumber / rename controls that start with the following..." pos:[16,24] width:176 height:32
@@ -41,14 +41,14 @@ rollout r1 "Microsoft ListView Control, version 6.0"
 	button btnDone "Done" pos:[8,224] width:192 height:16
 /*
 	on VMSTidyOptions open do
-	(
+(
 	local str=""
 	for s in (getpropnames VMSTidy.VMSTidyControlList) do str+=((s as string) + "; ")
 	--edtRename.text=str
-	)
+)
 */
 	on r1 open do 
-		(
+	(
 		-- style
 			ax.MousePointer = #ccArrow 
 			ax.GridLines = true 
@@ -64,16 +64,16 @@ rollout r1 "Microsoft ListView Control, version 6.0"
 		-- populate
 			list = ax.listItems
 			for i=1 to controlTypeArr.count do 
-				(
+			(
 				local itemHead, itemBody
 				itemHead = list.Add index:(controlTypeArr[i][2] as string)
 				itemBody = itemHead.listsubitems.add index:(controlTypeArr[i][1] as string)
-				) 
+			) 
 	
 		-- update interface
 			r1.ax.columnHeaders[1].position=2
 			r1.ax.refresh()
-		)
+	)
 
 	on ax BeforeLabelEdit arg do enableAccelerators=false
 	on ax AfterLabelEdit arg1 arg2 do enableAccelerators=true

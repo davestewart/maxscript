@@ -1,31 +1,31 @@
 	fn replaceAll str inStr outStr=
-		(
+	(
 		while (local i=findstring str inStr) != undefined do str=replace str i 1 outStr
 		--format ">%\n" str
 		return str
-		)
+	)
 
 
 rollout ro1 "Setup" width:162 height:24 rolledup:true 
-	(
+(
 	colorPicker cp1 "" width:400 height:16 color:red
 	on ro1 open do rFlash.roCurrent=ro1
-	)
+)
 rollout ro2 "Animation" rolledup:true (
 	colorPicker cp1 "" width:400 height:16 color:orange
-	)
+)
 rollout ro3 "Rendering" rolledup:true (
 	colorPicker cp1 "" width:400 height:16 color:yellow
-	)
+)
 rollout ro4 "Effects" rolledup:true (
 	colorPicker cp1 "" width:400 height:16 color:green
-	)
+)
 rollout ro5 "Extras" rolledup:true (
 	colorPicker cp1 "" width:400 height:16 color:blue
-	)
+)
 
 rollout rFlash "Shockwave Flash Object" 
-	( 
+( 
 
 -- variables
 	local rollouts=#(ro1,ro2,ro3,ro4,ro5)
@@ -48,7 +48,7 @@ rollout rFlash "Shockwave Flash Object"
 		on axFlash OnProgress arg1 do format "handler: OnProgress : %\n" arg1 
 	
 		on axFlash FSCommand arg1 arg2 do 
-			(
+		(
 			-- messagebox
 				--rFlash.title=(arg1 + " " +arg2)
 				--messagebox (arg1 + " " +arg2)
@@ -65,14 +65,14 @@ rollout rFlash "Shockwave Flash Object"
 			for i = 2 to 6 do flashFloater.rollouts[i].open=false
 			flashFloater.rollouts[(arg1 as Number)+1].open=true
 
-			) 
+		) 
 	
 		on rFlash open do 
-			(
+		(
 			local f=(openfile "flashBg.swf")
 			local fStr
 			if f!= undefined then
-				(
+			(
 				flush f; close f
 		
 				fStr=f as string
@@ -81,7 +81,7 @@ rollout rFlash "Shockwave Flash Object"
 				--execute("rollout VMSTidyHelp \"VMS Tidy Help\"(activeXControl ax \"file://"+fStr+"\" pos:[6,6] width:400 height:600)")
 				--createdialog VMSTidyHelp 412 612
 				
-				)
+			)
 			else messageBox "Help file not found..."
 
 			local path="E:/03_Scripting/3ds2ae/03_3ds/interface/flash interface/"
@@ -92,7 +92,7 @@ rollout rFlash "Shockwave Flash Object"
 			
 			axFlash.BackgroundColor=((colorMan.getColor #background)*255)as color
 			axFlash.menu=false
-			)
+		)
 
 	-- else
 
@@ -102,13 +102,13 @@ rollout rFlash "Shockwave Flash Object"
 
 
 	on ddl1 selected arg do
-		(
+	(
 		local ui=ddl1.items[arg] as name
 		cp1.color=(colorMan.getColor ui)*255
 		axFlash.BackgroundColor=((colorMan.getColor ui)*255) as color
-		)
+	)
 
-	) 
+) 
 
 if flashFloater!=undefined then closerolloutfloater flashfloater
 flashFloater = newRolloutFloater "Shockwave Flash Object" 450 350 10 10 

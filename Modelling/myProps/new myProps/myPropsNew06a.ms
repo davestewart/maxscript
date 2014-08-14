@@ -27,7 +27,7 @@ rollout roSource "Source" width:312 height:496
 	---------------------------------------------------------------------------------------------------
 
 fn goSearch =
-	(
+(
 	clearListener()
 	displayTempPrompt"Finding similar objects..." 1000
 
@@ -48,38 +48,38 @@ fn goSearch =
 	
 	-- loop through to see if they have same mods in same order (no matter what the name is)
 		for obj in objArray2 do
-			(
+		(
 			format "\nObject % has % mods\n     - " obj.name source.modifiers.count --to:myWin
 			score = 0
 			for i = 1 to source.modifiers.count do
-				(
+			(
 				score += 1
 				format "%:%, " i (obj.modifiers[i].name) 									-- modifier type
 				if classof obj.modifiers[i] != classof source.modifiers[i] then
-					(
+				(
 					format "\n     -   Failed (%/%)\n" (score-1) source.modifiers.count		-- object failed at mod i
 					exit
-					)
+				)
 				else if i == source.modifiers.count then
-					(
+				(
 					format "\n    OK   Passed (%/%)\n" score source.modifiers.count			-- object added
 					append objArray3 obj
-					)
 				)
-
 			)
+
+		)
 	
 		-- Reselect objects for visual clarity
 			for obj in objArray3 do append objArray4 obj
 			select (objArray4 as Array)
 
 			return objArray4
-	)
+)
 
 
 
 fn getStacks =
-	(
+(
 	clearListener()
 	displayTempPrompt"Getting stack info..." 1000
 
@@ -100,7 +100,7 @@ fn getStacks =
 		global data
 	
 		for obj in objArray4 do
-			(
+		(
 			i +=1
 			targetObj = obj.name
 
@@ -113,19 +113,19 @@ fn getStacks =
 		
 		-- print debugging information
 			if debugMinor then
-				(
+			(
 				format "\n\n================================================\n"
 				format "== Loop  : "; print i
 				format "== name  : %\n" targetObj
 				format "== object: %\n" obj
 				format "================================================\n"
-				)
+			)
 		
 		----------------------------------------------------------------------------
 		--get modifiers (loop)
 		----------------------------------------------------------------------------
 			for stackLevel = 1 to obj.modifiers.count do
-				(
+			(
 				target = obj.modifiers[stackLevel]
 		
 			-- append the modifiers array
@@ -134,17 +134,17 @@ fn getStacks =
 		
 			-- print debugging information
 				if debugMinor then
-					(
+				(
 					format "\n  ----------------------------------------------\n"
 					format "  > Stack Level:    %\n" stackLevel
 					format "  > target:         %\n" target
-					)
+				)
 		
 			----------------------------------------------------------------------------
 			--get props & values (loop)
 			----------------------------------------------------------------------------
 				for prop = 1 to (getPropNames target).count do
-					(
+				(
 					targetProp = (getPropNames target)[prop]
 					targetPropName = substring (targetProp as String) 1 (targetProp as String).count
 					targetPropValStart = execute ("$" + obj.name + ".modifiers[" + stackLevel as String + "]." + targetPropName)
@@ -157,16 +157,16 @@ fn getStacks =
 		
 				-- print debugging information
 					if debugMajor then
-						(
+					(
 						format "     - - - - - - - - - - - - - - - - - - - - - -\n"
 						format "     targetProp:         %\n" targetProp
 						format "     targetPropName:     %\n" targetPropName
 						format "     targetPropValStart: %\n" targetPropValStart
 						format "     targetPropClass:    %\n" targetPropClass
-						)
-						if debugMinor then (format"     "; print data;) --format"\n"
 					)
+						if debugMinor then (format"     "; print data;) --format"\n"
 				)
+			)
 	
 		----------------------------------------------------------------------------
 		--get base object
@@ -180,17 +180,17 @@ fn getStacks =
 	
 			-- print debugging information
 				if debugMinor then
-					(
+				(
 					format "\n  ----------------------------------------------\n"
 					format "  > Stack Level:    %\n" stackLevel
 					format "  > target:         %\n" target
-					)
+				)
 		
 		----------------------------------------------------------------------------
 		--get props & values (loop)
 		----------------------------------------------------------------------------
 		for prop = 1 to (getPropNames target).count do
-			(
+		(
 			targetProp = (getPropNames target)[prop]
 			targetPropName = substring (targetProp as String) 1 (targetProp as String).count
 			targetPropValStart = execute ("$" + obj.name + ".baseObject." + targetPropName)
@@ -204,38 +204,38 @@ fn getStacks =
 	
 		-- print debugging information
 			if debugMajor then
-				(
+			(
 				format "     - - - - - - - - - - - - - - - - - - - - - -\n"
 				format "     targetProp:         %\n" targetProp
 				format "     targetPropName:     %\n" targetPropName
 				format "     targetPropValStart: %\n" targetPropValStart
 				format "     targetPropClass:    %\n" targetPropClass
-				)
-				if debugMinor then (format "     "; print data;) -- format"\n"
 			)
+				if debugMinor then (format "     "; print data;) -- format"\n"
 		)
+	)
 
 	-- Reselect objects for visual clarity
 		select (objArray4 as Array)
 
 		return objList
-	)
+)
 
 fn start =
-	(
+(
 	if selection.count == 1 then
-		(
+	(
 		btnFindSimilar.enabled = true
 		btnPickSource.text = "Source: " + selection[1].name as String
-		)
 	)
+)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 
 	on btnPickSource picked obj do
-	(
+(
 	select obj
 	lblSource.text = "$" + selection[1].name
 	
@@ -245,7 +245,7 @@ fn start =
 	getStacks()
 	lblStackInfo.text = myObjList[1].stack.count as String + " elements in stack..."
 	roStack.populateLists()
-	)
+)
 )
 
 
@@ -269,7 +269,7 @@ rollout roStack "Stack" width:312 height:496
 	---------------------------------------------------------------------------------------------------
 
 fn propsSelected sel =
-	(
+(
 	stackSel = ddlStack.selection
 	lblProp.text = "Property: " + myObjList[1].stack[stackSel].props[sel].name as String
 	lblVal.text = "Value: " + myObjList[1].stack[stackSel].props[sel].valStart as String
@@ -279,28 +279,28 @@ fn propsSelected sel =
 	roEdits.updateEditList()
 
 
-	)
+)
 
 fn stackSelected sel =
-	(
+(
 	items = #()
 	for i = 1 to myObjList[1].stack[sel].props.count do
-		(
+	(
 		append items myObjList[1].stack[sel].props[i].name
-		)
+	)
 	ddlProps.items = items
 	ddlProps.selection = 1
 	propsSelected 1
-	)
+)
 
 fn populateLists =
-	(
+(
 -- Populate StackList
 	items = #()
 	for i = 1 to myObjList[1].stack.count do
-		(
+	(
 		append items myObjList[1].stack[i].name
-		)
+	)
 	ddlStack.items = items
 
 -- update highlight
@@ -309,7 +309,7 @@ fn populateLists =
 
 -- Populate PropsList
 	stackSelected 1
-	)
+)
 
 
 
@@ -339,7 +339,7 @@ rollout roFloat "Properties (float)" width:312 height:496
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 fn updateProp val =
-	(
+(
 	stackSel = roStack.ddlStack.selection
 	propSel = roStack.ddlProps.selection
 
@@ -350,25 +350,25 @@ fn updateProp val =
 
 
 	for i = 1 to myObjList.count do
-		(
+	(
 
 		-- define object name
 			obj = myObjList[i].name
 
 		-- if a modifier is selected...
 			if stackSel < myObjList[1].stack.count then
-				(
+			(
 				target = ("$" +obj as String+ ".modifiers[" +mod as String+ "]." + prop as String)
 				if debugMinor then format "%\n" target
-				)
+			)
 
 		-- if the baseobject is selected...
 			else 
-				(
+			(
 				target = ("$" +obj as String+ ".baseObject." + prop as String)
 				if debugMinor then format "%\n" target
 
-				)
+			)
 
 		-- do the modifications
 			rnd = myObjList[i].stack[stackSel].props[propSel].rnd
@@ -378,9 +378,9 @@ fn updateProp val =
 				myObjList[i].stack[stackSel].props[propSel].valNow = NewVal		-- current value of spinner * random offset
 			execute (target + "=" + NewVal as String )
 
-		)
-
 	)
+
+)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -419,7 +419,7 @@ rollout roEdits "Edits" width:312 height:496
 	-- functions (Update List)
 	----------------------------------------
 	fn updateEditList =
-		(
+	(
 		stack = roStack.ddlStack.selection
 		prop = roStack.ddlProps.selection
 		lbxObj.caption  =  myObjList[i].stack[stack].name as String +" / "+ myObjList[i].stack[stack].props[prop].name as String
@@ -427,13 +427,13 @@ rollout roEdits "Edits" width:312 height:496
 	-- update Objects & Props List
 		items = #()
 		for i = 1 to myObjList.count do
-			(
+		(
 			data = myObjList[i].name as String
 			append items data
-			)
+		)
 		lbxObj.items = items
 
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers (Update List)
@@ -452,29 +452,29 @@ rollout roEdits "Edits" width:312 height:496
 	-- Functions (Draw vp text)
 	---------------------------------------------------------------------------------------------------
 	fn drawText = 
-	(
+(
 		if viewport.activeViewport != lastViewport do
-			(
+		(
 			completeredraw()
 			lastViewport = viewport.activeViewport 
-			)
+		)
 
 		for i = 1 to myObjList.count do
-			(
+		(
 			try 
-				(
+			(
 				if chkVP.checked then viewtext = myObjList[i].name as String
 
 				gw.setTransform(Matrix3 1) 
 				obj = execute("$" + myObjList[i].name)
 				pos = obj.position
 				gw.text pos  viewtext  color:(cp1.color)
-				)
-			catch ()
 			)
+			catch ()
+		)
 				gw.enlargeUpdateRect #whole 
 				gw.updateScreen() 
-	)
+)
 
 	fn dtcb = drawText()
 
@@ -485,29 +485,29 @@ rollout roEdits "Edits" width:312 height:496
 
 
 	on roEdits close do
-		(
+	(
 		unregisterRedrawViewsCallback dtcb
 		completeredraw()
-		)
+	)
 
 	on chkVP changed state do
-		(
+	(
 		if chkVP.checked then
-			(
+		(
 			print "registering RedrawViewsCallback"
 			registerRedrawViewsCallback dtcb
-			)
+		)
 		else (
 			print "UN-registering RedrawViewsCallback"
 			unregisterRedrawViewsCallback dtcb
-			)
-		completeredraw()
 		)
+		completeredraw()
+	)
 
 	on cp1 changed val do
-		(
+	(
 		completeredraw()
-		)
+	)
 
 
 )

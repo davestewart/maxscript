@@ -7,36 +7,36 @@
 -- Functions
 
 fn luct_update_current_lights =
-	(
+(
 	all_the_lights = (all_lights "scene")
 	for l in all_the_lights do 
-		(
+	(
 		if l.ishidden == true and luct_show_hidden_value == false then continue
 		else
-			(
+		(
 			if l.isfrozen == true and luct_show_frozen_value == false then continue
 			else 
-				(
+			(
 				if l.isselected == false and luct_show_unselected_value == false then continue
 				else
-					(
+				(
 					if findItem o_selected_lights l == 0 and luct_show_uno_selected_value == false then continue
 					else
-						(
+					(
 						if contains_instance current_lights l == true and luct_show_instances_value == false then continue
 						else
-							(
+						(
 							append current_lights l
-							)
 						)
 					)
 				)
 			)
 		)
 	)
+)
 
 fn luct_sortbylighttype a = 
-	(
+(
 	a1 = #()
 	a2 = #()
 	a3 = #()
@@ -44,13 +44,13 @@ fn luct_sortbylighttype a =
 	a5 = #()
 	
 	for o in a do
-		(
+	(
 		if classof o == targetSpot then append a1 o
 		else if classof o == Omnilight then append a2 o
 		else if classof o == TargetDirectionallight then append a3 o
 		else if classof o == Directionallight then append a4 o
 		else if classof o == freeSpot then append a5 o
-		)
+	)
 	
 	qsort a1 name_compare_case_insensitive
 	qsort a2 name_compare_case_insensitive
@@ -60,45 +60,45 @@ fn luct_sortbylighttype a =
 	
 	b = a1 + a2 + a3 + a4 + a5
 	return b
-	)
+)
 
 fn luct_update_scene =
-	(
+(
 	previous_lights = current_lights
 	current_lights = #()
 	luct_update_current_lights()
 	luct_lighttotal = current_lights.count
 	if luct_lighttotal != 0 then 
-		(
+	(
 		if luct_sortby_value == 1 then qsort current_lights name_compare_case_insensitive
 		else if luct_sortby_value == 3 then current_lights = luct_sortbylighttype current_lights
-		)
 	)
+)
 
 fn luct_update_o_selected_lights = 
-	(
+(
 	if current_lights.count != 0 then
-		(
+	(
 		local new_array = #()
 		for i = 1 to current_lights.count do
-			(
+		(
 			if finditem o_selected_lights current_lights[i] != 0 then append new_array current_lights[i]			
-			)
-		o_selected_lights = new_array
 		)
-	else o_selected_lights = #()
+		o_selected_lights = new_array
 	)
+	else o_selected_lights = #()
+)
 
 fn luct_kill_ch = 
-	(
+(
 	deleteChangeHandler luct_id1
 	deleteChangeHandler luct_id2
 	luct_id1 = undefined
 	luct_id2 = undefined
-	)
+)
 
 fn luct_update_rollout = 
-	(
+(
 	-- width
 	
 	if luct_more1_value == false and luct_more2_value == false then luct_floater_width = 281
@@ -108,14 +108,14 @@ fn luct_update_rollout =
 	
 	luct_user_close = false
 	if luct_floater != undefined then 
-		(
+	(
 		luct_rollout_rolledup_value = (not luct_rollout.open)
 		luct_key_rollout_rolledup_value = (not luct_key_rollout.open)
 		luct_opt_rollout_rolledup_value = (not luct_opt_rollout.open)
 		luct_oldpos = luct_floater.pos
 		CloseRolloutFloater luct_floater
 		luct_floater = undefined
-		)
+	)
 	luct_rollout_function()
 	if luct_floater_height > systemTools.GetScreenHeight() then luct_floater_height = (systemTools.GetScreenHeight() - 88)
 	luct_floater = newRolloutFloater "LightControl" luct_floater_width luct_floater_height luct_oldpos.x luct_oldpos.y
@@ -138,28 +138,28 @@ fn luct_update_rollout =
 	luct_opt_rollout.open = not luct_opt_rollout_rolledup_value
 
 	luct_user_close = true
-	)
+)
 
 fn luct_full_update =
-	(
+(
 	luct_update_scene()
 	luct_update_o_selected_lights()
 	luct_update_rollout()
-	)
+)
 	
 fn luct_lights_select_func = 
-	(
+(
 	if has_scene_changed() == false then 
-		(
+	(
 		undo "LightUtilities" on
-			(
+		(
 			select o_selected_lights
-			)
 		)
 	)
+)
 
 fn luct_rollout_function =
-	(
+(
 	lrs=("Rollout luct_rollout \"LightControl\"\n")
 	lrs+="(\n"
 
@@ -212,33 +212,33 @@ fn luct_rollout_function =
 	luct_Ypos=43
 	luct_lighttotal = current_lights.count
 	if luct_lighttotal != 0 then
-		(
+	(
 		all_the_lights = (all_lights "scene")
 		
 		if luct_more1_value == true then 
-			(
+		(
 			diffuse_pos = 632
 			spec_pos = 650
 			decay_pos = 665
 			decaystart_pos = 735
 			bias_pos = 786
-			)
+		)
 		else
-			(
+		(
 			diffuse_pos = 253
 			spec_pos = 271
 			decay_pos = 286
 			decaystart_pos = 356
 			bias_pos = 407
-			)
+		)
 		
 		for i = 1 to luct_lighttotal do 
-			(
+		(
 			w = (i as string)
 			if luct_instances_in_bold_value == true then
-				(
+			(
 				if (contains_instance all_the_lights current_lights[i]) == true then make_bold = true else make_bold = false
-				)
+			)
 			
 			-- O-Select
 			if finditem o_selected_lights current_lights[i] != 0 then sb_value = true else sb_value = false
@@ -268,7 +268,7 @@ fn luct_rollout_function =
 			lrs+="Spinner mapsize_spin" +w+" "+" width:50 pos:[201,"+luct_Ypos as string+"] type:#integer range:[0,10000,"+(the_mapsize as string)+"] \n"
 			
 			if luct_more1_value == true then
-				(
+			(
 				-- Contrast
 				lrs+="Spinner contrast_spin" +w+" "+" width:50 pos:[251,"+luct_Ypos as string+"] type:#float range:[0.0,100.0,"+current_lights[i].contrast as string+"] \n"
 				
@@ -293,10 +293,10 @@ fn luct_rollout_function =
 				if classof (getproperty current_lights[i] "shadowgenerator") == shadowmap then the_samplerange = current_lights[i].sampleRange
 				else the_samplerange = 0
 				lrs+="Spinner samplerange_spin" +w+" "+"width:40 pos:[589,"+luct_Ypos as string+"] type:#float range:[0.01,50.0,"+the_samplerange as string+"] \n"
-				)
+			)
 				
 			if luct_more2_value == true then
-				(
+			(
 				-- Diffuse
 				lrs+="Checkbox diffuse_check"+w+" pos:["+diffuse_pos as string+","+luct_Ypos as string+"] width:12 checked:"+current_lights[i].affectDiffuse as string+" \n"
 				
@@ -313,7 +313,7 @@ fn luct_rollout_function =
 				if classof (getproperty current_lights[i] "shadowgenerator") == shadowmap then the_bias = current_lights[i].mapBias
 				else the_bias = 0
 				lrs+="Spinner bias_spin" +w+" "+" width:40 pos:["+bias_pos as string+","+luct_Ypos as string+"] type:#float range:[0.0,10000.0,"+the_bias as string+"] \n"
-				)
+			)
 			
 			lrs+="on select_button"+w+" changed state do (if has_scene_changed() == false then (\n if select_button"+w+".checked == true then append o_selected_lights current_lights["+w+"] else deleteitem o_selected_lights (finditem o_selected_lights current_lights["+w+"])\nluct_update_o_selected_lights()))\n"
 			lrs+="on on_off_check"+w+" changed state do (if has_scene_changed() == false then current_lights["+w+"].on=on_off_check"+w+".checked)\n"
@@ -325,7 +325,7 @@ fn luct_rollout_function =
 			lrs+="on mapsize_spin"+w+" changed value do (if has_scene_changed() == false then (if classof (getproperty current_lights["+w+"] \"shadowgenerator\") == shadowmap then current_lights["+w+"].mapsize=mapsize_spin"+w+".value else (mapsize_spin"+w+".value=0)))\n"
 
 			if luct_more1_value == true then
-				(
+			(
 				lrs+="on contrast_spin"+w+" changed value do (if has_scene_changed() == false then current_lights["+w+"].contrast=contrast_spin"+w+".value)\n"
 				lrs+="on sde_spin"+w+" changed value do (if has_scene_changed() == false then current_lights["+w+"].softenDiffuseEdge=sde_spin"+w+".value)\n"
 				lrs+="on farstart_spin"+w+" changed value do (if has_scene_changed() == false then current_lights["+w+"].farAttenStart=farstart_spin"+w+".value)\n"
@@ -333,51 +333,51 @@ fn luct_rollout_function =
 				lrs+="on shadowtype_drop"+w+" selected st do (if has_scene_changed() == false then ((if st == 1 then setproperty current_lights["+w+"] \"shadowgenerator\" (shadowmap()) else (setproperty current_lights["+w+"] \"shadowgenerator\" (raytraceShadow())))\nluct_full_update()))\n"
 				lrs+="on shadowdensity_spin"+w+" changed value do (if has_scene_changed() == false then current_lights["+w+"].shadowMultiplier=shadowdensity_spin"+w+".value)\n"
 				lrs+="on samplerange_spin"+w+" changed value do (if has_scene_changed() == false then (if classof (getproperty current_lights["+w+"] \"shadowgenerator\") == shadowmap then current_lights["+w+"].sampleRange=samplerange_spin"+w+".value else (samplerange_spin"+w+".value=0.01)))\n"
-				)
+			)
 
 			if luct_more2_value == true then
-				(
+			(
 				lrs+="on diffuse_check"+w+" changed state do (if has_scene_changed() == false then current_lights["+w+"].affectDiffuse=diffuse_check"+w+".checked)\n"
 				lrs+="on specular_check"+w+" changed state do (if has_scene_changed() == false then current_lights["+w+"].affectSpecular=specular_check"+w+".checked)\n"
 				lrs+="on decay_drop"+w+" selected st do (if has_scene_changed() == false then current_lights["+w+"].attenDecay=st)\n"
 				lrs+="on decaystart"+w+" changed value do (if has_scene_changed() == false then current_lights["+w+"].decayradius=decaystart"+w+".value)\n"
 				lrs+="on bias_spin"+w+" changed value do (if has_scene_changed() == false then (if classof (getproperty current_lights["+w+"] \"shadowgenerator\") == shadowmap then current_lights["+w+"].mapBias=bias_spin"+w+".value else (bias_spin"+w+".value=0.0)))\n"
-				)
-			luct_Ypos+=20
 			)
+			luct_Ypos+=20
 		)
+	)
 		
 	lrs+="on all_button pressed do (if luct_lighttotal != 0 then\n(\n"
 	lrs+="o_selected_lights = #()\n(\n"
 	if luct_lighttotal != 0 then
-		(
+	(
 		for sa = 1 to luct_lighttotal do
-			(
+		(
 			lrs+="select_button"+(sa as string)+".checked = true\n"
 			lrs+="append o_selected_lights current_lights["+(sa as string)+"]\n"
-			)
 		)
+	)
 	lrs+=")\n)\n)\n"
 	
 	lrs+="on none_button pressed do (if luct_lighttotal != 0 then\n(\n"
 	if luct_lighttotal != 0 then
-		(
+	(
 		for sa = 1 to luct_lighttotal do
-			(
+		(
 			lrs+="o_selected_lights = #()\n"
 			lrs+="select_button"+(sa as string)+".checked = false\n"
-			)
 		)
+	)
 	lrs+=")\n)\n"
 	
 	lrs+="on inv_button pressed do (if luct_lighttotal != 0 then\n(\n"
 	if luct_lighttotal != 0 then
-		(
+	(
 		for sa = 1 to luct_lighttotal do
-			(
+		(
 			lrs+="if select_button"+(sa as string)+".checked == false then (select_button"+(sa as string)+".checked = true\n append o_selected_lights current_lights["+(sa as string)+"])\n else (select_button"+(sa as string)+".checked = false\ndeleteitem o_selected_lights (finditem o_selected_lights current_lights["+(sa as string)+"]))\n"
-			)
 		)
+	)
 	lrs+=")\n)\n"
 
 	lrs+="on luct_rollout close do \n"
@@ -392,78 +392,78 @@ fn luct_rollout_function =
 	
 	execute lrs
 	luct_floater_height = luct_Ypos + 111
-	)
+)
 
 -- Script
 
 rollout luct_key_rollout "LightControl Key"
-	(
+(
 	label label1 "" align:#left
 	on luct_key_rollout open do
-		(
+	(
 		label1.text = luct_key as string
 		label1.pos = [4,5]
-		)
 	)
+)
 
 rollout luct_opt_rollout "LightControl Options"
-	(
+(
 	group "Sort"
-	(
+(
 	dropdownlist sortby_drop "" items:#("Alphabetical", "Creation", "LightType") selection:luct_sortby_value align:#left
-	)
+)
 
 	on sortby_drop selected i do 
-		(
+	(
 		luct_sortby_value = i
 		luct_full_update()
-		)
+	)
 	
 	group "Filters"
-	(
+(
 	checkbox show_hidden_check "Show Hidden" checked:luct_show_hidden_value
 	checkbox show_frozen_check "Show Frozen" checked:luct_show_frozen_value
 	checkbox show_unselected_check "Show Unselected" checked:luct_show_unselected_value
 	checkbox show_uno_selected_check "Show Un-O-Selected" checked:luct_show_uno_selected_value
 	checkbox show_instances_check "Show Instances" checked:luct_show_instances_value
-	)
+)
 
 	on show_hidden_check changed state do 
-		(
+	(
 		luct_show_hidden_value = state
 		luct_full_update()
-		)
+	)
 	on show_frozen_check changed state do 
-		(
+	(
 		luct_show_frozen_value = state
 		luct_full_update()
-		)
+	)
 	on show_unselected_check changed state do 
-		(
+	(
 		luct_show_unselected_value = state
 		luct_full_update()
-		)
+	)
 	on show_uno_selected_check changed state do 
-		(
+	(
 		luct_show_uno_selected_value = state
 		luct_full_update()
-		)
+	)
 	on show_instances_check changed state do 
-		(
+	(
 		luct_show_instances_value = state
 		luct_full_update()
-		)
+	)
 	
 	group "Misc"
-	(
+(
 	checkbox instances_in_bold_check "Instances In Bold" checked:luct_instances_in_bold_value
-	)
+)
 	
 	on instances_in_bold_check changed state do 
-		(
+	(
 		luct_instances_in_bold_value = state
 		luct_full_update()
-		)
 	)
+)
 )
 -------------------------------------------------------------------------------

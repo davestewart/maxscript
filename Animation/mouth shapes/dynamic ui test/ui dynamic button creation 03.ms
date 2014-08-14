@@ -4,7 +4,7 @@
 
 
 rollout ro1 "Options" width:160 height:311
-	( 
+( 
 	---------------------------------------------------------------------------------------------------
 	-- Variables
 	---------------------------------------------------------------------------------------------------
@@ -12,7 +12,7 @@ rollout ro1 "Options" width:160 height:311
 	local roMouth, createRO
 
 	fn createRO =
-		(
+	(
 		clearListener()
 
 		local str = "checkbutton ckb1 width:32 height:32 offset:[0,-5] across:2"
@@ -26,17 +26,17 @@ rollout ro1 "Options" width:160 height:311
 		addRollout roMouth myFloater
 		
 
-		)
+	)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Interface
 	---------------------------------------------------------------------------------------------------
 	
 		Group "Mouth Shapes" 
-			(
+		(
 			label lbl1 "Making buttons..." align:#left
 			button btn1 "Add rollout"
-			)
+		)
 
 
 
@@ -54,7 +54,7 @@ rollout ro1 "Options" width:160 height:311
 	---------------------------------------------------------------------------------------------------
 	--on ro1 open do createRO()
 	on btn1 pressed do createRO()
-	)
+)
 
 if myFloater != undefined then closerolloutfloater myFloater
 	myFloater = newRolloutFloater "My Floater" 188 500 

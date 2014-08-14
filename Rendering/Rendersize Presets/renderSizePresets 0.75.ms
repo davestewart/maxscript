@@ -50,7 +50,7 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 				#("PAL (Widescreen)", 1024, 576, 1),
 				#("HDTV", 1920, 1080, 1)
 				-- feel free to add more here
-			)
+		)
 			
 	----------------------------------------------------------------------------------------------------
 	-- variables
@@ -88,28 +88,28 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 	----------------------------------------------------------------------------------------------------
 	
 		fn updateDialog =
-			(
+		(
 			if renderSceneDialog.isOpen() do renderSceneDialog.update()
-			)
+		)
 			
 		fn secondsToMinutes t =
-			(
+		(
 			local s	= (mod t 60) as integer
 			local m	= ((t - s) / 60) as integer
 		
 			if s < 10 do s = "0" + s as string
 			return m as string + ":" + s as string
-			)
+		)
 			
 		fn secondsToTime t =
-			(
+		(
 			
 			fn pad str n strPad:"0"=
-				(
+			(
 				str = str as string
 				while str.count < n do str = strPad as string + str
 				str
-				)
+			)
 				
 			local s = (mod t 60) as integer
 			local m = (mod ((t - s) / 60) 60) as integer
@@ -120,28 +120,28 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 			h		= pad h 2
 
 			return h + ":" + m + ":" + s
-			)
+		)
 			
 		fn tooltipsOK =
-			(
+		(
 			(maxVersion())[1] >= 9000 
-			)
+		)
 
 	----------------------------------------------------------------------------------------------------
 	-- functions
 	----------------------------------------------------------------------------------------------------
 	
 		function getTooltip n =
-			(
+		(
 			local str		= arrRenderSizes[n]
 			local fraction	= arrRenderFractions[n]
 			local time		= arrRenderTimes[n]
 			if time != undefined then time = ". Last render: " + time else time = ""
 			"Render at " + str + " size (" + ((rWidth * fraction) as integer) as string + " x " + ((rHeight * fraction) as integer) as string + ")" + time
-			)
+		)
 			
 		function doRender index =
-			(
+		(
 			-- hide last render
 				try(undisplay rWindow);catch()
 				
@@ -156,30 +156,30 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 
 			-- display feedback				
 				if NOT rCancelled then
-					(
+				(
 					-- prompt
 						format "Image @ %x% rendered in: %" renderWidth renderHeight strTime to:str
 						
 					-- update tooltips
 						if tooltipsOK() do
-							(
+						(
 							btn1.tooltip	= getTooltip 1
 							btn2.tooltip	= getTooltip 2
 							btn3.tooltip	= getTooltip 3
 							btn4.tooltip	= getTooltip 4
-							)
-					)
+						)
+				)
 				else
-					(
+				(
 					-- prompt
 						format "Render was cancelled at: %" strTime to:str
-					)
+				)
 				pushPrompt (str as string)
 				
-			)
+		)
 			
 		function setRenderFraction index fraction =
-			(
+		(
 			-- settings
 				rFraction			= fraction
 				renderWidth			= rWidth * fraction
@@ -195,13 +195,13 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 		
 			-- render
 				if chk1.checked do
-					(
+				(
 					doRender index
-					)
-			)
+				)
+		)
 			
 		function setRenderSize index =
-			(
+		(
 			-- check UI
 				local uiState	= index > 2
 				btn1.enabled 	= uiState
@@ -210,17 +210,17 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 				btn4.enabled 	= uiState
 
 				if NOT uiState do
-					(
+				(
 					if tooltipsOK() do
-						(
+					(
 						btn1.tooltip			= ""
 						btn2.tooltip			= ""
 						btn3.tooltip			= ""
 						btn4.tooltip			= ""
-						)
+					)
 					ddlPresets.selection	= 1
 					return false
-					)
+				)
 			
 			-- settings
 				local preset	= presets[index - 2]
@@ -232,33 +232,33 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 			-- UI
 				arrRenderTimes = #()
 				if tooltipsOK() do
-					(
+				(
 					btn1.tooltip	= getTooltip 1
 					btn2.tooltip	= getTooltip 2
 					btn3.tooltip	= getTooltip 3
 					btn4.tooltip	= getTooltip 4
-					)
+				)
 
 			-- update renderer
 				setRenderFraction index rFraction
 				updateDialog()
 				
-			)
+		)
 		
 		function loadPresets =
-			(
+		(
 			local arr = #("Select render preset...","- - - - - - - - - - - - - - - - - - - - ")
 			for preset in presets do
-				(
+			(
 				append arr preset[1]
-				)
+			)
 			ddlPresets.items = arr
 			setRenderSize 1
-			)
+		)
 			
 		function savePresets =
-			(
-			)
+		(
+		)
 
 	----------------------------------------------------------------------------------------------------
 	-- interface 
@@ -272,7 +272,7 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 		on btn4 changed state do setRenderFraction 4 0.25
 		
 		on roRenderSizePresets open do
-			(
+		(
 			-- load presets
 				loadPresets()
 				
@@ -282,9 +282,9 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 
 			-- dock
 				if dockPosition == undefined do
-					(
+				(
 					dockPosition	= if systemTools.GetScreenWidth() / systemTools.GetScreenHeight() > 1 then #cui_dock_top else #cui_dock_bottom
-					)
+				)
 				cui.RegisterDialogBar roRenderSizePresets style:#(#cui_dock_top, #cui_dock_bottom, #cui_floatable, #cui_handles)
 				cui.DockDialogBar roRenderSizePresets dockPosition
 			
@@ -292,7 +292,7 @@ rollout roRenderSizePresets "Render Size Presets" width:236 height:39
 				local mode = getCommandPanelTaskMode()
 				setCommandPanelTaskMode #utility
 				setCommandPanelTaskMode mode
-			)
+		)
 
 		on roRenderSizePresets close do savePresets()
 )

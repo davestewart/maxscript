@@ -15,21 +15,21 @@
 -------------------------------------------------------------------------------
 (
 if selection.count == 1 then
-	(
+(
 	if classof $ == Editable_Poly then
-		(
+	(
 		temp_array = #()
 		for i in (getfaceselection $) do 
-			(
+		(
 			append temp_array i
-			)
+		)
 		for i in temp_array do
-			(
+		(
 			num_edges = (polyop.getFaceEdges $ i).count
 			to_print = "Polygon " + (i as string) + ": " + (num_edges as string) + " Edges"
 			print to_print
-			)
 		)
 	)
+)
 )
 -------------------------------------------------------------------------------

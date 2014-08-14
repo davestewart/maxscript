@@ -301,9 +301,9 @@ rollout textOptions "Text Options" width:176 height:493
 
 	--set up spinners on open
 		on textOptions open do
-			(
+		(
 			sizeCtrl.value = 100
-			)
+		)
 
 	--------------------------------------------------------------------------------------------------------------------------------
 	-- Font & Shape functions
@@ -313,44 +313,44 @@ rollout textOptions "Text Options" width:176 height:493
 	global tempFont = textOptions.font.text
 
 	fn updatePB i total =
-		(
+	(
 		pb1.value = 100.0 * i/total
 		-- reset when progress bar is full
 			if pb1.value == 100 then
-				(
+			(
 				pb1.value = 0
 				total = 0
-				)
-		)
+			)
+	)
 
 	fn updateFont =
-		(
+	(
 		if objectList.count != 0 then
-			(
+		(
 			for i = 1 to objectList.count do
-				(
+			(
 				obj = execute ("$'" + objectList[i] + "'")
 				if obj != undefined then obj.font = font.selected
 				updatePB i total
-				)
 			)
-		tempFont = textOptions.font.text
 		)
+		tempFont = textOptions.font.text
+	)
 
 
 	fn updateShapeSteps =
-		(
+	(
 		if objectList.count != 0 then
-			(
+		(
 			for i = 1 to objectList.count do
-				(
+			(
 				obj = execute ("$'" + objectList[i] + "'")
 				if obj != undefined then obj.steps = shapeSteps.value
 				updatePB i total
-				)
 			)
+		)
 		tempShapeSteps = textOptions.shapeSteps.value
-		)	
+	)	
 
 
 	--------------------------------------------------------------------------------------------------------------------------------
@@ -361,38 +361,38 @@ rollout textOptions "Text Options" width:176 height:493
 
 
 	on font selected true do
-		(
+	(
 		if interactiveBtn.checked then updateFont()
-		)
+	)
 
 	on shapeSteps changed val do
-		(
+	(
 		if interactiveBtn.checked then updateShapeSteps()
-		)
+	)
 
 	on updateBtn pressed do
-		(
+	(
 
 		-- Check if font needs updating
 			-- only if dropdown has changed from last time
 			if textOptions.font.text != tempFont then
-				(
+			(
 				total = total + objectList.count
 				updateFont = 1
-				)
+			)
 
 		-- Check if Shape Steps needs updating
 			-- only if spinner has changed from last time
 			if textOptions.shapeSteps.value != tempShapeSteps then
-				(
+			(
 				total = total + objectList.count
 				updateShapeSteps = 1
-				)
+			)
 
 		-- call appropriate functions
 			if updateFont == 1 then updateFont 
 			if updateShapeSteps == 1 then updateShapeSteps
-		)
+	)
 
 )
 
@@ -414,7 +414,7 @@ rollout names "Names" width:160 height:56
 	-- Creation handlers
 	--------------------------------------------------------------------------------------------------------------------------------
 	on namBtn pressed do
-		(
+	(
 			-- set other globals
 				spacing = 1000
 				objectList = #()
@@ -427,13 +427,13 @@ rollout names "Names" width:160 height:56
 	
 			--sets the animation range
 				if names.count == 0 then
-					(
+				(
 					print "No Data!"
-					)
+				)
 				else
-					(
+				(
 					animationRange = interval 0 (names.count + 1)
-					)
+				)
 	
 	
 			-- creates the objects & positions them
@@ -473,22 +473,22 @@ rollout names "Names" width:160 height:56
 
 					-- put in carriage returns
 						if textOptions.twoLines.checked then
-							(
+						(
 							displayText = names[i]
 							spaceIndex = findString displayText " " -- find any spaces
 							if spaceIndex != undefined then
-								(
-								obj.text = replace displayText spaceIndex 1 "\r"
-								)
-							else
-								(
-								obj.text = displayText
-								)
-							)
-						else
 							(
-							obj.text  = names[i]
+								obj.text = replace displayText spaceIndex 1 "\r"
 							)
+							else
+							(
+								obj.text = displayText
+							)
+						)
+						else
+						(
+							obj.text  = names[i]
+						)
 
 
 
@@ -498,41 +498,41 @@ rollout names "Names" width:160 height:56
 						targetHeight = 300
 						
 						fn scaleText obj targetScale =
-						(
+					(
 							case textOptions.scaleType.state of
-							(
-							1:	(
+						(
+							1:(
 								addModifier obj (XForm()) ui:on
 								obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
 								modPanel.setCurrentObject obj.modifiers[#XForm]
 								subobjectLevel = 0
-								)
-							2: 	(
-								obj.scale = [targetScale ,targetScale ,targetScale ]
-								)	
 							)
+							2: (
+								obj.scale = [targetScale ,targetScale ,targetScale ]
+							)	
 						)
+					)
 						
 						case textOptions.scaleMethod.state of
-							(
+						(
 							1:
-								(
+							(
 								-- do nothing
-								)
+							)
 							2:
-							 	(
+							 (
 								span = obj.max.x - obj.min.x
 								targetScale = targetHeight / span
 								scaleText obj targetScale
-								)
+							)
 								
 							3:
-							 	(
+							 (
 								span = obj.max.z - obj.min.z
 								targetScale = targetHeight / span
 								scaleText obj targetScale
-								)
-							) 
+							)
+						) 
 		
 
 					-- set up objects to move
@@ -545,27 +545,27 @@ rollout names "Names" width:160 height:56
 					-- Centre the object as well?
 						if textOptions.centre.checked then (
 							obj.pivot.z = (obj.max.z - obj.min.z) / 2 + obj.min.z
-						)
+					)
 
 						obj.pos.controller.Z_Position.controller.keys[1].value = spacing
 						obj.pos.controller.Z_Position.controller.keys[2].value = 0
 						obj.pos.controller.Z_Position.controller.keys[3].value = -spacing
 
-				)
+			)
 				sliderTime = 1
 				print "Printing Object List..."
 				print objectList
-	)
+)
 
 
 	on delBtn pressed do
-		(
+	(
 		for i = 1 to objectList.count do (
 			obj = execute ("$'" + objectList[i] + "'")
 			if obj != undefined then delete obj
-			)
-			objectList = #()
 		)
+			objectList = #()
+	)
 
 )
 
@@ -584,18 +584,18 @@ rollout tools "Tools" width:160 height:512
 	--------------------------------------------------------------------------------------------------------------------------------
 
 	on camBtn pressed do
-		(
+	(
 		if $Camera_SimpleCredits == undefined then
 			Freecamera fov:45 targetDistance:160 nearclip:1 farclip:1000 nearrange:0 farrange:1000 mpassEnabled:off mpassRenderPerPass:off transform:(matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,-700,0]) name:"Camera SimpleCredits"
 			else print "Camera already exists"
 			max vpt camera
-		)
+	)
 
 
 	on listBtn pressed do
-		(
+	(
 		for i = 1 to objectList.count do (print objectList[i])
-		)
+	)
 		
 )
 
@@ -603,9 +603,9 @@ rollout credits "Credits" width:160 height:40
 (
 	button webBtn "www.davestewart.co.uk" width:156 height:16
 	on webBtn pressed do
-		(
+	(
 		ShellLaunch "iexplore.exe" "http://www.davestewart.co.uk"
-	 	)
+	 )
 )
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -614,9 +614,9 @@ rollout credits "Credits" width:160 height:40
 
 -- create the Floater window and add the rollouts
 	if SCrof != undefined do
-		(
+	(
 		closerolloutfloater SCrof
-		)		
+	)		
 
 	SCrof=newrolloutfloater "Simple Credits" 200 200
 

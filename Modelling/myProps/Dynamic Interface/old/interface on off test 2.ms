@@ -54,7 +54,7 @@ utility onOff "Dynamic interface example" width:480 height:336
 	---------------------------------------------------------------------------------------------------
 
 	on rdo1 changed state do
-		(
+	(
 
 		---------------------------------------------------------------------------------------------------
 		-- update  globals
@@ -64,23 +64,23 @@ utility onOff "Dynamic interface example" width:480 height:336
 		debug = 0 -- set to 1 to continually update arrays
 
 		if onOff_uiAll== undefined OR debug == 1 then -- sets arrays on first run
-			(
+		(
 			-- your interface groups / selections go here
 				global onOff_ui1= 	#(grp1, btn1)
 				global onOff_ui2= 	#(grp2, btn2)
 				global onOff_ui3= 	#(grp3, btn3)
 		
 				global onOff_uiAll=	#(onOff_ui1, onOff_ui2, onOff_ui3)
-			)
+		)
 
 		for i = 1 to onOff_uiAll.count do
-			(
+		(
 			group = execute("onOff_ui" + i as String)
 			group.enabled = false
-			)
+		)
 			group = execute("onOff_ui" + state as String)
 			group.enabled = true
-		)
+	)
 
 )
 

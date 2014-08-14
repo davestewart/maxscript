@@ -32,13 +32,13 @@ fn get_stack_properties =
 
 -- GET MODIFIER LIST
 	for m = 1 to $.modifiers.count do
-		(
+	(
 		append TopCAT_stack_props #($.modifiers[m], ("--" + $.modifiers[m].name as string))
 		get_all_prop_name = getSubAnimNames $.modifiers[m]
 
 	-- GO THOUGH MODIFIER LIST AND GET PROPERTIES
 		for i in get_all_prop_name do
-			(
+		(
 			 print $.modifiers[m][i].value
 
 				try
@@ -62,7 +62,7 @@ fn get_stack_properties =
 -- GO THOUGH BASEOBJECT PROPERTY LIST AND GET PROPERTIES
 	get_all_prop_name = getSubAnimNames $.baseobject
 	for i in get_all_prop_name do
-		(
+	(
 		try
 			if classof ($.baseobject[i].value) == Float then
 				append TopCAT_stack_props #($.baseobject, i, "Float")
@@ -78,10 +78,10 @@ fn get_stack_properties =
 
 -- GIVE FRIENDLY NAMES TO STACK_PROPS
 	for i = 1 to TopCAT_stack_props.count do 
-	(
+(
 		append TopCAT_stack_names (TopCAT_stack_props[i][2] as string)
 		append TopCAT_active_array false
-	)
+)
 	prop_list.items = TopCAT_stack_names
 
 )--end fn

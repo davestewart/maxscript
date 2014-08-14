@@ -21,7 +21,7 @@ rollout roAnim "Animation" width:496 height:456
 		
 
 	on roAnim open do
-	(
+(
 	
 	-- objects -------------------------------------
 	-- style
@@ -43,11 +43,11 @@ rollout roAnim "Animation" width:496 height:456
 		list = axObj.listItems
 		local controlData=#("Sphere01","Box02","Point01", "Dummy01")
 		for i=1 to controlData.count do 
-			(
+		(
 			local itemHead, itemBody
 			itemHead = list.Add index:(controlData[i] as string)
 			itemBody = itemHead.listsubitems.add index:"Geometry"
-			)
+		)
 		
 		axObj.refresh()
 	
@@ -74,21 +74,21 @@ rollout roAnim "Animation" width:496 height:456
 		list = axProp.listItems
 		local controlData=#("Transform","Position","Rotaton", "Scale")
 		for i=1 to controlData.count do 
-			(
+		(
 			local itemHead, itemBody
 			itemHead = list.Add index:(controlData[i] as string)
 			if i == 1 then itemHead.bold=true
 			--itemBody = itemHead.listsubitems.add index:(controlData[i][1] as string)
-			)
+		)
 	
 		local controlData=#("Camera Parameters","Field of View","Focus")
 		for i=1 to controlData.count do 
-			(
+		(
 			local itemHead, itemBody
 			itemHead = list.Add index:(controlData[i] as string)
 			if i == 1 then itemHead.bold=true
 			--itemBody = itemHead.listsubitems.add index:(controlData[i][1] as string)
-			)
+		)
 	
 	
 	-- update interface
@@ -97,24 +97,24 @@ rollout roAnim "Animation" width:496 height:456
 	
 	
 	
-	)
+)
 	on axObj itemClick Item do
-	(
+(
 	--messagebox (Item.selected as string)
 	local obj=getnodebyname (Item.text)
 	if Item.selected then selectmore obj
 	else deselect obj
-	)
+)
 	on btnAdd pressed do
-	(
+(
 	for o in objects do
-		(
+	(
 		li=roAnimation.axObj.ListItems.Add index:o.name
 		--print li.ListSubItems.count
 		li.ListSubItems.Add text:(superclassof o as string)
-		)
-	axProp.refresh()
 	)
+	axProp.refresh()
+)
 )createDialog roAnim
 /*
 for i = 1 to roAnimation.axObj.listitems.count do roAnimation.axObj.listitems[i].forecolor=if (mod i 2 == 1) then (color 255 0 0) else (color 255 255 0)

@@ -43,7 +43,7 @@ rollout roScriptDevScripts "Script Organiser" width:272 height:441
 	---------------------------------------------------------------------------------------------------
 
 	fn getPathImp =
-		(
+	(
 		try (
 			scriptFullPath = getOpenFileName caption:"Select *.ms Script File" types:"Script Files(*.ms)|*.ms" ()
 			scriptName = filenameFromPath scriptFullPath as String
@@ -53,20 +53,20 @@ rollout roScriptDevScripts "Script Organiser" width:272 height:441
 
 			edtPathImp.text = getFilenamePath scriptFullPath
 			lbxScripts.items = initDisplayItems
-			)
+		)
 		catch ()
-		)	
+	)	
 
 
 	fn editScript item =
-		(
+	(
 		edit initScriptDB[item]
 		roScriptDevActions.grpStatus.text = "Info: OK"
 		roScriptDevActions.lblStatus.text = "Editing Script"
-		)
+	)
 
 	fn deleteScript item =
-		(
+	(
 		deleteItem initDisplayItems item
 		deleteItem initScriptDB item
 		lbxScripts.items = initDisplayItems
@@ -74,22 +74,22 @@ rollout roScriptDevScripts "Script Organiser" width:272 height:441
 		roScriptDevActions.grpStatus.text = "Info: OK"
 		roScriptDevActions.lblStatus.text = "Script Removed"
 
-		)
+	)
 
 	fn moveScript item =
-		(
+	(
 		append roScriptDevFav.favScriptDB initScriptDB[item]
 		append roScriptDevFav.favDisplayItems initDisplayItems[item]
 
 		roScriptDevFav.lbxScripts.items = roScriptDevFav.favDisplayItems
 		
 		deleteScript item
-		)
+	)
 
 	fn runScript item = 
-		(
+	(
 		try
-			(
+		(
 			fileIn initScriptDB[item]
 
 			-- Edit Name if script did contains errors, but is now fine
@@ -101,10 +101,10 @@ rollout roScriptDevScripts "Script Organiser" width:272 height:441
 				roScriptDevActions.grpStatus.text = "Status:"
 				roScriptDevActions.lblStatus.text = "Script OK"
 
-			)
+		)
 
 		catch
-			(
+		(
 			-- Edit Name as script contains errors
 				if substring initDisplayItems[item] 1 3 != "*  " then
 					initDisplayItems[item] = "*  " + initDisplayItems[item]
@@ -113,49 +113,49 @@ rollout roScriptDevScripts "Script Organiser" width:272 height:441
 
 			-- Take action
 				case roScriptDevActions.rdoError.state of
-					(
+				(
 					1:
-						(
+					(
 						-- do nothing
 							roScriptDevActions.grpStatus.text = "Info: ERROR"
 							roScriptDevActions.lblStatus.text = "Halting Script"
-						)
+					)
 	
 					2:
-						(
+					(
 						-- edit script
 							edit initScriptDB[item]
 							roScriptDevActions.grpStatus.text = "Info: ERROR"
 							roScriptDevActions.lblStatus.text = "Editing Script"
 	
-						)
+					)
 					3: 
-						(
+					(
 						-- delete script
 							deleteScript item
-						)
 					)
-			)
+				)
 		)
+	)
 
 
 	fn doAction item clicks =
-		(
+	(
 		if clicks == 2 AND roScriptDevActions.rdoAction.state == 3 then deleteScript item -- if user is in delete mode and doubleclicked...
 		else -- if user single clicked...
-			(
+		(
 			case roScriptDevActions.rdoAction.state of
-				(
+			(
 				1: runScript item
 				2: editScript item
 				4: moveScript item
-				)
 			)
 		)
+	)
 
 
 	fn SearchDir =
-		(
+	(
 
 		-- clear arrays
 			initDisplayItems =#()
@@ -163,12 +163,12 @@ rollout roScriptDevScripts "Script Organiser" width:272 height:441
 
 		files = getFiles ((getFilenamePath scriptFullPath as String) + "*.ms")
 		for f in files do
-			(
+		(
 			append initDisplayItems (filenameFromPath f as String)
 			append initScriptDB f
-			)
-		lbxScripts.items = initDisplayItems
 		)
+		lbxScripts.items = initDisplayItems
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
@@ -203,18 +203,18 @@ rollout roScriptDevActions "Actions" width:272 height:300
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn rdoActionTextUpdate state =
-		(
+	(
 		case state of
-			(
+		(
 			1: lblStatus.text="User: Click item to Run."
 			2: lblStatus.text="User: Click item to Edit only."
 			3: lblStatus.text="User: Dbl-click item to Delete."
 			4: lblStatus.text="User: Click item to Keep."
-			)
+		)
 
 		if state == 1 then (rdoError.enabled = true; grpError.enabled = true)
 		else (rdoError.enabled = false; grpError.enabled = false)
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

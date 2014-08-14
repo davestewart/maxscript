@@ -31,11 +31,11 @@ rollout roFlash "Move selected..." width:162 height:272
 	
 		ActiveXControl axFlash "ShockwaveFlash.ShockwaveFlash.9" pos:[13,7] width:150 height:150
 		group "Controls"
-			(
+		(
 			checkbutton chkActive "Active" across:2
 			button btnClose "Close"
 			timer tmr1 "Timer" pos:[8,112] width:24 height:24 interval:(1000 / 4)
-			)
+		)
 
 	---------------------------------------------------------------------------------------------------
 	-- variables
@@ -58,28 +58,28 @@ rollout roFlash "Move selected..." width:162 height:272
 	---------------------------------------------------------------------------------------------------
 	
 		fn loadFlash =
-			(
+		(
 			local flashFile = getDir #scripts + "\\Flash\\axisControl.swf"
 			local flashFile = "E:\\03_Scripting\\maxScript\\max 9\\realtime animation\\Flash AxisControl\\axisControl.swf"
 			axFlash.movie = flashFile  
 			axFlash.movie = flashFile  -- need to load 2nd time sometimes 
-			)
+		)
 	
 		fn getSurface src trg =
-			( 
+		( 
 			r1	= ray (src.pos + [0,0,10000]) [0,0,-1] 
 			r2	= intersectRay trg r1
 			z	= if r2 == undefined then 0 else r2.pos.z
 			z
-			)
+		)
 		
 		fn moveToSurface src trg =
-			( 
+		( 
 			src.pos.z = getSurface src trg
-			)
+		)
 	
 		function setup =
-			(
+		(
 			-- delete Objects
 				--delete objects
 				for o in objects do if o.name != "ground" do delete o
@@ -98,10 +98,10 @@ rollout roFlash "Move selected..." width:162 height:272
 				s = sphere()
 				s.recenter = on
 				s.pos.z = 300
-			)
+		)
 			
 		function animateObjects =
-			(
+		(
 			-- dummy pos
 				pc += 1
 				d.pos.controller.percent = pc
@@ -114,7 +114,7 @@ rollout roFlash "Move selected..." width:162 height:272
 				pz		= getSurface s p
 				
 				if s.pos.z <= pz then
-					(
+				(
 					s.pos.z	= pz
 					vz		= 0
 					vz		+= s.pos.z - pz
@@ -127,25 +127,25 @@ rollout roFlash "Move selected..." width:162 height:272
 	
 		--			s.pos.z = p.pos.z
 					*/
-					)
+				)
 				else
-					(
+				(
 					vz		+= g
 					s.pos.z	+= vz
-					)
+				)
 					
 			-- store vertical velocity
-			)
+		)
 			
 		function cleanup = 
-			(
+		(
 			tmr1.active = false
 			try(
 				for obj in arrObj do delete obj
-				)
+			)
 			catch(err)
 			--delete objects
-			)
+		)
 		
 	
 	
@@ -155,33 +155,33 @@ rollout roFlash "Move selected..." width:162 height:272
 
 	-- set the Flash object
 		on roFlash open do
-			(
+		(
 			loadFlash()
 			setup()
-			)
+		)
 
 
 	-- receive Flash commands
 		on axFlash FSCommand str1 str2 do
-			(
+		(
 			local args = filterString str1 ","
 			vx = args[1] as float * 5
 			vy = args[2] as float * 5
-			)
+		)
 			
 	-- other
 		on roFlash close do cleanup()
 		
 		on btnClose pressed do
-			(
+		(
 			destroydialog roFlash
-			)
+		)
 		
 		on tmr1 tick  do
-			(
+		(
 			if chkActive.checked do animateObjects ()
-			)
 		)
+	)
 if flashFloater != undefined then closerolloutfloater flashFloater
 flashFloater = newRolloutFloater "Flash Floater" 200 365
 addRollout roFlash flashFloater

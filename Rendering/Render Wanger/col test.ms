@@ -8,7 +8,7 @@ rollout RSro1 "Render Presets" width:816 height:180
 	ActiveXControl ax "{BDD1F04B-858B-11D1-B16A-00C0F0283628}" pos:[5,22] width:200 height:200
 
 	on RSro1 open do
-		(
+	(
 	-- SET UP AX OBJECT
 	--------------------------------------------------------
 		ax.MousePointer = #ccArrow 
@@ -31,17 +31,17 @@ rollout RSro1 "Render Presets" width:816 height:180
 		colLabels = #(	"Fill","Number")
 		
 		for i = 1 to colLabels.count  do
-			(
+		(
 			tmp = chs.Add Width:200
 			tmp.text=colLabels[i]
 			--execute(colLabels[i] + ".text = " + colLabels[i] as string)
-			)
+		)
 
 		
 	-- ADD ITEMS
 	--------------------------------------------------------
 		for i = 1 to 50 do
-			(
+		(
 		-- create color
 			local c = (((random 0 255)*65300) + ((random 0 255)*255) + (random 240 255)) as Integer
 			if c < 0 then c = -c
@@ -51,17 +51,17 @@ rollout RSro1 "Render Presets" width:816 height:180
 			local li = ax.listItems.Add text:"||||||||||||||||||||||||||||||||||"
 			li.bold=true
 			try
-				(
+			(
 				lsi = ax.ListItems[i].ListSubItems.add text:c
 				li.forecolor=c
-				)
+			)
 			catch
-				(
+			(
 				li.text=""
 				--ax.listItems.Remove (i)
-				)
 			)
-	)
+		)
+)
 		
 	
 

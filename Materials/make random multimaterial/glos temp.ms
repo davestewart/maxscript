@@ -7,7 +7,7 @@
 		local glosCtrl = bezier_float()		-- setup instanced controller, for when needed
 
 	fn updateGlos =
-		(
+	(
 
 		-- set variables
 			glosBas = spnGlosVal.value
@@ -24,29 +24,29 @@
 		-- update interface display
 			grpGlosParam.text = "Glossiness: (" + glosMin as String + " - " + glosMax as String + ")"
 
-		)
+	)
 
 	fn updateGlosDisplay =
-		(
+	(
 		case ckbGlosValInst.state of
-			(
+		(
 			true:
-				(
+			(
 				-- instance
 				spnGlosVarTemp = spnGlosVar.value
 				spnGlosVar.value = 0
 				spnGlosVar.enabled = false
 				updateGlos()
-				)
+			)
 			false:
-				(
+			(
 				-- copy
 				spnGlosVar.value = spnGlosVarTemp
 				spnGlosVar.enabled = true
 				updateGlos()
-				)
 			)
 		)
+	)
 
 
 

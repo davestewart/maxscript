@@ -2,9 +2,9 @@ fileIn "bmpArr.ms"
 fileIn "classArr.ms"
 
 if  (getCurrentSelection()).count==0 then
-	(
+(
 	if (NOT isvalidnode b) then
-		(
+	(
 		b=box()
 		addModifier b (Bend ())
 		addModifier b (Taper ())
@@ -29,8 +29,8 @@ if  (getCurrentSelection()).count==0 then
 	/*
 	*/
 		select b
-		)
 	)
+)
 if test!=undefined then destroydialog test
 	
 --------------------------------------------------------
@@ -38,7 +38,7 @@ if test!=undefined then destroydialog test
 select $box01
 
 	rollout test "Copy Properties" width:512 height:584
-		(
+	(
 
 -- declarations
 
@@ -68,15 +68,15 @@ select $box01
 
 -- utility functions
 		fn pad num padLength =
-			(
+		(
 			num=num as string
 			while num.count < padLength do num = ("0"+num)
 			return num
-			)
+		)
 	
 
 		fn replaceAll str outStr inStr =
-			(
+		(
 			-- str the original string
 			-- the string/character to replace
 			-- the replacement string/character
@@ -85,19 +85,19 @@ select $box01
 			while ((n=findstring str outStr) != undefined) do str = replace str n inStr.count inStr
 			if str != undefined then return str
 			else return origStr
-			)
+		)
 
 
 		fn reverseArray inArr =
-			(
+		(
 			local outArr = #()
 			while inArr.count > 0 do
-				(
+			(
 				append outArr inArr[inArr.count]
 				deleteItem inArr inArr.count
-				)
-			return outArr
 			)
+			return outArr
+		)
 
 
 
@@ -105,7 +105,7 @@ select $box01
 -- treeview functions
 
 		fn initImageList=
-			(
+		(
 			--messageBox "initImageList()"
 			-- set variables
 				local bmpRel ="icons\\final\\"
@@ -113,7 +113,7 @@ select $box01
 				local iconStr=""
 			-- start the loop
 				for i = 1 to libraryClassArr.count do
-					(
+				(
 					try (
 					-- get and load the bitmap file
 						local bmpFile =bmpRel + libraryBmpArr[i]
@@ -124,17 +124,17 @@ select $box01
 
 					-- update ebug info
 						iconStr+=(pad j 3) +" | "+ libraryClassArr[i] +" | "+ libraryBmpArr[i] +"\n"
-						)
-					catch(j-=1)
 					)
+					catch(j-=1)
+				)
 			-- write debug info
 				--format "%" iconStr to:(win=newScript())
 				--format "libraryClassArr.count:%\nj:%\n" libraryClassArr.count j to:win
-			)
+		)
 
 
 		fn initTreeView tv singleSel=
-			(
+		(
 			-- linestyles
 				tv.lineStyle = #tvwRootLines
 				tv.lineStyle = #tvwTreeLines
@@ -155,7 +155,7 @@ select $box01
 			--format ">>>>>>>%\n" imageList.count
 				--tv.ImageList=axImgList
 
-			)
+		)
 
 
 
@@ -164,22 +164,22 @@ select $box01
 
 
 	fn getClassFromSAString SAStr =
-		(
-		)
+	(
+	)
 
 
 	fn getSAStringFromNode tvNode =
-		(
+	(
 		-- set up variables
 			local nodeArr=#()
 			local saStr="$"
 
 		-- work up tree and add index to array
 			while tvNode.parent!=undefined do
-				(
+			(
 				append nodeArr (tvNode.tag as Integer)
 				tvNode=tvNode.parent
-				)
+			)
 		
 		-- reverse, convert and return Array
 
@@ -189,25 +189,25 @@ select $box01
 			--format"%\n" saStr
 			return saStr
 
-		)
+	)
 
 
 	fn getIconIndex sa i=
-		(
+	(
 		local iconIndex, lastIcon, class
 		lastIcon = axImgList.ListImages.Count
 		iconIndex=lastIcon 
-		try	(
+		try(
 			class=(classof (getSubAnim sa i).object) as string
 			--format "%\n" sa as string
 			iconIndex= findItem classArr class
 			if iconIndex==0 then iconIndex=lastIcon 
 			return iconIndex
-			)
+		)
 		catch(
 			return iconIndex
-			)
 		)
+	)
 
 
 
@@ -216,10 +216,10 @@ select $box01
 -- main recursive function
 
 		fn recurseSubAnims sa tv tvNode d=
-			(
+		(
 			d+=1
 			for i = 1 to sa.numSubs do
-				(
+			(
 
 			 -- flag if not visibility, transform, modified object or material
 				local oktoBuild=true
@@ -227,7 +227,7 @@ select $box01
 
 			-- build the nodes
 				if oktobuild == true then
-					(
+				(
 				-- build the node
 					newNode = tv.nodes.add tvNode.index 4 ""
 
@@ -255,9 +255,9 @@ select $box01
 
 				-- do children
 					recurseSubAnims sa[i] tv newNode d
-					)
 				)
 			)
+		)
 
 
 /*
@@ -273,19 +273,19 @@ select $box01
 	local t1=0,t2=0
 
 	fn timeIt type =
-		(
+	(
 		if type==0 then t1=timeStamp()
 		else
-			(
+		(
 			t2=timestamp()
 			local t=(t2-t1)/1000 as float
 			format "Processing took % seconds\n" t
-			)
 		)
+	)
 
 
 	fn populate tv obj =
-		(
+	(
 		-- Time it...
 			timeIt 0
 		-- clear
@@ -304,13 +304,13 @@ select $box01
 			recurseSubAnims obj tv1 newNode 0
 		-- Time it...
 			timeIt 1
-		)
+	)
 
 
 -- rollout handlers
 	
 	on test open do
-		(
+	(
 
 		-- Time it...
 			timeIt 0
@@ -334,11 +334,11 @@ select $box01
 		-- Time it...
 			timeIt 1
 	-- END
-		)
+	)
 
 
 	on tv1 NodeClick tvNode do
-		(
+	(
 		-- interface
 			-- update variables
 				prevNode=curNode
@@ -361,11 +361,11 @@ select $box01
 				--format "% %\n" (pad iconIndex 3) sa
 				format "%\n" sa
 		
-		)
+	)
 
 	on btn1 pressed do populate tv1 (pickObject())
 
 	
-	)
+)
 
 createdialog test 410 650 50 50 style:#(#style_minimizebox,#style_titlebar, #style_border, #style_sysmenu,#style_resizing)

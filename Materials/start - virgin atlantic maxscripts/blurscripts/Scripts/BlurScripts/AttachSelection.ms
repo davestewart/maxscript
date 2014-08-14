@@ -23,10 +23,10 @@
 -------------------------------------------------------------------------------
 (
 if selection.count >= 2 then
-	(
+(
 	disableSceneRedraw()
 	try
-		(
+	(
 		objs = for i in selection collect i
 		main_obj = objs[1]
 		convertTo main_obj TriMeshGeometry
@@ -37,21 +37,21 @@ if selection.count >= 2 then
 		curiter = 0
 		
 		for i = 2 to itemnum do
-			(
+		(
 			curiter += 1
 			m = ((curiter as float)/(itemnum as float))*100
 			attach main_obj objs[i]
 			progressUpdate m
-			)
+		)
 		progressEnd()
-		)
+	)
 	catch
-		(
+	(
 		MessageBox "An error has occured, you may want to undo." title:"AttachSelection"
-		)
+	)
 		
 	enableSceneRedraw()
 	completeRedraw()
-	)
+)
 )
 -------------------------------------------------------------------------------

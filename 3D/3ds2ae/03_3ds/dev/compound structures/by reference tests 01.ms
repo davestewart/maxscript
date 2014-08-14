@@ -1,8 +1,8 @@
 fn foo x y &z=
-	(
+(
 	z= x*y
 	return true
-	)
+)
 	
 
 a=1
@@ -28,9 +28,9 @@ s=sphere()
 newList
 
 function square &obj val=
-	(
+(
 	obj=10
-	)
+)
 	
 square &newList.temp 4
 
@@ -53,9 +53,9 @@ classof str
 
 
 function square &v=
-	(
+(
 	v*=v
-	)
+)
 
 n=3
 square &n

@@ -23,27 +23,27 @@ rollout ro1 "File browser"
 	-- utility functions
 
 		fn replaceAll strStr strOut strIn =
-			(
+		(
 			local strTemp = ""
 			local arrTemp = filterstring strStr strOut
 			for i = 1 to arrTemp.count do
-				(
+			(
 				strTemp += arrTemp[i]
 				if i < arrTemp.count then strTemp += strIn
-				)
-			return strTemp
 			)
+			return strTemp
+		)
 	
 	---------------------------------------------------------------------------------------
 	-- interface functions
 
 		fn getDirListing =
-			(
+		(
 			return #(1,2,3)
-			)
+		)
 
 		fn populateList =
-			(
+		(
 			
 			-- files
 			
@@ -83,7 +83,7 @@ rollout ro1 "File browser"
 
 
 			for i = 1 to arrDirs.count do
-				(
+			(
 				local f, li
 				local folderPath	= arrDirs[i]
 				local folder		= filterString folderPath "\\"
@@ -94,13 +94,13 @@ rollout ro1 "File browser"
 				li.text				= folder
 				li.tag				= folderPath
 				--li.bold
-				)
+			)
 
 
 
 
 			for i = 1 to arrFiles.count do
-				(
+			(
 				local f, li
 				local file			= arrFiles[i]
 				li = items.Add()
@@ -129,42 +129,42 @@ rollout ro1 "File browser"
 				lsi					= li.ListSubItems.Add()
 				lsi.text			= getFileModDate file
 
-				)
+			)
 				
 
 /*
 			for li in ax.listItems do li.bold = true
 			li = ax.HitTest 100 1500
 			if li != undefined do
-				(
+			(
 				showProperties		li
 				li.text				= "Just Hit Tested"
 				showEvents 			controlR92.ax
 				showMethods 		controlR92.ax
-				)
+			)
 				
 */
-			)
+		)
 
 
 
 		fn getSelectedItems ax=
-			(
+		(
 			local selectedItems = #()
 			for i = 1 to ro1.ax.listitems.count do
-				(
+			(
 				local item = ro1.ax.listitems[i]
 				if item.selected == true then
-					(
+				(
 					append selectedItems item
-					)
 				)
-			return selectedItems 
 			)
+			return selectedItems 
+		)
 
 
 		fn styleList =
-			(
+		(
 			ax.MousePointer			= #ccArrow
 			ax.font					= "Tahoma"
 			ax.GridLines			= false
@@ -172,29 +172,29 @@ rollout ro1 "File browser"
 			ax.BorderStyle			= #ccFixedSingle
 			ax.view					= #lvwReport
 			ax.MultiSelect 			= true
-			)
+		)
 
 
 		fn viewBitmap item=
-			(
+		(
 			local f = item.tag + item.text
 			local f = replaceAll f "\\" "\\\\"
 			local bm = openbitmap f
 			display bm
 			display bm
-			)
+		)
 
 	---------------------------------------------------------------------------------------
 	-- handlers
 
 		on ro1 resized size do
-			(
+		(
 			ax.size			= size - [16,40]
 			btnOpen.pos		= size - [68,28]
-			)
+		)
 			
 		on ro1 open do
-			(
+		(
 			--ax.size = [ro1.width-16,ro1.height-8]
 			ro1.resized [ro1.width,ro1.height]
 			styleList()
@@ -203,25 +203,25 @@ rollout ro1 "File browser"
 			--showProperties ax
 			--showProperties chs
 			--showMethods chs
-			)
+		)
 			
 			
 		on ax ItemClick Item do
-			(
+		(
 			itemCurrent				= item
-			)
+		)
 
 		on ax DblClick do
-			(
+		(
 			viewBitmap itemCurrent
 			--messagebox bm
-			)
+		)
 			
 		on btnOpen pressed do
-			(
+		(
 			local selectedItems 	= getSelectedItems ax
 			for item in selectedItems do viewBitmap item
-			)
+		)
 
 )
 

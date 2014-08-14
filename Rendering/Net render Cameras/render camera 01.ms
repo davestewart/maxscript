@@ -2,18 +2,18 @@ arrTime	= #()
 (
 
 fn getControllerTimes ctrl =
-	(
+(
 	for i = 1 to ctrl.numSubs do
-		(
+	(
 		local range = getTimeRange ctrl[i].controller
 		if range.start - range.end != 0f then
-			(
+		(
 			append arrTime range.start
 			append arrTime range.end
-			)
-		getControllerTimes ctrl[i]
 		)
+		getControllerTimes ctrl[i]
 	)
+)
 
 local cam		= viewport.getCamera()
 local fName 	= cam.name

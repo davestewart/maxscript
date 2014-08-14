@@ -30,21 +30,21 @@
 ---------------------------------------------------------------------------------------------------
 
 	rollout ro1 "Rollout 1" width:160 height:104
-	(
+(
 		groupBox grp1 "Rollout 1 Options" pos:[8,8] width:144 height:88 category:2
 		radioButtons rdo1 "" pos:[16,32] width:126 height:32 labels:#("Option 1", "Option 2", "Option 3", "Option 4") columns:2
 		button btn1 "Button" pos:[16,70] width:128 height:16
-	)
+)
 	
 	rollout ro2 "Rollout 2" width:160 height:184
-	(
+(
 		GroupBox grp1 "Rollout 2 Options" pos:[8,8] width:144 height:168 category:2
 		edittext edt1 "" pos:[16,32] width:128 height:112
 		button btn1 "Button" pos:[16,152] width:128 height:16
-	)
+)
 	
 	rollout ro3 "Rollout 3" width:160 height:144 category:1
-	(
+(
 		GroupBox grp1 "Rollout 3 Options" pos:[8,8] width:144 height:128
 		checkbox chk1 "Checkbox 1" pos:[16,24] width:128 height:16
 		checkbox chk2 "Checkbox 2" pos:[16,40] width:128 height:16
@@ -52,7 +52,7 @@
 		checkbox chk4 "Checkbox 4" pos:[16,72] width:128 height:16
 		checkbox chk5 "Checkbox 5" pos:[16,88] width:128 height:16
 		button btn1 "Button" pos:[16,112] width:128 height:16
-	)
+)
 
 
 
@@ -63,7 +63,7 @@
 ---------------------------------------------------------------------------------------------------
 
 	rollout roOptions "Interface Options" width:160 height:88
-	(
+(
 		---------------------------------------------------------------------------------------------------
 		-- Interface
 		---------------------------------------------------------------------------------------------------
@@ -95,7 +95,7 @@
 		---------------------------------------------------------------------------------------------------
 
 		fn updateInterface state = 
-			(
+		(
 			-- set target rollout...
 				dynRO_current = execute("ro" + state as String)
 
@@ -106,7 +106,7 @@
 				removeRollout dynRO_old dynROFloater
 				addRollout dynRO_current dynROFloater
 				dynRO_old = dynRO_current
-			)
+		)
 
 
 		---------------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@
 	
 		-- set-up on first run...
 			on roOptions open do dynRO_old = ro1
-	)
+)
 
 
 

@@ -23,7 +23,7 @@ mySelection = objects as Array
 
 -- create stack info for each object
 for obj in mySelection do --get objects (loop)
-	(
+(
 	i +=1
 	targetObj = obj.name
 	--format "\n\n================================================\n"
@@ -37,7 +37,7 @@ for obj in mySelection do --get objects (loop)
 	append myObjList data
 
 	for mod = 1 to obj.modifiers.count do --get modifiers (loop)
-		(
+	(
 		--format "\n  ----------------------------------------------\n"
 		--format "  > Modifier:       %\n" mod
 		targetMod = obj.modifiers[mod]
@@ -48,7 +48,7 @@ for obj in mySelection do --get objects (loop)
 		append myObjList[i].mods data
 
 		for prop = 1 to ((getPropNames obj.modifiers[mod]).count) do --get props & values (loop)
-			(
+		(
 			--format "     - - - - - - - - - - - - - - - - - - - - - -\n"
 			targetProp = (getPropNames targetMod)[prop]
 			--format "     targetProp:         %\n" targetProp
@@ -60,10 +60,10 @@ for obj in mySelection do --get objects (loop)
 			--format "     targetPropValStart: %\n" targetPropValStart
 
 			try
-				(
+			(
 				targetPropClass =  execute("classOf " + targetPropValStart as String)
 				--format "     targetPropClass:    +%\n" targetPropClass
-				)
+			)
 			catch()
 
 		--append the array
@@ -72,9 +72,9 @@ for obj in mySelection do --get objects (loop)
 			append myObjList[i].mods[mod].props data
 
 
-			)
 		)
 	)
+)
 
 
 

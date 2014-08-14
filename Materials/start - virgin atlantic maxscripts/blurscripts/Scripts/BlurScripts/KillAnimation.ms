@@ -34,44 +34,44 @@ global kill_anim_from_all
 -- Functions
 
 fn kill_all_anim_biped onwhat = 
-	(
+(
 	biped.deleteKeys onwhat.controller #allKeys
-	)
+)
 
 fn kill_all_anim onwhat = 
-	(
+(
 	if onwhat.numsubs != 0 then	
-		(
+	(
 		for i = 1 to onwhat.numsubs do
-			(	
+		(	
 			if onwhat[i] != undefined then
-				(
+			(
 				try (deletekeys onwhat[i] #allKeys) catch ()
-				)
-			kill_all_anim onwhat[i]
 			)
+			kill_all_anim onwhat[i]
 		)
 	)
+)
 	
 fn kill_anim_from_all = 
-	(
+(
 	undo "KillAnimation" on
-		(
+	(
 		for i in selection do 
-			(
+		(
 			if classof i == Biped_Object then kill_all_anim_biped i
 			else kill_all_anim i
-			)
 		)
 	)
+)
 
 -- The Script
 
 if selection.count == 0 then 
 		(MessageBox "Please select at least one object" title:"KillAnimation")
 	else
-		(
+	(
 		if (queryBox "Remove all animation from selected objects?" title:"KillAnimation") == true then kill_anim_from_all()
-		)
+	)
 )
 -------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 rollout r1 "Untitled" width:176 height:520
-	(
+(
 	
 	-----------------------------------------------------------------------------------------
 	-- interface
@@ -32,34 +32,34 @@ rollout r1 "Untitled" width:176 height:520
 	-----------------------------------------------------------------------------------------
 	
 		fn compareByName v1 v2 =
-			(
+		(
 			v1 = v1.name
 			v2 = v2.name
 			case of
-				(
+			(
 				(v1 < v2): -1
 				(v1 > v2): 1
 				default: 0
-				)
 			)
+		)
 		
 		fn isCamera obj =
-			(
+		(
 			return superclassof obj == camera
-			)
+		)
 		
 		function getAnimatedCamera =
-			(
-			)
+		(
+		)
 		
 		function getTemplateCameras =
-			(
+		(
 			
 			
 			arr = pickObject message:"Select cameras" count:#multiple filter:isCamera select:true forceListenerFocus:false
 			
 			
-			)
+		)
 		
 		/*
 		arr = getCurrentSelection()
@@ -70,14 +70,14 @@ rollout r1 "Untitled" width:176 height:520
 		
 		arr = #($camera01)
 		fn getPos =
-			(
+		(
 			print arr
 			return arr[arr.count].pos
-			)
+		)
 */
 	-----------------------------------------------------------------------------------------
 	-- interface
 	-----------------------------------------------------------------------------------------
 	
-	)
+)
 createdialog r1

@@ -17,11 +17,11 @@ rollout ro1 "Set Range" width:160 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn setRange state = 
-		(
+	(
 		case state of
-			(
+		(
 			true:
-				(
+			(
 				oldAnimStart = animationRange.start
 				oldAnimEnd = animationRange.end
 
@@ -32,23 +32,23 @@ rollout ro1 "Set Range" width:160 height:311
 				animationRange = (interval segAnimStart segAnimEnd )
 				
 				ckb1.text = oldAnimStart as String + " - " + oldAnimEnd as String
-				)
+			)
 
 			false:
-				(
+			(
 				animationRange = (interval oldAnimStart oldAnimEnd)
 				ckb1.text = segAnimStart as String + " - " + segAnimEnd as String
-				)
 			)
 		)
+	)
 
 	fn spnUpdate =
-		(
+	(
 		range = spn1.value
 		start = currentTime - (range/2)
 		end = currentTime + (range/2)
 		ckb1.text = start as String + " - " + end as String
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

@@ -19,7 +19,7 @@ rollout ro1 "Scripts" width:160 height:441
 	---------------------------------------------------------------------------------------------------
 
 	fn getPathImp =
-		(
+	(
 		try (
 			scriptFullPath = getOpenFileName caption:"Select *.ms Script File" types:"Script Files(*.ms)|*.ms" ()
 			scriptName = filenameFromPath scriptFullPath as String
@@ -28,15 +28,15 @@ rollout ro1 "Scripts" width:160 height:441
 			append displayItems scriptName
 			append scriptDB scriptFullPath
 			lbxScripts.items = displayItems
-			)
+		)
 		catch ()
-		)	
+	)	
 
 
 	fn runScript item = 
-		(
+	(
 		try
-			(
+		(
 			fileIn scriptDB[item]
 
 		-- Edit Name if script did contains errors, but is now fine
@@ -45,9 +45,9 @@ rollout ro1 "Scripts" width:160 height:441
 			lbxScripts.items = displayItems
 
 
-			)
+		)
 		catch
-			(
+		(
 		-- open item for editing
 			edit scriptDB[item]
 			--deleteItem displayItems item
@@ -60,34 +60,34 @@ rollout ro1 "Scripts" width:160 height:441
 			
 		-- Alert!
 			messageBox "There appear to be errors in your script, \nso it has been opened for editing..." title:"Possible Script Error"
-			)
 		)
+	)
 
 	fn editScript item =
-		(
+	(
 		edit scriptDB[item]
-		)
+	)
 
 	fn deleteScript item =
-		(
+	(
 		deleteItem displayItems item
 		deleteItem scriptDB item
 		lbxScripts.items = displayItems
-		)
+	)
 
 	fn doAction item clicks =
-		(
+	(
 		if clicks == 2 AND ro2.rdoAction.state == 3 then deleteScript item -- if user is in delete mode and doubleclicked...
 		else -- if user single clicked...
-			(
+		(
 			case ro2.rdoAction.state of
-				(
+			(
 				1: runScript item
 				2: editScript item
 				4: message
-				)
 			)
 		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -114,15 +114,15 @@ rollout ro2 "Script Actions" width:160 height:441
 	---------------------------------------------------------------------------------------------------
 
 	fn rdoActionTextUpdate state =
-		(
+	(
 		case state of
-			(
+		(
 			1: lblPrompt.text="User: Click item to Run."
 			2: lblPrompt.text="User: Click item to Edit only."
 			3: lblPrompt.text="User: Dbl-click item to Delete."
 			4: lblPrompt.text="User: Click item to Keep."
-			)
 		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

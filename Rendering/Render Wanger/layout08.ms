@@ -31,7 +31,7 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 
 
 	on RSro1 open do
-		(
+	(
 	-- SET UP AX OBJECT
 	--------------------------------------------------------
 		ax.MousePointer = #ccArrow 
@@ -62,20 +62,20 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 						"Camera")
 		
 		for i = 1 to colLabels.count  do
-			(
+		(
 			tmp = chs.Add Width:200
 			tmp.text=colLabels[i]
-			)
+		)
 		
 	-- ADD ITEMS
 	--------------------------------------------------------
 		for i = 1 to 8 do
-			(
+		(
 			-- VERTICAL
 				local li = ax.listItems.Add() 
 			-- HORIZONATAL
 				for j = 2 to colLabels.count do lsi = ax.ListItems[i].ListSubItems.add() --ForeColor:(128*128*128)
-			)
+		)
 
 
 	-- CHANGE COL WIDTHS
@@ -85,7 +85,7 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 		for i = 1 to colWidths.count do
 			windows.sendMessage ax.hwnd LVM_SETCOLUMNWIDTH (i-1) (colWidths[i])
 		ax.refresh()
-	)
+)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 	------------------------------------------------------------------------------------------------
 
 		on ax Click do
-			(
+		(
 		  	RSro2.indexOld = RSro2.index
 			RSro2.index = ax.SelectedItem.index
 
@@ -140,24 +140,24 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 			if obj[14] != "" then RSro2.pck1.text = obj[14] else RSro2.pck1.text = "Viewport"
 			/*
 			*/
-	)
+)
 	
 	-- Render
 	--------------------------------------------------------
 
 		fn convertToValidFilename str= 
-			(
+		(
 				newStr = ""
 				for i=1 to str.count do
-					(
+				(
 					if str[i] == "\\" then newStr += "\\\\"
 					else newStr += str[i]
-					)
+				)
 				return newStr
-			)
+		)
 
 		fn doRender obj =
-			(
+		(
 
 		-- begin
 			rendStr = "" as stringstream
@@ -170,11 +170,11 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 		-- frameRange
 			local t
 			case obj[3] of
-				(
+			(
 				1: t= "frame:#current "
 				2: t= "framerange:#active "
 				3: t= "fromFrame:" +obj[4].x as String+ " toFrame:"+obj[4].y as String+ " "
-				)
+			)
 		
 			format "% "						t	to:rendStr
 
@@ -189,10 +189,10 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 
 		-- fileOutput
 			if obj[12]==true then
-				(
+			(
 				local str = convertToValidFilename obj[11]
 				format "outputfile:\"%\" "	str 		to:rendStr
-				)
+			)
 			
 		-- Camera
 			local cam = getNodeByName obj[14]
@@ -209,30 +209,30 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 		-- RENDER!
 			format "\n%\nRendering..." rendStr
 			execute (rendStr as string)
-			)
+		)
 
 
 		fn checkForCamera obj =
-			(
+		(
 			if isValidNode (getNodeByName obj[14]) then return true
 				else
-					(
+				(
 					local vpType = substring (viewport.getType() as string) 6 20
 					local str = "The specified camera doesn't exist.\n\nDo you want to continue rendering through the active ("+vpType+ ") viewport?"
 					if queryBox str then return true else return false
-					) 
-			)
+				) 
+		)
 
 
 		on ax DblClick do
-			(
+		(
 			-- update List
 				RSro2.initList RSro2.index
 			
 			-- check, then render
 				local obj=RSro2.RSArr[RSro2.index]
 				if (checkForCamera obj) then doRender obj
-			)
+		)
 
 )
 
@@ -315,28 +315,28 @@ rollout RSro2 "Settings" width:816 height:192
 	--------------------------------------------------------
 		-- Name
 			on edtName changed text do
-				(
+			(
 				RSArr[index][1] = text as String
 				initList index
-				)
+			)
 		
 		-- Output Size
 			on btnSizeLock changed state do
-				(
+			(
 				if state == true then local sizeLock = [spnWidth.value,spnHeight,value]
-				)
+			)
 			
 			on spnWidth changed val do
-				(
+			(
 				RSArr[index][2] = [val,spnHeight.value]
 				initList index
-				)
+			)
 		
 			on spnHeight changed val do
-				(
+			(
 				RSArr[index][2] = [spnWidth.value,val]
 				initList index
-				)
+			)
 				
 		
 		-- Time
@@ -345,7 +345,7 @@ rollout RSro2 "Settings" width:816 height:192
 				local rndArr=#("S","A","R"), rt=1
 				
 				function updateTimeUI rt =
-					(
+				(
 					--RSArr[index][3]=rt.
 					btnRndType.text = rndArr[rt]
 			
@@ -353,47 +353,47 @@ rollout RSro2 "Settings" width:816 height:192
 						else	(spnRndFrom.enabled=true;spnRndTo.enabled=true)
 						
 					case rt of
-						(
+					(
 						1:	grpTime.text= "Time (Single)"
 						2:	grpTime.text= "Time (Active time)"
 						3:	grpTime.text= "Time (Range)"
-						)
-	
 					)
+	
+				)
 				on btnRndType pressed do
-					(
+				(
 					rt+=1
 					if rt > rndArr.count then rt = 1
 					RSArr[index][3]=rt
 					updateTimeUI rt
 					initList index
-					)
+				)
 	
 			-- From and To
 	
 				on spnRndFrom changed val do
-					(
+				(
 					if val >= spnRndTo.value then spnRndTo.value=val
 					RSArr[index][4] = [val,spnRndTo.value]
 					initList index
-					)
+				)
 			
 				on spnRndTo changed val do
-					(
+				(
 					if val <= spnRndFrom.value then spnRndFrom.value=val
 					RSArr[index][4] = [spnRndFrom.value,val]
 					initList index
-					)
+				)
 	
 	
 			
 		-- Scanline Options
 			
 			function updateScanline i state =
-				(
+			(
 				RSArr[index][i]=state
 				initList index
-				)
+			)
 	
 			on chkSH changed state do updateScanline 5 state
 			on chkAA changed state do updateScanline 6 state
@@ -407,63 +407,63 @@ rollout RSro2 "Settings" width:816 height:192
 		-- Render Output
 		
 			on btnPath pressed do
-				(
+			(
 				path = getSaveFileName "Choose output directory and filename"
 				
 				if path != undefined then
-					(
+				(
 					edtPath.text = path
 					RSArr[index][11] = path
 					initList index
-					)
 				)
+			)
 	
 			on edtPath entered text do
-				(
+			(
 				RSArr[index][11] = text as String
 				initList index
-				)
+			)
 	
 			on chkSave changed state do
-				(
+			(
 				RSArr[index][12] = state
 				edtPath.enabled = state
 				initList index
-				)
+			)
 	
 	
 		-- renderer
 		
 			on ckbRend changed state do
-				(
+			(
 				rnd = case ckbRend.state of 
-					( 
+				( 
 					false: "Draft"
 					true: "Production"
-					)
+				)
 				ckbRend.text = rnd
 	
 				RSArr[index][13] = state
 				initList index
-				)
+			)
 		
 		-- camera
 		
 			on pck1 picked obj do
-				(
+			(
 				pck1.text = obj.name
 				cam=obj
 				RSArr[index][14] = cam.name
 				initList index
-				)
+			)
 	
 			on btnRC pressed do
-				(
+			(
 				pck1.text = "Viewport"
 				cam=undefined
 				RSArr[index][14] = ""
 				initList index
-				)
+			)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -471,7 +471,7 @@ rollout RSro2 "Settings" width:816 height:192
 	---------------------------------------------------------------------------------------------------
 
 	function initList i=
-		(
+	(
 		-- ListItem
 		-- name
 			cell = RSro1.ax.ListItems[i]
@@ -502,13 +502,13 @@ rollout RSro2 "Settings" width:816 height:192
 			local r = RSArr[i][j]
 
 			str = case ot of 
-				( 
+			( 
 				1: "Single" 
 				2: "Active time segment"
-				3: 	(
+				3: (
 					str = "Range: " + (r.x as Integer) as String + " to " + (r.y as Integer) as String 
-					)  
-				) 
+				)  
+			) 
 			cell.text = str
 			---------------------------------------------------------------------
 			rendStart = r.x as Integer
@@ -517,11 +517,11 @@ rollout RSro2 "Settings" width:816 height:192
 
 		-- Scanline Options
 			for j = 5 to 11 do
-				(
+			(
 				cell = RSro1.ax.ListItems[i].ListSubItems[j-2]
 				local opt = RSArr[i][j]
 				if opt==true then cell.text = "x" else cell.text = ""
-				)
+			)
 			---------------------------------------------------------------------
 			shadows =		RSArr[i][5]
 			antiAliasing =	RSArr[i][6]
@@ -575,10 +575,10 @@ rollout RSro2 "Settings" width:816 height:192
 		
 			
 			
-		)
+	)
 
 	on RSro2 open do
-		(
+	(
 		/*
 			Array Sub-Items
 			1	Name				String
@@ -614,7 +614,7 @@ rollout RSro2 "Settings" width:816 height:192
 		RSArr[8] = #("Flash: Anim",[1024,576],2,[0,100],TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,"c:\\temp",FALSE,FALSE,"",TRUE)
 		
 		for i = 1 to RSArr.count do initList i
-		)
+	)
 
 )
 

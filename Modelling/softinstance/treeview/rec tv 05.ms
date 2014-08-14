@@ -2,9 +2,9 @@ fileIn "bmpArr.ms"
 fileIn "classArr.ms"
 
 if  (getCurrentSelection()).count==0 then
-	(
+(
 	if (NOT isvalidnode b) then
-		(
+	(
 		b=box()
 		addModifier b (Bend ())
 		addModifier b (Taper ())
@@ -29,15 +29,15 @@ if  (getCurrentSelection()).count==0 then
 	/*
 	*/
 		select b
-		)
 	)
+)
 if test!=undefined then destroydialog test
 	
 --------------------------------------------------------
 
 
 	rollout test "Copy Properties" width:512 height:584
-		(
+	(
 
 -- declarations
 
@@ -66,15 +66,15 @@ if test!=undefined then destroydialog test
 
 -- utility functions
 		fn pad num padLength =
-			(
+		(
 			num=num as string
 			while num.count < padLength do num = ("0"+num)
 			return num
-			)
+		)
 	
 
 		fn replaceAll str outStr inStr =
-			(
+		(
 			-- str the original string
 			-- the string/character to replace
 			-- the replacement string/character
@@ -83,19 +83,19 @@ if test!=undefined then destroydialog test
 			while ((n=findstring str outStr) != undefined) do str = replace str n inStr.count inStr
 			if str != undefined then return str
 			else return origStr
-			)
+		)
 
 
 		fn reverseArray inArr =
-			(
+		(
 			local outArr = #()
 			while inArr.count > 0 do
-				(
+			(
 				append outArr inArr[inArr.count]
 				deleteItem inArr inArr.count
-				)
-			return outArr
 			)
+			return outArr
+		)
 
 
 
@@ -103,7 +103,7 @@ if test!=undefined then destroydialog test
 -- treeview functions
 
 		fn initImageList=
-			(
+		(
 			--messageBox "initImageList()"
 			-- set variables
 				local bmpRel ="icons\\final\\"
@@ -111,7 +111,7 @@ if test!=undefined then destroydialog test
 				local iconStr=""
 			-- start the loop
 				for i = 1 to libraryClassArr.count do
-					(
+				(
 					try (
 					-- get and load the bitmap file
 						local bmpFile =bmpRel + libraryBmpArr[i]
@@ -122,17 +122,17 @@ if test!=undefined then destroydialog test
 
 					-- update ebug info
 						iconStr+=(pad j 3) +" | "+ libraryClassArr[i] +" | "+ libraryBmpArr[i] +"\n"
-						)
-					catch(j-=1)
 					)
+					catch(j-=1)
+				)
 			-- write debug info
 				--format "%" iconStr to:(win=newScript())
 				--format "libraryClassArr.count:%\nj:%\n" libraryClassArr.count j to:win
-			)
+		)
 
 
 		fn initTreeView tv singleSel=
-			(
+		(
 			-- linestyles
 				tv.lineStyle = #tvwRootLines
 				tv.lineStyle = #tvwTreeLines
@@ -153,7 +153,7 @@ if test!=undefined then destroydialog test
 			--format ">>>>>>>%\n" imageList.count
 				--tv.ImageList=axImgList
 
-			)
+		)
 
 
 
@@ -162,25 +162,25 @@ if test!=undefined then destroydialog test
 
 
 	fn getClassFromSAString SAStr =
-		(
+	(
 		local maxobj = execute("exprformaxobject " +saStr)
 		local class =  classof (execute(maxObj)) as string
 		return class
-		)
+	)
 
 
 	fn getSAStringFromNode tvNode =
-		(
+	(
 		-- set up variables
 			local nodeArr=#()
 			local saStr="$"
 
 		-- work up tree and add index to array
 			while tvNode.parent!=undefined do
-				(
+			(
 				append nodeArr (tvNode.tag as Integer)
 				tvNode=tvNode.parent
-				)
+			)
 		
 		-- reverse, convert and return Array
 
@@ -190,11 +190,11 @@ if test!=undefined then destroydialog test
 			format"%\n" saStr
 			return saStr
 
-		)
+	)
 
 
 	fn getIconIndex tvNode =
-		(
+	(
 		--format ">>%\n" obj
 		local iconIndex=axImgList.ListImages.Count
 		local class=""
@@ -206,15 +206,15 @@ if test!=undefined then destroydialog test
 			class = getClassFromSAString saStr
 			--format"%\n" class
 			iconIndex= findItem classArr class
-			)
+		)
 		catch()
 		--format"%\n" saStr
 		return iconIndex
-		)
+	)
 
 
 	fn getIconIndex2 sa i=
-		(
+	(
 		local iconIndex, lastIcon, class
 		lastIcon = axImgList.ListImages.Count
 		iconIndex=lastIcon 
@@ -227,21 +227,21 @@ if test!=undefined then destroydialog test
 			class = getClassFromSAString saStr
 			--format"%\n" class
 			iconIndex= findItem classArr class
-			)
+		)
 		catch()
 		--format"%\n" saStr
 */
-		try	(
+		try(
 			class=(classof (getSubAnim sa i).object) as string
 			format "%\n" sa as string
 			iconIndex= findItem classArr class
 			if iconIndex==0 then iconIndex=lastIcon 
 			return iconIndex
-			)
+		)
 		catch(
 			return iconIndex
-			)
 		)
+	)
 
 
 
@@ -250,10 +250,10 @@ if test!=undefined then destroydialog test
 -- main recursive function
 
 		fn recurseSubAnims sa tv tvNode d=
-			(
+		(
 			d+=1
 			for i = 1 to sa.numSubs do
-				(
+			(
 
 			 -- flag if not visibility, transform, modified object or material
 				local oktoBuild=true
@@ -261,7 +261,7 @@ if test!=undefined then destroydialog test
 
 			-- build the nodes
 				if oktobuild == true then
-					(
+				(
 				-- build the node
 					newNode = tv.nodes.add tvNode.index 4 ""
 
@@ -289,9 +289,9 @@ if test!=undefined then destroydialog test
 
 				-- do children
 					recurseSubAnims sa[i] tv newNode d
-					)
 				)
 			)
+		)
 
 /*
 	.Add
@@ -307,7 +307,7 @@ if test!=undefined then destroydialog test
 
 
 	function populate tv obj =
-		(
+	(
 		-- clear
 			tv.nodes.clear()
 		
@@ -322,13 +322,13 @@ if test!=undefined then destroydialog test
 
 		-- do the rest
 			recurseSubAnims obj tv1 newNode 0
-		)
+	)
 
 
 -- rollout handlers
 	
 	on test open do
-		(
+	(
 
 		-- TIMESTAMP
 			t1=timestamp()
@@ -351,12 +351,12 @@ if test!=undefined then destroydialog test
 			format "Processing took % seconds\n" t
 	
 	-- END
-		)
+	)
 
 
 	
 	on tv1 NodeClick tvNode do
-		(
+	(
 		-- update the label
 			lbl1.text = tvNode.fullpath
 
@@ -367,9 +367,9 @@ if test!=undefined then destroydialog test
 			format "% %\n" (pad iconIndex 3) sa
 --			tvNode.image = iconIndex
 		
-		)
+	)
 
 	
-	)
+)
 
 createdialog test 410 650 50 50 style:#(#style_minimizebox,#style_titlebar, #style_border, #style_sysmenu,#style_resizing)

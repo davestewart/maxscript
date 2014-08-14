@@ -1,14 +1,14 @@
 clearListener()
 
 	fn wrapLabelText str maxW=
-		(
+	(
 		fn wrap str=
 			()
 		local strArr=#()
 		local curLine, curStr
 		local w
 		for i = 1 to str.count do
-			(
+		(
 			-- current string
 				curStr=substring str 1 i
 			-- get the last space
@@ -17,12 +17,12 @@ clearListener()
 				w=(getTextExtent curStr).x
 			-- split the string
 				if w>maxW then
-					(
+				(
 					append strArr curLine
 					str=substring str (curLine.count+1) str.count
 					--format "> %\n" str
-					)
-			)
+				)
+		)
 		append strArr str
 		str=""
 		for s in strArr do str+=s+"\n"
@@ -30,7 +30,7 @@ clearListener()
 		format "%\n" str
 		/*
 		*/
-		)
+	)
 
 
 wrapLabelText str 200
@@ -42,7 +42,7 @@ rollout r1 "Text Test" width:264 height:502
 
 
 	on r1 open do
-	(
+(
 	local str=""
 	str= "One problem I've always had with displaying text on the screen in say an edit_texta label etc, is that i always manually have to put in line breaks when i write the etext. This is very inconvinient since if i change the size of the text box I'm forced to edit all these line breaks again!\n\n"
 	str+="There must be a better way. How do you guys do?\n\n"
@@ -52,7 +52,7 @@ rollout r1 "Text Test" width:264 height:502
 	
 	--str=wrapText str 200
 	lbl1.text=str
-	)
+)
 )
 createdialog r1
 

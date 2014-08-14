@@ -6,13 +6,13 @@ rollout roGrabFrame "Grab Frame" width:160 height:208
 	
 	
 	on btnGrab pressed do
-		(
+	(
 		local frame = ((slidertime as integer / ticksperframe) as string)+ ", "
 		edt1.text += frame
 		rendPickupFrames += frame
 		--renderSceneDialog.commit()
 		renderSceneDialog.update()
-		)
+	)
 )
 
 createDialog roGrabFrame

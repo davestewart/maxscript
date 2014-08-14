@@ -38,33 +38,33 @@ randomhigh_value = 100000
 -- Functions
 
 fn changeseed onwhat = 
-	(
+(
 	if onwhat.numsubs != 0 then
-		(
+	(
 		for i = 1 to onwhat.numsubs do
-			(
+		(
 			if onwhat[i] != undefined then
-				(
+			(
 				if classof onwhat[i].controller == Noise_position or classof onwhat[i].controller == noise_float or classof onwhat[i].controller == noise_point3 or classof onwhat[i].controller == noise_rotation or classof onwhat[i].controller == noise_scale then
 				onwhat[i].seed = random randomlow_value randomhigh_value
-				)
-			changeseed onwhat[i]
 			)
+			changeseed onwhat[i]
 		)
 	)
+)
 
 -- Script
 
 if selection.count == 0 then (MessageBox "Please select at least one object" title:"NoiseControllerRandomSeed")
 else 
-	(
+(
 	undo "NoiseControllerRandomSeed" on
-		(
+	(
 		if (queryBox "Apply a random seed to all noise controllers in selection?" title:"NoiseControllerRandomSeed") == true then 
-			(
+		(
 			for i in selection do changeseed i
-			)
 		)
 	)
+)
 )
 -------------------------------------------------------------------------------

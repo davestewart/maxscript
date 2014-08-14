@@ -3,10 +3,10 @@
 ----------------------------------------------------------------------------------
 
 rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
-	(
+(
 	activeXControl ax1 "Codejock.PropertyGrid.10.3.1" pos:[8,8] width:344 height:304
 	on ro1 open do
-		(
+	(
 		--   .AddCategory Title:string
 		local cat	= ax1.AddCategory "New Category"
 
@@ -24,30 +24,30 @@ rollout ro1 "Codejock.PropertyGrid.10.3.1" width:360 height:320
 						#PropertyItemCategory)
 
 		for i = 1 to arr.count do
-			(
+		(
 			local type	= i - 1
 			local label	= (arr[i] as string)
 			local value	= (random 0 100) as string
 			local item	= cat.AddChildItem type label value
 			
 			if label == "PropertyItemEnum" do
-				(
+			(
 				item.Constraints.Add "1-point"
 				item.Constraints.Add "2-point"
 				item.Constraints.Add "4-corner pin"
-				)
-
 			)
-			
+
 		)
+			
+	)
 		
 	  on ax1 RequestEdit Item Cancel do
-	  	(
+	  (
 		enableAccellerators = false
 		print "edit: " + Item.caption
-	  	)
+	  )
 
-	)
+)
 
 createdialog ro1
 

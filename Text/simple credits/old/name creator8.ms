@@ -18,7 +18,7 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 	
 
 	on btn1 pressed do
-	(
+(
 		-- set other globals
 			carriageReturn = "yes"
 			spacing = 1000
@@ -53,11 +53,11 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 						displayText = names[i]
 						spaceIndex = findString displayText " " -- find any spaces
 						obj.text = replace displayText spaceIndex 1 "\r"
-					)
+				)
 					else
-						(
+					(
 						obj.text  = names[i]
-					)
+				)
 				
 		
 				-- Set up scaling
@@ -65,25 +65,25 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 					targetHeight = 300
 
 					case scaling.state of (
-					1: 	(
+					1: (
 						print "Scaling by Width"
 						span = obj.max.x - obj.min.x
 						targetScale = targetHeight / span
 						addModifier obj (XForm())
 						obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
-						)
+					)
 						
-					2: 	(
+					2: (
 						print "Scaling by Height"
 						span = obj.max.z - obj.min.z
 						targetScale = targetHeight / span
 						addModifier obj (XForm())
 						obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
-						)
-					3:	(
+					)
+					3:(
 						print "No scaling"
-						)
-					) 
+					)
+				) 
 
 
 				-- set up objects to move
@@ -97,6 +97,6 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 					obj.pos.controller.Z_Position.controller.keys[2].value = 0
 					obj.pos.controller.Z_Position.controller.keys[3].value = -spacing
 			
-			)
 		)
+	)
 )

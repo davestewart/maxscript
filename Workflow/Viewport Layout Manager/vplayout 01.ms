@@ -34,7 +34,7 @@ rollout roViewportLayout "Viewport Layout" width:274 height:32
 			#(#layout_4vr,	"4 viewports - 1 on left, 3 on right"),
 			#(#layout_4ht,	"4 viewports - 3 on top, 1 on bottom"),
 			#(#layout_4hb,	"4 viewports - 1 on top, 3 on bottom")
-			)
+		)
 	
 	
 	--------------------------------------------------------------------------------------------
@@ -43,21 +43,21 @@ rollout roViewportLayout "Viewport Layout" width:274 height:32
 
 			
 		function updateDropdown layout =
-			(
+		(
 			local index = 0
 			while index == 0 do
-				(
+			(
 				for i = 1 to vpOptions.count do
-					(
+				(
 					if vpOptions[i][1] == layout then index = i
-					)
 				)
-			ddlLayouts.selection = index
 			)
+			ddlLayouts.selection = index
+		)
 			
 			
 		function saveSettings =
-			(
+		(
 			-- variables
 				local layout		= viewport.getLayout()
 				local oldActiveView = viewport.activeViewport
@@ -72,7 +72,7 @@ rollout roViewportLayout "Viewport Layout" width:274 height:32
 			-- get views
 				disableSceneRedraw()
 				for i = 1 to viewport.numViews do
-					(
+				(
 					-- settings
 						viewport.activeViewport = i
 						vpt = viewport.gettype()
@@ -90,29 +90,29 @@ rollout roViewportLayout "Viewport Layout" width:274 height:32
 										bgImage
 						
 					setINISetting iniFile layout (i as string) iniString
-					)
+				)
 				viewport.activeViewport = oldActiveView
 				enableSceneRedraw()
 
-			)
+		)
 		
 		function loadSettings =
-			(
+		(
 			for i = 1 to viewport.numViews do
-				(
+			(
 				activeview = i
 				vpt = viewport.gettype()
 				if vpt == #view_camera then
-					(
+				(
 					cam = viewport.getCamera()
 					print cam.name
-					)
+				)
 				else
-					(
+				(
 					print vpt
-					)
 				)
 			)
+		)
 
 
 			
@@ -121,29 +121,29 @@ rollout roViewportLayout "Viewport Layout" width:274 height:32
 	--------------------------------------------------------------------------------------------
 
 		on ddlLayouts selected index do
-			(
+		(
 			if vpOptions[index][1] != undefined then
-				(
+			(
 				saveSettings()
 				viewport.setLayout vpOptions[index][1]
-				)
-			else updateDropdown (viewport.getLayout())
 			)
+			else updateDropdown (viewport.getLayout())
+		)
 			
 		on btnReset pressed do
-			(
+		(
 			viewport.setLayout #layout_4
 			updateDropdown #layout_4
 	
-			)
+		)
 	
 		on roViewportLayout open do
-			(
+		(
 			ddlLayouts.items = for a in vpOptions collect a[2]
 			updateDropdown (viewport.getLayout())
-			)
+		)
 			
-	)
+)
 createdialog roViewportLayout style:#(#style_titlebar, #style_border, #style_sysmenu)
 cui.RegisterDialogBar roViewportLayout style:#(#cui_dock_top, #cui_dock_bottom, #cui_floatable)
 

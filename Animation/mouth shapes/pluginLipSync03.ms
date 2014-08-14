@@ -2,14 +2,14 @@ plugin modifier simpleLipSync
 	name:"Simple Lip Sync" 
 	classID:#(0x79ce6e65, 0xa8933438) 
 	extends:Materialmodifier replaceUI:true version:1 
-	( 
+( 
 		parameters main rollout:params 
-			( 
+		( 
 			--matID type:#integer animatable:true ui:bendamt default:1
-			) 
+		) 
 
 		rollout params "Parameters" 
-			( 
+		( 
 			---------------------------------------------------------------------------------------------------
 			-- declare variables
 			---------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ plugin modifier simpleLipSync
 			---------------------------------------------------------------------------------------------------
 		
 				function btnChange btn mat state =
-					(
+				(
 					pushPrompt (showproperies($.modifiers[this.name][1][1].controller) as string)
 		
 					btn.enabled = false
@@ -60,7 +60,7 @@ plugin modifier simpleLipSync
 
 					delegate.materialID = mat
 					
-					)
+				)
 		
 		
 			---------------------------------------------------------------------------------------------------
@@ -79,8 +79,8 @@ plugin modifier simpleLipSync
 				on ckb9 changed state do btnChange ckb9 10 state
 		
 				on params open do
-					(
+				(
 					btnOld = ckb0
-					)
-			) 
-	) 
+				)
+		) 
+) 

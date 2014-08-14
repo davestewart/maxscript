@@ -1,7 +1,7 @@
 fn autoZoom =
-	(
+(
 	if (subObjectLevel == 0 || subObjectLevel == undefined) then max zoomext sel
-	)
+)
 
 
 

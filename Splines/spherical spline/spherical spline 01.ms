@@ -10,7 +10,7 @@
 
 -- code
 	for i = 0 to segments do
-		(
+	(
 		-- variables
 			pc = i / (segments as float)
 	
@@ -26,6 +26,6 @@
 		-- do it		
 			format "%\n" z
 			addknot ss 1 #smooth #curve [x, y, z]
-		)
+	)
 		
 	updateshape ss

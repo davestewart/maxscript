@@ -91,167 +91,167 @@ no_hidden_value = true
 -- Functions
 
 fn bli_collect_objects = 
-	(
+(
 	obj_collection = #()
 	for i in $* do
-		(
+	(
 		if i != bound_obj then 
-			(
+		(
 			if i.ishidden == true and no_hidden_value == true then continue
 			else 
-				(
+			(
 				if superclassof i == GeometryClass or superclassof i == shape then 
-					(
+				(
 					append obj_collection i
-					)
-				)				
-			)
+				)
+			)				
 		)
 	)
+)
 	
 fn edit_the_key cont = 
-	(
+(
 	k = getkey cont (getKeyIndex cont sliderTime)
 	k.inTangentType = #step
 	k.outTangentType = #step
-	)
+)
 	
 fn fix_frame_0 =
-	(
+(
 	sliderTime = 0
 	choose_objects()
-	)
+)
 	
 fn bt_obj_bb obj = 
-	(
+(
 	if (do_boxes_overlap bound_obj.max bound_obj.min obj.max obj.min) == true then animate on at time sliderTime obj.visibility=true
 	else animate on at time sliderTime obj.visibility=false
-	)
+)
 	
 fn choose_objects = 
-	(
+(
 	for w in obj_collection do
-		(
+	(
 		if bt_value == 1 then bt_obj_bb w
 		edit_the_key w[1].controller
-		)
 	)
+)
 	
 fn choose_time = 
-	(
+(
 	if use_active_time_value == true then 
-		(
+	(
 		p = (animationRange.start as integer) / 160
 		q = (animationRange.end as integer) / 160
-		)
+	)
 	else
-		(
+	(
 		p = start_time_value
 		q = end_time_value
-		)
+	)
 	sliderTime = p
 	if update_view_value == false then 
-		(
+	(
 		disableSceneRedraw()	
-		)
+	)
 	my_endtime = (q - p + 1)
 	for mytime = 1 to my_endtime do 
-		(
+	(
 		if sliderTime != 0 then choose_objects()
 		sliderTime += 1
-		)
+	)
 	fix_frame_0()
 	if update_view_value == false then 
-		(
+	(
 		enableSceneRedraw()
 		redrawViews()
-		)
 	)
+)
 
 fn start_bli = 
-	(
+(
 	try 
-		(
+	(
 		if bound_obj == undefined then (MessageBox "Please select a Bounding Object" title:"Blinders")
 		else
-			(
+		(
 			if use_active_time_value == 0 and start_time_value > end_time_value then
-				(
+			(
 				MessageBox "Your start time is later then your end time, please reenter." title:"Blinders"
-				)
+			)
 			else 
-				(
+			(
 				bli_collect_objects()
 				choose_time()
-				)
 			)
 		)
-	catch (MessageBox "An error has occured, you may have accidently deleted your Bounding Object. If so, please re-pick it." title:"Blinders")
 	)
+	catch (MessageBox "An error has occured, you may have accidently deleted your Bounding Object. If so, please re-pick it." title:"Blinders")
+)
 
 -- Script
 	
 rollout bli_rollout "Blinders"
-	(
+(
 	group "Bounding"
-	(
+(
 	dropdownlist bounding_type "" items:#("Object Bounding Box") align:#center
 	
 --	To be added, Object Volume, Plane, Camera Plane, Camera View
 	
 	label bound_obj_label "None" align:#center
 	pickbutton pickobject "Pick" width:120 align:#center toolTip:"Pick" filter:geometry_filter
-	)
+)
 	
 	on bounding_type selected i do bt_value = i	
 	on pickobject picked obj do 
-		(
+	(
 		bound_obj = obj
 		bound_obj_label.text = obj.name		
-		)
+	)
 
 	group "Time"
-	(
+(
 	spinner start_time "Start: " range:[-9999999,9999999,0] type:#integer fieldWidth:50 align:#center across:2 enabled:false
 	spinner end_time " End: " range:[-9999999,9999999,100] type:#integer fieldWidth:50 align:#center enabled:false
 	checkbox use_active_time "Use Active Time Segment" checked:true align:#center
-	)
+)
 	on start_time changed val do start_time_value = val
 	on end_time changed val do end_time_value = val
 	on use_active_time changed state do 
-		(
+	(
 		if use_active_time.checked == true then 
-			(
+		(
 			start_time.enabled = false
 			end_time.enabled = false
 			use_active_time_value = true
-			)
+		)
 		else 
-			(
+		(
 			start_time.enabled = true
 			end_time.enabled = true
 			use_active_time_value = false
-			)
 		)
+	)
 	
 	group "Process"
-	(
+(
 	checkbox update_view "Update Viewport After Each Frame" checked:false align:#center
 	checkbox no_hidden "Do Not Process Hidden Objects" checked:true align:#center
 	button doit "Start The Process" width:180 align:#center toolTip:"Start The Process"
-	)
+)
 	on update_view changed state do 
-		(
+	(
 		if update_view.checked == true then update_view_value = true
 		else update_view_value = false
-		)
+	)
 	on no_hidden changed state do 
-		(
+	(
 		if no_hidden.checked == true then no_hidden_value = true
 		else no_hidden_value = false
-		)
-	on doit pressed do start_bli()
 	)
+	on doit pressed do start_bli()
+)
 
 if bli_floater != undefined then CloseRolloutFloater bli_floater
 bli_floater = newRolloutFloater "Blinders v1.02" 240 322

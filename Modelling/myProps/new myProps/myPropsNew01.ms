@@ -17,7 +17,7 @@ rollout ro1 "Options" width:160 height:311
 	---------------------------------------------------------------------------------------------------
 
 fn goSearch =
-	(
+(
 	clearListener()
 	
 	-- declare globals
@@ -36,26 +36,26 @@ fn goSearch =
 	
 	-- loop through to see if they have same mods in same order (no matter what the name is)
 		for obj in objArray2 do
-			(
+		(
 			format "\nObject % has % mods\n     - " obj.name source.modifiers.count --to:myWin
 			score = 0
 			for i = 1 to source.modifiers.count do
-				(
+			(
 				score += 1
 				format "%:%, " i (obj.modifiers[i].name) 									-- modifier type
 				if classof obj.modifiers[i] != classof source.modifiers[i] then
-					(
+				(
 					format "\n     -   Failed (%/%)\n" (score-1) source.modifiers.count		-- object failed at mod i
 					exit
-					)
+				)
 				else if i == source.modifiers.count then
-					(
+				(
 					format "\n    OK   Passed (%/%)\n" score source.modifiers.count			-- object added
 					append objArray3 obj
-					)
 				)
-
 			)
+
+		)
 	
 		-- Convert matched objectList to NameList
 			for obj in objArray3 do append objArray4 obj
@@ -63,12 +63,12 @@ fn goSearch =
 			-- for obj in objArray4 do selectMore (execute("$" + obj as String))
 			for obj in objArray4 do selectMore obj
 			return objArray4
-	)
+)
 
 
 
 fn getStacks =
-	(
+(
 	clearListener()
 	
 	-- define variables
@@ -88,7 +88,7 @@ fn getStacks =
 		global data
 	
 		for obj in objArray4 do
-			(
+		(
 			i +=1
 			targetObj = obj.name
 
@@ -101,19 +101,19 @@ fn getStacks =
 		
 		-- print debugging information
 			if debug then
-				(
+			(
 				format "\n\n================================================\n"
 				format "== Loop  : "; print i
 				format "== name  : %\n" targetObj
 				format "== object: %\n" obj
 				format "================================================\n"
-				)
+			)
 		
 		----------------------------------------------------------------------------
 		--get modifiers (loop)
 		----------------------------------------------------------------------------
 			for stackLevel = 1 to obj.modifiers.count do
-				(
+			(
 				target = obj.modifiers[stackLevel]
 		
 			-- append the modifiers array
@@ -122,17 +122,17 @@ fn getStacks =
 		
 			-- print debugging information
 				if debug then
-					(
+				(
 					format "\n  ----------------------------------------------\n"
 					format "  > Stack Level:    %\n" stackLevel
 					format "  > target:         %\n" target
-					)
+				)
 		
 			----------------------------------------------------------------------------
 			--get props & values (loop)
 			----------------------------------------------------------------------------
 				for prop = 1 to (getPropNames target).count do
-					(
+				(
 					targetProp = (getPropNames target)[prop]
 					targetPropName = substring (targetProp as String) 1 (targetProp as String).count
 					targetPropValStart = execute ("$" + obj.name + ".modifiers[" + stackLevel as String + "]." + targetPropName)
@@ -145,16 +145,16 @@ fn getStacks =
 		
 				-- print debugging information
 					if debug then
-						(
+					(
 						format "     - - - - - - - - - - - - - - - - - - - - - -\n"
 						format "     targetProp:         %\n" targetProp
 						format "     targetPropName:     %\n" targetPropName
 						format "     targetPropValStart: %\n" targetPropValStart
 						format "     targetPropClass:    %\n" targetPropClass
 						format"     "; print data; format"\n"
-						)
 					)
 				)
+			)
 	
 		----------------------------------------------------------------------------
 		--get base object
@@ -168,17 +168,17 @@ fn getStacks =
 	
 			-- print debugging information
 				if debug then
-					(
+				(
 					format "\n  ----------------------------------------------\n"
 					format "  > Stack Level:    %\n" stackLevel
 					format "  > target:         %\n" target
-					)
+				)
 		
 		----------------------------------------------------------------------------
 		--get props & values (loop)
 		----------------------------------------------------------------------------
 		for prop = 1 to (getPropNames target).count do
-			(
+		(
 			targetProp = (getPropNames target)[prop]
 			targetPropName = substring (targetProp as String) 1 (targetProp as String).count
 			targetPropValStart = execute ("$" + obj.name + ".baseObject." + targetPropName)
@@ -192,18 +192,18 @@ fn getStacks =
 	
 		-- print debugging information
 			if debug then
-				(
+			(
 				format "     - - - - - - - - - - - - - - - - - - - - - -\n"
 				format "     targetProp:         %\n" targetProp
 				format "     targetPropName:     %\n" targetPropName
 				format "     targetPropValStart: %\n" targetPropValStart
 				format "     targetPropClass:    %\n" targetPropClass
 				format "     "; print data; format"\n"
-				)
 			)
 		)
-		return objList
 	)
+		return objList
+)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -211,14 +211,14 @@ fn getStacks =
 	---------------------------------------------------------------------------------------------------
 
 	on btn1 pressed do
-		(
+	(
 		goSearch() --lbx1.items = objArray4
-		)
+	)
 
 	on btn2 pressed do
-		(
+	(
 		getStacks()
-		)
+	)
 )
 
 if myFloater != undefined then closerolloutfloater myFloater

@@ -1,7 +1,7 @@
 --macroScript SceneTreeView category:"HowTo"
---	(
+--(
 	rollout roTV "TreeView Scene Browser"
-		(
+	(
 		-- variables
 			local total=0
 			local newFile
@@ -13,29 +13,29 @@
 
 		-- functions
 			fn initTreeView tv ilTv=
-				(
+			(
 				tv.Indentation = 28*15
 				tv.LineStyle = #tvwRootLines 
-				)
+			)
 
 			fn addMacros tv theNode macroArr =
-				(
+			(
 				for i = 1 to macroArr.count do
-					(
+				(
 					total+=1
 					newNode = tv.Nodes.add theNode.index 4 "" macroArr[i].name 0
 					newNode.Tag=macroArr[i].path
 					newNode.Key=macroArr[i].id
 					--newNode.title=macroArr[i].path
-					)
-				theNode.sorted=true
 				)
+				theNode.sorted=true
+			)
 
 
 			fn addCategories tv theNode arr =
-				(
+			(
 				for i = 1 to arr.count do
-					(
+				(
 					local txt=macroTable.names[i] +" ("+ (macroTable.members[i].count as string)+")"
 					newNode = tv.Nodes.add theNode.index 4 "" txt 0
 					--newNode = tv.add theNode.index 4 "" macroTable.names[i] 0
@@ -44,13 +44,13 @@
 					--newNode.BackColor=color 255 225 225
 
 					addMacros tv newNode macroTable.members[i]
-					)
-				theNode.sorted=true
 				)
+				theNode.sorted=true
+			)
 
 
 			fn fillInTreeView tv =
-				(
+			(
 				theRoot = tv.Nodes.add()
 				theRoot.text = "Macros"
 				theRoot.Expanded=true
@@ -59,7 +59,7 @@
 				addCategories tv theRoot macrotable.names 
 				theRoot.text="Macros ("+total as string+")"
 				theRoot.bold=true
-				)
+			)
 				
 
 
@@ -68,7 +68,7 @@
 			
 			
 			on tv nodeClick theNode do
-				(
+			(
 				try(
 					format "%\n" theNode.tag
 					--macros.run (theNode.tag as integer)
@@ -78,34 +78,34 @@
 
 					ie.Navigate newFile
 					ie.Document.body.style.font="11px normal arial"
-					)
-				catch()
 				)
+				catch()
+			)
 				
 				
 			on tv DblClick do
-				(
+			(
 				local sel = roTV.tv.SelectedItem
 				macros.run sel.Key
 				--messagebox sel
-				)
+			)
 
 			on ie ProgressChange prog1 prog2 do
-				(
+			(
 				if prog1 == prog2 then
-					(
+				(
 					ie.Document.body.style.font="11px normal \"arial\""
 					sleep 0.1
 					deleteFile newFile
-					)
 				)
+			)
 			
 			/*
 			on spn_indent changed val do tv.indentation = val*15
 			*/
 
 			on roTV open do 
-				(
+			(
 				initTreeView tv ilTv
 				fillInTreeView tv
 				tv.LabelEdit=#tvwManual
@@ -113,16 +113,16 @@
 				
 				
 
-				)
+			)
 				
 			on roTV resized size do 
-				(
+			(
 				tv.size=size-[20,20]
-				)			
-		)
+			)			
+	)
 	try(destroyDialog roTV)catch()
 	createDialog roTV 800 800 style:#(#style_titlebar, #style_border, #style_sysmenu, #style_resizing)
---	)
+--)
 	
 	
 	

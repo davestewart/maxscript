@@ -34,12 +34,12 @@ rollout roSetup "Setup" width:408 height:64
 	-- functions
 	
 		function getCompInfo=
-			(
+		(
 			return compArr[ddComps.selection]
-			)
+		)
 	
 		function getCompList=
-			(
+		(
 			-- run the AE script
 				runJSX "getCompList.jsx"
 				sleep 0.1
@@ -48,23 +48,23 @@ rollout roSetup "Setup" width:408 height:64
 				local compListFile=(max2ae.appFolder+"jsx\\comps.dat")
 				f=openFile compListFile mode:"r"
 				if f != undefined then
-					(
+				(
 					compArr=#()
 					while not eof f do
-						(
+					(
 						txt=readline f
 						if txt.count>1 then append compArr (filterstring txt "\t")
-						)
+					)
 					close f
 					--deleteFile compListFile
-					)
+				)
 				
 	
 			-- populate the list
 				ddItems=#()
 				local activeComp=undefined
 				for i = 1 to compArr.count do
-					(
+				(
 					local data=compArr[i]
 					local str=stringstream ""
 					local fps= round (data[6] as float)
@@ -75,22 +75,22 @@ rollout roSetup "Setup" width:408 height:64
 					if data[data.count]=="true" then activeComp = i
 					/*
 					*/
-					)
+				)
 				ddComps.items=ddItems
 				if activeComp != undefined then ddComps.selection=activeComp
 
 				--getTextExtent "Comp Cube"
 				-- a space is 3 px
-				)
+			)
 	
 	-----------------------------------------------------------------
 	-- handlers
 	
 	
 		on ddComps selected sel do
-			(
+		(
 			if compArr.count>0 then max2ae.compName=compArr[sel][1]
-			)
+		)
 	
 		on btnRefresh pressed do getCompList()
 		
@@ -100,40 +100,40 @@ rollout roSetup "Setup" width:408 height:64
 
 	
 		fn updateRangeUI sel =
-			(
+		(
 			spnRangeFrom.enabled=spnRangeTo.enabled=(sel==3)
 			spnRangeBy.enabled=(sel!=2)
 			if sel==1 then
-				(
+			(
 				spnRangeFrom.value=animationRange.start
 				spnRangeTo.value=animationRange.end
-				)
 			)
+		)
 
 		fn getRangeInfo=
-			(
+		(
 			local val
 			updateRangeUI ddRange.selection
 			case ddRange.selection of
-				(
+			(
 				1:	val=#(animationRange.start,animationRange.end,spnRangeBy.value)
 				2:	val=#(currentTime,currentTime,1)
 				3:	val=#(spnRangeTo.value,spnRangeTo.value,spnRangeBy.value)
-				)
-			return val
 			)
+			return val
+		)
 
 	-- From and To
 
 		on spnRangeFrom changed val do
-			(
+		(
 			if val >= spnRangeTo.value then spnRangeTo.value=val
-			)
+		)
 	
 		on spnRangeTo changed val do
-			(
+		(
 			if val <= spnRangeFrom.value then spnRangeFrom.value=val
-			)
+		)
 
 		on ddRange selected sel do updateRangeUI sel
 
@@ -142,22 +142,22 @@ rollout roSetup "Setup" width:408 height:64
 -------------------------------------------------------------------------------------------------------------------
 
 		fn setTitle state=
-			(
+		(
 			if compArr.count>0 then
-				(
+			(
 				local comp=compArr[ddComps.selection][1]
 				local range
 				case ddRange.selection of
-					(
+				(
 					1:	range=spnRangeFrom.value as string +" - "+spnRangeTo.value as string+" / "+spnRangeBy.value as string
 					2:	range="current frame"
 					3:	range=spnRangeFrom.value as string +" - "+spnRangeTo.value as string+" / "+spnRangeBy.value as string
-					)
+				)
 	
 				if state then roSetup.title="Setup : "+comp+ "  ("+range+")"
 				else roSetup.title="Setup"
-				)
 			)
+		)
 
 		on roSetup open do updateRangeUI 1
 		

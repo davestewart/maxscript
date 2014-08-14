@@ -23,12 +23,12 @@ rollout roProx "Visibility Painter" width:192 height:224
 		local prox
 	
 		fn assign=
-			(
+		(
 			local distMin=spnDistMin.value
 			local distMax=spnDistMax.value
 			local ctrl
 			for obj in $ do 
-				(
+			(
 				-- string
 					local str=""
 					str+="obj1=$"+prox.name+"\n"
@@ -42,13 +42,13 @@ rollout roProx "Visibility Painter" width:192 height:224
 					obj.visibility.controller=float_script()
 					ctrl=obj.visibility.controller
 					ctrl.script=str
-				)
 			)
+		)
 	
 		fn convert=
-			(
+		(
 			for obj in $ do
-				(
+			(
 				-- get controller
 					local ctrl = obj.visibility.controller
 			
@@ -57,25 +57,25 @@ rollout roProx "Visibility Painter" width:192 height:224
 			
 				-- loop through time and get existing values from script controller
 					for t = animationRange.start to animationRange.end do
-						(
+					(
 						at time t if ctrl.value == 1 then
-							(
+						(
 							if keytime == 0 then keyTime = t
 							exit
-							)
 						)
+					)
 			
 				-- assign new controller, keys and values
 					ctrl=obj.visibility.controller=bezier_float()
 					if keyTime > 0 then
-						(
+					(
 						addnewkey ctrl keyTime
 						addnewkey ctrl (keyTime+spnFade.value)
 						ctrl.keys[1].value=0
 						ctrl.keys[2].value=1
-						)
-				)
-			)	
+					)
+			)
+		)	
 	
 	---------------------------------------------------------------------------
 	-- handlers
@@ -84,48 +84,48 @@ rollout roProx "Visibility Painter" width:192 height:224
 		
 
 	on pckObj picked object do
-		(
+	(
 		prox = object
 		pckObj.text = object.name
-		)
+	)
 	on btnAssign pressed do
-		(
+	(
 		if isvalidnode prox then 
-			(
+		(
 			assign()
 			try
-				(
-				)
-			catch
-				(
-				Messagebox "Failed to assign script controllers..."
-				)
-			)
-		else
 			(
-			messagebox "Invalid Proximity Node. Pick again."
+			)
+			catch
+			(
+				Messagebox "Failed to assign script controllers..."
 			)
 		)
+		else
+		(
+			messagebox "Invalid Proximity Node. Pick again."
+		)
+	)
 
 	on btnConvert pressed do
-		(
+	(
 		try
-			(
-			convert()
-			)
-		catch
-			(
-			Messagebox "Failed to convert script controllers..."
-			)
-		)
-	on btnHelp pressed do
 		(
+			convert()
+		)
+		catch
+		(
+			Messagebox "Failed to convert script controllers..."
+		)
+	)
+	on btnHelp pressed do
+	(
 		local str
 		str=	"Visibility Painter"
 		str+=	"--------------------------------------------\n"
 		str+=	"This script does several things. "
 		messagebox str
-		)
+	)
 )
 -- create
 	destroydialog roProx

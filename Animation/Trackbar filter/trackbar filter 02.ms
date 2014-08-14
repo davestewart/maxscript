@@ -15,31 +15,31 @@
 
 	-- callbacks
 		fn callbackFnCaller theAnim theParent theIndex theGParent theNode =
-			(
+		(
 			callbackFn theAnim theParent theIndex theGParent theNode
-			)
+		)
 		
 		fn testCallbackAdditionFunction arg1 arg2 = (true)
 	
 	
 	-- editable function
 		fn callbackFn theAnim theParent theIndex theGParent theNode = 
-			(
+		(
 			filterTracks theAnim theParent theIndex theGParent theNode 
-			)
+		)
 			
 		
 --------------------------------------------------------------------------
 -- custom filter
 
 		fn filterTracks theAnim theParent theIndex theGParent theNode = 
-			(
+		(
 			if theParent != undefined then
-				(
+			(
 				return (findItem filterParams theParent[theIndex].controller) != 0
-				)
-			else false
 			)
+			else false
+		)
 
 
 --------------------------------------------------------------------------

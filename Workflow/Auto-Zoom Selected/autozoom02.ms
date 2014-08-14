@@ -23,20 +23,20 @@ rollout ro1 "Options" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	fn zoomOn =
-		(
+	(
 		callbacks.addScript #selectionSetChanged "autoZoom()" persistent:true id:#autoZoom
 		autoZoom()
-		)
+	)
 
 	fn zoomOff =
-		(
+	(
 		callbacks.removeScripts id:#autoZoom
-		)
+	)
 
 	fn autoZoom =
-		(
+	(
 		--if (subObjectLevel == 0 || subObjectLevel == undefined) then max zoomext sel
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -44,18 +44,18 @@ rollout ro1 "Options" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	on ro1 open do
-		(
+	(
 		zoomOn()
 		ckb1.checked = true
-		)
+	)
 	on ro1 close do
 		zoomOff()
 
 	on ckb1 changed state do
-		(
+	(
 		if state then zoomOn()
 		else zoomOff()
-		)
+	)
 )
 
 if myFloater != undefined then closerolloutfloater myFloater

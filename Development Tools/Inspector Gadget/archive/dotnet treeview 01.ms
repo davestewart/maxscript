@@ -58,27 +58,27 @@ rollout treeview_rollout "TreeView Scene Browser"
 	-- Functions
 
 		fn addChildren theNode theChildren =
-		(
+	(
 			for c in theChildren do
-			(
+		(
 			newNode = theNode.Nodes.add c.name --add to the parent!
 			newNode.tag = dotNetMXSValue c --.tag can contain a MXS value
 			addChildren newNode c.children --recursive call for new node
-			)
 		)
+	)
 	 
 		fn fillInTreeView tv =
-		(
+	(
 			theRoot = tv.Nodes.add "WORLD ROOT" --add parent node
 			rootNodes = for o in objects where o.parent == undefined collect o
 			addChildren theRoot rootNodes --no need to pass the TreeView
-		)
+	)
 
 		fn initTreeView tv =
-		(
+	(
 			tv.Indent= 20 --property name is different and value is in pixels
 			--the default style already has root lines.
-		)
+	)
 		 
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--
@@ -94,7 +94,7 @@ rollout treeview_rollout "TreeView Scene Browser"
 	-- Handlers
 
 		on tv Click arg do 
-		(
+	(
 			--First get the TreeView node below the mouse cursor
 			--The arg argument has properties .x and .y with the current pos.
 			--Use showProperties arg to see what is available...
@@ -106,15 +106,15 @@ rollout treeview_rollout "TreeView Scene Browser"
 			catch(max select none) 
 			
 			--...we try to select the object stored as value in the .tag
-		)
+	)
 		 
 		on spn_indent changed val do tv.indent = val
 		 
 		on treeview_rollout open do 
-		(
+	(
 			initTreeView tv 
 			fillInTreeView tv
-		)
+	)
 )
  
 try(destroyDialog treeview_rollout)catch()

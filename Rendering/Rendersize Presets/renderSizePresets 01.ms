@@ -13,7 +13,7 @@ rollout roRenderSizePresets "Render Size Presets" width:216 height:32
 				#("PAL", 768, 576, 1),
 				#("PAL (Widescreen)", 1024, 576, 1),
 				#("HDTV", 1920, 1080, 1)
-			)
+		)
 
 	----------------------------------------------------------------------------------------------------
 	-- variables
@@ -43,12 +43,12 @@ rollout roRenderSizePresets "Render Size Presets" width:216 height:32
 	----------------------------------------------------------------------------------------------------
 	
 		function updateDialog =
-			(
+		(
 			if renderSceneDialog.isOpen() do renderSceneDialog.update()
-			)
+		)
 			
 		function setRenderFraction fraction =
-			(
+		(
 			renderWidth			= rWidth * fraction
 			renderHeight		= rHeight * fraction
 			renderPixelAspect	= rPAspect
@@ -56,14 +56,14 @@ rollout roRenderSizePresets "Render Size Presets" width:216 height:32
 			updateDialog()
 	
 			if chk1.checked do
-				(
+			(
 				try(undisplay rWindow);catch()
 				rWindow = render()
-				)
 			)
+		)
 			
 		function setRenderSize index =
-			(
+		(
 			local preset	= presets[index]
 			
 			rWidth			= preset[2]
@@ -72,22 +72,22 @@ rollout roRenderSizePresets "Render Size Presets" width:216 height:32
 			
 			setRenderFraction rFraction
 			updateDialog()
-			)
+		)
 		
 		function loadPresets =
-			(
+		(
 			local arr = #()
 			for preset in presets do
-				(
+			(
 				append arr preset[1]
-				)
+			)
 			ddlPresets.items = arr
 			setRenderSize 1
-			)
+		)
 			
 		function savePresets =
-			(
-			)
+		(
+		)
 
 	----------------------------------------------------------------------------------------------------
 	-- interface 

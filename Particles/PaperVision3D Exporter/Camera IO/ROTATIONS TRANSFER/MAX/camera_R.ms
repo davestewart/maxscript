@@ -85,12 +85,12 @@ close ofl
 
 ----- Y to Z
 if FinUpAxis =="y" then 
-	(
+(
 			-----Y UP to Z UP	
 			pp=Point pos:[0,0,0] name: (CameraName+"_Yup->Zup")
 			c.parent = pp
 			pp.rotation=(quat 0.707107 0 0 0.707107)
-	)
+)
 )
 
 -------------------------------------------------------------------------------------------------------------------------
@@ -201,29 +201,29 @@ Rollout CameraExport "Camera Exporter"
 	button Export "EXPORT" width:135 height:21 enabled:false
 		
 	on FilePick pressed  do
-	(
+(
 		FileName = getSaveFileName caption:"Select Camera Motion File" filename:"CameraOut.txt"
 		if FileName != undefined do
-		(
+	(
 		FilePick.text = FileName
 		Export.enabled=true
-		)
 	)
+)
 	
 	on pickCamera picked obj do
-	(
+(
 		if obj !="" do
-		(
+	(
 		pickCamera.text = obj.name
 		ExistingCamera=obj
 		FilePick.enabled=true
-		)
 	)
+)
 	
 	on Export pressed  do
-	(
+(
 	CameraAnimationExporter FileName ExistingCamera CameraExport.stf.value CameraExport.enf.value CameraExport.stp.value
-	)
+)
 
 )
 -------------------------------------------------------------------------------------------------------------------------
@@ -234,19 +234,19 @@ Rollout CameraImport "Camera Importer"
 	button FilePick "Pick File" width:135 height:21
 	button Import "IMPORT" width:135 height:21 enabled:false
 	on FilePick pressed  do
-	(
+(
 		FileName = getOpenFileName caption:"Select Camera Motion File" filename:"CameraOut.txt"
 		if FileName != undefined do
-		(
+	(
 			FilePick.text = FileName
 			Import.enabled=true;
-		)
 	)
+)
 
 	on Import pressed  do
-	(
+(
 		CameraAnimationImport FileName
-	)
+)
 )
 
 -------------------------------------------------------------------------------------------------------------------------

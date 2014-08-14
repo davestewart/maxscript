@@ -44,7 +44,7 @@ global make_bb_box
 -- Functions
 
 fn make_bb_box n =
-	(
+(
 	-- Dimensions of box
 
 	l = (n.max.y - n.min.y)
@@ -61,22 +61,22 @@ fn make_bb_box n =
 	the_box.parent = n
 	the_box.name = n.name + "_box"
 	-- the_box.pivot = n.pivot
-	)
+)
 
 -- Script
 
 if selection.count != 0 then
-	(
+(
 	undo "BoxSkeleton" on
-		(
+	(
 		for i = 1 to selection.count do
-			(
+		(
 			if classof selection[i].parent == Biped_Object and classof selection[i] == Biped_Object then
-				(
+			(
 				make_bb_box selection[i]
-				)
 			)
 		)
 	)
+)
 )
 -------------------------------------------------------------------------------

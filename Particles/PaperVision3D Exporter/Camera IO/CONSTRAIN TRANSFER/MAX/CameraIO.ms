@@ -64,19 +64,19 @@ with animate on do
 	at time f c.fov = (2.0*atan(HorApert/(2.0*lens)))	--match ResGate
 	
 	if FinUpAxis =="y" then 
-	(
+(
 -----Y UP to Z UP		
 	at time f ad.position = [dax,daz,day]
 	at time f ud.position = [dux,duz,duy]
 	at time f pd.position = [px,pz,py]
-	)
+)
 	else
-	(
+(
 	-----NO CHANGE
 	at time f ad.position = [dax,day,daz]
 	at time f ud.position = [dux,duy,duz]
 	at time f c.position = [px,py,pz]
-	)
+)
 )
 while not eof ofl
 close ofl
@@ -180,29 +180,29 @@ Rollout CameraExport "Camera Exporter"
 	button Export "EXPORT" width:135 height:21 enabled:false
 		
 	on FilePick pressed  do
-	(
+(
 		FileName = getSaveFileName caption:"Select Camera Motion File" filename:"CameraOut.txt"
 		if FileName != undefined do
-		(
+	(
 		FilePick.text = FileName
 		Export.enabled=true
-		)
 	)
+)
 	
 	on pickCamera picked obj do
-	(
+(
 		if obj !="" do
-		(
+	(
 		pickCamera.text = obj.name
 		ExistingCamera=obj
 		FilePick.enabled=true
-		)
 	)
+)
 	
 	on Export pressed  do
-	(
+(
 	CameraAnimationExporter FileName ExistingCamera CameraExport.stf.value CameraExport.enf.value
-	)
+)
 
 )
 -------------------------------------------------------------------------------------------------------------------------
@@ -213,19 +213,19 @@ Rollout CameraImport "Camera Importer"
 	button FilePick "Pick File" width:135 height:21
 	button Import "IMPORT" width:135 height:21 enabled:false
 	on FilePick pressed  do
-	(
+(
 		FileName = getOpenFileName caption:"Select Camera Motion File" filename:"CameraOut.txt"
 		if FileName != undefined do
-		(
+	(
 			FilePick.text = FileName
 			Import.enabled=true;
-		)
 	)
+)
 
 	on Import pressed  do
-	(
+(
 		CameraAnimationImport FileName
-	)
+)
 )
 
 -------------------------------------------------------------------------------------------------------------------------

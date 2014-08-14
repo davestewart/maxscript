@@ -33,27 +33,27 @@ rollout billboard_ro1 "Options" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	Group "Rotation: Axis Options"
-		(
+	(
 		spinner spnOffset "Offset : " type:#integer range:[-360,360,90] align:#left
 		label lbl1 "Axis : " across:2 align:#left
 		radioButtons rdo1 "" labels:#("X", "Y", "Z") default:3 columns:3 align:#right
-		)
+	)
 
 	Group "OK: Let's do it!"
-		(
+	(
 		pickbutton pkbNode "Pick Lookat Object..." width:144 height:16
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn allExceptLookat =
-		(
-		)
+	(
+	)
 
 	fn makeScript obj i=
-		(
+	(
 		offset = spnOffset.value as string
 
 		str= "
@@ -66,25 +66,25 @@ a = atan(y/x)
 degToRad(a + " + offset + ")"
 
 		return str
-		)
+	)
 
 
 	fn assignControllers lookAtObj objArray=
-		(
+	(
 		undo "Assign Scripted LookAt" on
-			(
-			try	(
+		(
+			try(
 				for thisObj in objArray do
-					(
+				(
 					axis = rdo1.state
 					thisObj.rotation.controller = Euler_XYZ()
 					thisObj.rotation.controller[axis].controller = float_script()
 					thisObj.rotation.controller[axis].controller.script = (makeScript lookAtObj thisObj)
-					)
 				)
-			catch()
 			)
+			catch()
 		)
+	)
 		
 	
 	---------------------------------------------------------------------------------------------------
@@ -92,12 +92,12 @@ degToRad(a + " + offset + ")"
 	---------------------------------------------------------------------------------------------------
 
 	on pkbNode picked lookAtObj do
-	(
+(
 	pkbNode.text = lookAtObj.name
 	if (selection.count > 0) then assignControllers lookAtObj (getCurrentSelection())
 	else displayTempPrompt "No selection" 2000
 	pkbNode.text = "Pick Lookat Object..."
-	)
+)
 )
 
 if billboardFloater != undefined then closerolloutfloater billboardFloater

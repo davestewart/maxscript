@@ -55,10 +55,10 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 	-------------------------------------------------------------------------------------
 	
 		fn flattenSelPoints cc ci =
-			(
+		(
 			local baPoints = getSelectedPts cc.curves[ci]
 			for pi in baPoints do
-				(
+			(
 				local p		= cc.curves[ci].points[pi]
 				local pVal	= p.value
 				local pIn	= p.inTangent * [1,0]
@@ -66,37 +66,37 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 				local pCorn	= pi == 1 OR pi == cc.curves[ci].points.count
 				local pNew	= ccPoint pVal pIn pOut bezier:true corner:pCorn select:true
 				setPoint cc.curves[ci] pi pNew
-				)
 			)
+		)
 			
 		fn getSelPoints cc ci =
-			(
+		(
 			local baPoints = getSelectedPts cc.curves[ci]
 			local arrPoints = for i in baPoints collect cc.curves[ci].points[i]
 			return arrPoints
-			)
+		)
 			
 		fn alignSelPoints cc ci align:#first =
-			(
+		(
 			local arrPoints = getSelPoints cc ci
 			if arrPoints.count == 0 then return false
 			local i = if align == #last then arrPoints.count else 1
 			local y = arrPoints[i].value.y
 			for p in arrPoints do p.value = [p.value.x,y]
-			)
+		)
 			
 		fn averageSelPoints cc ci =
-			(
+		(
 			local arrPoints = getSelPoints cc ci
 			if arrPoints.count == 0 then return false
 			local y = 0.0
 			for p in arrPoints do y += p.value.y
 			y = y / arrPoints.count
 			for p in arrPoints do p.value = [p.value.x,y]
-			)
+		)
 			
 		fn setTangentLength cc ci val type:#in =
-			(
+		(
 			-- get points
 				--format "% % %\n" cc ci val 
 				local arrPoints = getSelPoints cc ci
@@ -104,7 +104,7 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 				
 			-- set lengths
 				for p in arrPoints do
-					(
+				(
 					-- original dimensions
 						local t		= if type == #in then p.inTangent else p.outTangent
 						local x1	= t.x
@@ -122,8 +122,8 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 						 	p.outTangent = [x2,y2]
 						else
 							p.inTangent = [-x2,-y2]				
-					)
-			)
+				)
+		)
 
 		
 	-------------------------------------------------------------------------------------
@@ -131,7 +131,7 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 	-------------------------------------------------------------------------------------
 
 		fn createTestCurve cc ci name:"Curve" col:black numPoints:10 =
-			(
+		(
 			-- Initialize curve properties
 				local crv			= cc.curves[ci]
 				 
@@ -145,7 +145,7 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 				local span			= cc.x_range[2] / (numPoints - 1)
 
 				for i = 1 to numPoints do
-					(
+				(
 					local x			= span * (i - 1)
 					local y			= random -180 180
 					local p			= crv.points[i]
@@ -154,12 +154,12 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 					p.value			= [x,y]
 					p.outTangent	= [span/3.0,0]
 					p.inTangent		= [-span/3.0,0]
-					)
+				)
 
-			)
+		)
 		
 		fn createBaseCurve cc ci name:"Curve" col:red=
-			(
+		(
 			-- Initialize curve properties
 				local crv			= cc.curves[ci]
 		 
@@ -181,12 +181,12 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 				crv.points[1].outTangent= [333,0]
 				crv.points[2].inTangent	= [-333,0]
 				
-			)
+		)
 
 		
 		-- save curve to paramblock
 			fn saveCurve m cc ci = -- m:modifier, cc:curve control, ci:curve index
-				(
+			(
 				-- escape
 					if m == undefined then return
 
@@ -205,7 +205,7 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 				-- do it				
 				try(
 					for i = 1 to numPoints do
-						(
+					(
 						-- variables
 							cp						= c.points[i]
 							p						= cp.value
@@ -217,16 +217,16 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 							
 							m.pBeziers[i]			= cp.bezier
 							m.pCorners[i]			= cp.corner
-					 	)
-					)
+					 )
+				)
 				catch(
 					print "Couldn't save values"
-					)
 				)
+			)
 			
 		-- load curve from paramblock
 			fn loadCurve m cc ci = -- m:modifier, cc:curve control, ci:curve index
-				(
+			(
 				-- escape
 					if m == undefined then return
 				
@@ -248,7 +248,7 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 				-- do it				
 				try(
 					for i = numPoints to 1 by -1 do
-						(
+					(
 						-- variables
 							p3						= m.pPoints[i]
 							t4						= m.pTangents[i]
@@ -263,32 +263,32 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 						-- new point
 							local pNew				= ccPoint p2 tIn tOut bezier:bezier corner:corner select:true
 							setPoint c i pNew
-					 	)
-					)
+					 )
+				)
 				catch(
 					print "Couldn't load values"
-					)
 				)
+			)
 				
 	-------------------------------------------------------------------------------------
 	-- other functions
 	-------------------------------------------------------------------------------------
 		
 		function init m =
-			(
+		(
 			theMod = m
 			roCC.title = "Twist Profile : " + theMod as string
 			loadCurve theMod cc1 1
-			)
+		)
 
 		function updateModifier =
-			(
+		(
 			if ckbAutoZoom.checked then zoom cc1 #all
 			if theMod != undefined then theMod.valTwist += 0
 			--saveCurve theMod cc1 1
 --			try($.modifiers[1].valTwist += 0)
 --			catch(print "failed to update modifier")
-			)
+		)
 			
 			
 	-------------------------------------------------------------------------------------
@@ -306,44 +306,44 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 		-- points
 		
 			on btnAlignFirst pressed do
-				(
+			(
 				alignSelPoints cc1 1 align:#first
 				if chkFlatten.checked then flattenSelPoints cc1 1
-				)
+			)
 				
 			on btnAlignLast pressed do
-				(
+			(
 				alignSelPoints cc1 1 align:#last
 				if chkFlatten.checked then flattenSelPoints cc1 1
-				)
+			)
 				
 			on btnAverage pressed do
-				(
+			(
 				averageSelPoints cc1 1
 				if chkFlatten.checked then flattenSelPoints cc1 1
-				)
+			)
 				
 				
 		-- curves
 		
 			on spnLengthIn changed val do
-				(
+			(
 				setTangentLength cc1 1 val type:#in
 				if chkLockLengths.checked then
-					(
+				(
 					spnLengthOut.value = val 
 					setTangentLength cc1 1 val type:#out
-					)
 				)
+			)
 
 			on spnLengthOut changed val do setTangentLength cc1 1 val type:#out
 			
 			on chkLockLengths changed state do spnLengthOut.enabled = NOT state
 			
 			on btnFlatten pressed do
-				(
+			(
 				flattenSelPoints cc1 1
-				)
+			)
 
 		-- display
 				
@@ -352,29 +352,29 @@ rollout roCC "Twist Profile - profile" width:816 height:464
 		-- rollout
 		
 			on roCC open do
-				(
+			(
 				--createTestCurve cc1 1 name:"Twist" col:red numPoints:5
 				createBaseCurve cc1 1
 				zoom cc1 #all
 				updateModifier()
 				--if (getCurrentSelection())[1] != undefined then theMod = $.modifiers[1]
 				--loadCurve theMod cc1 1
-				)
+			)
 	
 			on btnLoad pressed do
-				(
+			(
 				loadCurve theMod cc1 1
-				)
+			)
 
 			on btnSave pressed do
-				(
+			(
 				saveCurve theMod cc1 1
-				)
+			)
 			
 			on roCC close do
-				(
+			(
 				saveCurve theMod cc1 1
-				)
+			)
 			
 			
 

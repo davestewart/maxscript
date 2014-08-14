@@ -68,9 +68,9 @@ rollout roAnim "Animation" width:400 height:464
 
 
 	fn exportObjects=
-		(
+	(
 		if (SETTINGS.checkBeforeExport()) then
-			(
+		(
 			--start
 				clearListener()
 				
@@ -100,12 +100,12 @@ rollout roAnim "Animation" width:400 height:464
 			-- into it, create jsx and run
 				createJSX "maxObjects.jsx" (finalCode as string)
 			
-			)
 		)
+	)
 
 
 	fn getIconFromBitmap thePath number =
-		(
+	(
 		tempBmp = openBitmap thePath
 		iconBmp = bitmap 15 15
 		for v = 0 to iconBmp.width-1 do
@@ -118,10 +118,10 @@ rollout roAnim "Animation" width:400 height:464
 		getDir #image +"/_temp.bmp"
 		/*
 		*/
-		)
+	)
 
 	fn initAXIcons=
-		(
+	(
 		ilGr.imagewidth = 16
 		ilGr.imageheight = 15
 		iconFile = appFolder+"ui/icons.bmp"
@@ -134,7 +134,7 @@ rollout roAnim "Animation" width:400 height:464
 
 		ax.Picture=roAnim.ilBg.ListImages[1].Picture
 		ax.PictureAlignment=#lvwTile
-		) 
+	) 
 
 
 --------------------------------------------------------------------------------------
@@ -146,7 +146,7 @@ rollout roAnim "Animation" width:400 height:464
 	--------------------------------------------------------------------------------------
 
 	on roAnim open do
-		(
+	(
 		
 		-- style
 			ax.MultiSelect=true
@@ -181,17 +181,17 @@ rollout roAnim "Animation" width:400 height:464
 
 		-- icons
 			if SETTINGS != undefined then
-				(
+			(
 				initAXIcons()
 				ax.ColumnHeaderIcons=ilGr
 				ax.Icons=ilGr
 				for i = 1 to 8 do ax.ColumnHeaders[i].icon=i
 				--ax.SmallIcons=true
-				)
+			)
 
 		-- right click stuff
 			rcmenu rcAxObj
-				(
+			(
 				menuItem miCheck "Check selected"
 				menuItem miUnCheck "Uncheck selected"
 				separator sep1
@@ -203,15 +203,15 @@ rollout roAnim "Animation" width:400 height:464
 					checkAXItems true
 					rcm=false
 				--	format "rcm=%\n" rcm
-					)
+				)
 				on miUnCheck picked do
-					(
+				(
 					checkAXItems false
 					rcm=false
 				--	format "rcm=%\n" rcm
-					)
-				
 				)
+				
+			)
 
 		-- tidy up	
 			ax.refresh()
@@ -220,69 +220,69 @@ rollout roAnim "Animation" width:400 height:464
 			rdoUse.state=1
 			showObjectManager false
 
-		)
+	)
 
 	
 	on rcAxObj open do
-		(
+	(
 		rcm=true
 		format "rcm=%\n" rcm
- 		)
+ 	)
 
 	on ax itemClick Item do
-		(
+	(
 		try(
 			--messagebox (Item.selected as string)
 			local obj=getnodebyname (Item.text)
 			if Item.selected then selectmore obj
 			else deselect obj
-			)
-		catch()
 		)
+		catch()
+	)
 
 	fn checkAXItems state=
-		(
+	(
 		for i = 1 to ax.listitems.count do
-			(
+		(
 			li=ax.listitems[i]
 			if li.selected then li.checked = state
-			)
 		)
+	)
 
 	--on btnCheck changed state do checkAXItems state
 
 	on ax ItemClick Item do
-		(
+	(
 			if rcm == false then print Item.index
 		 )
 
 	on ax MouseDown Button Shift x y do
-		(
+	(
 		if ax.listitems.count > 0 then -- rcm == false AND
-			(
+		(
 			if button==2 then popupMenu rcAxObj pos:[x+16,y+24] rollout:roAnim align:#align_topleft
 			--format "%, %, %, %, %\n" "MouseDown" Button Shift x y
 			local yOffset = -((ax.listitems[1].top-503)/ax.listitems[1].height) as integer
 			local item=((y-20)/14)+1
 			--format "Clicked item: %\n" (yOffset+item)
-			)
 		)
+	)
 		
 	--------------------------------------------------------------------------------------
 	-- Other Stuff
 	--------------------------------------------------------------------------------------
 
 	on btnAdd pressed do
-		(
+	(
 		for o in objects do
-			(
+		(
 			if classof o != Targetobject then
-				(
+			(
 				li=ax.ListItems.Add index:o.name
 				--print li.ListSubItems.count
 				--li.ListSubItems.Add text:(superclassof o as string)
 				for i = 1 to 7 do
-					(
+				(
 					lis=li.ListSubItems.Add()-- text:""
 					lis.bold=true
 					if i<=3 then lis.text="x"
@@ -290,17 +290,17 @@ rollout roAnim "Animation" width:400 height:464
 					if i==4 AND superclassof o==Camera then lis.text="x"
 					if i==5 AND superclassof o==Light then lis.text="x"
 					if i == 7 then lis.text=ax.listItems.count--superclassof o as string
-					)
 				)
 			)
-		ax.refresh()
 		)
+		ax.refresh()
+	)
 
 
 	local useObjectManager=true
 	
 	fn showObjectManager state=
-		(
+	(
 		local controls
 		if aeBridge!=undefined then controls = aeBridge.controls[2].rollouts[2].controls
 		else controls = roAnim.controls
@@ -327,11 +327,11 @@ rollout roAnim "Animation" width:400 height:464
 		
 		--update root rollout
 		if aeBridge!=undefined then
-			(
+		(
 			aeBridge.controls[2].rollouts[2].height=lastControl.pos[2]+28
 			aeBridge.flashClick 2
-			)
 		)
+	)
 
 	on rdoUse changed state do showObjectManager (state==2)
 	

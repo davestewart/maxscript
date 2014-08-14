@@ -47,13 +47,13 @@ global booleanParams
 ----------------------------------------
 
 fn changeAttribs newVal=
-	(
+(
 	execute("myObj." + myTargetAttrib + "=" + (origVal + spnFloatVal.value) as String)
-	)
+)
 
 
 fn updateInterface =
-	(
+(
 	lblAttrib.text = "Attrib: " + myTargetAttrib as String
 	lblAttribVal.text = "Value: " + myTargetAttribCurVal as String
 	lblAttribClass.text = "Class: " + (classof myTargetAttribCurVal) as String
@@ -62,52 +62,52 @@ fn updateInterface =
 	spnFloatVal.value = 0
 
 	case classof myTargetAttribCurVal of
-		(
+	(
 		Float:
-			(
+		(
 		-- execute ("removeRollout " + currentRollout as String + " ObjAttribs")
 		removeRollout currentRollout 
 		addRollout floatParams ObjAttribs
 		currentRollout = floatParams
-			)
+		)
 		Integer:
-			(
+		(
 			print "Show only Integer as Floats"
-			)
+		)
 		BooleanClass:
-			(
+		(
 		-- execute ("removeRollout " + currentRollout as String + " ObjAttribs")
 		removeRollout currentRollout 
 		addRollout booleanParams ObjAttribs
 		currentRollout = booleanParams
-			)
-		default:
-			(
-			print "Show Nothing"
-			)
 		)
-
+		default:
+		(
+			print "Show Nothing"
+		)
 	)
+
+)
 
 
 fn getTargetAttrib =
-	(
+(
 
 	if myModSelected then
-		(
+	(
 		myTargetAttrib = ddlMods.selected as String + "." + ddlAttribs.selected as String
 		myTargetAttribCurVal = execute ("myObj." + ddlMods.selected as String + "." + ddlAttribs.selected as String )
-		)
+	)
 	else
-		(
+	(
 		myTargetAttrib = ddlAttribs.selected as String
 		myTargetAttribCurVal = execute ("myObj.baseobject" + "." + ddlAttribs.selected as String )
-		)
 	)
+)
 
 
 fn getAttribs =
-	(
+(
 	myAttribs = #()
 	
 	-- modifier selected? if not, must be base object...
@@ -127,17 +127,17 @@ fn getAttribs =
 	getTargetAttrib()
 	updateInterface()
 
-	)
+)
 
 
 fn getMods =
-	(
+(
 	print "Getting Mods..."
 	myMods = #()
 	for i = 1 to myObj.modifiers.count do
-		(
+	(
 		append myMods myObj.modifiers[i].name
-		)
+	)
 	append myMods (myObj.baseObject as String)
 	if printState then print myMods
 
@@ -145,20 +145,20 @@ fn getMods =
 		ddlMods.items = myMods
 
 	updateInterface()
-	)
+)
 
 
 fn tcb = updateInterface()
 
 fn start =
-	(
+(
 	getMods()
 	ddlMods.enabled = true
 	ddlMods.selection = myMods.count -- Go to base object on start
 
 	getAttribs()
 	ddlAttribs.enabled = true
-	)
+)
 
 
 ----------------------------------------
@@ -179,15 +179,15 @@ fn start =
 
 
 	on ddlMods selected value do
-	(
+(
 	getAttribs()
 	
-	)
+)
 	on ddlAttribs selected value do
-	(
+(
 	getTargetAttrib()
 	updateInterface()
-	)
+)
 )
 
 

@@ -83,40 +83,40 @@ local uiStr="	GroupBox grpButton \"Objects\" pos:[8,8] width:72 height:104
 	---------------------------------------------------------------------------------------------------
 
 	fn isIn container item=
-		(
+	(
 		-- items should be uiItem structs
 		local c=container
 		local i = item
 		if c!= undefined AND i!=undefined then
-			(
+		(
 			local c=box2 c.x c.y c.w c.h
 			local i=point2 i.x i.y
 			return (contains c i)
-			)
-		else return false
 		)
+		else return false
+	)
 
 	fn orderArray arr=
-		(
+	(
 		tmpArr=#()
 		for y = 1 to arr.count do
-			(
+		(
 			if arr[y]!=undefined then
-				(
+			(
 				for x = 1 to arr[y].count do
-					(
+				(
 					if arr[y][x]!=undefined then
-						(
+					(
 						append tmpArr arr[y][x]
-						)
 					)
 				)
 			)
-		return tmpArr
 		)
+		return tmpArr
+	)
 
 	fn openWin uiScript=
-		(
+	(
 		if (uiScriptWin==undefined) OR ((uiScriptWin as string).count<10) then uiScriptWin=newScript()
 
 		local w=int (roSize.x +4) as string
@@ -140,10 +140,10 @@ local uiStr="	GroupBox grpButton \"Objects\" pos:[8,8] width:72 height:104
 			"createDialog roTest\n"
 
 		format "%\n%\n%" str1 uiScript str2 to:uiScriptWin
-		)
+	)
 
 	fn tidy=
-		(
+	(
 		-----------------------------------------------------------------
 		--	variables
 			roSize=point2 100 25
@@ -172,7 +172,7 @@ local uiStr="	GroupBox grpButton \"Objects\" pos:[8,8] width:72 height:104
 		-----------------------------------------------------------------
 
 		for s in strArr do
-			(
+		(
 			---------------------------------------------------------
 			--	strip whitespace
 
@@ -191,35 +191,35 @@ local uiStr="	GroupBox grpButton \"Objects\" pos:[8,8] width:72 height:104
 				-- x,y
 					i=findstring s "pos:["
 					if i != undefined then
-						(
+					(
 						str=substring s (i+5) -1
 						str=(filterstring str "]")[1]
 						arr=filterstring str ","
 						x=arr[1] as integer
 						y=arr[2] as integer
 						--format "x: % y: % \n" x y
-						)
+					)
 
 				-- width
 					i=findstring s "width:"
 					if i != undefined then
-						(
+					(
 						str=substring s (i+6) -1
 						str=(filterstring str " ")[1]
 						w=str as integer
 						--format "w: % \n" w
-						)
+					)
 
 				-- height
 					i=findstring s "height:"
 					--format "i:% \n" i
 					if i != undefined then
-						(
+					(
 						str=substring s (i+7) -1
 						str=(filterstring str " ")[1]
 						h=str as integer
 						--format "h: % \n" h
-						)
+					)
 
 
 			---------------------------------------------------------
@@ -241,16 +241,16 @@ local uiStr="	GroupBox grpButton \"Objects\" pos:[8,8] width:72 height:104
 				local ui=uiItem type:type x:x y:y w:w h:h string:s
 
 				if type=="groupBox" then
-					(
+				(
 					if uiGroupArr[y]==undefined then uiGroupArr[y]=#()
 					if uiGroupArr[y][x]==undefined then uiGroupArr[y][x]=ui
-					)
+				)
 				else
-					(
+				(
 					if uiItemArr[y]==undefined then uiItemArr[y]=#()
 					if uiItemArr[y][x]==undefined then uiItemArr[y][x]=ui
-					)
-			)
+				)
+		)
 			
 
 
@@ -272,45 +272,45 @@ local uiStr="	GroupBox grpButton \"Objects\" pos:[8,8] width:72 height:104
 		local currentGroup=undefined
 		local insertExtraLine=true
 		for i = 1 to uiItemArr.count do
-			(
+		(
 			-- check if in any groups;
 				local isInGroup=false
 				-- is it in the current group?
 					if isIn currentGroup uiItemArr[i] then isInGroup=true
 				-- loop through remaining groups
 					else
-						(
+					(
 						for g = 1 to uiGroupArr.count do
-							(
+						(
 							if isIn uiGroupArr[g] uiItemArr[i] then
-								(
+							(
 								format "\n	%\n" uiGroupArr[g].string to:str
 								isInGroup=true
 								currentGroup=uiGroupArr[g]
 								uiGroupArr=deleteItem uiGroupArr g
 								exit
-								)
 							)
 						)
+					)
 			if isInGroup then
-				(
+			(
 				format "		%\n" uiItemArr[i].string to:str
 				insertExtraLine=true
-				)
+			)
 			else
-				(
+			(
 				if insertExtraLine then format "\n" to:str
 				format "	%\n" uiItemArr[i].string to:str
 				insertExtraLine=false
-				)
 			)
+		)
 		format "\n" to:str
 
 		--edt1.text=(str as stringstream)
 		--format "%" (str as string) to:uiScriptWin 
 		openWin (str as string)
 
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -323,32 +323,32 @@ local uiStr="	GroupBox grpButton \"Objects\" pos:[8,8] width:72 height:104
 
 
 	on ro1 open do
-		(
+	(
 		--edt1.text = uiStr
 		--openWin uiStr
-		)
+	)
 	on btnNew pressed do
-		(
+	(
 		openWin uiStr
-		)
+	)
 
 	on btnTidy pressed do
-		(
+	(
 		tidy()
-		)
+	)
 
 	on btnTest pressed do
-		(
+	(
 		try (destroyDialog uiTidyTestRo);catch()
 		w=int (roSize.x +4) as string
 		h=int (roSize.y +4) as string
 		uiTidyTestStr="rollout uiTidyTestRo \"UITidy Test Rollout\" width:"+w+" height:"+h+"
-			(
+		(
 			"+edt1.text as string+"
 			)"
 		execute uiTidyTestStr
 		createDialog uiTidyTestRo
-		)
+	)
 )
 if uiTidyFloater != undefined then closerolloutfloater uiTidyFloater
 	uiTidyFloater = newRolloutFloater "My Floater" 220 100 10 10

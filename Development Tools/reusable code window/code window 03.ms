@@ -28,58 +28,58 @@ rollout ro1 "Apply this code to the selected objects..." width:392 height:184
 
 
 	fn replaceAll strAll strOut strIn =
-		(
+	(
 		while ((i=findstring strAll strOut) != undefined) do
-			(
+		(
 			strAll = replace strAll i strOut.count strIn
-			)
-		return strAll
 		)
+		return strAll
+	)
 
 	fn doCode=
-		(
+	(
 		cmd=edt1.text
 		for obj in selection do (
-			try	(
+			try(
 				tempObj = obj.name
 				execute("$" + tempObj + "." + cmd)
 				--lblStatus.text = "OK"
-				)
+			)
 			catch (
 				--lblStatus.text = "Error!"
-				)
 			)
 		)
+	)
 	
 	fn doCode2=
-		(
+	(
 		cmd=edt1.text
 		for obj in selection do (
 			print cmd
-			try	(
+			try(
 				execute cmd
 				lblStatus.text = "OK"
-				)
+			)
 			catch (
 				lblStatus.text = "Error!"
-				)
 			)
 		)
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 
 	on btnGetText pressed do
-		(
+	(
 		edt1.text += getListenerSelText()
-		)
+	)
 
 	on btnDoCode pressed do
-		(
+	(
 		--edt2.text = replaceAll edt1.text "$" "obj"
 		edt2.text = edt1.text
 		doCode2()
-		)
+	)
 
 )
 

@@ -2,14 +2,14 @@ plugin modifier simpleMatMod
 	name:"SimpleMaterialMod" 
 	classID:#(0x79ce6e69, 0xa8933438) 
 	extends:Materialmodifier replaceUI:true version:1 
-		( 
+	( 
 		parameters main rollout:params 
-			( 
+		( 
 			matID type:#integer animatable:true
 			on matID set val do delegate.materialID = val 
-			) 
+		) 
 		rollout params "Material" 
-			( 
+		( 
 			---------------------------------------------------------------------------------------------------
 			-- Interface
 			---------------------------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ plugin modifier simpleMatMod
 			---------------------------------------------------------------------------------------------------
 		
 				function btnChange btn mat state =
-					(
+				(
 					--pushPrompt (($.modifiers[this.name][1][1].controller) as string)
 
 				-- reset buttons
@@ -40,5 +40,5 @@ plugin modifier simpleMatMod
 				on ckb0 changed state do btnChange ckb0 1 state
 				on ckb1 changed state do btnChange ckb1 2 state
 
-			) 
 		) 
+	) 

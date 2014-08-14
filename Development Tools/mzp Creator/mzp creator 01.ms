@@ -79,7 +79,7 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 	-- Utilities
 
 		fn getMultipleFiles =
-		(
+	(
 			local dialog		= dotNetObject "System.Windows.Forms.OpenFileDialog"
 			
 			dialog.title		= "Select one or more script files to be included in the .mzp package"
@@ -92,57 +92,57 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 			result.ToString()
 			if result.Equals result.OK then dialog.fileNames
 			else #()
-		)
+	)
 		
 		fn shortenFilePath filePath maxLength:60 split:0.5 delimiter:"..." =
-		(
+	(
 			if filePath.count > maxLength then
-			(
+		(
 				maxLength -= delimiter.count
 				strStart = substring filePath 1 (maxLength * split)
 				strEnd = substring filePath (filePath.count - (maxLength * (1 - split))) filePath.count
 				strStart + delimiter + strEnd
-			)
-			else
-			(
-				filePath
-			)
 		)
+			else
+		(
+				filePath
+		)
+	)
 
 		fn selectSaveFile =
-		(
+	(
 			local filePath = getSaveFileName types:"Zip-file Script Packages (*.mzp)|*.mzp"
 
 			if filePath != undefined do
-			(
+		(
 				edtFileName.text = ""
 				edtFilePath.text = ""
 				setDescriptiveText filePath
-			)
 		)
+	)
 		
 		fn selectSavePath =
-		(
+	(
 			local filePath = getsavepath()
 			if filePath != undefined do edtFilePath.text = filePath
-		)
+	)
 		
 		fn removeQuotes str =
-		(
+	(
 			local arr = filterstring str "\""
 			str = ""
 			for a in arr do str += a
 			str
-		)
+	)
 		
 		fn showHelp =
-		(
+	(
 			local url = "mk:@MSITStore:" + (getdir #help) + "\maxscript.chm::/Zip_file_Script_Packages.htm"
 			shelllaunch url ""
-		)
+	)
 		
 		fn setDescriptiveText filePath =
-		(
+	(
 			if edtFileName.text == "" do
 				edtFileName.text				= getFilenameFile filePath + ".mzp"
 			
@@ -154,7 +154,7 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 			
 			if edtScriptDescription.text == "" do
 				edtScriptDescription.text		= edtScriptName.text + " is a utility to..."
-		)
+	)
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--
 	--  ██████                    ██   ██                   
@@ -169,10 +169,10 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 	-- Functions
 		
 		function resetAll prompt:true=
-		(
+	(
 			local state = if prompt then querybox "Are you sure you want to reset all fields?" else true
 			if state do
-			(
+		(
 				files					= #()
 				tempFiles				= #()
 				ddlFiles.items			= #()
@@ -183,42 +183,42 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 				edtRun.text				= ""
 				edtFileName.text		= ""
 				edtFilePath.text		= ""
-			)
 		)
+	)
 		
 		function createRunText files=
-		(
+	(
 			-- variables
 				local text = ""
 			
 			-- files
 				for f in files do
-				(
+			(
 					text += "run \"" + filenameFromPath f + "\"\n"
-				)
+			)
 				
 			-- text
 				text
-		)
+	)
 		
 		function selectFiles =
-		(
+	(
 			newFiles = getMultipleFiles()
 			if newFiles.count > 0 then
-			(
+		(
 				-- first files
 					if files.count == 0 then
-					(
+				(
 						setDescriptiveText newFiles[1]
-					)
+				)
 					
 				-- replace files
 					if NOT chkAppend.checked then	
-					(
+				(
 						edtRun.text				= ""
 						files					= #()
 						ddlFiles.items			= #()
-					)
+				)
 					
 				-- set up text etc
 					edtRun.text					+= createRunText newFiles
@@ -226,39 +226,39 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 					
 				-- update files list
 					join files newFiles
-			)
 		)
+	)
 		
 		function openSelectedFile =
-		(
+	(
 			local index = ddlFiles.selection
 			if files.count > 0 AND ddlFiles.selection != undefined do
-			(
+		(
 				local str = "start notepad.exe \"" + files[index] + "\"" 
 				doscommand str
-			)
 		)
+	)
 
 		function deleteSelectedFile =
-		(
+	(
 			local index = ddlFiles.selection
 			if files.count > 0 AND ddlFiles.selection != undefined do
-			(
+		(
 				local arr = ddlFiles.items
 				deleteItem arr index
 				deleteItem files index
 				ddlFiles.items = arr
-			)
 		)
+	)
 
 		function cleanupFiles =
-		(
+	(
 			tempFiles = getFiles (tempFilePath + "\\*.*")
 			for f in tempFiles do
-			(
+		(
 				deleteFile f
-			)
 		)
+	)
 		
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--
@@ -274,22 +274,22 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 	-- Code
 		
 		function createFiles =
-		(
+	(
 			--------------------------------------------------------------------------------------------------------------------------
 			-- setup
 			
 				-- check
 					if files.count == 0 do
-					(
+				(
 						messagebox "You haven't selected any files"
 						return false
-					)
+				)
 				
 					if NOT doesFileExist edtfilePath.text  do
-					(
+				(
 						messagebox "The output directory doesn't exist"
 						return false
-					)
+				)
 					
 				-- variables
 					local fileName		= edtFileName.text
@@ -307,14 +307,14 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 
 				-- copy all the files
 					for f in files do
-					(
+				(
 						copyFile f  (tempFilePath + (filenameFromPath f))
 						zipParams += " \"" + (filenameFromPath f) +"\" " 
-					)
+				)
 					
 				-- create the run file
 					if chkRun.checked do
-					(
+				(
 						local runFile = createFile (tempFilePath + "mzp.run")
 						
 						format "name \"%\"\n" (removeQuotes edtScriptName.text) to:runFile
@@ -323,7 +323,7 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 
 						close runFile
 						zipParams += " mzp.run "
-					)
+				)
 					
 
 			--------------------------------------------------------------------------------------------------------------------------
@@ -349,13 +349,13 @@ rollout roMzpCreator ".mzp Creator" width:376 height:520
 					
 				cleanupFiles()
 				
-		)
+	)
 
 		function init =
-		(
+	(
 			resetAll prompt:false
 			tempFilePath	= sysinfo.tempdir + TEMP_DIR + "\\"
-		)
+	)
 
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--

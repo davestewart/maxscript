@@ -57,13 +57,13 @@ global booleanParams
 ----------------------------------------
 
 fn changeAttribs newVal=
-	(
+(
 	execute("myObj." + myTargetAttrib + "=" + (origVal + spnFloatVal.value) as String)
-	)
+)
 
 
 fn updateInterface =
-	(
+(
 	lblAttrib.text = "Attrib: " + myTargetAttrib as String
 	lblAttribVal.text = "Value: " + myTargetAttribCurVal as String
 	lblAttribClass.text = "Class: " + (classof myTargetAttribCurVal) as String
@@ -72,52 +72,52 @@ fn updateInterface =
 	spnFloatVal.value = 0
 
 	case classof myTargetAttribCurVal of
-		(
+	(
 		Float:
-			(
+		(
 		-- execute ("removeRollout " + currentRollout as String + " ObjAttribs")
 		removeRollout currentRollout 
 		addRollout floatParams ObjAttribs
 		currentRollout = floatParams
-			)
+		)
 		Integer:
-			(
+		(
 			print "Show only Integer as Floats"
-			)
+		)
 		BooleanClass:
-			(
+		(
 		-- execute ("removeRollout " + currentRollout as String + " ObjAttribs")
 		removeRollout currentRollout 
 		addRollout booleanParams ObjAttribs
 		currentRollout = booleanParams
-			)
-		default:
-			(
-			print "Show Nothing"
-			)
 		)
-
+		default:
+		(
+			print "Show Nothing"
+		)
 	)
+
+)
 
 
 fn getTargetAttrib =
-	(
+(
 
 	if myModSelected then
-		(
+	(
 		myTargetAttrib = ddlMods.selected as String + "." + ddlAttribs.selected as String
 		myTargetAttribCurVal = execute ("myObj." + ddlMods.selected as String + "." + ddlAttribs.selected as String )
-		)
+	)
 	else
-		(
+	(
 		myTargetAttrib = ddlAttribs.selected as String
 		myTargetAttribCurVal = execute ("myObj.baseobject" + "." + ddlAttribs.selected as String )
-		)
 	)
+)
 
 
 fn getAttribs =
-	(
+(
 	myAttribs = #()
 	
 	-- modifier selected? if not, must be base object...
@@ -137,17 +137,17 @@ fn getAttribs =
 	getTargetAttrib()
 	updateInterface()
 
-	)
+)
 
 
 fn getMods =
-	(
+(
 	print "Getting Mods..."
 	myMods = #()
 	for i = 1 to myObj.modifiers.count do
-		(
+	(
 		append myMods myObj.modifiers[i].name
-		)
+	)
 	append myMods (myObj.baseObject as String)
 	if printState then print myMods
 
@@ -155,20 +155,20 @@ fn getMods =
 		ddlMods.items = myMods
 
 	updateInterface()
-	)
+)
 
 
 fn tcb = updateInterface()
 
 fn start =
-	(
+(
 	getMods()
 	ddlMods.enabled = true
 	ddlMods.selection = myMods.count -- Go to base object on start
 
 	getAttribs()
 	ddlAttribs.enabled = true
-	)
+)
 
 
 ----------------------------------------
@@ -176,36 +176,36 @@ fn start =
 ----------------------------------------
 
 	on myPropsUtility open do
-		(
+	(
 		local curSel = getCurrentSelection()
 		if curSel.count == 1 do
-			(
+		(
 			global myObj = curSel[1]
 			if printState then print myObj
 			start()
-			)
-		registerTimeCallback tcb
 		)
+		registerTimeCallback tcb
+	)
 
 	on myPropsUtility close do unRegisterTimeCallback tcb
 
 	on btnPick picked obj do
-		(
+	(
 			myObj = obj
 			start()
-		)
+	)
 
 	on ddlMods selected value do
-		(
+	(
 		getAttribs()
 
-		)
+	)
 
 	on ddlAttribs selected value do
-		(
+	(
 		getTargetAttrib()
 		updateInterface()
-		)
+	)
 
 ----------------------------------------
 -- handlers (ACTION)
@@ -213,39 +213,39 @@ fn start =
 
 on ckbFloatStart changed state do
 	case state of
-		(
+	(
 		true:
-			(
+		(
 			print "true"
 			myTargetAttribCurVal
 			-- set random multiplier
 			global multiplier = random 0.0 1.0
 			print multiplier
-			)
-		false:
-			(
-			print "false"
-			)
 		)
+		false:
+		(
+			print "false"
+		)
+	)
 
 
 	on spnFloatVal changed value do
-		(
+	(
 		val = spnFloatVal.value
 		var = spnFloatVar.value
 		result = val + (multiplier * var)
 
 		changeAttribs (result as String)
-		)
+	)
 
 	on spnFloatVar changed value do
-		(
+	(
 		val = spnFloatVal.value
 		var = spnFloatVar.value
 		--result = (val + (multiplier * var)) as Float
 
 		changeAttribs val
-		)
+	)
 
 )
 

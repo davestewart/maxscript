@@ -4,9 +4,9 @@ classID:#(0x399e7392, 0x6fae933c)
 
 --extends:normalize_spline 
 --replaceUI:true version:1 
-	( 
+( 
 	parameters main rollout:params 
-		(
+	(
 		distance type:#float animatable:true ui:spnDist default:0
 		pathPercent type:#float animatable:true ui:spnPercent default:0
 		spline type:#node ui:pkbSpline
@@ -14,14 +14,14 @@ classID:#(0x399e7392, 0x6fae933c)
 		on spnDist set val do delegate.length = val
 		
 		on create do
-			(
+		(
 			local length
-			)
-		*/
 		)
+		*/
+	)
 
 	rollout params "Parameters" width:160 height:128
-		(
+	(
 
 		local spnCtrl = bezier_float()
 		local pcCtrl = bezier_float()
@@ -44,36 +44,36 @@ classID:#(0x399e7392, 0x6fae933c)
 	--------------------------------------------------------------------------------
 
 		on pkbSpline picked obj do
-			(
+		(
 			this.spline = obj
 			segArr = getSegLengths obj 1
 			len = segArr[segArr.count]
 			lblSpline.text = "Length: " + len as string
 			pkbSpline.text = obj.name
-			)
-
-		on spnDist changed val do
-			(
-			pc=(val/len)
-			spnPercent.value = pc*100
-			)
-
-		on spnPercent changed val do
-			(
-			dist=len*val
-			spnDist.value = dist/100
-			)
-
 		)
 
-	on load do
+		on spnDist changed val do
 		(
-		print (">" + this as string)
-		show this
-		--this.params.pkbSpline.text = this.spline.name
+			pc=(val/len)
+			spnPercent.value = pc*100
+		)
+
+		on spnPercent changed val do
+		(
+			dist=len*val
+			spnDist.value = dist/100
 		)
 
 	)
+
+	on load do
+	(
+		print (">" + this as string)
+		show this
+		--this.params.pkbSpline.text = this.spline.name
+	)
+
+)
 	
 /*
 $.pos.controller[2].path

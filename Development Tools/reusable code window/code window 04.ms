@@ -42,38 +42,38 @@ $.wirecolor = c"
 
 
 	fn replaceAll strAll strOut strIn =
-		(
+	(
 		while ((i=findstring strAll strOut) != undefined) do
-			(
+		(
 			strAll = replace strAll i strOut.count strIn
-			)
-		return strAll
 		)
+		return strAll
+	)
 	
 	fn doCode2=
-		(
+	(
 		cmd=edt1.text
 		for obj in selection do (
-			try	(
+			try(
 				execute cmd
 				lblStatus.text = "OK"
-				)
+			)
 			catch (
 				lblStatus.text = "Error!"
-				)
 			)
 		)
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 
 	on btnGetText pressed do
-		(
+	(
 		edtCode.text += getListenerSelText()
-		)
+	)
 
 	on btnDoCode pressed do
-		(
+	(
 		objCode = replaceAll edtCode.text "$" "obj"
 
 		cmd = edtVars.text + "
@@ -81,14 +81,14 @@ $.wirecolor = c"
 for obj in selection do (
 	try(
 		" + objCode + "
-	)
+)
 	catch()
 	)"
 
 		edtFinal.text = cmd
 
 		execute cmd
-		)
+	)
 
 	on btnInsertToVars pressed do ro1.title = "ARSE"
 

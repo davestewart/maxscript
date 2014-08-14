@@ -6,23 +6,23 @@
 
 -- ui fn
 	fn arrayToBmp arr fg:black bg:white =
-		(
+	(
 		
 		local b		= bitmap arr[1].count arr.count
 		local y		= 0
 		
 		for row in arr do
-			(
+		(
 			local pixels = for pixel in row collect (if pixel == 1 then fg else bg)
 			setPixels b [0,y] pixels
 			y += 1
-			)
+		)
 
 		return b
-		)
+	)
 		
 	fn setButtonImage btn imageName =
-		(
+	(
 		local b			= arrayToBmp bmpRefresh
 		btn.images		= #(b, b, 1, 1, 1, 1, 1)
 		)

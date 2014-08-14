@@ -15,65 +15,65 @@
 ----------------------------------------------------------------------------------------------
 
 		function round n points =
-			(
+		(
 			if points == 0 then
-				(
+			(
 				n += 0.5
 				n = n as integer
-				)
+			)
 			else
-				(
+			(
 				local exp = pow 10 points
 				n *= exp
 				n = floor n
 				n /= exp
-				)
-			n
 			)
+			n
+		)
 			
 		function outputData str =
-			(
+		(
 			clearlistener()
 			format "var animation_array:Array = [\n%\n];\n\n" (str as string)
-			)
+		)
 		
 ----------------------------------------------------------------------------------------------
 -- trajectory functions
 ----------------------------------------------------------------------------------------------
 
 		function trajectoryAsArray obj =
-			(
+		(
 			local arr	= for t = 0 to animationrange.end collect at time t obj.pos
 			arr
-			)
+		)
 
 		function trajectoryToSpline arr =
-			(
+		(
 			-- spline
 				local ss = SplineShape pos:arr[1]
 				addNewSpline ss
 				
 			-- knots
 				for i = 1 to arr.count do
-					(
+				(
 					addKnot ss 1 #corner #line arr[i]
-					)
+				)
 				updateShape ss
 				
 			-- return
 				ss
-			)
+		)
 		
 		function particleTrajectoryToArray pf index =
-			(
+		(
 			local arr	= #()
 			for t = 0 to animationrange.end do
-				(
+			(
 				pf.updateParticles pf t
 				append arr (pf.getParticlePositionById index)-- 
-				)
-			arr
 			)
+			arr
+		)
 
 --arr = particleTrajectoryToArray pf 1
 --trajectoryToSpline arr
@@ -83,7 +83,7 @@
 ----------------------------------------------------------------------------------------------
 
 		function getAllParticleData pf numParticles:#all =
-			(
+		(
 			-- variables
 				local pos
 				local rot
@@ -95,17 +95,17 @@
 			-- create initial arrays
 				local arr = #()
 				for p = 1 to numParticles do
-					(
+				(
 					arr[p] = #()
-					)
+				)
 		
 			-- loop through time
 				for t = 0 to animationrange.end do
-					(
+				(
 					pf.updateParticles pf t
 					--gc()
 					for p = 1 to numParticles do
-						(
+					(
 						--pf.particleIndex	= p
 						--pos	= pf.particlePosition - origin.pos
 						--rot	= pf.particleOrientation / Pi * 180
@@ -115,13 +115,13 @@
 
 	
 						append arr[p] (pData pos:pos rot:rot)
-						)
 					)
+				)
 			arr
-			)
+		)
 
 		function getParticleData pf p =
-			(
+		(
 			-- variables
 				local pos
 				local rot
@@ -136,7 +136,7 @@
 			-- loop through time
 				pf.particleIndex	= p
 				for t = 0 to animationrange.end do
-					(
+				(
 					--pf.updateParticles pf t
 					slidertime = t
 
@@ -144,16 +144,16 @@
 					rot					= pf.particleOrientation / Pi * 180
 
 					append arr (pData pos:pos rot:rot)
-					)
+				)
 			arr
-			)
+		)
 
 ----------------------------------------------------------------------------------------------
 -- export functions
 ----------------------------------------------------------------------------------------------
 
 		function exportCamera =
-			(
+		(
 			-- variables
 				local cam			= $camera01
 				local tm			= $ExposeTMCamera01
@@ -162,9 +162,9 @@
 				
 			-- loop	
 				for t = 0 to 131 do
-					(
+				(
 					at time t
-						(
+					(
 						-- max coords
 							mpx	= round tm.localPositionX precision
 							mpy	= round tm.localPositionY precision
@@ -187,15 +187,15 @@
 							format "[%, %, %, %, %, %]" fpx fpy fpz frx fry frz to:str
 							if t < 131 do format ",\n" to:str
 				
-						)
 					)
+				)
 			
 			-- output
 				outputData(str)
-			)
+		)
 	
 		function exportParticles arr =
-			(
+		(
 			-- variables
 				local cam			= $camera01
 				local tm			= $ExposeTMCamera01
@@ -208,10 +208,10 @@
 				
 			-- loop	
 				for b = 1 to arr.count do
-					(
+				(
 					strBox = stringstream ""
 					for t = 1 to arr[b].count do
-						(
+					(
 						-- object
 							local data = arr[b][t]
 						
@@ -237,16 +237,16 @@
 							format "[%, %, %, %, %, %]" fpx fpy fpz frx fry frz to:strBox
 							if t < arr[b].count do format "," to:strBox
 				
-						)
+					)
 					-- output
 						format "[%]" (strBox as string) to:strAll
 						if b < arr.count do format ",\n" to:strAll
-					)
+				)
 			
 			-- output
 				
 				outputData(strAll)
-			)
+		)
 
 	
 ----------------------------------------------------------------------------------------------
@@ -257,11 +257,11 @@
 	exportParticles particleData
 	
 	for i = 1 to particleData.count do
-		(
+	(
 		b = particleData[i]
 		arr = for d in b collect d.pos
 		trajectoryToSpline arr
-		)
+	)
 
 /*
 	b = getParticleData pf 1

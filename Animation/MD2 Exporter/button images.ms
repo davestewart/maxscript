@@ -9,11 +9,11 @@ rollout ro1 "Untitled" width:162 height:300
 	
 	
 	on ro1 open do
-	(
+(
 		bmImage = openbitmap ((getdir #ui) + "Icons\\bip_layer_i.bmp")
 		--bmMask = openbitmap ((getdir #ui) + "Icons\\bip_layer_a.bmp")
 		btn1.images = #(bmImage, bmMask, 24, 1, 1, 1, 1)
-	)
+)
 	
 )
 

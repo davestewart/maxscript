@@ -1,7 +1,7 @@
 --macroScript SceneTreeView category:"HowTo"
---	(
+--(
 	rollout roTV "TreeView Scene Browser"
-		(
+	(
 		
 		-- -----------------------------------------------------------------------------------
 		-- interface
@@ -24,21 +24,21 @@
 			local newFile
 			
 			fn tvAddMacros tv theNode macroArr =
-				(
+			(
 				for i = 1 to macroArr.count do
-					(
+				(
 					total+=1
 					newNode = tv.Nodes.add theNode.index 4 "" macroArr[i].name 0
 					newNode.Tag=macroArr[i].path
-					)
-				theNode.sorted=true
 				)
+				theNode.sorted=true
+			)
 
 
 			fn tvAddCategories tv theNode arr =
-				(
+			(
 				for i = 1 to arr.count do
-					(
+				(
 					local txt=macroTable.names[i] +" ("+ (macroTable.members[i].count as string)+")"
 					newNode = tv.Nodes.add theNode.index 4 "" txt 0
 					newNode.bold=true
@@ -46,9 +46,9 @@
 					--newNode.BackColor=color 255 225 225
 
 					tvAddMacros tv newNode macroTable.members[i]
-					)
-				theNode.sorted=true
 				)
+				theNode.sorted=true
+			)
 
 
 		-- -----------------------------------------------------------------------------------
@@ -56,13 +56,13 @@
 		-- -----------------------------------------------------------------------------------
 		
 			fn tvInit tv ilTv=
-				(
+			(
 				tv.Indentation = 28*15
 				tv.LineStyle = #tvwRootLines 
-				)
+			)
 
 			fn tvBuild tv =
-				(
+			(
 				local theRoot
 				local rootNodes
 				
@@ -74,7 +74,7 @@
 				tvAddCategories tv theRoot macrotable.names 
 				theRoot.text="Macros ("+total as string+")"
 				theRoot.bold=true
-				)
+			)
 				
 
 
@@ -86,7 +86,7 @@
 			
 			
 			on tv nodeClick theNode do
-				(
+			(
 				try(
 					format "%\n" theNode.tag
 					--macros.run (theNode.tag as integer)
@@ -96,24 +96,24 @@
 					messagebox ""
 					ie.Navigate newFile
 					ie.Document.body.style.font="11px normal arial"
-					)
-				catch()
 				)
+				catch()
+			)
 				
 				
 			on tv DblClick do
-				(
+			(
 				local sel = roTV.tv.SelectedItem
 				macros.run sel.Key
 				--messagebox sel
-				)
+			)
 
 		-- -----------------------------------------------------------------------------------
 		-- plugin start
 		-- -----------------------------------------------------------------------------------
 		
 			on roTV open do 
-				(
+			(
 				-- build macro table
 					sleep 0.1
 					getMacroList()					
@@ -123,13 +123,13 @@
 					tvBuild tv
 					tv.LabelEdit=#tvwManual
 					tv.fullrowselect=true
-				)
+			)
 				
 			on roTV resized size do 
-				(
+			(
 				tv.size=size-[20,20]
-				)			
-		)
+			)			
+	)
 	try(destroyDialog roTV)catch()
 	createDialog roTV 800 800 pos:[10,10] style:#(#style_titlebar, #style_border, #style_sysmenu, #style_resizing)
 	cui.RegisterDialogBar roTV style:#(#cui_dock_all, #cui_floatable, #cui_handles)

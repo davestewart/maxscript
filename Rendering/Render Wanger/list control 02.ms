@@ -12,15 +12,15 @@ rollout ro1 "Microsoft ListView Control, version 6.0" width:231 height:259
 	button btn6 "Add Items" pos:[116,232] width:100 height:16
 
 	function axClick obj =
-		(
+	(
 		--select (getNodeByName obj)
 		print obj
-		)
+	)
 /*
 */
 	
 	on ro1 open do
-		(
+	(
 		ax.MousePointer = #ccArrow 
 		ax.GridLines = true 
 		ax.AllowColumnReorder = true 
@@ -36,13 +36,13 @@ rollout ro1 "Microsoft ListView Control, version 6.0" width:231 height:259
 		colLabels = #("Col_1","Col_2","Col_3","Col_4","Col_5")
 		
 		for i = 1 to 10 do
-			(
+		(
 			--print (colLabels[i])
 			--execute(colLabels[i] + "=")
 			chs.Add()
 			--execute(colLabels[i] + ".text = " + colLabels[i] as string)
 
-			)
+		)
 
 --		hSetting = chs.Add() 
 --		hTime = chs.Add() 
@@ -51,66 +51,66 @@ rollout ro1 "Microsoft ListView Control, version 6.0" width:231 height:259
 		
 		ax.MultiSelect = true
 		
-		)
+	)
 	
 	
 	on ax click do
-		(
+	(
 		axClick ax.SelectedItem.text
-		)
+	)
 
 	
 	on btn1 pressed do
-		(
+	(
 		lis = ax.listItems 
 		for i=1 to 10 do 
-			( 
+		( 
 			local li 
 			li = lis.Add() 
 			li.text = "Sphere0" + i as string
-			)
 		)
+	)
 
 	on btn2 pressed do
-		(
+	(
 		--showProperties ax.ListItems
 		Sphere()
 		for i = 1 to 10 do copy $Sphere01 pos:[random -100 100,random -100 100,random -100 100]
-		)
+	)
 	
 	on btn3 pressed do
-		(
+	(
 		showProperties ax
 		format"\n"
-		)
+	)
 	on btn4 pressed do
-		(
+	(
 		showMethods ax
 		format"\n"
-		)
+	)
 
 	on btn5 pressed do
-		(
+	(
 		for i = 1 to ax.ListItems.count do
-			(
+		(
 			ax.ListItems[i].text = random 0 500
-			)
 		)
+	)
 
 	on btn6 pressed do
-		(
+	(
 		for i = 1 to 10 do
-			(
+		(
 			for j = 1 to 10 do
-				(
+			(
 				ro1.ax.ListItems[i].ListSubItems.add text:(random 0 500)
-				)
 			)
 		)
-
-
-
 	)
+
+
+
+)
 
 
 if axFloater != undefined then closerolloutfloater axFloater 

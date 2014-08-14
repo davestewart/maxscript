@@ -8,9 +8,9 @@
 
 
 fn createDummy pt =
-	(
+(
 	dummy pos:pt
-	)
+)
 
 fn test str = format "%\n" (str[1] as string)
 	
@@ -22,16 +22,16 @@ d = dummy pos:(pickPoint())
 d = dummy pos:(pickPoint mouseMoveCallback:test rubberband:true)
 
 fn callback_fn msg ir obj faceNum shift ctrl alt = 
-	(
+(
 	format "\n msg:%\n ir:%\n" msg ir
 	if msg == #mousePoint AND dragging == false do
-		(
+	(
 		dragging = true
 		--messagebox (ir.pos as string)
 		return ir.pos
-		)
-	#continue
 	)
+	#continue
+)
 
 
 dragging = false
@@ -40,11 +40,11 @@ pickPoint rubberband:pt1
 
 arr = #()
 while arr.count < 5 do
-	(
+(
 	local pt = pickpoint()
 	append arr pt
 	print pt as string
-	)
+)
 print arr
 
 
@@ -53,31 +53,31 @@ print arr
 
 
 fn getCircleRadius pt1 pt2 =
-	(
+(
 	xy = pt2 - pt1
 	r = sqrt ((xy.x * xy.x) + (xy.y * xy.y))
-	)
+)
 
 
 fn makeCircle msg ir obj faceNum shift ctrl alt = 
-	(
+(
 	-- stop
 		if msg == #mousePoint then
-			(
+		(
 			messagebox (r as string)
 			return pt2
-			)
+		)
 	-- start
 		else(
 			if isvalidnode c do
-				(
+			(
 				pt2			= ir.pos
 				r			= getCircleRadius pt1 pt2
 				c.radius	= r
-				)
 			)
+		)
 		#continue
-	)
+)
 
 
 r			= 0

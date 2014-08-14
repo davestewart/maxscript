@@ -7,7 +7,7 @@ fn ReadExcelData excelFile sheet col row=
 	
 	-- get the Workbook. Workbook apparently is the open file.
 	if xl.Workbooks.count > 0 do -- number of open files.
-	(
+(
 		thisWorkbook = xl.Workbooks 1
 		
 		-- get the Worksheet. The "tab" of the spreadsheet.
@@ -17,7 +17,7 @@ fn ReadExcelData excelFile sheet col row=
 		x	= (thisWorksheet.cells row col).value
 		
 		xl.call "testSubroutine" "Hello!"
-	)
+)
 	-- Shut it all down
 	--xl.quit()
 	releaseOLEObject xl

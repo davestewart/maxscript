@@ -17,24 +17,24 @@
 -------------------------------------------------------------------------------
 (
 if selection.count == 1 then
-	(
+(
 	for l in selection do
-		(
+	(
 		if superclassof l == light then
-			(
+		(
 			if l.includeList != undefined then 
-				(
+			(
 				answer = "Include"
 				select l.includeList
-				)
+			)
 			if l.excludeList != undefined then 
-				(
+			(
 				answer = "Exclude"
 				select l.excludeList
-				)
+			)
 			print answer
-			)		
-		)
+		)		
 	)
+)
 )
 -------------------------------------------------------------------------------

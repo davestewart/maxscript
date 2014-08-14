@@ -18,7 +18,7 @@ fn DumpXForms obj =
 	-- calculate and output vertex position in world coordinates
 		local v_pos=(in coordsys local getvert obj 1)* obj.objecttransform
 		format "%:\t%\n" "vert 1 (world2) " v_pos
-		)
+	)
 	catch()
 )
 

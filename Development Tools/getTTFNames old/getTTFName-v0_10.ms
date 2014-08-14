@@ -105,26 +105,26 @@
 fn sortCaseInsensitive theArray asc:true =
 (
 	try
-	(
+(
 		theArray=for arg in theArray collect (arg as name)
 		sort theArray
 		
 		if NOT asc then
-		(
+	(
 			local theArrayTMP=copy theArray #noMap
 			local revIdx=theArray.count
 			for i = 1 to theArray.count do
-			(
+		(
 				theArray[revIdx]=theArrayTMP[i] as string
 				revIdx-=1
-			)
+		)
 			theArray
-		)
-		else
-		(		
-			theArray=for arg in theArray collect (arg as string)
-		)
 	)
+		else
+	(		
+			theArray=for arg in theArray collect (arg as string)
+	)
+)
 	catch(theArray=undefined)
 )
 --------------------------
@@ -173,13 +173,13 @@ fn getTTFName
 	-- Get the font common name from the temp file.
 	local fontName
 	for i=1 to 5 where (NOT eof df) do
-	(
+(
 		try
-		(
+	(
 			fontName=readLine df
-		)
-		catch exit
 	)
+		catch exit
+)
 	
 	flush df
 	close df
@@ -223,7 +223,7 @@ example=0	-- Set =0 to not run any example.
 case example of
 (
 	1:-- Get ALL the font filenames into an array, and write results to Listener.
-	(
+(
 		global gffAllArr, fontAllArr, fontArr
 		
 		gffAllArr	=getFontsFilenameArr()
@@ -234,27 +234,27 @@ case example of
 		-- Write ALL the font filenames and common names to the Listener.
 		format "\nfontAllArr (cnt=%)\n" fontAllArr.count
 		for f in fontAllArr do format "%\n" f
-	)
+)
 
 	2:-- Get the first 5 font common names into an array, and write results to Listener.
-	(
+(
 		global fontStrsArr=getTTFNameStrs cntMax:5
 		
 		format "\nFont Strings (%)\n" fontStrsArr.count
 		for f in fontStrsArr do format "%\n" f
-	)
+)
 
 	3:-- Get ALL the font common names into an array, and write results to Listener.
-	(
+(
 		global fontStrsArr=getTTFNameStrs()
 		
 		format "\nFont Strings (%)\n" fontStrsArr.count
 		for f in fontStrsArr do format "%\n" f
-	)
+)
 
 	4:-- Get ALL the font filenames and common names, and write results to Listener.
 	  -- This example can be used to troubleshoot which fonts files are not processed properly.
-	(
+(
 		global gffAllArr
 		
 		gffAllArr	=getFontsFilenameArr()
@@ -263,5 +263,5 @@ case example of
 		fontStruct	=for f in gffAllArr where (cnt+=1; cnt<=cntMax) collect getTTFName fFilename:f
 		
 		for f in fontStruct do format "%\n" f
-	)
+)
 )

@@ -2,13 +2,13 @@
 
 	struct List(
 		fn defaultListProperty=
-			(
-			)
+		(
 		)
+	)
 		
 -- struct functions
 	function makeList names values=
-		(
+	(
 		-- names
 			local str=""
 			for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -18,9 +18,9 @@
 			global List=undefined
 			struct List(
 				fn defaultListProperty=
-					(
-					)
+				(
 				)
+			)
 
 			execute ("struct List("+str+")")
 			local s=List()
@@ -30,16 +30,16 @@
 	
 		-- return
 			return s
-		)
+	)
 
 	fn addItem &theList name value=
-		(
+	(
 		-- check that item exists
 			if findItem (getPropNames theList) name >0 then
-				(
+			(
 				setProperty theList name value
 				return theList
-				)
+			)
 		
 		-- if not, create a new struct
 		--initialize
@@ -53,10 +53,10 @@
 		-- delete the "defaultListProperty" if found
 			local i=findItem names #defaultListProperty
 			if i>0 then
-				(
+			(
 				deleteItem names i
 				deleteItem values i
-				)
+			)
 
 		-- add the new props	
 			append names name
@@ -64,7 +64,7 @@
 
 		-- create a new items struct and replace
 			theList= makeList names values
-		)
+	)
 
 List=undefined
 newList=createNewList()
@@ -91,7 +91,7 @@ newList
 
 
 	fn addItem theList name value=
-		(
+	(
 		-- initialize
 			local names=#()
 			local values=#()
@@ -107,7 +107,7 @@ newList
 		-- create a new items struct and replace
 			local tmpStruct=makeList names values
 			return tmpStruct
-		)
+	)
 newList=List()
 addItem newList #name "dave"
 newList=addItem newList #height 54

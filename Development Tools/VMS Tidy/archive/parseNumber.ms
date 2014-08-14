@@ -1,11 +1,11 @@
 fn parseNumber str all:false type:Integer=
-	(
+(
 	local n,i
 	n=(filterstring str "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")[1]
 	i=(findstring str n)-1
 	str=substring str 1 i
 	return if all then #(str,n as type) else n as type
-	)
+)
 
 parseNumber "object13"
 --13

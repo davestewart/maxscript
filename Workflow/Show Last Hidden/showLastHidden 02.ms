@@ -1,47 +1,47 @@
 struct showLastHidden
-	(
+(
 	nodeList = #()
 	,
 	fn addNode =
-		(
+	(
 		local obj = callbacks.notificationParam()
 		showLastHidden.nodes[showLastHidden.nodes.count].append obj
-		)
+	)
 	,
 	fn showNodes =
-		(
+	(
 		unhide showLastHidden.nodes[nodes.count]
 		showLastHidden.nodes.count = nodes.count - 1
-		)
+	)
 	,
 	fn update=
-		(
+	(
 		if showLastHidden.nodes[showLastHidden.nodes.count] > 0 then append showLastHidden.nodes (#())
-		)
 	)
+)
 
 
 struct showLastHidden
-	(
+(
 	nodes = #(#())
 	,
 	fn addNode =
-		(
+	(
 		local obj = callbacks.notificationParam()
 		append nodes[nodes.count] obj
-		)
+	)
 	,
 	fn showNodes =
-		(
+	(
 		unhide nodes[nodes.count]
 		nodes.count = nodes.count - 1
-		)
+	)
 	,
 	fn update=
-		(
+	(
 		if nodes[nodes.count].count > 0 then append nodes[nodes.count] (#())
-		)
 	)
+)
 
 
 callbacks.removeScripts id:#addNodeToHiddenList
@@ -64,10 +64,10 @@ showLastHidden.showNodes()
 
 
 fn unhideLastHiddenNodes =
-	(
+(
 	unhide lastHiddenNodes
 	lastHiddenNodes = #()
-	)
+)
 	
 unhideLastHiddenNodes()
 showLastHidden.nodeList

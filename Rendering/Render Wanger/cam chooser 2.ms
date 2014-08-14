@@ -1,5 +1,5 @@
 rollout ro1 "Camera renderer" width:231 height:259
-	(
+(
 	local c
 	fn camFilter c = classOf c == Targetcamera
 
@@ -9,20 +9,20 @@ rollout ro1 "Camera renderer" width:231 height:259
 	button btnRnd "Render" pos:[8,88] width:96 height:16
 	
 	on pck1 picked obj do
-		(
+	(
 		pck1.text = obj.name
 		c=obj
-		)
+	)
 
 	on btnRC pressed do
-		(
+	(
 		pck1.text = "Viewport"
 		c=undefined
-		)
+	)
 
 
 	on btnRnd pressed do
-		(
+	(
 		-- start the string
 			str = "render "
 		-- get the camera (if any)
@@ -30,8 +30,8 @@ rollout ro1 "Camera renderer" width:231 height:259
 			try(if isDeleted c then MessageBox ("Camera has been deleted!\nRendering from current viewport"))
 			catch()
 			format "c: %\n%\n" c str
-		)
 	)
+)
 if nRF != undefined then closerolloutfloater nRF 
 	nRF = newRolloutFloater "Cam chooser" 350 300 10 10 
 	addRollout ro1 nRF 

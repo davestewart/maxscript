@@ -7,7 +7,7 @@ print tp
 )
 
 fn worldToCam p c=
-	(
+(
 
 -- variables	
 	-- adjacent side, or z distance
@@ -49,5 +49,5 @@ fn worldToCam p c=
 
 -- return
 	return point2 x y
-	)
+)
 

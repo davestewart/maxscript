@@ -4,7 +4,7 @@
 			sf = openFile scriptFullPath mode:"r"
 		
 			while (NOT eof sf) do
-			(
+		(
 
 			skipToString sf "newRolloutFloater"
 			print (readLine sf)
@@ -16,6 +16,6 @@
 						if (findString s "newRolloutFloater") == undefined then	
 							print s
 						else seek sf i
-					)
+				)
 */
-			)
+		)

@@ -36,10 +36,10 @@ Note: If the style keyword parameter is not specifed, the default styles of #sty
 */
 
 rollout roContainer "3ds2ae" width:450 height:400
-	(
+(
 	subrollout container "Rollouts" height:400
 	on roContainer resized size do roContainer.container.height =size[2]-10
-	) 
+) 
 
 
 createdialog roContainer 450 410 10 10 style:#(#style_titlebar,#style_resizing,#style_minimizebox,#style_sysmenu) lockWidth:true

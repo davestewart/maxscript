@@ -1,7 +1,7 @@
 
 
 rollout uTestCurveControl "Curve Control"
-	(
+(
 	-- Curve control Properties
 	local ccProps = #(
 		#visible, 
@@ -12,7 +12,7 @@ rollout uTestCurveControl "Curve Control"
 		#zoomValues, 
 		#scrollValues, 
 		#commandMode
-		)
+	)
 	 
 	-- Curve properties 
 	local curveProps = #(
@@ -26,7 +26,7 @@ rollout uTestCurveControl "Curve Control"
 		#disabledStyle,
 		#numPoints,
 		#lookupTableSize
-		)
+	)
 	  
 	-- Curve Point properties
 	local cpProps = #(
@@ -40,7 +40,7 @@ rollout uTestCurveControl "Curve Control"
 		#selected,
 		#end,
 		#noXConstraint
-		)
+	)
 	 
 	button btn_props "Print Properties"
 	checkBox chk_visible "Visible" checked:true
@@ -65,7 +65,7 @@ rollout uTestCurveControl "Curve Control"
 	on chk_visible changed state do cc_test.visible = state
 	on chk_enable changed state do cc_test.enabled = state
 	on uTestCurveControl open do
-		(
+	(
 		 zoom cc_test #all
 		local colors = #(red, green, blue)
 		local styles = #(#solid, #dash, #dot, #dashDot, #dashDotDot, #null, #insideFrame)
@@ -73,7 +73,7 @@ rollout uTestCurveControl "Curve Control"
 		  
 		-- Initialize curve properties
 		for i=2 to num do
-			(
+		(
 			local crv = cc_test.curves[i]
 			local ci = ((mod (i-1) colors.count)+1) as integer
 			local si = ((mod (i-1) styles.count)+1) as integer
@@ -89,7 +89,7 @@ rollout uTestCurveControl "Curve Control"
 			-- format "del:%\n" del
 			-- Place intermediate points equally spaced
 			for j=1 to crv.numPoints do
-				(
+			(
 				local cp = crv.points[j]
 				format "% end: % -> " j cp.end
 				--cp.corner = true
@@ -99,12 +99,12 @@ rollout uTestCurveControl "Curve Control"
 				crv.points[j] = cp
 				format "%\n" crv.points[j].end
 				format "value: %\n" crv.points[j].value
-				)
 			)
 		)
+	)
 	 
 	on btn_props pressed do
-		(
+	(
 		local tab = "\t"
 		-- print the CC properties
 		format "Curve Control Properties\n"
@@ -113,7 +113,7 @@ rollout uTestCurveControl "Curve Control"
 		 format (tab + "Curves:\n")
 		tab += "\t"
 		for i=1 to cc_test.numCurves do
-			(
+		(
 			local crv = cc_test.curves[i]
 			-- print each Curve's properties
 			format (tab + "Curve%\n") i   
@@ -122,15 +122,15 @@ rollout uTestCurveControl "Curve Control"
 			  
 			format (tab + "\tPoints:\n")
 			for j=1 to crv.numPoints do
-				(
+			(
 				local cp = crv.points[j]
 				format (tab + "\t\tPoint%\n") j
 				-- Print each curve point properties
 				for pp in cpProps do
 				format (tab + "\t\t\t% : %\n") (pp as string) (getProperty cp pp)
-				)
 			)
 		)
+	)
 	 
 	-- Curve control event handlers
 	on cc_test selChanged ci val do format "curve % numSelected : %\n" ci val
@@ -138,7 +138,7 @@ rollout uTestCurveControl "Curve Control"
 	on cc_test tangentChanged ci val type do format "curve % tangentChanged : % %\n" ci val (type as string)
 	on cc_test deleted ci pi do format "curve % deleted : %\n" ci pi
 	on cc_test reset ci do format "curve % resetted\n" ci
-	)
+)
  
 curveFloater = newRolloutFloater "Curve Control Test" 500 400
  

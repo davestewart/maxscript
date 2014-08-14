@@ -9,12 +9,12 @@ rollout ro1 "AX Rollout" width:474 height:371
 	on ddl1 selected val do ax.activecell.text = val
 	
 	on ax Click do
-		(
+	(
 		local x = ax.activecell.top + 8
 		local y = ax.activecell.left + 8
 		ro1.ddl1.pos	=[y,x]
 		ro1.ddl1.width	=ax.activecell.width
-		)
+	)
 	
 )
 
@@ -39,10 +39,10 @@ enableAccelerators = false
 
 
 fn test=
-	(
+(
 	local ss=stringstream ""
 	showMethods ax to:ss 
-	)
+)
 	
 test()
 classof propArr[3].value

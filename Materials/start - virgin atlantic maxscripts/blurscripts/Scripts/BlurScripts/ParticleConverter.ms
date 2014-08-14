@@ -55,7 +55,7 @@ adj = 0.9
 -- Functions
 
 fn dothechange tho thno = 
-	(
+(
 	thno.rotation = tho.rotation
 	thno.scale = tho.scale
 
@@ -73,62 +73,62 @@ fn dothechange tho thno =
 -- Icon Size
 
 	if pt_from == 2 and pt_to == 2 then 
-		(
+	(
 		thno.Emitter_Rad_Len = tho.Emitter_Rad_Len
 		thno.Emitter_Width = tho.Emitter_Width
 		thno.Emitter_Height = tho.Emitter_Height
-		)
+	)
 	if pt_from == 2 and pt_to == 1 then
-		(
+	(
 		thno.iconsize = tho.Emitter_Rad_Len
-		)
+	)
 	if pt_from == 2 and pt_to == 0 then
-		(
+	(
 		thno.iconsize = (tho.Emitter_Rad_Len * 0.5)
-		)
+	)
 
 	if pt_from == 1 and pt_to == 2 then 
-		(
+	(
 		thno.Emitter_Rad_Len = tho.iconsize
 		thno.Emitter_Width = tho.iconsize
 		thno.Emitter_Height = tho.iconsize
-		)
+	)
 	if pt_from == 1 and pt_to == 1 then
-		(
+	(
 		thno.iconsize = tho.iconsize
-		)
+	)
 	if pt_from == 1 and pt_to == 0 then
-		(
+	(
 		thno.iconsize = tho.iconsize * 0.5
-		)
+	)
 
 	if pt_from == 0 and pt_to == 2 then 
-		(
+	(
 		thno.Emitter_Rad_Len = tho.iconsize * 2
 		thno.Emitter_Width = tho.iconsize * 2
 		thno.Emitter_Height = tho.iconsize * 2
-		)
+	)
 	if pt_from == 0 and pt_to == 1 then
-		(
+	(
 		thno.iconsize = tho.iconsize * 2
-		)
+	)
 	if pt_from == 0 and pt_to == 0 then
-		(
+	(
 		thno.iconsize = tho.iconsize
-		)
+	)
 
 -- Icon Hidden
 
 	if pt_from == 2 and pt_to == 2 then thno.emitterHidden = tho.emitterHidden
 	else
-		(
+	(
 		if pt_from == 2 then thno.iconHidden = tho.emitterHidden
 		else 
-			(
+		(
 			if pt_to == 2 then thno.emitterHidden = tho.iconHidden
 			else thno.iconHidden = tho.iconHidden
-			)
 		)
+	)
                           
 	thno.viewPercent = tho.viewPercent
 	thno.viewType = tho.viewType
@@ -157,14 +157,14 @@ fn dothechange tho thno =
 
 	if pt_from == 1 and pt_to == 1 then thno.particleType = tho.particleType
 	else
-		(
+	(
 		if pt_to == 1 and tho.particleType == 2 then thno.particleType = 3
 		else
-			(
+		(
 			if pt_from == 1 and tho.particletype == 3 then thno.particleType = 2
 			else thno.particleType = tho.particleType
-			)
 		)
+	)
 
 	thno.standardParticle = tho.standardParticle
 
@@ -187,27 +187,27 @@ fn dothechange tho thno =
 
 	matsource = ""
 	if pt_from == 2 then
-		(
+	(
 		if tho.materialSource == 0 then matsource = "icon"
 		else matsource = "inst"
-		)
+	)
 	else if pt_from == 1 then
-		(
+	(
 		if tho.materialSource == 0 then matsource = "icon"
 		else if tho.materialSource == 1 then matsource = "picked"
 		else matsource = "inst"
-		)
+	)
 	if pt_to == 2 then
-		(
+	(
 		if matsource == "icon" then thno.materialSource = 0
 		else if matsource == "inst" then thno.materialSource = 1
-		)
+	)
 	else if pt_to == 1 then
-		(
+	(
 		if matsource == "icon" then thno.materialSource = 0
 		else if matsource == "picked" then thno.materialSource = 1
 		else if matsource == "inst" then thno.materialSource = 2
-		)
+	)
 
 -- Rotation And Collision
 
@@ -262,19 +262,19 @@ fn dothechange tho thno =
 	if pt_from != 0 and pt_to != 0 then thno.Spawn_Lifespan = tho.Spawn_Lifespan
 
 	thno.objectMutationQueue = tho.objectMutationQueue
-	)
+)
 
 fn canidothechange = 
-	(
+(
 	if selection.count == 0 then (MessageBox "Please select at least one object" title:"ParticleConverter")
 	else
-		(
+	(
 		undo "ParticleConverter" on
-			(
+		(
 			for i in selection do
-				(
+			(
 				if classof i.baseobject == SuperSpray or classof i.baseobject == PArray or classof i.baseobject == PCloud then
-					(
+				(
 					if classof i.baseobject == SuperSpray then pt_from = 0
 					if classof i.baseobject == PArray then pt_from = 1
 					if classof i.baseobject == PCloud then pt_from = 2
@@ -282,27 +282,27 @@ fn canidothechange =
 					if pt_to == 1 then new_part = PArray ()
 					if pt_to == 2 then new_part = PCloud ()
 					dothechange i new_part
-					)
-				else continue
 				)
+				else continue
 			)
 		)
 	)
+)
 
 -- The Script
 
 rollout pcr_rollout "ParticleConverter"
-	(
+(
 	group "Convert To:"
-	(
+(
 	dropdownlist part_type_rb "" items:#("SuperSpray", "PArray", "PCloud") selection:1
-	)	
+)	
 
 	on part_type_rb selected i do pt_to = (i - 1)
 
 	button button_do "Do the Conversion" width:150 align:#center toolTip:"Do the Conversion"
 	on button_do pressed do canidothechange ()
-	)
+)
 
 if pcr_floater != undefined then CloseRolloutFloater pcr_floater
 pcr_floater = newRolloutFloater "ParticleConverter v1.11" 230 147

@@ -28,35 +28,35 @@
 	------------------------------------
 
 	struct MD2_Tex
-	(
+(
 		s,t
-	)	
+)	
 
 	struct MD2_Vertex
-	(
+(
 		pos, lightNormalIndex
-	)
+)
 
 	struct MD2_Frame
-	(
+(
 		scale, translate, name,
 		vList,vNorm	
-	)
+)
 
 	struct MD2_Tri
-	(
+(
 		vx,
 		st
-	)
+)
 
 	struct MD2_model
-	(
+(
 		skinlist,
 		texlist,
 		trilist,
 		framelist,
 		glcmdlist
-	)
+)
 
 	------------------------------------
 	-- GL COMMAND GENERATION
@@ -82,40 +82,40 @@
 	-- Utilities
 
 		fn addcheck cb = 
-		(
+	(
 			if classof cb == string do messagebox cb title:"MD2 / TAG Export Error"
-		)
+	)
 
 		fn debug val =
-		(
+	(
 			if roMD2Exporter.debug.checked do
-			(
+		(
 				options.printAllElements = true
 				print val
-			)
 		)
+	)
 		
 		fn updateProgress v vMax =
-		(
+	(
 			local val = if v == 0 AND vMax == 0 then 0 else (v as float) / vMax * 100.0
 			roMD2Exporter.pbMD2.value = val
-		)
+	)
 		
 		fn updateStatus val =
-		(
+	(
 			roMD2Exporter.lblStatus.text = val
-		)
+	)
 
 
 		fn pad num len char:"0" =
-		(
+	(
 			local str = num as string;
 			while str.count < len do
-			(
+		(
 				str = char + str;
-			)
-			str
 		)
+			str
+	)
 		
 
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -135,7 +135,7 @@
 	-- STRIPLENGTH
 	------------------------------------
 	fn striplength md2 it iv = 
-	(
+(
 		strip_vx		 = #()
 		strip_st		 = #()
 		strip_tris		 = #()
@@ -161,23 +161,23 @@
 		done			 = false
 		
 		do
-		(
+	(
 			nexttri = false
 			
 			for i = it + 1 to md2.trilist.count do
-			(
+		(
 				tri = md2.trilist[i]
 
 				if tri.vx[1] == mvx1 do if tri.st[1] == mst1 do if tri.vx[2] == mvx2 do if tri.st[2] == mst2 do
-				(				
+			(				
 					if used[i] > 0 do
-					(
+				(
 						done		 = true
 						exit
-					)
+				)
 
 					if (mod stripcount 2) == 1 then
-					(
+				(
 						mvx2		 = tri.vx[3]
 						mst2		 = tri.st[3]
 						append strip_vx mvx2
@@ -187,7 +187,7 @@
 						mst1		 = tri.st[3]
 						append strip_vx mvx1
 						append strip_st mst1
-					)
+				)
 					append strip_tris i
 					
 					stripcount		 += 1
@@ -195,18 +195,18 @@
 					
 					nexttri			 = true
 					exit
-				)
+			)
 
 				if tri.vx[2] == mvx1 do if tri.st[2] == mst1 do if tri.vx[3] == mvx2 do if tri.st[3] == mst2 do
-				(				
+			(				
 					if used[i] > 0 do
-					(
+				(
 						done		 = true
 						exit
-					)
+				)
 
 					if (mod stripcount 2) == 1 then
-					(
+				(
 						mvx2		 = tri.vx[1]
 						mst2		 = tri.st[1]
 						append strip_vx mvx2
@@ -216,7 +216,7 @@
 						mst1		 = tri.st[1]
 						append strip_vx mvx1
 						append strip_st mst1
-					)
+				)
 					append strip_tris i
 					
 					stripcount += 1
@@ -224,18 +224,18 @@
 					
 					nexttri = true
 					exit
-				)
+			)
 
 				if tri.vx[3] == mvx1 do if tri.st[3] == mst1 do if tri.vx[1] == mvx2 do if tri.st[1] == mst2 do
-				(				
+			(				
 					if used[i] > 0 do
-					(
+				(
 						done = true
 						exit
-					)
+				)
 
 					if (mod stripcount 2) == 1 then
-					(
+				(
 						mvx2		 = tri.vx[2]
 						mst2		 = tri.st[2]
 						append strip_vx mvx2
@@ -245,7 +245,7 @@
 						mst1		 = tri.st[2]
 						append strip_vx mvx1
 						append strip_st mst1
-					)
+				)
 					append strip_tris i
 					
 					stripcount		 += 1
@@ -253,28 +253,28 @@
 					
 					nexttri			 = true
 					exit
-				)
 			)
+		)
 			if not done and not nexttri do exit
 		) while not done
 		
 		for i = it + 1 to md2.trilist.count do
-		(
+	(
 			if used[i] == 2 do
-			(
+		(
 				used[i] = 0
-			)
 		)
+	)
 		
 		return stripcount
-	)
+)
 
 
 	------------------------------------
 	-- FANLENGTH
 	------------------------------------
 	fn fanlength md2 it iv = 
-	(
+(
 		strip_vx		 = #()
 		strip_st		 = #()
 		strip_tris		 = #()
@@ -300,20 +300,20 @@
 		done			 = false
 		
 		do
-		(
+	(
 			nexttri = false
 		
 			for i = it + 1 to md2.trilist.count do
-			(
+		(
 				tri = md2.trilist[i]
 
 				if tri.vx[1] == mvx1 do if tri.st[1] == mst1 do if tri.vx[2] == mvx2 do if tri.st[2] == mst2 do
-				(				
+			(				
 					if used[i] > 0 do
-					(
+				(
 						done		 = true
 						exit
-					)
+				)
 
 					mvx2			 = tri.vx[3]
 					mst2			 = tri.st[3]
@@ -327,15 +327,15 @@
 					
 					nexttri = true
 					exit
-				)
+			)
 
 				if tri.vx[2] == mvx1 do if tri.st[2] == mst1 do if tri.vx[3] == mvx2 do if tri.st[3] == mst2 do
-				(				
+			(				
 					if used[i] > 0 do
-					(
+				(
 						done		 = true
 						exit
-					)
+				)
 
 					mvx2			 = tri.vx[1]
 					mst2			 = tri.st[1]
@@ -349,15 +349,15 @@
 					
 					nexttri			 = true
 					exit
-				)
+			)
 				
 				if tri.vx[3] == mvx1 do if tri.st[3] == mst1 do if tri.vx[1] == mvx2 do if tri.st[1] == mst2 do
-				(				
+			(				
 					if used[i] > 0 do
-					(
+				(
 						done		 = true
 						exit
-					)
+				)
 
 					mvx2			 = tri.vx[2]
 					mst2			 = tri.st[2]
@@ -371,21 +371,21 @@
 					
 					nexttri = true
 					exit
-				)
 			)
+		)
 			if not done and not nexttri do exit
 		) while not done
 		
 		for i = it + 1 to md2.trilist.count do
-		(
+	(
 			if used[i] == 2 do
-			(
+		(
 				used[i] = 0
-			)
 		)
+	)
 		
 		return stripcount
-	)
+)
 
 
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -403,26 +403,26 @@
 -- MD2 Export
 
 	fn makemd2 obj = 
-	(
+(
 	------------------------------------
 	-- animation time
 	------------------------------------
 	
 		if roMD2Exporter.useanim.state == 1 then 
-		(
+	(
 			astart		 = animationrange.start
 			aend		 = animationrange.end
-		)
+	)
 		else
-		(
+	(
 			astart		 = roMD2Exporter.animstart.value
 			aend		 = roMD2Exporter.animend.value
-		)
+	)
 		if not(roMD2Exporter.oneframe.state) do 
-		(
+	(
 			astart		 = 1
 			aend		 = 1
-		)
+	)
 			
 	------------------------------------
 	-- objects
@@ -437,11 +437,11 @@
 	
 		updateStatus "Building texture vert list"
 		for i = 1 to getnumtverts obj do
-		(
+	(
 			local s		 = (((getTVert obj i).x) * 256) as integer
 			local t		 = ((-(getTVert obj i).y + 1) * 256) as integer
 			append md2.texlist (md2_tex s:s t:t)
-		)
+	)
 		
 	------------------------------------
 	-- build triangle list
@@ -449,7 +449,7 @@
 		
 		updateStatus "Building triangle list"
 		for i = 1 to obj.numfaces do
-		(
+	(
 			local vx = #()
 			append vx (((getFace obj i).z) as integer)
 			append vx (((getFace obj i).y) as integer)
@@ -461,7 +461,7 @@
 			append st (((getTVface obj i).x) as integer)
 			
 			append md2.trilist (md2_Tri vx st)
-		)
+	)
 		
 	-------------------------------------
 	-- build frame list
@@ -477,7 +477,7 @@
 		local trafo			 = matrix3 1
 		local traforot		 = matrix3 1
 		if (classof floor) != UndefinedClass then
-		(
+	(
 			trafo.row1			 = normalize floor.transform.row1
 			trafo.row2			 = normalize floor.transform.row2
 			trafo.row3			 = normalize floor.transform.row3
@@ -487,7 +487,7 @@
 
 			traforot			 = copy trafo
 			traforot.row4		 = [0,0,0]
-		)
+	)
 
 	-------------------------------------
 	-- output frames
@@ -495,7 +495,7 @@
 		
 		local fNum = 1
 		for f = astart to aend by roMD2Exporter.stepframe.value do 
-		(
+	(
 			
 			updateProgress f aend
 			sliderTime = f
@@ -512,10 +512,10 @@
 			vmax				 = [0,0,0]
 
 			if roMD2Exporter.unibbox.state then
-			(
+		(
 				for curObj in objects do
 					for i = 1 to curObj.numverts do at time f
-					(
+				(
 						local v						 = (getvert curObj i) * trafo
 						if v.x < vmin.x do vmin.x	 = v.x
 						if v.y < vmin.y do vmin.y	 = v.y
@@ -523,12 +523,12 @@
 						if v.x > vmax.x do vmax.x	 = v.x
 						if v.y > vmax.y do vmax.y	 = v.y
 						if v.z > vmax.z do vmax.z	 = v.z	
-					)
-			)
+				)
+		)
 			else 
-			(
+		(
 				for i = 1 to obj.numverts do at time f
-				(
+			(
 					local v							 = (getvert obj i) * trafo
 					if v.x < vmin.x do vmin.x		 = v.x
 					if v.y < vmin.y do vmin.y		 = v.y
@@ -536,14 +536,14 @@
 					if v.x > vmax.x do vmax.x		 = v.x
 					if v.y > vmax.y do vmax.y		 = v.y
 					if v.z > vmax.z do vmax.z		 = v.z	
-				)
 			)
+		)
 				
 			frame.translate			 = vmin
 			frame.scale				 = (vmax - vmin) / [255,255,255]
 		
 			for i = 1 to obj.numverts do at time f
-			(
+		(
 				local v			 = (getvert obj i) * trafo
 				v				 -= frame.translate
 				v				 /= frame.scale
@@ -557,16 +557,16 @@
 				
 				if roMD2Exporter.donormals.state do
 					for j = 1 to nlist.count do
-					(
+				(
 						local dotvalue = dot nlist[j] vn
 						if dotvalue > maxdot do
-						(
+					(
 							maxdot = dotvalue
 							normindex = j-1
-						)
 					)
+				)
 				append normlist normindex 
-			)
+		)
 			
 			frame.vList		 = vertlist
 			frame.vNorm		 = normlist
@@ -575,7 +575,7 @@
 			debug frame
 			append md2.framelist frame
 			
-		)	
+	)	
 	
 	------------------------------------
 	-- Z - sort triangle list
@@ -583,22 +583,22 @@
 		
 		updateStatus "Z-sorting triangles"
 		if roMD2Exporter.dozsort.state do
-		(
+	(
 			fn zsort t1 t2 ff: = 
 			( (ff.vList[t1.vx[1]].z + ff.vList[t1.vx[2]].z + ff.vList[t1.vx[3]].z) - (ff.vList[t2.vx[1]].z + ff.vList[t2.vx[2]].z + ff.vList[t2.vx[3]].z) )
 
 			qsort md2.trilist zsort ff:md2.framelist[1]
-		)
+	)
 	
 	------------------------------------
 	-- build GL command list
 	------------------------------------
 		
 		if roMD2Exporter.doglcmds.state do
-		(
+	(
 			updateStatus "Building GL command list"
 			if cmds == undefined or not roMD2Exporter.sameglcmds.state do
-			(
+		(
 				cmds			 = #()
 				used			 = #()
 				for i = 1 to md2.trilist.count do append used 0
@@ -608,21 +608,21 @@
 				best_tris		 = #()
 		
 				for i = 1 to md2.trilist.count do
-				(
+			(
 					if used[i] > 0 do continue
 					
 					bestlen		 = 0
 					besttype	 = 0
 					
 					for type = 1 to 2 do
-					(
+				(
 						for sv = 1 to 3 do
-						(
+					(
 							if type == 1 then len = striplength md2 i sv
 							else len = fanlength md2 i sv
 							
 							if len > bestlen do
-							(
+						(
 								besttype		 = type
 								bestlen			 = len
 								best_vx			 = #()
@@ -630,28 +630,28 @@
 								best_tris		 = #()
 		
 								for j = 1 to bestlen + 2 do
-								(
+							(
 									append best_vx strip_vx[j]
 									append best_st strip_st[j]
-								)
+							)
 								for j = 1 to bestlen do
-								(
+							(
 									append best_tris strip_tris[j]
-								)
 							)
 						)
 					)
+				)
 					
 					for j = 1 to bestlen do
-					(
+				(
 						used[best_tris[j]] = 1
-					)
+				)
 						
 					if besttype == 1 then append cmds (bestlen + 2)
 					else append cmds -(bestlen + 2)
 					
 					for j = 1 to bestlen + 2 do
-					(
+				(
 						k		 = best_st[j]
 						
 						s		 = md2.texlist[k].s as float
@@ -663,25 +663,25 @@
 						append cmds s
 						append cmds t
 						append cmds (best_vx[j] - 1)   -- (C Style: -1)
-					)		
 				)		
+			)		
 				append cmds 0
 				
 				if not roMD2Exporter.sameglcmds.enabled do
-				(
+			(
 					roMD2Exporter.sameglcmds.enabled = true
-				)
 			)
+		)
 			
 			md2.glcmdlist = cmds
-		)
+	)
 		
 	------------------------------------
 	-- return
 	------------------------------------
 	
 		md2
-	)
+)
 
 -- ------------------------------------------------------------------------------------------------------------------------
 --
@@ -697,7 +697,7 @@
 -- Write MD2
 
 	fn writemd2 obj md2file = 
-	(
+(
 		
 	updateStatus "Writing file to disk"
 
@@ -766,42 +766,42 @@
 	-----------------------------------------------------
 	
 		for i in model.skinlist do
-		(
+	(
 			if i.count > 63 do return "Skin name too long"
 			writestring f i
 			for j = i.count to 62 do writebyte f 0
-		)
+	)
 
 	-----------------------------------------------------
 	-- write texture coordinate list
 	-----------------------------------------------------
 		
 		for i in model.texlist do
-		(
+	(
 			writeshort f i.s #unsigned
 			writeshort f i.t #unsigned
-		)
+	)
 		
 	-----------------------------------------------------
 	--write triangles (C style: -1)
 	-----------------------------------------------------	
 		
 		for i in model.trilist do
-		(
+	(
 			writeshort f (i.vx[1] - 1) #unsigned
 			writeshort f (i.vx[2] - 1) #unsigned
 			writeshort f (i.vx[3] - 1) #unsigned
 			writeshort f (i.st[1] - 1) #unsigned
 			writeshort f (i.st[2] - 1) #unsigned
 			writeshort f (i.st[3] - 1) #unsigned
-		)
+	)
 
 	-----------------------------------------------------
 	-- write frames
 	-----------------------------------------------------
 		
 		for i in model.framelist do
-		(
+	(
 			writefloat f i.scale.x
 			writefloat f i.scale.y
 			writefloat f i.scale.z
@@ -814,24 +814,24 @@
 
 			--k = 0
 			for j = 1 to i.vlist.count do
-			(
+		(
 				writebyte f i.vlist[j].x
 				writebyte f i.vlist[j].y
 				writebyte f i.vlist[j].z
 				writebyte f i.vNorm[j]
-			)
 		)
+	)
 		
 	-----------------------------------------------------
 	-- write gl commands
 	-----------------------------------------------------
 		
 		for i in model.glcmdlist do
-		(
+	(
 			if (classof i) == integer then writelong f i
 			else if (classof i) == float then writefloat f i
 			else return "Unknown glcmd data type"			
-		)
+	)
 		
 	------------------------------------------------------
 	-- end of file writing
@@ -844,7 +844,7 @@
 		updateStatus ""
 		updateProgress 0 0
 
-	)
+)
 
 
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -862,40 +862,40 @@
 -- Tag Export
 
 	struct TAG_single
-	(
+(
 		matl
-	)
+)
 
 	struct TAG_file
-	(
+(
 		framenum,
 		namel,
 		tagl
-	)
+)
 
 	------------------------------------
 	-- MAKETAGS
 	------------------------------------
 	fn maketags objlist = 
-	(
+(
 		-------------------------------------
 		-- get frame range
 		-------------------------------------
 			if roMD2Exporter.useanim.state == 1 then 
-				(
+			(
 				astart			 = animationrange.start
 				aend			 = animationrange.end
-				)
+			)
 			else
-				(
+			(
 				astart			 = roMD2Exporter.animstart.value
 				aend			 = roMD2Exporter.animend.value
-				)
+			)
 			if not(roMD2Exporter.oneframe.state) do 
-				(
+			(
 				astart			 = 1
 				aend			 = 1
-				)
+			)
 				
 		-------------------------------------
 		-- objects
@@ -909,27 +909,27 @@
 		-------------------------------------
 			local trafo = matrix3 1
 			if (classof floor) != UndefinedClass then
-			(
+		(
 				trafo.row1		 = normalize floor.transform.row1
 				trafo.row2		 = normalize floor.transform.row2
 				trafo.row3		 = normalize floor.transform.row3
 				trafo.row4		 = floor.transform.row4
 				trafo.row4.z	 += 32
 				trafo			 = inverse trafo		
-			)
+		)
 
 		-------------------------------------
 		-- go through all objects
 		-------------------------------------
 			for obj in objlist do
-			(
+		(
 				-------------------------------------
 				-- build frame list
 				-------------------------------------
 				local tag = TAG_single matl:#()
 				
 				for f = astart to aend by roMD2Exporter.stepframe.value do at time f
-				(
+			(
 					local mat		 = matrix3 0
 					
 					mat				 = obj.transform * trafo
@@ -938,21 +938,21 @@
 					mat.row3		 = normalize mat.row3
 					
 					append tag.matl mat
-				)
+			)
 				
 				append tags.namel obj.name
 				append tags.tagl tag
-			)
+		)
 			
 			tags
-		)
+	)
 
 	------------------------------------
 	-- WRITETAGS
 	------------------------------------
 		
 	fn writetags objlist tagfile = 
-	(
+(
 		if objlist.count == 0 do return "No objects selected"
 		tags = maketags objlist	
 		
@@ -988,19 +988,19 @@
 	-- write out the tag names
 	-----------------------------------------------------
 		for i in tags.namel do
-		(
+	(
 			if i.count > 63 do return "Object name too long"
 			writestring f i
 			for j = i.count to 62 do writebyte f 0
-		)
+	)
 
 	-----------------------------------------------------
 	-- write positions and matrices
 	-----------------------------------------------------
 		for i in tags.tagl do
-		(
+	(
 			for j = 1 to i.matl.count do
-			(
+		(
 				writefloat f i.matl[j].row1.x
 				writefloat f i.matl[j].row1.y
 				writefloat f i.matl[j].row1.z
@@ -1013,8 +1013,8 @@
 				writefloat f i.matl[j].row4.x
 				writefloat f i.matl[j].row4.y
 				writefloat f i.matl[j].row4.z
-			)
 		)
+	)
 		
 	------------------------------------------------------
 	-- end of file writing
@@ -1024,7 +1024,7 @@
 		messagebox msgstr title:"TAG Export Success"
 
 		fclose f	
-	)
+)
 
 
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -1043,78 +1043,78 @@
 	try(destroydialog roMD2Exporter);catch(err)
 
 	rollout roMD2Exporter "MD2 / TAG Exporter"
-	(
+(
 		local lastfile = ""
 		
 		group "Animation"
-		(
+	(
 			checkbox oneframe "Save Animation" checked:true align:#center
 			spinner stepframe "Frame Step" range:[1,200,5] fieldwidth:40 type:#integer
 			radiobuttons useanim labels:#("Active Time Segment","Custom Time Segment") default:2
 			spinner animstart "from" range:[0,1000,0] type:#integer fieldwidth:40 across:2
 			spinner animend "to" range:[0,1000,60] type:#integer fieldwidth:40
-		)
+	)
 		group "Skins"
-		(
+	(
 			edittext skinText
 			listbox skinBox items:#() height:4
 			button baddSkin "Add" across:2
 			button bdelSkin "Delete"
-		)
+	)
 		group "MD2 Options"
-		(
+	(
 			checkbox dozsort "Z - Sort Triangles" align:#center checked:true align:#left
 			checkbox donormals "Generate Normals" align:#center checked:true
 			checkbox doglcmds "Add GL Commands" align:#center checked:true
 			checkbox unibbox "Unified Bounding Box" align:#center checked:false
 			checkbox sameglcmds "Use same GLCmds" align:#center checked:false enabled:false
-		)
+	)
 		
 		group "MD2 Export"
-		(
+	(
 			button bexportMD2 "Export MD2"
 			progressBar pbMD2 "ProgressBar" 
 			label lblStatus "" align:#left
 			checkbox debug "Debug" align:#center checked:true align:#left
-		)
+	)
 		
 		group "TAG Export"
-		(
+	(
 			button bexportTAG "     Export TAG    "
-		)
+	)
 		group "About"
-		(
+	(
 			label titleLabel	"MD2 / TAG Exporter v1.4"
 			HyperLink credits1 "by Herby" align:#center address:"mailto:herby@planetquake.com" color:(color 0 100 0) hoverColor:(color 0 0 100)
 			label credits2 "based on code"
 			HyperLink credits3 "by Adam Barton" align:#center address:"mailto:adam.add3d.co.uk" color:(color 0 100 0) hoverColor:(color 0 0 100)
-		)
+	)
 		
 		on baddSkin pressed do
-		(
+	(
 			append skins skinText.text
 			skinBox.items = skins
-		)
+	)
 		
 		on bdelSkin pressed do
-		(
+	(
 			if skinBox.selection > 0 then deleteItem skins skinBox.selection
 			skinBox.items = skins
-		)
+	)
 		
 		on skinBox selected num do
-		(
+	(
 			skinText.text = skinBox.selected
-		)
+	)
 		
 	--	on skinText entered text do
-	--	(
+	--(
 	--		if skinBox.selection > 0 then skins[skinBox.selection] = skinText.text
 	--		skinBox.items = skins
-	--	)
+	--)
 			
 		on bexportMD2 pressed do
-		( 
+	( 
 			if heapSize < 32000000 then heapSize = 32000000
 			
 			local sel = (getCurrentSelection())[1]
@@ -1122,24 +1122,24 @@
 			md2filename = getsavefilename caption:"Save MD2" filename:filename types:"Blitz MD2 (*.md2)|*.md2|All Files (*.*)|*.*|"
 			
 			if md2filename != undefined do 
-			(				
+		(				
 				addcheck (writemd2 selection md2filename)
 				lastfile = substring md2filename 1 (md2filename.count - 4)
-			)
 		)
+	)
 
 		on bexportTAG pressed do
-		( 
+	( 
 			if heapSize < 32000000 then heapSize = 32000000
 
 			tagfilename = getsavefilename caption:"Save TAG" filename:(lastfile + ".tag") types:"Herby TAG (*.tag)|*.tag|All Files (*.*)|*.*|"
 			if tagfilename != undefined do 
-			(				
+		(				
 				addcheck (writetags selection tagfilename)
 				lastfile = substring tagfilename 1 (tagfilename.count - 4)
-			)
 		)
 	)
+)
 
 	createDialog roMD2Exporter
 )

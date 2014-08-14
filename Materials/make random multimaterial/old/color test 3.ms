@@ -44,7 +44,7 @@ rollout matColor "Color Options" width:200 height:600
 ---------------------------------------------------------------------------------------------------
 
 fn updateColor =
-	(
+(
 	-- set variables
 		baseClr = cpClr.color
 		rVar = spnClrRedVar.value
@@ -85,43 +85,43 @@ fn updateColor =
 		lblClrBluMin.text = bMin as String
 		cpClrBluMax.color = color 0 0 bMax
 		lblClrBluMax.text = bMax as String
-	)
+)
 
 
 fn setColor i j =
-	(
+(
 	case rdoColGen.state of
-		(
+	(
 		1:
-			(
+		(
 			r = rMin + (((rMax - rMin) / j) * i)
 			g = gMin + (((gMax - gMin) / j) * i)
 			b = bMin + (((gMax - gMin) / j) * i)
-			)
+		)
 		2:
-			(
+		(
 			r = random rMin rMax
 			g = random gMin gMax
 			b = random bMin bMax
-			)
 		)
-	return (color r g b)
 	)
+	return (color r g b)
+)
 
 
 fn createMaterial slot =
-	(
+(
 	subs = 10
 
 	matTop = meditMaterials[slot] = Multimaterial ()
 	matTop.numSubs = subs
 
 	for i = 1 to subs do
-		(
+	(
 		matSub = meditMaterials[slot].materialList[i]
 		matSub.diffuse = setColor i subs
-		)
 	)
+)
 
 
 
@@ -148,8 +148,8 @@ fn createMaterial slot =
 ---------------------------------------------------------------------------------------------------
 
 if multiMat != undefined do
-				(
+			(
 				closerolloutfloater multiMat 
-				)		
+			)		
 multiMat = newRolloutFloater "Random Multi Material" 230 400
 addRollout matColor multiMat

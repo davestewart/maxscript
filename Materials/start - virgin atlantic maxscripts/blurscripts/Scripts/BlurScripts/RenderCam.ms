@@ -101,114 +101,114 @@ rc_outfiletype = ".tga"
 -- Functions
 
 fn what_to_do = 
-	(
+(
 	if rc_out_dir[rc_out_dir.count] != "\\" then 
-		(
+	(
 		rc_out_dir = rc_out_dir + "\\"
-		)
+	)
 	rc_outname = ""
 	i = 1
 	for w = 1 to 999999 do
-		(
+	(
 		rc_outname = rc_out_dir + rc_outfilename + (extra_zeros w 4) + rc_outfiletype
 		if (getFiles rc_outname).count != 0 then
-			(
+		(
 			i = i + 1
-			)
-		else exit
 		)
+		else exit
+	)
 	rc_outname = rc_out_dir + rc_outfilename + (extra_zeros i 4) + rc_outfiletype
 	render camera: myrendercam frame: 0 outputfile: rc_outname vfb: off
 	gc()
-	)
+)
 
 -- The Script
 
 rollout rc_rollout "RenderCam"
-	(
+(
 	timer myclock interval:intervaltime_ticks
 	on myclock tick do 
-		(
+	(
 		if clockon == 1 then what_to_do ()
-		)
+	)
 
 	group "Camera"
-	(
+(
 	label what_camera "None" align:#center
 
 	pickbutton pickthecamera "Pick The Camera" width:150 align:#center toolTip:"Pick The Camera" filter:camera_filter
-	)
+)
 	on pickthecamera picked obj do 
-		(
+	(
 		camerapicked = 1
 		myrendercam = obj
 		what_camera.text = obj.name
-		)
+	)
 
 	group "Time"
-	(
+(
 	spinner intervaltime_spinner "Interval Time (min): " range:[1,99999,20] fieldWidth:35 type:#integer align:#center
-	)
+)
 	on intervaltime_spinner changed val do 
-		(
+	(
 		intervaltime_min = val
 		intervaltime_ticks = intervaltime_min * multiplier
 		myclock.interval = intervaltime_ticks
-		)
+	)
 
 	group "Files"
-	(
+(
 	button rc_getpath "Path" align:#left across:2
 	edittext rc_pathlabel "" fieldWidth:145 offset:[-55,4] text:"undefined"
 	edittext rc_filename "Name: " fieldWidth:145 text:"rendercam" align:#left offset:[4,0]
 	edittext rc_filetype "Type: " fieldWidth:145 text:".tga" align:#left offset:[8,0]
-	)
+)
 	
 	on rc_getpath pressed do
-		(
+	(
 		rc_out_dir = getSavePath()
 		rc_pathlabel.text = (rc_out_dir as string)
-		)
+	)
 	on rc_pathlabel entered text do 
-		(
+	(
 		if rc_pathlabel.text == "undefined" then rc_out_dir = undefined
 		else rc_out_dir = rc_pathlabel.text
-		)
+	)
 	on rc_filename changed text do rc_out_filename = rc_filename.text
 	on rc_filetype changed text do rc_out_filetype = rc_filetype.text	
 
 	checkbutton startthecam "Off" width:150 align:#center toolTip:"Off" highlightColor:orange
 	on startthecam changed state do
-		(
+	(
 		if state == on then
-			(
+		(
 			if camerapicked == 1 then
-				(
+			(
 				if rc_out_dir != undefined then
-					(
+				(
 					clockon = 1
 					startthecam.text = "On"
 					rc_getpath.enabled = false
 					rc_pathlabel.enabled = false
 					rc_filename.enabled = false
 					rc_filetype.enabled = false
-					)
+				)
 				else
-					(
+				(
 					MessageBox "Please pick a valid path" title:"RenderCam"
 					startthecam.state = off
 					startthecam.text = "Off"
-					)
 				)
+			)
 			else 
-				(
+			(
 				MessageBox "Please select a camera first" title:"RenderCam"
 				startthecam.state = off
 				startthecam.text = "Off"
-				)
 			)
+		)
 		else 
-			(
+		(
 			clockon = 0
 			startthecam.state = off
 			startthecam.text = "Off"
@@ -216,18 +216,18 @@ rollout rc_rollout "RenderCam"
 			rc_pathlabel.enabled = true
 			rc_filename.enabled = true
 			rc_filetype.enabled = true
-			)
 		)
+	)
 
 	button rendernow "Render Now" width:150 align:#center toolTip:"Render Now"
 	on rendernow pressed do 
-		(
+	(
 		if camerapicked == 1 then
-			(
+		(
 			if rc_out_dir != undefined then
-				(
+			(
 				if clockon == 1 then 
-					(
+				(
 					clockon = 0
 					startthecam.state = off
 					startthecam.text = "Off"
@@ -235,9 +235,9 @@ rollout rc_rollout "RenderCam"
 					clockon = 1
 					startthecam.state = on
 					startthecam.text = "On"		
-					)
+				)
 				else
-					(
+				(
 					rc_getpath.enabled = false
 					rc_pathlabel.enabled = false
 					rc_filename.enabled = false
@@ -247,13 +247,13 @@ rollout rc_rollout "RenderCam"
 					rc_pathlabel.enabled = true
 					rc_filename.enabled = true
 					rc_filetype.enabled = true
-					)
 				)
-			else (MessageBox "Please pick a valid path" title:"RenderCam")
 			)
-		else (MessageBox "Please select a camera first" title:"RenderCam")
+			else (MessageBox "Please pick a valid path" title:"RenderCam")
 		)
+		else (MessageBox "Please select a camera first" title:"RenderCam")
 	)
+)
 
 if rc_floater != undefined then CloseRolloutFloater rc_floater
 rc_floater = newRolloutFloater "RenderCam v1.16" 240 333

@@ -3,20 +3,20 @@
 
 	-- core functions
 		fn callbackFnCaller theAnim theParent theIndex theGParent theNode =
-			(
+		(
 			callbackFn theAnim theParent theIndex theGParent theNode
-			)
+		)
 		
 		fn testCallbackAdditionFunction arg1 arg2 = (true)
 	
 	
 	-- editable function
 		fn callbackFn theAnim theParent theIndex theGParent theNode = 
-			(
+		(
 			-- call the functions here
 			--testCallbackFilterFunction theAnimatable theParent theIndex theGParent theNode 
 			filterTracks theAnim theParent theIndex theGParent theNode 
-			)
+		)
 			
 	-- add
 		theIndex = (maxOps.trackbar).registerFilter callbackFnCaller callbackAdditionFunction "Test Filter" 8 active:true stopTraversal:false
@@ -81,45 +81,45 @@ customAtts: Controller:Bezier_Float
 
 
 	fn filterTracks theAnim theParent theIndex theGParent theNode = 
-		(
+	(
 		if theParent != undefined then
-			(
+		(
 			return (findItem paramList theParent[theIndex]) != 0
-			)
-		return false
 		)
+		return false
+	)
 
 
 	fn filterTracks theAnim theParent theIndex theGParent theNode = 
-		(
+	(
 		if theParent != undefined then
-			(
+		(
 			if ((findItem paramList theParent[theIndex]) != 0) then return true
 			format "%\n" theParent[theIndex]
 			try(
 				format "%\n" theParent[theIndex]
 				if (findItem paramList theParent[theIndex].name) > 0 then return true
 				else return false
-				)
+			)
 			catch(
 				format "\n"
 				return false
-				)
 			)
-		else return false
 		)
+		else return false
+	)
 		
 	fn filterTracks theAnim theParent theIndex theGParent theNode = 
-		(
+	(
 		if(hasproperty theParent[theIndex] "name") then
-			(
+		(
 			if (findItem paramList theParent[theIndex].name) > 0 then return true
 			else return false
-			)
+		)
 		else(
 			return false
-			)
 		)
+	)
 		
 	fn filterTracks2 theAnim theParent theIndex theGParent theNode = 
 		local param		= theNode.baseObject.Custom_Attributes[1]
@@ -137,9 +137,9 @@ customAtts: Controller:Bezier_Float
 		catch(
 			format"theAnim:%\n theParent:%\n theIndex:%\n theGParent:%\n theNode:%\n\n" theAnim theParent theIndex theGParent theNode 
 			false
-			)
-			*/
 		)
+			*/
+	)
 	
 	-- add
 		theIndex = (maxOps.trackBar).registerFilter filterTracks callbackAdditionFunction "Filter CA Tracks" 13 active:true stopTraversal:true

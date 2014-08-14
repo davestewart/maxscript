@@ -36,12 +36,12 @@ include "$scripts/BlurScripts/BSLib.ms"
 -- Script
 
 undo "AssignAtmMatte" on
-	(
+(
 	m = copy (get_blurmat "Matte_Atmosphere")
 	for i in selection do
-		(
+	(
 		i.material = m
-		)
 	)
+)
 )
 -------------------------------------------------------------------------------

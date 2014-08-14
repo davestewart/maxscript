@@ -1,7 +1,7 @@
 plugin modifier pathControl21
 name:"Path Control 21" 
 classID:#(0x399e7392, 0x6fae933c)
-	( 
+( 
 	local distCtrl = bezier_float()
 	local pcCtrl = bezier_float()
 	local lenCtrl = bezier_float()
@@ -9,7 +9,7 @@ classID:#(0x399e7392, 0x6fae933c)
 	local segArr, len
 
 	parameters main rollout:params 
-		(
+	(
 		distance type:#float animatable:true ui:spnDist default:0
 		pathPercent type:#float animatable:true
 		spline type:#node ui:pkbSpline
@@ -19,20 +19,20 @@ classID:#(0x399e7392, 0x6fae933c)
 		on spnDist set val do delegate.length = val
 		
 		on create do
-			(
+		(
 			local length
-			)
+		)
 		*/
 
 		on spline set obj do
-			(
+		(
 			try(this.pkbSpline.text = obj.name)
 			catch()
-			) 
-		)
+		) 
+	)
 
 	rollout params "Parameters" width:160 height:128
-		(
+	(
 
 
 	--INTERFACE
@@ -51,48 +51,48 @@ classID:#(0x399e7392, 0x6fae933c)
 	--------------------------------------------------------------------------------
 
 		fn getSplineLength obj =
-			(
+		(
 			segArr = getSegLengths obj 1
 			len = segArr[segArr.count]
 			return len
-			)
+		)
 
 
 		on pkbSpline picked obj do
-			(
+		(
 			this.spline = obj
 			len = getSplineLength obj
 			spnLength.value = len
 			pkbSpline.text = obj.name
 			
 			when geometry obj changes do
-				(
+			(
 				--this.len = getSplineLength obj
 				this.splineLength.value = random 0 30--getSplineLength obj
-				)
 			)
+		)
 
 		on spnDist changed val do
-			(
+		(
 			pc=(val/len)
 			spnPercent.value = pc
-			)
-
-		)
-
-	on load do
-		(
-		print (">" + this as string)
-		show this
-		--this.params.pkbSpline.text = this.spline.name
-		)
-	on update do
-		(
-		try(print (this.spline.name))
-		catch()
 		)
 
 	)
+
+	on load do
+	(
+		print (">" + this as string)
+		show this
+		--this.params.pkbSpline.text = this.spline.name
+	)
+	on update do
+	(
+		try(print (this.spline.name))
+		catch()
+	)
+
+)
 	
 /*
 $.pos.controller[2].path

@@ -56,7 +56,7 @@ maxdimdiv = 30
 -- Functions
 
 fn box_to_cham the_object= 
-	(
+(
 	l = the_object.length
 	w = the_object.width
 	h = the_object.height
@@ -81,10 +81,10 @@ fn box_to_cham the_object=
 
 	append to_delete the_object
 	append to_select new_box
-	)
+)
 
 fn cham_to_box the_object= 
-	(
+(
 	l = the_object.length
 	w = the_object.width
 	h = the_object.height
@@ -107,10 +107,10 @@ fn cham_to_box the_object=
 
 	append to_delete the_object
 	append to_select new_box
-	)
+)
 
 fn cyl_to_cham the_object= 
-	(
+(
 	r = the_object.radius
 	h = the_object.height
 	s = the_object.sides
@@ -136,10 +136,10 @@ fn cyl_to_cham the_object=
 
 	append to_delete the_object
 	append to_select new_cyl
-	)
+)
 
 fn cham_to_cyl the_object= 
-	(
+(
 	r = the_object.radius
 	h = the_object.height
 	s = the_object.sides
@@ -167,26 +167,26 @@ fn cham_to_cyl the_object=
 
 	append to_delete the_object	
 	append to_select new_cyl
-	)
+)
 
 fn start_ccon = 
-	(
+(
 	undo "ChamferConverter" on
-		(
+	(
 		for obj in $ do
-			(
+		(
 			if classof obj == box then box_to_cham obj
 			else if classof obj == ChamferBox then cham_to_box obj
 			else if classof obj == Cylinder then cyl_to_cham obj
 			else if classof obj == ChamferCyl then cham_to_cyl obj
 			else append to_select obj
-			)
+		)
 		delete to_delete
 		select to_select
 		to_delete = #()
 		to_select = #()
-		)
 	)
+)
 
 -- Script
 

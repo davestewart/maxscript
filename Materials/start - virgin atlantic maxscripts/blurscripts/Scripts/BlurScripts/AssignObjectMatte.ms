@@ -43,14 +43,14 @@ include "$scripts/BlurScripts/BSLib.ms"
 -- Script
 
 undo "AssignObjectMatte" on
-	(
+(
 	m = copy (get_blurmat "Matte_Object")
 	for i in selection do
-		(
+	(
 		i.material = m
 		i.castShadows = off
 		i.receiveshadows = off
-		)
 	)
+)
 )
 -------------------------------------------------------------------------------

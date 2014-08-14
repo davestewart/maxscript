@@ -1,5 +1,5 @@
 rollout roSphereSpline "Sphere Spline" width:162 height:300
-	(
+(
 	--------------------------------------------------------------------------------------------
 	-- UI
 		spinner spnTurns "Turns" fieldWidth:50 height:16 range:[0,200,10] align:#right
@@ -21,36 +21,36 @@ rollout roSphereSpline "Sphere Spline" width:162 height:300
 	-- utilities
 
 		fn getCircleRadius pt1 pt2 =
-			(
+		(
 			local xy	= pt2 - pt1
 			local r		= sqrt ((xy.x * xy.x) + (xy.y * xy.y))
 			r
-			)
+		)
 		
 		
 		fn mouseDrag msg ir obj faceNum shift ctrl alt cb = 
-			(
+		(
 			-- stop
 				if msg == #mousePoint then
-					(
+				(
 					return pt2
-					)
+				)
 			-- start
 				else(
 					pt2				= ir.pos
 					radius			= getCircleRadius pt1 pt2
 					spnRadius.value	= radius
 					create()
-					)
+				)
 				#continue
-			)
+		)
 		
 
 
 	--------------------------------------------------------------------------------------------
 	-- functions
 		fn sphereSpline =
-		(
+	(
 		-- variables
 			local knots		= #()
 			local lineType	= #(#curve, #line)[rdoSegment.state]
@@ -59,7 +59,7 @@ rollout roSphereSpline "Sphere Spline" width:162 height:300
 		-- code
 			-- knots	
 				for i = 0 to segments do
-					(
+				(
 					-- %
 						pc = i / (segments as float)
 				
@@ -82,36 +82,36 @@ rollout roSphereSpline "Sphere Spline" width:162 height:300
 					-- do it		
 						addknot ss 1 vertType lineType [x, y, z]
 						append knots [x, y, z]
-					)
+				)
 		
 			-- finalise
 				updateshape ss
 				--ss.vertexTicks = vertexTicks
 				--select ss
-				)
+			)
 		
 		function resetSphereSpline=
-			(
+		(
 			if numsplines ss > 0 do deleteSpline ss 1
 			addnewspline ss
-			)
+		)
 
 		function getValues =
-			(
+		(
 			radius		= spnRadius.value
 			turns		= spnTurns.value
 			segments	= spnSegments.value
-			)
+		)
 			
 		function create = 
-			(
+		(
 			if isValidNode ss do
-				(
+			(
 				resetSphereSpline()
 				getValues()
 				sphereSpline()
-				)
 			)
+		)
 			
 		function
 
@@ -119,24 +119,24 @@ rollout roSphereSpline "Sphere Spline" width:162 height:300
 	-- handlers
 
 		on roSphereSpline open do
-			(
+		(
 			ss = splineshape()
 			create()
 			select ss
-			)
+		)
 			
 		on btnNew pressed do
-			(
+		(
 			ss = splineshape()
 			create()
 			select ss
-			)
+		)
 			
 		on btnNewMouse pressed do
-			(
+		(
 			pt1			= pickpoint()
 			pt2			= mouseTrack trackCallback:mouseDrag
-			)
+		)
 
 		on spnRadius changed val do create()
 		on spnTurns changed val do create()
@@ -144,7 +144,7 @@ rollout roSphereSpline "Sphere Spline" width:162 height:300
 		on rdoVertex changed index do create()
 		on rdoSegment changed index do create()
 
-	)
+)
 
 
 try(destroydialog roSphereSpline)

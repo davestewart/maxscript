@@ -51,76 +51,76 @@ deselect_array = #()
 -- Functions
 
 fn deselect_the_nodes =
-	(
+(
 	if deselect_array.count != 0 then
-		(
+	(
 		for j = 1 to deselect_array.count do
 		deselect deselect_array[j]
-		)
 	)
+)
 
 fn world_select =
-	(
+(
 	max select all
 	for i = 1 to selection.count do 
-		(
+	(
 		if selection[i].parent != undefined then 
-			(
+		(
 			if isGroupMember selection[i] != true then
-				(
+			(
 				append deselect_array selection[i]
-				)
 			)
 		)
 	)
+)
 
 fn selected_select =
-	(
+(
 	if selection.count != 0 then
-		(
+	(
 		for i = 1 to selection.count do 
-			(
+		(
 			if selection[i].parent != undefined then 
-				(
+			(
 				if selection[i].parent.isselected == true then
-					(
+				(
 					if isGroupMember selection[i] != true then
-						(
+					(
 						append deselect_array selection[i]
-						)
 					)
 				)
 			)
 		)
-	else (MessageBox "Please Select at least one object." title:"IWantMyMom!")
 	)
+	else (MessageBox "Please Select at least one object." title:"IWantMyMom!")
+)
 
 -- Script
 
 rollout iwmm_rollout "IWantMyMom!"
-	(
+(
 	button inw "In World" width:150 align:#center toolTip:"In World"
 	on inw pressed do 
-		(
+	(
 		undo "IWantMyMom!" on
-			(
+		(
 			deselect_array = #()
 			world_select ()
 			deselect_the_nodes ()
-			)
 		)
+	)
 
 	button ins "In Selected" width:150 align:#center toolTip:"In Selected"
 	on ins pressed do 
-		(
+	(
 		undo "IWantMyMom!" on
-			(
+		(
 			deselect_array = #()
 			selected_select ()
 			deselect_the_nodes ()
-			)
 		)
 	)
+)
 
 if iwmm_floater != undefined then CloseRolloutFloater iwmm_floater
 iwmm_floater = newRolloutFloater "IWantMyMom! v1.30" 224 122

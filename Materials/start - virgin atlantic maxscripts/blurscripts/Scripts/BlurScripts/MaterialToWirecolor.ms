@@ -24,23 +24,23 @@ global get_diffuse_color
 -- Functions
 
 fn get_diffuse_color mat = 
-	(
+(
 	if classof mat == Standardmaterial or classof mat == Standard then return mat.diffuse
 	else if classof mat == RaytraceMaterial or classof mat == Raytrace then return mat.diffuse
 	else if classof mat == Multimaterial or classof mat == Toon_Assistant then get_diffuse_color mat[1]
 	else if classof mat == Blend or classof mat == Blendmaterial then get_diffuse_color mat.map1
-	)
+)
 
 -- Script
 
 for i in selection do
-	(
+(
 	mycolor = color 165 165 165
 	if i.material != undefined then 
-		(
+	(
 		mycolor = (get_diffuse_color i.material)
-		)
-	i.wirecolor = mycolor
 	)
+	i.wirecolor = mycolor
+)
 )
 -------------------------------------------------------------------------------

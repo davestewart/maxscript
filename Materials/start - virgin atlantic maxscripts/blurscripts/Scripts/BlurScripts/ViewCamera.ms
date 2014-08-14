@@ -71,52 +71,52 @@ height_value = undefined
 -- Functions
 
 fn collect_cams = 
-	(
+(
 	for c in all_cameras() do
-		(
+	(
 		if camera_filter c == true then append scene_cams c
-		)
+	)
 	qsort scene_cams name_compare_case_insensitive
 	for c in scene_cams do append scene_cams_names c.name
-	)
+)
 	
 fn dialogue_height = 
-	(
+(
 	height_value = ((13*scene_cams_names.count) + 40)
 	if height_value > systemTools.GetScreenHeight() then height_value = (systemTools.GetScreenHeight() - 20)
-	)
+)
 	
 fn find_cur_cam = 
-	(
+(
 	if viewport.getCamera() != undefined then cam_to_use = finditem scene_cams (viewport.getCamera())
-	)
+)
 	
 fn vc_ok = 
-	(
+(
 	disableSceneRedraw()
 	viewport.setCamera scene_cams[cam_to_use]
 	destroydialog vc_rollout
 	enableSceneRedraw()
 	redrawViews()
-	)
+)
 	
 fn vc_cancel = 
-	(
+(
 	destroydialog vc_rollout
-	)
+)
 	
 fn vc_apply = 
-	(
+(
 	disableSceneRedraw()
 	viewport.setCamera scene_cams[cam_to_use]
 	enableSceneRedraw()
 	redrawViews()
-	)
+)
 
 -- Rollouts
 
 rollout vc_rollout "ViewCamera v1.14" 
-	(
+(
 	listbox selc items:scene_cams_names height:scene_cams_names.count selection:cam_to_use
 
 	on selc selected i do cam_to_use = i
@@ -129,7 +129,7 @@ rollout vc_rollout "ViewCamera v1.14"
 	on vc_button_ok pressed do vc_ok()
 	on vc_button_cancel pressed do vc_cancel()
 	on vc_button_apply pressed do vc_apply()
-	)
+)
 
 -- Script
 
@@ -138,9 +138,9 @@ dialogue_height()
 find_cur_cam()
 if scene_cams.count == 0 then (MessageBox "No Cameras In Scene" title:"ViewCamera")
 else 
-	(
+(
 	if scene_cams.count == 1 then vc_ok()
 	else createDialog vc_rollout width:250 height:height_value modal:true
-	)
+)
 )
 -------------------------------------------------------------------------------

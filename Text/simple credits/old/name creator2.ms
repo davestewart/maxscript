@@ -36,13 +36,13 @@ utility Credits2 "Simple Credits Maker2" width:162 height:1000
 	------------------------------------------------------------------------------------------
 	
 	on btn1 pressed do
-	(
+(
 		print edt1.text 
 
-	)
+)
 	
 	on btn2 pressed do
-	(
+(
 		
 		--sets the animation range
 			animationRange = interval 0 a.count
@@ -67,11 +67,11 @@ utility Credits2 "Simple Credits Maker2" width:162 height:1000
 						displayText = names[i]
 						spaceIndex = findString displayText " " -- find any spaces
 						obj.text = replace displayText spaceIndex 1 "\r"
-					)
+				)
 					else
-						(
+					(
 						obj.text  = names[i]
-					)
+				)
 				
 		
 				-- Set up scaling
@@ -80,7 +80,7 @@ utility Credits2 "Simple Credits Maker2" width:162 height:1000
 						targetScale = targetWidth / objWidth
 						addModifier obj (XForm())
 						obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
-					)
+				)
 		
 				
 		
@@ -96,6 +96,6 @@ utility Credits2 "Simple Credits Maker2" width:162 height:1000
 					obj.pos.controller.Z_Position.controller.keys[2].value = 0
 					obj.pos.controller.Z_Position.controller.keys[3].value = -spacing
 			
-			)
 		)
+	)
 )

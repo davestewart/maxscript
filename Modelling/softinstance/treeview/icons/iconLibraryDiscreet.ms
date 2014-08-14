@@ -333,14 +333,14 @@ global libraryIcons=#(
 )
 /*
 fn listIconCats =
-	(
+(
 	local cat, catArr=#()
 	for d in libraryIcons do
-		(
+	(
 		cat = d[2]
 		if findItem catArr cat == 0 then append catArr cat
-		)
+	)
 	catArr = sort catArr
 	for c in catArr do format "%\n" c
-	)
+)
 */

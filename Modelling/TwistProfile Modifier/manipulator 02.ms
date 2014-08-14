@@ -11,7 +11,7 @@
 plugin simpleManipulator twistManip2
 name:"RadiusManip2"
 invisible:true
-	(
+(
 	-- Create the green and red colors for the gizmo
 	 
 		local green = [0, 1, 0], red = [1, 0, 0]
@@ -29,21 +29,21 @@ invisible:true
 		local arrRot = #(10,30,100)
 
 		function rotateGizmo giz val =
-			(
+		(
 			local mx = matrix3 [1,0,0] [0,1,0] [0,0,1] [0,0,0]
 			rotateY mx val
 			giz.transform mx
-			)
+		)
 			
 	on updateGizmos do
-		(
+	(
 		-- Clear the current gizmo cache
 			this.clearGizmos()
 		
 		-- Build new gizmos
 
 			for i = 1 to arrPos.count do
-				(
+			(
 				print i
 				y = arrPos[i]
 				r = arrRot[i]
@@ -59,17 +59,17 @@ invisible:true
 				rotateGizmo giz r
 				
 				this.addGizmoShape giz 0 green red
-				)
+			)
 
 			return node.name + "Current Gizmo = " + (currentManip + 1) as string + " " + arrRot as string
 
-		)
+	)
 	 
 	-- mouseMove is called on every mouse move when dragging the manip
 	-- It needs to convert the mouse position 'm' into a new value for the radius
 	
 	on mouseMove m which do
-		(
+	(
 		-- Create the XY plane. 
 		
 		currentManip = which
@@ -88,11 +88,11 @@ invisible:true
 		-- If the intersection worked, set the radius
 		 
 			if (res) then
-				(
+			(
 				val = length projectedPoint
 				target.twist = val
 				arrRot[currentManip + 1] = val
-				)
-		)
+			)
 	)
+)
 $.transform

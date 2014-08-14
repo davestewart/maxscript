@@ -39,16 +39,16 @@ fn comprobarEsc =
 (
 	if keyboard.escPressed then
 		if (querybox "¿Terminar juego?") then
-		(
+	(
 			terminarJuego = true
 			true
-		)
+	)
 		else
-		(
+	(
 			reloj = timeStamp()
 			pos = mouse.screenpos.y
 			false
-		)
+	)
 	else
 		false
 )
@@ -71,13 +71,13 @@ tool toolSacar
 	local pos = mouse.screenpos.y
 
 	on mousepoint value do
-	(
+(
 		pelota.generarAngulo 130 230
 		stoptool toolSacar
-	)
+)
 	
 	on freemove do
-	(	
+(	
 		if comprobarEsc() then stopTool toolSacar
 		setsyscur #arrow
 		raqueta_1.actualizarAuto ignorarPosicionBola:true ignorarReloj:true
@@ -85,7 +85,7 @@ tool toolSacar
 		pelota.mover (raqueta_2.objeto.pos - [pelota.radio,0,0] - [3,0,0])
 
 		redrawViews()
-	)
+)
 )
 
 
@@ -104,41 +104,41 @@ struct strRaqueta
 	
 	-- actualiza la posición de la raqueta comprobando que no se sale del campo
 	fn actualizar =
-	(
+(
 		objeto.pos.y +=  (velRaton * (pos - mouse.screenpos.y))
 		y = objeto.pos.y
 		pos = mouse.screenpos.y
 		
 		if y > (campo.ancho/2 - ancho/2) then
-		(
+	(
 			y = (campo.ancho/2 - ancho/2)
-		)
+	)
 		if y < (-campo.ancho/2 + ancho/2) then 
-		(
+	(
 			y = (-campo.ancho/2 + ancho/2)
-		)
+	)
 		
 		objeto.pos.y = y
 
 	),
 	
 	fn actualizarAuto ignorarPosicionBola:false ignorarReloj:false =
-	(
+(
 		movimiento = 1 /* 1=der -1=izq */
 		if y > pelota.y then movimiento = -1
 		cantidadMovimiento = nivel
 		if abs (y - pelota.y) < nivel then cantidadMovimiento = abs (y - pelota.y)
 		
 		if (pelota.x < 0 or ignorarPosicionBola) then 
-		(	
+	(	
 			if ignorarReloj then tiempoTranscurrido = 0.5
 			objeto.pos.y += (cantidadMovimiento * movimiento * tiempoTranscurrido)
 			y = objeto.pos.y
-		)
+	)
 	),
 	
 	fn mover posicion =
-	(
+(
 		objeto.pos = posicion
 		x = posicion.x
 		y = posicion.y
@@ -147,13 +147,13 @@ struct strRaqueta
 	fn sacar = (startTool toolSacar),
 	
 	fn sacarAuto =
-	(
+(
 		posSaqueY = random (-campo.ancho/2 + raqueta_1.ancho/2) (campo.ancho/2 - raqueta_2.ancho/2)
 		step = -(y - posSaqueY) / 15
 		reloj = timeStamp()
 		
 		while (abs(posSaqueY - y)>5) and (not comprobarEsc()) do
-		(
+	(
 			tiempo = (timeStamp() - reloj)/40.0
 			reloj = timeStamp()
 			
@@ -164,7 +164,7 @@ struct strRaqueta
 			raqueta_2.actualizar()
 			
 			redrawViews()		
-		)
+	)
 		
 		pelota.angulo = random -50 50
 		pelota.direccion = [cos pelota.angulo,sin pelota.angulo]
@@ -172,7 +172,7 @@ struct strRaqueta
 	),
 	
 	fn ganar puntosOrdenador puntosJugador =
-	(
+(
 		mensajesCasi = #("It was hard, but you got it.\nTry a harder level!!",
 						 "Congratulations! That was a great match!!\nNow try another level!",
 						 "What a great match!! Congratulations!!\nTry something harder now!")
@@ -190,7 +190,7 @@ struct strRaqueta
 	),
 	
 	fn perder puntosOrdenador puntosJugador =
-	(
+(
 		mensajesCasi = #("It was so close!! You must kick that computer's but!!",
 						 "Oh, come on, you almost got it! Try again!",
 						 "Very close, but not enougth!")
@@ -208,7 +208,7 @@ struct strRaqueta
 
 		messagebox mensaje title:"You lost!!"
 		terminarjuego = true
-	)
+)
 	
 	
 )
@@ -228,18 +228,18 @@ struct strPelota
 	objeto,
 	
 	fn crearPelota = 
-	(
+(
 		objeto = sphere name:"Pelota" pos:[x,y,0] radius:radio wirecolor:[200,0,255]
 	),
 	
 	fn generarAngulo angMin angMax = 
-	(
+(
 		angulo = random angMin angMax
 		direccion = [(cos angulo), (sin angulo)]
 	),
 	
 	fn actualizar = 
-	(
+(
 		objeto.pos.x += (direccion.x * velocidad * tiempoTranscurrido) as float
 		objeto.pos.y += (direccion.y * velocidad * tiempoTranscurrido) as float
 		x = objeto.pos.x
@@ -247,11 +247,11 @@ struct strPelota
 	),
 	
 	fn mover posicion =
-	(
+(
 		objeto.pos = posicion
 		x = posicion.x
 		y = posicion.y
-	)
+)
 )
 
 --------------------------------------------
@@ -267,7 +267,7 @@ struct strCampo
 	marcador = text name:"marcador" size:60 pos:[0,ancho/2,30] text:"0 - 0" wirecolor:[224,188,57],
 	
 	fn crearCampo =
-	(
+(
 		
 		-- creamos las piezas del campo			
 		local colorCampo = color 150 177 26
@@ -295,7 +295,7 @@ struct strCampo
 	),
 	
 	fn modificarCampo anchura longitud =
-	(
+(
 		ancho = anchura
 		largo = longitud
 		$campoDer.pos = [largo/2,0,0]; $campoDer.length = ancho; 
@@ -308,7 +308,7 @@ struct strCampo
 		$fondoMarcador.pos = [0,(ancho/2 + 30),20]
 		
 		cam.pos.z = (campo.ancho + campo.largo)/0.9
-	)
+)
 	
 )
 
@@ -333,9 +333,9 @@ rollout rollInstrucciones "Instrucciones MaxTennis v1.0" width:256 height:320
 	button btnCerrar "Cerrar" pos:[9,272] width:231 height:34
 	
 	on btnCerrar pressed do
-	(
+(
 		destroyDialog rollInstrucciones
-	)
+)
 )
 
 
@@ -373,7 +373,7 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 	button btnInsideMotion "www.InsideMotion.com" pos:[16,508] width:128 height:16
 	
 	on rollTenis open do
-	(
+(
 		toolMode.coordsys #world
 		
 		delete objects
@@ -406,74 +406,74 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 		campo.cam.controller.UseTargetAsUpNode = true
 		
 		for obj in objects do
-		(
+	(
 			obj.showFrozenInGray = false
 			freeze obj
-		)
-		
 	)
+		
+)
 	on rollTenis close do
-	(
+(
 		resetear()
 		cui.expertModeOff()
-	)
+)
 	on spnRaqueta2 changed value do
-	(
+(
 		raqueta_2.ancho = value
 		raqueta_2.objeto.length = raqueta_2.ancho
-	)
+)
 	on spnRaqueta1 changed value do
-	(
+(
 		raqueta_1.ancho = value
 		raqueta_1.objeto.length = raqueta_1.ancho
-	)
+)
 	on spnVelocidad changed value do
-	(
+(
 		pelota.velocidad = value * 5
-	)
+)
 	on spnTamañoBola changed value do
-	(
+(
 		pelota.objeto.radius = value
 		pelota.radio = value
-	)
+)
 	on spnAnchoCampo changed value do
-	(
+(
 		campo.modificarCampo spnAnchoCampo.value spnLargoCampo.value
-	)
+)
 	on spnLargoCampo changed value do
-	(
+(
 		campo.modificarCampo spnAnchoCampo.value spnLargoCampo.value
 		colocarRaquetas raqueta_1 raqueta_2
-	)
+)
 	on spnNivel changed value do
-	(
+(
 		raqueta_1.nivel = value*3
-	)
+)
 	on spnVelRaton changed value do
-	(
+(
 		velRaton = (value*1.5)/2 
-	)
+)
 		on btnInstrucciones pressed do
-	(
+(
 		createDialog rollInstrucciones "" modal:true
-	)
+)
 	on btnCerrar pressed do
-	(
+(
 		if (querybox "Do you really want to close?") then
-		(
+	(
 			resetear()
 			destroyDialog rollTenis
-		)
 	)
+)
 	on btnInsideMotion pressed do
-	(
+(
 		try (shelllaunch "explorer.exe" "http://www.insidemotion.com") catch (messagebox "Couldn't start the web browser. Enter www.insidemotion.com ")
-	)
+)
 	on ddlPresets selected value do
-	(
+(
 		valores = #()
 		case value of
-		(
+	(
 			1: valores = #(75,25,3,20,300,400,10,2)		-- Extremely easy
 			2: valores = #(60,40,4,15,300,400,10,3)		-- Easy
 			3: valores = #(50,50,4,10,300,400,10,4)		-- Medium level
@@ -486,7 +486,7 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 			10: valores = #(50,50,8,10,500,700,10,9)  	-- Medium great hall 
 			11: valores = #(40,60,8,10,500,700,10,10)	-- Hard great hall
 			12: valores = #(50,50,8,10,300,450,10,10)	-- Extremely hard
-		)
+	)
 		
 		spnRaqueta2.value = valores[1]; spnRaqueta1.value = valores[2]; spnRaqueta2.changed valores[1]; spnRaqueta1.changed valores[2]; 
 		spnVelocidad.value = valores[3]; spnTamañoBola.value = valores[4]; spnVelocidad.changed valores[3]; spnTamañoBola.changed valores[4];
@@ -495,9 +495,9 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 		spnNivel.value = valores[8]
 		spnNivel.changed valores[8]
 	
-	)	
+)	
 	on btnJugar pressed do
-	(
+(
 	
 		campo.marcador.text = "0 - 0"		
 		setDialogPos rollTenis [2000,2000]
@@ -522,7 +522,7 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 		reloj = timeStamp()
 				
 		while (not terminarJuego) do
-		(
+	(
 			
 			
 			raqueta_1.velocidad = raqueta_2.y - posAnterior1
@@ -572,7 +572,7 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 					pelota.direccion.x *= -1
 					pelota.direccion.y += v.y
 					pelota.direccion = normalize pelota.direccion
-				)
+			)
 	
 	
 			-- rebote contra la raqueta izquierda
@@ -593,7 +593,7 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 					pelota.direccion.x *= -1
 					pelota.direccion.y += v.y
 					pelota.direccion = normalize pelota.direccion
-				)
+			)
 	
 			
 			-- rebote en paredes laterales
@@ -609,7 +609,7 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 			--- Generamos un punto ---
 			if (pelota.x >= (campo.largo/2-pelota.radio)) or
 			   (pelota.x <= (-campo.largo/2+pelota.radio)) then
-			(
+		(
 				if pelota.x > 0 then (raqueta_1.puntos += 1; raq = 2)
 				if pelota.x < 0 then (raqueta_2.puntos += 1; raq = 1)
 				
@@ -621,14 +621,14 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 				
 				-- si no ha terminado el juego damos el saque a quien corresponda
 				if not terminarJuego then
-				(
+			(
 					-- si sacamos permitimos colocar la raqueta
 					if raq == 2 then 
-					(
+				(
 						raqueta_2.sacar()
 						pelota.generarAngulo 130 230
 						pos = mouse.screenpos.y
-					)
+				)
 					
 					-- si saca el ordenador se coloca automáticamente y saca
 					if raq == 1 then raqueta_1.sacarAuto()
@@ -636,7 +636,7 @@ rollout rollTenis "MaxTennis v1.0" width:160 height:544
 					posAnterior1 = 0
 					posAnterior2 = 0
 					pos = mouse.screenpos.y
-				)
+			)
 				
 				
 				-- actualizaos el reloj por el tiempo perdido generando el punto

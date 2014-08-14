@@ -35,19 +35,19 @@ utility fonts "Fonts" (
 
 	on refresh pressed do (
 		fonts.items = getFontNamesList forceUpd:true
-	)
+)
 	
 	on fonts selected i do (
 		format "The selected font is: %\n" fonts.items[i]
-	)
+)
 
 	on fonts open do (
 		global fontNamesList = getFontNamesList()
 		fonts.items=fontNamesList
-	)
+)
 
 	fn getFontNamesList forceUpd:false =
-	(
+(
 		if  forceUpd or (fontNamesList == undefined) then
 			return getFontNames()
 		else 

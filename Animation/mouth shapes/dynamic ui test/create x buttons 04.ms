@@ -12,16 +12,16 @@ rollout baseRollout "Base Rollout" width:160 height:311 rolledUp:true
 	-- Interface
 	---------------------------------------------------------------------------------------------------
 	Group "Instructions"
-		(
+	(
 		label lbl1 "How to us this plugin. \nWell, the thing you have to understand is that..." align:#left height:200 width:160
-		)
+	)
 
 	
 	fn looper j=
-		(
+	(
 		local str = ""
 		for i = 1 to 10 do
-			(
+		(
 			btnW = 32
 			btnH = 32
 			
@@ -42,15 +42,15 @@ rollout baseRollout "Base Rollout" width:160 height:311 rolledUp:true
 			str += "button btn" + i as string + btnPos + btnSize + btnImg + " align:#right across:2\n"
 			str += "label lbl" + i as string + lblPos + lblSize + " \" " + (random 1 100) as string + " >\" align:#left\n"
 			print str
-			)
-			return str
 		)
+			return str
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 
 	fn createRO roName roTitle =
-		(
+	(
 		clearListener()
 
 		roCode = "rollout " +roName as String+ " \"" +roTitle as String+ "\" width:160 height:200 rolledUp:false"
@@ -63,7 +63,7 @@ rollout baseRollout "Base Rollout" width:160 height:311 rolledUp:true
 		try(execute roCode);catch()
 		execute ("addRollout " +roName+ " dynROFloater")
 
-		)
+	)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -71,12 +71,12 @@ rollout baseRollout "Base Rollout" width:160 height:311 rolledUp:true
 
 
 	on edtROName changed val do
-		(
+	(
 		if val != "" then btnROCreate.enabled = true
 		else btnROCreate.enabled = false
-		)
+	)
 	on btnROCreate pressed do
-		(
+	(
 		roIndex+=1
 		
 		roName = "scriptMngrRO_" + (removeSpacesFromStr (edtROName.text as String))
@@ -85,7 +85,7 @@ rollout baseRollout "Base Rollout" width:160 height:311 rolledUp:true
 		createRO roName roTitle
 		
 		edtROName.text = "Test Rollout " + roIndex as String
-		)
+	)
 	
 	on baseRollout open do createRO "two" "two"
 )

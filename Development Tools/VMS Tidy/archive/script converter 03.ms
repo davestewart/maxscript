@@ -61,15 +61,15 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 	---------------------------------------------------------------------------------------------------
 
 	fn isIn container item=
-		(
+	(
 		-- items should be uiItem structs
 		local c=box2 c.x c.y c.w c.h
 		local i=point2 i.x i.y
 		return (contains c i)
-		)
+	)
 
 	fn go=
-		(
+	(
 		-----------------------------------------------------------------
 		--	variables
 		
@@ -87,7 +87,7 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 		--	start to parse array into a new array uiArr of uiObj structs
 
 		for s in strArr do
-			(
+		(
 			---------------------------------------------------------
 			--	strip whitespace
 
@@ -105,50 +105,50 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 				-- x,y
 					i=findstring s "pos:["
 					if i != undefined then
-						(
+					(
 						str=substring s (i+5) -1
 						str=(filterstring str "]")[1]
 						arr=filterstring str ","
 						x=arr[1] as integer
 						y=arr[2] as integer
 						--format "x: % y: % \n" x y
-						)
+					)
 
 				-- width
 					i=findstring s "width:"
 					if i != undefined then
-						(
+					(
 						str=substring s (i+6) -1
 						str=(filterstring str " ")[1]
 						w=str as integer
 						--format "w: % \n" w
-						)
+					)
 
 				-- height
 					i=findstring s "height:"
 					--format "i:% \n" i
 					if i != undefined then
-						(
+					(
 						str=substring s (i+7) -1
 						str=(filterstring str " ")[1]
 						h=str as integer
 						--format "h: % \n" h
-						)
+					)
 
 			---------------------------------------------------------
 			--	set up final string
 				if chkIndent.checked then
-					(
+				(
 					if stricmp type "GroupBox" == 0 then s="	"+s
 					else s="		"+s
-					)
+				)
 			---------------------------------------------------------
 			-- add to a new array
 				local ui=uiItem type:type x:x y:y w:w h:h string:s
 				format ">>%\n" ui
 				if uiArr[y]==undefined then uiArr[y]=#()
 				if uiArr[y][x]==undefined then uiArr[y][x]=ui
-			)
+		)
 			
 
 
@@ -159,32 +159,32 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 			local str=""
 			local currType="",prevType=""
 			for y = 1 to uiArr.count do
-				(
+			(
 				if uiArr[y]!=undefined then
-					(
+				(
 					-- newline if new Y
 					--if (currType == prevType)then 
 
 					for x = 1 to uiArr[y].count do
-						(
+					(
 						if uiArr[y][x]!=undefined then
-							(
+						(
 							c=uiArr[y][x]
 							currType=substring c 1 (findstring c " ")
 							format "%\n" currType
 							str+=c+"\n"
-							)
 						)
+					)
 					-- newline
 						str+="\n"
 					-- take away newline if the same
 						if (currType == prevType)then str = substring str 1 (str.count-1)
 						prevType = currType
-					)
 				)
+			)
 			edt1.text=str
 */
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -195,14 +195,14 @@ rollout ro1 "Enter your rollout code here..." width:784 height:376
 	
 
 	on ro1 open do
-		(
+	(
 		edt1.text = uiStr
 		--go()
-		)
+	)
 	on btn1 pressed do
-		(
+	(
 		go()
-		)
+	)
 )
 
 if myFloater != undefined then closerolloutfloater myFloater

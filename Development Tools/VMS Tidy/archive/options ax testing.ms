@@ -28,7 +28,7 @@ rollout r1 "Microsoft ListView Control, version 6.0"
 		#(#spinner, "spn"),
 		#(#subRollout, "sub subRoll"),
 		#(#timer, "tmr")
-		)
+	)
 
 activeXControl ax "{BDD1F04B-858B-11D1-B16A-00C0F0283628}" height:100 width:220 align:#left 
 
@@ -36,7 +36,7 @@ activeXControl ax "{BDD1F04B-858B-11D1-B16A-00C0F0283628}" height:100 width:220 
 --on ax DblClick do format "handler: DblClick\n" 
 
 on r1 open do 
-	( 
+( 
 	showProperties ax 
 	-- style
 		ax.MousePointer = #ccArrow 
@@ -54,13 +54,13 @@ on r1 open do
 	-- populate
 		list = ax.listItems 
 		for i=1 to controlTypeArr.count do 
-			( 
+		( 
 			local li 
 			li = list.Add() 
 			li.text = controlTypeArr[i][2] as string
 			li2=li.listsubitems.add()
 			li2.text=controlTypeArr[i][1] as string
-			) 
+		) 
 
 	-- update
 		r1.ax.columnHeaders[1].position=2
@@ -72,14 +72,14 @@ on r1 open do
 	-- hit test
 		li = ax.HitTest 100 1500 
 		if li != undefined do 
-			( 
+		( 
 			showProperties li 
 			li.text = "Just Hit Tested" 
 			showEvents r1.ax 
 			showMethods r1.ax 
-			) 
+		) 
 */
-	) 
+) 
 ) 
 rax = newRolloutFloater "Microsoft ListView Control, version 6.0" 350 300 10 10 
 addRollout r1 rax

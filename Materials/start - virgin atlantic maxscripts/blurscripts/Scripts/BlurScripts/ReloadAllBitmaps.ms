@@ -56,52 +56,52 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn rab_reload_scene = 
-	(
+(
 	progressStart "Reload Bitmaps in Scene"
 	escapeEnable = false
 	scene_mats = get_scene_materials()
 	itemnum = scene_mats.count
 	if itemnum != 0 then
-		(
+	(
 		for i = 1 to itemnum do
-			(
+		(
 			reload_bitmaps scene_mats[i]
 			m = ((i as float)/(itemnum as float))*100
 			progressUpdate m
-			)
 		)
-	progressEnd()
 	)
+	progressEnd()
+)
 	
 fn rab_reload_medit = 
-	(
+(
 	progressStart "Reload Bitmaps in Medit"
 	escapeEnable = false
 	itemnum = 24
 	for i = 1 to itemnum do
-		(
+	(
 		reload_bitmaps meditmaterials[i]
 		m = ((i as float)/(itemnum as float))*100
 		progressUpdate m
-		)
-	progressEnd()
 	)
+	progressEnd()
+)
 
 -- Script
 
 rollout rab_rollout "ReloadAllBitmaps"
-	(
+(
 	button button_rab_scene "Reload Bitmaps in Scene" width:170 align:#center toolTip:"Reload Bitmaps in Scene"
 	button button_rab_medit "Reload Bitmaps in Medit" width:170 align:#center toolTip:"Reload Bitmaps in Medit"
 	button button_rab_all "Reload All Bitmaps" width:170 align:#center toolTip:"Reload All Bitmaps"
 	on button_rab_scene pressed do rab_reload_scene()
 	on button_rab_medit pressed do rab_reload_medit()
 	on button_rab_all pressed do 
-		(
+	(
 		rab_reload_scene()
 		rab_reload_medit()
-		)
 	)
+)
 
 if c != undefined then CloseRolloutFloater rab_floater
 rab_floater = newRolloutFloater "ReloadAllBitmaps v1.12" 230 147

@@ -10,7 +10,7 @@ classID:#(0xfb50b203, 0x3e80208d)
 	local arrnr_leaf = 9
 
 	parameters pblock_trunk rollout:trunk
-	(
+(
 		sides_trunk ui:sides default:12 type:#worldunits animatable:false
 		segs_trunk ui:steps default:20 type:#worldunits animatable:false
 		thickness_trunk ui:thickness default:10 type:#worldunits animatable:true
@@ -23,10 +23,10 @@ classID:#(0xfb50b203, 0x3e80208d)
 		bstop_trunk ui:bstop default:250 type:#worldunits animatable:true
 		taper_trunk ui:taper default:0.5 type:#worldunits animatable:true
 
-	)
+)
 
 	parameters pblock_branch rollout:branch
-	(
+(
 		sub_branches ui:sub type:#string 
 		subb type:#floattab tabsizevariable:true
 		sub_name_b type:#stringtab
@@ -39,18 +39,18 @@ classID:#(0xfb50b203, 0x3e80208d)
 		teee_l type:#floattab tabsize:100 tabsizevariable:true
 		teee_b type:#floattab tabsize:100 tabsizevariable:true
 		teee_d type:#floattab tabsize:100 tabsizevariable:true
-	)
+)
 	
 	parameters pblock_leaf rollout:leaf
-	(
+(
 		leaf_type_l ui:leaf_type default:1 type:#worldunits animatable:false
 		sub_leaf ui:sub type:#string 
 		subb_leaf type:#floattab tabsizevariable:true
 
-	)
+)
 	
 	parameters pblock_winds rollout:winds
-	(
+(
 		direction_winds ui:direction default:1 type:#worldunits animatable:true
 		dir_strengt_winds ui:dir_strengt  default:20 type:#worldunits animatable:true
 		dir_freq_winds ui:dir_freq default:1.5 type:#worldunits animatable:true
@@ -60,10 +60,10 @@ classID:#(0xfb50b203, 0x3e80208d)
 		w_dist_freq_winds ui:w_dist_freq default:2 type:#worldunits animatable:true
 		w_dist_strength_winds ui:w_dist_strength default:10 type:#worldunits animatable:true
 		windon_wind ui:windon type:#boolean
-	)
+)
 
 rollout trunk "Trunk" width:162 height:300
-	(
+(
 		spinner sides "Sides: " range:[3,30,12] type:#integer fieldwidth:40
 		spinner steps "Segments: " range:[2,30,20] type:#integer fieldwidth:40
 		spinner thickness "Thickness: " range:[5,50,10] type:#integer fieldwidth:40
@@ -76,10 +76,10 @@ rollout trunk "Trunk" width:162 height:300
 		spinner bstop "Branch to heigth: " range:[0,1000,250] type:#integer fieldwidth:40
 		spinner taper "Taper: " range:[0.5,1,0.5] type:#float fieldwidth:40
 
-	)
+)
 
 rollout branch "Branch" width:162 height:300
-	(
+(
 		button creasub "New sub branch" width:110 
 		dropdownlist sub "Sub branch:" 
 		spinner sides "Sides: " range:[3,30,5] type:#integer fieldwidth:40 enabled:locker
@@ -331,7 +331,7 @@ append teee_d t
 
 
 			on delbranch pressed do 
-				(
+			(
 					del_1 = sub_name.count
 					del_2 = subb.count/arrnr
 					
@@ -339,10 +339,10 @@ append teee_d t
 					for de = 0 to arrnr-1 do deleteitem subb (arrnr-de+((del_2-1)*arrnr))
 					sub.items = sub_name
 
-				)
+			)
 
 			on creasub pressed do
-				(
+			(
 					append subb sides.value
 					append subb steps.value
 					append subb thickness.value
@@ -381,10 +381,10 @@ append teee_d t
 					noise_variation.enabled = true
 					noise_phase.enabled = true
 
-				)
+			)
 	
 			on sub selected i do
-				(
+			(
 					local subnumber = i
 					sub.items = sub_name
 					sides.value = subb[1+((i-1)*arrnr)]
@@ -404,7 +404,7 @@ append teee_d t
 					noise_variation.value = subb[15+((i-1)*arrnr)]
 					noise_phase.value = subb[16+((i-1)*arrnr)]
 
-				)
+			)
 
 
 					on sides changed val do subb[1+((sub.selection-1)*arrnr)] = sides.value
@@ -423,11 +423,11 @@ append teee_d t
 					on noise_size changed val do subb[14+((sub.selection-1)*arrnr)] = noise_size.value
 					on noise_variation changed val do subb[15+((sub.selection-1)*arrnr)] = noise_variation.value
 					on noise_phase changed val do subb[16+((sub.selection-1)*arrnr)] = noise_phase.value
-	)
+)
 
 
 rollout leaf "Leaf" width:162 height:300
-	(
+(
 
 		dropdownlist leaf_type "Leaf type:" items:#("Single plane","Duoplane")
 
@@ -447,7 +447,7 @@ rollout leaf "Leaf" width:162 height:300
 
 				
 			on leaf open do
-				(	
+			(	
 					temp = #()
 					temp2 = #()
 					append temp ("Trunk" as string)
@@ -456,15 +456,15 @@ rollout leaf "Leaf" width:162 height:300
 					temp = #()
 					temp2 = #()
 
-				)
+			)
 
 				on leaf_type selected d do
-				(
+			(
 					leaf_type_l = d
-				)			
+			)			
 	
 			on sub selected i do
-				(
+			(
 
 					local subnumber = i
 					temp = #()
@@ -485,7 +485,7 @@ rollout leaf "Leaf" width:162 height:300
 					if subb_leaf[8+((i-1)*arrnr_leaf)] != undefined then rott.value = subb_leaf[8+((i-1)*arrnr_leaf)] else rott.value = subb_leaf[8+((i-1)*arrnr_leaf)] = 0
 					if subb_leaf[9+((i-1)*arrnr_leaf)] != undefined then posaff.value = subb_leaf[9+((i-1)*arrnr_leaf)] else posaff.value = subb_leaf[9+((i-1)*arrnr_leaf)] = 0
 
-				)
+			)
 
 
 					on amount changed val do subb_leaf[1+((sub.selection-1)*arrnr_leaf)] = amount.value
@@ -498,10 +498,10 @@ rollout leaf "Leaf" width:162 height:300
 					on rott changed val do subb_leaf[8+((sub.selection-1)*arrnr_leaf)] = rott.value
 					on posaff changed val do subb_leaf[9+((sub.selection-1)*arrnr_leaf)] = posaff.value
 
-	)
+)
 	
 rollout winds "Winds" width:162 height:300
-	(
+(
 		spinner direction "Direction" range:[0,360,0] type:#integer scale:1 fieldwidth:40
 		spinner dir_strengt "Dir strength" range:[0,100,20] type:#integer scale:1 fieldwidth:40
 		spinner dir_freq "Dir variation" range:[0,10,1.5] type:#float scale:0.1 fieldwidth:40
@@ -514,7 +514,7 @@ rollout winds "Winds" width:162 height:300
 
 
 
-	)
+)
 
 rollout fileio "File I / O" width:162 height:300
 (
@@ -524,7 +524,7 @@ rollout fileio "File I / O" width:162 height:300
 
 
 		on load pressed do 
-			(
+		(
 				sFileName = getOpenFileName caption:"Load settings" filename:"*.tre" types:"Tree Maker settings(*.tre)|(*.tre)"
 			
 				if sFileName == undefined then return false
@@ -534,24 +534,24 @@ rollout fileio "File I / O" width:162 height:300
 				fInput = openFile sFileName mode:"r"
 				
 				if fInput == undefined then
-					(
+				(
 						MessageBox ( "Unable to open \"" + sFileName + "\" for input." ) 
 						return false
-					)
+				)
 				
 				sInput = readLine fInput
 				if sInput != "Treetool Data File" then
-					(
+				(
 					 	close fInput
 				
 						MessageBox ( "\"" + sFileName + "\" didn't appear to contain tree maker data." )
 						return false
-					)
+				)
 				
 				sInput = readLine fInput
 			
 				while( not ( eof fInput ) ) do
-					(
+				(
 						sides_trunk				= readvalue fInput
 						segs_trunk 				= readvalue fInput
 						thickness_trunk 		= readvalue fInput
@@ -585,7 +585,7 @@ rollout fileio "File I / O" width:162 height:300
 						subb_leaf = #()
 						for a = 1 to d do append subb_leaf (readvalue fInput)
 
-					)
+				)
 					sub_name = #()
 					for sn = 1 to (subb.count/arrnr) do append sub_name ("sub branch " +(sn as string))
 					if sub_name.count > 0 do locker = true
@@ -593,11 +593,11 @@ rollout fileio "File I / O" width:162 height:300
 
 				close fInput
 				return true	
-			)
+		)
 	
 			
 		on save pressed do
-			(
+		(
 			
 			 	sFileName = getSaveFileName caption:"Save settings" filename:"*.tre" types:"Tree Maker settings(*.tre)|(*.tre)"
 			
@@ -609,10 +609,10 @@ rollout fileio "File I / O" width:162 height:300
 			
 				fOutput = openfile sFileName mode:"w"
 				if( fOutput == undefined ) then
-				(
+			(
 					MessageBox ( "Unable to open \"" + sFileName + "\" for output." )
 					return false
-				)
+			)
 				
 				---version
 			
@@ -663,19 +663,19 @@ rollout fileio "File I / O" width:162 height:300
 				close fOutput
 			
 				return true
-			)
+		)
 )
 
 on load do 
-	(	
+(	
 		if subb != undefined then
-			(
+		(
 				sub_name = #()
 				for sn = 1 to (subb.count/arrnr) do append sub_name ("sub branch " +(sn as string))
 				if sub_name.count > 0 do locker = true
-			)
+		)
 		else print "empty tree"
-	)
+)
 
 
 
@@ -697,42 +697,42 @@ subbleaf = #()
 -------- Wind generation
 
 if windon_wind == true then 
-	(	
+(	
 		benddir_trunk = (sin(currenttime  * dir_freq_winds) * dir_strengt_winds) +direction_winds
 		bend_trunk = abs (sin (currenttime * wind_freq_winds) * wind_strength_winds) + min_wind_winds + abs (sin(currenttime * w_dist_freq_winds + w_dist_strength_winds))
-	)
+)
 
 	else 
 	
-	(
+(
 		benddir_trunk = benddir_t
 		bend_trunk = bend_t
-	)
+)
 
 -------- Wind generation end
 
 -------- Rearranging arrays bor branches and leafs
 	
 for a = 1 to subb.count/arrnr do
-	(	
+(	
 		temparr = #()
 		for fr = 1 to arrnr do append temparr subb[fr+((a-1)*arrnr)]
 		append subbranches temparr
 
-	)
+)
 for a = 1 to subb_leaf.count/arrnr_leaf do
-	(	
+(	
 		temparr = #()
 		for fr = 1 to arrnr_leaf do append temparr subb_leaf[fr+((a-1)*arrnr_leaf)]
 	
 		append subbleaf temparr
 
-	)
+)
 
 -------- Rearranging arrays bor branches and leafs end
 
 for i = 1 to (segs_trunk + 1) do
-	(	
+(	
 		dirscale = i / segs_trunk
 
 		y = length_trunk / segs_trunk * (i-1)
@@ -743,7 +743,7 @@ for i = 1 to (segs_trunk + 1) do
 		noise_y = cos (benddir_trunk * dirscale) * noise-- * (2 * segs_trunk - y) / segs_trunk
 		
 		for j = 1 to sides_trunk do
-			(
+		(
 
 
 
@@ -777,32 +777,32 @@ for i = 1 to (segs_trunk + 1) do
 				append treeverts ([x_var + add_x + noise_x,y_var + add_y + noise_y,z_var])
 
 				if i != (segs_trunk + 1) do
-					(
+				(
 						if j != sides_trunk then
-							(
+						(
 								append facearr [j + sides_trunk * (i-1),j + 1 + sides_trunk * (i-1),sides_trunk * i + j]
 								append facearr [j + 1 + sides_trunk * (i-1),sides_trunk * i + j + 1,sides_trunk * i + j]
 								append matarr 1
 								append matarr 1
-							)
+						)
 						else
-							(
+						(
 								append facearr [j + sides_trunk * (i-1),j + sides_trunk * (i-1) - (sides_trunk-1),(1 + i) * sides_trunk]
 								append facearr [j + sides_trunk * (i-1) - (sides_trunk-1),j + 1 + sides_trunk * (i-1),(1 + i) * sides_trunk]
 								append matarr 1
 								append matarr 1
-							)
-					)
-			)
-	)
+						)
+				)
+		)
+)
 
 --- collects coordinates for branches generation 1
 
 if subbranches[1] != undefined do
-	(
+(
 
 		for i = 1 to subbranches[1][8] do
-			(
+		(
 				seed i
 				y = random bstart_trunk bstop_trunk
 				level = ((y / length_trunk) * segs_trunk)
@@ -827,16 +827,16 @@ if subbranches[1] != undefined do
 
 				append placearr [x_var + noise_x,y_var + noise_y,z_var]
 
-			)
-	)
+		)
+)
 
 
 --- collects coordinates for leafs on stem or stem top
 
 if subbleaf[1] != undefined and subbleaf[1] != 0 do
-	(
+(
 		for i = 1 to subbleaf[1][1] do
-			(
+		(
 				seed i
 				y = random subbleaf[1][2] length_trunk
 				level = ((y / length_trunk) * segs_trunk)
@@ -861,12 +861,12 @@ if subbleaf[1] != undefined and subbleaf[1] != 0 do
 
 			append leafplacearr [x_var + noise_y,y_var + noise_x,z_var]
 
-			)
+		)
 --- leaf algoritm
 --- spike trees
 
 for le = 1 to subbleaf[1][1] do
-	(
+(
 			ga = (le * (subbleaf[1][1] + 999)) * 6789
 			seed ga
 			randir = random 1 360
@@ -875,7 +875,7 @@ for le = 1 to subbleaf[1][1] do
 
 	local current_numverts = treeverts.count
 	for c = 1 to 4 do
-		(	
+	(	
 			if c == 1 then affection_xy = 0 else affection_xy = 0.4
 			if c == 1 or c == 3 then affection24 = 0 else affection24 = 1
 			if c == 2 then affection2 = 1 else affection2 = -1
@@ -889,15 +889,15 @@ for le = 1 to subbleaf[1][1] do
 			
 			append treeverts ([x_var,y_var,z_var])
 		
-		)
+	)
 
 	append facearr [current_numverts+4,current_numverts+3,current_numverts+2]
 	append facearr [current_numverts+2,current_numverts+1,current_numverts+4]
 	append matarr 10
 	append matarr 10
-	)
+)
 	
-	)
+)
 
 local branches = 1
 local barr = #()
@@ -919,23 +919,23 @@ local lutningsarrbranch = #()
 for name = 1 to sub_name.count do barr[name] = #()
 
 for i = 1 to sub_name.count do 
-	(	
+(	
 		local colection = 0
 
 -------- Wind generation branches 
 
 if windon_wind == true then 
-	(	
+(	
 		benddir_trunk = (sin((currenttime + subbranches[i][13]) * dir_freq_winds) * dir_strengt_winds) +direction_winds
 		bend_trunk = abs (sin ((currenttime + subbranches[i][13]) * wind_freq_winds) * wind_strength_winds) + min_wind_winds + abs (sin((currenttime + subbranches[i][13]) * w_dist_freq_winds + w_dist_strength_winds))
-	)
+)
 
 	else 
 	
-	(
+(
 		benddir_trunk = benddir_t
 		bend_trunk = bend_t
-	)
+)
 
 -------- Wind generation branches end
 
@@ -943,15 +943,15 @@ if windon_wind == true then
 		lastdir = #()
 		if i == 1 do local remember = placearr
 		for B = 1 to branches do
-			(
+		(
 				if i != 1 do
-					(	
+				(	
 
 						placearr = barr[i]
-					)
+				)
 					
 				for j = 1 to subbranches[i][8] do 
-					(	
+				(	
 						local arrcount = facearr[facearr.count][3]
 						if j == 1 or y == branches do y = 1
 						if i == 1 do local jb_con = j 
@@ -961,15 +961,15 @@ if windon_wind == true then
 						angb = 360 / subbranches[i][1]
 												
 						if i == 1 do
-							(
+						(
 								switch = 1
 								seed (subbranches[i][7] * j * B * i)
 								angle = (random 0 360) as float
 
-							)
+						)
 
 						if i != 1 do 
-							(	
+						(	
 --								if ((j + b)/2) as float == ((j + b)/2) as integer then switch = -1 else switch = 1
 --								if i == 3 then if ((j + b)/2) as float == ((j + b)/2) as integer then switch = -1 else switch = 1
 								switch = -switch
@@ -979,7 +979,7 @@ if windon_wind == true then
 								seed (subbranches[i][7]* j * B * i)
 								angle = lastdir1[jb_con] + 45 * switch-- + random 0 (switch * subbranches[i][9] / 2)
 
-										)
+									)
 local lutningsarr = #()
 
 			---- Disables functions dealing with scaling furter out on branches for branch gen. 1 ----
@@ -1007,7 +1007,7 @@ local lutningsarr = #()
 
 	for k = 1 to (subbranches[i][2] + 1) do
 
-		(	
+	(	
 
 		y = b_l / subbranches[i][2] * (k-1)
 
@@ -1019,7 +1019,7 @@ local lutningsarr = #()
 
 		for L = 1 to subbranches[i][1] do
 
-			(	
+		(	
 
 				------ calculates circle shape start ------
 
@@ -1050,12 +1050,12 @@ local lutningsarr = #()
 
 
 			if l == 1 do
-				(
+			(
 					if k == 1 do forsta = [x_var,y_var,z_var]
 					if k == subbranches[i][2] do sista = [x_var,y_var,z_var]
 
 					if k > 1 do 
-						(
+					(
 							lutning_x = amax #(abs forra_x,abs x_var) - amin #(abs forra_x,abs x_var)
 							lutning_y = amax #(abs forra_y,abs y_var) - amin #(abs forra_y,abs y_var)
 							lutning_z = amax #(abs forra_z,abs z_var) - amin #(abs forra_z,abs z_var)
@@ -1064,17 +1064,17 @@ local lutningsarr = #()
 
 							append lutningsarr ([forra_z,z_var,(90 - lut)])
 							for LU = 1 to lutningsarr.count do append lutningsarrbranch lutningsarr[LU]
-						)
+					)
 
 					forra_x = x_var
 					forra_y = y_var
 					forra_z = z_var
-				)
+			)
 
 										if k != (subbranches[i][2] + 1) do
-											(
+										(
 												if l != subbranches[i][1] then
-													(	
+												(	
 														arradd1 = [(L + subbranches[i][1] * (k-1)) + arrcount,L + 1 + subbranches[i][1] * (k-1) + arrcount,(subbranches[i][1] * k + L) + arrcount]
 														arradd2 = [(L + 1 + subbranches[i][1] * (k-1)) + arrcount,(subbranches[i][1] * k + L + 1) + arrcount,(subbranches[i][1] * k + L) + arrcount]
 
@@ -1083,9 +1083,9 @@ local lutningsarr = #()
 
 														append matarr (i+1)
 														append matarr (i+1)
-													)
+												)
 												else
-													(
+												(
 														local arradd1 = [L + subbranches[i][1] * (k-1) + arrcount,L + subbranches[i][1] * (k-1) - (subbranches[i][1]-1) + arrcount,((1 + k) * subbranches[i][1]) + arrcount]
 														local arradd2 = [L + subbranches[i][1] * (k-1) - subbranches[i][1] - 1 + arrcount+2,L + 1 + subbranches[i][1] * (k-1) + arrcount,((1 + k) * subbranches[i][1]) + arrcount]
 
@@ -1093,20 +1093,20 @@ local lutningsarr = #()
 														append facearr arradd2
 														append matarr (i+1)
 														append matarr (i+1)
-													)
+												)
 
-											)
+										)
 											
-				)
+			)
 
 
-		)
+	)
 
 --- startpositions for next generation branches 
 
 if subbranches[i+1] != undefined do
 
-	(
+(
 		--- starting point for nextgen scaling ---
 			
 			b_ls = subbranches[i+1][10] * teee_d[((dist_from_ground * 100)) as integer]
@@ -1116,7 +1116,7 @@ if subbranches[i+1] != undefined do
 
 		for n = 1 to (subbranches[i+1][8]) do 
 
-			(
+		(
 --print subbranches[i][9]
 
 				seed (n*subbranches[i+1][7])
@@ -1151,9 +1151,9 @@ if subbranches[i+1] != undefined do
 				append lastdir (angle + subbranches[i][9])
 
 									
-			)
+		)
 									
-	)
+)
 							
 --- startpositions for next generation branches ends
 
@@ -1164,7 +1164,7 @@ antalperkvist = (SQRT ((abs sista[1] - abs forsta[1])^2 + (abs sista[2] - abs fo
 --print subbleaf[i+1][2]
 if subbleaf[i+1] != undefined and subbleaf[i+1][1] != 0 do
 
-	(
+(
 
 		--- starting point for thisgen leafs scaling ---
 			
@@ -1175,7 +1175,7 @@ if subbleaf[i+1] != undefined and subbleaf[i+1][1] != 0 do
 		leafremember = leafplacearr.count
 		for n = 1 to (subbleaf[i+1][1] * antalperkvist) as integer  do 
 
-			(
+		(
 				y = random b_ls  subbleaf[i+1][6]
 				level = ((y / length_trunk) * segs_trunk)
 
@@ -1199,7 +1199,7 @@ if subbleaf[i+1] != undefined and subbleaf[i+1][1] != 0 do
 			
 				append leafplacearr [x_var + noise_y,y_var + noise_x,z_var]
 
-			)
+		)
 	
 --- end of leaf startpoints
 
@@ -1208,7 +1208,7 @@ antalperkvist = (SQRT ((abs sista[1] - abs forsta[1])^2 + (abs sista[2] - abs fo
 
 for le = 1 to (subbleaf[i+1][1] * antalperkvist) as integer do
 
-	(
+(
 			randir = random subbleaf[i+1][7] subbleaf[i+1][8]
 
 			hscale = 1 - (le / (subbleaf[i+1][1] * antalperkvist)) / subbleaf[i+1][9]
@@ -1245,7 +1245,7 @@ if lutning == undefined do lutning = 0
 	local randir = randir + lutning * sin subbleaf[i+1][3]
 	
 	for c = 1 to 4 do
-		(	
+	(	
 			if c == 1 then affection_xy = 0 else affection_xy = 0.5
 			if c == 3 then affection_xy = 1
 			if c == 1 or c == 3 then affection24 = 0 else affection24 = 1
@@ -1280,23 +1280,23 @@ if lutning == undefined do lutning = 0
 			append treeverts ([x_var,y_var,z_var])
 
 if leaf_type_l != 1 do 
-	(
+(
 	
 	if c == 1 or c == 3 then 
-		(
+	(
 			append next treeverts[treeverts.count]
-		)
+	)
 	else 	
-		(
+	(
 			x_var =  x_var_part_1 - x_var_part_2 + x_var_part_3 - z_var_part_3 * sin angle * sidepl
 			y_var =  y_var_part_1 - y_var_part_2 + y_var_part_3 - z_var_part_3 * -cos angle * sidepl
 			z_var = z_var_part_1 - sqrt (x_var_part_4^2 + y_var_part_4^2) * affection2 - sqrt (x_var_part_5^2 + y_var_part_5^2) * affection2 + z_var_part_2
 
 			append next ([x_var,y_var,z_var])
 
-		)
-	)		
 	)
+)		
+)
 
 			append facearr [current_numverts+4,current_numverts+3,current_numverts+2]
 			append facearr [current_numverts+2,current_numverts+1,current_numverts+4]
@@ -1310,7 +1310,7 @@ if leaf_type_l != 1 do
 --- for duoplanes
 
 if leaf_type_l != 1 do
-	(
+(
 		for q = 1 to 4 do append treeverts next[q]
 
 			append facearr [current_numverts+8,current_numverts+7,current_numverts+6]
@@ -1318,7 +1318,7 @@ if leaf_type_l != 1 do
 				
 					append matarr 10
 					append matarr 10
-	)
+)
 
 --- duoplanes end
 
@@ -1333,8 +1333,8 @@ if leaf_type_l != 1 do
 colection += 1
 					
 
-					)
-			)
+				)
+		)
 branches = colection
 )
 
@@ -1343,18 +1343,18 @@ setmesh mesh vertices:treeverts faces:facearr materialids:matarr
 )
 
 tool create
-	(
+(
 		on mousePoint click do
 		case click of 
-			(
+		(
 				1: 
-					(
+				(
 					local posit = gridpoint
 					nodeTM.translation = gridpoint
 					local subbranches = #()
-					)
+				)
 				2: #stop
-			)		
-	)
+		)		
+)
 
 )-- EOS

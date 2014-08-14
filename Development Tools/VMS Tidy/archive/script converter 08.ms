@@ -120,7 +120,7 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 	label lbl5 \"Sparrows\" pos:[16,237] width:56 height:16
 	progressBar pb1 \"ProgressBar\" pos:[208,248] width:144 height:8 value:50"
 
-	)
+)
 
 
 
@@ -144,40 +144,40 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 	---------------------------------------------------------------------------------------------------
 
 	fn isIn container item=
-		(
+	(
 		-- items should be uiItem structs
 		local c=container
 		local i = item
 		if c!= undefined AND i!=undefined then
-			(
+		(
 			local c=box2 c.x c.y c.w c.h
 			local i=point2 i.x i.y
 			return (contains c i)
-			)
-		else return false
 		)
+		else return false
+	)
 
 	fn orderArray arr=
-		(
+	(
 		tmpArr=#()
 		for y = 1 to arr.count do
-			(
+		(
 			if arr[y]!=undefined then
-				(
+			(
 				for x = 1 to arr[y].count do
-					(
+				(
 					if arr[y][x]!=undefined then
-						(
+					(
 						append tmpArr arr[y][x]
-						)
 					)
 				)
 			)
-		return tmpArr
 		)
+		return tmpArr
+	)
 
 	fn tidy=
-		(
+	(
 		-----------------------------------------------------------------
 		--	variables
 			roSize=point2 100 25
@@ -195,7 +195,7 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 		-----------------------------------------------------------------
 
 		for s in strArr do
-			(
+		(
 			---------------------------------------------------------
 			--	strip whitespace
 
@@ -203,7 +203,7 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 				while substring s 1 1 == " " do s=substring s 2 -1
 
 			if s.count>0 then
-				(
+			(
 				---------------------------------------------------------
 				-- start breaking string down to get propeties
 	
@@ -216,35 +216,35 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 					-- x,y
 						i=findstring s "pos:["
 						if i != undefined then
-							(
+						(
 							str=substring s (i+5) -1
 							str=(filterstring str "]")[1]
 							arr=filterstring str ","
 							x=arr[1] as integer
 							y=arr[2] as integer
 							--format "x: % y: % \n" x y
-							)
+						)
 	
 					-- width
 						i=findstring s "width:"
 						if i != undefined then
-							(
+						(
 							str=substring s (i+6) -1
 							str=(filterstring str " ")[1]
 							w=str as integer
 							--format "w: % \n" w
-							)
+						)
 	
 					-- height
 						i=findstring s "height:"
 						--format "i:% \n" i
 						if i != undefined then
-							(
+						(
 							str=substring s (i+7) -1
 							str=(filterstring str " ")[1]
 							h=str as integer
 							--format "h: % \n" h
-							)
+						)
 	
 	
 				---------------------------------------------------------
@@ -266,17 +266,17 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 					local ui=uiItem type:type x:x y:y w:w h:h string:s
 	
 					if type=="groupBox" then
-						(
+					(
 						if uiGroupArr[y]==undefined then uiGroupArr[y]=#()
 						if uiGroupArr[y][x]==undefined then uiGroupArr[y][x]=ui
-						)
+					)
 					else
-						(
+					(
 						if uiItemArr[y]==undefined then uiItemArr[y]=#()
 						if uiItemArr[y][x]==undefined then uiItemArr[y][x]=ui
-						)
-				)
+					)
 			)
+		)
 			
 
 
@@ -299,65 +299,65 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 		local currentGroup=undefined
 		local insertExtraLine=true
 		for i = 1 to uiItemArr.count do
-			(
+		(
 			-- check if in any groups;
 				local isInGroup=false
 				-- is it in the current group?
 					if isIn currentGroup uiItemArr[i] then isInGroup=true
 				-- loop through remaining groups
 					else
-						(
+					(
 						for g = 1 to uiGroupArr.count do
-							(
+						(
 							if isIn uiGroupArr[g] uiItemArr[i] then
-								(
+							(
 								format "\n	%\n" uiGroupArr[g].string to:str
 								isInGroup=true
 								currentGroup=uiGroupArr[g]
 								uiGroupArr=deleteItem uiGroupArr g
 								exit
-								)
 							)
 						)
+					)
 			if isInGroup then
-				(
+			(
 				format "		%\n" uiItemArr[i].string to:str
 				insertExtraLine=true
-				)
+			)
 			else
-				(
+			(
 				if insertExtraLine then format "\n" to:str
 				format "	%\n" uiItemArr[i].string to:str
 				insertExtraLine=false
-				)
 			)
+		)
 		format "\n" to:str
 
 		edt1.text=(str as stringstream)
 */
 		str = ""
 		for g = 1 to uiGroupArr.count do
-			(
+		(
 			--format "%\n" uiGroupArr[g].string
 			str+="	"+uiGroupArr[g].string+"\n"
 			
 			for i = 1 to uiItemArr.count do
-				(
+			(
 				if isIn uiGroupArr[g] uiItemArr[i] then
-					(
+				(
 					--format "%\n" uiItemArr[i].string
 					str+="		"+uiItemArr[i].string+"\n"
-					)
 				)
+			)
 			--format "\n"
 			str+="\n"
-			)
+		)
 			edt1.text=str
 
-		)
+	)
 
 	fn createScript=
-		(
+	(
 		local w=int (roSize.x +4) as string
 		local h=int (roSize.y +4) as string
 		local str="--UI Tidy test rollout\n\n"+
@@ -368,7 +368,7 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 			"	)\n\n"+
 			"createDialog uiTidyTestRo\n"
 		return str
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -379,45 +379,45 @@ rollout ro1 "Copy and paste rollout code here..." width:800 height:800
 	
 
 	on ro1 open do
-		(
+	(
 		edt1.text = uiStrArr[1]
-		)
+	)
 /*
 	on ro1 resized size do
-		(
+	(
 		h=size[2]
 		ro1.height=h-35
 		for c in ro1.controls do
-			(
+		(
 			local x=c.pos[1]
 			local y=h-56
 			c.pos=[x,y]
-			)
+		)
 		edt1.pos=[8,8]
 		format "%\n" edt1.height
-		)
+	)
 */
 	on btnTidy pressed do
-		(
+	(
 		tidy()
-		)
+	)
 
 	on btnTest pressed do
-		(
+	(
 		tidy()
 		global uiTidyTestRo
 		execute (createScript())
 		try (destroyDialog uiTidyTestRo);catch()
 		createDialog uiTidyTestRo
-		)
+	)
 
 	on btnEdit pressed do
-		(
+	(
 		tidy()
 		local uiTidyTestStr=createScript()
 		if (uiScriptWin==undefined) OR ((uiScriptWin as string).count<10) then uiScriptWin=newScript()
 		format "%\n" uiTidyTestStr to:uiScriptWin
-		)
+	)
 
 	on rdoText changed val do edt1.text = uiStrArr[val]
 )

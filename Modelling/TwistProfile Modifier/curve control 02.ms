@@ -1,5 +1,5 @@
 rollout uTestCurveControl "Curve Control"
-	(
+(
 
 	-------------------------------------------------------------------------------------
 	-- interface
@@ -28,7 +28,7 @@ rollout uTestCurveControl "Curve Control"
 	-------------------------------------------------------------------------------------
 	
 		on uTestCurveControl open do
-			(
+		(
 			local colors = #(red, green, blue)
 			local styles = #(#solid, #dash, #dot, #dashDot, #dashDotDot, #null, #insideFrame)
 			local num = cc_test.numCurves 
@@ -51,7 +51,7 @@ rollout uTestCurveControl "Curve Control"
 			-- Place intermediate points equally spaced
 	
 			zoom cc_test #all
-			)
+		)
 	 
 	 
 		-- Curve control event handlers
@@ -62,7 +62,7 @@ rollout uTestCurveControl "Curve Control"
 			on cc_test deleted ci pi do format "curve % deleted : %\n" ci pi
 			on cc_test reset ci do format "curve % resetted\n" ci
 		*/
-	)
+)
  
 --curveFloater = newRolloutFloater "Curve Control Test"
  
@@ -93,11 +93,11 @@ twistMod = $.modifiers[1]
 twistCrv = uTestCurveControl.cc_test.curves[1]
 
 for i = 1 to twistCrv.points.count do
-	(
+(
 	twistMod.twistVals[i]		= twistCrv.points[i].value
 	twistMod.twistValsIn[i]		= twistCrv.points[i].inTangent
 	twistMod.twistValsOut[i]	= twistCrv.points[i].outTangent
- 	)
+ )
 
 getValue uTestCurveControl.cc_test.curves[1] 0 750
 

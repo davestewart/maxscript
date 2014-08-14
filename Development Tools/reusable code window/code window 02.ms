@@ -26,18 +26,18 @@ rollout ro1 "Options" width:392 height:184
 
 
 fn doCode=
-	(
+(
 	for obj in selection do (
-		try	(
+		try(
 			tempObj = obj.name
 			cmd=edt1.text
 			execute("$" + tempObj + "." + cmd)
-			)
+		)
 		catch (
 		--displayTempPrompt <string> <milliseconds_integer> 
-			)
 		)
 	)
+)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

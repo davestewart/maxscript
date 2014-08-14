@@ -39,19 +39,19 @@ local aeKeyEnd = "End of Keyframe Data"
 
 
 fn getKeyStart w h = 
-	(
+(
 	local str = "" as stringstream
 	format aeKeyStart framerate w h 1 1 to:str
 	return str as string
-	)
+)
 	
 fn getKeyEnd = 
-	(
+(
 	return aeKeyEnd
-	)
+)
 	
 fn getKeyPosition obj t1 t2 drawMarkers:false =
-	(
+(
 	local p, t, a
 	local strBase	= "" as stringstream
 	local strKeys	= "" as stringstream
@@ -59,29 +59,29 @@ fn getKeyPosition obj t1 t2 drawMarkers:false =
 	gw.setTransform(Matrix3 1)
 
 	for t = t1 to t2 do
-		(
+	(
 		p			= at time t getScreenPos obj
 		format "	%	%	%	0	\n" t p.x p.y to: strKeys
 		t			+= 1
 		if drawMarkers == true then gw.wMarker p #circle color:green
-		)
+	)
 
 	if drawMarkers == true then
-		(
+	(
 		gw.enlargeUpdateRect #whole
 		gw.updateScreen()
-		)
+	)
 
 
 	format aeKeyPosition (strKeys as string) to:strBase
 	return strBase as string
-	)
+)
 	
 if testing != false then
-	(
+(
 	clearListener()
 	format "%\n" (getKeyStart 300 300)
 	format "%\n" (getKeyPosition $ 1 40 drawMarkers:true)
 	format "%\n" (getKeyEnd())
-	)
+)
 )

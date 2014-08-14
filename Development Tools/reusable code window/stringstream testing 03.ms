@@ -24,13 +24,13 @@ interface."
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	on btn1 pressed do
-		(
+	(
 
 		local txt1 = stringstream edt1.text
 		local txt2 = "			"
 		
 		while not (eof txt1) do
-			(
+		(
 			char = (readChar txt1)
 			if char != "\n" then txt2 += char
 			else txt2 += "
@@ -38,7 +38,7 @@ interface."
 		close txt1
 
 		edt2.text = txt2
-		)
+	)
 )
 
 if myFloater != undefined then closerolloutfloater myFloater

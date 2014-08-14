@@ -4,7 +4,7 @@ s = sphere radius:500
 m = snapshotasmesh s
 
 for i = 1 to getnumverts m do
-	(
+(
 	pos = getvert m i
 	rot = getnormal m i
 
@@ -12,7 +12,7 @@ for i = 1 to getnumverts m do
 	translate mx pos
 	
 	b	= box transform:mx
-	)
+)
 
 
 pf = $'PF Source 01'

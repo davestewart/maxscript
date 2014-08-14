@@ -33,7 +33,7 @@ rollout ro1 "Options" width:472 height:144
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 fn convertFiles =
-	(
+(
 	i=0
 	files = getFiles ((getFilenamePath pathImp) as String + "*.3ds")
 
@@ -48,11 +48,11 @@ fn convertFiles =
 		--	importFile f #noPrompt
 		print f
 
-		)
+	)
 		grpProgress.text = "Progress"
 
 
-	)
+)
 
 
 
@@ -60,19 +60,19 @@ fn convertFiles =
 
 
 	fn getPathImp =
-		(
+	(
 		pathImp = getOpenFileName caption:"Select first *.3ds file to import..." types:"3D Studio Mesh (*.3ds)|*.3ds" ()
 		edtPathImp.text = pathImp as String
 		grpProgress.text = "Progress"
 
-		)	
+	)	
 	
 	fn getPathExp =
-		(
+	(
 		--pathExp = getSaveFileName caption:"Select output directory for *.max files" types:"3ds max (*.max)|*.max" ()
 		pathExp = getSavePath()
 		edtPathExp.text = pathExp as String
-		)
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------

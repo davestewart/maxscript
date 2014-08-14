@@ -12,12 +12,12 @@ rollout r1 "Graphing Example 2" width:320 height:336
 	local s
 
 	function getPos=
-		(
+	(
 		return [random -100 100,random -100 100,random -100 100]
-		)
+	)
 
 	function createNewAnimation=
-		(
+	(
 		delete objects
 		s=sphere()
 		s.showTrajectory =on
@@ -26,45 +26,45 @@ rollout r1 "Graphing Example 2" width:320 height:336
 		local t2		=animationRange.end
 		
 		with animate on
-			(
+		(
 			at time (t1)				s.pos=getPos()
 			at time ((t2-t1)*0.25)		s.pos=getPos()
 			at time ((t2-t1)*0.5)		s.pos=getPos()
 			at time ((t2-t1)*0.75)		s.pos=getPos()
 			at time (t2)				s.pos=getPos()
-			)
-
-		plotGraph()
 		)
 
+		plotGraph()
+	)
+
 	function plotGraph=
-		(
+	(
 		local posStr=""
 		for t = animationRange.start to animationRange.end do
-			(
+		(
 			case rdo1.state of
-				(
+			(
 				1:		at time t posStr+=s.pos.x as string + "," + s.pos.y as string + " "
 				2:		at time t posStr+=s.pos.x as string + "," + s.pos.z as string + " "
 				3:		at time t posStr+=s.pos.y as string + "," + s.pos.z as string + " "
 				default:	""
-				)
 			)
+		)
 
 		ax.SetVariable "pointsStr" posStr
 		ax.TCallLabel "_root" "update"
 		--messagebox posStr
-		)
+	)
 		
 	on r1 open do
-		(
+	(
 
 		-- BE SURE TO UPDATE YOUR FLASH PATH HERE!
 		local flashPath	="E:/03_Scripting/maxScript/max 8/graphing/"
 
 		ax.movie		=flashPath+"graphing_example_2.swf"
 		createNewAnimation()
-		)
+	)
 		
 	on btn1 pressed do plotGraph()
 	on btn2 pressed do createNewAnimation()

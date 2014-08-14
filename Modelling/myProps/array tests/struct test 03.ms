@@ -17,17 +17,17 @@ mySelection = objects as Array
 
 -- create stack info for each object
 for obj in selection do
-	(
+(
 	format "\n%:\n" obj.name
 	for mod = 1 to obj.modifiers.count do
-		(
+	(
 		format "  %\n" obj.modifiers[mod]
 		append myModList obj.modifiers[mod] as String
-		)
+	)
 	data = objInfo name:obj.name  baseProps: (getPropNames obj) mods:obj.modifiers
 	append myObjList data
 	myModList = #()
-	)
+)
 
 
 

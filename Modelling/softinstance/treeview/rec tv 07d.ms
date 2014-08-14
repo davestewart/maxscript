@@ -13,9 +13,9 @@ superclassIcoArr
 */
 
 if  (getCurrentSelection()).count==0 then
-	(
+(
 	if (NOT isvalidnode b) then
-		(
+	(
 		b=box()
 		addModifier b (Bend ())
 	/*
@@ -40,8 +40,8 @@ if  (getCurrentSelection()).count==0 then
 		b.material = meditmaterials[1]
 	*/
 		select b
-		)
 	)
+)
 if test!=undefined then destroydialog test
 global doCopy
 	
@@ -49,7 +49,7 @@ global doCopy
 
 
 	rcMenu copyMenu
-		( 
+	( 
 		--local clone_node, is_cut		
 		menuItem mi_Val					"Copy Value Only"
 		seperator sep1
@@ -64,11 +64,11 @@ global doCopy
 		on mi_Wire picked do			test.doCopy "wir"
 		on mi_Instance picked do		test.doCopy "ins"
 		on mi_SoftInstance picked do	test.doCopy "sof"
-		)	
+	)	
 
 
 	rcMenu nodeMenu
-		( 
+	( 
 		--local clone_node, is_cut		
 		menuItem mi_Copy				"Copy"
 		seperator sep1
@@ -80,27 +80,27 @@ global doCopy
 		menuItem mi_PasteSoftInstance	"Paste Soft Instance"
 		seperator sep3
 		subMenu "Controller..."
-			( 
+		( 
 			menuItem mi_CtrlDlg				"Controller Dialog..."
 			menuItem mi_TrackviewSelect		"Select in trackview..."
 			menuItem mi_AssignController	"Assign..."
-			)
+		)
 		seperator sep4
 		subMenu "Tree..."
-			( 
+		( 
 			menuItem mi_SelAllDown			"Select all downstream"
 			seperator sep5
 			menuItem mi_Options				"AutoExpand settings"
-			)
+		)
 		
 		on mi_CtrlDlg picked do			test.ctrlDiag()
 
-		)	
+	)	
 --------------------------------------------------------
 
 
 	rollout test "The Phat Controller" width:512 height:584
-		(
+	(
 
 ---------------------------------------------------------------------------------------------------------------------------
 -- declarations
@@ -158,15 +158,15 @@ global doCopy
 ---------------------------------------------------------------------------------------------------------------------------
 
 		function pad num padLength =
-			(
+		(
 			num=num as string
 			while num.count < padLength do num = ("0"+num)
 			return num
-			)
+		)
 	
 
 		function replaceAll str outStr inStr =
-			(
+		(
 			-- str the original string
 			-- the string/character to replace
 			-- the replacement string/character
@@ -175,32 +175,32 @@ global doCopy
 			while ((n=findstring str outStr) != undefined) do str = replace str n inStr.count inStr
 			if str != undefined then return str
 			else return origStr
-			)
+		)
 
 
 		function reverseArray inArr =
-			(
+		(
 			local outArr = #()
 			while inArr.count > 0 do
-				(
+			(
 				append outArr inArr[inArr.count]
 				deleteItem inArr inArr.count
-				)
-			return outArr
 			)
+			return outArr
+		)
 
 
 		local t1=0,t2=0
 		function timeIt type =
-			(
+		(
 			if type==0 then t1=timeStamp()
 			else
-				(
+			(
 				t2=timestamp()
 				local t=(t2-t1)/1000 as float
 				format "Processing took % seconds\n" t
-				)
 			)
+		)
 
 		function ctrlDiag = try(displayControlDialog (getSAFromNode selNode).controller "")catch()
 
@@ -210,7 +210,7 @@ global doCopy
 
 
 	fn doCopy type =
-		(
+	(
 		local src, trg
 		src= getSAFromNode dragNode
 		trg= getSAFromNode dropNode
@@ -218,24 +218,24 @@ global doCopy
 		format "% | %\n" src.object trg.object
 
 		undo "Property Copy" on
-			(
+		(
 			case type of
-				(
-				"val":	(
+			(
+				"val":(
 				-- values only
 					trg.value = src.value
-					)
-				"cop":	(
+				)
+				"cop":(
 				-- copy
 					if (NOT src.isAnimated OR src.controller==undefined) then trg.value = src.value
 					else trg.controller = copy src.controller
-					)
-				"ins":	(
+				)
+				"ins":(
 				-- instance
 					if src.controller==undefined then src.controller=bezier_float()
 					trg.controller = src.controller
-					)
-				"wir":	(
+				)
+				"wir":(
 				-- wire
 					--sa1=$sphere01[4][2]
 					--sa2=$teapot01[4][1]
@@ -243,20 +243,20 @@ global doCopy
 					local trgName=(filterstring (trg as string) ":")[2]
 	
 					paramWire.connect2Way src trg trgName srcName
-					)
-				"sof":	(
+				)
+				"sof":(
 				-- soft instance
 					-- popup new window with checkboxes
 					-- makes selection
 					-- instance recursively
-					)
-				default:messagebox "Unknown argument for doCopy()"
 				)
+				default:messagebox "Unknown argument for doCopy()"
+			)
 		--update icon
 			dragNode.image=getIconIndex src
 			dropNode.image=getIconIndex trg
-			)
 		)
+	)
 
 ---------------------------------------------------------------------------------------------------------------------------
 -- treeview functions
@@ -265,7 +265,7 @@ global doCopy
 
 
 		fn initImageList=
-			(
+		(
 			--messageBox "initImageList()"
 			-- set variables
 				local icoRel ="icons\\ico\\"
@@ -273,7 +273,7 @@ global doCopy
 				local iconStr=""
 			-- start the loop
 				for i = 1 to libraryClassArr.count do
-					(
+				(
 					try (
 					-- get and load the bitmap file
 						local icoFile =icoRel + libraryIcoArr[i]
@@ -284,17 +284,17 @@ global doCopy
 
 					-- update ebug info
 						iconStr+=(pad j 3) +" | "+ libraryClassArr[i] +" | "+ libraryIcoArr[i] +"\n"
-						)
-					catch(j-=1)
 					)
+					catch(j-=1)
+				)
 			-- write debug info
 				--format "%" iconStr to:(win=newScript())
 				--format "libraryClassArr.count:%\nj:%\n" libraryClassArr.count j to:win
-			)
+		)
 
 
 		fn initTreeView tv singleSel=
-			(
+		(
 			-- linestyles
 				tv.lineStyle = #tvwRootLines
 				tv.lineStyle = #tvwTreeLines
@@ -319,71 +319,71 @@ global doCopy
 				tv.oleDragMode = #ccOLEDragAutomatic
 				tv.oleDropMode = #ccOLEDropManual
 
-			)
+		)
 
 
 
 	fn getSAStringFromNode tvNode =
-		(
+	(
 		-- set up variables
 			local saStr="$"+tvNode.root.key
 			local saArr=filterstring tvNode.tag ","
 			for n in saArr do saStr+="["+n as string+"]"
 			return saStr
-		)
+	)
 
 	fn getSAFromNode tvNode =
-		(
+	(
 		-- set up variables
 			local saStr="$"+tvNode.root.key
 			local saArr=filterstring tvNode.tag ","
 			for n in saArr do saStr+="["+n as string+"]"
 			return (execute(saStr))
-		)
+	)
 
 /*	
 	fn getIconIndex sa i=
-		(
+	(
 		local iconIndex, lastIcon, class
 		lastIcon = axImgList.ListImages.Count
 		iconIndex=lastIcon 
-		try	(
+		try(
 			class=(classof (getSubAnim sa i).object) as string
 			--format "%\n" sa as string
 			iconIndex= findItem classArr class
 			if iconIndex==0 then iconIndex=lastIcon 
 			return iconIndex
-			)
+		)
 		catch(
 			return iconIndex
-			)
 		)
+	)
 */
 	fn getIconIndex sa =
-		(
+	(
 		local iconIndex, lastIcon, class
 		lastIcon = axImgList.ListImages.Count
 		iconIndex=lastIcon 
-		try	(
+		try(
 			class=classof sa.object as string
 			iconIndex= findItem classArr class
 			if iconIndex==0 then iconIndex=lastIcon 
 			return iconIndex
-			)
+		)
 		catch(
 			return iconIndex
-			)
 		)
+	)
 
 
 
 -- main recursive function
 
 		fn recurseSubAnims sa tv tvNode d=
-			(
+		(
 			d+=1
 			for i = 1 to sa.numSubs do
-				(
+			(
 
 			 -- flag if not visibility, transform, modified object or material
 				local oktoBuild=true
@@ -391,7 +391,7 @@ global doCopy
 
 			-- build the nodes
 				if oktobuild == true then
-					(
+				(
 				-- build the node
 					newNode = tv.nodes.add tvNode.index 4 ""
 
@@ -421,9 +421,9 @@ global doCopy
 
 				-- do children
 					recurseSubAnims sa[i] tv newNode d
-					)
 				)
 			)
+		)
 
 
 /*
@@ -438,7 +438,7 @@ global doCopy
 
 
 	fn populateTreeView tv obj =
-		(
+	(
 		-- Time it...
 			timeIt 0
 		-- clear
@@ -468,7 +468,7 @@ global doCopy
 			timeIt 1
 			--tv1.MouseIcon = (LoadPicture "E:\\2_Current_Jobs\\softinstance\\treeview\\icons\\ico\\AtmosApp_01.ico")
 
-		)
+	)
 
 
 
@@ -479,7 +479,7 @@ global doCopy
 
 	
 	on test open do
-		(
+	(
 
 		-- Time it...
 			timeIt 0
@@ -504,17 +504,17 @@ global doCopy
 			-- POPULATE TREEVIEWS
 				populateTreeView tv1 obj1
 				populateTreeView tv2 obj2
-				)
+			)
 			catch()
 
 
 		-- Time it...
 			timeIt 1
 	-- END
-		)
+	)
 
 	on test resized size do
-		(
+	(
 		tv1.size.x = (size.x-15)/2
 		tv2.size.x = (size.x-15)/2
 
@@ -531,7 +531,7 @@ global doCopy
 
 		btnNew2.pos=	[((size.x/nTV)+5),(size.y-20)]
 		btnUpdate2.pos=	[((size.x/nTV)+105),(size.y-20)]
-		)
+	)
 
 
 	on btnNew1 pressed do populateTreeView tv1 (obj1=pickObject())
@@ -549,7 +549,7 @@ global doCopy
 
 
 function tvNodeClick tv tvNode =
-	(
+(
 		-- interface
 			-- update variables
 				prevNode=curNode
@@ -583,17 +583,17 @@ function tvNodeClick tv tvNode =
 					format "  ctrl             %\n" sa.controller
 					format "  ctrl class:      %\n" (classof sa.controller)
 					format "  ctrl superclass: %\n\n" (superclassof sa.controller)
-					)
+				)
 				catch()
 				if superclassof sa.object == modifier then
-					(
+				(
 					format "IS MODIFIER!\n"
 					modPanel.setCurrentObject sa.object
-					)
+				)
 					else format "%\n" (superclassof sa.object)
 /*			
 */		
-	)
+)
 
 
 	on tv1 NodeClick tvNode do tvNodeClick tv1 tvNode
@@ -613,21 +613,21 @@ function tvNodeClick tv tvNode =
 		local kCtrl = 2, space=32
 		
 		on tv1 keyPress keyCode do
-			(
+		(
 			format "%\n" keyCode
 			if keyCode == space then
-				(
+			(
 				if dropNode.expanded==true then dropNode.expanded=false
 				else dropNode.expanded=true
-				)
-			)	
+			)
+		)	
 
 
 		fn tvGetHitNode tv= 
-			(
+		(
 			local p = getCursorPos tv
 			tv.hitTest (p.x*15) (p.y*15)
-			)
+		)
 
 
 
@@ -635,40 +635,40 @@ function tvNodeClick tv tvNode =
 
 
 		fn tvMouseUp tv MouseUp btn shift x y =
-			(
+		(
 			enableAccelerators = false			
 			selNode = tvGetHitNode tv
 			if btn == 2 and selNode != undefined do
-				(
+			(
 				popupmenu nodeMenu pop:[x, y] rollout:test
-				)
 			)
+		)
 
 	-- drag stuff
 		-- start drag
 			fn tvOLEStartDrag tv data effects =
-				(
+			(
 				dragNode = tvGetHitNode tv
 				if dragNode == undefined or dragNode.parent == undefined then return()
 				else
-					(
+				(
 					dragNode.bold=true
 					tv.dragIcon = tv.selectedItem.createdragimage
-					)
 				)
+			)
 	
 		-- drag over
 			fn tvOLEDragOver tv data Effect Button Shift x y State =
-				(
+			(
 
 				try
-					(
+				(
 					lastNode = dropNode 
 					dropNode = tvGetHitNode tv
 					--if dropNode.index != lastNode.index then	-- this needs finishing!
-						(
+					(
 						if dropNode != undefined then
-							(
+						(
 							-- color stuff
 								try lastNode.backcolor = colOff
 								catch()
@@ -676,34 +676,34 @@ function tvNodeClick tv tvNode =
 							local dragNodeSuperclass = superclassof((getSAFromNode dragNode).object)
 							local dropNodeSuperclass = superclassof((getSAFromNode dropNode).object)
 							if dragNodeClass == dropNodeClass then
-								(
+							(
 								dropNode.backcolor = colOver
 								lastNode=dropNode
 								okToCopy=true
-								)
+							)
 							else
-								(
+							(
 							-- dont allow copy
 								okToCopy=false
 							-- autoexpand if closed
 								if dropNode.expanded==false then dropNode.expanded=true
-	  							)
-							)
+	  						)
 						)
 					)
+				)
 				catch()
 				--try format "% | %\n" lastNode.index dropNode.index
 				--catch()
-				)
+			)
 
 		-- drop
 
 			fn tvOLEDragDrop tv data Effect btn key x y =
-				(
+			(
 				local cPos=mouse.screenpos
 				if dropNode != undefined AND okToCopy==true then popupmenu copyMenu pop:[cPos.x, (cPos.y-30)] rollout:test
 				dragNode.bold=false
-				)
+			)
 
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -723,6 +723,6 @@ function tvNodeClick tv tvNode =
 		on tv2 OLEDragDrop data Effect btn key x y do 				tvOLEDragDrop tv2 data Effect btn key x y
 
 
-	)
+)
 
 createdialog test 615 600 50 50 style:#(#style_minimizebox,#style_titlebar, #style_border, #style_sysmenu,#style_resizing)

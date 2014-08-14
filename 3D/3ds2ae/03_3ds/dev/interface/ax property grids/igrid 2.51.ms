@@ -11,12 +11,12 @@ igrid=ro1.ax
 igrid.AddCol "Column 1"
 igrid.AddCol "Column 2"
 for i = 1 To 10 do
-   	(
+   (
 	r=igrid.AddRow()
 	print r
 	--igrid.CellValue(i, 1) = i as string --+ ", 1"
 	--igrid.CellValue(i, 2) = i as string --+ ", 2"
-	)
+)
 /*
 show igrid
 

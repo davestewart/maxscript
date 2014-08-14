@@ -35,18 +35,18 @@ material_array = #()
 -- Script
 
 undo "IsolateByMaterial" on
-	(
+(
 	for i in $* do
-		(
+	(
 		if i.material == meditmaterials[medit.GetActiveMtlSlot()] then append material_array i
-		)
+	)
 	for i in material_array do
-		(
+	(
 		if i.ishidden = true then i.ishidden = false
-		)
+	)
 	select material_array
 	max hide inv
 	completeRedraw()
-	)
+)
 )
 -------------------------------------------------------------------------------

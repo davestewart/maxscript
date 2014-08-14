@@ -9,21 +9,21 @@ rollout roSpaceText "Text spacer" width:296 height:56
 	-- script
 	
 		fn pad n len=
-			(
+		(
 			n = n as string
 			while n.count < len do n = "0" + n
 			return n
-			)
+		)
 	
 		on btnGo pressed do
-			(
+		(
 			-- start
 				sel = (getCurrentSelection())[1]
 				if classof sel != text then
-					(
+				(
 					messagebox "No text selected. Using default font, size and position..."
 					sel = text()
-					)
+				)
 				txtObjects = #(sel)
 				txtObjectsToDelete = #()
 
@@ -36,16 +36,16 @@ rollout roSpaceText "Text spacer" width:296 height:56
 	
 			-- do it
 				for i = 2 to str.count do
-					(
+				(
 					-- new object
 						txt2=copy txt1
 						
 					-- text
 						if str[i] != " " then
-							(
+						(
 							txt2.text = str[i]
 							j+=1
-							)
+						)
 						 else txt2.text = "i"
 						
 					-- position
@@ -59,11 +59,11 @@ rollout roSpaceText "Text spacer" width:296 height:56
 						txt1=txt2
 						if str[i] == " " then append txtObjectsToDelete txt2
 						else append txtObjects txt2
-					)
+				)
 				-- finish
 					delete txtObjectsToDelete 
 					select txtObjects
-			)
+		)
 
 )
 

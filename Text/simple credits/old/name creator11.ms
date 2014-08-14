@@ -37,11 +37,11 @@ rollout create "Create" width:160 height:56
 
 	
 	on camBtn pressed do
-	(
+(
 			Freecamera fov:45 targetDistance:160 nearclip:1 farclip:1000 nearrange:0 farrange:1000 mpassEnabled:off mpassRenderPerPass:off transform:(matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,-700,0])
-		)
+	)
 	on namBtn pressed do
-	(
+(
 			-- set other globals
 				spacing = 1000
 		
@@ -55,10 +55,10 @@ rollout create "Create" width:160 height:56
 			--sets the animation range
 				if names.count == 0 then (
 					print "No Data!"
-					)
+				)
 				else (
 					animationRange = interval 0 names.count
-					)
+				)
 	
 	
 			-- creates the objects & positions them
@@ -97,15 +97,15 @@ rollout create "Create" width:160 height:56
 							spaceIndex = findString displayText " " -- find any spaces
 							if spaceIndex != undefined then (
 								obj.text = replace displayText spaceIndex 1 "\r"
-								)
+							)
 							else (
 								obj.text = displayText
-								)
 							)
-							else
-							(
-							obj.text  = copy.names[i]
 						)
+							else
+						(
+							obj.text  = copy.names[i]
+					)
 
 
 
@@ -115,26 +115,26 @@ rollout create "Create" width:160 height:56
 						targetHeight = 300
 		
 						case textOptions.scaling.state of (
-						1: 	(
+						1: (
 							span = obj.max.x - obj.min.x
 							targetScale = targetHeight / span
 							addModifier obj (XForm()) ui:on
 							obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
 							modPanel.setCurrentObject obj.modifiers[#XForm]
 							subobjectLevel = 0
-							)
+						)
 							
-						2: 	(
+						2: (
 							span = obj.max.z - obj.min.z
 							targetScale = targetHeight / span
 							addModifier obj (XForm()) ui:on
 							obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
 							modPanel.setCurrentObject obj.modifiers[#XForm]
 							subobjectLevel = 0
-							)
-						3:	(
-							)
-						) 
+						)
+						3:(
+						)
+					) 
 		
 
 					-- set up objects to move
@@ -147,14 +147,14 @@ rollout create "Create" width:160 height:56
 					-- Centre the object as well?
 						if textOptions.centre.checked then (
 							obj.pivot.z = (obj.max.z - obj.min.z) / 2 + obj.min.z
-						)
+					)
 
 						obj.pos.controller.Z_Position.controller.keys[1].value = spacing
 						obj.pos.controller.Z_Position.controller.keys[2].value = 0
 						obj.pos.controller.Z_Position.controller.keys[3].value = -spacing
 
-				)
 			)
+		)
 )
 
 

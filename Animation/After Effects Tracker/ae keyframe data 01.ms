@@ -42,36 +42,36 @@ local aeKeyEnd = "End of Keyframe Data"
 
 
 fn getKeyStart w h = 
-	(
+(
 	local str = "" as stringstream
 	format aeKeyStart framerate w h 1 1 to:str
 	return str as string
-	)
+)
 	
 fn getKeyEnd = 
-	(
+(
 	return aeKeyEnd
-	)
+)
 	
 fn getKeyPosition arr t =
-	(
+(
 	local strBase	= "" as stringstream
 	local strKeys	= "" as stringstream
 	for a in arr do
-		(
+	(
 		format "	%	%	%	%	\n" t a[1] a[2] a[3] to: strKeys
 		t += 1
-		)
+	)
 	format aeKeyPosition (strKeys as string) to:strBase
 	return strBase as string
-	)
+)
 	
 if testing != false then
-	(
+(
 	clearListener()
 	local arrPos = for i = 1 to 10 collect at time i $.pos
 	format "%\n" (getKeyStart 300 300)
 	format "%\n" (getKeyPosition arrPos 1)
 	format "%\n" (getKeyEnd())
-	)
+)
 )

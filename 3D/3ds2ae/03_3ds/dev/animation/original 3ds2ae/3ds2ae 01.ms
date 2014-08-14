@@ -15,7 +15,7 @@ images:#(
 	<enabled_in_image_index>,
 	<disabled_out_image_index>,
 	<disabled_in_image_index>
-	) 
+) 
 */
 	
 	button btn1 "" pos:[8,8] width:24 height:24 images:#(bmi,bma,3,1,1,1,1)

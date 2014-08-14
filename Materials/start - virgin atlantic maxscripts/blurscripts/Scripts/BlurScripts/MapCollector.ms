@@ -66,7 +66,7 @@ overwrite_value = false
 -- Functions
 
 fn start_mapc =
-	(
+(
 	if mapc_out_dir[mapc_out_dir.count] != "\\" then mapc_out_dir = mapc_out_dir + "\\"
 
 	print "Collecting bitmap info"
@@ -95,61 +95,61 @@ fn start_mapc =
 	escapeEnable = false
 	
 	for i = 1 to all_bm.count do
-		(
+	(
 		m = ((i as float)/(all_bm.count as float))*100
 		
 		filein = all_bm[i].filename
 		fileout = (mapc_out_dir + (filenameFromPath filein))
 		
 		if overwrite_value == true then
-			(
+		(
 			copyfile filein fileout
 			total_files_copied += 1
-			)
+		)
 		else 
-			(
+		(
 			if file_exist fileout == false then 
-				(
+			(
 				answer = copyfile filein fileout
 				if answer != false then total_files_copied += 1
-				)
 			)
+		)
 		
 		if update_mats_value == true then all_bm[i].filename = fileout
 		if copy_move_value == 2 then deletefile filein
 		
 		progressUpdate m
-		)
+	)
 		
 	progressEnd()
 	
 	print "Map Collector Results"
 	print ("Bitmaps Copied: " + (total_files_copied as string))
-	)
+)
 
 -- The Script
 
 rollout mapc_rollout "MapCollector"
-	(
+(
 	group "Path To Collect Maps To"
-	(
+(
 	button mapc_getpath "Path" align:#left across:2
 	edittext mapc_pathlabel "" fieldWidth:158 offset:[-60,4] text:"undefined"
-	)
+)
 	
 	on mapc_getpath pressed do
-		(
+	(
 		mapc_out_dir = getSavePath()
 		mapc_pathlabel.text = (mapc_out_dir as string)
-		)
+	)
 	on mapc_pathlabel entered text do 
-		(
+	(
 		if mapc_pathlabel.text == "undefined" then mapc_out_dir = undefined
 		else mapc_out_dir = mapc_pathlabel.text
-		)
+	)
 	
 	group "Include"
-	(
+(
 	checkbox i1 "Maps In Scene Materials" checked:i1_value
 	checkbox i2 "Material Editor" checked:i2_value
 	checkbox i3 "Background" checked:i3_value
@@ -158,7 +158,7 @@ rollout mapc_rollout "MapCollector"
 	checkbox i6 "Projector Lights" checked:i6_value
 	checkbox i7 "Fog" checked:i7_value
 	checkbox i8 "Maps Applied to Selected Objects" checked:i8_value
-	)
+)
 	
 	on i1 changed state do (if i1.checked == true then i1_value = true else i1_value = false)
 	on i2 changed state do (if i2.checked == true then i2_value = true else i2_value = false)
@@ -170,11 +170,11 @@ rollout mapc_rollout "MapCollector"
 	on i8 changed state do (if i8.checked == true then i8_value = true else i8_value = false)
 
 	group "Options"
-	(
+(
 	dropdownlist copy_move "" items:#("Copy Maps", "Move Maps") selection:copy_move_value
 	checkbox update_mats "Update Scene" checked:update_mats_value
 	checkbox overwrite_checkbox "Overwrite Existing Bitmaps" checked:overwrite_value
-	)
+)
 	
 	on copy_move selected i do copy_move_value = i
 	on update_mats changed state do (if update_mats.checked == true then update_mats_value = true else update_mats_value = false)
@@ -182,18 +182,18 @@ rollout mapc_rollout "MapCollector"
 	
 	button domapcollection "Collect Maps" width:200 align:#center toolTip:"Collect Maps"
 	on domapcollection pressed do 
-		(
+	(
 		if mapc_out_dir != undefined then 
-			(
+		(
 			if copy_move_value == 2 then 
-				(
+			(
 				if (queryBox "Are you SURE you want to move the maps?" title:"MapCollector") == true then start_mapc()
-				)
-			else start_mapc()
 			)
-		else (MessageBox "Please pick a valid path" title:"MapCollector")
+			else start_mapc()
 		)
+		else (MessageBox "Please pick a valid path" title:"MapCollector")
 	)
+)
 
 if mapc_floater != undefined then CloseRolloutFloater mapc_floater
 mapc_floater = newRolloutFloater "MapCollector v1.10" 250 424

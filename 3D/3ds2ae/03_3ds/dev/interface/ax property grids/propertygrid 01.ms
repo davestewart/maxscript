@@ -1,36 +1,36 @@
 rollout rAccelState "State" 
-	( 
+( 
 	checkButton accelState "Test" 
 	on rAccelState open do 
-		( 
+	( 
 		accelState.text = if (enableAccelerators) then "Enabled" else "Disabled" 
 		accelState.checked = enableAccelerators 
-		) 
+	) 
 	on accelState changed state do 
-		( 
+	( 
 		enableAccelerators = state 
 		accelState.text = if (enableAccelerators) then "Enabled" else "Disabled" 
-		) 
 	) 
+) 
 
 rollout roColor "Color Picker" width:100 height:100
 (
 	colorPicker cp1 "" width:90 height:90 pos:[4,4]
 
 	on cp1 changed col do
-		(
+	(
 		curItem.value = (color col.b col.g col.r)
-		)
+	)
 	on roColor open do
-		(
+	(
 		messagebox "opened"
 		local col =(color 255 0 0)
 		cp1.changed col
-		)
+	)
 )
 
 rollout rProp "Property Grid" 
-	( 
+( 
 
 -- interface
 	activeXControl axProp "{DBB2628C-1E1F-48EF-8004-31A16D92A564}" height:300 width:401 align:#left 
@@ -44,7 +44,7 @@ rollout rProp "Property Grid"
 
 
 	on btnSet pressed do 
-		(
+	(
 	--rProp.axProp.Nodes.Add "hel"
 	
 
@@ -88,31 +88,31 @@ rollout rProp "Property Grid"
 	axProp.VisualTheme = styles[4] as name
 
 
-		)
+	)
 
 --show rProp.axProp.categories[1]
 on axProp ValueChanged Item do
-	(
+(
 	if item.type==#PropertyItemString then
 		item.caption=item.value + " ("+item.value as string+")"
 	format ">%\n" item.type
- 	)
+ )
 
 on axProp RClick Item do 
-	(
+(
 --	if item == Categories[1].childs[2]
 --		messagebox item.index as string
 	show item
 	if item.type==#PropertyItemColor then
-		(
+	(
 		global curItem=item
 		--messagebox "Item is Color"
 		createdialog roColor 100 100 mouse.screenpos[1] mouse.screenpos[2] modal:true
 
 
-		)
-
 	)
+
+)
 
 --rProp.
 
@@ -120,7 +120,7 @@ on axProp RClick Item do
 	on btnMethods pressed do showmethods axProp
 	on btnEvents pressed do showevents axProp
 
-	) 
+) 
 propFloater = newRolloutFloater "Grid" 450 450 10 10 
 addRollout rProp propFloater 
 addRollout rAccelState propFloater 

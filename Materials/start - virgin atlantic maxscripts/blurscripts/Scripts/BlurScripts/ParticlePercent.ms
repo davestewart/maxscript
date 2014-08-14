@@ -35,30 +35,30 @@ global pVal = 0
 -- Functions
 
 fn GoProcess =
-	(
+(
 	if $ != undefined then 
-		(
+	(
 		for s in $ do
-			(
-			if classof s.baseobject == SuperSpray or classof s.baseobject == PArray or classof s.baseobject == PCloud then
-				(
-				s.viewPercent = pVal
-				)
-			)
-		)	
- 	else for i in objects do
 		(
-		if classof i.baseobject == SuperSpray or classof i.baseobject == PArray or classof i.baseobject == PCloud then
+			if classof s.baseobject == SuperSpray or classof s.baseobject == PArray or classof s.baseobject == PCloud then
 			(
-			i.viewPercent = pVal
+				s.viewPercent = pVal
 			)
 		)
 	)	
+ 	else for i in objects do
+	(
+		if classof i.baseobject == SuperSpray or classof i.baseobject == PArray or classof i.baseobject == PCloud then
+		(
+			i.viewPercent = pVal
+		)
+	)
+)	
 
 -- The Script
 
 rollout PPer_rollout "ParticlePercent" 
-	(
+(
 	button Pzero 		"0%" across:5
 	button Pten 		"10%"
 	button Ptwofive		"25%"
@@ -66,35 +66,35 @@ rollout PPer_rollout "ParticlePercent"
 	button Pmax			"100%"
 	
 	on Pzero pressed do
-		(
+	(
 		pVal = 0
 		GoProcess()
-		)
+	)
 	
 	on Pten pressed do
-		(
+	(
 		pVal = 10
 		GoProcess()
-		)
+	)
 		
 	on Ptwofive pressed do
-		(
+	(
 		pVal = 25
 		GoProcess()
-		)
+	)
 
 	on PfiveOh pressed do
-		(
+	(
 		pVal = 50
 		GoProcess()
-		)
+	)
 		
 	on Pmax pressed do
-		(
+	(
 		pVal = 100
 		GoProcess()
-		)	
-	)
+	)	
+)
 
 if PPer_floater != undefined then CloseRolloutFloater PPer_floater
 PPer_floater = newRolloutFloater "ParticlePercent v1.00" 250 100

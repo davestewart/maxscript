@@ -1,5 +1,5 @@
 function makeStruct names values=
-	(
+(
 	-- names
 		local str=""
 		for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -16,14 +16,14 @@ function makeStruct names values=
 
 	-- return
 		return s
-	)
+)
 
 struct List
-	(
+(
 	thisList
 	/*,
 	fn addItem name value=
-		(
+	(
 		-- initialize
 			local names=#()
 			local values=#()
@@ -40,9 +40,9 @@ struct List
 			--local tmpStruct=makeStruct names values
 			--execute(thisList+"=tmpStruct")
 			print tmpStruct
-		)
-		*/
 	)
+		*/
+)
 	
 
 newList=List()

@@ -1,5 +1,5 @@
 function makeStruct theStruct names values=
-	(
+(
 	-- names
 		local str=""
 		for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -16,10 +16,10 @@ function makeStruct theStruct names values=
 
 	-- return
 		return s
-	)
+)
 
 fn addItem structName name value=
-	(
+(
 	-- initialize
 		local names=#()
 		local values=#()
@@ -36,7 +36,7 @@ fn addItem structName name value=
 	-- create a new items struct and replace
 		local tmpStruct=makeStruct theStruct names values
 		execute (structName+"= tmpStruct")
-	)
+)
 
 
 struct v1 (a,b,c)

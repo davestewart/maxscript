@@ -1,10 +1,10 @@
 -- 
 fn effectDataToAE str=
-	(
+(
 	local data=stringstream("")
 	format "posArr=new Array(
 		%
-		)
+	)
 	
 	comp=app.project.activeItem
 	prop=comp.selectedProperties[0]
@@ -16,10 +16,10 @@ fn effectDataToAE str=
 	
 	if createJSX != undefined then createJSX "effectsCode.jsx" (data as string)
 	else messagebox "createJSX function  has not yet been run"
-	)
+)
 	
 fn worldToCam p c z:false=
-	(
+(
 	-- notes
 		-- p is the point (node) or a point3 value
 		-- c is the camera
@@ -59,27 +59,27 @@ fn worldToCam p c z:false=
 		return point2 x y
 		
 		return point3 x y z
-	)
+)
 	
 	
 fn dumpTransforms p c=
-	(
+(
 	-- check that functions are loaded
 		if drawPointOnVpt == undefined then
-			(
+		(
 			messagebox "drawPointOnVpt function has not yet been run"
 			return undefined
-			)
+		)
 	-- array
 		arr=#()
 		for t = 0 to 100 do
-			(
+		(
 			-- get point
 				at time t pos=worldToCam p c
 				append arr pos
 			-- draw points
 				drawPointOnVpt pos.x pos.y
-			)
+		)
 		-- update viewport
 			gw.enlargeUpdateRect #whole 
 			gw.updateScreen() 
@@ -87,14 +87,14 @@ fn dumpTransforms p c=
 	-- string
 		str=""
 		for i = 1 to arr.count do
-			(
+		(
 			str+=arr[i] as string+","
-			)
+		)
 		str=substring str 1 (str.count-1)
 		
 	-- export
 		effectDataToAE str
-	)
+)
 
 tp=worldToCam $point01 $camera01
 

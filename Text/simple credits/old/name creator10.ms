@@ -26,7 +26,7 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 		
 		
 	on btn1 pressed do
-	(
+(
 		-- set other globals
 			carriageReturn = "yes"
 			spacing = 1000
@@ -43,10 +43,10 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 		--sets the animation range
 			if names.count == 0 then (
 				print "No Data!"
-				)
+			)
 			else (
 				animationRange = interval 0 names.count
-				)
+			)
 	
 		
 		
@@ -69,11 +69,11 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 						displayText = names[i]
 						spaceIndex = findString displayText " " -- find any spaces
 						obj.text = replace displayText spaceIndex 1 "\r"
-					)
+				)
 					else
-						(
+					(
 						obj.text  = names[i]
-					)
+				)
 				
 		
 				-- Set up scaling
@@ -81,25 +81,25 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 					targetHeight = 300
 	
 					case scaling.state of (
-					1: 	(
+					1: (
 						print "Scaling by Width"
 						span = obj.max.x - obj.min.x
 						targetScale = targetHeight / span
 						addModifier obj (XForm())
 						obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
-						)
+					)
 						
-					2: 	(
+					2: (
 						print "Scaling by Height"
 						span = obj.max.z - obj.min.z
 						targetScale = targetHeight / span
 						addModifier obj (XForm())
 						obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
-						)
-					3:	(
+					)
+					3:(
 						print "No scaling"
-						)
-					) 
+					)
+				) 
 	
 	
 				-- set up objects to move
@@ -112,16 +112,16 @@ utility Credits8 "Simple Credits Maker 8" width:162 height:1000
 					-- Centre the object?
 					if centre.checked then (
 						obj.pivot.z = (obj.max.z - obj.min.z) / 2 + obj.min.z
-					)
+				)
 
 					obj.pos.controller.Z_Position.controller.keys[1].value = spacing
 					obj.pos.controller.Z_Position.controller.keys[2].value = 0
 					obj.pos.controller.Z_Position.controller.keys[3].value = -spacing
 			
-			)
 		)
-	on camBtn pressed do
-	(
-	Freecamera fov:45 targetDistance:160 nearclip:1 farclip:1000 nearrange:0 farrange:1000 mpassEnabled:off mpassRenderPerPass:off transform:(matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,-700,0])
 	)
+	on camBtn pressed do
+(
+	Freecamera fov:45 targetDistance:160 nearclip:1 farclip:1000 nearrange:0 farrange:1000 mpassEnabled:off mpassRenderPerPass:off transform:(matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,-700,0])
+)
 )

@@ -65,26 +65,26 @@ rollout components "Components" width:210 height:432
 	---------------------------------------------------------------------------------------------------
 
 	on chkCol changed state do
-		(
+	(
 		if chkCol.checked then matColor.open = true
 		else matColor.open = false
-		)
+	)
 
 	on chkHigh changed state do
-		(
+	(
 		if chkHigh.checked then matHigh.open = true
 		else matHigh.open = false
-		)
+	)
 	on chkOpac changed state do
-		(
+	(
 		if chkOpac.checked then	(	matOpac.open = true; matOpac.chkOpacStatus.checked=false)
 		else (	matOpac.open = false; matOpac.chkOpacStatus.checked=true)
-		)
+	)
 	on chkOther changed state do
-		(
+	(
 		if chkOther.checked then matOther.open = true
 		else matOther.open = false
-		)
+	)
 )
 
 
@@ -143,7 +143,7 @@ rollout matColor "Color Options" width:210 height:600
 	---------------------------------------------------------------------------------------------------
 	
 	fn updateColor =
-		(
+	(
 		-- set variables
 			baseClr = cpClr.color
 			rVar = spnClrRedVar.value
@@ -193,13 +193,13 @@ rollout matColor "Color Options" width:210 height:600
 
 		-- update preview
 			for i = 1 to 10 do
-				(
+			(
 				swatch = execute("matColor.cpPrv" + i as String)
 -- s*: Nxt line flagged on 1st run error.
 				swatch.color = matGen.setColor i 10
-				)
+			)
 
-		)
+	)
 	
 	
 	---------------------------------------------------------------------------------------------------
@@ -256,23 +256,23 @@ rollout matGen "Material Generation" width:210 height:544
 	------------------------------------
 
 	fn setColor i j =
-		(
+	(
 		local r,g,b	--s* These vars cannot be seen by the 'return' because they are in the scope of the case
 					--   expression and not the fn.
 		case matColor.rdoColGen.state of
 --s*: Nxt line flagged on 1st run error after 1st fix.
 --    Problem: matColor and matGen reference each other, there for one will have to be declared local at
 --    start of script.
-			(
+		(
 			1:
-				(
+			(
 				r = random rMin rMax
 				g = random gMin gMax
 				b = random bMin bMax
-				)
+			)
 
 			2:
-				(
+			(
 				r = rMin + (((rMax - rMin) / j) * i)
 					if r > 255 then r = 255
 					if r < 0 then r = 0
@@ -282,11 +282,11 @@ rollout matGen "Material Generation" width:210 height:544
 				b = bMin + (((gMax - gMin) / j) * i)
 					if b > 255 then b = 255
 					if b < 0 then b = 0
-				)
 			)
+		)
 		-- print ("r:" + r as String + " g:" + g as String + " b: " + b as String)
 		return (color r g b)
-		)
+	)
 
 
 	------------------------------------
@@ -294,41 +294,41 @@ rollout matGen "Material Generation" width:210 height:544
 	------------------------------------
 
 	fn setOpac matSub i j =
-		(
+	(
 		case matOpac.rdoOpacCtrl.state of
-			(
+		(
 			1: -- copy
-				(
+			(
 				matSub.opacity = random opacMin opacMax
-				)
+			)
 			2: -- instance
-				(
+			(
 				matSub.opacity.controller = opacCtrl
 				opacCtrl.value = 50 --matOpac.opacBas
-				)
 			)
-		if matOpac.chkOpac2Sided.checked then matSub.twoSided = true
 		)
+		if matOpac.chkOpac2Sided.checked then matSub.twoSided = true
+	)
 
 	fn setOpacMap matSub =
-		(
+	(
 		if matOpac.btnOpacMap.map != undefined then
-			(
+		(
 			case matOpac.rdoOpacMapCtrl.state of
-				(
+			(
 				1:
-					(
+				(
 					matSub.opacityMap = copy matOpac.btnOpacMap.map
 					matSub.opacityMap.name = matSub.opacityMap.name + " copy"
-					)
-				2:
-					(
-					matSub.opacityMap = matOpac.btnOpacMap.map
-					)
 				)
-			if matOpac.chkOpacAffectMap.checked then matSub.opacityMapAmount = random opacMin opacMax
+				2:
+				(
+					matSub.opacityMap = matOpac.btnOpacMap.map
+				)
 			)
+			if matOpac.chkOpacAffectMap.checked then matSub.opacityMapAmount = random opacMin opacMax
 		)
+	)
 
 
 	------------------------------------
@@ -336,21 +336,21 @@ rollout matGen "Material Generation" width:210 height:544
 	------------------------------------
 
 	fn setSpec matSub i j =
-		(
+	(
 		case matHigh.rdoSpecCtrl.state of
-			(
+		(
 			1: -- copy
-				(
+			(
 				print ("matSub is " + matSub as String)
 				matSub.specularLevel = random specMin specMax
-				)
+			)
 			2: -- instance
-				(
+			(
 				matSub.specularLevel.controller = matHigh.specCtrl
 				-- matSub.specularLevel.controller.value = 50
-				)
 			)
 		)
+	)
 
 
 	------------------------------------
@@ -358,7 +358,7 @@ rollout matGen "Material Generation" width:210 height:544
 	------------------------------------
 
 	fn createMaterial slot =
-		(
+	(
 		max mtledit
 		global subs = amtSubs.value
 	
@@ -367,7 +367,7 @@ rollout matGen "Material Generation" width:210 height:544
 		matTop.numSubs = subs
 	
 		for i = 1 to subs do
-			(
+		(
 			matSub = meditMaterials[slot].materialList[i]
 			matSub.name = matName.text + " sub" + i as String
 
@@ -375,20 +375,20 @@ rollout matGen "Material Generation" width:210 height:544
 				if components.chkCol.checked then matSub.Diffuse = setColor i subs
 			-- opacity
 				if components.chkOpac.checked then
-					(
+				(
 					setOpac matSub i subs
 					setOpacMap matSub
 					-- set Material editor preferences as a <bitarray>
 					-- 1: MTL_BEING_EDITED, 2: BACKGROUND, 3: BACKLIGHT, 4: VIDEO_COLOR_CHECK
 					setMTLMEditFlags meditMaterials[slot] #{2,3}
-					)
+				)
 			-- specular highlights
 				if components.chkHigh.checked then setSpec matSub i subs
-			)
+		)
 		activeMeditSlot = slot
 
 
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -430,7 +430,7 @@ rollout matHigh "Specular Highlights" width:210 height:432
 		local glosCtrl = bezier_float()		-- setup instanced controller, for when needed
 
 	fn updateSpec =
-		(
+	(
 
 		-- set variables
 			specBas = spnSpecVal.value
@@ -447,34 +447,34 @@ rollout matHigh "Specular Highlights" width:210 height:432
 		-- update interface display
 			grpSpecParam.text = "Specular Level: (" + specMin as String + " - " + specMax as String + ")"
 
-		)
+	)
 
 	fn updateSpecDisplay =
-		(
+	(
 		case ckbSpecValInst.state of
-			(
+		(
 			true:
-				(
+			(
 				-- instance
 				spnSpecVarTemp = spnSpecVar.value
 				spnSpecVar.value = 0
 				spnSpecVar.enabled = false
 				updateSpec()
-				)
+			)
 			false:
-				(
+			(
 				-- copy
 				spnSpecVar.value = spnSpecVarTemp
 				spnSpecVar.enabled = true
 				updateSpec()
-				)
 			)
 		)
+	)
 
 
 
 	fn updateGlos =
-		(
+	(
 
 		-- set variables
 			glosBas = spnGlosVal.value
@@ -491,29 +491,29 @@ rollout matHigh "Specular Highlights" width:210 height:432
 		-- update interface display
 			grpGlosParam.text = "Glossiness: (" + glosMin as String + " - " + glosMax as String + ")"
 
-		)
+	)
 
 	fn updateGlosDisplay =
-		(
+	(
 		case ckbGlosValInst.state of
-			(
+		(
 			true:
-				(
+			(
 				-- instance
 				spnGlosVarTemp = spnGlosVar.value
 				spnGlosVar.value = 0
 				spnGlosVar.enabled = false
 				updateGlos()
-				)
+			)
 			false:
-				(
+			(
 				-- copy
 				spnGlosVar.value = spnGlosVarTemp
 				spnGlosVar.enabled = true
 				updateGlos()
-				)
 			)
 		)
+	)
 
 
 
@@ -523,10 +523,10 @@ rollout matHigh "Specular Highlights" width:210 height:432
 
 	-- Both
 		on matHigh open do
-			(
+		(
 			updateSpec(); print "Updating Spec"
 			updateGlos(); print "Updating Glos"
-			)
+		)
 
 
 	-- Specular Level
@@ -585,7 +585,7 @@ rollout matOpac "Opacity" width:210 height:432
 
 
 	fn updateOpac =
-		(
+	(
 
 		-- set variables
 			opacBas = spnOpacVal.value
@@ -603,70 +603,70 @@ rollout matOpac "Opacity" width:210 height:432
 		-- update instanced controller, if needed
 			opacCtrl.value = opacBas
 
-		)
+	)
 
 
 	fn updateOpacDisplay =
-		(
+	(
 		case ckbOpacValInst.state of
-			(
+		(
 			true:
-				(
+			(
 				-- instance
 				spnOpacVarTemp = spnOpacVar.value
 				spnOpacVar.value = 0
 				spnOpacVar.enabled = false
 				updateOpac()
-				)
+			)
 			false:
-				(
+			(
 				-- copy
 				spnOpacVar.value = spnOpacVarTemp
 				spnOpacVar.enabled = true
 				updateOpac()
-				)
 			)
 		)
+	)
 
 
 	fn setOpacMapBtnDisplay =
-		(
+	(
 		if btnOpacMap.map != undefined then
-			(
+		(
 			name =  btnOpacMap.map.name as string
 			type = classof btnOpacMap.map as String
 			btnOpacMap.text= name + " (" + type + ")"
 			chkOpacAffectMap.enabled = true
-			)
+		)
 		else
-			(
+		(
 			btnOpacMap.text= "None"
 			chkOpacAffectMap.enabled = false
-			)
 		)
+	)
 
 	fn updateOpacMapCtrl =
-		(
+	(
 		case ckbOpacMapCtrlInst.state of
-			(
+		(
 			true:
-				(
+			(
 				opacMapInst = btnOpacMap.map
 				print "Instance"
-				)
+			)
 			false:
-				(
+			(
 				print "Copy only"
-				)
 			)
 		)
+	)
 
 	fn updateStatus =
-		(
+	(
 		chkOpacStatus.text = "Disabled"
 		matOpac.open = false
 		components.chkOpac.checked = false
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- handlers OPACITY
@@ -697,9 +697,9 @@ rollout credits "Credits" width:160 height:40
 	---------------------------------------------------------------------------------------------------
 	button webBtn "www.davestewart.co.uk" width:156 height:16
 	on webBtn pressed do
-		(
+	(
 		ShellLaunch "iexplore.exe" "http://www.davestewart.co.uk"
-	 	)
+	 )
 )
 ---------------------------------------------------------------------------------------------------
 -- create the rollout window and add the rollouts
@@ -708,9 +708,9 @@ rollout credits "Credits" width:160 height:40
 
 -- create the floater
 	if multiMat != undefined do
-		(
+	(
 		closerolloutfloater multiMat 
-		)		
+	)		
 	multiMat = newRolloutFloater "Random Multi Material" 230 800
 
 

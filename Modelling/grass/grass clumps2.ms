@@ -30,7 +30,7 @@ rollout grassOptions "Options" width:162 height:197
 	---------------------------------------------------------------------------------------------------
 
 	fn updateGrass =
-		(
+	(
 		bpc =  spnBpC.value
 		blades = grassObject.Blade_Count
 
@@ -41,7 +41,7 @@ rollout grassOptions "Options" width:162 height:197
 		grassObject.Clumps_Count = clumps as Integer
 		lblBlades.text = "Blades: " + grassObject.Blade_Count as String
 
-		)
+	)
 	
 
 	---------------------------------------------------------------------------------------------------
@@ -55,9 +55,9 @@ rollout grassOptions "Options" width:162 height:197
 
 
 	on btnPick picked obj do
-	(
+(
 	if classOf obj == Grass_O_matic then
-		(
+	(
 			global grassObject = obj
 			btnPick.text = grassObject.name
 	
@@ -74,12 +74,12 @@ rollout grassOptions "Options" width:162 height:197
 			lblClumps.text = "Clumps: " + clumps as String
 
 			when parameters grassObject changes id:#grassUpdater do updateGrass()
-		)
 	)
+)
 	on spnBpC changed val do updateGrass()
 
 	on btnKill pressed do
-		(
+	(
 
 
 		lblBlades.text = 
@@ -89,7 +89,7 @@ rollout grassOptions "Options" width:162 height:197
 		lblClumps.enabled = false
 
 		deleteAllChangeHandlers  id:#grassUpdater
-		)
+	)
 
 	on btnClose pressed do closerolloutfloater grassFloater
 )

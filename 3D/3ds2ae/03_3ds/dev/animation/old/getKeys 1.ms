@@ -1,33 +1,33 @@
 fn getKeys c=
-	(
+(
 	local ctrl=execute((classof c as string)+"()")
 	--local arr=#()
 	fn drill c=
-		(
+	(
 		for i = 1 to c.numSubs do
-			(
+		(
 			local cs=getSubAnim c i
 			if cs.controller!=undefined then
-				(
+			(
 				--print (cs.controller.keys)
 --				if finditem arr 
 				--append arr
 				if cs.controller.keys.count > 0 then
-					(
+				(
 					for k in cs.controller.keys do
-						(
+					(
 						print k.time
 						--addNewKey ctrl.keys k.time
-						)
 					)
 				)
-			drill cs
 			)
+			drill cs
 		)
+	)
 	drill c
 	sortKeys ctrl
 	print ctrl
-	)
+)
 
 $.position.controller.numSubs
 
@@ -44,10 +44,10 @@ for c in cArr do getSubAnimNames c.controller
 
 c=$.position.controller
 for i = 1 to c.numSubs do
-	(
+(
 	local cs=getSubAnim c i
 	print (cs.controller.keys)--()
-	)
+)
 
 
 k = c[1].controller[1].keys

@@ -1,6 +1,6 @@
 struct List(items)
 		function makeStruct names values=
-			(
+		(
 			-- names
 				local str=""
 				for i = 1 to names.count do str+=(names[i] as string)+","
@@ -17,20 +17,20 @@ struct List(items)
 		
 			-- return
 				return s
-			)
+		)
 
 		fn addItem items name value=
-			(
+		(
 			-- initialize
 				local names=#()
 				local values=#()
 	
 			-- collect the existing props
 				if items != undefined then
-					(
+				(
 					local names=getPropNames items
 					local values=for prop in names collect (getProperty items prop)
-					)
+				)
 			-- add the new props	
 				append names name
 				append values value
@@ -39,7 +39,7 @@ struct List(items)
 				local tmpStruct=makeStruct names values
 				tmpStruct
 				--items=tmpStruct
-			)
+		)
 
 			
 (

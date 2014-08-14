@@ -15,10 +15,10 @@
 -------------------------------------------------------------------------------
 (
 for i in 1 to xrefs.getXRefFileCount() do 
-	(
+(
 	x = xrefs.getXRefFile i
 	if x.boxDisp == true then x.boxDisp = false
 	else x.boxDisp = true
-	)
+)
 )
 -------------------------------------------------------------------------------

@@ -29,21 +29,21 @@ rollout ro1 "Options" width:162 height:311
 
 
 	on btn1 pressed  do
-		(
+	(
 		i+=1
 		if i > rndArr.count then i = 1
 		btn1.text = rndArr[i]
 		btn1.enabled=false
 		btn1.enabled=true
-		)
+	)
 	on ckb1 changed state do
-		(
+	(
 		i+=1
 		if i > rndArr.count then i = 1
 		ckb1.text = rndArr[i]
 		ckb1.checked=true
 		ckb1.highlightcolor=(color 128 128 255)
-		)
+	)
 
 )
 

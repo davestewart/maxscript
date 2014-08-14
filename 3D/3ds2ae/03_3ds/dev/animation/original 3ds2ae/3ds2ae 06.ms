@@ -4,10 +4,10 @@
 global ro1
 
 fn max2AESel =
-	(
+(
 	ro1.sel=(getcurrentselection())[1]
 	ro1.handleSelection()
-	)
+)
 
 rollout ro1 "Options" width:232 height:336
 (
@@ -53,37 +53,37 @@ rollout ro1 "Options" width:232 height:336
 	---------------------------------------------------------------------------------------------------
 
 	fn handleSelection=
-		(
+	(
 		if NOT btnLock.state then
-			(
+		(
 			obj=sel
 			if sel!=undefined then
-				(
+			(
 				lblObj.text=obj.name
 				objClass=superclassof obj
-				)
+			)
 			else(
 				lblObj.text="Pick an object, camera or light..."
-				)
+			)
 			chkLight.enabled= 	objClass==light
 			chkCam.enabled=	objClass==camera
 			btnExport.enabled=(obj!=undefined)
-			)
 		)
+	)
 
 
 	fn setAnimRange=
-		(
+	(
 		local animRange=#()
 		animRange=case ddAnimRange.selection of
-			(
+		(
 			1:	#(spnAnimFrom.value,spnAnimTo.value)
 			2:	#(animationrange.start,animationrange.end)
 			3:	#(sliderTime,sliderTime)
-			)
+		)
 		spnAnimFrom.value=animRange[1]
 		spnAnimTo.value=animRange[2]
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -93,12 +93,12 @@ rollout ro1 "Options" width:232 height:336
 -- 3dsmax
 
 	on ro1 open do 
-		(
+	(
 		callbacks.addScript #selectionSetChanged "max2AESel()" id:#max2aeCallback
 		ddAnimRange.selection=3
 		setAnimRange()
 		max2AESel()
-		)
+	)
 
 	on ro1 close do callbacks.removeScripts id:#max2aeCallback
 
@@ -106,31 +106,31 @@ rollout ro1 "Options" width:232 height:336
 
 /*
 	on btnObj pressed do
-		(
+	(
 		obj=pickObject message:"Pick an object, light or camera..."
 		btnObj.text=obj.name
 		objClass=superclassof obj
 
 		chkLight.enabled= 	objClass==light
 		chkCam.enabled=	objClass==camera
-		)
+	)
 */
 
 -- After Effects
 
 	on ddCompPreset selected item do
-		(
+	(
 		local xy=#()
 		xy=case ddCompPreset.selection of
-			(
+		(
 			1:	#(spnCompWidth.value,spnCompHeight.value)
 			2:	#(renderwidth,renderheight)
 			3:	#(720,576)
 			4:	#(1024,576)
-			)
+		)
 		spnCompWidth.value=xy[1]
 		spnCompHeight.value=xy[2]
-		)
+	)
 
 	on spnCompWidth changed val do ddCompPreset.selection=1
 	on spnCompHeight changed val do ddCompPreset.selection=1
@@ -141,50 +141,50 @@ rollout ro1 "Options" width:232 height:336
 	on ddAnimRange selected sel do setAnimRange()
 
 	on spnAnimFrom changed val do
-		(
+	(
 		ddAnimRange.selection=1
 		if spnAnimFrom.value >= spnAnimTo.value then spnAnimTo.value = spnAnimFrom.value
-		)
+	)
 
 	on spnAnimTo changed val do
-		(
+	(
 		ddAnimRange.selection=1
 		if spnAnimTo.value <= spnAnimFrom.value then spnAnimFrom.value = spnAnimTo.value
-		)
+	)
 
 -- Export
 
 	on btnExport pressed do
-		(
+	(
 		local posData=rotXData=rotYData=rotZData=scaleData=camData=lightData=data=""
 -- data		
 
 		if chkPos.checked then posData="\nPosition\n	Frame	X pixels	Y pixels	Z pixels\n"
 
 		if chkRot.checked then
-			(
+		(
 			rotXData="\nRotation\n	Frame	degrees\n"
 			rotYData="\nX Rotation\n	Frame	degrees\n"
 			rotZData="\nY Rotation\n	Frame	degrees\n"
-			)
+		)
 
 		if chkScale.checked then scaleData="\nScale\n	Frame	X percent	Y percent	Z percent\n"
 		if chkCam.checked AND ((classof obj)==Targetcamera) then camData="\nPoint of Interest\n	Frame	X pixels	Y pixels	Z pixels\n"
 		if chkLight.checked AND ((classof obj)==light) then lightData=""
 
 		if isvalidnode obj then
-			(
+		(
 			for t = spnAnimFrom.value to spnAnimTo.value do
-				(
+			(
 				at time t
-					(
+				(
 					f=t
 					--f=""
 					in coordsys $Point01
-						(
+					(
 					-- position
 						if chkPos.checked then
-							(
+						(
 							px=obj.pos.x
 							py=obj.pos.y
 							pz=obj.pos.z
@@ -195,11 +195,11 @@ rollout ro1 "Options" width:232 height:336
 								(px) as string+"	"+
 								(pz) as string+"	"+
 								(-py) as string+"\n"
-							)
+						)
 
 					-- rotation
 						if chkRot.checked AND (classof obj)!=Targetcamera then
-							(
+						(
 							rot=obj.rotation as eulerangles
 							rx=rot.x
 							ry=rot.y
@@ -207,26 +207,26 @@ rollout ro1 "Options" width:232 height:336
 							rotXData+="	"+f as string+"	"+(rx) as string+"\n"
 							rotYData+="	"+f as string+"	"+(ry) as string+"\n"
 							rotZData+="	"+f as string+"	"+(-ry) as string+"\n"
-							)
+						)
 
 					-- scale
 						if chkScale.checked then
-							(
-							)
+						(
+						)
 		
 					-- camera data
 						if chkCam.checked AND (classof obj)==Targetcamera then
-							(
+						(
 							px=obj.target.pos.x
 							py=obj.target.pos.y
 							pz=obj.target.pos.z
 							camData+="	"+f as string+"	"+(px) as string+"	"+(-pz) as string+"	"+(py) as string+"\n"
-							)
+						)
 		
 					-- light data
-					)
 				)
 			)
+		)
 
 
 -- final data gathering
@@ -243,8 +243,8 @@ format "Adobe After Effects % Keyframe Data
 				
 %
 End of Keyframe Data\n" ddAEVersion.selected framerate spnCompWidth.value spnCompHeight.value data
-			)
 		)
+	)
 )
 
 if AEFloater != undefined then closerolloutfloater AEFloater

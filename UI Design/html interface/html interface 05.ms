@@ -43,9 +43,9 @@ rollout ro1 "HTML Interface" width:316 height:650
 	---------------------------------------------------------------------------------------------------
 		-- go to the start page
 			on ro1 open do
-				( 
+			( 
 				axWeb.Navigate ("file://" + urlForm)
-				)
+			)
 
 		-- sample links
 			on btnCmd pressed do maxHtml.addMaxLink axWeb edt1.text edt2.text
@@ -55,16 +55,16 @@ rollout ro1 "HTML Interface" width:316 height:650
 			
 		-- set bg color on initial page load
 			on axWeb NavigateComplete2 pDisp url do
-				(
+			(
 				--if urlForm == url then maxHtml.setBgColor axWeb
-				)
+			)
 	
 
 		-- intercept urls
 			on axWeb BeforeNavigate2 pDisp url Flags TargetFrameName PostData Headers Cancel do
-				(
+			(
 				maxHtml.parseUrl url
-				)
+			)
 	
 )
 

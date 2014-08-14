@@ -69,10 +69,10 @@ invisible:true
 	-- Sends a roll angle in degrees and rescales it back to
 	--be within a 0-360 range
 	fn NormalizeRollAngle angle =
-	(
+(
 		angle = mod angle 360
 
-	)
+)
 	
 	
 	--******************************************************************************************
@@ -86,7 +86,7 @@ invisible:true
 	-- Create the manipulator gizmo. 
 	-- This is called initially and whenever the manipulator target changes 
 	on updateGizmos do 
-	( 
+( 
 	
 		local giz
 		local gizpos = [0,0,0]
@@ -99,7 +99,7 @@ invisible:true
 		this.clearGizmos() 
 		
 		if node.target != undefined do --pfb; 16 juin 2003: fixes cases wher a light can be set to targeted/non-targeted
-		(		
+	(		
 			-- defines gizmo distance to position it on the line between the light and the target
 			--due to Maxscript inconsistencies, the target_distance property is not always valid
 			if node.targetdistance == undefined 
@@ -159,68 +159,68 @@ invisible:true
 	--Stores the current rotation and projected point to calculate the rotation
 	-- during dragging (mouse move)
 	on mouseDown m wich do
-	(
+(
 		MouseDownVportCoords = (m) 
 		MouseDownRollAngle = NormalizeRollAngle (node.transform.controller.roll_angle) -- cache the current roll angle of the light	
 		node.transform.controller.roll_angle  = MouseDownRollAngle 
 		
 		-- the circle and arrows
 		if wich == 0 do 
-		(
-		)
+	(
+	)
 		
 		-- the Y+ line
 		if wich == 1 do 
-		(
+	(
 			node.transform.controller.roll_angle = node.transform.controller.roll_angle + 90
-		)
+	)
 		
 		--the x+ line
 		if wich == 2 do 
-		(
+	(
 			node.transform.controller.roll_angle = node.transform.controller.roll_angle - 90
-		)
+	)
 		
 		-- the Y+ dot
 		if wich == 3 do 
-		(
+	(
 			node.transform.controller.roll_angle = node.transform.controller.roll_angle + 90
-		)
+	)
 		
 		--the x+ dot
 		if wich == 4 do 
-		(
+	(
 			node.transform.controller.roll_angle = node.transform.controller.roll_angle - 90
-		)
+	)
 		
 		--the small cercle
 		if wich == 5 do 
-		(
+	(
 			
-		)
+	)
 	
 	)--end mouse down
 
 
 	-- Mouse move event
 	on mouseMove m which do 
-	(  
+(  
 		--ony if the circle and arrows are dragged
 		--rotates the light through it's roll angle
 		if (which == 0 or which == 5) do
-		(
+	(
 			--calculates the mouse movement in Y screen coords 
 			local DeltaRoll = (MouseDownVportCoords.y - m.y) 
 				
 			--updates the node roll angle
 			node.transform.controller.roll_angle = (DeltaRoll + MouseDownRollAngle)
-		)
+	)
 	) --end on mouse move
 
 
 	-- Mouse Up event
 	on mouseUp m wich do
-	(
+(
 		node.transform.controller.roll_angle =  NormalizeRollAngle (node.transform.controller.roll_angle)
 	)--end mouse up
 

@@ -15,15 +15,15 @@
 -------------------------------------------------------------------------------
 (
 if selection.count == 1 then 
-	(
+(
 	try 
-		(
+	(
 		modPanel.setCurrentObject $.modifiers[1]
-		)
-	catch
-		(
-		modPanel.setCurrentObject $
-		)
 	)
+	catch
+	(
+		modPanel.setCurrentObject $
+	)
+)
 )
 -------------------------------------------------------------------------------

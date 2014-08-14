@@ -1,25 +1,25 @@
 -- custom attributes
 	if distanceCA == undefined then
-		(
+	(
 		distanceCA = attributes "Distance" (
-			)
 		)
+	)
 
 	distanceCA = attributes "Distance" redefine:distanceCA
-		(
+	(
 		parameters main rollout:params
-			(
+		(
 			Value type:#float ui:spnValue default:0
-			)
+		)
 		 
 		rollout params "Distance"
-			(
+		(
 			spinner spnValue "Value: " type:#float range:[0,999999,0]
-			)
 		)
+	)
 
 function createObjects =
-	(
+(
 	-- setup objects
 		obj = sphere()
 	
@@ -32,11 +32,11 @@ function createObjects =
 		close ln 1
 		updateshape ln
 		
-	)
+)
 
 
 function applyPathController obj ln =
-	(
+(
 	-- vars
 		local pc, lc, sc, bc
 	
@@ -53,10 +53,10 @@ function applyPathController obj ln =
 		lc.weight = #(0,100)
 		
 		for i = 1 to lc.weights.numSubs do
-			(
+		(
 			lc.weights[i].controller = bezier_float()
 			lc.weights[i].controller.keyable = false
-			)
+		)
 		
 		lc.active = 1
 
@@ -67,27 +67,27 @@ function applyPathController obj ln =
 		sc.script	+="length	= amax (getSegLengths path 1)\n"
 		sc.script	+= "dist/length * 100\n"
 		sc.update()
-	)
+)
 
 
 function addDistanceSpinner obj wire:false =
-	(
+(
 	-- add modifier and ca
 		if classof obj.modifiers[1] != EmptyModifier then addModifier obj (EmptyModifier name:"Path Control")
 		custAttributes.add obj.modifiers[1] distanceCA
 		obj.modifiers[1].value.controller = bezier_float()
 	-- wire
 		if wire then
-			(
+		(
 			paramWire.connect2Way \
 				obj.position.controller.percent.controller[1] \
 				obj.modifiers[1].distance[1] \
 				"value / 100" \
 				"Distance * 100"
-			)
+		)
 	-- edit keys
 		
-	)
+)
 
 /*
 paramWire.connect \

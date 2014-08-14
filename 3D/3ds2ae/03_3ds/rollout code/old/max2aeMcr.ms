@@ -1,5 +1,5 @@
 MacroScript aeBridgeMcr category:"After Effects" tooltip:"After Effects Bridge"-- silentErrors:true
-	( 
+( 
 	-----------------------------------------------------------------
 	-- setup (macroscript scope)
 		clearListener()
@@ -13,7 +13,7 @@ global aeBridge
 	-- main interface
 
 		rollout aeBridge "3dsmax > After Effects" width:422 height:496
-			(
+		(
 		-- includes
 			include "core/utility.ms"
 		
@@ -24,7 +24,7 @@ global aeBridge
 		-- functions
 	
 			function flashClick n =
-				(
+			(
 				-- rollout information
 					local numRollouts=container.rollouts.count
 					local roHeights=for ro in container.rollouts collect ro.height
@@ -44,42 +44,42 @@ global aeBridge
 					
 				-- set title
 					container.rollouts[1].setTitle (n!=1)
-				)
+			)
 	
 		-- handlers
 
 			-- load flash
 				on aeBridge open do 
-					(
+				(
 					local subRo=aeBridge.controls[1]
 					local f=(openfile "ui/flashUI2.swf")
 					local fStr
 					if f!= undefined then
-						(
+					(
 						flush f; close f
 				
 						fStr=f as string
 						fStr = substring fStr 7 (fStr.count-7)
 						fStr=replaceAll fStr "\\" "/"
 						
-						)
+					)
 					else messageBox "Interface file not found..."
 		
 					ax.movie = fStr
 					ax.BackgroundColor=((colorMan.getColor #background)*255)as color
 					ax.menu=false
-					)
+				)
 	
 			-- handle flash click
 				on ax FSCommand argName argVal do 
-					(
+				(
 					if argName == "click" then
-						(
+					(
 						setFocus ax
 						n=argVal as Number
 						flashClick n
-						)
-					) 
+					)
+				) 
 		
 			-- resizing
 				function resizeUI size=aeBridge.container.height=size[2]-84
@@ -87,7 +87,7 @@ global aeBridge
 				on aeBridge resized size do resizeUI size
 				on aeBridge opened do resizeUI size
 				on aeBridge close do aeBridge=undefined
-			)
+		)
 	
 	
 	-----------------------------------------------------------------
@@ -116,6 +116,6 @@ global aeBridge
 		AddSubRollout aeBridge.container roTools rolledUp:true
 */	
 		aeBridge.flashClick 2
-	) 
+) 
 
 macros.run "After Effects" "aeBridgeMcr"

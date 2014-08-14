@@ -1,9 +1,9 @@
 	fn getAnchor obj =
-		(
+	(
 		local v=obj.pos
 		local p3=Point3 (round v.x) (-round v.z) (round v.y)
 		return p3
-		)
+	)
 
 
 
@@ -35,21 +35,21 @@ $.transform = $.transform * inverse $.transform
 
 -- get bounds function
 	fn getBounds obj=
-		(
+	(
 		at time 0 with animate off
-			(
+		(
 			storedTransform=obj.transform
 			obj.transform = identity obj.transform
 			size=obj.max-obj.min
 			obj.transform=storedTransform
-			)
-		return size
 		)
+		return size
+	)
 	getBounds $
 	
 -- better get bounds function
 	fn getBounds obj baseObject:false=
-		(
+	(
 		local n, xf, size
 		xf=xform()
 		n=if base==true then obj.modifiers.count else 0
@@ -57,6 +57,6 @@ $.transform = $.transform * inverse $.transform
 		size=(getModContextBBoxMax $ xf - getModContextBBoxMin $ xf)
 		deleteModifier obj xf
 		return round size
-		)
+	)
 	
 	getBounds $-- baseObject:true

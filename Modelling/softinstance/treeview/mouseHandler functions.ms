@@ -4,7 +4,7 @@
 		-- node click
 		-------------
 		function tvNodeClick tv tvNode =
-			(
+		(
 			-- interface
 				-- update variables
 					prevNode=curNode
@@ -35,15 +35,15 @@
 						format "  ctrl             %\n" sa.controller
 						format "  ctrl class:      %\n" (classof sa.controller)
 						format "  ctrl superclass: %\n\n" (superclassof sa.controller)
-						)
+					)
 					catch()
 					if superclassof sa.object == modifier then
-						(
+					(
 						format "IS MODIFIER!\n"
 						modPanel.setCurrentObject sa.object
-						)
+					)
 					else format "%\n" (superclassof sa.object)
-			)
+		)
 
 
 
@@ -58,43 +58,43 @@
 		------------
 /*
 		on tv1 keyPress keyCode do
-			(
+		(
 			format "%\n" keyCode
 			if keyCode == kSpace then
-				(
+			(
 				if dropNode.expanded==true then dropNode.expanded=false
 				else dropNode.expanded=true
-				)
-			)	
+			)
+		)	
 */
 
 		-------------
 		-- mouse down
 		-------------
 		fn tvMouseDown tv btn shift x y =
-			(
+		(
 			if btn == 1 then
-				(
+			(
 				try(
 					tv.selectedItem=tvGetHitNode tv
-					)
-				catch()
 				)
+				catch()
 			)
+		)
 
 /*
 		fn tvMouseMove tv btn shift x y =
-			(
+		(
 
 		--If Button = vbLeftButton Then ' Signal a Drag operation. indrag = True ' Set the flag to true. 
 
 			enableAccelerators = false			
 			
 			if btn == 1 then
-				(
+			(
 				dragging= true
 				--dragImage=tv.createdragimage()
-				)
+			)
 			format "%\n" dragging
 			--dragNode = 
 			--tv.selectedItem.createdragimage()
@@ -103,7 +103,7 @@
 		--	TreeView1.DragIcon = TreeView1.SelectedItem.CreateDragImage 
 		--	TreeView1.Drag vbBeginDrag ' Drag operation. 
 
-			)
+		)
 */
 
 
@@ -113,9 +113,9 @@
 		-- mouse move
 		-------------
 		fn tvMouseMove tv btn shift x y =
-			(
+		(
 			if btn == 1 then
-				(
+			(
 				try(
 					dragging= true
 					lastNode.backColor= colOver
@@ -126,46 +126,46 @@
 					dropNode.backColor= colOver
 	
 					format "% | %\n" lastNode.index dropNode.index
-					)
-				catch()
 				)
+				catch()
 			)
+		)
 
 		------------
 		-- mouse up
 		------------
 		fn tvMouseUp tv btn shift x y =
-			(
+		(
 			enableAccelerators = false			
 			selNode = tvGetHitNode tv
 			if btn == 2 and selNode != undefined do
-				(
-				popupmenu nodeMenu pop:[x, y] rollout:test 				)
-			)
+			(
+				popupmenu nodeMenu pop:[x, y] rollout:test 			)
+		)
 
 		-------------
 		-- start drag
 		-------------
 			fn tvStartDrag tv data effects =
-				(
+			(
 				--dragNode = tvGetHitNode tv
 				dragNode = tv.selectedItem
 				if dragNode == undefined or dragNode.parent == undefined then return()
 				else
-					(
+				(
 					dragNode.bold=true
 					--tv.dropHighlight = 
 					--tv.selectedItem.createdragimage()
-					)
 				)
+			)
 	
 		------------
 		-- drag over
 		------------
-			fn tvDragOver tv data Effect Button Shift x y State = 				(
+			fn tvDragOver tv data Effect Button Shift x y State = 			(
 
 				try
-					(
+				(
 /*
 					lastNode = dropNode 
 					lastNode.backcolor = colOff
@@ -177,10 +177,10 @@
 */
 /*
 					if dropNode.index != lastNode.index then
-						(
+					(
 						format "% | different%\n" dropNode.index
 						if dropNode != undefined then
-							(
+						(
 							-- color stuff
 								try lastNode.backcolor = colOff
 								catch()
@@ -188,38 +188,38 @@
 							local dragNodeSuperclass = superclassof((getSAFromNode dragNode).object)
 							local dropNodeSuperclass = superclassof((getSAFromNode dropNode).object)
 							if dragNodeClass == dropNodeClass then
-								(
+							(
 								dropNode.backcolor = colOver
 								lastNode=dropNode
 								okToCopy=true
-								)
+							)
 							else
-								(
+							(
 							-- dont allow copy
 								okToCopy=false
 							-- autoexpand if closed
 								if dropNode.expanded==false then dropNode.expanded=true
-	  							)
-							)
+	  						)
 						)
+					)
 					else format "% | SAME\n" dropNode.index
 */
-					)
+				)
 				catch()
 				--try format "% | %\n" lastNode.index dropNode.index
 				--catch()
-				)
+			)
 
 		-------
 		-- drop
 		-------
 
 			fn tvDragDrop tv data Effect btn key x y =
-				(
+			(
 				local cPos=mouse.screenpos
 				if dropNode != undefined AND okToCopy==true then popupmenu copyMenu pop:[cPos.x, (cPos.y-30)] rollout:test
 				dragNode.bold=false
-				)
+			)
 
 
 ---------------------------------------------------------------------------------------------------------------------------

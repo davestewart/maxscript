@@ -1,5 +1,5 @@
 rollout rFlash "Shockwave Flash Object" 
-	( 
+( 
 
 -- interface
 	activeXControl axFlash "{D27CDB6E-AE6D-11CF-96B8-444553540000}" height:151 width:401 align:#left 
@@ -18,14 +18,14 @@ rollout rFlash "Shockwave Flash Object"
 		on axFlash OnProgress arg1 do format "handler: OnProgress : %\n" arg1 
 	
 		on axFlash FSCommand arg1 arg2 do 
-			(
+		(
 			rFlash.title=(arg1 + " " +arg2)
 			messagebox (arg1 + " " +arg2)
 			setFocus axFlash
-			) 
+		) 
 	
 		on rFlash open do 
-			(
+		(
 			local path="X:/Dave/3ds to ae/03_3ds/interface/flash interface/"
 			local file="flashBg.swf"
 			--local file="flashFun01.swf"
@@ -34,7 +34,7 @@ rollout rFlash "Shockwave Flash Object"
 			
 			axFlash.BackgroundColor=((colorMan.getColor #background)*255)as color
 			axFlash.menu=false
-			)
+		)
 
 	-- else
 
@@ -44,13 +44,13 @@ rollout rFlash "Shockwave Flash Object"
 
 
 	on ddl1 selected arg do
-		(
+	(
 		local ui=ddl1.items[arg] as name
 		cp1.color=(colorMan.getColor ui)*255
 		axFlash.BackgroundColor=((colorMan.getColor ui)*255) as color
-		)
+	)
 
-	) 
+) 
 flashFloater = newRolloutFloater "Shockwave Flash Object" 450 250 10 10 
 addRollout rFlash flashFloater 
 

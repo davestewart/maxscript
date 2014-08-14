@@ -318,11 +318,11 @@ rollout textOptions "Text Options" width:176 height:493
 
 	--set up spinners & scene on open
 		on textOptions open do
-			(
+		(
 			sizeCtrl.value = 100
 			for obj in geometry do delete obj
 			for obj in shapes do delete obj
-			)
+		)
 
 	--------------------------------------------------------------------------------------------------------------------------------
 	-- Font & Shape functions
@@ -330,46 +330,46 @@ rollout textOptions "Text Options" width:176 height:493
 
 
 	fn updatePB i progressTotal =
-		(
+	(
 		progressCurrent = progressCurrent + 1
 		pb1.value = 100.0 * progressCurrent / progressTotal
 		-- reset when progress bar is full
 			if pb1.value == 100 then
-				(
+			(
 				pb1.value = 0
 				progressTotal = 0
 				progressCurrent = 0
-				)
-		)
+			)
+	)
 
 	fn updateFont =
-		(
+	(
 		if objectList.count != 0 then
-			(
+		(
 			for i = 1 to objectList.count do
-				(
+			(
 				obj = execute ("$'" + objectList[i] + "'")
 				obj.font = font.selected
 				updatePB i progressTotal
-				)
-			tempFont = textOptions.font.text
 			)
+			tempFont = textOptions.font.text
 		)
+	)
 /*
 
 	fn updateShapeSteps =
-		(
+	(
 		if objectList.count != 0 then
-			(
+		(
 			for i = 1 to objectList.count do
-				(
+			(
 				obj = execute ("$'" + objectList[i] + "'")
 				obj.steps = shapeSteps.value
 				updatePB i progressTotal
-				)
-			tempShapeSteps = textOptions.shapeSteps.value
 			)
-		)	
+			tempShapeSteps = textOptions.shapeSteps.value
+		)
+	)	
 */
 
 	--------------------------------------------------------------------------------------------------------------------------------
@@ -379,48 +379,48 @@ rollout textOptions "Text Options" width:176 height:493
 
 
 	on font selected true do
+	(
 		(
-			(
 			progressTotal = objectList.count
 			if interactiveBtn.checked then updateFont()
-			)
 		)
+	)
 /*
 	on shapeSteps changed val do
-		(
+	(
 		if textOptions.interactiveBtn.checked then
-			(
+		(
 			progressTotal = objectList.count
 			updateShapeSteps()
-			)
 		)
+	)
 */
 	on interactiveBtn changed state do
-		(
+	(
 		if textOptions.updateBtn.enabled == false then textOptions.updateBtn.enabled = true
 		else textOptions.updateBtn.enabled = false
-		)
+	)
 		
 		
 	on updateBtn pressed do
-		(
+	(
 		progressTotal = 0
 
 		-- Check if font needs updating (only if dropdown has changed from last time)
 			if textOptions.font.text != tempFont then
-				(
+			(
 				progressTotal = progressTotal + objectList.count
 				updateFontState = 1
 				print "Updating Font"
-				)
+			)
 
 		-- Check if Shape Steps needs updating (only if spinner has changed from last time)
 			if textOptions.shapeSteps.value != tempShapeSteps then
-				(
+			(
 				progressTotal = progressTotal + objectList.count
 				updateShapeStepsState = 1
 				print "Updating Steps"
-				)
+			)
 
 		-- call appropriate functions
 
@@ -428,7 +428,7 @@ rollout textOptions "Text Options" width:176 height:493
 			if updateFontState == 1 then updateFont()
 			if updateShapeStepsState == 1 then updateShapeSteps()
 
-		)
+	)
 
 
 )
@@ -452,7 +452,7 @@ rollout textObjects "Text Objects" width:160 height:56
 	-- Creation handlers
 	--------------------------------------------------------------------------------------------------------------------------------
 	on createBtn pressed do
-		(
+	(
 				-- deleteTextObj()
 			-- set other globals
 				spacing = 1000
@@ -468,13 +468,13 @@ rollout textObjects "Text Objects" width:160 height:56
 	
 			--sets the animation range
 				if names.count == 0 then
-					(
+				(
 					print "No Data!"
-					)
+				)
 				else
-					(
+				(
 					animationRange = interval 0 ((names.count * d) + 1)
-					)
+				)
 	
 	
 			-- creates the objects & positions them
@@ -514,22 +514,22 @@ rollout textObjects "Text Objects" width:160 height:56
 
 					-- put in carriage returns if requested
 						if textOptions.twoLines.checked then
-							(
+						(
 							displayText = names[i]
 							spaceIndex = findString displayText " " -- find any spaces
 							if spaceIndex != undefined then
-								(
-								obj.text = replace displayText spaceIndex 1 "\r"
-								)
-							else
-								(
-								obj.text = displayText
-								)
-							)
-						else
 							(
-							obj.text  = names[i]
+								obj.text = replace displayText spaceIndex 1 "\r"
 							)
+							else
+							(
+								obj.text = displayText
+							)
+						)
+						else
+						(
+							obj.text  = names[i]
+						)
 
 
 
@@ -539,41 +539,41 @@ rollout textObjects "Text Objects" width:160 height:56
 						targetHeight = 300
 						
 						fn scaleText obj targetScale =
-						(
+					(
 							case textOptions.scaleType.state of
-							(
-							1:	(
+						(
+							1:(
 								addModifier obj (XForm()) ui:on
 								obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
 								modPanel.setCurrentObject obj.modifiers[#XForm]
 								subobjectLevel = 0
-								)
-							2: 	(
-								obj.scale = [targetScale ,targetScale ,targetScale ]
-								)	
 							)
+							2: (
+								obj.scale = [targetScale ,targetScale ,targetScale ]
+							)	
 						)
+					)
 						
 						case textOptions.scaleMethod.state of
-							(
+						(
 							1:
-								(
+							(
 								-- do nothing
-								)
+							)
 							2:
-							 	(
+							 (
 								span = obj.max.x - obj.min.x
 								targetScale = targetHeight / span
 								scaleText obj targetScale
-								)
+							)
 								
 							3:
-							 	(
+							 (
 								span = obj.max.z - obj.min.z
 								targetScale = targetHeight / span
 								scaleText obj targetScale
-								)
-							) 
+							)
+						) 
 		
 
 					-- set up objects to move
@@ -602,7 +602,7 @@ rollout textObjects "Text Objects" width:160 height:56
 					-- Centre the object if requested
 						if textOptions.centre.checked then (
 							obj.pivot.z = (obj.max.z - obj.min.z) / 2 + obj.min.z
-						)
+					)
 
 						key1.value = spacing
 						key2.value = 0
@@ -613,37 +613,37 @@ rollout textObjects "Text Objects" width:160 height:56
 						textOptions.updatePB i names.count
 
 
-				)
+			)
 				sliderTime = 1
 				print "Printing Object List..."
 				print objectList
-	)
+)
 
 
 	fn deleteTextObj =
-		(
+	(
 		for i = 1 to objectList.count do
-			(
+		(
 				obj = execute ("$'" + objectList[i] + "'")
 				if obj != undefined then delete obj
 
 			-- Update progress bar
 				textOptions.updatePB i objectList.count
-			)
-			objectList = #()
 		)
+			objectList = #()
+	)
 
 	on delLastBtn pressed do
-		(
+	(
 		deleteTextObj()
-		)
+	)
 
 
 	on delAllBtn pressed do
-		(
+	(
 		for obj in geometry do delete obj
 		for obj in shapes do delete obj
-		)
+	)
 )
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -657,10 +657,10 @@ rollout anim "Text Duration" width:160 height:32
 	label frmLbl "frame" pos:[131,8] width:33 height:16
 		
 	on frames changed val do
-		(
+	(
 		if frames.value == 1 then frmLbl.text = "frame"
 		else frmLbl.text = "frames"
-		)
+	)
 
 )
 
@@ -679,25 +679,25 @@ rollout tools "Tools" width:160 height:512
 	--------------------------------------------------------------------------------------------------------------------------------
 
 	on camBtn pressed do
-		(
+	(
 		if $Camera_SimpleCredits == undefined then
-			(
+		(
 			camSC = Freecamera fov:45 targetDistance:160 nearclip:1 farclip:1000 nearrange:0 farrange:1000 mpassEnabled:off mpassRenderPerPass:off transform:(matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,-700,0])
 			camSC.name = "Camera SimpleCredits"
 			camSC.ignoreExtents = on
-			)
-		else
-			(
-			print "Camera already exists"
-			)
-			max vpt camera
 		)
+		else
+		(
+			print "Camera already exists"
+		)
+			max vpt camera
+	)
 
 
 	on listBtn pressed do
-		(
+	(
 		for i = 1 to objectList.count do (print objectList[i])
-		)
+	)
 		
 )
 
@@ -707,9 +707,9 @@ rollout credits "Credits" width:160 height:40
 (
 	button webBtn "www.davestewart.co.uk" width:156 height:16
 	on webBtn pressed do
-		(
+	(
 		ShellLaunch "iexplore.exe" "http://www.davestewart.co.uk"
-	 	)
+	 )
 )
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -718,9 +718,9 @@ rollout credits "Credits" width:160 height:40
 
 -- create the Floater window and add the rollouts
 	if SCrof != undefined do
-		(
+	(
 		closerolloutfloater SCrof
-		)		
+	)		
 
 	SCrof=newrolloutfloater "Simple Credits" 200 200
 

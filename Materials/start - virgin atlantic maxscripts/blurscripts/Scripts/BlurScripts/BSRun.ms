@@ -62,57 +62,57 @@ the_script = 1
 -- Functions
 
 fn bsrun_update = 
-	(
+(
 	script_names = #()
 	script_files = get_all_files_in_dir ((getdir #scripts) + "\\BlurScripts\\") false "ms"
 	if script_files.count != 0 then
-		(
+	(
 		for i = 1 to script_files.count do
-			(
+		(
 			the_name = (filenameFromPath script_files[i])
 			append script_names (strip_file_extension the_name)
-			)
 		)
 	)
+)
 	
 fn bsr_io = 
-	(
+(
 	bsr_ini_name = ((getdir #scripts) + "\\BlurScripts\\" + "BSRun.ini")
 	if openFile bsr_ini_name != undefined then
-		(
+	(
 		bsr_ini = openFile bsr_ini_name
 		inputdata = readLine bsr_ini
 		my_index = findItem script_names inputdata
 		if my_index == 0 then my_index = 1
 		last_script_index = my_index
 		close bsr_ini
-		)
+	)
 	else
-		(
+	(
 		bsr_ini = createFile bsr_ini_name
 		format (strip_file_extension (filenameFromPath (script_files[the_script] as string))) to:bsr_ini
 		close bsr_ini
-		)
 	)
+)
 
 -- Script
 
 rollout bsr_rollout "BSRun"
-	(
+(
 	on bsr_rollout open do
-		(
+	(
 		the_script = last_script_index
-		)
+	)
 		
 	dropdownlist the_scripts "" items:script_names selection:last_script_index height:40
 	button the_scripts_run "Run The Script" width:200 align:#center toolTip:"Run The Script"
 
 	on the_scripts selected i do 
-		(
+	(
 		the_script = i
-		)
+	)
 	on the_scripts_run pressed do 
-		(
+	(
 		CloseRolloutFloater bsr_floater
 
 		bsr_ini_name = ((getdir #scripts) + "\\BlurScripts\\" + "BSRun.ini")
@@ -122,8 +122,8 @@ rollout bsr_rollout "BSRun"
 		close bsr_ini
 		
 		execute (openfile (script_files[the_script] as string))
-		)
 	)
+)
 	
 bsrun_update()
 bsr_io()

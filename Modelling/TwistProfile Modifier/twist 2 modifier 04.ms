@@ -3,7 +3,7 @@
 plugin simpleMod twistProfile
 name:"-Twist Profile"
 classID:#(0x2d60fac1, 0x2d0524a1)
-	(
+(
 	
 	
 	----------------------------------------------------------------------------------
@@ -25,20 +25,20 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 	----------------------------------------------------------------------------------
 	
 		parameters main rollout:params
-			(
+		(
 			valTwist 		type:#float ui:spnTwist default:20
 			valValue		type:#float ui:spnVal default:20
 	
 			twistVals		type:#point3Tab tabSizeVariable:true
 			twistValsIn		type:#point3Tab tabSizeVariable:true
 			twistValsOut	type:#point3Tab tabSizeVariable:true
-			)
+		)
 	----------------------------------------------------------------------------------
 	-- main rollout
 	----------------------------------------------------------------------------------
 	
 		rollout params "Parameters"
-			(
+		(
 			
 			----------------------------------------------------------------------------------
 			-- ui
@@ -59,16 +59,16 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 				on params open do removeRollout roCC
 			
 				on btn1 pressed do
-					(
+				(
 					createdialog roCC 820 464
-					)
+				)
 					
 				on btn2 pressed do
-					(
+				(
 					local val = getValue roCC.cc1.curves[1] 0 750
 					print val
-					)
 				)
+			)
 
 
 	----------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 	/*
 
 	on map i p do
-		(
+	(
 		print p
 
 		local iy = p.y / extent.y
@@ -93,11 +93,11 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 --			p.y = cos(val) * z + sin(val) * y
 		p.z = cos(val) * z + sin(val) * x
 		p
-		)
+	)
 */
 	
 		on map i p do
-			(
+		(
 			-- ratio of how far along geometry the point is
 				local dy	= (p.y / extent.y) + 0.5
 
@@ -109,7 +109,7 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 				--print i
 				local curves = roCC.cc1.curves
 				if curves != undefined then
-					(
+				(
 					local val	= getValue roCC.cc1.curves[1] 0 (1000 * dy)
 					--format " -- %\n" roCC.cc1.curves[1]
 					
@@ -123,16 +123,16 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 					p.x = cos(val) * x - sin(val) * z
 		--			p.y = cos(val) * z + sin(val) * y
 					p.z = cos(val) * z + sin(val) * x
-					)
+				)
 				
 			--p.z += val
 				
 			p
-			)
+		)
 
 	/*
 	*/
-	)
+)
 
 
 /*

@@ -87,60 +87,60 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 	-- Utilities
 	
 		fn getCell name index: =
-		(
+	(
 			-- returns a reference to a cell within lvAnimations
 			
 			local subIndex = case name of
-			(
+		(
 				"name"		:0
 				"in"		:1
 				"out"		:2
 				"frames"	:3
-			)
+		)
 			index = if index != unsupplied then index else if lvAnimations.SelectedItems.count > 0 do lvAnimations.selectedIndices.item[0]
 			if index != undefined do
-			(
+		(
 				lvAnimations.items.item[index].subItems.item[subIndex]
-			)
 		)
+	)
 		
 		fn walkSubAnim ctrl =
-		(
+	(
 			-- variables
 				local sub, n, k
 			
 			-- controller and keys
 				if ctrl.controller != undefined do
-				(
+			(
 					n = numKeys ctrl.controller
 					if n > 0 do
-					(
+				(
 						for k = 1 to n do
-						(
+					(
 							if isKeySelected ctrl.controller k do
-							(
+						(
 								appendIfUnique keyList (getKeyTime ctrl.controller k)
-							)
 						)
 					)
 				)
+			)
 			
 			-- sub anim and children
 				for i = 1 to ctrl.numSubs do
-				(
+			(
 					sub = getsubanim ctrl i
 					if sub.controller != undefined do
-					(
+				(
 						walkSubAnim sub
-					)
 				)
-		)
+			)
+	)
 		
 		fn debugProperty property recursive:false depth:0 =
-		(
+	(
 			local props = getpropnames property
 			for i = 1 to props.count do
-			(
+		(
 				-- properties
 					local propName		= props[i] as string
 					local prop			= getproperty property propName
@@ -149,18 +149,18 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 				-- output
 					format ".% (%)\n----------------------------------------------------------------\n" propName propClass
 					try
-					(
+				(
 						getPropNames prop
 						show prop
 						if recursive AND depth < 3 do debugProperty prop recursive:true depth:(depth + 1)
-					)
+				)
 					catch
-					(
+				(
 						format "  %\n" prop
-					)
+				)
 					format "\n"
-			)
 		)
+	)
 	
 		
 	-- ------------------------------------------------------------------------------------------------------------------------
@@ -181,7 +181,7 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 		--------------------------------------------------------------------------------------------------------------------------
 		
 			function addAnimation name: inPoint:"-" outPoint:"-" beginEdit:false =
-			(
+		(
 				-- variables
 					local li, liSub
 					name = if name != unsupplied then name else "Animation " + (lvAnimations.items.count + 1) as string
@@ -199,38 +199,38 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 					
 				-- edit if needed
 					if beginEdit do li.BeginEdit()
-			)
+		)
 
 			function deleteAnimation =
-			(
+		(
 				selectedItems = lvAnimations.SelectedItems
 				if selectedItems.count > 0 do
-				(
+			(
 					if queryBox "Are you sure you want to delete these animation presets?" do
-					(
+				(
 						for i = selectedItems.count - 1 to 0 by -1 do selectedItems.item[i].remove()
-					)
 				)
 			)
+		)
 
 			function setAnimationInPoint frame: =
-			(
+		(
 				if frame == unsupplied do frame = sliderTime as integer / ticksperframe
 				local cell = getCell "in"
 				if cell != undefined do cell.text = frame as String
 				updateAnimationListItem()
-			)
+		)
 
 			function setAnimationOutPoint frame: =
-			(
+		(
 				if frame == unsupplied do frame = sliderTime as integer / ticksperframe
 				local cell = getCell "out"
 				if cell != undefined do cell.text = frame as String
 				updateAnimationListItem()
-			)
+		)
 
 			function setAnimationInOutPoint =
-			(
+		(
 				-- variables
 					keyList			= #()
 					local ctrl		= obj.transform.controller
@@ -240,133 +240,133 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 
 				-- modifiers
 					if obj.modifiers.count > 0 do
-					(
+				(
 						for i = 1 to obj.modifiers[1].numSubs do
-						(
+					(
 							walkSubAnim obj.modifiers[1][i]
-						)
 					)
+				)
 					
 				-- in and out points
 					if keyList.count > 0 do
-					(
+				(
 						setAnimationInPoint frame:(amin keyList)
 						setAnimationOutPoint frame:(amax keyList)
-					)
-			)
+				)
+		)
 
 			function moveAnimationUp =
-			(
+		(
 				
-			)
+		)
 
 			function moveAnimationDown =
-			(
+		(
 				
-			)
+		)
 			
 			function updateAnimationListItem index: =
-			(
+		(
 				-- index
 					index = if index != unsupplied then index else if lvAnimations.SelectedItems.count > 0 do lvAnimations.selectedIndices.item[0]
 					if index != undefined do
-					(
+				(
 						-- variables
 							local vIn		= (getCell "in").text as integer
 							local vOut		= (getCell "out").text as integer
 						
 						-- frames & order
 							if vIn != undefined AND vOut != undefined do
-							(
+						(
 							-- frames
 								(getCell "frames").text = (vOut - vIn) as String
 								
 							-- wrong order
 								lvAnimations.items.item[index].ForeColor = if vOut < vIn then colors.Red else colors.Black
-							)
+						)
 							
 						-- not sure
-					)
-			)
+				)
+		)
 			
 			function updateAnimationList =
-			(
+		(
 				for i = 1 to lvAnimations.items.count do
-				(
+			(
 					updateAnimationListItem index:i
-				)
 			)
+		)
 			
 			function checkAnimationName index label =
-			(
+		(
 				local cell = getCell "name" index:index
 				print cell.text
 				print label
 				if cell.text.count > 12 do cell.text = substring cell.text 1 12
-			)
+		)
 			
 			fn updateListViewSelection =
-			(
+		(
 				-- updated selected items colors
 					for i = 0 to lvAnimations.items.count - 1 do
-					(
+				(
 						lvAnimations.items.item[i].backColor = undefined -- set to white
-					)
+				)
 					
 					for i = 0 to lvAnimations.SelectedItems.count - 1 do 
-					(
+				(
 						lvAnimations.SelectedItems.item[i].backColor = colors.Gainsboro -- set to gray
-					)
+				)
 					
 				-- update button text
 					updateButtonText()
-			)
+		)
 			
 		--------------------------------------------------------------------------------------------------------------------------
 		-- Textures
 		--------------------------------------------------------------------------------------------------------------------------
 		
 			function addTexture =
-			(
+		(
 				local f = getOpenFileName types:"Image files (*.jpg, *.png)|*.jpg;*.png;" caption:"Choose a texture map..."
 				if f != undefined do
-				(
+			(
 					lbxTextures.items = append lbxTextures.items ((filenameFromPath f) + "  (" + (getFilenamePath f) + ")")
 					textureMaps = append textureMaps f
 					lbxTextures.selection = lbxTextures.items.count
-				)
 			)
+		)
 
 			function deleteTexture =
-			(
+		(
 				if lbxTextures.items.count > 0 AND lbxTextures.selection > 0 do
-				(
+			(
 					if queryBox "Are you sure you want to delete this texture?" do 
-					(
+				(
 						local i = lbxTextures.selection
 						lbxTextures.items = deleteItem lbxTextures.items i
 						deleteItem textureMaps i
-					)
 				)
 			)
+		)
 
 		--------------------------------------------------------------------------------------------------------------------------
 		-- Export
 		--------------------------------------------------------------------------------------------------------------------------
 			
 			function export =
-			(
+		(
 				
-			)
+		)
 			
 			fn updateButtonText =
-			(
+		(
 				btnExport.text = "Export"
 				if btnExportSel.checked do
-				(
+			(
 					btnExport.text += " (" + lvAnimations.selectedItems.count as string + " animations only)"
-				)
 			)
+		)
 			
 
 		--------------------------------------------------------------------------------------------------------------------------
@@ -388,13 +388,13 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 	-- Code
 
 			fn init =
-			(
+		(
 				local sel = getCurrentSelection()
 				obj = if sel.count == 1 then obj = sel[1] else undefined
-			)
+		)
 			
 			fn initListView =
-			(
+		(
 				-- properties
 					lvAnimations.gridLines		= true
 					lvAnimations.labelEdit		= true
@@ -416,16 +416,16 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 			
 				-- columns, names, widths & alignments
 					for i = 1 to columnNames.count do
-					(
+				(
 						local column = lvAnimations.Columns.add columnNames[i] columnWidths[i]
 						column.textAlign = columnAligns[i]
-					)
-			)
+				)
+		)
 			
 			fn populate =
-			(
+		(
 				for i = 1 to 5 do addAnimation()
-			)
+		)
 				
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--
@@ -444,13 +444,13 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 		-- Animations
 		
 			on lvAnimations DoubleClick e do
-			(
+		(
 				format "%\n" e
-			)
+		)
 			
 			on lvAnimations SelectedIndexChanged evt do updateListViewSelection()
 			on lvAnimations MouseClick evt do
-			(
+		(
 				clearListener()
 				--debugProperty evt recursive:true
 				roProps.add evt
@@ -461,7 +461,7 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 				on <control_name> MouseUp		<System.Windows.Forms.MouseEventArgs>e do ( ... )
 				on <control_name> MouseWheel	<System.Windows.Forms.MouseEventArgs>e do ( ... )
 			*/
-			)
+		)
 			
 			on btnAnimationNew pressed do addAnimation beginEdit:true
 			on btnAnimationDelete pressed do deleteAnimation()
@@ -493,12 +493,12 @@ rollout roMD2Exporter "MD2 Exporter" width:224 height:664
 		-- rollout
 	
 			on roMD2Exporter open do
-			(
+		(
 				clearListener()
 				init()
 				initListView()
 				populate()
-			)
+		)
 			
 )
 

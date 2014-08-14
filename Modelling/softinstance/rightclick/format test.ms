@@ -1,5 +1,5 @@
 fn doIt obj =
-	(
+(
 --	local tempStr = testStr as stringstream
 	format "The object is :" to:testStr
 	format "%\n" obj.name to:testStr
@@ -7,7 +7,7 @@ fn doIt obj =
 
 	close testStr
 	print(testStr as string)
-	)
+)
 
 
 

@@ -49,10 +49,10 @@ rollout roProps "Property Debugger"
 	-- Utilities
 	
 		fn debugProperty property =
-		(
+	(
 			local props = getpropnames property
 			for i = 1 to props.count do
-			(
+		(
 				-- properties
 					local propName		= props[i] as string
 					local prop			= getproperty property propName
@@ -61,17 +61,17 @@ rollout roProps "Property Debugger"
 				-- output
 					format ".% (%)\n----------------------------------------------------------------\n" propName propClass
 					try
-					(
+				(
 						getPropNames prop
 						show prop
-					)
+				)
 					catch
-					(
+				(
 						format "  %\n" prop
-					)
+				)
 					format "\n"
-			)
 		)
+	)
 
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--
@@ -87,14 +87,14 @@ rollout roProps "Property Debugger"
 	-- Functions
 
 		fn addChildren theNode theChildren =
-		(
+	(
 			for c in theChildren do
-			(
+		(
 			newNode			= theNode.Nodes.add c.name --add to the parent!
 			newNode.tag		= dotNetMXSValue c --.tag can contain a MXS value
 			addChildren newNode c.children --recursive call for new node
-			)
 		)
+	)
 	 
 		 
 	-- ------------------------------------------------------------------------------------------------------------------------
@@ -111,16 +111,16 @@ rollout roProps "Property Debugger"
 	-- Code
 
 		fn initTreeView tv =
-		(
+	(
 			tv.Indent = 20
-		)
+	)
 
 		fn populateTreeView tv =
-		(
+	(
 			theRoot			= tv.Nodes.add "Scene"
 			rootNodes		= for o in objects where o.parent == undefined collect o
 			addChildren theRoot rootNodes
-		)
+	)
 
 		
 	-- ------------------------------------------------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ rollout roProps "Property Debugger"
 	-- Handlers
 
 		on tv Click arg do 
-		(
+	(
 			-- First get the TreeView node below the mouse cursor
 			-- The arg argument has properties .x and .y with the current pos.
 			-- Use showProperties arg to see what is available...
@@ -148,26 +148,26 @@ rollout roProps "Property Debugger"
 			-- try to select the object stored as value in the .tag
 			
 				if node != undefined do
-				(
+			(
 					try
-					(
+				(
 						select node.tag.value
-					)
-					catch
-					(
-						max select none
-					)
 				)
+					catch
+				(
+						max select none
+				)
+			)
 			
-		)
+	)
 		 
 		on spnIndent changed val do tv.indent = val
 		 
 		on roProps open do 
-		(
+	(
 			initTreeView tv 
 			populateTreeView tv
-		)
+	)
 )
 
 createDialog roProps 200 320
@@ -193,9 +193,9 @@ showEvents
 on tv AfterCheck arg do 
 (
 	try
-	(
+(
 		arg.node.tag.value.isHidden = NOT arg.node.checked
-	)
+)
 	catch()
 )
 

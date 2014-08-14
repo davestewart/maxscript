@@ -29,10 +29,10 @@ select sel2
 	sel = (getcurrentselection())
 	arr = #()
 	for obj in sel do
-		(
+	(
 		newObj = copy obj
 		append arr newObj
-		)
+	)
 	--move arr [20,0,0]
 	delete sel
 	select arr
@@ -43,7 +43,7 @@ select sel2
 	arr.count = arr.count - 1
 
 	for obj in arr do
-		(
+	(
 		print obj
 		meshop.attach objSource obj attachMat:#IDToMat condenseMat:true
-		)
+	)

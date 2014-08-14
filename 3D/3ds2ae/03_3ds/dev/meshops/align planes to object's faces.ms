@@ -1,5 +1,5 @@
 fn alignPlane theObj theFace =
-	(
+(
 	-- First get the face normal vector.
 	-- It is shown in BLUE on the image
 	faceNormal = in coordsys theObj (getFaceNormal theObj theFace) 
@@ -37,7 +37,7 @@ fn alignPlane theObj theFace =
 	p.transform = theMatrix
 	p.position =meshop.getFaceCenter theObj theFace
 
-	)
+)
 
 for i = 1 to (getNumFaces $GeoSphere01) do alignPlane $GeoSphere01 i
 

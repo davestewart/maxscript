@@ -16,7 +16,7 @@ fn sphereSpline radius turns segments vertexTicks:off =
 
 	-- knots	
 		for i = 0 to segments do
-			(
+		(
 			-- %
 				pc = i / (segments as float)
 		
@@ -39,14 +39,14 @@ fn sphereSpline radius turns segments vertexTicks:off =
 			-- do it		
 				addknot ss 1 #smooth #curve [x, y, z]
 				append knots [x, y, z]
-			)
+		)
 
 	-- finalise
 		updateshape ss
 		ss.vertexTicks = vertexTicks
 		select ss
 		return ss
-		)
+	)
 		
 radius		= 150
 turns		= 20
@@ -63,19 +63,19 @@ ss2 = splineshape()
 vSpans = (segments / turns)
 
 for i = 0 to vSpans - 1 do
-	(
+(
 	addnewspline ss2
 --	format "%\n" (i as string)
 	si = i + 1
 	addknot ss2 si #corner #curve knots[1] -- top knot
 	for j = 1 to knots.count - 1 by (segments / turns) do
-		(
+	(
 		ki = i + j
 		--format "%	%\n" (si as string) (ki as string)
 		addknot ss2 si #corner #curve knots[ki]
-		)
-	addknot ss2 si #corner #curve knots[knots.count]
 	)
+	addknot ss2 si #corner #curve knots[knots.count]
+)
 	
 updateshape ss2
 ss2.wirecolor = ss.wirecolor * 0.65

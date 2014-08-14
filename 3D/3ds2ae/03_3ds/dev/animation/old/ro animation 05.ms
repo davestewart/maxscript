@@ -48,7 +48,7 @@ rollout roAnim "Animation" width:328 height:512
 
 
 	fn getIconFromBitmap thePath number =
-		(
+	(
 		tempBmp = openBitmap thePath
 		iconBmp = bitmap 15 15
 		for v = 0 to iconBmp.width-1 do
@@ -61,10 +61,10 @@ rollout roAnim "Animation" width:328 height:512
 		getDir #image +"/_temp.bmp"
 		/*
 		*/
-		)
+	)
 
 	fn initAXIcons=
-		(
+	(
 		ilGr.imagewidth = 16
 		ilGr.imageheight = 15
 		iconFile = "E:\\03_Scripting\\3ds2ae\\03_3ds\\animation\\icons.bmp"
@@ -77,11 +77,11 @@ rollout roAnim "Animation" width:328 height:512
 
 		ax.Picture=roAnim.ilBg.ListImages[1].Picture
 		ax.PictureAlignment=#lvwTile
-		) 
+	) 
 
 
 	on roAnim open do
-		(
+	(
 		-- icons
 			initAXIcons()
 			ax.ColumnHeaderIcons=ilGr
@@ -124,7 +124,7 @@ rollout roAnim "Animation" width:328 height:512
 
 		-- right click stuff
 			rcmenu rcAxObj
-				(
+			(
 				menuItem miCheck "Check selected"
 				menuItem miUnCheck "Uncheck selected"
 				separator sep1
@@ -134,34 +134,34 @@ rollout roAnim "Animation" width:328 height:512
 
 				on miCheck picked do checkAXItems true
 				on miUnCheck picked do checkAXItems false
-				)
+			)
 
 		-- tidy up	
 			ax.refresh()
-		)
+	)
 
 	on ax itemClick Item do
-		(
+	(
 		try(
 			--messagebox (Item.selected as string)
 			local obj=getnodebyname (Item.text)
 			if Item.selected then selectmore obj
 			else deselect obj
-			)
-		catch()
 		)
+		catch()
+	)
 
 	on btnAdd pressed do
-		(
+	(
 		for o in objects do
-			(
+		(
 			if classof o != Targetobject then
-				(
+			(
 				li=ax.ListItems.Add index:o.name
 				--print li.ListSubItems.count
 				--li.ListSubItems.Add text:(superclassof o as string)
 				for i = 1 to 7 do
-					(
+				(
 					lis=li.ListSubItems.Add()-- text:""
 					lis.bold=true
 					if i<=3 then lis.text="x"
@@ -169,28 +169,28 @@ rollout roAnim "Animation" width:328 height:512
 					if i==4 AND superclassof o==Camera then lis.text="x"
 					if i==5 AND superclassof o==Light then lis.text="x"
 					if i == 7 then lis.text=superclassof o as string
-					)
 				)
 			)
-		ax.refresh()
 		)
+		ax.refresh()
+	)
 
 	fn checkAXItems state=
-		(
+	(
 		for i = 1 to ax.listitems.count do
-			(
+		(
 			li=ax.listitems[i]
 			if li.selected then li.checked = state
-			)
 		)
+	)
 
 	on btnCheck changed state do checkAXItems state
 
 	on ax MouseDown Button Shift x y do
-		(
+	(
 		if button==2 then popupMenu rcAxObj pos:[x+16,y+24] rollout:roAnim align:#align_topleft
 		format "%, %, %, %, %\n" "MouseUp" Button Shift x y 
-		)
+	)
 
 
 )

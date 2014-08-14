@@ -352,9 +352,9 @@ rollout credits "Credits" width:160 height:40
 
 -- create the Floater window and add the rollouts
 	if SCrof != undefined do
-		(
+	(
 			closerolloutfloater SCrof
-		)		
+	)		
 
 	SCrof=newrolloutfloater "Simple Credits" 200 200
 

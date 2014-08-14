@@ -2,19 +2,19 @@ plugin modifier simpleLipSync
 	name:"Simple Lip Sync" 
 	classID:#(0x79ce6e65, 0xa8933438) 
 	extends:Materialmodifier replaceUI:true version:1 
-	( 
+( 
 		parameters main rollout:params 
-			( 
+		( 
 			matID type:#integer animatable:true ui:spnMatID default:1
 
 			on matID get val do
-				(
+			(
 				label.text = ("> " + val as string)
-				)
-			) 
+			)
+		) 
 
 		rollout params "Parameters" 
-			( 
+		( 
 			---------------------------------------------------------------------------------------------------
 			-- declare variables
 			---------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ plugin modifier simpleLipSync
 			local col = (color 0 255 0)
 			
 			Group "Mouth Shapes"
-				(
+			(
 				checkbutton ckb1 "" images:#(btnImage, btnAlpha, 12, 1 , 1 , 1 , 1) checked:true across:3 alighn:#left
 				checkbutton ckb2 "" images:#(btnImage, btnAlpha, 12, 2 , 2 , 2 , 2) 
 				checkbutton ckb3 "" images:#(btnImage, btnAlpha, 12, 3 , 3 , 3 , 3) 
@@ -45,14 +45,14 @@ plugin modifier simpleLipSync
 				checkbutton ckb12 "" images:#(btnImage, btnAlpha, 12, 12 , 12 , 12 , 12) 
 				spinner spnMatID "" width:31 height:16
 				label lbl1 ">" width:100 height:20
-				)
+			)
 		
 			---------------------------------------------------------------------------------------------------
 			-- Functions
 			---------------------------------------------------------------------------------------------------
 		
 				function btnChange btn mat state =
-					(
+				(
 					pushPrompt (($.modifiers[this.name][1][1].controller) as string)
 
 				-- reset buttons
@@ -75,9 +75,9 @@ plugin modifier simpleLipSync
 					--set tangent types
 						k.inTangentType = #step
 						k.outTangentType = #step					
-					)
+				)
 				catch()
-					)
+				)
 		
 		
 			---------------------------------------------------------------------------------------------------
@@ -98,9 +98,9 @@ plugin modifier simpleLipSync
 				on ckb12 changed state do btnChange ckb9 12 state
 		
 				on params open do
-					(
+				(
 					btnOld = ckb1
-					)
+				)
 
-			) 
-	) 
+		) 
+) 

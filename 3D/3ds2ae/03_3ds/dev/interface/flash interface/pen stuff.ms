@@ -50,7 +50,7 @@ rollout util_R "PEN Rigging Utils"
 		extraUtil_R,
 		help_R,
 		editAttributesR
-	)
+)
 	local rollHeight = -- array of rollout heights
 	#(
 		floatHeight,
@@ -60,7 +60,7 @@ rollout util_R "PEN Rigging Utils"
 		480,
 		135,
 		420
-	)
+)
 	
 	local rollWidth = --array of rollout widths
 	#(
@@ -71,52 +71,52 @@ rollout util_R "PEN Rigging Utils"
 		0,
 		0,
 		360
-	)
+)
 
 --characterSetup_F.size[2] - floatHeight
 
 	-- Called when Utility button is pressed. Opens the correct rollout.
 	FN btCon_fn btPres =
-	(
+(
 		if btPres == 1 then
-		(
+	(
 			sub1.width = floatWidth
 			sub1.height = floatHeight
 			util_R.width = floatWidth
 			util_R.height = floatHeight
 			for x in roll_ar do (if x != undefined do (removeSubRollout Sub1 x))
 		)else
-		(
+	(
 			for x in roll_ar do (if x != undefined do (removeSubRollout Sub1 x))
 			sub1.width = (floatWidth + rollWidth[btPres])
 			sub1.height = (floatHeight + rollHeight[btPres])
 			util_R.width = (floatWidth + rollWidth[btPres])
 			util_R.height = (floatHeight + rollHeight[btPres])
 			addSubRollout Sub1 roll_ar[btPres]
-		)
 	)
+)
 	
 	on util_R close do
-	(
+(
 		callbacks.removescripts #selectionSetChanged
-	)
+)
 
 	on util_R open do
-	(
+(
 		
 		ax.tabs.clear()
 		ax.multiRow = true
 		
 		for x = 1 to tabNames.count do --Add new tabs
-		(
+	(
 			newTab = ax.tabs.add()
 			newTab.caption = tabNames[x]
 			newTab.toolTipText = tabTips[x]
-		)
 	)
+)
 
 	on ax click do
-	(
+(
 		axT = ax.selectedItem
 		btCon_fn axT.index
 		for x = 1 to tabNames.count do ax.tabs[x].highLighted = false --Clear highlights in tabs.
@@ -129,7 +129,7 @@ rollout util_R "PEN Rigging Utils"
 		showMethods ax.tabs
 		print "--------------"
 		showEvents ax.tabs
-	)
+)
 
 )-- End util_R
 
@@ -149,26 +149,26 @@ rollout help_R "Help"
 rollout controllers_R "Controllers" 
 (
 	group "List Controllers Names:"
-	(
+(
 		dropDownList conPre_ddl ""
 	
-	)
+)
 
 	group "Remove List Controllers:"
-	(
+(
 		button removePoslist "Pos" width:btWidth3 align:#center across:3 toolTip:"Removes position list controllers and set them to a default of Postion_XYZ."
 		button removeRotlist "Rot" width:btWidth3  align:#center toolTip:"Removes Rotation list controllers and set them to a default of Euler_XYZ."
 		button removeScllist "Scl" width:btWidth3  align:#center toolTip:"Removes Scale list controllers and set them to a default of Scale_XYZ."
-	)
+)
 
 	group "Zero Out Objects:"
-	(
+(
 		button zeroPos "0 Pos" width:btWidth align:#center across:2 toolTip:"Adds List Controller with a Position_XYZ controller in the second track."
 		button zeroRot "0 Rot" width:btWidth align:#center toolTip:"Add List Controller with a Euler_XYZ controller in the second track."
-	)
+)
 	
 	group "Add Controllers:"
-	(
+(
 		checkBox makeList_cb ":Make List Controller" checked:true
 		
 		label ACTL01_lb "List Controller Name:" align:#left
@@ -187,10 +187,10 @@ rollout controllers_R "Controllers"
 		
 		checkBox makeActive_cb ":Make Active" checked:true
 		button addConTolist_bt "Add/Replace/Rename" width:130 align:#center toolTip:"Adds/Replaces/Renames selected controllers to/in List controller."
-	)
+)
 	
 	group "Set / Del Controllers:"
-	(
+(
 		radioButtons setBy_rb "By:" labels:#(":Number", ":Name") default:2
 		
 		spinner nlist_sp "List Number" fieldWidth:40 type:#integer range:[1,100,1] enabled:false
@@ -207,118 +207,118 @@ rollout controllers_R "Controllers"
 		
 		button set1stActive "Set 1st" width:btWidth align:#center across:2 toolTip:"Set the first controller active in a list"
 		button setTopActive "Set Top" width:btWidth align:#center toolTip:"Set the top controller active in a list"
-	)
+)
 	
 	group "Resets:"
-	(
+(
 		button resetPos "Pos" width:btWidth3 align:#center across:3 toolTip:"Reset the active position controller to a value of 0"
 		button resetRot "Rot" width:btWidth3 align:#center toolTip:"Reset the active rotation contoller to a value of 0"
 		button resetScl "Scl" width:btWidth3 align:#center toolTip:"Reset the active scale controller to a value of 0"
-	)
+)
 	
 		on conPre_ddl selected i do
-	(
+(
 		setactiveName_et.text = conPre_ddl.selected
 		conName_et.text = conPre_ddl.selected
-	)
+)
 	
 	on removePoslist pressed do
-	(
+(
 		disableSceneRedraw()
 		obj = getCurrentSelection()
 		Con = position_XYZ()
 		for x in selection do
-		(	
+	(	
 			posVal = x.pos.controller.value
 			x.pos.controller = copy Con
 			x.pos.controller.value = posVal
-		)
+	)
 		
 		select obj
 		enableSceneRedraw()
 		reDrawViews()
-	)
+)
 	
 	on removeRotlist pressed do
-	(
+(
 		disableSceneRedraw()
 		obj = getCurrentSelection()
 		Con = euler_XYZ()
 		for x in selection do
-		(	
+	(	
 			rotVal = x.rotation.controller.value
 			x.rotation.controller = copy Con
 			x.rotation.controller.value = rotVal
-		)
+	)
 		
 		select obj
 		enableSceneRedraw()
 		reDrawViews()
 		
-	)
+)
 	
 	on removeScllist pressed do
-	(
+(
 		disableSceneRedraw()
 		obj = getCurrentSelection()
 		Con = scaleXYZ()
 		for x in selection do
-		(	
+	(	
 			scaleVal = x.scale.controller.value
 			x.scale.controller = copy Con
 			x.scale.controller.value = scaleVal
-		)
+	)
 		
 		select obj
 		enableSceneRedraw()
 		reDrawViews()
 		
-	)
+)
 	
 	on zeropos pressed do
-	(
+(
 		disablesceneredraw()
 		posXYZcon_var = position_XYZ()
 		obj_sel01 = getcurrentselection()
 		
 		for x = 1 to obj_sel01.count do
-		(
+	(
 			poscon = obj_sel01[x].position.controller
 			if (classof poscon) != position_list do
-			(
+		(
 				poslistcon_var = position_list()
 				obj_sel01[x].position.controller = poslistcon_var
 				obj_sel01[x].position.controller[2].controller = copy posXYZcon_var
 				obj_sel01[x].position.controller.setactive 2
 				listctrl.setname obj_sel01[x].position.controller 1 "Zero"
 				listctrl.setname obj_sel01[x].position.controller 2 "Animation"
-			)
 		)
+	)
 		
 		for x = 1 to obj_sel01.count do
-		(
+	(
 			if obj_sel01[x].position.controller.numsubs == 2 do
-			(
+		(
 				obj_sel01[x].position.controller[2].controller = copy posXYZcon_var
 				obj_sel01[x].position.controller.setactive 2
 				listctrl.setname obj_sel01[x].position.controller 1 "Zero"
 				listctrl.setname obj_sel01[x].position.controller 2 "Animation"
-			)
+		)
 			
 			poslistcon2 = obj_sel01[x].position.controller[2].controller
 			if (classof poslistcon2) == position_XYZ do
-			(
+		(
 				obj_sel01[x].position.controller[1].value += obj_sel01[x].position.controller[2].value
 				obj_sel01[x].position.controller[2].value = [0,0,0]
-			)
 		)
+	)
 		select obj_sel01
 		enablesceneredraw()
 		redrawviews()
-	)
+)
 	
 	on zerorot pressed do
-	(
+(
 	disablesceneredraw()
 	
 		obj_sel = getcurrentselection()
@@ -327,22 +327,22 @@ rollout controllers_R "Controllers"
 		rotfloatcon = bezier_float()
 		
 		for x = 1 to obj_sel.count do
-		(
+	(
 			rotlistcon1 = obj_sel[x].rotation.controller --check for list controller
 			if (classof rotlistcon1) == rotation_list then
-			(
+		(
 				rotlistcon2 = obj_sel[x].rotation.controller[2].controller --check for euler_xyz controller
 				if (classof rotlistcon2) == euler_XYZ do
-				(
+			(
 					float_count = 0
 					for m = 1 to 3 do --check for bezier_float controller
-					(
+				(
 						rotlistcon2con = obj_sel[x].rotation.controller[2][m].controller 
 						if (classof rotlistcon2con) == bezier_float do
 						(float_count +=1)
-					)
+				)
 						if float_count == 3 do
-						(
+					(
 							--copy current controllers
 							currotcon = #()
 							for y = 1 to 3 do (append currotcon obj_sel[x].rotation.controller[2][y].controller)
@@ -356,10 +356,10 @@ rollout controllers_R "Controllers"
 							rotlistcon = rotation_list() 							obj_sel[x].rotation.controller = rotlistcon
 							obj_sel[x].rotation.controller[2].controller = copy rotXYZcon
 							for z = 1 to 3 do 
-							(
+						(
 								obj_sel[x].rotation.controller[2][z].controller = currotcon[z]
 								obj_sel[x].rotation.controller[2][z].controller.value = 0
-							)
+						)
 							
 							--set second controller active
 							obj_sel[x].rotation.controller.setactive 2
@@ -370,9 +370,9 @@ rollout controllers_R "Controllers"
 							
 						)--end if float_count
 				)--end if rotlistcon2
-			)
+		)
 			else
-			(
+		(
 				--Create 1st and 2nd list controller
 				rotlistcon = rotation_list()
 				obj_sel[x].rotation.controller = rotlistcon
@@ -398,26 +398,26 @@ rollout controllers_R "Controllers"
 
 --********************************************Add Controller
 	on makeList_cb changed state do
-	(
+(
 		if state then
-		(
+	(
 			setactiveName_et.enabled = true
 			if (addnList_cb.checked == true) do (addnList_sp.enabled = true)
 			addnList_cb.enabled = true
 			makeActive_cb.enabled = true
 		)else
-		(
+	(
 			setactiveName_et.enabled = false
 			addnList_sp.enabled = false
 			addnList_cb.enabled = false
 			makeActive_cb.enabled = false
-		)
 	)
+)
 	
 	on addnList_cb changed state do -- Checkbox to enable addcontroller in a given track
-	(
+(
 		if state then (addnList_sp.enabled = true) else (addnList_sp.enabled = false)
-	)
+)
 
 	local posCon_ar =
 	#(
@@ -427,22 +427,22 @@ rollout controllers_R "Controllers"
 		"Noise_Position()",
 		"Position_Script()",
 		"Position_Constraint()"
-	)
+)
 	local rotCon_ar =
 	#(
 		"None",
 		"Euler_XYZ()",
 		"TCB_Rotation()",
 		"Orientation_Constraint()"
-	)
+)
 	local sclCon_ar =
 	#(
 		"None"
-	)
+)
 	
 	-- adds controllers to list and renames controllers 	
 	on addConTolist_bt pressed do  
-	(
+(
 		makeCon = makeList_cb.state
 		posCon_vr = conPos_ddl.selected
 		rotCon_vr = conRot_ddl.selected
@@ -453,55 +453,55 @@ rollout controllers_R "Controllers"
 		PRS_ar =#(posCon_vr, rotCon_vr, sclCon_vr)
 		if makeCon do (CreateListCon_fn PRS_ar)
 		addListCon_fn makeCon posCon_vr rotCon_vr sclCon_vr newName_vr numTrack useNumTrack makeActive_cb.state
-	)
+)
 	
 	--Sets 1st controllers active.
 	on set1stActive pressed do -- sets the 1st controller active
-	(
+(
 		for x in selection do
-		(
+	(
 			try(x.pos.controller.setActive 1)catch()
 			try(x.rotation.controller.setActive 1)catch()
-		)
 	)
+)
 	
 	--Sets top controller active
 	on setTopActive pressed do -- sets the top controler active
-	(
+(
 		for x in selection do
-		(
+	(
 			try(x.pos.controller.setActive (x.pos.controller.count))catch()
 			try(x.rotation.controller.setActive (x.rotation.controller.count))catch()
-		)
 	)
+)
 	
 	--Updates interface when radio buttons are changed in setBy_rb
 	Fn setBy_fn state =
-	(
+(
 		case state of
-		(
+	(
 			1:
-			(
+		(
 				nlist_sp.enabled = true
 				conName_et.enabled = false
-			)
+		)
 			2:
-			(
+		(
 				nlist_sp.enabled = false
 				conName_et.enabled = true
-			)
 		)
 	)
+)
 	
 	--Called by setBy_rb
 	on setBy_rb changed state do
-	(
+(
 		setBy_fn state
-	)
+)
 	
 	--Converts strings to upper case.
 	fn uppercase_fn instring =
-	( 
+( 
 		local upper, lower, outstring -- declare variables as local 
 		upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ" -- set variables to literals 
 		lower="abcdefghijklmnopqrstuvwxyz" 
@@ -510,212 +510,212 @@ rollout controllers_R "Controllers"
 		
 		for i=1 to outstring.count do 
 		
-		( 
+	( 
 			j=findString lower outstring[i] 
 			
 			if (j != undefined) do outstring[i]=upper[j] 
-		) 
+	) 
 		outstring
 	) -- end uppercase_fn
 
 	--Sets controllers active by number.
 	FN listByNum_fn =
-	(
+(
 		for x in selection do
-		(
+	(
 			if setP_cb.state do
-			(
+		(
 				try(nPosCon = (if nList_sp.value > x.pos.controller.count then (x.pos.controller.count)else(nList_sp.value))
 				x.pos.controller.setActive nPosCon)catch()
-			)
+		)
 			if setR_cb.state do
-			(
+		(
 				try(nRotCon = (if nList_sp.value > x.rotation.controller.count then (x.rotation.controller.count)else(nList_sp.value))
 				x.rotation.controller.setActive nRotCon)catch()
-			)
+		)
 			if setS_cb.state do
-			(
+		(
 				try(nSclCon = (if nList_sp.value > x.scale.controller.count then (x.scale.controller.count)else(nList_sp.value))
 				x.scale.controller.setActive nSclCon)catch()
-			)
 		)
 	)
+)
 	
 	-- Deletes controllers by number.
 	FN delListByNum_fn =
-	(
+(
 		for x in selection do
-		(
+	(
 			if setP_cb.state do
-			(
+		(
 				try(nPosCon = (if nList_sp.value > x.pos.controller.count then (x.pos.controller.count)else(nList_sp.value))
 				x.pos.controller.delete nPosCon)catch()
-			)
+		)
 			if setR_cb.state do
-			(
+		(
 				try(nRotCon = (if nList_sp.value > x.rotation.controller.count then (x.rotation.controller.count)else(nList_sp.value))
 				x.rotation.controller.delete nRotCon)catch()
-			)
+		)
 			if setS_cb.state do
-			(
+		(
 				try(nSclCon = (if nList_sp.value > x.scale.controller.count then (x.scale.controller.count)else(nList_sp.value))
 				x.scale.controller.delete nRotCon)catch()
-			)
-			
 		)
+			
 	)
+)
 	
 	-- Set controllers active by name.
 	FN listByName_fn =
-	(
+(
 		for x in selection do
-		(
+	(
 			if (classof x.pos.controller) == Position_List do
-			(
+		(
 				for c = 1 to x.pos.controller.count do
-				(
+			(
 					if (uppercase_fn (x.pos.controller.getName c)) == uppercase_fn (conName_et.text) do
-					(
+				(
 						x.pos.controller.setActive c
-					)
 				)
 			)
+		)
 			if (classof x.rotation.controller) == Rotation_List do
-			(
+		(
 				for c = 1 to x.rotation.controller.count do
-				(
+			(
 					if (uppercase_fn (x.rotation.controller.getName c)) == uppercase_fn (conName_et.text) do
-					(
+				(
 						x.rotation.controller.setActive c
-					)
 				)
 			)
 		)
 	)
+)
 	
 	--Deletes Controllers by name.
 	FN delListByName_fn =
-	(
+(
 		for x in selection do
-		(
+	(
 			if (classof x.pos.controller) == Position_List do
-			(
+		(
 				for c = x.pos.controller.count to 1 by -1 do
-				(
+			(
 					if (uppercase_fn (x.pos.controller.getName c)) == uppercase_fn (conName_et.text) do
-					(
+				(
 						x.pos.controller.delete c
-					)
 				)
 			)
+		)
 			if (classof x.rotation.controller) == Rotation_List do
-			(
+		(
 				for c = x.rotation.controller.count to 1 by -1 do
-				(
+			(
 					if (uppercase_fn (x.rotation.controller.getName c)) == uppercase_fn (conName_et.text) do
-					(
+				(
 						x.rotation.controller.delete c
-					)
 				)
 			)
 		)
 	)
+)
 	
 	-- sets controller active by name and number
 	on conApply_bt pressed do 
-	(
+(
 		case setBy_rb.state of
-		(
+	(
 			1:
-			(
+		(
 				listByNum_fn()
-			)
-			2:
-			(
-				listByName_fn()
-			)
 		)
-	
+			2:
+		(
+				listByName_fn()
+		)
 	)
+	
+)
 	
 	-- deletes controller by name and number
 	on conDelete_bt pressed do 
-	(
+(
 		case setBy_rb.state of
-		(
+	(
 			1:
-			(
+		(
 				delListByNum_fn()
 				updateCons_fn()
-			)
+		)
 			2:
-			(
+		(
 				delListByName_fn()
 				updateCons_fn()
-			)
 		)
-	
 	)
+	
+)
 	
 	on resetPos pressed do
-	(
+(
 		disableSceneRedraw()
 		for x in selection do
-		(
+	(
 			try(activeList = x.pos.controller.active)catch()
 			if (classof x.pos.controller) == position_list then
-			(
+		(
 				x.pos.controller[activeList].value = [0,0,0]
 			)else
-			(
+		(
 				x.pos.controller.value = [0,0,0]
-			)
-		)		
+		)
+	)		
 		
 		enableSceneredraw()
 		redrawViews()
-	)
+)
 	
 	on resetRot pressed do
-	(
+(
 		disableSceneRedraw()
 		for x in selection do
-		(
+	(
 			try(activeList = x.rotation.controller.active)catch()
 			if (classof x.rotation.controller) == rotation_list then
-			(
+		(
 				x.rotation.controller[activeList].value = (quat 0 0 0 1)
 			)else
-			(
+		(
 				x.rotation.controller.value = (quat 0 0 0 1)
-			)
-		)		
+		)
+	)		
 		
 		enableSceneredraw()
 		redrawViews()
-	)
+)
 	
 	on resetScl pressed do
-	(
+(
 		disableSceneRedraw() 		for x in selection do
-		(
+	(
 			try(activeList = x.scale.controller.active)catch()
 			if (classof x.scale.controller) == scale_list then
-			(
+		(
 				x.scale.controller[activeList].value = [1,1,1]
 			)else
-			(
+		(
 				x.scale.controller.value = [1,1,1]
-			)
-		)		
+		)
+	)		
 		
 		enableSceneredraw()
 		redrawViews()
-	)
+)
 	
 	
 	on controllers_R open do
-	(
+(
 		updateCons_fn()
 		callbacks.addscript #selectionSetChanged "selsetchanged_fn()" id:#selSetChanged_id
 		conPos_ddl.items = posCon_ar
@@ -724,13 +724,13 @@ rollout controllers_R "Controllers"
 --		try(setactiveName_et.text = conPre_ddl.selected)catch() -- upadates the editText fields with names of current controllers
 --		try(conName_et.text = conPre_ddl.selected)catch() -- upadates the editText fields with names of current controllers
 
-	)
+)
 	
 	on controllers_R close do
-	(
+(
 		callbacks.removescripts #selectionSetChanged
 	
-	)
+)
 
 )-- end controller_R
 
@@ -741,7 +741,7 @@ rollout controllers_R "Controllers"
 rollout linkInfo_R "Link Info"
 (
 	group "Locks"
-	(
+(
 		label locklinkinfo01 "Move:" align:#left
 		checkbox lockmove_X "X" checked:true align:#right across:5
 		checkbox lockmove_Y "Y" checked:true align:#right offset:[5,0]
@@ -766,10 +766,10 @@ rollout linkInfo_R "Link Info"
 		button locklinkinfo_apply "Apply" width:60 height:20 align:#left
 		button locklinkinfo_checkAll "All" width:25 height:20 offset:[33,-25]
 		button locklinkinfo_clearall "N" width:25 height:20 offset:[60,-25]
-	)
+)
 
 	group "Inherit"
-	(
+(
 		label inheritlinkinfo01 "Move:" align:#left
 		checkbox inheritmove_X "X" checked:true align:#right across:5
 		checkbox inheritmove_Y "Y" checked:true align:#right offset:[5,0]
@@ -794,7 +794,7 @@ rollout linkInfo_R "Link Info"
 		button inheritlinkinfo_apply "Apply" width:60 height:20 align:#left
 		button inheritlinkinfo_checkAll "All" width:25 height:20 offset:[33,-25]
 		button inheritlinkinfo_clearall "N" width:25 height:20 offset:[60,-25]
-	)
+)
 
 --**********************************************************reply Linkinfo
 --*******Lock return
@@ -810,14 +810,14 @@ rollout linkInfo_R "Link Info"
 	on locklinkinfo_checkAll pressed do (for i = 1 to 9 do (lockcheck_array[i].checked = true))
 	
 	on locklinkinfo_apply pressed do
-	(
+(
 		lock_array = #()
 		for i = 1 to 9 do
-		(
+	(
 			if lockcheck_array[i].checked == true do (append lock_array i)
-		)
-		for x in selection do ( settransformlockflags x (lock_array as bitarray) ) 
 	)
+		for x in selection do ( settransformlockflags x (lock_array as bitarray) ) 
+)
 	
 	--*****Inherit return
 	local inheritcheck_array = #(inheritmove_X,inheritmove_Y,inheritmove_Z,inheritrotate_X,inheritrotate_Y,inheritrotate_Z,inheritscale_X,inheritscale_Y,inheritscale_Z)
@@ -832,14 +832,14 @@ rollout linkInfo_R "Link Info"
 	on inheritlinkinfo_checkAll pressed do (for i = 1 to 9 do (inheritcheck_array[i].checked = true))
 	
 	on inheritlinkinfo_apply pressed do
-	(
+(
 		inherit_array = #()
 		for i = 1 to 9 do
-		(
+	(
 			if inheritcheck_array[i].checked == true do (append inherit_array i)
-		)
-		for x in selection do ( setinheritanceflags x (inherit_array as bitarray) ) 
 	)
+		for x in selection do ( setinheritanceflags x (inherit_array as bitarray) ) 
+)
 	
 
 )--end linkInfo_R
@@ -848,33 +848,33 @@ FN updateCons_fn = -- updates list controllers names DDL with current selected o
 (
 	conPre_ar = #()
 	for x in selection do
-	(
+(
 		if (classof x.pos.controller) == Position_List do
-		(
+	(
 			for c = 1 to x.pos.controller.count do
-			(
+		(
 				name01 = x.pos.controller.getName c
 				findit = finditem conPre_ar name01
 				if findit == 0 do
-				(
-					append conPre_ar name01
-				)
-			)
-		)
-		
-		if (classof x.rotation.controller) == Rotation_List do
-		(
-			for c = 1 to x.rotation.controller.count do
 			(
-				name01 = x.rotation.controller.getName c
-				findit = finditem conPre_ar name01
-				if findit == 0 do
-				(
 					append conPre_ar name01
-				)
 			)
 		)
 	)
+		
+		if (classof x.rotation.controller) == Rotation_List do
+	(
+			for c = 1 to x.rotation.controller.count do
+		(
+				name01 = x.rotation.controller.getName c
+				findit = finditem conPre_ar name01
+				if findit == 0 do
+			(
+					append conPre_ar name01
+			)
+		)
+	)
+)
 	
 	controllers_R.conPre_ddl.items = conPre_ar
 
@@ -892,26 +892,26 @@ FN CreateListCon_fn PRS_ar =
 		1, -- Position
 		2, -- Rotation
 		3  -- Scale
-	)
+)
 	
 	listCon_ar =
 	#(
 		position_list,
 		rotation_list,
 		scale_list
-	)
+)
 	
 	obj = selection as array
 	for x in selection do
-	(
+(
 		for t = 1 to tracks_ar.count do
-		(
+	(
 			if ((classof x[3][t].controller) != listCon_ar[t]) and (PRS_ar[t] != "None") do
-			(
+		(
 				x[3][t].controller = (listCon_ar[t]())
-			)
 		)
 	)
+)
 	select obj
 )--end CreateListCon_fn
 
@@ -920,90 +920,90 @@ fn addListCon_fn makeCon posCon_vr rotCon_vr sclCon_vr newName_vr numTrack useNu
 (
 	obj = selection as array
 	for x in selection do
-	(
+(
 		NumTrackP = if (useNumTrack != true) and ((classof x.position.controller) == position_list) then 
-		(
+	(
 			x.position.controller.count + 1
 		)else 
-		(
+	(
 			if ((classof x.position.controller) == position_list) and (numTrack > x.position.controller.count + 1) then
-			(
+		(
 				x.position.controller.count + 1
 			)else
-			(
+		(
 				numTrack
-			)
 		)
+	)
 		
 		NumTrackR = if (useNumTrack != true) and ((classof x.rotation.controller) == rotation_list) then 
-		(
+	(
 			x.rotation.controller.count + 1
 		)else 
-		(
+	(
 			if ((classof x.rotation.controller) == rotation_list) and (numTrack > x.rotation.controller.count + 1) then
-			(
+		(
 				x.rotation.controller.count + 1
 			)else
-			(
+		(
 				numTrack
-			)
 		)
+	)
 		
 		NumTrackS = if (useNumTrack != true) and ((classof x.scale.controller) == scale_list) then 
-		(
+	(
 			x.scale.controller.count + 1
 		)else 
-		(
+	(
 			if ((classof x.scale.controller) == scale_list) and (numTrack > x.scale.controller.count + 1) then
-			(
+		(
 				x.scale.controller.count + 1
 			)else
-			(
+		(
 				numTrack
-			)
 		)
+	)
 		
 		if (posCon_vr != "None") and (makeCon == false) do
-		(
+	(
 			x.position.controller = (execute posCon_vr)
-		)
+	)
 		
 		if (posCon_vr != "None") and (makeCon == true) do
-		(
+	(
 			x.position.controller[NumTrackP].controller = (execute posCon_vr)
 			if makeActive_cb do (x.position.controller.setActive NumTrackP)
-		)
+	)
 
 		if (rotCon_vr != "None") and (makeCon == false) do
-		(
+	(
 			x.rotation.controller = (execute rotCon_vr)
-		)
+	)
 		
 		if (rotCon_vr != "None") and (makeCon == true) do
-		(
+	(
 			x.rotation.controller[NumTrackR].controller = (execute rotCon_vr)
 			if makeActive_cb do (x.rotation.controller.setActive NumTrackR)
-		)
+	)
 
 		if (sclCon_vr != "None") and (makeCon == false) do
-		(
+	(
 			x.scale.controller = (execute sclCon_vr)
-		)
+	)
 		
 		if (sclCon_vr != "None") and (makeCon == true) do
-		(
+	(
 			x.scale.controller[NumTrackS].controller = (execute sclCon_vr)
 			if makeActive_cb do (x.scale.controller.setActive NumTrackS)
-		)
+	)
 		
 		if (newName_vr != "") and (makeCon == true) do
-		(
+	(
 			try(x.position.controller.setName NumTrackP newName_vr)catch()
 			try(x.rotation.controller.setName NumTrackR newName_vr)catch()
 			try(x.scale.controller.setName NumTrackS newName_vr)catch()
-		)
-
 	)
+
+)
 	select obj
 )-- end addListCon_fn
 

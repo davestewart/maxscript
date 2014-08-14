@@ -5,27 +5,27 @@ struct List (
 		values=#(),
 		
 		fn setVal str val=
-			(
+		(
 			local i=findItem names (str as string)
 			--format ">> %\n" i
 			if i>0 then
-				(
+			(
 				names[i]=str
 				values[i]=val
-				)
+			)
 			else
-				(
+			(
 				append names str
 				append values val
-				)
+			)
 			),
 
 		fn getVal str=
-			(
+		(
 			local i=findItem names str
 			if i>0 then return values[i]
-			)
 		)
+	)
 
 -- create a list
 	arr=List()
@@ -49,15 +49,15 @@ struct List (
 
 /*
 		fn delete str=
-			(
+		(
 			local i=findItem names str
 			if i>0 then 
-				(
+			(
 				local namesArr=deleteItem names i
 				local valuesArr=deleteItem values i
-				)
-			return #(namesArr,valuesArr)
 			)
+			return #(namesArr,valuesArr)
+		)
 */
 
 function

@@ -17,36 +17,36 @@ fn bubblesort arrs func:#asc =
 		
 	-- select comparison function
 		if superclassof func != Name then
-		(
+	(
 			func = case func of
-			(
+		(
 				#desc: compareDesc
 				#asc: compareAsc
 				default: compareAsc
-			)
 		)
+	)
 		else if superclassof func as string != "Function" then
-		(
+	(
 			throw "bubblesort: argument 'func' must be a sort type (#asc, #desc) or a custom comparison function"
-		)
+	)
 
 	-- do the sort
 		while true do
-		(
+	(
 			local changed = false
 			for i = 1 to (arrs[1].count - 1) do
-			(
+		(
 				if func arrs[1][i] arrs[1][i+1] do
-				(
+			(
 					for j = 1 to arrs.count do
-					(
+				(
 						swap arrs[j][i] arrs[j][i+1]
-					)
-				changed = true
 				)
+				changed = true
 			)
-			if not changed then exit
 		)
+			if not changed then exit
+	)
 		
 	-- return
 		if single then arrs[1] else arrs
@@ -64,18 +64,18 @@ fn sortArrays arrs order:#asc =
 	
 	-- do the sort
 		while true do
-		(
+	(
 			local changed = false
 			for i = 1 to (arrs[1].count - 1) do
-			(
+		(
 				if func arrs[1][i] arrs[1][i+1] do
-				(
+			(
 					for j = 1 to arrs.count do swap arrs[j][i] arrs[j][i+1]
 					changed = true
-				)
 			)
-			if not changed then exit
 		)
+			if not changed then exit
+	)
 		
 	-- return
 		arrs

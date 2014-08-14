@@ -34,10 +34,10 @@ for p in (getSubAnimNames obj[prop]) do print p
 
 
 function printNode obj level=
-	(
+(
 	format "%\n" obj
 	format "%\n" (classof obj)
-	)
+)
 
 
 n = 1

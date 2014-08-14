@@ -7,23 +7,23 @@
 
 -- function
 	function getUnmappedObjects printObj:false selObj:false=
-		(
+	(
 		local objArr=#(), matArr
 		render missingUVWAction:#(#logmsg,#abort) missingUVWList:&matArr quiet:true
 		for obj in matArr do append objArr (getNodeByName (trimleft ((filterstring obj ":")[2])))
 		if printObj then
-			(
+		(
 			format "\n-------------------------\nUnmapped Objects:\n-------------------------\n"
 			for obj in objArr do format "%\n" obj.name
 			format "-------------------------\n\n"
-			)
+		)
 		if selObj then
-			(
+		(
 			clearSelection()
 			select objArr
-			)
-		return objArr
 		)
+		return objArr
+	)
 
 -- usage
 

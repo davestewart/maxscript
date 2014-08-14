@@ -64,9 +64,9 @@ delete_array = #()
 -- Functions
 
 fn remove_random_faces obj removetype = 
-	(
+(
 	if obj.faces.count != 0 then
-		(
+	(
 		delete_array = #()
 		
 		a = (for i = 1 to obj.faces.count collect i)
@@ -76,30 +76,30 @@ fn remove_random_faces obj removetype =
 			
 		delete obj.faces[delete_array]
 		delete_array = #()
-		)
 	)
+)
 	
 fn rfr_filters removetype =
-	(
+(
 	undo "RandomFaceRemover" on
-		(
+	(
 		error_occured = false
 		for i in selection do 
-			(
+		(
 			if classof i == Editable_Poly or classof i == PolyMeshObject then convertTo i PolyMeshObject
 			else if classof i == Editable_mesh then convertTo i TriMeshGeometry
 			else error_occured = true
 	
 			if error_occured == false then remove_random_faces i removetype
-			)
-		if error_occured == true then (MessageBox "At least one object in your selection was not an Editable Mesh or Editable Poly object, and was not affected." title:"RandomFaceRemover")
 		)
+		if error_occured == true then (MessageBox "At least one object in your selection was not an Editable Mesh or Editable Poly object, and was not affected." title:"RandomFaceRemover")
 	)
+)
 	
 -- Script
 
 rollout rfr_rollout "RandomFaceRemover"
-	(
+(
 	spinner weight_spinner "Weight:" range:[0,100,50] type:#integer fieldWidth:40 across:2 align:#right offset:[9,0] 
 	button do_weight "Remove Faces" width:100 toolTip:"Remove Faces" align:#right
 	spinner per_spinner "Percentage %:" range:[0,100,50] type:#float fieldWidth:40 across:2 align:#right offset:[9,0]
@@ -110,7 +110,7 @@ rollout rfr_rollout "RandomFaceRemover"
 	
 	on do_weight pressed do rfr_filters 1
 	on do_per pressed do rfr_filters 2
-	)
+)
 
 if rfr_floater != undefined then CloseRolloutFloater rfr_floater
 rfr_floater = newRolloutFloater "RandomFaceRemover v1.12" 290 121

@@ -1,60 +1,60 @@
 rollout ro1 "ui items" 
-	( 
+( 
 
 	fn getSetControlValue c =
-		(
+	(
 		local cStr = c as string
 		local cClass = (filterstring cStr ":")[1]
 		local cName= (filterstring cStr ":")[2]
 
 		case cClass of
-			(
+		(
 			"CheckBoxControl":
-				(
+			(
 				format "% | %\n" cName c.checked
-				)
+			)
 			"CheckButtonControl":
-				(
+			(
 				format "% | %\n" cName c.state
-				)
+			)
 			"ColorPickerControl":
-				(
+			(
 				format "% | %\n" cName c.color
-				)
+			)
 			"ComboBoxControl":
-				(
+			(
 				format "% | %\n" cName c.items
-				)
+			)
 			"EditTextControl":
-				(
+			(
 				format "% | %\n" cName c.text
-				)
+			)
 			"ListBoxControl":
-				(
+			(
 				format "% | %\n" cName c.items
-				)
+			)
 			"MapButtonControl":
-				(
+			(
 				format "% | %\n" cName c.map
-				)
+			)
 			"RadioControl":
-				(
+			(
 				format "% | %\n" cName c.state
-				)
+			)
 			"SpinnerControl":
-				(
+			(
 				format "% | %\n" cName c.value
-				)
+			)
 			"SliderControl":
-				(
+			(
 				format "% | %\n" cName c.value
-				)
+			)
 			
 			default:
-				(
-				)
+			(
 			)
 		)
+	)
 
 
 	bitmap a1 bitmap:(bitmap 50 50) 
@@ -80,7 +80,7 @@ rollout ro1 "ui items"
 	on ro1 open do for c in ro1.controls do getSetControlValue c
 	on ro1 oktoclose do for c in ro1.controls do getSetControlValue c
 
-	)
+)
 
 createdialog ro1
 

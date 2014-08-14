@@ -26,7 +26,7 @@ rollout ro1 "Options" width:162 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn autoZoomSelAll =
-		(
+	(
 		errorLevel = 0
 
 		if getCommandPanelTaskMode() == #create then errorLevel+=1
@@ -35,20 +35,20 @@ rollout ro1 "Options" width:162 height:311
 
 		--print errorLevel
 		if  errorLevel == 0 then max zoomext sel all
-		)
+	)
 
 	fn zoomOn =
-		(
+	(
 		callbacks.addScript #selectionSetChanged "autoZoomSelAll()" persistent:false id:#autoZoomSelAll
 		autoZoomSelAll()
 		state = true
-		)
+	)
 
 	fn zoomOff =
-		(
+	(
 		callbacks.removeScripts id:#autoZoomSelAll
 		state = false
-		)
+	)
 	
 
 	---------------------------------------------------------------------------------------------------
@@ -56,18 +56,18 @@ rollout ro1 "Options" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	on ro1 open do
-		(
+	(
 		zoomOn()
 		ckb1.checked = true
-		)
+	)
 	on ro1 close do
 		zoomOff()
 
 	on ckb1 changed state do
-		(
+	(
 		if state then zoomOn()
 		else zoomOff()
-		)
+	)
 )
 
 if myFloater != undefined then closerolloutfloater myFloater

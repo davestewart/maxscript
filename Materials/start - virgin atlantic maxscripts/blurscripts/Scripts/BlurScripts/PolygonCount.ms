@@ -81,53 +81,53 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn pc_io = 
-	(
+(
 	pc_ini_name = ((getdir #scripts) + "\\BlurScripts\\" + "PolygonCount.ini")
 	if openFile pc_ini_name != undefined then
-		(
+	(
 		pc_ini = openFile pc_ini_name
 		inputdata = readLine pc_ini
 		if inputdata == "1" or inputdata == "2" or inputdata == "3" then pc_display_type = (inputdata as integer) else pc_display_type = 1
 		close pc_ini
-		)
+	)
 	else
-		(
+	(
 		pc_ini = createFile pc_ini_name
 		format (pc_display_type as string) to:pc_ini
 		close pc_ini
-		)
 	)
+)
 	
 fn pc_count = 
-	(
+(
 	for i in $* do
-		(
+	(
 		tempfaces = howmanypolys i
 		if i.isselected == true then slf += tempfaces
 		scf += tempfaces
-		)
+	)
 	polytext1 = (commafy (slf as string)) + " faces in selected"
 	polytext2 = (commafy (scf as string)) + " faces in scene"
-	)
+)
 	
 fn display_polys = 
-	(
+(
 	if pc_display_type == 1 then
-		(
+	(
 		pushPrompt (polytext1 + ", " + polytext2)
-		)
+	)
 	else if pc_display_type == 2 then
-		(
+	(
 		gw.wtext [5,35,50] polytext1 color:polycolor
 		gw.wtext [5,50,50] polytext2 color:polycolor
 		gw.enlargeUpdateRect #whole
 		gw.updateScreen()
-		)
-	else
-		(
-		MessageBox (polytext1 + ", " + polytext2) title:"PolygonCount"
-		)
 	)
+	else
+	(
+		MessageBox (polytext1 + ", " + polytext2) title:"PolygonCount"
+	)
+)
 
 -- Script
 

@@ -18,16 +18,16 @@
 (
 if selection.count == 0 then (MessageBox "Please select at least one object" title:"GoAway")
 	else
-		(
+	(
 		if (queryBox "Make Object(s) GoAway?" title:"GoAway") == true then 
-			(
+		(
 			for i in selection do
-				(
+			(
 				i.renderable = off
 				i.xray = on
 				i.material = undefined
-				)
 			)
 		)
+	)
 )
 -------------------------------------------------------------------------------

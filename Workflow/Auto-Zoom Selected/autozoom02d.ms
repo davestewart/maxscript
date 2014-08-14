@@ -38,46 +38,46 @@ rollout ro1 "AutoZoom Selected" width:162 height:311
 
 
 	fn checkZoom =
-		(
+	(
 		callbacks.removeScripts id:#autoZoom
 		if (findItem autoZoomType true) > 0 then
-			(
+		(
 			callbacks.addScript #selectionSetChanged "autoZoomCB()" persistent:false id:#autoZoom
 			autoZoom()
-			)
 		)
+	)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 
 	on ro1 open do
-		(
+	(
 
 		-- set up global functions
 	
 			fn autoZoom =
-				(
+			(
 				print "autoZoom called!"
 		
 				if getCommandPanelTaskMode() == #create then
-					(
+				(
 					-- do nothing if in create mode
-					)
-				else if (subObjectLevel!=0 OR subObjectLevel==undefined) then
-					(
-					-- do nothing if in subobject mode
-					)
-				else if autoZoomType[2]==true then
-					(
-					max zoomext sel all
-					)
-				else if autoZoomType[1]==true then
-					(
-					max zoomext sel
-					)
-		
 				)
+				else if (subObjectLevel!=0 OR subObjectLevel==undefined) then
+				(
+					-- do nothing if in subobject mode
+				)
+				else if autoZoomType[2]==true then
+				(
+					max zoomext sel all
+				)
+				else if autoZoomType[1]==true then
+				(
+					max zoomext sel
+				)
+		
+			)
 		
 		
 			fn autoZoomCB = autoZoom()
@@ -89,21 +89,21 @@ rollout ro1 "AutoZoom Selected" width:162 height:311
 			ckb1.checked = true
 			autoZoomType[1] = true
 			checkZoom()
-		)
+	)
 
 	on ro1 close do autoZoomType=#(false,false)
 
 	on ckb1 changed state do
-		(
+	(
 		autoZoomType[1] = state
 		checkZoom()
-		)
+	)
 
 	on ckb2 changed state do
-		(
+	(
 		autoZoomType[2] = state
 		checkZoom()
-		)
+	)
 )
 
 if autoZoomFloater != undefined then closerolloutfloater autoZoomFloater

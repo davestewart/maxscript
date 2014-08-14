@@ -15,10 +15,10 @@ rollout ro1 "MultiMaterial Aligner" width:168 height:168
 	listBox lbx1 "ListBox" pos:[8,8] width:152 height:10
 	
 	on ro1 open do 	
-		(
+	(
 		mm = meditmaterials[medit.GetActiveMtlSlot()]
 		lbx1.items = getsubanimnames mm.[1]
-		)
+	)
 )
 
 createdialog ro1
@@ -26,13 +26,13 @@ createdialog ro1
 mm = meditmaterials[medit.GetActiveMtlSlot()]
 
 for i = 1 to mm[1].maps.count do
-	(
+(
 	local st=mm[1].shaderType+1
 	if mm[1].maps[i] != undefined then
-		(
+	(
 		format "% %\n" i materialList[st][i]
-		)
 	)
+)
 
 
 mm[1].shaderType

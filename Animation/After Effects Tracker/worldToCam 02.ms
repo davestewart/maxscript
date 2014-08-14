@@ -1,5 +1,5 @@
 fn getCameraTransform cam =
-	(
+(
 	--this will return a camera transform matrix, ignoring perspective for now:
 		local ct	= cam.transform
 		local ctd	= cam.target_distance
@@ -14,11 +14,11 @@ fn getCameraTransform cam =
 		local ctx	= inverse (matrix3 row1 row2 row3 p)
 		
 		return ctx
-	)
+)
 
 
 fn worldToCam pt3 cam ctx:undefined =
-	(
+(
 	-- get camera transform
 		if ctx == undefined then ctx = getCameraTransform cam
 	
@@ -37,6 +37,6 @@ fn worldToCam pt3 cam ctx:undefined =
 
 	-- return
 		return pixloc 
-	)
+)
 	
 worldToCam $.pos $camera01

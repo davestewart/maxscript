@@ -1,5 +1,5 @@
 fn replaceAll2 str outStr inStr =
-	(
+(
 	local ss1 = stringstream ""
 	local ss2 = stringstream ""
 	
@@ -7,22 +7,22 @@ fn replaceAll2 str outStr inStr =
 	
 	seek ss1 0
 	while not eof ss1 do
-		(
+	(
 		local c = readChar ss1
 		if c == outStr then c = inStr
 		format "%" c to:ss2
-		)
-	return ss2 as string
 	)
+	return ss2 as string
+)
 
 
 
 fn replaceAll str outStr inStr =
-	(
+(
 	local str = #(str,"")
 
 	while findstring str[1] outStr != undefined do
-		(
+	(
 	-- get variables
 		local s1 = 1
 		local s2 = (findstring str[1] outStr) + (-1)
@@ -34,10 +34,10 @@ fn replaceAll str outStr inStr =
 		
 	-- reduce str[1]
 		str[1]= substring str[1] s3 str[1].count
-		)
+	)
 	str[2]+=str[1]
 	return str[2]
-	)
+)
 (
 t1 = timestamp()
 replaceAll str " " "-"

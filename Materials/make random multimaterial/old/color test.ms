@@ -31,22 +31,22 @@ rollout matColor "Color Options" width:208 height:600 category: 3
 
 
 	on matOptions open do
-		(
+	(
 		max mtledit
-		)
+	)
 
 	on cpBase changed value do
-		(
+	(
 		cpBaseR.color = color cpBase.color.r 0 0
-		)
+	)
 
 	on spnVarR changed value do
-		(
+	(
 		value = cpBase.color.r - spnVarR.value
 		cpVarR1.color = color value 0 0
 		lblVarR1.text = value as String
 
-		)
+	)
 )
 
 
@@ -55,8 +55,8 @@ rollout matColor "Color Options" width:208 height:600 category: 3
 ---------------------------------------------------------------------------------------------------
 
 if multiMat != undefined do
-				(
+			(
 				closerolloutfloater multiMat 
-				)		
+			)		
 multiMat = newRolloutFloater "Random Multi Material" 200 250 
 addRollout matColor multiMat

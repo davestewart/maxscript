@@ -21,7 +21,7 @@
 
 	-- rollout resized
 		on test resized size do
-			(
+		(
 --			tv1.size.x = size.x/2 - 4
 			tv1.size.x = size.x - 4
 			tv1.size.y = size.y - 50
@@ -33,19 +33,19 @@
 			lbl1.pos.y  = size.y - 40
 			lbl2.pos.y  = size.y - 20
 			spn1.pos.y = size.y - 20
-			)
+		)
 ------------------------------------------------------------------------------------
 			
 	-- spinner change
 		on spn1 changed val do
-			(
+		(
 			if val <= il.ListImages.count then
-				(
+			(
 				tv1.nodes[1].image=val
 				lbl2.text = classArr[val] as string
-				)
-			else spn1.value=il.ListImages.count
 			)
+			else spn1.value=il.ListImages.count
+		)
 
 
 ------------------------------------------------------------------------------------
@@ -62,7 +62,7 @@
 
 ------------------------------------------------------------------------------------
 	on tv1 NodeClick Node do
-		(
+	(
 			prevNode=curNode
 			curNode = tv1.selectedItem
 			

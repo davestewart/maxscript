@@ -17,7 +17,7 @@
 
 	-- knots	
 		for i = 0 to segments do
-			(
+		(
 			-- %
 				pc = i / (segments as float)
 		
@@ -40,7 +40,7 @@
 			-- do it		
 				addknot ss 1 #smooth #curve [x, y, z]
 				append knots [x, y, z]
-			)
+		)
 
 	-- finalise
 		updateshape ss

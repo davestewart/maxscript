@@ -2,7 +2,7 @@ rollout roListView "ListView Selected"
 (
 	 
 	fn initListView lv =
-	(
+(
 		-- props
 			lv.gridLines = true
 		
@@ -15,17 +15,17 @@ rollout roListView "ListView Selected"
 		--add column with name and optional width
 			for i in layout_def do
 			lv.Columns.add i 96
-	) 
+) 
 	 
 
 	fn fillInSpreadSheet lv =
-	(
+(
 		 --array to collect the list items
 			theRange = #()
 
 		-- do it
 			for o in selection do
-			(
+		(
 				 --First we create a ListViewItem object with the object's name:
 					li = dotNetObject "System.Windows.Forms.ListViewItem" o.name
 			
@@ -35,25 +35,25 @@ rollout roListView "ListView Selected"
 					sub_li = li.SubItems.add (try((o.mesh.numfaces) as string)catch("--"))
 					sub_li = li.SubItems.add ((o.material) as string)
 					append theRange li --we add the list item to the array
-			)
+		)
 		
 		--when done, we populate the ListView
 			lv.Items.AddRange theRange
-	) 
+) 
 	 
 
 	dotNetControl lv "System.Windows.Forms.ListView" width:490 height:190 align:#center 
 	 
 	on roListView open do 
-	(
+(
 		initListView lv
 		fillInSpreadSheet lv
-	) 
+) 
 	
 	on lv DoubleClick e do
-	(
+(
 		format "%\n" e
-	)
+)
 	
 )
 try(destroyDialog roListView)catch()

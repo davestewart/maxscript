@@ -48,60 +48,60 @@ local strAEEnd = "End of Keyframe Data"
 ------------------------------------------------------------------------------------------
 
 fn getAEStart w h = 
-	(
+(
 	local str = "" as stringstream
 	format strAEStart framerate w h 1 1 to:str
 	return str as string
-	)
+)
 	
 fn getAEEnd = 
-	(
+(
 	return strAEEnd
-	)
+)
 	
 	
 fn getAEAnchor obj t1 t2 =
-	(
+(
 	local p, t
 	local strBase	= "" as stringstream
 	local strKeys	= "" as stringstream
 
 	if obj == undefined then 
-		(
+	(
 		format "		0	0	0	\n" to: strKeys
 		format strAEAnchor (strKeys as string) to:strBase
 		return strBase as string
-		)
 	)
+)
 
 	
 fn getAEPosition obj t1 t2 =
-	(
+(
 	local p, t
 	local strBase	= "" as stringstream
 	local strKeys	= "" as stringstream
 
 	if obj == undefined then 
-		(
+	(
 		format "		0	0	0	\n" to: strKeys
 		format strAEPosition (strKeys as string) to:strBase
 		return strBase as string
-		)
+	)
 
 	local arrPos	= showObjectPath obj
 	for t = 1 to arrPos.count do
-		(
+	(
 		p			= arrPos[t]
 		format "	%	%	%	0	\n" (t - 1) p.x p.y to: strKeys
-		)
+	)
 
 	format strAEPosition (strKeys as string) to:strBase
 	return strBase as string
-	)
+)
 	
 	
 fn getAECornerPin obj cam t1 t2 drawMarkers:false =
-	(
+(
 	local p, t
 	local strBase	= "" as stringstream
 	local strKeys	= "" as stringstream
@@ -116,19 +116,19 @@ fn getAECornerPin obj cam t1 t2 drawMarkers:false =
 	local numVerts	= arrTime[1].count
 	
 	for v = 1 to numVerts do
-		(
+	(
 		ss = stringstream ""
 		for t = 1 to arrTime.count do
-			(
+		(
 			p			= arrTime[t][v]
 			format "	%	%	%	\n" (t - 1) p.x p.y to:ss
-			)
-		append arrStr (ss as string)
 		)
+		append arrStr (ss as string)
+	)
 	
 	format strAECornerPin (arrStr[3]) (arrStr[4]) (arrStr[1]) (arrStr[2]) to:strBase
 	return strBase as string
-	)
+)
 /*
 	clearListener()
 	local obj = $

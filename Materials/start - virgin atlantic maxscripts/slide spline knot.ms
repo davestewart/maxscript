@@ -1,5 +1,5 @@
 with undo on
-	(
+(
 	sp=(getSplineSelection $) [1]
 	kn= (getKnotSelection $ sp)[1]
 	

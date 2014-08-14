@@ -3,14 +3,14 @@
 
 
 fn drawPointOnVpt x y=
-	(
+(
 	-- get view
 		viewSize = point2 (gw.getWinSizeX()) (view_h=gw.getWinSizeY())
 		renderSize= point2 (renderWidth*renderPixelAspect ) (renderHeight)
 		
 		f=viewSize.x/renderSize.x
 		renderSize*f
-	)
+)
 
 
 gw.hPolyline #([0,0,0], [50,50,50], [450,250,4]) true 

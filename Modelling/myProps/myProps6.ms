@@ -46,45 +46,45 @@ global myModSelected = true
 ----------------------------------------
 
 fn changeAttribs =
-	(
+(
 	print "Lets do it baby!"
 	print edtNewAttribVal.text as String
 	if edtNewAttribVal != undefined do
-		(
+	(
 		--execute("myObj." + ddlMods.selected as String + "." + ddlAttribs.selected as String)
 		--myObj.myTargetAttrib = edtNewAttribVal.text as (classof myTargetAttribCurVal)
 		execute("myObj." + myTargetAttrib + "=" + edtNewAttribVal.text as String)
-		)
 	)
+)
 
 
 fn updateInterface =
-	(
+(
 	lblAttrib.text = "Attrib: " + myTargetAttrib as String
 	lblAttribVal.text = "Value: " + myTargetAttribCurVal as String
 	lblAttribClass.text = "Class: " + (classof myTargetAttribCurVal) as String
 
-	)
+)
 
 
 fn getTargetAttrib =
-	(
+(
 
 	if myModSelected then
-		(
+	(
 		myTargetAttrib = ddlMods.selected as String + "." + ddlAttribs.selected as String
 		myTargetAttribCurVal = execute ("myObj." + ddlMods.selected as String + "." + ddlAttribs.selected as String )
-		)
+	)
 	else
-		(
+	(
 		myTargetAttrib = ddlAttribs.selected as String
 		myTargetAttribCurVal = execute ("myObj.baseobject" + "." + ddlAttribs.selected as String )
-		)
 	)
+)
 
 
 fn getAttribs =
-	(
+(
 	myAttribs = #()
 	
 	-- modifier selected? if not, must be base object...
@@ -104,17 +104,17 @@ fn getAttribs =
 	getTargetAttrib()
 	updateInterface()
 
-	)
+)
 
 
 fn getMods =
-	(
+(
 	print "Getting Mods..."
 	myMods = #()
 	for i = 1 to myObj.modifiers.count do
-		(
+	(
 		append myMods myObj.modifiers[i].name
-		)
+	)
 	append myMods (myObj.baseObject as String)
 	if printState then print myMods
 
@@ -122,20 +122,20 @@ fn getMods =
 		ddlMods.items = myMods
 
 	updateInterface()
-	)
+)
 
 
 fn tcb = updateInterface()
 
 fn start =
-	(
+(
 	getMods()
 	ddlMods.enabled = true
 	ddlMods.selection = myMods.count -- Go to base object on start
 
 	getAttribs()
 	ddlAttribs.enabled = true
-	)
+)
 
 
 ----------------------------------------
@@ -143,35 +143,35 @@ fn start =
 ----------------------------------------
 
 	on myPropsUtility open do
-		(
+	(
 		local curSel = getCurrentSelection()
 		if curSel.count == 1 do
-			(
+		(
 			global myObj = curSel[1]
 			if printState then print myObj
 			start()
-			)
-		registerTimeCallback tcb
 		)
+		registerTimeCallback tcb
+	)
 
 	on myPropsUtility close do unRegisterTimeCallback tcb
 
 	on btnPick picked obj do
-		(
+	(
 			myObj = obj
 			start()
-		)
+	)
 
 	on ddlMods selected value do
-		(
+	(
 		getAttribs()
-		)
+	)
 
 	on ddlAttribs selected value do
-		(
+	(
 		getTargetAttrib()
 		updateInterface()
-		)
+	)
 	on btnAttribDoIt pressed do changeAttribs()
 
 

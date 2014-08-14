@@ -16,26 +16,26 @@ macroScript Poly_Counter
 	local PolyCounterOn = false
 	local lastViewport
 	fn polytext = 
-	(
+(
 		try 
-		(
+	(
 			if viewport.activeViewport != lastViewport do
 			(	completeredraw()
 				lastViewport = viewport.activeViewport 
-			)
+		)
 			viewtext = ""
 			if selection.count == 1 do
 			(	if getCommandPanelTaskMode() == #modify and subobjectlevel == 1 then
 					viewtext = "Vertices: " + (getPolygoncount $)[2] as string
 				else
 					viewtext = "Triangles: " + (getPolygoncount $)[1] as string
-			)
+		)
 			gw.wtext [5,40,1000]  viewtext  color:(color 255 234 0)
 			gw.enlargeUpdateRect #whole 
 			gw.updateScreen() 
-		)
-		catch ()
 	)
+		catch ()
+)
 
 	on ischecked return PolyCounterOn 
 	
@@ -47,7 +47,7 @@ macroScript Poly_Counter
 		PolyCounterOn = not PolyCounterOn 
 		completeredraw()
 		updateToolbarButtons()
-	) 
+) 
 ) 
 
 

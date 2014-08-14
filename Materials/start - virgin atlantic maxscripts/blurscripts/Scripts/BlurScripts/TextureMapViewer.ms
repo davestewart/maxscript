@@ -64,7 +64,7 @@ tmv_si = 100
 -- Functions
 
 fn tmv_view = 
-	(
+(
 	v_objs = #()
 	tmv_hide_these = #()
 	cur_objs = (unhiddenobj())
@@ -72,7 +72,7 @@ fn tmv_view =
 	cur_tex = (medit.GetCurMtl())
 
 	if superclassof cur_tex == textureMap then
-		(
+	(
 		new_mat = Standard()
 		new_mat.specularlevel = 0
 		new_mat.Glossiness = 0
@@ -86,14 +86,14 @@ fn tmv_view =
 		disableSceneRedraw()
 		
 		try
-			(		
+		(		
 			for i in cur_objs do
-				(
+			(
 				if i.material == cur_mat then append v_objs i
-				)
+			)
 			if v_objs.count == 0 then (MessageBox "No objects with that material are currently visible." title:"TextureMapViewer")
 			else
-				(
+			(
 				tmv_hide_these = remove_from_array_by_items cur_objs v_objs
 				
 				for i in tmv_hide_these do i.ishidden = true
@@ -105,31 +105,31 @@ fn tmv_view =
 				for i in v_objs do i.material = cur_mat
 				
 				for i in tmv_hide_these do i.ishidden = false
-				)
 			)
+		)
 		catch
-			(
+		(
 			for i in v_objs do i.material = cur_mat
 			for i in tmv_hide_these do i.ishidden = false
 			enableSceneRedraw()
 			completeRedraw()
-			)
+		)
 		enableSceneRedraw()
 		completeRedraw()
-		)
-	else (MessageBox "Please pick a slot that contains a texturemap" title:"TextureMapViewer")
 	)
+	else (MessageBox "Please pick a slot that contains a texturemap" title:"TextureMapViewer")
+)
 
 -- Script
 
 rollout tmv_rollout "TextureMapViewer"
-	(
+(
 	spinner si_spinner "Self Illumination: " range:[0,100,tmv_si] type:#integer fieldWidth:40 align:#center
 	on si_spinner changed val do tmv_si = val
 	
 	button doit "View Texmap" width:145 align:#center toolTip:"View Texmap"
 	on doit pressed do tmv_view()
-	)
+)
 
 if tmv_floater != undefined then CloseRolloutFloater tmv_floater
 tmv_floater = newRolloutFloater "TextureMapViewer v1.11" 190 118

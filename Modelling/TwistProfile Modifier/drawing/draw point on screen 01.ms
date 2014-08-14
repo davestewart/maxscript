@@ -26,12 +26,12 @@ gw.getTransform()-- (identity $.transform)
 arr = #("point","hollowBox","plusSign","asterisk","xMarker","bigBox","circle","triangle","diamond","smallHollowBox","smallCircle","smallTriangle","smallDiamond" )
 
 for i=1 to arr.count do
-	(
+(
 	local p = [100, (50 + i*10), 0]
 	format "p: %\n" p
 	local marker = (arr[i] as name)
 	gw.hMarker p marker
-	)
+)
 gw.enlargeUpdateRect #whole
 gw.updateScreen()
 

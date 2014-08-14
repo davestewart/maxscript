@@ -54,17 +54,17 @@ utility onOff "Dynamic interface example" width:480 height:336
 
 
 	on rdo1 changed state do
-		(
+	(
 
 		for i = 1 to onOff_uiAll.count do
-			(
+		(
 			group = execute("onOff_ui" + i as String)
 			group.enabled = false
-			)
+		)
 			group = execute("onOff_ui" + state as String)
 			group.enabled = true
 			
-		)
+	)
 
 )
 

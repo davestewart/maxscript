@@ -19,7 +19,7 @@ rollout ro1 "Scripts" width:160 height:441
 	---------------------------------------------------------------------------------------------------
 
 	fn getPathImp =
-		(
+	(
 		try (
 			scriptFullPath = getOpenFileName caption:"Select *.ms Script File" types:"Script Files(*.ms)|*.ms" ()
 			scriptName = filenameFromPath scriptFullPath as String
@@ -28,18 +28,18 @@ rollout ro1 "Scripts" width:160 height:441
 			append displayItems scriptName
 			append scriptDB scriptFullPath
 			lbxScripts.items = displayItems
-			)
+		)
 		catch ()
-		)	
+	)	
 
 	fn doScript item =
-		(
+	(
 		case ro2.rdoAction.state of
-			(
+		(
 			1:
-				(
+			(
 				try
-					(
+				(
 					fileIn scriptDB[item]
 	
 				-- Edit Name if script did contains errors, but is now fine
@@ -48,9 +48,9 @@ rollout ro1 "Scripts" width:160 height:441
 					lbxScripts.items = displayItems
 	
 	
-					)
+				)
 				catch
-					(
+				(
 				-- open item for editing
 					edit scriptDB[item]
 					--deleteItem displayItems item
@@ -63,19 +63,19 @@ rollout ro1 "Scripts" width:160 height:441
 					
 				-- Alert!
 					messageBox "There appear to be errors in your script, \nso it has been opened for editing..." title:"Possible Script Error"
-					)
 				)
+			)
 
 			2:	edit scriptDB[item]
 
 			3:
-				(
+			(
 				deleteItem displayItems item
 				deleteItem scriptDB item
 				lbxScripts.items = displayItems
-				)
 			)
 		)
+	)
 
 
 

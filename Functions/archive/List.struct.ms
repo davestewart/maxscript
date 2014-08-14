@@ -24,13 +24,13 @@
 -------------------------------------------------------------------------------------------------------------------------------
 
 	struct ListItem
-	(
+(
 		name = "", 
 		value = ""
-	)
+)
 
 	struct List
-	(
+(
 		------------------------------------------------------------------------------
 		-- properties
 		
@@ -41,7 +41,7 @@
 		-- setters
 		
 			function addItem name value =
-			(
+		(
 				local index = finditem names name
 				if index == 0 do index = names.count + 1
 				names[index] = name
@@ -50,7 +50,7 @@
 			),
 			
 			function setItem name value =
-			(
+		(
 				addItem name value
 				true
 			),
@@ -59,7 +59,7 @@
 		-- getters
 		
 			function getItem name =
-			(
+		(
 				local index = finditem names name
 				if index != 0 do values[index]
 			),
@@ -72,42 +72,42 @@
 		-- clear or delete items
 		
 			fn clear =
-			(
+		(
 				names = #(); 
 				values = #()
 				true
 			),
 			
 			function deleteItem name =
-			(
+		(
 				local index = finditem names name
 				if index != 0 then
-				(
+			(
 					deleteitem names index
 					deleteitem values index
 					true
-				)
+			)
 				else
-				(
+			(
 					false
-				)
+			)
 			),
 
 			function deleteIndex index =
-			(
+		(
 				if index < names.count do
-				(
+			(
 					deleteitem names index
 					deleteitem values index
 					true
-				)
+			)
 			),
 			
 		------------------------------------------------------------------------------
 		-- utilities
 		
 			fn sort order:#asc field:#name func: =
-			(
+		(
 				-- comparison functions
 					fn compareAsc v1 v2 = v1 > v2
 					fn compareDesc v1 v2 = v1 < v2
@@ -121,29 +121,29 @@
 					
 				-- do the sort
 					while true do
-					(
+				(
 						local changed = false
 						for i = 1 to (arrs[1].count - 1) do
-						(
+					(
 							if func arrs[1][i] arrs[1][i+1] do
-							(
+						(
 								for j = 1 to arrs.count do swap arrs[j][i] arrs[j][i+1]
 								changed = true
-							)
 						)
-						if not changed then exit
 					)
+						if not changed then exit
+				)
 					
 				-- return
 					arrs
 			),
 			
 			fn print =
-			(
+		(
 				for i = 1 to names.count do format "%:	%\n" names[i] values[i]
-			)
+		)
 		
-	)
+)
 
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -222,10 +222,10 @@
 		-- so we can tell if the sorting has worked or not
 			
 			fn selectSpheres =
-				(
+			(
 				ss = lst.getValues()
 				for s in ss do (select s; sleep 0.2; redrawviews())
-				)
+			)
 
 			selectSpheres()
 			

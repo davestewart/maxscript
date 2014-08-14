@@ -1,18 +1,18 @@
 theMod = 1
 fn setAllLod state =
-	(
+(
 	for obj in objects do
-		(
+	(
 		for m in obj.modifiers do
-			(
+		(
 			if m.name == "Level of Detail" then
-				(
+			(
 				--print (obj.name +" : "+m.arrNodes as string)
 				m.setLod #high
-				)
 			)
 		)
 	)
+)
 
 setAllLod #high
 

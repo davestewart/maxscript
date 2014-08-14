@@ -48,21 +48,21 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn seb_get_kids i the_array = 
-	(
+(
 	if classof i == Biped_object then append the_array i
 	if i.children.count != 0 then
-		(
+	(
 		for w = 1 to i.children.count do
-			(
+		(
 			seb_get_kids i.children[w] the_array
-			)
 		)
 	)
+)
 
 -- The Script
 
 if selection.count == 1 and classof selection[1] == biped_object then
-	(
+(
 	seb_biped_array = #()
 	
 	-- Get root
@@ -76,6 +76,6 @@ if selection.count == 1 and classof selection[1] == biped_object then
 	select seb_biped_array
 	enableSceneRedraw()
 	completeRedraw()
-	)
+)
 )
 -------------------------------------------------------------------------------

@@ -2,14 +2,14 @@ plugin modifier simpleLipSync
 	name:"Simple Lip Sync" 
 	classID:#(0x79ce6e65, 0xa8933438) 
 	extends:Materialmodifier replaceUI:true version:1 
-	( 
+( 
 		parameters main rollout:params 
-			( 
+		( 
 			--matID type:#integer animatable:true ui:bendamt default:1
-			) 
+		) 
 
 		rollout params "Parameters" 
-			( 
+		( 
 			---------------------------------------------------------------------------------------------------
 			-- declare variables
 			---------------------------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ plugin modifier simpleLipSync
 			---------------------------------------------------------------------------------------------------
 			
 			Group "Mouth Shapes"
-				(
+			(
 				button btn1 "" images:#(btnImage, btnAlpha, 12, 1 , 1 , 1 , 1)across:3 alighn:#left
 				button btn2 "" images:#(btnImage, btnAlpha, 12, 2 , 2 , 2 , 2) 
 				button btn3 "" images:#(btnImage, btnAlpha, 12, 3 , 3 , 3 , 3) 
@@ -34,14 +34,14 @@ plugin modifier simpleLipSync
 				button btn10 "" images:#(btnImage, btnAlpha, 12, 10 , 10 , 10 , 10) 
 				button btn11 "" images:#(btnImage, btnAlpha, 12, 11 , 11 , 11 , 11) across:2
 				button btn12 "" images:#(btnImage, btnAlpha, 12, 12 , 12 , 12 , 12) 
-				)
+			)
 		
 			---------------------------------------------------------------------------------------------------
 			-- Functions
 			---------------------------------------------------------------------------------------------------
 		
 				function setID mat =
-					(
+				(
 				-- set the parameters
 					with animate on delegate.materialID = mat
 
@@ -56,9 +56,9 @@ plugin modifier simpleLipSync
 					--set tangent types
 						k.inTangentType = #step
 						k.outTangentType = #step					
-					)
+				)
 				catch()
-					)
+				)
 		
 		
 			---------------------------------------------------------------------------------------------------
@@ -77,5 +77,5 @@ plugin modifier simpleLipSync
 				on btn10 pressed do setID 10
 				on btn11 pressed do setID 11
 				on btn12 pressed do setID 12
-			) 
-	) 
+		) 
+) 

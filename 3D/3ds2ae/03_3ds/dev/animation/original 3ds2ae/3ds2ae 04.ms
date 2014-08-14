@@ -52,31 +52,31 @@ rollout ro1 "Options" width:232 height:336
 -- 3dsmax
 
 	on btnObj pressed do
-		(
+	(
 		obj=pickObject message:"Pick an object, light or camera..."
 		btnObj.text=obj.name
 		objClass=superclassof obj
 
 		chkLight.enabled= 	objClass==light
 		chkCam.enabled=	objClass==camera
-		)
+	)
 
 
 -- After Effects
 
 	on ddCompPreset selected item do
-		(
+	(
 		local xy=#()
 		xy=case ddCompPreset.selection of
-			(
+		(
 			1:	#(spnCompWidth.value,spnCompHeight.value)
 			2:	#(renderwidth,renderheight)
 			3:	#(720,576)
 			4:	#(1024,576)
-			)
+		)
 		spnCompWidth.value=xy[1]
 		spnCompHeight.value=xy[2]
-		)
+	)
 
 	on spnCompWidth changed val do ddCompPreset.selection=1
 	on spnCompHeight changed val do ddCompPreset.selection=1
@@ -85,34 +85,34 @@ rollout ro1 "Options" width:232 height:336
 -- Animation range
 
 	on ddAnimRange selected sel do
-		(
+	(
 		local animRange=#()
 		animRange=case ddAnimRange.selection of
-			(
+		(
 			1:	#(spnAnimFrom.value,spnAnimTo.value)
 			2:	#(animationrange.start,animationrange.end)
 			3:	#(sliderTime,sliderTime)
-			)
+		)
 		spnAnimFrom.value=animRange[1]
 		spnAnimTo.value=animRange[2]
-		)
+	)
 
 	on spnAnimFrom changed val do
-		(
+	(
 		ddAnimRange.selection=1
 		if spnAnimFrom.value >= spnAnimTo.value then spnAnimTo.value = spnAnimFrom.value
-		)
+	)
 
 	on spnAnimTo changed val do
-		(
+	(
 		ddAnimRange.selection=1
 		if spnAnimTo.value <= spnAnimFrom.value then spnAnimFrom.value = spnAnimTo.value
-		)
+	)
 
 -- Export
 
 	on btnExport pressed do
-		(
+	(
 		local posData, rotXData, rotYData, rotZData, scaleData, camData, lightData, data=""
 -- data		
 
@@ -125,25 +125,25 @@ rollout ro1 "Options" width:232 height:336
 		lightData=""
 
 		if isvalidnode obj then
-			(
+		(
 			for t = spnAnimFrom.value to spnAnimTo.value do
-				(
+			(
 				at time t
-					(
+				(
 					in coordsys #world
-						(
+					(
 					-- position
 						if chkPos.checked then
-							(
+						(
 							px=obj.pos.x
 							py=obj.pos.y
 							pz=obj.pos.z
 							posData+="	"+t as string+"	"+(px+(spnCompWidth.value/2)) as string+"	"+(-pz) as string+"	"+(py+(spnCompHeight.value/2)) as string+"\n"
-							)
+						)
 
 					-- rotation
 						if chkRot.checked AND (classof obj)!=Targetcamera then
-							(
+						(
 							rot=obj.rotation as eulerangles
 							rx=rot.x
 							ry=rot.y
@@ -151,26 +151,26 @@ rollout ro1 "Options" width:232 height:336
 							rotXData+="	"+t as string+"	"+(rx+90) as string+"\n"
 							rotYData+="	"+t as string+"	"+(-rz) as string+"\n"
 							rotZData+="	"+t as string+"	"+(ry) as string+"\n"
-							)
+						)
 
 					-- scale
 						if chkScale.checked then
-							(
-							)
+						(
+						)
 		
 					-- camera data
 						if chkCam.checked AND (classof obj)==Targetcamera then
-							(
+						(
 							px=obj.target.pos.x
 							py=obj.target.pos.y
 							pz=obj.target.pos.z
 							camData+="	"+t as string+"	"+(px) as string+"	"+(-pz) as string+"	"+(py) as string+"\n"
-							)
+						)
 		
 					-- light data
-					)
 				)
 			)
+		)
 
 
 -- final data gathering
@@ -188,8 +188,8 @@ Adobe After Effects 6.0 Keyframe Data
 				
 %
 End of Keyframe Data\n\n" framerate spnCompWidth.value spnCompHeight.value data
-			)
 		)
+	)
 )
 
 if AEFloater != undefined then closerolloutfloater AEFloater

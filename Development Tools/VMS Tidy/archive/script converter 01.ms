@@ -57,13 +57,13 @@ rollout ro1 "Options" width:384 height:312
 	---------------------------------------------------------------------------------------------------
 
 	fn go=
-		(
+	(
 		local str=edt1.text
 		local strArr=filterstring str "\n\r"
 		--format "%\n\n" strArr
 		local cArr=#()
 		for s in strArr do
-			(
+		(
 			--format "<%>\n" s
 
 			-- strip tab characters
@@ -77,7 +77,7 @@ rollout ro1 "Options" width:384 height:312
 				local i, posStr, posArr, pos, x, y
 				i=findstring s "pos:["
 				if i != undefined then
-					(
+				(
 					posStr=substring s (i+5) -1
 					posStr=substring posStr 1 ((findstring posStr "]")-1)
 					posArr=filterstring posStr ","
@@ -89,38 +89,38 @@ rollout ro1 "Options" width:384 height:312
 				-- add to a new array
 					if cArr[y]==undefined then cArr[y]=#()
 					if cArr[y][x]==undefined then cArr[y][x]=s
-				)
 			)
+		)
 		-- go through new array and print
 			local c
 			local str=""
 			local currType="",prevType=""
 			for y = 1 to cArr.count do
-				(
+			(
 				if cArr[y]!=undefined then
-					(
+				(
 					-- newline if new Y
 					--if (currType == prevType)then 
 
 					for x = 1 to cArr[y].count do
-						(
+					(
 						if cArr[y][x]!=undefined then
-							(
+						(
 							c=cArr[y][x]
 							currType=substring c 1 (findstring c " ")
 							format "%\n" currType
 							str+=c+"\n"
-							)
 						)
+					)
 					-- newline
 						str+="\n"
 					-- take away newline if the same
 						if (currType == prevType)then str = substring str 1 (str.count-1)
 						prevType = currType
-					)
 				)
+			)
 			edt1.text=str
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -128,15 +128,15 @@ rollout ro1 "Options" width:384 height:312
 
 
 	on ro1 open do
-		(
+	(
 		edt1.text = uiStr
 		--go()
-		)
+	)
 
 	on btn1 pressed do
-		(
+	(
 		go()
-		)
+	)
 	
 
 )

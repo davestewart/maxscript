@@ -39,9 +39,9 @@ rollout ro1 "HTML Interface" width:552 height:624
 	---------------------------------------------------------------------------------------------------
 		-- go to the start page
 			on ro1 open do
-				( 
+			( 
 				if doesFileExist urlForm then
-					(
+				(
 				-- setup ax
 					axWeb.Navigate ("file://" + urlForm)
 				-- setup sample commands
@@ -53,13 +53,13 @@ rollout ro1 "HTML Interface" width:552 height:624
 					
 					txt3.text = "Search for \"3dsmax\" on Google"
 					cmd3.text = "http://www.google.co.uk/search?q=\"3dsmax\""
-					)
-				else
-					(
-					messagebox "The demo file 'html-demo.html' could not be found.\nEdit the variable 'urlForm' at the head of this script to point towards the file 'html-demo.html'."
-					)
-					
 				)
+				else
+				(
+					messagebox "The demo file 'html-demo.html' could not be found.\nEdit the variable 'urlForm' at the head of this script to point towards the file 'html-demo.html'."
+				)
+					
+			)
 
 		-- sample links
 			on btn1 pressed do maxHtml.addMaxLink  axWeb txt1.text cmd1.text id:"maxDefined"
@@ -69,16 +69,16 @@ rollout ro1 "HTML Interface" width:552 height:624
 			
 		-- set bg color on initial page load
 			on axWeb NavigateComplete2 pDisp url do
-				(
+			(
 				--if urlForm == url then maxHtml.setBgColor axWeb
-				)
+			)
 	
 
 		-- intercept urls
 			on axWeb BeforeNavigate2 pDisp url Flags TargetFrameName PostData Headers Cancel do
-				(
+			(
 				maxHtml.parseUrl url
-				)
+			)
 	
 )
 

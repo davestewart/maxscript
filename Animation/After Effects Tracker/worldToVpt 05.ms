@@ -1,146 +1,146 @@
 -- gets the viewport coords of an object's center by passing the object
 	fn getVptObjPos obj start end =
-		(
+	(
 		local arr	= #()
 		local st = slidertime
 		with redraw off
-			(
+		(
 			for t = start to end do
-				(
+			(
 				local pt3	= at time t obj.pos
 				slidertime	= t
 				gw.setTransform(Matrix3 1)
 				append arr (gw.wTransPoint pt3)
-				)
 			)
+		)
 		slidertime = st
 		return arr
-		)
+	)
 
 -- gets the viewport coords of a point by passing a 1D array of points
 -- point array > point3
 	fn getVptPoints arr start end =
-		(
+	(
 		local st = slidertime
 		with redraw off
-			(
+		(
 			for t = start to end do
-				(
+			(
 				local i		= t - start + 1
 				slidertime	= t
 				gw.setTransform(Matrix3 1)
 				arr[i]		= gw.wTransPoint arr[i]
-				)
 			)
+		)
 		slidertime = st
 		return arr
-		)
+	)
 
 -- gets the viewport coords of multiple points by passing a 2D array of points over time:
 -- time array > point array > point3
 	fn getVptPointsArr arrPts start end =
-		(
+	(
 		local arr	= #()
 		local st = slidertime
 		local i
 		local pts
 		with redraw off
-			(
+		(
 			for t = start to end do
-				(
+			(
 				slidertime = t
 				gw.setTransform(Matrix3 1)
 				local i = t - start + 1
 				local pts = arrPts[i]
 				format "% : %\n" i pts
 				for p = 1 to pts.count do
-					(
+				(
 					pts[p] = gw.wTransPoint pts[p]
-					)
-				arrPts[i] = pts
 				)
+				arrPts[i] = pts
 			)
+		)
 		slidertime = st
 		return arrPts
-		)
+	)
 
 -- gets the viewport coords of multiple points by passing a 2D array of points over time:
 -- time array > point array > point3
 
 fn getVptPointsArr arr start end =
-	(
+(
 	local st				= slidertime
 	with redraw off
-		(
+	(
 		for t = start to end do
-			(
+		(
 			local i			= t - start + 1
 			local arrVerts	= arr[i]
 			slidertime		= t
 			gw.setTransform(Matrix3 1)
 			for v = 1 to arrVerts.count do
-				(
+			(
 				arrVerts[v]	= gw.wTransPoint arrVerts[v]
-				)
-			arr[i]			= arrVerts
 			)
+			arr[i]			= arrVerts
 		)
+	)
 	slidertime = st
 	return arr
-	)
+)
 
 
 
 
 fn getMeshPoints obj start end =
-	(
+(
 	local arr	= #()
 	local verts	= getNumVerts obj.mesh
 	for t = start to end do
-		(
+	(
 		local arrVerts	= #()
 		local objMesh	= obj.mesh
 		for v = 1 to verts do
-			(
+		(
 			local pt3 = at time t (getVert objMesh v) * (obj.transform)
 			append arrVerts pt3
-			)
-		append arr arrVerts
 		)
-	return arr
+		append arr arrVerts
 	)
+	return arr
+)
 
 
 
 
 fn drawVptLine arr marker:#point markerColor:white lineColor:red =
-	(
+(
 	-- line
 		gw.setColor #line lineColor
 		gw.wPolyline arr false
 		
 	-- points
 		if point != undefined then
-			(
+		(
 			for p in arr do gw.wMarker p marker color:markerColor
-			)
+		)
 
 	-- update
 		gw.setTransform(Matrix3 1)
 		gw.enlargeUpdateRect #whole
 		gw.updateScreen()
-	)
+)
 
 
 fn drawVptLineArr arr =
-	(
+(
 	for i = 1 to arr[1].count do
-		(
+	(
 		local line = for j = 1 to arr.count collect arr[j][i]
 		local lineColor = random black white
 		drawVptLine line lineColor:lineColor
-		)
 	)
+)
 
 -- times
 	t1	= 25

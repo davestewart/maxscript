@@ -18,10 +18,10 @@
 -- Script
 
 if selection.count == 1 then
-	(
+(
 	m1 = $.material
 	if m1 == undefined then m2 = "No Material" else m2 = (m1.name as string)
 	MessageBox m2 title:"DisplayMat"
-	)
+)
 )
 -------------------------------------------------------------------------------

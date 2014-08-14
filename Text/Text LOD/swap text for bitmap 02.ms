@@ -1,22 +1,22 @@
 function replaceTextWithMap sel =
-	(
+(
 
 	local savePath = "E:/02_Current_Jobs/2006-06 - LittleFire, Borders Conference/2 - 3d/maps/text/"
 
 	if sel == undefined then
-		(
+	(
 		messagebox "Nothing selected!"
 		return false
-		)
+	)
 	if classof sel == ObjectSet then
-		(
+	(
 		sel = sel as array
 		obj = sel[1]
-		)
+	)
 	else
-		(
+	(
 		obj = sel
-		)
+	)
 	
 	-- get text
 		local t		= obj
@@ -38,18 +38,18 @@ function replaceTextWithMap sel =
 		
 		-- workings
 			if NOT ortho then
-				(
+			(
 				fov		= 45
 				a		= fov / 2
 				y		= w / 2
 				x		= y / (tan a)
-				)
+			)
 			else
-				(
+			(
 				fov		= 90
 				y		= w / 2
 				x		= if h > w then (h / (h/w) / 2) else w / 2
-				)
+			)
 				
 		
 	-- create camera
@@ -95,7 +95,7 @@ function replaceTextWithMap sel =
 		select #(t,p)
 /*	
 */
-	)
+)
 
 --arr = $'Bg text'* as array
 --for obj in arr do replaceTextWithMap obj

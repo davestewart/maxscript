@@ -49,14 +49,14 @@ rollout roIconLibrary "Icon Library" width:128 height:256
 	---------------------------------------------------------------------------------------------
 
 		on roIconLibrary open do
-			(
+		(
 			-- default variables
 				local fg	= colorMan.getColor #text as color
 				local bg	= colorMan.getColor #background as color
 			
 			-- loop through controls and assign button image
 				for i = 1 to iconNames.count do
-					(
+				(
 					-- grab control
 						local icon	= iconNames[i]
 						local btn	= roIconLibrary.controls[i]
@@ -64,20 +64,20 @@ rollout roIconLibrary "Icon Library" width:128 height:256
 					-- assign icon
 						iconUtils.setButtonIcon btn icon
 			
-					)
-			)
+				)
+		)
 			
 		on btnAssignRandomIcons pressed do
-			(
+		(
 			for i = 1 to roIconLibrary.controls.count - 1 do
-				(
+			(
 				local fg	= random black white
 				local bg	= random black white
 				local icon	= iconNames[random 1 iconNames.count]
 				local btn	= roIconLibrary.controls[i]
 				
 				iconUtils.setButtonIcon btn icon fg:fg bg:bg
-				)
 			)
+		)
 )
 createdialog roIconLibrary

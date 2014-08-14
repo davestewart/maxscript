@@ -1,11 +1,11 @@
 try(
 	destroyDialog roAETracker
-	)
+)
 catch()
 
 
 rollout roAETracker "After Effects Tracker" width:192 height:528
-	(
+(
 
 
 	-------------------------------------------------------------------------------------------
@@ -124,154 +124,154 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 		-- Vertex display
 
 			fn displayVertOrder state =
-				(
+			(
 				if state == true then
-					(
+				(
 					fn showVertsCb = showVertexOrder objTracker1
 					registerRedrawViewsCallback showVertsCb 
-					)
-				else
-					(
-					unRegisterRedrawViewsCallback showVertsCb
-					)
-				completeRedraw()
 				)
+				else
+				(
+					unRegisterRedrawViewsCallback showVertsCb
+				)
+				completeRedraw()
+			)
 	
 			fn getVertexOrder i =
-				(
+			(
 				if objTracker1 != undefined then
-					(
+				(
 					btnCornerDown = i
 					popupMenu rcMenuVertList
-					)
 				)
+			)
 	
 			fn setVertexOrder i v =
-				(
+			(
 				local iOld = finditem vertexOrder v
 				if iOld != 0 then
-					(
+				(
 					arrCorners[iOld].text = arrCorners[i].text
 					vertexOrder[iOld] = arrCorners[iOld].text as number
-					)
+				)
 				arrCorners[i].text = v as string
 				vertexOrder[i] = v
-				)
+			)
 	
 			fn resetVertexOrder =
-				(
+			(
 				vertexOrder = copy defaultVertexOrder #nomap
 				for i = 1 to arrCorners.count do arrCorners[i].text = vertexOrder[i] as string
-				)
+			)
 			
 		---------------------------------------------------------------------------------------
 		-- Tracked object
 					
 			fn setTracker index obj =
-				(
+			(
 				if getnumverts obj.baseobject.mesh != 4 then
-					(
+				(
 					if querybox "In order to use this object for tracking, it needs to have 4 vertices. Would you like to make the adjustment automatically?" then
-						(
+					(
 						try
-							(
+						(
 							obj.lengthsegs	= 1
 							obj.widthsegs	= 1
-							)
+						)
 						catch(
 							return false
-							)
 						)
-					else return false
 					)
+					else return false
+				)
 				if index == 1 then
-					(
+				(
 					objTracker1 = obj
 					pckTracker1.text = "Object 1: " + obj.name
-					)
+				)
 				else
-					(
+				(
 					objTracker2 = obj
 					pckTracker2.text = "Object 2: " + obj.name
-					)
 				)
+			)
 	
 			fn getTracker =
-				(
+			(
 				local obj, sel = getCurrentSelection()
 				if sel.count == 1 then
-					(
+				(
 					obj = sel[1]
 					if filterIsPlane obj then setTracker 1 obj
-					)
+				)
 				else
-					(
+				(
 					obj = for i = 1 to objects.count do if filterIsPlane objects[i] then exit with objects[i]
 					if obj != undefined then setTracker 1 obj
-					)
 				)
+			)
 	
 			fn getTrackSize =
-				(
+			(
 				if isValidNode objTracker1 then
-					(
+				(
 					local w = spnTrackWidth.value = objTracker1.baseObject.width
 					local h = spnTrackHeight.value =  objTracker1.baseObject.length
 					trackerSize = [w,h]
-					)
 				)
+			)
 		
 		---------------------------------------------------------------------------------------
 		-- Cameras
 					
 			fn setCamera cam =
-				(
+			(
 				objCamera = cam
 				pckCamera.text = cam.name
-				)
+			)
 				
 			fn getCamera =
-				(
+			(
 				local cam = viewport.GetCamera()
 				if cam != undefined then setCamera cam
-				)
+			)
 	
 			fn getRenderSize =
-				(
+			(
 				local w = spnCompWidth.value = renderWidth
 				local h = spnCompHeight.value = renderHeight
 				renderSize = [w,h]
-				)
+			)
 					
 		---------------------------------------------------------------------------------------
 		-- Time
 			
 			fn setTimeSegment =
-				(
+			(
 				timeSegment = interval spnTimeStart.value spnTimeEnd.value
-				)
+			)
 		
 			fn getTimeSegment =
-				(
+			(
 				local timeSegment
 				if objCamera != undefined then
-					(
+				(
 					local ts = getControllerRange objCamera.transform.controller
 					if ts != undefined then timeSegment = ts
-					)
+				)
 				else
-					(
+				(
 					timeSegment = animationRange
-					)
+				)
 				spnTimeStart.value = timeSegment.start
 				spnTimeEnd.value = timeSegment.end
-				)
+			)
 		
 		---------------------------------------------------------------------------------------
 		-- UI
 					
 			fn setButtons =
-				(
+			(
 				iconUtil.init()
 	
 				iconUtil.setIcon btnResetVerts #refresh
@@ -285,14 +285,14 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 				iconUtil.setIcon btnResetTracker2 #cross
 				
 				iconUtil.setIcon btnShowVerts #eye
-				)
+			)
 		
 
 		---------------------------------------------------------------------------------------
 		-- Do track
 	
 			function doTrack =
-				(
+			(
 				-- objects
 					local obj	= objTracker1
 					local cam	= objCamera
@@ -306,24 +306,24 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 					
 				-- swap the vertices around to match the AE Tracker
 					for i = 1 to arrTrack.count do
-						(
+					(
 						local arrTemp	= arrTrack[i]
 						local arrVerts	= #()
 						
 						for i = 1 to vertexOrder.count do -- #(3,4,1,2)
-							(
+						(
 							local n = vertexOrder[i]
 							append arrVerts arrTemp[n]
-							)
-						arrTrack[i] = arrVerts
 						)
+						arrTrack[i] = arrVerts
+					)
 					/*
 					*/
 				
-				)
+			)
 			
 			function dumpTrackData =
-				(
+			(
 				-- objects
 					local obj	= objTracker1
 					local cam	= objCamera
@@ -344,15 +344,15 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 				
 					if setClipboardText != undefined then setClipboardText (output as string)
 					else
-						(
+					(
 						clearListener()
 						format "%\n" (output as string)
-						)
+					)
 
-				)
+			)
 				
 			function dumpDepthData =
-				(
+			(
 				-- objects
 					local obj	= objTracker1
 					local cam	= objCamera
@@ -373,12 +373,12 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 				
 					if setClipboardText != undefined then setClipboardText (output as string)
 					else
-						(
+					(
 						clearListener()
 						format "%\n" (output as string)
-						)
+					)
 
-				)
+			)
 
 	-------------------------------------------------------------------------------------------
 	-- handlers
@@ -423,11 +423,11 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 		-- track
 		
 			on btnCalculate pressed do
-				(
+			(
 				setTimeSegment()
 				doTrack()
 				dumpTrackData()
-				)
+			)
 	
 			on btnCopyTrack pressed do dumpTrackData()
 			on btnCopyDepth pressed do dumpDepthData()
@@ -435,7 +435,7 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 		-- open
 		
 			on roAETracker open do
-				(
+			(
 				setButtons()
 				getTracker()
 				getTrackSize()
@@ -443,12 +443,12 @@ rollout roAETracker "After Effects Tracker" width:192 height:528
 				getCamera()
 				timeSegment = interval 0 0
 				getTimeSegment()
-				)
-	)
+			)
+)
 
 
 rcmenu rcMenuVertList
-	(
+(
 	
 	menuItem mi1 "1" checked:false enabled:true
 	menuItem mi2 "2" checked:false enabled:true
@@ -459,25 +459,25 @@ rcmenu rcMenuVertList
 	local ro	= roAETracker
 	
 	on rcMenuVertList open do
-		(
+	(
 		index	= ro.btnCornerDown
 		vert	= ro.vertexOrder[index]
 		
 		arrMi	= #(mi1, mi2, mi3, mi4)
 		arrMi[vert].checked = true
 		arrMi[vert].enabled = false
-		)
+	)
 
 	on rcMenuVertList close do
-		(
+	(
 		print "Closed!"
-		)
+	)
 		
 	on mi1 picked do ro.setVertexOrder index 1
 	on mi2 picked do ro.setVertexOrder index 2
 	on mi3 picked do ro.setVertexOrder index 3
 	on mi4 picked do ro.setVertexOrder index 4
-	)	
+)	
 
 createDialog roAETracker
 

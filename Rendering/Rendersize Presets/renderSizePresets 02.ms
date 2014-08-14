@@ -39,7 +39,7 @@ rollout roRenderSizePresets "Render Size Presets" width:224 height:39
 				#("PAL (Widescreen)", 1024, 576, 1),
 				#("HDTV", 1920, 1080, 1)
 				-- feel free to add more here
-			)
+		)
 			
 	----------------------------------------------------------------------------------------------------
 	-- variables
@@ -71,12 +71,12 @@ rollout roRenderSizePresets "Render Size Presets" width:224 height:39
 	----------------------------------------------------------------------------------------------------
 	
 		function updateDialog =
-			(
+		(
 			if renderSceneDialog.isOpen() do renderSceneDialog.update()
-			)
+		)
 			
 		function setRenderFraction fraction =
-			(
+		(
 			rFraction			= fraction
 			
 			renderWidth			= rWidth * fraction
@@ -86,14 +86,14 @@ rollout roRenderSizePresets "Render Size Presets" width:224 height:39
 			updateDialog()
 	
 			if chk1.checked do
-				(
+			(
 				try(undisplay rWindow);catch()
 				rWindow = render()
-				)
 			)
+		)
 			
 		function setRenderSize index =
-			(
+		(
 			local preset	= presets[index]
 			
 			rWidth			= preset[2]
@@ -102,22 +102,22 @@ rollout roRenderSizePresets "Render Size Presets" width:224 height:39
 			
 			setRenderFraction rFraction
 			updateDialog()
-			)
+		)
 		
 		function loadPresets =
-			(
+		(
 			local arr = #()
 			for preset in presets do
-				(
+			(
 				append arr preset[1]
-				)
+			)
 			ddlPresets.items = arr
 			setRenderSize 1
-			)
+		)
 			
 		function savePresets =
-			(
-			)
+		(
+		)
 
 	----------------------------------------------------------------------------------------------------
 	-- interface 
@@ -131,7 +131,7 @@ rollout roRenderSizePresets "Render Size Presets" width:224 height:39
 		on btn4 pressed do setRenderFraction 0.25
 		
 		on roRenderSizePresets open do
-			(
+		(
 			-- load presets
 				loadPresets()
 				chk1.checked = true
@@ -144,7 +144,7 @@ rollout roRenderSizePresets "Render Size Presets" width:224 height:39
 				local mode = getCommandPanelTaskMode()
 				setCommandPanelTaskMode #utility
 				setCommandPanelTaskMode mode
-			)
+		)
 
 		on roRenderSizePresets close do savePresets()
 )

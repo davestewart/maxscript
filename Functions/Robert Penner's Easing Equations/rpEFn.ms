@@ -37,7 +37,7 @@ struct rpEFn (
  		)else(
  			t-=1
  			-c  2  (t (t - 2) - 1) + b
- 		)
+ 	)
  	),
  	-- cubic easing in - accelerating from zero velocity
  	fn easeInCubic t b c d = (
@@ -58,7 +58,7 @@ struct rpEFn (
  		)else(
  			t -= 2
  			c2(ttt + 2) + b
- 		)
+ 	)
  	),
  	-- quartic easing in - accelerating from zero velocity
  	fn easeInQuart t b c d = (
@@ -79,7 +79,7 @@ struct rpEFn (
  		)else(
  			t -= 2
  			-c2  (tttt - 2) + b
- 		)
+ 	)
  	),
  	-- quintic easing in - accelerating from zero velocity
  	fn easeInQuint t b c d = (
@@ -100,7 +100,7 @@ struct rpEFn (
  		)else(
  			t -= 2
  			c2(ttttt + 2) + b
- 		)
+ 	)
  	),
  	-- sinusoidal easing in - accelerating from zero velocity
  	fn easeInSine t b c d = (
@@ -130,7 +130,7 @@ struct rpEFn (
  		)else(
  			t -= 1
  			c  2   (-pow 2 (-10.  t) + 2 ) + b
- 		)
+ 	)
  	),
  	-- circular easing in - accelerating from zero velocity
  	fn easeInCirc t b c d = (
@@ -151,8 +151,8 @@ struct rpEFn (
  		)else(
  			t -= 2
  			c2.  (sqrt(1. - tt) + 1.) + b
- 		)
  	)
+ )
  )
  
  -- sample

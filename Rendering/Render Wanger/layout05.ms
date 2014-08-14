@@ -27,7 +27,7 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 
 
 	on RSro1 open do
-		(
+	(
 	-- SET UP AX OBJECT
 	--------------------------------------------------------
 		ax.MousePointer = #ccArrow 
@@ -60,20 +60,20 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 						"Renderer")
 		
 		for i = 1 to colLabels.count  do
-			(
+		(
 			tmp = chs.Add Width:200
 			tmp.text=colLabels[i]
 			--execute(colLabels[i] + ".text = " + colLabels[i] as string)
 
-			)
+		)
 		
 	-- ADD ITEMS
 	--------------------------------------------------------
 	for i = 1 to 8 do
-		(
+	(
 		local li = ax.listItems.Add() 
 		for j = 2 to 11 do lsi = ax.ListItems[i].ListSubItems.add() --ForeColor:(128*128*128)
-		)
+	)
 
 
 	-- CHANGE COL WIDTHS
@@ -89,17 +89,17 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 	-- Randomly check render options
 	--------------------------------------------------------
 		for i = 1 to ax.listItems.count do
-			(
+		(
 			for j = 1 to 6 do
-				(
+			(
 				local n str
 				n = random 0 1
 				if n == 0 then str = "" else str="x"
 				ax.listItems[i].ListSubItems[j+2].text=str
-				)
 			)
+		)
 
-	)
+)
 		
 
 
@@ -148,15 +148,15 @@ rollout RSro1 "Render Presets  ( Single-click to edit  /  Double-click to render
 			RSro2.ckbRend.state = obj[13]
 			/*
 			*/
-	)
+)
 	
 	-- Render
 	--------------------------------------------------------
 	on ax DblClick do
-		(
+	(
 		print ("Rendering option : " + RSro2.index as string)
 		RSro2.initList RSro2.index
-		)
+	)
 )
 
 rollout RSro2 "Options" width:816 height:192
@@ -235,23 +235,23 @@ rollout RSro2 "Options" width:816 height:192
 
 	-- Name
 		on edtName changed text do
-			(
+		(
 			RSArr[index][1] = text as String
 			initList index
-			)
+		)
 	
 	-- Output Size
 		on spnWidth changed val do
-			(
+		(
 			RSArr[index][2] = [val,spnHeight.value]
 			initList index
-			)
+		)
 	
 		on spnHeight changed val do
-			(
+		(
 			RSArr[index][2] = [spnWidth.value,val]
 			initList index
-			)
+		)
 			
 	
 	-- Time
@@ -260,7 +260,7 @@ rollout RSro2 "Options" width:816 height:192
 			local rndArr=#("S","A","R"), rt=1
 			
 			function updateTimeUI rt =
-				(
+			(
 				--RSArr[index][3]=rt.
 				btnRndType.text = rndArr[rt]
 		
@@ -268,47 +268,47 @@ rollout RSro2 "Options" width:816 height:192
 					else	(spnRndFrom.enabled=true;spnRndTo.enabled=true)
 					
 				case rt of
-					(
+				(
 					1:	grpTime.text= "Time (Single)"
 					2:	grpTime.text= "Time (Active time)"
 					3:	grpTime.text= "Time (Range)"
-					)
-
 				)
+
+			)
 			on btnRndType pressed do
-				(
+			(
 				rt+=1
 				if rt > rndArr.count then rt = 1
 				RSArr[index][3]=rt
 				updateTimeUI rt
 				initList index
-				)
+			)
 
 		-- From and To
 
 			on spnRndFrom changed val do
-				(
+			(
 				if val >= spnRndTo.value then spnRndTo.value=val
 				RSArr[index][4] = [val,spnRndTo.value]
 				initList index
-				)
+			)
 		
 			on spnRndTo changed val do
-				(
+			(
 				if val <= spnRndFrom.value then spnRndFrom.value=val
 				RSArr[index][4] = [spnRndFrom.value,val]
 				initList index
-				)
+			)
 
 
 		
 	-- Scanline Options
 		
 		function updateScanline i state =
-			(
+		(
 			RSArr[index][i]=state
 			initList index
-			)
+		)
 		on chkSH changed state do updateScanline 5 state
 		on chkAA changed state do updateScanline 6 state
 		on chkRef changed state do updateScanline 7 state
@@ -328,22 +328,22 @@ rollout RSro2 "Options" width:816 height:192
 	-- Render Output
 	
 		on btnPath pressed do
-			(
+		(
 			path = getSaveFileName "Choose output directory and filename"
 			
 			if path != undefined then
-				(
+			(
 				edtPath.text = path
 				RSArr[index][11] = path
 				initList index
-				)
 			)
+		)
 
 		on edtPath entered text do
-			(
+		(
 			RSArr[index][11] = text as String
 			initList index
-			)
+		)
 
 		on chkSave changed state do edtPath.enabled = state
 
@@ -351,17 +351,17 @@ rollout RSro2 "Options" width:816 height:192
 	-- renderer
 	
 		on ckbRend changed state do
-			(
+		(
 			rnd = case ckbRend.state of 
-				( 
+			( 
 				false: "Draft"
 				true: "Production"
-				)
+			)
 			ckbRend.text = rnd
 
 			RSArr[index][13] = state
 			initList index
-			)
+		)
 	
 	
 
@@ -371,7 +371,7 @@ rollout RSro2 "Options" width:816 height:192
 	---------------------------------------------------------------------------------------------------
 
 	function initList i=
-		(
+	(
 		-- ListItem
 		-- name
 			cell = RSro1.ax.ListItems[i]
@@ -402,13 +402,13 @@ rollout RSro2 "Options" width:816 height:192
 			local r = RSArr[i][j]
 
 			str = case ot of 
-				( 
+			( 
 				1: "Single" 
 				2: "Active time segment"
-				3: 	(
+				3: (
 					str = "Range: " + (r.x as Integer) as String + " to " + (r.y as Integer) as String 
-					)  
-				) 
+				)  
+			) 
 			cell.text = str
 			---------------------------------------------------------------------
 			rendStart = r.x as Integer
@@ -417,11 +417,11 @@ rollout RSro2 "Options" width:816 height:192
 
 		-- Scanline Options
 			for j = 5 to 11 do
-				(
+			(
 				cell = RSro1.ax.ListItems[i].ListSubItems[j-2]
 				local opt = RSArr[i][j]
 				if opt==true then cell.text = "x" else cell.text = ""
-				)
+			)
 			---------------------------------------------------------------------
 			shadows =		RSArr[i][5]
 			antiAliasing =	RSArr[i][6]
@@ -461,10 +461,10 @@ rollout RSro2 "Options" width:816 height:192
 
 			
 			
-		)
+	)
 
 	on RSro2 open do
-		(
+	(
 		path = getFilenamePath  rendOutputFilename
 		edtPath.text = path
 
@@ -485,7 +485,7 @@ rollout RSro2 "Options" width:816 height:192
 	for i = 1 to RSArr.count do initList i
 
 		
-		)
+	)
 
 )
 

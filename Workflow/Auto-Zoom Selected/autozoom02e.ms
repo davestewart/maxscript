@@ -40,16 +40,16 @@ rollout ro1 "AutoZoom Selected" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	fn checkZoom =
-		(
+	(
 		autoZoomProps[3] = true -- enable autoZoom
 
 		callbacks.removeScripts id:#autoZoom
 		if (findItem autoZoomProps true) > 0 then
-			(
+		(
 			callbacks.addScript #selectionSetChanged "autoZoomCB()" persistent:false id:#autoZoom
 			autoZoom()
-			)
 		)
+	)
 
 	
 	---------------------------------------------------------------------------------------------------
@@ -57,46 +57,46 @@ rollout ro1 "AutoZoom Selected" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	on ro1 open do
-		(
+	(
 
 		-- set up global functions (callees of the intermediate callback functions)
 	
 			fn autoZoom =
-				(
+			(
 				print "autoZoom called!"
 
 				if autoZoomProps[3]==false then 				-- if the nodeCreated callback has disabled autoZoom...
-					(
+				(
 					format ">>> clicks: %\n" autoZoomProps[4]	-- how many times has the selection set changed?
 					autoZoomProps[4] += 1						-- Once...
 					if autoZoomProps[4] == 1 then				
-						(
+					(
 						autoZoomProps[3]=true
 						autoZoomProps[4]=0
-						)
+					)
 					-- do nothing if nodeCreated callback has disabled autoZoom
-					)
-				else if (subObjectLevel!=0 OR subObjectLevel==undefined) then
-					(
-					-- do nothing if in subobject mode
-					)
-				else if autoZoomProps[2]==true then
-					(
-					max zoomext sel all
-					)
-				else if autoZoomProps[1]==true then
-					(
-					max zoomext sel
-					)
 				)
+				else if (subObjectLevel!=0 OR subObjectLevel==undefined) then
+				(
+					-- do nothing if in subobject mode
+				)
+				else if autoZoomProps[2]==true then
+				(
+					max zoomext sel all
+				)
+				else if autoZoomProps[1]==true then
+				(
+					max zoomext sel
+				)
+			)
 		
 
 		fn nodeCreated =
-			(
+		(
 			format ">>> %" "Creating Node, and disabling autoZoom"
 			autoZoomProps[3]=false -- disable autoZoom
 			
-			)
+		)
 		
 
 		-- setup intermediate callback functions
@@ -114,21 +114,21 @@ rollout ro1 "AutoZoom Selected" width:162 height:311
 			callbacks.addScript #nodeCreated "nodeCreatedCB()" persistent:false id:#autoZoom
 
 
-		)
+	)
 
 	on ro1 close do autoZoomProps=#(false,false)
 
 	on ckb1 changed state do
-		(
+	(
 		autoZoomProps[1] = state
 		checkZoom()
-		)
+	)
 
 	on ckb2 changed state do
-		(
+	(
 		autoZoomProps[2] = state
 		checkZoom()
-		)
+	)
 )
 
 if autoZoomFloater != undefined then closerolloutfloater autoZoomFloater

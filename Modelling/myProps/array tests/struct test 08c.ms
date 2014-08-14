@@ -23,7 +23,7 @@ clearListener()
 --get objects (loop)
 ----------------------------------------------------------------------------
 	for obj in mySelection do
-		(
+	(
 		i +=1
 		targetObj = obj.name
 	
@@ -33,19 +33,19 @@ clearListener()
 	
 	-- print debugging information
 		if debug then
-			(
+		(
 			format "\n\n================================================\n"
 			format "== Loop  : "; print i
 			format "== name  : %\n" targetObj
 			format "== object: %\n" obj
 			format "================================================\n"
-			)
+		)
 	
 	----------------------------------------------------------------------------
 	--get modifiers (loop)
 	----------------------------------------------------------------------------
 		for stackLevel = 1 to obj.modifiers.count do
-			(
+		(
 			target = obj.modifiers[stackLevel]
 	
 		-- append the modifiers array
@@ -54,17 +54,17 @@ clearListener()
 	
 		-- print debugging information
 			if debug then
-				(
+			(
 				format "\n  ----------------------------------------------\n"
 				format "  > Stack Level:    %\n" stackLevel
 				format "  > target:         %\n" target
-				)
+			)
 	
 		----------------------------------------------------------------------------
 		--get props & values (loop)
 		----------------------------------------------------------------------------
 			for prop = 1 to (getPropNames target).count do
-				(
+			(
 				targetProp = (getPropNames target)[prop]
 				targetPropName = substring (targetProp as String) 1 (targetProp as String).count
 				targetPropValStart = execute ("$" + obj.name + ".modifiers[" + stackLevel as String + "]." + targetPropName)
@@ -77,16 +77,16 @@ clearListener()
 	
 			-- print debugging information
 				if debug then
-					(
+				(
 					format "     - - - - - - - - - - - - - - - - - - - - - -\n"
 					format "     targetProp:         %\n" targetProp
 					format "     targetPropName:     %\n" targetPropName
 					format "     targetPropValStart: %\n" targetPropValStart
 					format "     targetPropClass:    %\n" targetPropClass
 					format"     "; print data; format"\n"
-					)
 				)
 			)
+		)
 
 	----------------------------------------------------------------------------
 	--get base object
@@ -100,17 +100,17 @@ clearListener()
 
 		-- print debugging information
 			if debug then
-				(
+			(
 				format "\n  ----------------------------------------------\n"
 				format "  > Stack Level:    %\n" stackLevel
 				format "  > target:         %\n" target
-				)
+			)
 	
 	----------------------------------------------------------------------------
 	--get props & values (loop)
 	----------------------------------------------------------------------------
 	for prop = 1 to (getPropNames target).count do
-		(
+	(
 		targetProp = (getPropNames target)[prop]
 		targetPropName = substring (targetProp as String) 1 (targetProp as String).count
 		targetPropValStart = execute ("$" + obj.name + ".baseObject." + targetPropName)
@@ -124,16 +124,16 @@ clearListener()
 
 	-- print debugging information
 		if debug then
-			(
+		(
 			format "     - - - - - - - - - - - - - - - - - - - - - -\n"
 			format "     targetProp:         %\n" targetProp
 			format "     targetPropName:     %\n" targetPropName
 			format "     targetPropValStart: %\n" targetPropValStart
 			format "     targetPropClass:    %\n" targetPropClass
 			format "     "; print data; format"\n"
-			)
 		)
 	)
+)
 
 
 

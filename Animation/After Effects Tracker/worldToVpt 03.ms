@@ -50,44 +50,44 @@
 
 
 fn testGw =
-	(
+(
 	local start	= 0
 	local end	= 100 -- animationrange.end
 	local arr	= #()
 	with redraw off
-		(
+	(
 		for t = start to end do
-			(
+		(
 			slidertime = t
 			gw.setTransform(Matrix3 1)
 			local pos	= objects[1].pos
 			local pt3 = at time t pos
 			pt3 = gw.wTransPoint pt3
 			append arr pt3
-			)
 		)
+	)
 	for pt3 in arr do
-		(
+	(
 		gw.wMarker pt3 #circle color:black
-		)
+	)
 	gw.enlargeUpdateRect #whole
 	gw.updateScreen()
 	return arr
-	)
+)
 
 fn testCam =
-	(
+(
 	gw.setTransform(Matrix3 1)
 	gw.enlargeUpdateRect #whole
 	for t = 1 to animationrange.end do
-		(
+	(
 		local pos	= objects[1].pos
 		local pt2	= at time t worldToCam pos cam
 		pt3 = gw.wTransPoint [pt2.x,pt2.y,0]
 		gw.wMarker pt3 #circle color:black
-		)
-	gw.updateScreen()
 	)
+	gw.updateScreen()
+)
 
 
 

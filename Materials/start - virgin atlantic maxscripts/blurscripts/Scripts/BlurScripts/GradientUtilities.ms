@@ -56,25 +56,25 @@ gu_names = #()
 -- Functions
 
 fn grad_to_ramp a = 
-	(
+(
 	b = Gradient_Ramp ()
 	b.name = a.name
 	if a.gradientType == 0 then 
-		(
+	(
 		b.Gradient_Type = 4
 		b.gradient_ramp.flag__1.color = a.color1
 		b.gradient_ramp.flag__2.color = a.color3
 		b.gradient_ramp.flag__3.color = a.color2
 		b.gradient_ramp.flag__3.position = (1 - a.color2Pos)*100
-		)
+	)
 	else 
-		(
+	(
 		b.Gradient_Type = 8
 		b.gradient_ramp.flag__1.color = a.color3
 		b.gradient_ramp.flag__2.color = a.color1
 		b.gradient_ramp.flag__3.color = a.color2
 		b.gradient_ramp.flag__3.position = (a.color2Pos)*100
-		)
+	)
 		
 	b.coordinates.mappingType = a.coordinates.mappingType
 	b.coordinates.mapping = a.coordinates.mapping
@@ -108,67 +108,67 @@ fn grad_to_ramp a =
 	b.output.Bump_Amount = a.output.Bump_Amount
 	
 	return b
-	)
+)
 	
 fn gc_convert cur_mat = 
-	(
+(
 	if classof cur_mat == Gradient then
-		(
+	(
 		meditMaterials[gu_toslot_value] = grad_to_ramp cur_mat
-		)
-	else (MessageBox "Your active material slot must be a Gradient for the script to work." title:"GradientUtilities")
 	)
+	else (MessageBox "Your active material slot must be a Gradient for the script to work." title:"GradientUtilities")
+)
 	
 fn gradient_preset_update = 
-	(
+(
 	gu_names = #()
 	mat_files = get_all_files_in_dir "$scripts/BlurMats/" false "mat"
 	grad_files = #()
 	for i in mat_files do
-		(
+	(
 		if substring (filenameFromPath i) 1 8 == "Gradient" then append grad_files i
-		)
+	)
 	if grad_files.count != 0 then
-		(
+	(
 		for i = 1 to grad_files.count do
-			(
+		(
 			the_name = (filenameFromPath grad_files[i])
 			append gu_names (strip_file_extension the_name)
-			)
 		)
 	)
+)
 
 fn gradient_preset = 
-	(
+(
 	undo "GradientUtilities" on
-		(
+	(
 		m = get_blurmat (gu_names[gpr] as string)
 		if m != false then meditMaterials[medit.GetActiveMtlSlot()] = copy m
-		)
 	)
+)
 		
 -- Script
 
 rollout gc_rollout "Gradient Converter"
-	(
+(
 	spinner gc_toslot "Output Slot: " range:[1,24,2] type:#integer fieldWidth:27 align:#center
 	button gc_convert_button "Convert Gradient To Gradient Ramp" width:200 align:#center toolTip:"Convert Gradient To Gradient Ramp"
 
 	on gc_toslot changed val do gu_toslot_value = val
 	on gc_convert_button pressed do 
-		(
+	(
 		gc_convert (medit.GetCurMtl())
-		)
 	)
+)
 	
 rollout gpr_rollout "Gradient Ramp Presets"
-	(
+(
 	dropdownlist gpr_list "" items:gu_names height:20
 	on gpr_list selected i do gpr = i
 		
 	button do_gpr "Place Preset In Active Slot" width:200 align:#center toolTip:"Place Preset In Active Slot"
 	on do_gpr pressed do gradient_preset()
-	)
+)
 	
 gradient_preset_update()
 

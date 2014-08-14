@@ -40,19 +40,19 @@ fn createObjPerFace obj = (
 					if nFace == 1 then (
 						-- If this is the first face, we know the indices
 						v1 = 1; v2 = 2; v3 = 3
-					)
+				)
 					else (
 						-- Else, we have to increment them based upon previous indices
 						v2 += 1; v3 += 1
-					)
+				)
 	
 				-- Append the current face to the array of faces
 					append meshFaces [v1,v2,v3]
-			)
+		)
 		
 		-- Create and append the new mesh to our list of meshes
 			--append meshes (mesh vertices:verts faces:meshFaces)
-	)
+)
 
 	-- Return the mesh list
 		--return meshes

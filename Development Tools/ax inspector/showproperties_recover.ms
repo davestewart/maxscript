@@ -44,11 +44,11 @@ show ro1.ax.SelectedItem
 
 selectedItems = #()
 for i = 1 to ro1.ax.listitems.count do
-	(
+(
 	local item = ro1.ax.listitems[i]
 	if item.selected == true then
-		(
+	(
 		append selectedItems item
-		)
 	)
+)
 ax.HideColumnHeaders

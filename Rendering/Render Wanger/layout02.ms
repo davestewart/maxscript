@@ -27,7 +27,7 @@ rollout RSro1 "Render Presets" width:816 height:180
 
 
 	on RSro1 open do
-		(
+	(
 	-- SET UP AX OBJECT
 	--------------------------------------------------------
 		ax.MousePointer = #ccArrow 
@@ -61,27 +61,27 @@ rollout RSro1 "Render Presets" width:816 height:180
 						"Renderer")
 		
 		for i = 1 to colLabels.count  do
-			(
+		(
 			tmp = chs.Add Width:200
 			tmp.text=colLabels[i]
 			--execute(colLabels[i] + ".text = " + colLabels[i] as string)
 
-			)
+		)
 		
 	-- ADD ITEMS
 	--------------------------------------------------------
 	for i = 1 to 8 do
-		(
+	(
 		local li = ax.listItems.Add() 
 		local str = "Item " + i as string
 		li.text = str
 		for j = 2 to 10 do
-			(
+		(
 			lsi = ax.ListItems[i].ListSubItems.add ForeColor:(128*128*128)
 			str = str = "Item " + ((10*(i-1))+j) as string
 			lsi.text = str
-			)
 		)
+	)
 
 	/*	*/
 
@@ -112,17 +112,17 @@ Syntax
 	-- Randomly check render options
 	--------------------------------------------------------
 		for i = 1 to ax.listItems.count do
-			(
+		(
 			for j = 1 to 6 do
-				(
+			(
 				local n str
 				n = random 0 1
 				if n == 0 then str = "" else str="x"
 				ax.listItems[i].ListSubItems[j+2].text=str
-				)
 			)
+		)
 
-	)
+)
 		
 
 
@@ -132,27 +132,27 @@ Syntax
 	local varIndex, h, col, argButton, argShift, argX, argY, argItem
 	
 	on ax mouseDown argButton argShift argX argY do
-		(
+	(
 		col = argX
-		)
+	)
 	on ax itemClick argItem do
-		(
+	(
 		For h in ax.ColumnHeaders do
-			(
+		(
 			if col > (h.Left + ax.pos.x) and col < (h.Left + ax.pos.x + h.Width) then
-				(
+			(
 				-- Found the column
 				varIndex = h.Index
 				exit
-				)
 			)
-		format "Row: %\tColumn: %\n" argItem.Index varIndex
 		)
+		format "Row: %\tColumn: %\n" argItem.Index varIndex
+	)
 	*/
 	  on ax Click do (
 		RSro2.index = ax.SelectedItem.index
 		format "%\n" RSro2.index
-		)
+	)
 	
 	-- Column Resizing
 	--------------------------------------------------------
@@ -288,20 +288,20 @@ rollout RSro2 "Options" width:816 height:192
 
 
 	on ckbRend changed state do
-		(
+	(
 		rnd = case ckbRend.state of 
-			( 
+		( 
 			true: #Draft
 			false: #Production
 			default: #Production
-			)
-		ckbRend.text = rnd
 		)
+		ckbRend.text = rnd
+	)
 
 	local rndArr=#("S","A","R"), i=1
 
 	on btnRndType pressed  do
-		(
+	(
 		i+=1
 		if i > rndArr.count then i = 1
 		btnRndType.text = rndArr[i]
@@ -310,21 +310,21 @@ rollout RSro2 "Options" width:816 height:192
 			else	(spnRndFrom.enabled=true;spnRndTo.enabled=true)
 			
 		case i of
-			(
+		(
 			1:	grpTime.text= "Time (Single)"
 			2:	grpTime.text= "Time (Active time)"
 			3:	grpTime.text= "Time (Range)"
-			)
 		)
+	)
 
 
 	on btnPath pressed do
-		(
+	(
 		path = getSaveFileName "Choose output directory and filename"
 		--path = getSavePath "Choose output directory and filename"
 		
 		if path != undefined then edtPath.text = path
-		)
+	)
 
 	on chkSave changed state do edtPath.enabled = state
 
@@ -334,12 +334,12 @@ rollout RSro2 "Options" width:816 height:192
 	---------------------------------------------------------------------------------------------------
 
 	on ro2 open do
-		(
+	(
 		path = getFilenamePath  rendOutputFilename
 		edtPath.text = path
 
 		rndFloater.height=300
-		)
+	)
 
 )
 

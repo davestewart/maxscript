@@ -13,7 +13,7 @@
 plugin simpleMod twistProfileScripted
 name:"Twist Profile (scripted)"
 classID:#(0x2d60fac1, 0x2d0524a1)
-	(
+(
 	
 	
 	----------------------------------------------------------------------------------
@@ -34,21 +34,21 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 	----------------------------------------------------------------------------------
 	
 		parameters main rollout:params
-			(
+		(
 			valTwist 		type:#float default:10
 	
 			pPoints			type:#point3Tab tabSizeVariable:true --values:#([0,0,0],[1000,0,0])
 			pTangents		type:#point4Tab tabSizeVariable:true
 			pBeziers		type:#boolTab tabSizeVariable:true
 			pCorners		type:#boolTab tabSizeVariable:true
-			)
+		)
 
 	----------------------------------------------------------------------------------
 	-- main rollout
 	----------------------------------------------------------------------------------
 	
 		rollout params "Parameters"
-			(
+		(
 			
 			----------------------------------------------------------------------------------
 			-- ui
@@ -61,17 +61,17 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 			-- handlers	
 			
 				on params open do
-					(
+				(
 					try (removeRollout roCC);catch()
 					roCC.init this
-					)
+				)
 			
 				on btnProfile pressed do
-					(
+				(
 					createdialog roCC 820 464 -- modal:true
 					roCC.init this
-					)
 				)
+			)
 
 
 	----------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 	----------------------------------------------------------------------------------
 
 		on map i p do
-			(
+		(
 			-- skip if 0
 				if i == 0 then return p
 			
@@ -87,17 +87,17 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 			
 			-- skip if the rollout is undefined
 				if roCC == undefined then
-					(
+				(
 					p
 					return false
-					)
+				)
 			
 			-- ratio of how far along geometry the point is
 				local dy	= (p.y / extent.y) + 0.5
 
 			-- get the values
 				if roCC.cc1.curves != undefined then
-					(
+				(
 					-- value
 						local val	= getValue roCC.cc1.curves[1] 0 (1000 * dy)
 						
@@ -110,8 +110,8 @@ classID:#(0x2d60fac1, 0x2d0524a1)
 						p.x = cos(val) * x - sin(val) * z
 						p.z = cos(val) * z + sin(val) * x
 						--p.y = cos(val) * z + sin(val) * y
-					)
+				)
 			-- set the value
 				p
-			)
-	)
+		)
+)

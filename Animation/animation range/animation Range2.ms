@@ -1,5 +1,5 @@
 	rollout ro1 "Set Range" width:160 height:311
-	(
+(
 		---------------------------------------------------------------------------------------------------
 		-- declare globals
 		---------------------------------------------------------------------------------------------------
@@ -17,9 +17,9 @@
 		-- Functions
 		---------------------------------------------------------------------------------------------------
 		fn setRange = 
-			(
+		(
 				animationRange = (interval spn1.value spn2.value)
-			)
+		)
 
 
 		---------------------------------------------------------------------------------------------------
@@ -27,7 +27,7 @@
 		---------------------------------------------------------------------------------------------------
 		on spn1 changed val do setRange()
 		on spn2 changed val do setRange()
-	)
+)
 
 	if animRangeFloater2 != undefined then closerolloutfloater animRangeFloater2
 		animRangeFloater2 = newRolloutFloater "Anim range" 188 115 

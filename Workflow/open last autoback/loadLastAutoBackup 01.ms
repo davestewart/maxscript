@@ -25,29 +25,29 @@
 ----------------------------------------------------------------------------------------------
 
 	struct date
-		(
+	(
 		-- variables
 			y, m, d, hh, mm, ss, t,
 			
 		-- methods
 			fn fromString str year:2000 =
-				(
+			(
 				-- error checking
 					if classof str != String do
-						(
+					(
 						format "-- Runtime error: 'date.fromString' requires a string of the format \"mm/dd/yy hh:mm:ss PM\"\n"
 						return undefined
-						)
+					)
 	
 				-- vars
 					local a, d
 
 					a		= filterstring str " "
 					if a.count != 3 do
-						(
+					(
 						format "-- Runtime error: 'date.fromString' requires a string of the format \"mm/dd/yy hh:mm:ss PM\"\n"
 						return undefined
-						)
+					)
 					
 					a[1]	= filterstring a[1] "/"
 					a[2]	= filterstring a[2] ":"
@@ -69,7 +69,7 @@
 					return d
 				),
 			fn secondsElapsed &d year:2000 =
-				(
+			(
 				-- vars
 					local t				= if year > 1990 then 0 else 0.0
 					local secondsInDay	= 60 * 60 * 24
@@ -77,15 +77,15 @@
 	
 				-- y, m, d		
 					for y = year to (d.y - 1) do
-						(
+					(
 						if mod y 4 == 0 then t += 366 * secondsInDay 
 						else t += 365 * secondsInDay 
-						)
+					)
 					
 					for m = 1 to (d.m - 1) do
-						(
+					(
 						t += daysInMonth[m] * secondsInDay
-						)
+					)
 					if (mod d.y 4 == 0) AND d.m >= 3 do t += secondsInDay -- leap year
 						
 					t += (d.d - 1)	* secondsInDay
@@ -97,27 +97,27 @@
 					
 				-- assign
 					d.t = t
-				)
-		)
+			)
+	)
 
 ----------------------------------------------------------------------------------------------
 -- functions
 ----------------------------------------------------------------------------------------------
 
 	function getFilesByDate filenameString type:#modified order:#ascending debug:false =
-		(
+	(
 		-- error checking
 			if classof date != StructDef do
-				(
+			(
 				format "-- Runtime error: function 'getFilesByDate' requires the 3rd-party struct 'date'\n"
 				return #()
-				)
+			)
 				
 			if type != #modified AND type != #created then
-				(
+			(
 				format "-- Runtime error: function 'getFilesByDate' parameter 'type' should be #modified or #created\n"
 				return #()
-				)
+			)
 	
 		-- get files
 			local str, d
@@ -125,27 +125,27 @@
 			local files	= getFiles filenameString
 			
 			for f in files do
-				(
+			(
 				str		= if type == #created then getFileCreateDate f else getFileModDate f 
 				d		= date.fromString str
 				append arr #(d.t, str, f)
-				)
+			)
 	
 		-- sort files		
 			fn orderFn v1 v2 order:#ascending =
-				(
+			(
 				-- vars
 					local val
 					if order == #descending then val = v2[1] - v1[1]
 					else val = v1[1] - v2[1]
 				-- calcs
 					case of
-						(
+					(
 						(val < 0): -1
 						(val > 0): 1
 						default: 0
-						)
-				)
+					)
+			)
 			
 			qsort arr orderFn order:order
 			
@@ -155,7 +155,7 @@
 		-- return
 			for i = 1 to arr.count do arr[i] = arr[i][3]
 			return arr
-		)
+	)
 
 ----------------------------------------------------------------------------------------------
 -- testing
@@ -170,10 +170,10 @@
 	-- open last autobackup
 
 		function loadLastAutoBackup =
-			(
+		(
 			local arr = getFilesByDate "$max\\Autoback\\Autobak*" order:#descending -- debug:true
 			if arr.count > 0 then loadmaxfile arr[1]
-			)
+		)
 
 		loadLastAutoBackup()
 )

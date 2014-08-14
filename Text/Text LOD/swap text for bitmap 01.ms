@@ -1,5 +1,5 @@
 function replaceTextWithMap obj =
-	(
+(
 	-- get text
 		local t = obj
 		local size = t.max - t.min
@@ -50,7 +50,7 @@ function replaceTextWithMap obj =
 		--hide t
 		delete c
 		select #(t,p)
-	)
+)
 
 arr = $'Bg text'* as array
 --for obj in arr do replaceTextWithMap obj

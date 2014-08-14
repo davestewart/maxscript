@@ -74,7 +74,7 @@ rollout roProps "Property Explorer" width:400 height:324
 								#("DotNet: This Treeview",""),
 								#("DotNet: This Treeview's selected node",""),
 								#("DotNet","Available Windows Forms")
-								)
+							)
 	
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--
@@ -93,64 +93,64 @@ rollout roProps "Property Explorer" width:400 height:324
 		-- iterator functions
 			
 			fn appendArray obj =
-			(
+		(
 				format "adding array: %\n" (obj as string)
 				add obj node:currentNode tooltip:"Array"
-			)
+		)
 			
 			fn appendChild obj =
-			(
+		(
 				format "adding child: %\n" obj
-			)
+		)
 			
 			fn appendObj obj =
-			(
+		(
 				format "adding object: %\n" obj
-			)
+		)
 			
 			fn appendProperty obj =
-			(
+		(
 				--format "adding property: %\n" obj
 				try
-				(
+			(
 					--local childNode = currentNode.nodes.add (obj.name as string + ": " +obj.value as string)
 					--childNode.tag	= dotNetMXSValue obj.object
 					add obj.value node:currentNode text:(obj.name as string + ": " +obj.value as string) tooltip:obj.name
-				)
-				catch
-				(
-					--format "FAILED!\n"
-				)
-				--add obj node:currentNode
 			)
+				catch
+			(
+					--format "FAILED!\n"
+			)
+				--add obj node:currentNode
+		)
 			
 			fn appendSubAnim obj =
-			(
+		(
 				--format "adding subanim: % to % with %\n" obj.name currentNode.text add
 				-- check for property or another sub anim
 				--format "ANIM: %\n" obj.object
 				if isProperty obj "object" AND obj.object.numSubs > 0 then
-				(
+			(
 					add obj node:currentNode text:obj.name --tooltip:obj.value
-				)
+			)
 				else
-				(
+			(
 					try
-					(
+				(
 						add obj node:currentNode text:(obj.name as string + ": " +obj.value as string) tooltip:obj.name
-					)
+				)
 					catch
-					(
+				(
 						add obj node:currentNode text:obj
-					)
 				)
 			)
+		)
 	
 		--------------------------------------------------------------------------------------------------------------------------
 		-- iterators
 			
 			function getIteratorObjects obj =
-			(
+		(
 				-- variables
 					local iterator, iteratorFn, iteratorName
 				
@@ -158,19 +158,19 @@ rollout roProps "Property Explorer" width:400 height:324
 				
 					-- object: subanims
 						if isValidNode obj OR (isProperty obj "numSubs" AND obj.numSubs > 0) then
-						(
+					(
 							iteratorName	= "SubAnimIterator"
 							iterator		= SubAnimIterator obj
 							iteratorFn		= appendSubAnim
-						)
+					)
 						
 					-- selection: objects
 						else if classOf obj == ObjectSet then
-						(
+					(
 							iteratorName	= "SelectionIterator"
 							iterator		= SelectionIterator obj
 							iteratorFn		= appendObj
-						)
+					)
 						
 					-- array: elements
 						else if 
@@ -179,29 +179,29 @@ rollout roProps "Property Explorer" width:400 height:324
 							OR classOf obj == MaterialLibrary  \
 							OR classOf obj == MeditMaterialsClass \
 							then
-						(
+					(
 							iteratorName	= "ArrayIterator"
 							iterator		= ArrayIterator obj
 							iteratorFn		= appendArray
-						)
+					)
 						
 					-- default: properties
 						else
-						(
+					(
 							iteratorName	= "PropertyIterator"
 							iterator		= PropertyIterator obj
 							iteratorFn		= appendProperty
-						)
+					)
 					
 				-- return
 					#(iterator, iteratorFn, iteratorName)
-			)
+		)
 
 		--------------------------------------------------------------------------------------------------------------------------
 		-- populate
 			
 			function populateNode node =
-			(
+		(
 				-- node
 					currentNode				= node
 				
@@ -218,19 +218,19 @@ rollout roProps "Property Explorer" width:400 height:324
 
 				-- populate
 					if iterator != undefined  AND iteratorFn != undefined do
-					(
+				(
 						currentNode.nodes.clear()
 						iterator.iterate iteratorFn
-					)
-			)
+				)
+		)
 
 			function expandNode node =
-			(
+		(
 				if node.nodes.count > 0 AND node.nodes.item[0].text == DUMMY_TEXT do
-				(
+			(
 					populateNode node
-				)
 			)
+		)
 			
 	-- ------------------------------------------------------------------------------------------------------------------------
 	--
@@ -249,7 +249,7 @@ rollout roProps "Property Explorer" width:400 height:324
 		-- add objects
 			
 			function add obj node: text: tooltip: =
-			(
+		(
 					-- parent node
 						if node == unsupplied do node = tv
 						if text == unsupplied do text = if isProperty obj "name" then obj.name else obj as string
@@ -262,9 +262,9 @@ rollout roProps "Property Explorer" width:400 height:324
 						local childNode			= node.nodes.add text
 						childNode.tag			= dotNetMXSValue obj
 						if tooltip != unsupplied do
-						(
+					(
 							childNode.ToolTipText = iteratorObjects[3]
-						)
+					)
 					
 					-- dummy node
 						if iterator.hasNext() do childNode.nodes.add DUMMY_TEXT
@@ -277,13 +277,13 @@ rollout roProps "Property Explorer" width:400 height:324
 					-- return
 						true
 				try
-				(
-				)
-				catch
-				(
-					--format "Couldn't add node: % \n" obj
-				)
+			(
 			)
+				catch
+			(
+					--format "Couldn't add node: % \n" obj
+			)
+		)
 		
  
 	-- ------------------------------------------------------------------------------------------------------------------------
@@ -300,7 +300,7 @@ rollout roProps "Property Explorer" width:400 height:324
 	-- Code
 
 		fn initTreeView tv =
-		(
+	(
 			tv.Indent				= 20
 			tv.ShowNodeToolTips		= true
 			tv.AllowDrop		 	= true
@@ -309,7 +309,7 @@ rollout roProps "Property Explorer" width:400 height:324
 			
 			local items				= for i = 1 to commands.count where commands[i][1] != "" collect commands[i][1]
 			ddlCommands.items		= items
-		)
+	)
 
 		
 	-- ------------------------------------------------------------------------------------------------------------------------
@@ -326,12 +326,12 @@ rollout roProps "Property Explorer" width:400 height:324
 	-- Handlers
 
 		on tv BeforeExpand evt do
-		(
+	(
 			expandNode evt.node
-		)
+	)
 			
 		on tv DoubleClick arg do 
-		(
+	(
 			-- node
 				local node		= tv.GetNodeAt (dotNetObject "System.Drawing.Point" arg.x arg.y)
 				local parent	= node.parent
@@ -341,59 +341,59 @@ rollout roProps "Property Explorer" width:400 height:324
 				
 			-- something
 				try
-				(
+			(
 					if classof exprNode == dotNetObject then
-					(
-						add exprNode node:node
-					)
-					else
-					(
-						format "%\n" (exprformaxobject exprNode)
-					)
-					--format "%\n" (classof exprNode)
-				)
-				catch
 				(
-					try
-					(
-						format "%\n" (exprNode.text)
-					)
-					catch()
+						add exprNode node:node
 				)
-		)
+					else
+				(
+						format "%\n" (exprformaxobject exprNode)
+				)
+					--format "%\n" (classof exprNode)
+			)
+				catch
+			(
+					try
+				(
+						format "%\n" (exprNode.text)
+				)
+					catch()
+			)
+	)
 		
 		on btnObjects pressed do
-		(
+	(
 			add (getCurrentSelection())
-		)
+	)
 		 
 		on btnObject pressed do
-		(
+	(
 			if isValidNode $ do add $
-		)
+	)
 		 
 		on btnModifiers pressed do
-		(
+	(
 			if isValidNode $ do add $.modifiers
-		)
+	)
 		 
 		on btnMaterial pressed do
-		(
+	(
 			if isValidNode $ do add $.material
-		)
+	)
 		 
 		on btnTransform pressed do
-		(
+	(
 			if isValidNode $ do add $.transform.controller
-		)
+	)
 		 
 		on btnElement pressed do
-		(
+	(
 			add tv
-		)
+	)
 
 		on roProps resized size do
-		(
+	(
 			local w					= size[1]
 			local h					= size[2]
 			
@@ -402,27 +402,27 @@ rollout roProps "Property Explorer" width:400 height:324
 			
 			local ctrls				= #(ddlCommands, btnDdlCommand, edtCommand, btnEdtCommand)
 			for c in ctrls do
-			(
+		(
 				c.pos = [c.pos[1], h - 20]
-			)
+		)
 			edtCommand.width		= w - edtCommand.pos[1] - 19
 			btnDdlCommand.pos	 	= [btnDdlCommand.pos[1], btnDdlCommand.pos[2] + 1]
 			btnEdtCommand.pos 		= [w - 18, btnEdtCommand.pos[2] + 1]
 			
 			if w > btnDdlCommand.pos[1] + 36 then
-			(
+		(
 				btnEdtCommand.pos 	= [w - 18, btnEdtCommand.pos[2]]
-			)
-			else
-			(
-				btnEdtCommand.pos 	= [btnDdlCommand.pos[1] + 18, btnEdtCommand.pos[2]]
-			)
 		)
+			else
+		(
+				btnEdtCommand.pos 	= [btnDdlCommand.pos[1] + 18, btnEdtCommand.pos[2]]
+		)
+	)
 
 		on roProps open do 
-		(
+	(
 			initTreeView tv 
-		)
+	)
 )
 
 createDialog roProps style:#(#style_resizing, #style_minimizebox, #style_maximizebox, #style_titlebar, #style_sysmenu)
@@ -465,9 +465,9 @@ showmethods roProps.tv.nodes.item[0]--.nodes
 on tv AfterCheck arg do 
 (
 	try
-	(
+(
 		arg.node.tag.value.isHidden = NOT arg.node.checked
-	)
+)
 	catch()
 )
 

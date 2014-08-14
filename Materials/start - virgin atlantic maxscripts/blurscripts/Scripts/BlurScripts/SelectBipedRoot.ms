@@ -24,8 +24,8 @@
 -- The Script
 
 if classof $ == biped_object then
-	(
+(
 	select (get_biped_root $)
-	)
+)
 )
 -------------------------------------------------------------------------------

@@ -2,14 +2,14 @@ plugin modifier pathCtrl
 name:"PathCtrl" 
 classID:#(0x90478bea, 0x8a1a88fe)
 
-	(
+(
 	
 	local distCtrl=bezier_float()
 	local pcCtrl=float_script()
 	local updatePathPercent
 	
 	parameters main rollout:params 
-		( 
+	( 
 		splObj type:#node animatable:false
 		length type:#float animatable:true
 
@@ -19,14 +19,14 @@ classID:#(0x90478bea, 0x8a1a88fe)
 
 
 		on distance set val do
-			(
-			pathPercent = distance/length
-			)
-
-
-		) 
-	rollout params "Parameters" width:162 height:133
 		(
+			pathPercent = distance/length
+		)
+
+
+	) 
+	rollout params "Parameters" width:162 height:133
+	(
 
 	-- interface
 	------------------------------------------------------------
@@ -45,53 +45,53 @@ classID:#(0x90478bea, 0x8a1a88fe)
 
 
 		fn updatePathPercent=
-			(
+		(
 			pathPercent = this.distance/this.length
-			)
+		)
 		
 		fn getSplineLength obj=
-			(
+		(
 			local len = getSegLengths obj 1
 			len = len[len.count]
 			return len
-			)
+		)
 	
 
 		fn getPercent =
-			(
+		(
 			return distance/length
-			)
+		)
 
 
 
 		fn updateInterface =
-			(
+		(
 			try(
 				pkbSpline.text=this.splObj.name
 				params.lbl1.text="Length: " + this.length as string
-				)
-			catch()
 			)
+			catch()
+		)
 
 
 
 		global splineUpdate
 
 		fn splineUpdate pluginInstance=
-			(
+		(
 			print pluginInstance
 			/*
 			pluginInstance.length=getSplineLength pluginInstance.splObj
 			pluginInstance.distance+=0
 			*/
-			)
+		)
 
 
 	-- handlers
 	------------------------------------------------------------
 
 		on pkbSpline picked obj do
-			(
+		(
 			this.splObj = obj
 			this.length=getSplineLength obj
 			updateInterface()
@@ -99,25 +99,25 @@ classID:#(0x90478bea, 0x8a1a88fe)
 			try(
 				format "%\n" "Setting Up Change Handler"
 				when geometry this.splObj changes do splineUpdate "My Plugin"
-				)
+			)
 			catch(
 				format "%\n" "Change Handler ERROR"
-				)
+			)
 
 			paramWire.connect $.modifiers[#PathCtrl][#pathPercent] $.pos.controller.Path_Constraint.controller[#Percent] "pathPercent"
 
-			)
+		)
 
 		on params open do updateInterface()
 	
-		)
+	)
 
 	on create do
-		(
+	(
 		--pathPercent.script="hello\n0"
-		)
+	)
 
 	
 	
-	) 
+) 
 

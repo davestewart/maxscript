@@ -26,20 +26,20 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Script
 
 if selection.count == 1 then 
-	(
+(
 	current_mod_index = current_modifier_index $
 	if current_mod_index != 0 then
-		(
+	(
 		if current_mod_index == $.modifiers.count then
-			(
+		(
 			modPanel.setCurrentObject $
-			)
+		)
 		else 
-			(
+		(
 			current_mod_index = current_mod_index + 1
 			modPanel.setCurrentObject $.modifiers[current_mod_index]
-			)
 		)
 	)
+)
 )
 -------------------------------------------------------------------------------

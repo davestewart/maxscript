@@ -20,20 +20,20 @@ rollout ro1 "Options" width:160 height:311
 	---------------------------------------------------------------------------------------------------
 
 	fn saveList =
-		(
+	(
 		for i = 1 to lbxList.items.count do
-			( 
+		( 
 			setINISetting listPath lbxList.name ("item_" + i as String) lbx.items[i]
 /*				<filename_string> 
 				<section_string> 
 				<key_string> 
 				<key_value_string> */
-			)
 		)
+	)
 
 	fn loadList =
-		(
-		)
+	(
+	)
 
 
 	---------------------------------------------------------------------------------------------------

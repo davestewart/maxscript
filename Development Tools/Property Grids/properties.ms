@@ -1,9 +1,9 @@
 struct property
-	(
+(
 	fn get type =
-		(
+	(
 		case type of
-			(
+		(
 			String: 0
 			Number: 1
 			Bool: 2
@@ -15,15 +15,15 @@ struct property
 			Enum: 8
 			EnumFlags: 9
 			Category: 10
-			)
 		)
 	)
+)
 property.get "String"
 
 fn getType prop =
-	(
+(
 	case (classof prop) of
-		(
+	(
 		String: 0		--String
 		Integer: 1		--Number
 		BooleanClass: 2	--Bool
@@ -36,5 +36,5 @@ fn getType prop =
 		Array: 9		--Enum
 		"Category": 10
 		default: -1
-		)
-	)	
+	)
+)	

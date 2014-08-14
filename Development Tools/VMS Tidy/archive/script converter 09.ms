@@ -129,7 +129,7 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 	label lbl5 \"Sparrows\" pos:[16,237] width:56 height:16
 	progressBar pb1 \"ProgressBar\" pos:[208,248] width:144 height:8 value:50"
 
-	)
+)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -155,42 +155,42 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 	---------------------------------------------------------------------------------------------------
 
 	fn isIn container item=
-		(
+	(
 		-- items should be uiItem structs
 		local c=container
 		local i = item
 		if c!= undefined AND i!=undefined then
-			(
+		(
 			local c=box2 c.x c.y c.w c.h
 			local i=point2 i.x i.y
 			return (contains c i)
-			)
-		else return false
 		)
+		else return false
+	)
 
 	fn orderArray arr=
-		(
+	(
 		tmpArr=#()
 		for y = 1 to arr.count do
-			(
+		(
 			if arr[y]!=undefined then
-				(
+			(
 				for x = 1 to arr[y].count do
-					(
+				(
 					if arr[y][x]!=undefined then
-						(
+					(
 						append tmpArr arr[y][x]
 						--format "> %\n" arr[y][x]
-						)
 					)
 				)
 			)
-		return tmpArr
 		)
+		return tmpArr
+	)
 
 
 	fn createScript=
-		(
+	(
 		local w=int (roSize.x +4) as string
 		local h=int (roSize.y +4) as string
 		local str="--UI Tidy test rollout\n\n"+
@@ -200,7 +200,7 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 			edt1.text as string+
 			"	)\n\n"
 		return str
-		)
+	)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -208,7 +208,7 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 	---------------------------------------------------------------------------------------------------
 
 	fn tidy=
-		(
+	(
 		-----------------------------------------------------------------
 		--	variables
 			roSize=point2 100 25
@@ -226,7 +226,7 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 		-----------------------------------------------------------------
 
 		for s in strArr do
-			(
+		(
 			---------------------------------------------------------
 			--	strip whitespace
 
@@ -234,7 +234,7 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 				while substring s 1 1 == " " do s=substring s 2 -1
 
 			if s.count>0 then
-				(
+			(
 				---------------------------------------------------------
 				-- start breaking string down to get propeties
 	
@@ -247,35 +247,35 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 					-- x,y
 						i=findstring s "pos:["
 						if i != undefined then
-							(
+						(
 							str=substring s (i+5) -1
 							str=(filterstring str "]")[1]
 							arr=filterstring str ","
 							x=arr[1] as integer
 							y=arr[2] as integer
 							--format "x: % y: % \n" x y
-							)
+						)
 	
 					-- width
 						i=findstring s "width:"
 						if i != undefined then
-							(
+						(
 							str=substring s (i+6) -1
 							str=(filterstring str " ")[1]
 							w=str as integer
 							--format "w: % \n" w
-							)
+						)
 	
 					-- height
 						i=findstring s "height:"
 						--format "i:% \n" i
 						if i != undefined then
-							(
+						(
 							str=substring s (i+7) -1
 							str=(filterstring str " ")[1]
 							h=str as integer
 							--format "h: % \n" h
-							)
+						)
 	
 					-- line-break / comment
 						i=findstring s "--"
@@ -294,10 +294,10 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 				--	set ro dimensions
 				
 					if x!= undefined && w!= undefined then
-						(
+					(
 						if x+w > roSize.x then roSize.x=x+w
 						if y+h > roSize.y then roSize.y=y+h
-						)
+					)
 	
 	
 				---------------------------------------------------------
@@ -310,20 +310,20 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 						
 					-- create x entry (column)
 						if type=="groupBox" then
-							(
+						(
 							-- add to ui array
 								if uiItemArr[y][x]==undefined then uiItemArr[y][x]=#(ui)
 							-- add to group lookup
 								if uiGroupArr[y]==undefined then uiGroupArr[y]=#()
 								if uiGroupArr[y][x]==undefined then uiGroupArr[y][x]=ui
-							)
+						)
 						else
-							(
+						(
 							-- add to ui array
 								uiItemArr[y][x]=ui
-							)
-				)
+						)
 			)
+		)
 			
 		--format "Items added OK\n"
 
@@ -344,29 +344,29 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 		-------------------------------------------------------------
 
 		for y = 1 to uiItemArr.count do
-			(
+		(
 			if uiItemArr[y]!=undefined then
-				(
+			(
 				for x = 1 to uiItemArr[y].count do
-					(
+				(
 					if uiItemArr[y][x]!=undefined then
-						(
+					(
 						if classof uiItemArr[y][x] != Array then
-							(
+						(
 							for g = 1 to uiGroupArr.count do
-								(
+							(
 								if isIn uiGroupArr[g] uiItemArr[y][x] then
-									(
+								(
 									append uiItemArr[uiGroupArr[g].y][uiGroupArr[g].x] uiItemArr[y][x]
 									uiItemArr[y][x]=undefined
 									exit
-									)
 								)
 							)
 						)
 					)
 				)
 			)
+		)
 
 		-------------------------------------------------------------
 		-- SECOND RUN THROUGH NEW ARRAY
@@ -382,30 +382,30 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 		local group=false
 		local y=0
 		for i = 1 to uiItemArr.count do
-			(
+		(
 			if classof uiItemArr[i] == Array then
-				(
+			(
 				str+="\n"
 				group=true
 				for j = 1 to uiItemArr[i].count do
-					(
+				(
 					if j == 1 then str+="	"+uiItemArr[i][j].string+"\n"
 					else
-						(
+					(
 						if uiItemArr[i][j].linebreak==true then str+="\n"
 						str+="		"+uiItemArr[i][j].string+"\n"
-						)
 					)
 				)
+			)
 			else(
 				if group==true then str+="\n"
 				if uiItemArr[i].linebreak==true then str+="\n"
 				str+="	"+uiItemArr[i].string+"\n"
 				group=false
-				)
-			)	
+			)
+		)	
 		edt1.text=str
-		)
+	)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
@@ -415,63 +415,63 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 
 	
 	on ro1 open do
-		(
+	(
 		--edt1.text = uiStrArr[1]
-		)
+	)
 /*
 	on ro1 resized size do
-		(
+	(
 		h=size[2]
 		ro1.height=h-35
 		for c in ro1.controls do
-			(
+		(
 			local x=c.pos[1]
 			local y=h-56
 			c.pos=[x,y]
-			)
+		)
 		edt1.pos=[8,8]
 		format "%\n" edt1.height
-		)
+	)
 */
 	on btnTidy pressed do
-		(
+	(
 		if edt1.text.count>0 then
-			(
+		(
 			tidy()
 			--);catch(messagebox errStr)
-			)
-		--else messagebox "VMS Tidy has been designed to tidy the jumble of code that Visual MaxScript creates.\nYou need to copy and paste some code here first, before tidying."
 		)
+		--else messagebox "VMS Tidy has been designed to tidy the jumble of code that Visual MaxScript creates.\nYou need to copy and paste some code here first, before tidying."
+	)
 
 	on btnEdit pressed do
-		(
+	(
 		try(tidy());catch(messagebox errStr)
 		local vmsTidyTestStr=createScript()
 		if (uiScriptWin==undefined) OR ((uiScriptWin as string).count<10) then uiScriptWin=newScript()
 		format "%\n" vmsTidyTestStr to:uiScriptWin
 		format "%\n" "createDialog vmsTidyTestRo\n" to:uiScriptWin
 
-		)
+	)
 
 	on btnTest pressed do
-		(
+	(
 		if edt1.text.count>0 then
-			(
+		(
 			try(tidy());catch()
 			global vmsTidyTestRo
-			try	(
+			try(
 				execute (createScript())
 				try (destroyDialog vmsTidyTestRo);catch()
 				try (createDialog vmsTidyTestRo);catch(messageBox errStr)
-				)
+			)
 			catch(
 				messageBox errStr
-				)
 			)
 		)
+	)
 
 	on btnHelp pressed do
-		(
+	(
 		try(
 			global roVMSTidyHelp, helpStr
 	
@@ -484,18 +484,18 @@ rollout vmsTidyRo "VMS (Visual MaxScript) Tidy" width:800 height:800
 			execute("rollout roVMSTidyHelp \"VMS Tidy Help\"(activeXControl ax \"file://"+helpStr+"\" pos:[6,6] width:400 height:600)")
 			
 			createdialog roVMSTidyHelp 412 612
-			)
-		catch(messageBox "Help file not found...")
 		)
+		catch(messageBox "Help file not found...")
+	)
 	
 	on rdoSample changed val do edt1.text = uiStrArr[val]
 	
 	on chkClear changed val do
-		(
+	(
 		edt1.text=""
 		chkClear.checked=false
 		rdoSample.state = 0
-		)
+	)
 
 	--on edt1 changed value do btnTest.enabled = value.count>0
 )

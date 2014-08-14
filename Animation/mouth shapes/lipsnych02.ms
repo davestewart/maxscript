@@ -72,18 +72,18 @@ rollout ro1 "Options" width:160 height:488
 	---------------------------------------------------------------------------------------------------
 
 		function btnChange btn state =
-			(
+		(
 			pushPrompt (btn as String)
 
 			if btn != undefined then
-				(
+			(
 				btn.enabled = false
 				btnOld.enabled = true
 				btnOld.checked = false
 				btnOld = btn
-				)
-			else (btnOld = btn)
 			)
+			else (btnOld = btn)
+		)
 
 
 	---------------------------------------------------------------------------------------------------
@@ -102,9 +102,9 @@ rollout ro1 "Options" width:160 height:488
 		on ckb9 changed state do btnChange ckb9 state
 
 		on ro1 open do
-			(
+		(
 			btnOld = ckb0
-			)
+		)
 )
 
 if myFloater != undefined then closerolloutfloater myFloater

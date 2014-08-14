@@ -51,40 +51,40 @@ include "$scripts\BlurScripts\BSLib.ms"
 -- Functions
 
 fn blurselect typeofblur =
-	(
+(
 	undo "MotionBlurSelect" on
-		(
+	(
 		objs = unhiddenobj()
 		new_objs = #()
 
 		disableSceneRedraw()
 		
 		for i in objs do
-			(
+		(
 			if typeofblur == 1 then
-				(
+			(
 				if i.motionblur == #none then append new_objs i
-				)
-			if typeofblur == 2 then
-				(
-				if i.motionblur == #object then append new_objs i
-				)
-			if typeofblur == 3 then
-				(
-				if i.motionblur == #image then append new_objs i
-				)
 			)
+			if typeofblur == 2 then
+			(
+				if i.motionblur == #object then append new_objs i
+			)
+			if typeofblur == 3 then
+			(
+				if i.motionblur == #image then append new_objs i
+			)
+		)
 		if new_objs.count != 0 then select new_objs
 		
 		enableSceneRedraw()
 		completeRedraw()
-		)
 	)
+)
 
 -- Script
 		
 rollout mbs_rollout "MotionBlurSelect"
-	(
+(
 	button noneblur "None" width:60 align:#center toolTip:"None" across:3
 	on noneblur pressed do blurselect 1
 
@@ -93,7 +93,7 @@ rollout mbs_rollout "MotionBlurSelect"
 	
 	button imageblur "Image" width:60 align:#center toolTip:"Image"
 	on imageblur pressed do blurselect 3
-	)
+)
 
 if mbs_floater != undefined then CloseRolloutFloater mbs_floater
 mbs_floater = newRolloutFloater "MotionBlurSelect v1.11" 255 97

@@ -76,10 +76,10 @@ rollout textPlacement "Text Placement" width:176 height:493
 	--------------------------------------------------------------------------------------------------------------------------------
 
 	on frames changed val do
-		(
+	(
 		if frames.value == 1 then frmLbl.text = "frame"
 		else frmLbl.text = "frames"
-		)
+	)
 )
 
 rollout textOptions "Text Options" width:352 height:456
@@ -94,28 +94,28 @@ rollout textOptions "Text Options" width:352 height:456
 
 	fn sortCaseInsensitive theArray asc:true =
 	-- This function sorts an array of strings in ascending or descending alphabetical order while ignoring case.
-		(
+	(
 			try
-			(
+		(
 				theArray=for arg in theArray collect (arg as name)
 				sort theArray
 				
 				if NOT asc then
-				(
+			(
 					local theArrayTMP=copy theArray #noMap
 					local revIdx=theArray.count
 					for i = 1 to theArray.count do
-					(
+				(
 						theArray[revIdx]=theArrayTMP[i] as string
 						revIdx-=1
-					)
+				)
 					theArray
-				)
-				else
-				(		
-					theArray=for arg in theArray collect (arg as string)
-				)
 			)
+				else
+			(		
+					theArray=for arg in theArray collect (arg as string)
+			)
+		)
 			catch(theArray=undefined)
 		)  -- End of sortCaseInsensitive function.
 	
@@ -124,17 +124,17 @@ rollout textOptions "Text Options" width:352 height:456
 
 	fn removeSpacesFromStr str =
 	-- This function removes spaces from the end of the string.
-		(
+	(
 			if str[str.count] != " " then return str
 			removeSpacesFromStr (substring str 1 (str.count-1))
-		)
+	)
 	
 	
 	--------------------------------------------------------
 
 	fn getFontNames =
 	-- This is the actual function that gets the font names.
-		(
+	(
 		-- cmdPath is the path where you put the batch files: listfonts.bat & fontinfo.bat and the .exe file: ttfname.exe
 		-- note: DO NOT put back-slash at the end of the cmdPath. eg. "C:\\3dsmax4\\scripts"
 			cmdPath = getDir #scripts + "\listFonts"
@@ -148,7 +148,7 @@ rollout textOptions "Text Options" width:352 height:456
 			df=openFile fontListFile mode:"r"
 			
 			while (NOT eof df) do
-			(
+		(
 				if (findString (readLine df) "New Font:") != undefined then
 					if (not eof df) then (
 						i = filePos df
@@ -156,8 +156,8 @@ rollout textOptions "Text Options" width:352 height:456
 						if (findString s "New Font:") == undefined then	
 							append fontNames (removeSpacesFromStr s)
 						else seek df i
-					)
-			)
+				)
+		)
 		
 			flush df
 			close df
@@ -176,10 +176,10 @@ rollout textOptions "Text Options" width:352 height:456
 	on textOptions open do global fontNamesList = getFontNamesList()
 
 	fn getFontNamesList forceUpd:false =
-		(
+	(
 		if forceUpd or (fontNamesList == undefined) then return getFontNames()
 		else return fontNamesList
-		)
+	)
 
 	
 
@@ -226,91 +226,91 @@ rollout textOptions "Text Options" width:352 height:456
 
 
 	fn updatePB i progressTotal =
-		(
+	(
 		progressCurrent += 1
 		pb1.value = 100.0 * progressCurrent / progressTotal
 		-- reset when progress bar is full
 			if pb1.value == 100 then
-				(
+			(
 				pb1.value = 0
 				progressTotal = 0
 				progressCurrent = 0
-				)
-		)
+			)
+	)
 
 
 	fn pickFontUpdt =
-		(
+	(
 		case pickFont.state of
-			(
-			1:	(
+		(
+			1:(
 				fontTypeIn.enabled=true
 				fontTypeInUpdt.enabled=true
 				fontListBox.enabled=false
-				)
-			2:	(
+			)
+			2:(
 				fontTypeIn.enabled=false
 				fontTypeInUpdt.enabled=false
 				fontListBox.enabled=true
-				)
 			)
-			size.value = 100
 		)
+			size.value = 100
+	)
 
 	fn updateFont =
-		(
+	(
 		if pickFont.state==1 then font=fontTypeIn.text
 			else font=fontListBox.selected
 
 		if objectList.count != 0 then
-			(
+		(
 			for i = 1 to objectList.count do
-				(
+			(
 				obj = execute ("$'" + objectList[i] + "'")
 				obj.font = font
 				updatePB i progressTotal
-				)
-			tempFont = font
 			)
+			tempFont = font
 		)
+	)
 
 
 	fn updateShapeSteps =
-		(
+	(
 		if objectList.count != 0 then
-			(
+		(
 			for i = 1 to objectList.count do
-				(
+			(
 				obj = execute ("$'" + objectList[i] + "'")
 				obj.steps = shapeSteps.value
 				updatePB i progressTotal
-				)
-			tempShapeSteps = textOptions.shapeSteps.value
 			)
+			tempShapeSteps = textOptions.shapeSteps.value
 		)
+	)
 		
 	fn updateAll =
-		(
+	(
 		progressTotal = 0
 		
 		-- Check if font needs updating (only if dropdown has changed from last time)
-			if 	(
+			if (
 				(pickFont.state==1 AND textOptions.fontTypeIn.text != tempFont)or(pickFont.state==2 AND textOptions.fontListBox.selected != tempFont)
-				)
+			)
 				then
-					(
+				(
 					progressTotal = progressTotal + objectList.count
 					updateFontState = 1
 					print "Updating Font"
-					)
+				)
 		
 		-- Check if Shape Steps needs updating (only if spinner has changed from last time)
 			if textOptions.shapeSteps.value != tempShapeSteps then
-				(
+			(
 				progressTotal = progressTotal + objectList.count
 				updateShapeStepsState = 1
 				print "Updating Steps"
-				)
+			)
 		
 		-- call appropriate functions
 		
@@ -318,7 +318,7 @@ rollout textOptions "Text Options" width:352 height:456
 			if updateFontState == 1 then updateFont()
 			if updateShapeStepsState == 1 then updateShapeSteps()
 		
-		)
+	)
 
 	--------------------------------------------------------------------------------------------------------------------------------
 	-- Font & shape step handlers
@@ -326,25 +326,25 @@ rollout textOptions "Text Options" width:352 height:456
 
 
 	on textOptions open do
-		(
+	(
 		pickFontUpdt()
 		sizeCtrl.value = 100
 		--for obj in geometry do delete obj
 		--for obj in shapes do delete obj
-		)
+	)
 
 	on pickFont changed state do pickFontUpdt()
 
 	on fontTypeIn changed text do
-		(
+	(
 	-- check for carriage returns
 		end = findstring text "\r"
 		if end != undefined then
-			(
+		(
 			fontTypeIn.text = substring text 1 (end-1)
 			updateFont()
-			)
 		)
+	)
 
 	
 	on fontTypeInUpdt pressed do updateFont()
@@ -352,21 +352,21 @@ rollout textOptions "Text Options" width:352 height:456
 	on fontListBox selected sel do updateFont()
 
 	on shapeSteps changed val do
-		(
+	(
 		if textOptions.interactiveBtn.checked then
-			(
+		(
 			progressTotal = objectList.count
 			updateShapeSteps()
-			)
 		)
+	)
 
 	on updateBtn pressed do updateAll()
 
 	on interactiveBtn changed state do
-		(
+	(
 		if textOptions.updateBtn.enabled == false then textOptions.updateBtn.enabled = true
 		else textOptions.updateBtn.enabled = false
-		)
+	)
 
 
 )
@@ -390,7 +390,7 @@ rollout textObjects "Text Objects" width:160 height:56
 	-- Creation handlers
 	--------------------------------------------------------------------------------------------------------------------------------
 	on createBtn pressed do
-		(
+	(
 				-- deleteTextObj()
 			-- set other globals
 				spacing = 1000
@@ -409,13 +409,13 @@ rollout textObjects "Text Objects" width:160 height:56
 	
 			--sets the animation range
 				if names.count == 0 then
-					(
+				(
 					print "No Data!"
-					)
+				)
 				else
-					(
+				(
 					animationRange = interval 0 ((names.count * d) + 1)
-					)
+				)
 	
 	
 			-- creates the objects & positions them
@@ -455,22 +455,22 @@ rollout textObjects "Text Objects" width:160 height:56
 
 					-- put in carriage returns if requested
 						if textPlacement.twoLines.checked then
-							(
+						(
 							displayText = names[i]
 							spaceIndex = findString displayText " " -- find any spaces
 							if spaceIndex != undefined then
-								(
-								obj.text = replace displayText spaceIndex 1 "\r"
-								)
-							else
-								(
-								obj.text = displayText
-								)
-							)
-						else
 							(
-							obj.text  = names[i]
+								obj.text = replace displayText spaceIndex 1 "\r"
 							)
+							else
+							(
+								obj.text = displayText
+							)
+						)
+						else
+						(
+							obj.text  = names[i]
+						)
 
 
 
@@ -480,41 +480,41 @@ rollout textObjects "Text Objects" width:160 height:56
 						targetHeight = 300
 						
 						fn scaleText obj targetScale =
-						(
+					(
 							case textPlacement.scaleType.state of
-							(
-							1:	(
+						(
+							1:(
 								addModifier obj (XForm()) ui:on
 								obj.modifiers[#XForm].gizmo.scale *= [targetScale ,targetScale ,targetScale ]
 								modPanel.setCurrentObject obj.modifiers[#XForm]
 								subobjectLevel = 0
-								)
-							2: 	(
-								obj.scale = [targetScale ,targetScale ,targetScale ]
-								)	
 							)
+							2: (
+								obj.scale = [targetScale ,targetScale ,targetScale ]
+							)	
 						)
+					)
 						
 						case textPlacement.scaleMethod.state of
-							(
+						(
 							1:
-								(
+							(
 								-- do nothing
-								)
+							)
 							2:
-							 	(
+							 (
 								span = obj.max.x - obj.min.x
 								targetScale = targetHeight / span
 								scaleText obj targetScale
-								)
+							)
 								
 							3:
-							 	(
+							 (
 								span = obj.max.z - obj.min.z
 								targetScale = targetHeight / span
 								scaleText obj targetScale
-								)
-							) 
+							)
+						) 
 		
 
 					-- set up objects to move
@@ -543,7 +543,7 @@ rollout textObjects "Text Objects" width:160 height:56
 					-- Centre the object if requested
 						if textPlacement.centre.checked then (
 							obj.pivot.z = (obj.max.z - obj.min.z) / 2 + obj.min.z
-						)
+					)
 
 						key1.value = spacing
 						key2.value = 0
@@ -554,38 +554,38 @@ rollout textObjects "Text Objects" width:160 height:56
 						textOptions.updatePB i names.count
 
 
-				)
+			)
 				sliderTime = 1
 				print "Printing Object List..."
 				print objectList
-	)
+)
 
 
 	fn deleteTextObj =
-		(
+	(
 		for i = 1 to objectList.count do
-			(
+		(
 				obj = execute ("$'" + objectList[i] + "'")
 				if obj != undefined then delete obj
 
 			-- Update progress bar
 				textOptions.updatePB i objectList.count
-			)
-			objectList = #()
 		)
+			objectList = #()
+	)
 
 	on delLastBtn pressed do
-		(
+	(
 		deleteTextObj()
-		)
+	)
 
 
 	fn deleteAllTextObj =
-		(
+	(
 		clearSelection()
 		for obj in objects where substring obj.name 1 4 == "Text" do selectMore obj
 		delete selection
-		)
+	)
 
 	on delAllBtn pressed do deleteAllTextObj()
 
@@ -612,25 +612,25 @@ rollout tools "Tools" width:160 height:512
 	--------------------------------------------------------------------------------------------------------------------------------
 
 	on camBtn pressed do
-		(
+	(
 		if $Camera_SimpleCredits == undefined then
-			(
+		(
 			camSC = Freecamera fov:45 targetDistance:160 nearclip:1 farclip:1000 nearrange:0 farrange:1000 mpassEnabled:off mpassRenderPerPass:off transform:(matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,-700,0])
 			camSC.name = "Camera SimpleCredits"
 			camSC.ignoreExtents = on
-			)
-		else
-			(
-			print "Camera already exists"
-			)
-			max vpt camera
 		)
+		else
+		(
+			print "Camera already exists"
+		)
+			max vpt camera
+	)
 
 
 	on listBtn pressed do
-		(
+	(
 		for i = 1 to objectList.count do (print objectList[i])
-		)
+	)
 		
 )
 
@@ -643,9 +643,9 @@ rollout credits "Dave Stewart" width:160 height:120
 	button webBtn "www.davestewart.co.uk" width:156 height:16
 
 	on webBtn pressed do
-	(
+(
 	ShellLaunch "iexplore.exe" "http://www.davestewart.co.uk"
-	)
+)
 )
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -654,9 +654,9 @@ rollout credits "Dave Stewart" width:160 height:120
 
 -- create the Floater window and add the rollouts
 	if SCrof != undefined do
-		(
+	(
 		closerolloutfloater SCrof
-		)		
+	)		
 
 	SCrof=newrolloutfloater "Simple Credits" 200 200
 

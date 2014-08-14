@@ -3,10 +3,10 @@ rollout roFlash "Flash Rollout" width:216 height:216
 	activeXControl axFlash "{D27CDB6E-AE6D-11CF-96B8-444553540000}" pos:[8,8] width:200 height:200
 	
 	on rFlash open do 
-		( 
+	( 
 		axFlash.movie = "box.swf"
 		axFlash.movie = "box.swf"
-		)
+	)
 		
 	on axFlash OnReadyStateChange arg1 do format "handler: OnReadyStateChange : %\n" arg1
 	on axFlash OnProgress arg1 do format "handler: OnProgress : %\n" arg1
@@ -39,10 +39,10 @@ fn getPropsAndPropTypes obj = (
 				propTypeString = trimLeft propTypeString
 				propTypeString = trimRight propTypeString 
 				propTypesArray[i] = propTypeString
-			)
 		)
-		#(propNamesArray,propTypesArray)
 	)
+		#(propNamesArray,propTypesArray)
+)
 	
 f = roFlash.axFlash
 props = (getPropsAndPropTypes f)[1]

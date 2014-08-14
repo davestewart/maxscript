@@ -35,7 +35,7 @@ rollout foo "ListViewTester" width:680 height:500
 		lv.foreColor = fixOleColor txtColor
 		lv.font = "arial"
 		lv.font.size = 8
-	)
+)
 	fn addSomeStuff lv = (
 		for t = 1 to 30 do(
 			local newEvent1 = lv.listItems.add()
@@ -59,18 +59,18 @@ rollout foo "ListViewTester" width:680 height:500
 			local newEvent7 = newEvent1.ListSubItems.add()	--Create the Start Frame field
 			newEvent7.text = (getDir #scripts) + "\\my_output_" + (t as string)
 			newEvent7.foreColor = (color 200 0 0)
-		)	
 	)	
+)	
 	local h_offset
 	on foo open do(
 		initListView lvObjects --Initialize the List View Control
 		addSomeStuff lvObjects --include some temp listitems:
 		h_offset = lvObjects.listItems[1].left --gets the standard size of the leftmost column offset to be used later
-	)
+)
 	on foo resized p do(
 		lvObjects.size = p - [0,60]	
 		windows.sendMessage lvObjects.hwnd (0x1000+30) 6 (p.x - 345) --adjust last column width
-	)
+)
 	on lvObjects dblclick do(	
 		global selItemArray = #()
 		local twipPerPixelConstant = 26.47058882353 --arial 7 point
@@ -85,7 +85,7 @@ rollout foo "ListViewTester" width:680 height:500
 		    local thisColWidth = (windows.sendMessage lvObjects.hwnd (0x1000+29) t 0 )
 		    append columnPositions (lastColPos + 4); --the "+4" is an offset needed to get exact position of the column..adjust to your own needs
 		    lastColPos += thisColWidth
-		)
+	)
 		columnPositions[1] -= 4 --you may want to trim back only the first column by the offset you gave it above...because the get column message includes and extra 4 pixels for the first column
 		local x = (getDialogPos foo).x + lvObjects.pos.x + columnPositions[selItemArray[2]+1]  	
 		--adjust for horizontal scroll
@@ -96,16 +96,16 @@ rollout foo "ListViewTester" width:680 height:500
 			1:( --label column
 				w = (columnPositions[selItemArray[2]+2] - columnPositions[selItemArray[2]+1]-1) - ( h_offset / twipPerPixelConstant ) 
 				x += ( h_offset / twipPerPixelConstant ) + 4 
-			)
+		)
 			num_columns:( --path column
 				w = (foo.width - columnPositions[selItemArray[2]+1]) - 15
-			)
+		)
 			default:(
 				w = (columnPositions[selItemArray[2]+2] - columnPositions[selItemArray[2]+1]-1) 
-			)
 		)
-		createDialog editDialog width:w height:17  pos:[x,y] style:#() modal:true
 	)
+		createDialog editDialog width:w height:17  pos:[x,y] style:#() modal:true
+)
 )
 
 

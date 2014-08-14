@@ -33,7 +33,7 @@ rollout ro1 "Options" width:472 height:128
 --files = getFiles "E:\\2 - Current Jobs\\doods - phase 2\\4 - environment development\\www.3dcafe.com\\models\\~unzipped\\*.3ds" 
 --for f in files do (
 --	importFile f #noPrompt
---	)
+--)
 
 
 --path3ds = (getSavePath caption:"Pick 3ds directory")

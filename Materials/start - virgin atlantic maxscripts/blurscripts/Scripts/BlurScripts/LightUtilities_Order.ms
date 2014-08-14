@@ -7,37 +7,37 @@
 -- Functions
 
 fn luo_start = 
-	(
+(
 	luo_cur_light = 1
 	luo_update()
-	)
+)
 
 fn luo_up lelight = 
-	(
+(
 	if lelight != 1 then
-		(
+	(
 		local temp = luo_array[lelight]
 		luo_array[lelight] = luo_array[lelight-1]
 		luo_array[lelight-1] = temp
 		luo_cur_light -= 1
-		)
-	luo_update()
 	)
+	luo_update()
+)
 	
 fn luo_down lelight = 
-	(
+(
 	if lelight != luo_array.count then
-		(
+	(
 		local temp = luo_array[lelight]
 		luo_array[lelight] = luo_array[lelight+1]
 		luo_array[lelight+1] = temp
 		luo_cur_light += 1
-		)
-	luo_update()
 	)
+	luo_update()
+)
 
 fn luo_func = 
-	(
+(
 	luos="Rollout luo_rollout \"LightOrder\"\n"
 	luos+="(\n"
 
@@ -50,14 +50,14 @@ fn luo_func =
 	luos_light_labels = #()
 
 	if luo_array.count != 0 then
-		(
+	(
 		for i in luo_array do
-			(
+		(
 			append luos_light_labels (i.name as string)
-			)
+		)
 		luos+="radiobuttons which_light labels:luos_light_labels default:luo_cur_light columns:1\n"
 		luos+="on which_light changed state do luo_cur_light = which_light.state\n"
-		)
+	)
 
 	luos+="button luo_done_button \"Done\" width:80 height:23 align:#center across:2 tooltip:\"Done\"\n"
 	luos+="button luo_cancel_button \"Cancel\" width:80 height:23 align:#center toolTip:\"Do the Conversion\"\n"
@@ -70,10 +70,10 @@ fn luo_func =
 
 	luos+=")\n"
 	execute luos
-	)
+)
 	
 fn luo_update = 
-	(
+(
 	if luo_rollout == undefined then lu_dialog_pos = [400,400] else lu_dialog_pos = GetDialogPos luo_rollout
 	luo_dialog_height = 67 + (15*luo_array.count)
 	if luo_rollout != undefined then destroydialog luo_rollout
@@ -81,6 +81,6 @@ fn luo_update =
 	luo_func()
 	
 	createDialog luo_rollout width:220 height:luo_dialog_height pos:lu_dialog_pos modal:true
-	)
+)
 )
 -------------------------------------------------------------------------------

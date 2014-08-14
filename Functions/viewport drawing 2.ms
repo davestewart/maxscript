@@ -27,7 +27,7 @@ fn testFN = (
 	
 	gw.updateScreen()
 	--pos1 = mouse.pos
-	)
+)
 	
 fn cbCaller = testFN()
 
@@ -36,17 +36,17 @@ rollout testRlt "test" (
 	
 	on testBtn changed val do (
 		if val then
-			(
+		(
 			registerRedrawViewsCallback cbCaller 
-			)
+		)
 		else
-			(
+		(
 			unregisterRedrawViewsCallback cbCaller
 			max views redraw
-			)
 		)
+	)
 		
 	on testRlt close do unregisterRedrawViewsCallback cbCaller
-	)
+)
 
 createDialog testRlt

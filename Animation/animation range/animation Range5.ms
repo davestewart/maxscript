@@ -11,54 +11,54 @@ rollout ro1 "Animation Range" width:160 height:311
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 	fn init =
-		(
+	(
 		spnTotalStart.value = animationRange.start
 		spnTotalEnd.value = animationRange.end
 		spnTotalLength.value = (animationRange.end - animationRange.start) + 1
-		)
+	)
 
 	fn updateAnimationRange start end =
-		(
+	(
 		if ro2.ckbFocus.state == false then animationRange = (interval start end)
-		)
+	)
 
 
 	fn updateStart = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		spnTotalLength.value = (end - start) + 1
 
 		if start >= end then
-			(
+		(
 			end = start + 1
 			spnTotalEnd.value = end
-			)
-		updateAnimationRange start End
 		)
+		updateAnimationRange start End
+	)
 
 	fn updateEnd = 
-		(
+	(
 		start = spnTotalStart.value
 		end = spnTotalEnd.value
 		spnTotalLength.value = (end - start) + 1
 
 		if end <= start then
-			(
+		(
 			start = end - 1
 			spnTotalStart.value = start
-			)
-
-		updateAnimationRange start End
 		)
 
+		updateAnimationRange start End
+	)
+
 	fn updateLength = 
-		(
+	(
 		start = spnTotalStart.value
 		end = (start + spnTotalLength.value) - 1
 		spnTotalEnd.value = end
 		updateAnimationRange start End
-		)
+	)
 
 
 
@@ -111,12 +111,12 @@ rollout ro2 "Focus" width:160 height:311
 	-- Functions (callbacks)
 	---------------------------------------------------------------------------------------------------
 	fn time_cb =
-		(
+	(
 		print currentTime
 		ckbFocus.state = false
 		ro1.init()
 
-		)
+	)
 
 	fn timeUpdateCB = time_cb() 
 
@@ -127,7 +127,7 @@ rollout ro2 "Focus" width:160 height:311
 
 
 	fn updateInterface updateTimeline =
-		(
+	(
 
 	-- get spinner values as vars
 		foc = spnFocus.value
@@ -135,17 +135,17 @@ rollout ro2 "Focus" width:160 height:311
 
 	-- set spnFocus range (can't be higher or lower than the total animation time)
 		if rdoScope.state == 1 then
-			(
+		(
 			min = ro1.spnTotalStart.value
 			max = ro1.spnTotalEnd.value - dur
 			val = spnFocus.value
-			)
+		)
 		else
-			(
+		(
 			min = ro1.spnTotalStart.value + (dur/2)
 			max = ro1.spnTotalEnd.value - (dur/2)
 			val = spnFocus.value
-			)
+		)
 		spnFocus.range = [min,max,val]
 
 
@@ -154,42 +154,42 @@ rollout ro2 "Focus" width:160 height:311
 
 	-- set scope
 		if rdoScope.state == 1 then
-			(
+		(
 			start = foc
 			end = foc + dur
-			)
+		)
 		else
-			(
+		(
 			start = foc-(dur/2)
 			end = start + dur
-			)
+		)
 
 		grpSetFocus.text = "Result: " + start as String + " to " + end as String
 
 		if ckbFocus.state == true then
-			(
+		(
 			animationRange = (interval start end)
 			--sliderTime = start
-			)
-		)
-
-	fn checkFocus state = 
-	(
-	case state of
-		(
-		true: updateInterface true
-		false: animationRange = (interval ro1.spnTotalStart.value ro1.spnTotalEnd.value)
 		)
 	)
+
+	fn checkFocus state = 
+(
+	case state of
+	(
+		true: updateInterface true
+		false: animationRange = (interval ro1.spnTotalStart.value ro1.spnTotalEnd.value)
+	)
+)
 
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 	on ro2 open do
-		(
+	(
 		registerTimeCallback timeUpdateCB
 		updateInterface false
-		)
+	)
 	on ro2 close do unregisterTimeCallback timeUpdateCB
 
 	on spnFocus buttonDown do updateInterface false

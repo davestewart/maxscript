@@ -56,28 +56,28 @@ pp_groups_value = true
 -- Functions
 
 fn move_the_pivot location = 
-	(
+(
 	undo "PivotPlacer" on
-		(
+	(
 		error = 0
 		if selection.count != 0 then
-			(
+		(
 			for obj in selection do
-				(
+			(
 				if isgroupmember obj == true and pp_groups_value == true then continue
 				else
-					(
+				(
 					if superclassof obj == GeometryClass or superclassof obj == shape or superclassof obj == helper then
-						(
+					(
 						try	
-							(
+						(
 							if transtype_value == 1 then
-								(
+							(
 								org_center = [(obj.max.x+obj.min.x)/2, (obj.max.y+obj.min.y)/2, (obj.max.z+obj.min.z)/2]
 								org_rot = coordsys world obj.rotation
 								obj.rotation = quat 0 0 0 1
-								)
-							) 
+							)
+						) 
 						catch (error = 1)
 		
 						if location == 1 then try (obj.pivot = [obj.min.x, obj.min.y, obj.max.z]) catch (error = 1)
@@ -111,9 +111,9 @@ fn move_the_pivot location =
 						if location == 27 then try (obj.pivot = [obj.max.x, obj.max.y, obj.min.z]) catch (error = 1)
 		
 						try 
-							(
+						(
 							if transtype_value == 1 then
-								(
+							(
 								obj.rotation = org_rot
 		
 								mid_pivot = obj.pivot
@@ -122,23 +122,23 @@ fn move_the_pivot location =
 								obj.pos = org_center
 								deltapos = obj.pos - mid_pos
 								obj.pivot = mid_pivot + deltapos
-								)
-							) 
+							)
+						) 
 						catch (error = 1)
-						)
 					)
 				)
 			)
-		if error == 1 then (MessageBox "At least one object in your selection has a pivot that could not be changed." title:"PivotPlacer")
 		)
+		if error == 1 then (MessageBox "At least one object in your selection has a pivot that could not be changed." title:"PivotPlacer")
 	)
+)
 	
 -- The Script
 
 rollout pp_rollout "PivotPlacer"
-	(
+(
 	Group "Front:"
-		(
+	(
 		button but_f1 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1) across:3
 		button but_f2 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
 		button but_f3 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
@@ -148,9 +148,9 @@ rollout pp_rollout "PivotPlacer"
 		button but_f7 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1) across:3
 		button but_f8 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
 		button but_f9 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
-		)
+	)
 	Group "Middle:"
-		(
+	(
 		button but_m1 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1) across:3
 		button but_m2 width:15 align:#center images:#(im1, undefined, 3, 2, 2, 2, 2)
 		button but_m3 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
@@ -160,9 +160,9 @@ rollout pp_rollout "PivotPlacer"
 		button but_m7 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1) across:3
 		button but_m8 width:15 align:#center images:#(im1, undefined, 3, 2, 2, 2, 2)
 		button but_m9 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
-		)
+	)
 	Group "Back:"
-		(
+	(
 		button but_b1 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1) across:3
 		button but_b2 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
 		button but_b3 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
@@ -172,7 +172,7 @@ rollout pp_rollout "PivotPlacer"
 		button but_b7 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1) across:3
 		button but_b8 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
 		button but_b9 width:15 align:#center images:#(im1, undefined, 3, 1, 1, 1, 1)
-		)
+	)
 
 	on but_f1 pressed do move_the_pivot 1
 	on but_f2 pressed do move_the_pivot 2
@@ -206,18 +206,18 @@ rollout pp_rollout "PivotPlacer"
 
 	dropdownlist transtype "" items:#("Local", "World")
 	on transtype selected i do transtype_value = i
-	)
+)
 	
 rollout pp_options_rollout "Options"
-	(
+(
 	checkbox treat_groups "Treat Group" checked:true
 	label label1 "as Single Obj"
 	on treat_groups changed state do 
-		(
+	(
 		if treat_groups.checked == true then pp_groups_value = true
 		else pp_groups_value = false
-		)
 	)
+)
 
 if pp_floater != undefined then CloseRolloutFloater pp_floater
 pp_floater = newRolloutFloater "PivotPlacer v1.11" 130 374

@@ -1,7 +1,7 @@
 clearListener()
 
 fn addItem &theList name value=
-	(
+(
 	local names=getPropNames theList
 	local values=for prop in names collect (getProperty theList prop)
 	
@@ -12,11 +12,11 @@ fn addItem &theList name value=
 	format ">%\n" tmpStruct
 	theList=tmpStruct
 	return tmpStruct
-	)
+)
 
 
 function makeStruct names values=
-	(
+(
 	-- names
 		local str=""
 		for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -33,7 +33,7 @@ function makeStruct names values=
 
 	-- return
 		return s
-	)
+)
 
 
 struct List(
@@ -41,7 +41,7 @@ struct List(
 		item1="One",
 		item2="Two",
 		item3="Three"
-	)
+)
 
 
 newList=List()

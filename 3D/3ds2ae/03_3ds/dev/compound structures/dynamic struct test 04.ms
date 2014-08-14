@@ -1,7 +1,7 @@
 clearListener()
 
 fn addItem2Struct  name value=
-	(
+(
 	local names=getPropNames theList
 	local values=for prop in names collect (getProperty theList prop)
 	
@@ -12,11 +12,11 @@ fn addItem2Struct  name value=
 	format ">%\n" tmpStruct
 	theList=tmpStruct
 	items=tmpStruct
-	)
+)
 
 
 function makeStruct names values=
-	(
+(
 	-- names
 		local str=""
 		for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -33,23 +33,23 @@ function makeStruct names values=
 
 	-- return
 		return s
-	)
+)
 
 
 struct List(
 	items,
 	fn addItem name value=
-		(
+	(
 		-- initialize
 			local names=#()
 			local values=#()
 
 		-- collect the existing props
 			if items != undefined then
-				(
+			(
 				local names=getPropNames items
 				local values=for prop in names collect (getProperty items prop)
-				)
+			)
 		-- add the new props	
 			append names name
 			append values value
@@ -61,7 +61,7 @@ struct List(
 			format "> %\n" items
 		),
 	function makeStruct names values=
-		(
+	(
 		-- names
 			local str=""
 			for i = 1 to names.count do str+=(names[i] as string)+", "
@@ -78,9 +78,9 @@ struct List(
 	
 		-- return
 			return s
-		)
-
 	)
+
+)
 
 
 newList=List()

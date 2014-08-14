@@ -38,43 +38,43 @@ rollout ro1 "AutoZoom Selected" width:162 height:311
 	---------------------------------------------------------------------------------------------------
 
 	fn autoZoomSel =
-		(
+	(
 if debug then messageBox "autoZoomSel"
 		print "autoZoomSel called!"
 
 		if getCommandPanelTaskMode() == #create then
-			(
+		(
 			-- do nothing if in create mode
-			)
-		else if (subObjectLevel!=0 OR subObjectLevel==undefined) then
-			(
-			-- do nothing if in subobject mode
-			)
-		else if autoZoomType[2]==true then
-			(
-			max zoomext sel all
-			)
-		else if autoZoomType[1]==true then
-			(
-			max zoomext sel
-			)
-
 		)
+		else if (subObjectLevel!=0 OR subObjectLevel==undefined) then
+		(
+			-- do nothing if in subobject mode
+		)
+		else if autoZoomType[2]==true then
+		(
+			max zoomext sel all
+		)
+		else if autoZoomType[1]==true then
+		(
+			max zoomext sel
+		)
+
+	)
 
 
 	fn autoZoomSelCallback =
-		(
+	(
 		if debug then messageBox "autoZoomSelCallback running..."
 		autoZoomSel()
-		)
+	)
 
 	fn checkZoom =
-		(
+	(
 if debug then messageBox "checkZoom running..."
 
 		callbacks.removeScripts id:#autoZoomSel
 		if (findItem autoZoomType true) > 0 then
-			(
+		(
 
 if debug then messageBox "checkZoom : about to register callback"
 			callbacks.addScript #selectionSetChanged "autoZoomSelCallback()" persistent:false id:#autoZoomSel
@@ -83,33 +83,33 @@ if debug then messageBox "checkZoom : about to register callback"
 if debug then messageBox "checkZoom : about to call autoZoomSel"
 			autoZoomSel()
 
-			)
 		)
+	)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Handlers
 	---------------------------------------------------------------------------------------------------
 
 	on ro1 open do
-		(
+	(
 		ckb1.checked = true
 		autoZoomType[1] = true
 		checkZoom()
-		)
+	)
 
 	on ro1 close do autoZoomType=#(false,false)
 
 	on ckb1 changed state do
-		(
+	(
 		autoZoomType[1] = state
 		checkZoom()
-		)
+	)
 
 	on ckb2 changed state do
-		(
+	(
 		autoZoomType[2] = state
 		checkZoom()
-		)
+	)
 )
 
 if autoZoomFloater != undefined then closerolloutfloater autoZoomFloater

@@ -10,25 +10,25 @@ rollout baseRollout "Base Rollout" width:160 height:311 rolledUp:true
 	-- Interface
 	---------------------------------------------------------------------------------------------------
 	Group "Instructions"
-		(
+	(
 		label lbl1 "How to us this plugin. \nWell, the thing you have to understand is that..." align:#left height:200 width:160
-		)
+	)
 
 	
 	fn looper j=
-		(
+	(
 		for i = 1 to j do
-			(
+		(
 			str += "Number" + i as string
 			return roCode
-			)
 		)
+	)
 	---------------------------------------------------------------------------------------------------
 	-- Functions
 	---------------------------------------------------------------------------------------------------
 
 	fn createRO =
-		(
+	(
 		clearListener()
 
 		roCode = "rollout ro1 \"Rollout 1\" width:160 height:200 rolledUp:false"
@@ -44,7 +44,7 @@ rollout baseRollout "Base Rollout" width:160 height:311 rolledUp:true
 		try(execute roCode);catch()
 		addRollout ro1 dynROFloater
 
-		)
+	)
 	
 	---------------------------------------------------------------------------------------------------
 	-- Handlers

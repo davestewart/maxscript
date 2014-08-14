@@ -1,7 +1,7 @@
 /*
 */
 if (NOT isvalidnode b) OR $.count>0 then
-	(
+(
 	b=box()
 	addModifier b (Bend ())
 	addModifier b (Taper ())
@@ -24,21 +24,21 @@ if (NOT isvalidnode b) OR $.count>0 then
 	addModifier b (Preserve ())
 	b.material = meditmaterials[1]
 	select b
-	)
+)
 destroydialog test
 	
 --------------------------------------------------------
 
 
 	rollout test "Copy Properties" width:512 height:584
-		(
+	(
 		local addToTreeView
 		local obj, replaceAll
 		local addNode, obj, tv, tvNode, d, i, index
 
 
 		fn replaceAll str outStr inStr =
-			(
+		(
 			-- str the original string
 			-- the string/character to replace
 			-- the replacement string/character
@@ -47,38 +47,38 @@ destroydialog test
 			while ((n=findstring str outStr) != undefined) do str = replace str n inStr.count inStr
 			if str != undefined then return str
 			else return origStr
-			)
+		)
 
 		fn setUpTreeView tv obj=
-			(
+		(
 			tv.nodes.Clear()
 			addToTreeView tv obj false
 			local n = tv.nodes[1].LastSibling.index
 			tv.selectedItem = tv.nodes[n]
-			)
+		)
 
 
 		fn addNode obj tv tvNode d i =
-			(
-			)
+		(
+		)
 	
 		fn recurseSubAnims obj tv tvNode d=
-			(
+		(
 			n = obj.numSubs
 			d+=1
 			for i = 1 to n do
-				(
+			(
 			 -- flag if not visibility, transform, modified object or material
 				local oktoBuild=true
 --				if d==1 AND ((i>1 AND i<3) OR i>5) then
 				if d==1 AND (i<3 OR i>5) then
-					(
+				(
 					oktobuild=false
 					--format " stopping on %\n" (getSubAnimName obj i)
-					)
+				)
 			-- build the nodes
 				if oktobuild == true then
-					(
+				(
 --					addNode obj tv tvNode d i
 
 					--format "%\n" tvNode.text
@@ -101,29 +101,29 @@ destroydialog test
 					--newNode.image= random 1 37
 
 					recurseSubAnims obj[i] tv newNode d
-					)
 				)
 			)
+		)
 
 
 
 		fn reverseArray inArr =
-			(
+		(
 			local outArr = #()
 			while inArr.count > 0 do
-				(
+			(
 				append outArr inArr[inArr.count]
 				deleteItem inArr inArr.count
-				)
-			return outArr
 			)
+			return outArr
+		)
 
 		fn getSubAnimArray nodeArr =
-			(
+		(
 			local str=""
 			for n in nodeArr do str+="["+n as string+"]"
 			return str
-			)
+		)
 
 
 	ActiveXControl tv1 "MSComctlLib.TreeCtrl" pos:[5,5] width:400 height:590
@@ -139,7 +139,7 @@ destroydialog test
 		local bmproot = ("E:\\2_Current_Jobs\\softinstance\\treeview\\icons\\final\\")
 
 		fn styleTreeView tv singleSel=
-			(
+		(
 			-- linestyles
 				tv.lineStyle = #tvwRootLines
 				tv.lineStyle = #tvwTreeLines
@@ -217,20 +217,20 @@ destroydialog test
 				tv.imagelist = il
 
 
-			)
+		)
 
 
 	local prevNode, curNode
 
 	fn nodeArrToSaArr arr=
-		(
+	(
 		local str="$"
 		for n in arr do str+="["+n as string+"]"
 		return str
-		)
+	)
 	
 	on tv1 NodeClick Node do
-		(
+	(
 			prevNode=curNode
 			curNode = tv1.selectedItem
 			
@@ -245,10 +245,10 @@ destroydialog test
 			local nodeArr=#()
 			
 			while inode.parent!=undefined do
-				(
+			(
 				append nodeArr (inode.tag as Integer)
 				inode=inode.parent
-				)
+			)
 			
 			nodeArr= reverseArray nodeArr
 			format "%\n" (nodeArrToSaArr nodeArr)
@@ -258,10 +258,10 @@ destroydialog test
 	
 			format "%\n" (exprformaxobject subAnimObj)
 		
-		)
+	)
 	
 	on test open do
-		(
+	(
 		t1=timestamp()
 		styleTreeView tv1 true
 		styleTreeView tv2 true
@@ -299,11 +299,11 @@ destroydialog test
 		test.tv1.font.bold=false
 
 
-		)
+	)
 
 
 		on test resized size do
-			(
+		(
 			tv1.size.x = size.x/2 - 4
 			tv1.size.y = size.y - 50
 
@@ -311,15 +311,15 @@ destroydialog test
 			tv2.size.y = size.y - 50
 			tv2.pos.x  = size.x/2 +4
 
-			)
+		)
 			
 		on spn1 changed val do
-			(
+		(
 			if val <= il.ListImages.count then tv1.nodes[1].image=val
 			else spn1.value=il.ListImages.count
-			)
+		)
 	
-	)
+)
 
 createdialog test 810 660 50 50 style:#(#style_minimizebox,#style_titlebar, #style_border, #style_sysmenu,#style_resizing)
 --show test.size

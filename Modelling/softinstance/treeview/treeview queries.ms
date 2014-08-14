@@ -6,10 +6,10 @@ pNode = test.tv2.SelectedItem
 pNode.children
 thisNode = pNode.child
 for i = 1 to pNode.children do
-	(
+(
 	nextNode=thisNode.next
 	format "%\n" nextNode.text
-	)
+)
 
 showMethods test.tv1.nodes
 
@@ -42,5 +42,5 @@ test.tv1.nodes[1][3]
 						#ccArrowQuestion
 						#ccSizeAll
 						#ccCustom
-						)
+					)
 					*/

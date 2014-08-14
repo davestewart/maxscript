@@ -10,7 +10,7 @@
 -- main interface
 
 	rollout max2ae "3dsmax > After Effects" width:450 height:400
-		(
+	(
 	-- includes
 
 		include "core/utility.ms"
@@ -27,7 +27,7 @@
 	-- functions
 
 		function flashClick n =
-			(
+		(
 			-- rollout information
 				local numRollouts=container.rollouts.count
 				local roHeights=for ro in container.rollouts collect ro.height
@@ -44,7 +44,7 @@
 			-- rollout open/close
 				for i = 1 to numRollouts do container.rollouts[i].open=false
 				container.rollouts[n].open=true
-			)
+		)
 
 	-- handlers
 		-- flash
@@ -53,36 +53,36 @@
 		
 		-- handle flash click
 			on ax FSCommand argName argVal do 
-				(
+			(
 				if argName == "click" then
-					(
+				(
 					setFocus ax
 					n=argVal as Number
 					flashClick n
-					)
-				) 
+				)
+			) 
 	
 		-- load flash
 			on max2ae open do 
-				(
+			(
 				local subRo=max2ae.controls[1]
 				local f=(openfile "ui/flashUI.swf")
 				local fStr
 				if f!= undefined then
-					(
+				(
 					flush f; close f
 			
 					fStr=f as string
 					fStr = substring fStr 7 (fStr.count-7)
 					fStr=replaceAll fStr "\\" "/"
 					
-					)
+				)
 				else messageBox "Interface file not found..."
 	
 				ax.movie = fStr
 				ax.BackgroundColor=((colorMan.getColor #background)*255)as color
 				ax.menu=false
-				)
+			)
 
 		-- resizing
 			function resizeUI size=max2ae.container.height=size[2]-84
@@ -90,7 +90,7 @@
 			on max2ae resized size do resizeUI size
 			on max2ae opened do resizeUI size
 			on max2ae close do max2ae=undefined
-		)
+	)
 
 
 -----------------------------------------------------------------

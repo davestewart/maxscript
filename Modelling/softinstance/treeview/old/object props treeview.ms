@@ -35,7 +35,7 @@
 --		on tv Click do format"%\n" tv.SelectedItem.fullpath
 
 		on tv OLEDragDrop  Data Effect Button Shift x y do
-			(
+		(
 			-- Data:DataObject
 			-- Effect:integer
 			-- Button:integer
@@ -52,20 +52,20 @@
 			format "> y			%\n" y
 
 			show Data
-			)
+		)
 
 /*
 */
 		on tv NodeClick theNode do
-			(
+		(
 			format ">theNode	%\n" theNode.text
-			)
+		)
 
 
 		on test.tv OLEStartDrag Data:DataObject AllowedEffects:integer do
-			(
+		(
 			format "%\n" AllowedEffects
-			)
+		)
 
 		on test open do (
 			tv.lineStyle = #tvwRootLines
@@ -79,7 +79,7 @@
 	
 	-- mods
 		for m = 1 to $.modifiers.count do
-			(
+		(
 			--format "\n\n>%\n" $.modifiers[m]
 			mNode = tv.nodes.add()
 			mNode.text = $.modifiers[m].name as string
@@ -87,7 +87,7 @@
 			mNode.bold=true
 			local propArr = getPropNames $.modifiers[m]
 			for p in propArr do
-				(
+			(
 				pNode = tv.nodes.add mNode.index 4 "" (p as string)
 				pNode.expanded=true
 				pNode.checked=true
@@ -98,16 +98,16 @@
 					
 				theNode=execute("$.modifiers["+m as string+"]."+p as string)
 				if (classof theNode==SubAnim) then
-					(
+				(
 					saArr=getPropNames theNode
 					for s in saArr do
-						(
+					(
 						gNode = tv.nodes.add pNode.index 4 "" (s as string)
 						gNode.checked=true
-						)
 					)
 				)
-			)	
+			)
+		)	
 	
 	-- baseobject
 	
@@ -117,25 +117,25 @@
 		bNode.bold=true
 		local propArr = getPropNames $.baseobject
 		for p in propArr do
-			(
+		(
 			pNode = tv.nodes.add bNode.index 4 "" (p as string)
 			pNode.checked=true
 			theNode=execute("$.baseobject."+p as string)
 			if (classof theNode==SubAnim) then
-				(
+			(
 				saArr=getPropNames theNode
 				for s in saArr do
-					(
+				(
 					gNode = tv.nodes.add pNode.index 4 "" (s as string)
 					gNode.checked=true
-					)
 				)
 			)
-	
-	
-	
 		)
+	
+	
+	
 	)
+)
 	
 	
 	createdialog test 310 510

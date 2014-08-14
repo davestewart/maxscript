@@ -42,26 +42,26 @@
 fn sortCaseInsensitive theArray asc:true =
 (
 	try
-	(
+(
 		theArray=for arg in theArray collect (arg as name)
 		sort theArray
 		
 		if NOT asc then
-		(
+	(
 			local theArrayTMP=copy theArray #noMap
 			local revIdx=theArray.count
 			for i = 1 to theArray.count do
-			(
+		(
 				theArray[revIdx]=theArrayTMP[i] as string
 				revIdx-=1
-			)
+		)
 			theArray
-		)
-		else
-		(		
-			theArray=for arg in theArray collect (arg as string)
-		)
 	)
+		else
+	(		
+			theArray=for arg in theArray collect (arg as string)
+	)
+)
 	catch(theArray=undefined)
 )  -- End of sortCaseInsensitive function.
 
@@ -92,7 +92,7 @@ fn getFontNames =
 	df=openFile fontListFile mode:"r"
 	
 	while (NOT eof df) do
-	(
+(
 		if (findString (readLine df) "New Font:") != undefined then
 			if (not eof df) then (
 				i = filePos df
@@ -100,8 +100,8 @@ fn getFontNames =
 				if (findString s "New Font:") == undefined then	
 					append fontNames (removeSpacesFromStr s)
 				else seek df i
-			)
-	)
+		)
+)
 
 	flush df
 	close df

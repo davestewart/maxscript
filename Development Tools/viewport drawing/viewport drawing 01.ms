@@ -34,21 +34,21 @@ need to call gw.updateScreen() to update the viewport display.
 	-- clears screen
 		
 		fn clearGw =
-			(
+		(
 			w = gw.getWinSizeX()
 			h = gw.getWinSizeY()
 			gw.clearScreen (Box2 [0,0] [w,h])
-			)
+		)
 		clearGw()
 		
 	------------------------------------------------------------------------------------------------
 	-- resets gw matrix
 		
 		fn resetGwTransform =
-			(
+		(
 			identityMatrix = matrix3 1
 			gw.setTransform identityMatrix 
-			)
+		)
 		resetGwTransform ()
 		
 ------------------------------------------------------------------------------------------------
@@ -74,12 +74,12 @@ need to call gw.updateScreen() to update the viewport display.
 		-- plot markers
 			arr = #("point","hollowBox","plusSign","asterisk","xMarker","bigBox","circle","triangle","diamond","smallHollowBox","smallCircle","smallTriangle","smallDiamond")
 			for i=1 to arr.count do
-				(
+			(
 				local p = [100, (50 + i*10), 50]
 				local m = arr[i] as name
 				gw.hMarker (p + [100,0,0]) m
 				gw.wMarker p m
-				)
+			)
 		
 		-- Update the viewports 
 			gw.enlargeUpdateRect #whole
@@ -89,7 +89,7 @@ need to call gw.updateScreen() to update the viewport display.
 	------------------------------------------------------------------------------------------------
 	-- draws text
 	
-			(
+		(
 			gw.setTransform (matrix3 1)
 
 			local col	= black
@@ -99,7 +99,7 @@ need to call gw.updateScreen() to update the viewport display.
 			gw.text p "normal method" color:col
 			gw.hText p "h method" color:col	-- device coordinates with the origin at the lower-left.
 			gw.wText p "w method" color:col	-- Windows device coordinates with the origin at the upper left
-			)
+		)
 
 			gw.enlargeUpdateRect #whole
 			gw.updateScreen()
@@ -108,7 +108,7 @@ need to call gw.updateScreen() to update the viewport display.
 	-- build marker at object pivot
 	
 			fn drawMarker p3 m:#circle c:red =
-				(
+			(
 				-- reset gw matrix
 					gw.setTransform(Matrix3 1)
 					
@@ -121,7 +121,7 @@ need to call gw.updateScreen() to update the viewport display.
 				-- update screen
 					gw.enlargeUpdateRect #whole
 					gw.updateScreen()
-				)
+			)
 			
 		drawMarker $.pos
 		
@@ -131,10 +131,10 @@ need to call gw.updateScreen() to update the viewport display.
 	
 
 		fn drawPointOnSpline ss i d m:#circle c:red =
-			(
+		(
 			local p3 = lengthInterp ss i d
 			drawMarker p3 m:m c:c 
-			)
+		)
 			
 		drawPointOnSpline shapes[1] 1 0.5 c:green
 		
@@ -143,7 +143,7 @@ need to call gw.updateScreen() to update the viewport display.
 	------------------------------------------------------------------------------------------------
 	-- trace a curve
 	
-		(
+	(
 		-- variables
 			--local 
 			ss = shapes[1]
@@ -155,11 +155,11 @@ need to call gw.updateScreen() to update the viewport display.
 			
 		-- plot points
 			for i = 1 to arr.count do
-				(
+			(
 				local dx = i * (1.0/arr.count)
 				drawPointOnSpline ss 1 dx c:green
 				arr[i] = gw.wTransPoint arr[i]
-				)
+			)
 				
 			gw.wPolyline arr false 
 	
@@ -167,7 +167,7 @@ need to call gw.updateScreen() to update the viewport display.
 			gw.enlargeUpdateRect #whole 
 			gw.updateScreen()
 
-		)
+	)
 		
 	
 	
@@ -178,15 +178,15 @@ need to call gw.updateScreen() to update the viewport display.
 	
 			gw.setTransform (matrix3 1)
 			for x = 1 to 1000 by 100 do
-				(
+			(
 				for y = 1 to 1000 by 100 do
-					(
+				(
 					local p = [x,y,0]
 					local m = #hollowbox
 					p = gw.transPoint p
 					gw.wMarker p m
-					)
 				)
+			)
 			gw.enlargeUpdateRect #whole
 			gw.updateScreen()
 	
@@ -200,17 +200,17 @@ need to call gw.updateScreen() to update the viewport display.
 			--resetGwTransform ()
 			
 			for x = 1 to 1000 by 100 do
-				(
+			(
 				for y = 1 to 1000 by 100 do
-					(
+				(
 					local v = 1000
 					local p = random [-v,-v,-v] [v,v,v]
 					local p = [x,y,0]
 					local m = #hollowbox
 					gw.transPoint p
 					gw.hMarker p m
-					)
 				)
+			)
 			gw.enlargeUpdateRect #whole
 			gw.updateScreen()
 	

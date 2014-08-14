@@ -11,10 +11,10 @@ arr=polyOp.getFacesUsingVert $globe01 112
 norm=[0,0,0]
 facecount=0
 for a in arr do
-	(
+(
 	norm += (polyOp.getFaceNormal $globe01 a)
 	facecount+=1
-	)
+)
 
 norm/=facecount
 

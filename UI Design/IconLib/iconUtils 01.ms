@@ -34,7 +34,7 @@
 -------------------------------------------------------------------------------------
 
 struct iconLib
-	(
+(
 	
 	-- these are all 16x16 pixel bitmaps, but they can be any size.
 	
@@ -64,7 +64,7 @@ struct iconLib
 
 	open		= #(#(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0), #(0,0,0,1,0,0,0,1,1,1,1,1,1,0,0,0), #(0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0), #(0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0), #(0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0), #(0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0), #(0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0), #(0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0), #(0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0), #(0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)),
 	save		= #(#(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0), #(0,0,1,0,1,0,0,0,0,0,0,1,0,1,0,0), #(0,0,1,0,1,0,0,0,0,0,0,1,0,1,0,0), #(0,0,1,0,1,0,0,0,0,0,0,1,0,1,0,0), #(0,0,1,0,1,0,0,0,0,0,0,1,0,1,0,0), #(0,0,1,0,1,1,1,1,1,1,1,1,0,1,0,0), #(0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0), #(0,0,1,0,0,0,0,1,1,0,0,0,0,1,0,0), #(0,0,1,0,0,0,0,1,1,0,0,0,0,1,0,0), #(0,0,1,0,0,0,0,1,1,0,0,0,0,1,0,0), #(0,0,1,0,0,0,0,1,1,0,0,0,1,0,0,0), #(0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), #(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0))
-	)
+)
 
 -------------------------------------------------------------------------------------
 -- Icon Utilities
@@ -72,27 +72,27 @@ struct iconLib
 
 
 struct iconUtils
-	(
+(
 	fn arrayToBmp arr fg:black bg:white =
-		(
+	(
 		local b		= bitmap arr[1].count arr.count
 		local y		= 0
 		
 		for row in arr do
-			(
+		(
 			local pixels = for pixel in row collect (if pixel == 1 then fg else bg)
 			setPixels b [0,y] pixels
 			y += 1
-			)
+		)
 
 		return b
 		),
 		
 	fn setButtonIcon btn icon fg:black bg:white =
-		(
+	(
 		local icons = iconLib()
 		if btn != undefined AND isproperty icons icon then
-			(
+		(
 			-- variables
 				local arr	= getProperty icons icon
 				local bmp	= iconUtils.arrayToBmp arr fg:fg bg:bg
@@ -103,7 +103,7 @@ struct iconUtils
 
 			-- return
 				return bmp
-			)
+		)
 		return undefined
 		),
 
@@ -112,34 +112,34 @@ struct iconUtils
 -- as they are only needed for creating arrays from bitmaps
 		
 	fn bmpToArray file threshold:gray =
-		(
+	(
 		if NOT fileExists file then return #()
 		
 		try
-			(
+		(
 			local b		= openBitMap file
 			local arr	= #()
 			
 			for y = 0 to b.height - 1 do
-				(
+			(
 				local row = getPixels b [0,y] b.width
 				for x = 1 to row.count do
-					(
+				(
 					row[x] = if row[x].v < threshold.v then 1 else 0
-					)
-				append arr row
 				)
+				append arr row
+			)
 				
 			return arr
-			)
+		)
 		catch
-			(
+		(
 			return #()
-			)
+		)
 		),
 		
 	fn getIconDefs filepath =
-		(
+	(
 		-- variables
 			local files = getFiles filepath 
 			local iconNames = #()
@@ -148,7 +148,7 @@ struct iconUtils
 
 		-- functions
 			fn compactArrayToString arr =
-				(
+			(
 				local ss1 = stringstream ""
 				local ss2 = stringstream ""
 				
@@ -156,39 +156,39 @@ struct iconUtils
 				
 				seek ss1 0
 				while not eof ss1 do
-					(
+				(
 					local c = readChar ss1
 					if c == "#" then format " %" c to:ss2
 					else if c != " " then format "%" c to:ss2
-					)
-				return ss2 as string
 				)
+				return ss2 as string
+			)
 
 		-- parse files		
 			for f in files do
-				(
+			(
 				local arr = iconUtils.bmpToArray f
 				if arr.count > 0 then
-					(
+				(
 					-- name
 						local iconName = (getFilenameFile f) as name
 						append iconNames iconName
 					-- data
 						local iconStr = compactArrayToString arr 
 						format "%		= %,\n" iconName iconStr to:iconData
-					)
 				)
+			)
 		-- print data
 			with printAllElements on
-				(
+			(
 				format "\n\n---------------\n-- Icon names:\n\n%" iconNames to:win
 				format "\n\n---------------\n-- Icon data:\n\n%" (iconData as string) to:win
-				)
+			)
 		),
 		
 	fn getIconNames =
-		(
+	(
 		local icons = iconLib()
 		return getPropNames icons
-		)
 	)
+)

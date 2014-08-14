@@ -3,11 +3,11 @@ obj=$Dummy01
 
 str=""
 for i = 0 to 50 do
-	(
+(
 	at time i
-		(
+	(
 		in coordsys #world
-			(
+		(
 			px=obj.pos.x
 			py=obj.pos.y
 			pz=obj.pos.z
@@ -17,14 +17,14 @@ for i = 0 to 50 do
 			rx=rot.x
 			ry=rot.y
 			rz=rot.z
-			)
+		)
 		--format "	%	%	%	%\n" i px -pz py) to str
 		--format "%	%	%	%\n" i rx ry rz
 		
 		str+="	"+i as string+"	"+px as string+"	"+(-pz) as string+"	"+py as string+"\n"
 
-		)
 	)
+)
 
 
 format "\n\n

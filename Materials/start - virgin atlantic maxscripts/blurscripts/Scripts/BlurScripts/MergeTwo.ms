@@ -17,10 +17,10 @@
 (
 mfile = getMAXOpenFileName()
 if mfile != undefined then
-	(
+(
 	mergeMAXFile (mfile) #prompt #select #noRedraw
 	m = getFilenameFile mfile
 	selectionSets[m] = selection
-	)
+)
 )
 -------------------------------------------------------------------------------

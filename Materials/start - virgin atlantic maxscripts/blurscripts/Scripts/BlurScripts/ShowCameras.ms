@@ -26,22 +26,22 @@ global all_visible = true
 -- Script
 
 for c in cameras do
-	(
+(
 	if c.ishidden == true then 
-		(
+	(
 		all_visible = false
 		exit
-		)
-	else continue
 	)
+	else continue
+)
 
 c = Freecamera()
 delete c
 
 for c in cameras do
-	(
+(
 	c.ishidden = all_visible
-	)
+)
 completeredraw()
 )
 -------------------------------------------------------------------------------

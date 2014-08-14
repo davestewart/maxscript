@@ -16,11 +16,11 @@ fn planeLineIntersect planePoint planeNormal linePoint lineVector = (
 	local d2			= dot lineVector planeNormal
 	if abs(d2)<.0000000754 then (
 		if abs(d1)>.0000000754 then 0 else -1
-		)
+	)
 	else(
 		linePoint + ( (d1/d2)*lineVector )
-		)
 	)
+)
 	
 	
 	
