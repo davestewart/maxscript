@@ -1,0 +1,12 @@
+[name]
+name=Find Edges
+matchName=ADBE Find Edges
+
+[properties]
+name=	Invert
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

@@ -1,0 +1,39 @@
+[name]
+name=Change To Color
+matchName=ADBE Change To Color
+
+[properties]
+name=	From
+type=	COLOR
+
+name=	To
+type=	COLOR
+
+name=	Change
+type=	OneD
+
+name=	Change By
+type=	OneD
+
+name=	Tolerance
+type=	NO_VALUE
+
+name=	Hue
+type=	OneD
+
+name=	Lightness
+type=	OneD
+
+name=	Saturation
+type=	OneD
+
+name=	Saturation
+type=	NO_VALUE
+
+name=	Softness
+type=	OneD
+
+name=	View Correction Matte
+type=	OneD
+
+

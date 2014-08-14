@@ -1,0 +1,15 @@
+[name]
+name=Linear Wipe
+matchName=ADBE Linear Wipe
+
+[properties]
+name=	Transition Completion
+type=	OneD
+
+name=	Wipe Angle
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+

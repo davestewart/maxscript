@@ -1,0 +1,21 @@
+[name]
+name=Block Dissolve
+matchName=ADBE Block Dissolve
+
+[properties]
+name=	Transition Completion
+type=	OneD
+
+name=	Block Width
+type=	OneD
+
+name=	Block Height
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+name=	Soft Edges (Best Quality)
+type=	OneD
+
+

@@ -1,0 +1,54 @@
+All code questions should be send to David Joham at djoham@yahoo.com
+
+<<********ORIGINAL (Classic DOM) PARSER WORK***************>>
+Michael Houghton <mike@idle.org>
+
+<<********SAX PARSER WORK********************>>
+Scott Severtson <scotty@auragen.com>
+Scott Starsman <scott@starsman.com> (tinyxmlsax.js contribution)
+
+
+<<*******W3C DOM PARSER WORK********************>>
+Scott Severtson <scotty@auragen.com> (initial construction)
+Jon van Noort <jon@webarcana.com.au> (refactoring and full implmentation)
+
+<<*******XPATH PARSER WORK********************>>
+Jon van Noort <jon@webarcana.com.au> 
+
+
+<<********CLASSIC DOM PARSER EXTENSION WORK************>>
+David Joham <djoham@yahoo.com>
+
+<<********TEST SUITES**********************>>
+David Joham <djoham@yahoo.com>
+Scott Severtson <scotty@auragen.com> (SAX Test Suite)
+Jon van Noort <jon@webarcana.com.au> (W3C DOM Test Suites)
+
+<<********EXAMPLE APPLICATIONS************>>
+David Joham <djoham@yahoo.com>
+Michael Houghton <mike@idle.org>
+Raymond Irving <xwisdom@yahoo.com>
+
+<<*********DOCUMENTATION*****************>>
+David Joham <djoham@yahoo.com> (documentation author)
+David Martz <david.martz@hp.com> (W3C documentation reviewer)
+
+<<*********THANKS FOR BUG FIXES*********>>
+Stu Coats <stuart.coates@sherwoodinternational.com>
+Mike Yukish <may106@psu.edu>
+
+<<*********THANKS FOR IDEAS*********>>
+Colin Johnson <colin_johnson@dsldesigns.net>
+
+<<********THANKS FOR ADD-ONS*********>>
+James S. Elkins <jselkins@yahoo.com>
+
+<<********* THANKS FOR GRAPHICS/HTML LAYOUT ****************>>
+Jennifer Sims <jennifer@dreamthunder.com>
+
+<<********* THANKS FOR PROXIES ****************>>
+Brandon Zehm <caspian@dotconf.net>
+Brent Brown <brent@stpaulsboise.org>
+Jon van Noort <jon@webarcana.com.au>
+
+

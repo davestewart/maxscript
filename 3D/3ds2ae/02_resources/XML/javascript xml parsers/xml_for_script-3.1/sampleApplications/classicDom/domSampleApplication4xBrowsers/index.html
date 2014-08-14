@@ -1,0 +1,90 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+// =========================================================================
+//
+// index.html - Sample DOM application for 4.x and above browsers for XML for <SCRIPT>
+//
+// =========================================================================
+//
+// Copyright (C) 2000 - 2001 Michael Houghton (mike@idle.org) and David Joham (djoham@yahoo.com)
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-->
+
+
+<head>
+    <title>
+        XML for &lt;SCRIPT&gt; Cross Platform XML Parsing in JavaScript - Sample Application for 4.x Browsers
+    </title>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#5765AE" onload="centerMe(window)">
+
+<form name="frm4xSample" id="frm4xSample" action="none">
+    <table width="700" border="0"cellpadding="0" cellspacing="0">
+        <tr>
+            <td valign="middle" height="40" width="150" align="center">
+                <a href="http://validator.w3.org/check/referer"><img src="../../../website/images/valid-html401.png" alt="Valid HTML 4.01!" height="31" width="88"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Type or paste XML code here, and then press "Process"
+                <br>
+                <textarea name="in" rows="9" cols="80" style="color:inherit">
+&lt;?xml version="1.0"?&gt;
+&lt;mydoc format="simple"&gt;
+&lt;mytitle&gt;A title would go here&lt;/mytitle&gt;
+&lt;main someatt="someval"&gt;
+    &lt;para&gt;first paragraph here&lt;/para&gt;
+    &lt;para&gt;second paragraph here&lt;/para&gt;
+    &lt;para&gt;third paragraph here - &lt;linebreak/&gt; spotting a pattern
+        emerging?&lt;/para&gt;
+&lt;/main&gt;
+&lt;/mydoc&gt;
+
+                </textarea>
+                <br>
+                <input type="button" value="Process" onclick="process()">
+                <input type="button" value="Clear" onclick="wipeText();">
+
+                <p>
+                    If there is an error in your document, you will receive an error report in a new window.
+                </p>
+
+                <p>
+                    Note that a bug in the current parser may cause your browser to lock up
+                    if your document contains an attribute with a <b><tt>&gt;</tt></b> in its
+                    value.
+                </p>
+
+                <p>
+                    Otherwise, a structured definition of your document will be presented.
+                    Also, note that, while the parser itself avoids recursion for the most part,
+                    this demonstration is recursive, so with very large documents you may experience problems.
+                </p>
+
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript" src="../../../website/scripts/scripts.js"></script>
+<script type="text/javascript" src="../../../jsXMLParser/xmldom.js"></script>
+<script type="text/javascript" src="formFunctions.js"></script>
+</body>
+</html>

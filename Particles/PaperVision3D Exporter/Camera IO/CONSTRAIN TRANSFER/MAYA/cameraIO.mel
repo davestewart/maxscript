@@ -1,0 +1,600 @@
+//##########################################################################################################################################################################
+global proc InterfaceCAMIO() {
+float $as = `playbackOptions -q -animationStartTime`;
+float $ae=`playbackOptions -q -animationEndTime`;
+string $imp="fileBrowserDialog -m 0 -ds 1 -fc \"filename 1\" -fl \"Camera (*.txt),*.txt\" -ft \"Camera (*.txt)\" -an \"Open\" -om \"Import\"";
+string $exp="fileBrowserDialog -m 1 -ds 1 -fc \"filename 2\" -fl \"Camera (*.txt),*.txt\" -ft \"Camera (*.txt)\" -an \"Save\" -om \"Import\"";
+
+//MAIN WINDOW CONFIGURATION
+
+string $CioWindow = `window -title "Camera i/o"	-iconName "Camera i/o" -toolbox true -widthHeight 187 443 -sizeable 1`;
+string $MainCol= `columnLayout -adjustableColumn 1 -columnAttach "both" 2 -rowSpacing 2 -columnWidth 187 -parent $CioWindow`;
+string $ExpFrame =`frameLayout -label "Camera Exporter"	-marginHeight 5 -marginWidth 2 -labelAlign "top" -collapsable 1 -collapse 1 -borderStyle "etchedOut"`;
+setParent ..;
+string $ImpFrame =`frameLayout -label "Camera Importer" -marginHeight 5 -marginWidth 2 -labelAlign "top" -collapsable 1 -collapse 1 -borderStyle "etchedOut"`;
+setParent ..;
+string $Info =`frameLayout -label "About" -marginHeight 5 -marginWidth 2 -labelAlign "top" -collapsable 1 -collapse 0 -borderStyle "etchedOut"`;
+setParent ..;
+
+///EXPORT INTERFACE
+
+string $ExpCol= `columnLayout -adjustableColumn 1 -columnAttach "both" 2 -rowSpacing 2 -columnWidth 150 -parent $ExpFrame`;
+	text -label "Start Frame" -parent $ExpCol -align "left";
+floatField -ann "Start Frame" -v $as -precision 4 -step 1 -parent $ExpCol stfrm;		//START FRAME FIELD
+	text -label "End Frame" -parent $ExpCol -align "left";
+floatField -ann "End Frame" -v $ae -precision 4 -step 1 -parent $ExpCol enfrm;			//END FRAME FIELD
+	text -label "Step" -parent $ExpCol -align "left" ;
+floatField -ann "Export frames step" -min 0.000000001 -v 1 -precision 4 -step 1 -parent $ExpCol stpfrm;			//END FRAME FIELD
+
+button -label "Pick File" 
+	-w 135 -h 21 
+	-parent $ExpCol 
+	-command $exp
+	-align "center" expFileNameButton;
+	
+button -label "EXPORT" 
+	-w 135 -h 21 
+	-parent $ExpCol 
+	-align "center" 
+	-en 0 
+	-command "CamExportFn" expButton;
+
+///IMPORT INTERFACE
+
+string $ImpCol= `columnLayout 
+	-adjustableColumn 1 
+	-columnAttach "both" 2 
+	-rowSpacing 2
+	-columnWidth 150 
+	-parent $ImpFrame`;
+button -label "Pick File" 
+	-w 135 -h 21 
+	-parent $ImpCol 
+	-command $imp
+	-align "center" impFileNameButton;
+
+button -label "IMPORT" -w 135 -h 21 
+	-parent $ImpCol 
+	-align "center" 
+	-en 0 
+	-command "CamImportFn" impButton;
+
+///About Interface	
+string $InfoCol= `columnLayout -adjustableColumn 1 -columnAttach "both" 2 -rowSpacing 2
+	-columnWidth 150 -parent $Info`;	
+	text -label "Version: 1.0 Constrain" -parent $InfoCol -align "center";
+	text -label "Author: Evil Kornholio" -parent $InfoCol -align "center";
+	text -label "gasmasocet@abv.bg" -parent $InfoCol -align "center";
+
+
+showWindow $CioWindow;
+}
+
+//// FILE BROWSER ////
+//##########################################################################################################################################################################
+
+global proc string filename( int $action, string $filename, string $fileType){
+if ($action==1){
+ 			$fileId = fopen($filename,"r");
+ 			string $a=`fgetword $fileId`;
+ 			fclose($fileId);		
+			if ($a == "cio")
+					{
+					button -e -label $filename impFileNameButton;
+					button -e -en 1 impButton;
+					} else {
+					confirmDialog -message "Select Camera i/o format file" -button "Close";
+					button -e -en 0 impButton;
+					button -e -label "Pick FIle" impFileNameButton;
+					}
+}else {
+	button -e -label $filename expFileNameButton;
+	button -e -en 1 expButton; 
+}
+ 	return  $filename;
+}
+
+//EXPORT FN
+//##########################################################################################################################################################################
+global proc CamExportFn()  //DONE//
+{
+   
+/////////////////////////////////DEFINITIONS	//////////////////////////////
+	string $filename=`button -q -l expFileNameButton`;
+	float $StartFrame=`floatField -q -v stfrm`;
+	float $EndFrame=`floatField -q -v enfrm`;
+	float $StepFrame=`floatField -q -v stpfrm`;
+	string $trx,$try,$trz,$tax,$tay,$taz,$tux,$tuy,$tuz,$FrPerSec,$FilmFit,$cnm,$upax,$oldxform;
+	float $RenderWidth,$RenderHeight,$DevAspect,$VerFilmAp,$HorFilmAp,$FilmAspect,$PixAspect,$LSqueze,$FilmFitScale,$Prscl,$Poscl,$FocLeng,$Hfov,$Vfov,$xxx,$rxx,$Cascl;
+	int $RaspLock,$mm;
+	string $PMX=`convertUnit -toUnit "m" "1"`;
+	$PMX=`substitute "m" $PMX ""`;
+	float $fold=`currentTime -q`;
+
+
+
+if ($StepFrame<=1e-009) {
+	confirmDialog -message "Step Frame can't be 0" -button "Close";
+}else{
+//IS CAMERA SELECTED/
+$mm=`GetSelMatch("camera")`;
+if ($mm==0){ 						
+confirmDialog -message "Select Camera to export" -button "Close";
+} else {
+
+	
+///GetCamera Name Shape Name RenderSettings FilmBack FilmFIt LensSqueze 
+string $plress[] = `listConnections defaultRenderGlobals.resolution`;
+string $cameraName[] =`selectedNodes`;
+string $ShapeName[] =`eval("listRelatives -s "+$cameraName[0])`;
+string $cnm = $cameraName[0];
+$cnm =substituteAllString($cnm, "|", "");
+$cnm =substituteAllString($cnm, " ", "");
+$VerFilmAp = `eval("getAttr -time 0 "+$ShapeName[0]+".verticalFilmAperture")`;  
+$HorFilmAp = `eval("getAttr -time 0 "+$ShapeName[0]+".horizontalFilmAperture")`;
+$FilmAspect=`camera -q -ar $cameraName[0]`;
+$FilmFit=`camera -q -ff $cameraName[0]`;
+$LSqueze=`camera -q -lsr $cameraName[0]`;
+$RaspLock=`getAttr ($plress[0]+".ldar")`;
+$RenderWidth=`getAttr ($plress[0]+".width")`;
+$RenderHeight=`getAttr ($plress[0]+".height")`;
+$DevAspect=`getAttr ($plress[0]+".deviceAspectRatio")`;
+$PixAspect=($RenderHeight/$RenderWidth)*$DevAspect;
+
+////////////////CREATE HELPERS////////////
+
+string $Uploc[] = `spaceLocator -n "UpLocator"`;
+string $Aimloc[] = `spaceLocator -n "AimLocator"`;
+///GET CAMERA POSITION AND ROTATION
+$CamPos=`xform -q -ws -t $cameraName[0]`;
+$CamRot=`xform -q -ws -ro $cameraName[0]`;
+
+///SET AIM LOCATOR POSITION AND ROTATION
+xform -ws -t $CamPos[0] $CamPos[1] $CamPos[2] $Aimloc[0];
+xform -ws -ro $CamPos[0] $CamRot[1] $CamRot[2] $Aimloc[0];
+
+///SET UP LOCATOR POSITION AND ROTATION
+xform -ws -t $CamPos[0] $CamPos[1] $CamPos[2] $Uploc[0];
+xform -ws -ro $CamRot[0] $CamRot[1] $CamRot[2] $Uploc[0];
+/// PARENT LOCATORS TO CAMERA
+parent $Aimloc[0] $cameraName[0] ;
+parent $Uploc[0] $cameraName[0];
+/// OFFSET LOCATORS
+
+float $Pmultip= $PMX;
+
+move -r -ls -wd 0 0 (-1000*(1 / $Pmultip)) $Aimloc[0];
+move -r -ls -wd 0 (1000*(1 / $Pmultip)) 0 $Uploc[0];
+
+//////////////////////////////////////
+
+$FrPerSec=Getfps();										//fucking file is open for writing
+$fileId = fopen($filename,"w");
+fprint($fileId,"cio" +"\ ");					//////////////////////fileid
+fprint($fileId,$cnm +"\ ");						//////////////////////CameraName STRING
+fprint($fileId,$FrPerSec +"\ ");			//////////////////////FramesPerSecond					
+fprint($fileId,$RenderWidth +"\ ");		//////////////////////RendImg width PIX
+fprint($fileId,$RenderHeight +"\ ");	//////////////////////RendgImgHeigth PIX
+fprint($fileId,$DevAspect +"\ ");			//////////////////////RendImgeAspectRatio
+fprint($fileId,$PixAspect +"\ ");			//////////////////////PixAspectRatio
+
+fprint($fileId,$VerFilmAp*$DevAspect+"\ ");			//////////////////////ApertWidth IN
+fprint($fileId,$VerFilmAp +"\ ");			//////////////////////ApertHeight IN
+					
+fprint($fileId,$PMX +"\ ");						//////////////////////Position Units AWAYS CONVERTED TO METERS				
+fprint($fileId,"y" +"\ ");						//////////////////////UP Axis IS AWAYS CONVERTED TO Y					
+fprint($fileId,"MA " +"\r\n");				//////////////////////SOFTWARE
+
+for ($f = $StartFrame; $f < $EndFrame+1; $f=$f+$StepFrame) {
+	currentTime -edit $f;
+///LENS PART////////////////////////////////////////////////////////////////////////////////////////
+///READ CAMERASHAPE SETTINGS ///
+	$LSqueze=`camera -q -lsr $cameraName[0]`;										///LENS SQUEZE
+	$Cascl = `eval("getAttr "+$ShapeName[0]+".cameraScale")`;		///CAMERA SCALE
+	$Prscl = `eval("getAttr "+$ShapeName[0]+".preScale")`;			///PRE SCALE
+  $Poscl = `eval("getAttr "+$ShapeName[0]+".postScale")`;			///POST SCALE
+  $FocLeng =`eval("getAttr "+$ShapeName[0]+".focalLength")`;	///LENS
+
+$FilmFitScale=ResGateScl($DevAspect,$FilmAspect,$LSqueze,$FilmFit);			///FILM FIT CONVERSION CALC
+$FocLeng=$FocLeng*$FilmFitScale*(1/$Cascl);
+$FocLeng=$FocLeng*$Prscl*$Poscl;
+$FocLeng=$FocLeng*(1/$LSqueze);
+	
+	$Hfov = 2*atand( ($HorFilmAp*25.4) /(2* $FocLeng));
+	$Vfov = 2*atand(tan($Hfov/2.0)/$HorFilmAp/$VerFilmAp);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// POSITON PART ///
+////////////////////////////////////////////////////////////////////////////////////////////////////
+float $tx[]=`xform -q -ws -t $cameraName[0]`;
+float $aimx[]=`xform -q -ws -t $Aimloc[0]`;
+float $upx[]=`xform -q -ws -t $Uploc[0]`;
+/// Y up  -   Z up convertion///////////////////////////////////////////////////////////////////////
+$upax=`upAxis -q -ax`;
+if ($upax=="y")
+{
+///UPAX=Y///////////////////////////////////////////////////////////////////////////////////////////
+$trx=$tx[0];
+$try=$tx[1];
+$trz=(($tx[2]*-1));
+
+$tax=$aimx[0];
+$tay=$aimx[1];
+$taz=(($aimx[2]*-1));
+
+$tux=$upx[0];
+$tuy=$upx[1];
+$tuz=(($upx[2]*-1));
+}
+
+if ($upax=="z")
+{
+$trx=$tx[0];
+$try=$tx[2];
+$trz=$tx[1];
+
+$tax=$aimx[0];
+$tay=$aimx[2];
+$taz=$aimx[1];
+
+$tux=$upx[0];
+$tuy=$upx[2];
+$tuz=$upx[1];
+
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+string $rrh=$Hfov;
+string $rrv=$Vfov;
+string $trfx[]={$trx,$try,$trz,$tax,$tay,$taz,$tux,$tuy,$tuz,$FocLeng,$rrh,$rrv};
+
+	fprint($fileId,$f+"\ ");					//////////////////////Frame Number	
+	fprint($fileId,$trfx[0]+"\ ");		//////////////////////Position CAM X	
+	fprint($fileId,$trfx[1]+"\ ");		//////////////////////Position CAM Y
+	fprint($fileId,$trfx[2]+"\ ");		//////////////////////Position CAM Z
+	
+	fprint($fileId,$trfx[3]+"\ ");		//////////////////////Position AIM X
+	fprint($fileId,$trfx[4]+"\ ");		//////////////////////Position AIM Y
+	fprint($fileId,$trfx[5]+"\ ");		//////////////////////Position AIM Z
+	
+	fprint($fileId,$trfx[6] +"\ ");		//////////////////////Position UP X
+	fprint($fileId,$trfx[7] +"\ ");		//////////////////////Position UP Y
+	fprint($fileId,$trfx[8] +"\ ");	//////////////////////Position Up Z	
+	
+	
+	fprint($fileId,$trfx[9] +"\ ");		//////////////////////Lens  MILIMETERS
+	fprint($fileId,$trfx[10] +"\ ");		//////////////////////Horizontal FOV DEG
+	fprint($fileId,$trfx[11] +"\r\n");	//////////////////////Vertical FOV DEG
+}
+fclose($fileId);
+delete $Uploc[0] $Aimloc[0];
+
+currentTime -edit $fold;
+}
+}
+}
+
+//IMPORT FN
+//##########################################################################################################################################################################
+global proc CamImportFn()
+{
+string $filename=`button -q -l impFileNameButton`;
+///DECLARATIONS AND GLOBAL VARS
+int $f;
+float $Rmult=1, $nextWord, $PPMX, $rx, $ry, $rz;
+string $tempName, $PMX, $SetKey, $sfrm, $frm, $msg;
+string $plress[] = `listConnections defaultRenderGlobals.resolution`;
+string $CurUpAx=`upAxis -q -ax`;					//GET CURRENT UP AXIS
+
+$fileId = fopen($filename,"r");						//OPEN FILE FOR READING
+fgetword $fileId;													//reading cio
+string $CameraName=`fgetword $fileId`;		//CameraName STRING
+string $Fps = `fgetword $fileId`;					//FramesPerSecond
+float $RW = `fgetword $fileId`;						//RendImg width PIX
+float $RH = `fgetword $fileId`;						//RendgImgHeigth PIX
+float $DevAsp = `fgetword $fileId`;				//RendImgeAspectRatio
+float $PixAsp = `fgetword $fileId`;				//PixAspectRatio
+float $ApW = `fgetword $fileId`;					//ApertWidth IN
+float $ApH = `fgetword $fileId`;					//ApertHeight IN
+float $Pmult = `fgetword $fileId`;				//Position Units STRING
+string $UpAx=`fgetword $fileId`;					//UP Axis STRING
+string $Soft=`fgetword $fileId`;					//SOFTWARE                    MA MX LW
+
+	$sfrm = IsValidFps($Fps);
+	
+	if ($sfrm == "false")
+	{
+		$msg="Invalid time units: "+$Fps+" FPS. Scale keys in graf editor to match input.";
+		confirmDialog -message $msg -button "Close";
+	}
+	else
+	{	
+		string $cun=`currentUnit -q -t`;
+		if ($cun!=$sfrm){
+		$msg="Change scene time units to: "+$sfrm+" ?";
+		$msg=`confirmDialog -message $msg
+		-button "Yes"
+		-button "No"
+		-cancelButton "No"
+		-dismissString "No"`;
+		}
+		if ($msg=="Yes"){
+				currentUnit -time $sfrm;
+			}
+	}
+
+	$PMX=`convertUnit -toUnit "m" "1"`;
+	$PPMX=`substitute "m" $PMX ""`;
+	$Pmult=$Pmult*(1/$PPMX);
+
+
+	$PMX=`convertUnit -toUnit "deg" "1"`;
+	$PPMX=`substitute "deg" $PMX ""`;
+	$Rmult=1/$PPMX;
+
+
+/////GENERATE UNIQUE CAMERA NAME////
+$f =0;
+$CameraName = $CameraName +"_Import";
+$tempName =$CameraName;
+do	{
+	$f++;
+	$tempName =$CameraName+$f;
+	}
+while (objExists($tempName));
+
+$CameraName =$tempName;
+$f = 0;
+///////////////////////////////////
+
+
+/////CREATING CAMERA/////
+//string $Cameraz[]=`camera -name $CameraName`;
+//rename $Cameraz[0] $CameraName;
+//string $ShapeName[] =`eval("listRelatives -s "+$CameraName)`;
+
+
+/////CREATING TEMP CAMERA/////
+camera -name $CameraName;
+string $ShapeName[]=`ls -s`; 
+cameraMakeNode 3 "";
+$Tempcam=`ls -sl`;
+$TempGroupName= (eval("listRelatives -p "+$Tempcam[0]));
+$TempCameraName=$Tempcam[0];
+$TempUpName=$Tempcam[1];
+$TempAimName=$Tempcam[2];
+
+select $Tempcam[0];
+ 
+
+////////////////////////
+
+///SET INITIAL SETTINGS FOR CAMERA AND RENDERER///
+ 
+eval("setAttr "+$ShapeName[0]+".verticalFilmAperture "+$ApH);			
+eval("setAttr "+$ShapeName[0]+".horizontalFilmAperture "+$ApW);		
+eval("setAttr "+$ShapeName[0]+".filmFit 0");
+eval("setAttr "+$ShapeName[0]+".lensSqueezeRatio 1");							
+eval("setAttr "+$ShapeName[0]+".cameraScale 1");									
+eval("setAttr "+$ShapeName[0]+".preScale 1");											
+eval("setAttr "+$ShapeName[0]+".postScale 1");										
+eval("setAttr "+$ShapeName[0]+".filmFitOffset 0");
+eval("setAttr "+$ShapeName[0]+".horizontalFilmOffset 0");
+eval("setAttr "+$ShapeName[0]+".verticalFilmOffset 0");
+eval("setAttr "+$ShapeName[0]+".filmTranslateH 0");
+eval("setAttr "+$ShapeName[0]+".filmTranslateV 0");
+eval("setAttr "+$ShapeName[0]+".verticalRollPivot 0");
+eval("setAttr "+$ShapeName[0]+".horizontalRollPivot 0");
+eval("setAttr "+$ShapeName[0]+".filmRollValue 0");
+eval("setAttr "+$ShapeName[0]+".filmRollOrder 0");
+eval("setAttr "+$ShapeName[0]+".tumblePivotX 0");
+eval("setAttr "+$ShapeName[0]+".tumblePivotY 0");
+eval("setAttr "+$ShapeName[0]+".tumblePivotZ 0");
+eval("setAttr "+$ShapeName[0]+".displayFilmGate 1");
+eval("setAttr "+$ShapeName[0]+".displayResolution 1");
+eval("setAttr "+$ShapeName[0]+".overscan 2");
+
+//RENDERER
+eval("setAttr "+$plress[0]+".lockDeviceAspectRatio true");  
+eval("setAttr "+$plress[0]+".w "+$RW );
+eval("setAttr "+$plress[0]+".h "+$RH);
+eval("setAttr "+$plress[0]+".deviceAspectRatio "+$DevAsp);
+
+
+//reading animation data 
+do {
+	$frm=`fgetword $fileId`;
+	if ($frm!="") {
+	$SetKey="setKeyframe -time "+$frm+" -v ";
+	$GetKey="getAttr -time "+$frm+" ";
+	if ($CurUpAx=="z") {
+	
+	$nextWord = `fgetword $fileId`; 
+	eval($SetKey+$nextWord*$Pmult+" "+$TempCameraName+".translateX");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempCameraName+".translateZ");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempCameraName+".translateY");
+
+		
+	$nextWord = `fgetword $fileId`; 
+	eval($SetKey+$nextWord*$Pmult+" "+$TempAimName+".translateX");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempAimName+".translateZ");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempAimName+".translateY");
+	
+	$nextWord = `fgetword $fileId`; 
+	eval($SetKey+$nextWord*$Pmult+" "+$TempUpName+".translateX");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempUpName+".translateZ");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempUpName+".translateY");
+	
+	
+	
+	} else {
+	$nextWord = `fgetword $fileId`; 
+	eval($SetKey+$nextWord*$Pmult+" "+$TempCameraName+".translateX");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempCameraName+".translateY");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*-1*$Pmult+" "+$TempCameraName+".translateZ");
+	
+	$nextWord = `fgetword $fileId`; 
+	eval($SetKey+$nextWord*$Pmult+" "+$TempAimName+".translateX");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempAimName+".translateY");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*-1*$Pmult+" "+$TempAimName+".translateZ");
+	
+	$nextWord = `fgetword $fileId`; 
+	eval($SetKey+$nextWord*$Pmult+" "+$TempUpName+".translateX");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*$Pmult+" "+$TempUpName+".translateY");
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord*-1*$Pmult+" "+$TempUpName+".translateZ");
+	}
+ 
+	$nextWord = `fgetword $fileId`;
+	eval($SetKey+$nextWord+" "+$ShapeName[0]+".focalLength");
+	$nextWord = `fgetword $fileId`;
+	$nextWord = `fgetword $fileId`;
+	}
+} while ( !feof($fileId) );
+
+fclose($fileId);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+////READ MAYA TIME SETTINGS AND RETURN STRING FRAMES PER SECOND     Getfps();
+//##########################################################################################################################################################################
+global proc string Getfps (){
+	string $fpss=`currentUnit -q -t`;
+	string $timelist[] = {"hour0,00277778", "min0,01666667", "sec1", "millisec1000", "game15", "film24", "pal25", "ntsc30", "show48", "palf50", "ntscf60"};
+	string $s1="";
+	int $m=0;
+	int $f=0;
+	$m=`gmatch $fpss "*fps"`;
+	if ($m==1){
+		string $s1 = `substitute "fps" $fpss ""`;
+		return $s1;
+		}else{
+			do {
+				$f++;
+				$m=`gmatch $timelist[$f] ($fpss+"*")`;
+			} while ($m ==0);
+			string $s1 = `substitute $fpss $timelist[$f] ""`;
+			return $s1;
+		}
+}
+
+
+//VALID FPS
+//##########################################################################################################################################################################
+global proc string IsValidFps (string $FramesPerSecond){
+string $outVal="false";
+string $preset = "2fps3fps4fps5fps6fps8fps10fps12fps16fps20fps40fps75fps80fps100fps120fps125fps150fps200fps240fps250fps300fps375fps400fps500fps600fps750fps1000fps1200fps1500fps2000fps3000fps6000fps";
+switch ($FramesPerSecond) {
+case "0,00277778":
+$outVal= "hour"; break;
+case  "0,01666667":
+$outVal= "min"; break;
+case  "1":
+$outVal= "sec"; break;
+case  "15":
+$outVal= "game"; break;
+case  "24":
+$outVal= "film"; break;
+case  "25":
+$outVal= "pal"; break;
+case  "30":
+$outVal= "ntsc"; break;
+case  "48":
+$outVal= "show"; break;
+case  "50":
+$outVal= "palf"; break;
+case  "60":
+$outVal= "ntscf"; break;
+}
+if ($outVal=="false"){
+$FramesPerSecond=$FramesPerSecond+"fps";
+$outVal =`match $FramesPerSecond $preset`;
+}
+if ($outVal==""){
+	$outVal="false";
+}
+return $outVal;
+}
+
+
+// COMPENSATE FILM FIT VALUE AND LENS SQUEZE
+//##########################################################################################################################################################################
+global proc float ResGateScl (float $DeviceAspectRatio, float $FilmAspectRatio, float $LensSqueze, string $FilmFitValue)
+{
+$FilmAspectRatio=$FilmAspectRatio*$LensSqueze;
+float $FilmFitScl=1;	
+float $dfspt = $DeviceAspectRatio/$FilmAspectRatio;	
+
+if ($dfspt>1){
+	switch ($FilmFitValue){
+		case "vertical":
+	  	$FilmFitScl= 1/$dfspt;
+			break;
+		case "overscan":
+	  	$FilmFitScl= 1/$dfspt;
+  		break;
+	}
+}
+if ($dfspt<1){
+	switch ($FilmFitValue){
+		case "horizontal":
+	  	$FilmFitScl= $dfspt;
+			break;
+		case "overscan":
+	  	$FilmFitScl= $dfspt;
+  		break;
+  		}
+}
+return $FilmFitScl;
+}
+
+
+//Returns Selection TypeMatch Returns 1 if selected obj match selected type GetSelMatch("camera");
+//##########################################################################################################################################################################
+global proc int GetSelMatch (string $tp){
+string $obje[] = `selectedNodes`;
+if ($obje[0] =="")
+	{
+	int $ot=0;
+	return $ot;
+	}
+	else
+	{
+	string $ShapeName[] =`eval("listRelatives -s "+$obje[0])`;
+	int $ot=0;
+	int $m=`objectType -i $tp $ShapeName`;
+
+	if ($m==1){
+		int $ot=1;
+		return $ot;
+		} else{
+		return $ot;
+		}
+	}
+}
+//##########################################################################################################################################################################
+
+InterfaceCAMIO();
+

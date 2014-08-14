@@ -1,0 +1,108 @@
+[name]
+name=Vegas
+matchName=APC Vegas
+
+[properties]
+name=	Stroke
+type=	OneD
+
+name=	Image Contours
+type=	NO_VALUE
+
+name=	Input Layer
+type=	LAYER_INDEX
+
+name=	Invert Input
+type=	OneD
+
+name=	If Layer Sizes Differ
+type=	OneD
+
+name=	Channel
+type=	OneD
+
+name=	Threshold
+type=	OneD
+
+name=	Pre-Blur
+type=	OneD
+
+name=	Tolerance
+type=	OneD
+
+name=	Render
+type=	OneD
+
+name=	Selected Contour
+type=	OneD
+
+name=	Shorter Contours Have
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Mask/Path
+type=	NO_VALUE
+
+name=	Path
+type=	MASK_INDEX
+
+name=	
+type=	NO_VALUE
+
+name=	Segments
+type=	NO_VALUE
+
+name=	Segments
+type=	OneD
+
+name=	Length
+type=	OneD
+
+name=	Segment Distribution
+type=	OneD
+
+name=	Rotation
+type=	OneD
+
+name=	Random Phase
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Rendering
+type=	NO_VALUE
+
+name=	Blend Mode
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Width
+type=	OneD
+
+name=	Hardness
+type=	OneD
+
+name=	Start Opacity
+type=	OneD
+
+name=	Mid-point Opacity
+type=	OneD
+
+name=	Mid-point Position
+type=	OneD
+
+name=	End Opacity
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

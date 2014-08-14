@@ -1,0 +1,303 @@
+<html>
+
+<head>
+<title>Quake2 Model File (md2) Format Specification</title>
+</head>
+
+<body bgcolor="#333333" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#CCCCCC">
+
+<p align="center"><font size="5"><strong>.md2 File Format Specification</strong></font></p>
+
+<p align="center"><font size="3"><strong>by </strong></font><a href="mailto:dansch@hops.cs.jhu.edu">
+<font size="3"><strong>Daniel E. Schoenblum</strong></font></a></p>
+
+<p>&nbsp;</p>
+
+<a name="INTRO">
+<p align="left"><font color="#436888" size="4">INTRO</font></p>
+
+<p>This page will try and give some sort of technical
+documentation on the Quake2 model format (.md2).</p>
+
+<p>These specs can be used freely for whatever you want. I only ask that people <a href="mailto:dansch@hops.cs.jhu.edu">send me</a> corrections, suggestions, etc.</p>
+
+<p align="left">Quake2 models are stored in files with the .md2
+extension. This is a custom format used only by Quake2 and
+(probably) Quake2 mission packs. md2 files can be generated from
+various other file formats by tools provided freely by id, in
+original and modified form. A single md2 file contains the
+model's geometry, frame information, skin filename(s), and
+texture coordinates. The file is little-endian (intel byte
+ordering).</p>
+
+<a name="HEADER">
+<p align="left"><font color="#436888" size="4">HEADER</font></p>
+
+<p align="left">
+The header comes right at the start of the file. The information in the header is needed to load different parts of the model.
+</p>
+
+<a name="model">
+<p align="left"><code>typedef struct <br>
+{ <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_magic">magic</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_version">version</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_skinWidth">skinWidth</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_skinHeight">skinHeight</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_frameSize">frameSize</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_numSkins">numSkins</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_numVertices">numVertices</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_numTexCoords">numTexCoords</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_numTriangles">numTriangles</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_numGlCommands">numGlCommands</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_numFrames">numFrames</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_offsetSkins">offsetSkins</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_offsetTexCoords">offsetTexCoords</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_offsetTriangles">offsetTriangles</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_offsetFrames">offsetFrames</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_offsetGlCommands">offsetGlCommands</a>; <br>
+&nbsp;&nbsp;&nbsp;int <a href="#model_offsetEnd">offsetEnd</a>; <br>
+} model_t;</code></p>
+
+<a name="model_magic"></a>
+<p align="left">
+int magic: A "magic number" used to identify the
+file. The magic number is 844121161 in decimal (0x32504449 in
+hexadecimal). The magic number is equal to the int &quot;IDP2&quot;
+(id polygon 2), which is formed by ('I' + ('D' &lt;&lt; 8) + ('P'
+&lt;&lt; 16) + ('2' &lt;&lt; 24)).
+</p>
+
+<p align="left"><a name="model_version" target="_top"></a>
+int version: Version number of the file. Always 8.
+</p>
+
+<p align="left"><a name="model_skinWidth" target="_top"></a>
+int skinWidth: Width of the skin(s) in pixels.
+</p>
+
+<p align="left"><a name="model_skinHeight" target="_top"></a>
+int skinHeight: Height of the skin(s) in pixels.
+</p>
+
+<p align="left"><a name="model_frameSize" target="_top"></a>
+int frameSize: Size of each <a href="#FRAMES">frame</a> in bytes.
+</p>
+
+<p align="left"><a name="model_numSkins" target="_top"></a>
+int numSkins: Number of skins associated with this model.
+</p>
+
+<p align="left"><a name="model_numVertices" target="_top"></a>
+int numVertices: Number of <a href="#triangleVertex">vertices</a> in each frame.
+</p>
+
+<p align="left"><a name="model_numTexCoords" target="_top"></a>
+int numTexCoords: Number of texture coordinates (not necessarily the same as the number of vertices).
+</p>
+
+<p align="left"><a name="model_numTriangles" target="_top"></a>
+int numTriangles: Number of triangles in each frame.
+</p>
+
+<p align="left"><a name="model_numGlCommands" target="_top"></a>
+int numGlCommands: Number of dwords (4 bytes) in the gl command list.
+</p>
+
+<p align="left"><a name="model_numFrames" target="_top"></a>
+int numFrames: Number of <a href="#FRAMES">frames</a>.
+</p>
+
+<p align="left"><a name="model_offsetSkins" target="_top"></a>
+int offsetSkins: Offset, in bytes from the start of the file, to the list of skin names.
+</p>
+
+<p align="left"><a name="model_offsetTexCoords" target="_top"></a>
+int offsetTexCoords: Offset, in bytes from the start of the file, to the list of texture coordinates.
+</p>
+
+<p align="left"><a name="model_offsetTriangles" target="_top"></a>
+int offsetTriangles: Offset, in bytes from the start of the file, to the list of triangles.
+</p>
+
+<p align="left"><a name="model_offsetFrames" target="_top"></a>
+int offsetFrames: Offset, in bytes from the start of the file, to the list of <a href="#FRAMES">frames</a>.
+</p>
+
+<p align="left"><a name="model_offsetGlCommands" target="_top"></a>
+int offsetGlCommands: Offset, in bytes from the start of the file, to the gl command list.
+</p>
+
+<p align="left"><a name="model_offsetEnd" target="_top"></a>
+int offsetEnd: Offset, in bytes from the start of the file, to the end (size of the file).
+</p>
+
+<a name="FRAMES"></a>
+<p align="left"><font color="#436888" size="4">FRAMES</font></p>
+
+<p align="left">
+Each frame contains the positions in 3D space for each vertex of each triangle that makes up the model.  Quake 2 (and Quake) models contain only triangles.
+</p>
+
+<a name="triangleVertex">
+<code>
+typdef struct<br>
+{<br>
+&nbsp;&nbsp;&nbsp;byte <a href="#triangleVertex_vertex">vertex</a>[3];<br>
+&nbsp;&nbsp;&nbsp;byte <a href="#triangleVertex_lightNormalIndex">lightNormalIndex</a>;<br>
+} triangleVertex_t;<br>
+</code>
+
+<p align="left"><a name="triangleVertex_vertex" target="_top"></a>
+byte vertex[3]: The three bytes represent the x, y, and z coordinates of this vertex. This is not the "real" vertex coordinate. This is a scaled version of the coordinate, scaled so that each of the three numbers fit within one byte.  To scale the vertex 
+back to the "real" coordinate, you need to first multiply each of the bytes by their respective float <a href="#frame_scale">scale</a> in the <a href="#frame">frame_t</a> structure, and then add the respective float <a href="#frame_translate">translation<
+/a>, also in the <a href="#frame">frame_t</a> structure.  This will give you the vertex coordinate relative to the model's origin, which is at the origin, (0, 0, 0).
+</p>
+
+<p align="left"><a name="triangleVertex_lightNormalIndex" target="_top"></a>
+byte lightNormalIndex: This is an index into a table of normals kept by Quake2.  To get the table, you need to download <a href="ftp://ftp.idsoftware.com/idstuff/quake2/source/q2source_12_11.zip">this zip file (1.7 MB)</a>, released by <a href="http://www
+.idsoftware.com">id</a>, that has the source code to all of the tools they used for quake2.
+</p>
+
+<a name="frame">
+<p align="left">
+<code>
+typedef struct<br>
+{<br>
+&nbsp;&nbsp;&nbsp;float <a href="#frame_scale">scale</a>[3];<br>
+&nbsp;&nbsp;&nbsp;float <a href="#frame_translate">translate</a>[3];<br>
+&nbsp;&nbsp;&nbsp;char <a href="#frame_name">name</a>[16];<br>
+&nbsp;&nbsp;&nbsp;<a href="#triangleVertex">triangleVertex_t</a> <a href="#frame_vertices">vertices</a>[1];<br>
+} frame_t;<br>
+</code>
+
+<p align="left">
+frame_t is a variable sized structure, however all frame_t structures within the same file will have the same size
+(<a href="#model_numVertices">numVertices</a> in the <a href="#model">header</a>)
+</p>
+
+<p align="left"><a name="frame_scale" target="_top"></a>
+float scale[3]: This is a scale used by the <a href="#triangleVertex_vertex">vertex</a> member of the <a href="#triangleVertex">triangleVertex_t</a> structure.
+</p>
+
+<p align="left"><a name="frame_translate" target="_top"></a>
+float translate[3]: This is a translation used by the <a href="#triangleVertex_vertex">vertex</a> member of the <a href="#triangleVertex">triangleVertex_t</a> structure.
+</p>
+
+<p align="left"><a name="frame_name" target="_top"></a>
+char name[16]: This is a name for the frame.
+</p>
+
+<p align="left"><a name="frame_vertices" target="_top"></a>
+<a href="#triangleVertex">triangleVertex_t</a> vertices[1]: An array of <a href="#model_numVertices">numVertices</a> <a href="#triangleVertex">triangleVertex_t</a> structures.
+</p>
+
+<a name="TRIANGLES"></a>
+<p align="left"><font color="#436888" size="4">TRIANGLES</font>
+</p>
+
+<p align="left">
+Quake 2 models are made up of only triangles. At <a href="#model_offsetTriangles">offsetTriangles</a> in the file is an array of <a href="#triangle">triangle_t</a> structures.  The array has <a href="#model_numTriangles">numTriangles</a> structures in it.
+
+</p>
+
+<a name="triangle">
+<p align="left">
+<code>
+typedef struct<br>
+{<br>
+&nbsp;&nbsp;&nbsp;short <a href="#triangle_vertexIndices">vertexIndices</a>[3];<br>
+&nbsp;&nbsp;&nbsp;short <a href="#triangle_textureIndices">textureIndices</a>[3];<br>
+} triangle_t;<br>
+</code>
+
+<p align="left"><a name="triangle_vertexIndices" target="_top"></a>
+short vertexIndices: These three shorts are indices into the array of <a href="#frame_vertices">vertices</a> in each <a href="#frame">frames</a>. In other words, the number of triangles in a md2 file is fixed, and each triangle is always made of the same 
+three indices into each frame's array of vertices.  So, in each frame, the triangles themselves stay intact, their vertices are just moved around.
+</p>
+
+<p align="left"><a name="triangle_textureIndices" target="_top"></a>
+short textureIndices: These three shorts are indices into the array of <a href="#textureCoordinate">texture coordinates</a>.
+</p>
+
+<a name="SKINS">
+<p align="left"><font color="#436888" size="4">SKINS</font>
+</p>
+
+<p align="left">
+There is an array of <a href="#model_numSkins">numSkins</a> skin names stored at <a href="#model_offsetSkins">offsetSkins</a> into the file. Each skin name is a char[64]. The name is really a path to the skin, relative to the base game directory (baseq2 f
+or "standard" Quake2). The skin files are regular pcx files.
+</p>
+
+<a name="textureCoordinate">
+<p align="left">
+<code>
+typedef struct<br>
+{<br>
+&nbsp;&nbsp;&nbsp;short <a href="#textureCoordinate_st">s</a>, <a href="#textureCoordinate_st">t</a>;<br>
+} textureCoordinate_t;<br>
+</code>
+
+<p align="left">
+<a name="textureCoordinate_s" target="_top">
+<a name="textureCoordinate_t" target="_top">
+short s, t: These two shorts are used to map a vertex onto a skin.  The horizontal axis position is given by s, and the vertical axis position is given by t. The range for s is greater than or equal to 0 and less than <a href="#model_skinWidth">skinWidth<
+/a> (<code>0 &lt;= s &lt; <a href="#model_skinWidth">skinWidth</a></code>).  The range for t is greater than or equal to 0 and less than <a href="#model_skinHeight">skinHeight</a> (<code>0 &lt;= s &lt; <a href="#model_skinHeight">skinHeight</a></code>). N
+ote that the ranges are different than in the <a href="#glCommandVertex_s">s</a> and <a href="#glCommandVertex_t">t</a> members of the <a href="#glCommandVertex">glCommandVertex</a> structure.
+</p>
+
+<a name="GL_COMMANDS">
+<p align="left"><font color="#436888" size="4">GL COMMANDS</font>
+</p>
+
+At <a href="#model_offsetGlCommands">offsetGlCommands</a> bytes into the file, there is the gl command list, which is made up of a series of <a href="#model_numGlCommands">numGlCommands</a> int's and float's, organized into groups. Each group starts with 
+an int.  If it is positive, it is followed by that many <a href="#glCommandVertex">glCommandVertex_t</a> structures, which form a triangle strip. If it is negative, it is followed by -x <a href="#glCommandVertex">glCommandVertex_t</a> structures, which fo
+rm a triangle fan. A 0 indicates the end of the list.  The list is an optimized way of issuing commands when rendering with <a href="http://www.opengl.org">OpenGl</a>.
+
+<a name="glCommandVertex">
+<p align="left">
+<code>
+typedef struct<br>
+{<br>
+&nbsp;&nbsp;&nbsp;float <a href="#glCommandVertex_st">s</a>, <a href="#glCommandVertex_st">t</a>;<br>
+&nbsp;&nbsp;&nbsp;int <a href="#glCommandVertex_vertexIndex">vertexIndex</a>;<br>
+} glCommandVertex_t;<br>
+</code>
+
+<p align="left">
+<a name="glCommandVertex_s" target="_top">
+<a name="glCommandVertex_t" target="_top">
+float s, t: These two floats are used to map a vertex onto a skin.  The horizontal axis position is given by s, and the vertical axis position is given by t. The range for s and for t is 0.0 to 1.0.  Note that the ranges are different than in the <a href=
+"#textureCoordinate">textureCoordinate_t</a> structure. They are stored as floats here because that's the way Quake2 passes them to <a href="http://www.opengl.org">OpenGl</a>.
+</p>
+
+<p align="left">
+<a name="glCommandVertex_vertexIndex" target="_top">
+int vertexIndex: Index into the array of <a href="#frame_vertices">vertices</a> stored in each <a href="#frame">frame</a>.
+</p>
+
+<p align="left"><font color="#436888" size="4">MAXIMUMS</font></p>
+
+<p align="left">
+Quake2 has some pre-defined limits, so that dynamic memory does not need to be used.  You can use these to your advantage to speed up loading if you want.
+</p>
+
+<p align="left">
+<li><a href="#TRIANGLES">Triangles</a>: 4096</li>
+<li><a href="#triangleVertex">Vertices</a>: 2048</li>
+<li><a href="#textureCoordinate">Texture Coordinates</a>: 2048
+<li><a href="#FRAMES">Frames</a>: 512</li>
+<li><a href="#SKINS">Skins</a>: 32</li>
+</p>
+
+<br>
+
+<p align="left">
+<font size=-1>
+Quake and Quake2 are trademarks of <a href="http://www.idsoftware.com">id Software</a>.<br>
+All trademarks used are properties of their respective owners.
+</font>
+</p>
+
+</body>
+</html>

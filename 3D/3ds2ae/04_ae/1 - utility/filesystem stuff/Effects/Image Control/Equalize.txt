@@ -1,0 +1,12 @@
+[name]
+name=Equalize
+matchName=ADBE Equalize
+
+[properties]
+name=	Equalize
+type=	OneD
+
+name=	Amount to Equalize
+type=	OneD
+
+

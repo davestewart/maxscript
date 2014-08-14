@@ -1,0 +1,381 @@
+[name]
+name=Particle Playground
+matchName=ADBE Playgnd
+
+[properties]
+name=	Cannon
+type=	NO_VALUE
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Barrel Radius
+type=	OneD
+
+name=	Particles Per Second
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Direction Random Spread
+type=	OneD
+
+name=	Velocity
+type=	OneD
+
+name=	Velocity Random Spread
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Particle Radius
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Grid
+type=	NO_VALUE
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Width
+type=	OneD
+
+name=	Height
+type=	OneD
+
+name=	Particles Across
+type=	OneD
+
+name=	Particles Down
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Particle Radius
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Layer Exploder
+type=	NO_VALUE
+
+name=	Explode Layer
+type=	LAYER_INDEX
+
+name=	Radius of New Particles
+type=	OneD
+
+name=	Velocity Dispersion
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Particle Exploder
+type=	NO_VALUE
+
+name=	Radius of New Particles
+type=	OneD
+
+name=	Velocity Dispersion
+type=	OneD
+
+name=	Affects
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Selection Map
+type=	LAYER_INDEX
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	Age Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Layer Map
+type=	NO_VALUE
+
+name=	Use Layer
+type=	LAYER_INDEX
+
+name=	Time Offset Type
+type=	OneD
+
+name=	Time Offset
+type=	OneD
+
+name=	Affects
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Selection Map
+type=	LAYER_INDEX
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	Age Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Gravity
+type=	NO_VALUE
+
+name=	Force
+type=	OneD
+
+name=	Force Random Spread
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Affects
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Selection Map
+type=	LAYER_INDEX
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	Age Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Repel
+type=	NO_VALUE
+
+name=	Force
+type=	OneD
+
+name=	Force Radius
+type=	OneD
+
+name=	Repeller
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Selection Map
+type=	LAYER_INDEX
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	Age Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Affects
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Selection Map
+type=	LAYER_INDEX
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	Age Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Wall
+type=	NO_VALUE
+
+name=	Boundary
+type=	MASK_INDEX
+
+name=	Affects
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Persistent Property Mapper
+type=	NO_VALUE
+
+name=	Use Layer As Map
+type=	LAYER_INDEX
+
+name=	Affects
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	Age Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Map Red to
+type=	OneD
+
+name=	Min
+type=	OneD
+
+name=	Max
+type=	OneD
+
+name=	Map Green to
+type=	OneD
+
+name=	Min
+type=	OneD
+
+name=	Max
+type=	OneD
+
+name=	Map Blue to
+type=	OneD
+
+name=	Min
+type=	OneD
+
+name=	Max
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Ephemeral Property Mapper
+type=	NO_VALUE
+
+name=	Use Layer As Map
+type=	LAYER_INDEX
+
+name=	Affects
+type=	NO_VALUE
+
+name=	Particles from
+type=	OneD
+
+name=	Characters
+type=	OneD
+
+name=	Older/Younger than
+type=	OneD
+
+name=	Age Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Map Red to
+type=	OneD
+
+name=	Operator
+type=	OneD
+
+name=	Min
+type=	OneD
+
+name=	Max
+type=	OneD
+
+name=	Map Green to
+type=	OneD
+
+name=	Operator
+type=	OneD
+
+name=	Min
+type=	OneD
+
+name=	Max
+type=	OneD
+
+name=	Map Blue to
+type=	OneD
+
+name=	Operator
+type=	OneD
+
+name=	Min
+type=	OneD
+
+name=	Max
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

@@ -1,0 +1,89 @@
+SCRIPT FEATURES:
+
+Animated properties:
+	Position
+	Orientation
+	Lens
+
+Non Animated:
+	Render Width
+	Render Height
+	Filmback
+	Pixel Aspect Ratio
+
+Respected properties:
+	Linear Units:
+		Units will be converted to match current scene units. So if the incoming camera has position 5cm on X, imported result will be 5cm on X in the current scene units.
+		For example incoming Key_Position_X 5 (exported units meters) will apear as Key_Position_X 12.7 (current scene units inches).
+
+	Time Units:
+		If the original animation is 24fps, imported scene will be set to 24fps too.
+		In some cases (MAYA) Custum FPS are not suported. (year 2007 maya version 8.5 !?!?!?!  can you beleive ?! try 13fps for example......)
+		So in case of 13 fps incoming animation, in MAYA imported scene will keep default fps and incoming freme number 13 will be still freme number 13.
+		To get correct time, animation must be rescaled in graph editor manualy.
+
+
+
+
+
+IMPORTANT!!! SOFTWARE RESTRICTIONS:
+
+LightWave:
+	No way to change rotation orders.
+	Thats why, imported camera apears under NULLS herrachy. It is the easy way to simulate diferent rotation orders and still to see normal curves in graph editor.
+	Now way to get world rotation without GIMBLE LOCK.
+	Aditional plugin needed for constarined vesrion.
+
+MAYA:
+	No way to set custom FPS. Some naming convertion troubles.
+
+MAX:
+	No problems at now...
+
+
+
+WHY 2 DIFERENT VERSIONS OF THE SCRIPT:
+
+	Becouse of the GIMBLE LOCK issue, motion blur can be diferent in diferent packages. To resolve that, i did ROTATION based trensfer and CONSTRAIN based transfer.
+
+	In Rotation Based version, the goal is to stay as close as possible to original camera rotations. Disadvantage is GIMBLE LOCK in some frames.
+	In those frames Motion blur will be scrap...
+
+
+	In Constrain Based version, camera rotation is represented by Target and UPvector. So in that "Rotationless" way, motion blur will be correct all the time.
+	Disadvantage is 2 parasite nulls 1km away of the camera, and invisible camera rotation data.
+	Theose nulls or locators or etc, can`t be closer becouse the calculated resul will be inaccurate.
+	For LightWave, you need (included in archive) RV_ORINET plugin to link camera and nuls. (year 2007 LightWave version 9.....  still no way to get aim and Up vector constrain.)
+
+
+Text File structure description:
+
+
+Constrain version:
+
+Furst line:
+	ID CameraName FPS RenderWidth RenderHeight ImageAspectRatio PixelAspectRatio FilmbackWidth FilmbackHeight ScaleMultiplier UpAxis SoftwareID
+NextLines:
+	FrameNumber CameraPositionX CameraPositionY CameraPositionZ TargetPositionX TargetPositionY TargetPositionZ UpVectorPositionX UpVectorPositionY UpVectorPositionZ Lens HorizontalFov VerticalFov
+
+
+Rotation version:
+
+Furst line:
+	ID CameraName FPS RenderWidth RenderHeight ImageAspectRatio PixelAspectRatio FilmbackWidth FilmbackHeight ScaleMultiplier UpAxis RotationOrder
+NextLines:
+	FrameNumber PositionX PositionY PositionZ RotationX RotationY RotationZ Lens HorizontalFov VerticalFov
+
+
+
+
+Fell free to modify and use code as you wish. Just let me know, and ADD LINE INSIDE YOUR APLICATION:
+Used reference: "CAMERA I/O" : gasmasocet@abv.bg
+
+
+PLEASE REPORT BUGS !!!!
+
+
+author:
+EvilKornholio
+gasmasocet@abv.bg

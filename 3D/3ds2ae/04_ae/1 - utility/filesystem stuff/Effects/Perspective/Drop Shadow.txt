@@ -1,0 +1,24 @@
+[name]
+name=Drop Shadow
+matchName=ADBE Drop Shadow
+
+[properties]
+name=	Shadow Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Distance
+type=	OneD
+
+name=	Softness
+type=	OneD
+
+name=	Shadow Only
+type=	OneD
+
+

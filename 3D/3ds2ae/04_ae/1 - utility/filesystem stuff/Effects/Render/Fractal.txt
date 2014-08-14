@@ -1,0 +1,99 @@
+[name]
+name=Fractal
+matchName=ADBE Fractal
+
+[properties]
+name=	Set Choice
+type=	OneD
+
+name=	Equation
+type=	OneD
+
+name=	Mandelbrot
+type=	NO_VALUE
+
+name=	X (Real)
+type=	OneD
+
+name=	Y (Imaginary)
+type=	OneD
+
+name=	Magnification
+type=	OneD
+
+name=	Escape Limit
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Julia
+type=	NO_VALUE
+
+name=	X (Real)
+type=	OneD
+
+name=	Y (Imaginary)
+type=	OneD
+
+name=	Magnification
+type=	OneD
+
+name=	Escape Limit
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Post-inversion offset
+type=	NO_VALUE
+
+name=	X (Real)
+type=	OneD
+
+name=	Y (Imaginary)
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Color
+type=	NO_VALUE
+
+name=	Overlay
+type=	OneD
+
+name=	Transparency
+type=	OneD
+
+name=	Palette
+type=	OneD
+
+name=	Hue
+type=	OneD
+
+name=	Cycle Steps
+type=	OneD
+
+name=	Cycle Offset
+type=	OneD
+
+name=	Edge Highlight (Force LQ)
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	High Quality Settings
+type=	NO_VALUE
+
+name=	Oversample Method
+type=	OneD
+
+name=	Oversample Factor
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

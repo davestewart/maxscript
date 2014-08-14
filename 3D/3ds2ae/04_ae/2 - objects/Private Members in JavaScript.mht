@@ -1,0 +1,235 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Private Members in JavaScript
+Date: Thu, 10 Mar 2005 01:11:14 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.crockford.com/javascript/private.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Private Members in JavaScript</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2800.1106" name=3DGENERATOR></HEAD>
+<BODY bgColor=3Dlinen>
+<H1 align=3Dcenter>Private Members in JavaScript</H1>
+<P></P>
+<P align=3Dcenter><A href=3D"mailto:douglas@crockford.com"><FONT =
+size=3D+1>Douglas=20
+Crockford</FONT></A><BR><A href=3D"http://www.crockford.com/"=20
+target=3D_top><TT>www.crockford.com</TT></A></P>
+<P>&nbsp;</P>
+<P><A href=3D"http://www.crockford.com/javascript">JavaScript</A> is <A=20
+href=3D"http://www.crockford.com/javascript/javascript.html">the world's =
+most=20
+misunderstood programming language</A>. Some believe that it lacks the =
+property=20
+of <I>information hiding</I> because objects cannot have private =
+instance=20
+variables and methods. But this is a misunderstanding. JavaScript =
+objects can=20
+have private members. Here's how.</P>
+<H2>Objects</H2>
+<P>JavaScript is fundamentally about <I>objects</I>. Arrays are objects. =
+
+Functions are objects. Objects are objects. So what are objects? Objects =
+are=20
+collections of name-value pairs. The names are strings, and the values =
+are=20
+strings, numbers, booleans, and objects (including arrays and =
+functions).=20
+Objects are usually implemented as hashtables so values can be retrieved =
+
+quickly.</P>
+<P>If a value is a function, we can consider it a <I>method</I>. When a =
+method=20
+of an object is invoked, the <TT>this</TT> variable is set to the =
+object. The=20
+method can then access the instance variables through the <TT>this</TT>=20
+variable.</P>
+<P>Objects can be produced by <I>constructors</I>, which are functions =
+which=20
+initialize objects. Constructors provide the features that classes =
+provide in=20
+other languages, including static variables and methods.</P>
+<H2>Public</H2>
+<P>The members of an object are all <I>public</I> members. Any function =
+can=20
+access, modify, or delete those members, or add new members. There are =
+two main=20
+ways of putting members in a new object:</P>
+<H3>In the constructor</H3>
+<P>This technique is usually used to initialize public instance =
+variables. The=20
+constructor's <TT>this</TT> variable is used to add members to the =
+object.</P>
+<BLOCKQUOTE><PRE>function Container(param) {
+    this.member =3D param;
+}</PRE></BLOCKQUOTE>
+<P>So, if we construct a new object</P>
+<BLOCKQUOTE><PRE>var myContainer =3D new =
+Container('abc');</PRE></BLOCKQUOTE>
+<P>then <TT>myContainer.member</TT> contains <TT>'abc'</TT>.</P>
+<H3>In the prototype</H3>
+<P>This technique is usually used to add public methods. When a member =
+is sought=20
+and it isn't found in the object itself, then it is taken from the =
+object's=20
+constructor's <TT>prototype</TT> member. The prototype mechanism is used =
+for=20
+inheritance. It also conserves memory. To add a method to all objects =
+made by a=20
+constructor, add a function to the constructor's <TT>prototype</TT>:</P>
+<BLOCKQUOTE><PRE>Container.prototype.stamp =3D function (string) {
+    return this.member + string;
+}</PRE></BLOCKQUOTE>
+<P>So, we can invoke the method</P>
+<BLOCKQUOTE><PRE>myContainer.stamp('def')</PRE></BLOCKQUOTE>
+<P>which produces <TT>'abcdef'</TT>.</P>
+<H2>Private</H2>
+<P><I>Private</I> members are made by the constructor. Ordinary =
+<TT>var</TT>s=20
+and parameters of the constructor becomes the private members.</P>
+<BLOCKQUOTE><PRE>function Container(param) {
+    this.member =3D param;
+    var secret =3D 3;
+    var self =3D this;
+}</PRE></BLOCKQUOTE>
+<P>This constructor makes three private instance variables: =
+<TT>param</TT>,=20
+<TT>secret</TT>, and <TT>self</TT>. They are attached to the object, but =
+they=20
+are not accessible to the outside, nor are they accessible to the =
+object's own=20
+public methods. They are accessible to private methods. Private methods =
+are=20
+inner functions of the constructor.</P>
+<BLOCKQUOTE><PRE>function Container(param) {
+
+    function dec() {
+        if (secret &gt; 0) {
+            secret -=3D 1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    this.member =3D param;
+    var secret =3D 3;
+    var self =3D this;
+}</PRE></BLOCKQUOTE>
+<P>The private method <TT>dec</TT> examines the <TT>secret</TT> instance =
+
+variable. If it is greater than zero, it decrements <TT>secret</TT> and =
+returns=20
+<TT>true</TT>. Otherwise it returns <TT>false</TT>. It can be used to =
+make this=20
+object limited to three uses.</P>
+<P>By convention, we make a private <TT>self</TT> parameter. This is =
+used to=20
+make the object available to the private methods. This is a workaround =
+for an=20
+error in the ECMAScript Language Specification which causes =
+<TT>this</TT> to be=20
+set incorrectly for inner functions.</P>
+<P>Private methods cannot be called by public methods. To make private =
+methods=20
+useful, we need to introduce a privileged method.</P>
+<H2>Privileged</H2>
+<P>A <I>privileged</I> method is able to access the private variables =
+and=20
+methods, and is itself accessible to the public methods and the outside. =
+It is=20
+possible to delete or replace a privileged method, but it is not =
+possible to=20
+alter it, or to force it to give up its secrets.</P>
+<P>Privileged methods are assigned with <TT>this</TT> within the=20
+constructor.</P>
+<BLOCKQUOTE><PRE>function Container(param) {
+
+    function dec() {
+        if (secret &gt; 0) {
+            secret -=3D 1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    this.member =3D param;
+    var secret =3D 3;
+    var self =3D this;
+
+    this.service =3D function () {
+        if (dec()) {
+            return self.member;
+        } else {
+            return null;
+        }
+    };
+}</PRE></BLOCKQUOTE>
+<P><TT>service</TT> is a privileged method. Calling=20
+<TT>myContainer.service()</TT> will return <TT>'abc'</TT> the first =
+three times=20
+it is called. After that, it will return <TT>null</TT>. <TT>service</TT> =
+calls=20
+the private <TT>dec</TT> method which accesses the private =
+<TT>secret</TT>=20
+variable. <TT>service</TT> is available to other objects and methods, =
+but it=20
+does not allow direct access to the private members.</P>
+<H2>Closures</H2>
+<P>This pattern of public, private, and privileged members is possible =
+because=20
+JavaScript has <I>closures</I>. What this means is that an inner =
+function always=20
+has access to the vars and parameters of its outer function, even after =
+the=20
+outer function has returned. This is an extremely powerful property of =
+the=20
+language. There is no book currently available on JavaScript programming =
+that=20
+shows how to exploit it. Most don't even mention it.</P>
+<P>Private and privileged members can only be made when an object is=20
+constructed. Public members can be added at any time.</P>
+<H2>Patterns</H2>
+<H3>Public</H3>
+<BLOCKQUOTE><TT>function </TT><I>Constructor</I><TT>(</TT>...<TT>) =
+{</TT>=20
+  <BLOCKQUOTE><TT>this.</TT><I>membername</I><TT> =3D=20
+  </TT><I>value</I><TT>;</TT></BLOCKQUOTE>
+  <P>}<BR><I>Constructor</I><TT>.prototype.</TT><I>membername</I><TT> =
+=3D=20
+  </TT><I>value</I><TT>;</TT></P></BLOCKQUOTE>
+<H3>Private</H3>
+<BLOCKQUOTE><TT>function </TT><I>Constructor</I><TT>(</TT>...<TT>) =
+{</TT>=20
+  <BLOCKQUOTE><TT>var self =3D this;<BR>var </TT><I>membername</I><TT> =
+=3D=20
+    </TT><I>value</I><TT>;</TT>=20
+    <P><TT>function </TT><I>membername</I><TT>(</TT>...<TT>)=20
+    {</TT>...<TT>}</TT></P></BLOCKQUOTE>
+  <P><TT>}</TT></P>
+  <P>Note: The function statement</P>
+  <BLOCKQUOTE>
+    <P><TT>function </TT><I>membername</I><TT>(</TT>...<TT>)=20
+    {</TT>...<TT>}</TT></P></BLOCKQUOTE>
+  <P>is shorthand for</P>
+  <BLOCKQUOTE>
+    <P><TT>var </TT><I>membername</I><TT> =3D function=20
+    </TT><I>membername</I><TT>(</TT>...<TT>)=20
+{</TT>...<TT>};</TT></P></BLOCKQUOTE></BLOCKQUOTE>
+<H3>Privileged</H3>
+<BLOCKQUOTE><TT>function</TT> <I>Constructor</I><TT>(</TT>...<TT>) =
+{</TT>=20
+  <BLOCKQUOTE><TT>this.</TT><I>membername</I><TT> =3D function =
+(</TT>...<TT>)=20
+    {</TT>...<TT>};</TT></BLOCKQUOTE>
+  <P><TT>}</TT></P></BLOCKQUOTE>
+<P>Copyright 2001 <A href=3D"mailto:douglas@crockford.com">Douglas =
+Crockford.</A>=20
+<A href=3D"http://www.crockford.com/">All Rights Reserved=20
+Wrrrldwide.</A></P></BODY></HTML>

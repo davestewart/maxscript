@@ -1,0 +1,66 @@
+.mmbody {
+	FONT-SIZE: 80%; LINE-HEIGHT: 131%; FONT-FAMILY: Arial, sans-serif
+}
+.mmbodysml {
+	FONT-SIZE: 66%; LINE-HEIGHT: 140%; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+.itemmed {
+	FONT-SIZE: 80%; LINE-HEIGHT: 140%; FONT-FAMILY: Arial, sans-serif
+}
+.itemsml {
+	FONT-WEIGHT: bold; FONT-SIZE: 64%; COLOR: #333399; LINE-HEIGHT: 138%; FONT-FAMILY: Verdana, Geneva, Arial, sans-serif
+}
+.itemsml A {
+	COLOR: #333399; TEXT-DECORATION: none
+}
+.itemsml A:hover {
+	TEXT-DECORATION: underline
+}
+.bdr1 {
+	BORDER-RIGHT: #dddddd 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #dddddd 8px solid; PADDING-LEFT: 15px; PADDING-BOTTOM: 12px; BORDER-LEFT: #dddddd 1px solid; PADDING-TOP: 12px; BORDER-BOTTOM: #dddddd 0px solid
+}
+.bdr2 {
+	BORDER-RIGHT: #dddddd 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 12px; BORDER-LEFT: #dddddd 1px solid; PADDING-TOP: 12px; BORDER-BOTTOM: #dddddd 0px solid
+}
+.padded {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 15px; PADDING-BOTTOM: 12px; PADDING-TOP: 10px
+}
+.homesmall {
+	FONT-SIZE: 64%; LINE-HEIGHT: 127%; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+.homesmall A {
+	FONT-WEIGHT: bold; COLOR: #333399; TEXT-DECORATION: none
+}
+.homesmall A:hover {
+	TEXT-DECORATION: underline
+}
+.mmcrumb {
+	FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Geneva, Arial, sans-serif
+}
+.fineprint {
+	FONT-SIZE: 9px; LINE-HEIGHT: 12px; FONT-FAMILY: Verdana, Geneva, Arial, sans-serif
+}
+.separator {
+	FONT-SIZE: 9px; COLOR: #aaaaaa; LINE-HEIGHT: 22px; FONT-FAMILY: Verdana, Arial
+}
+A:hover {
+	TEXT-DECORATION: none
+}
+.heading1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; LINE-HEIGHT: 130%; FONT-FAMILY: Arial, Verdana, sans-serif
+}
+.heading2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 90%; LINE-HEIGHT: 115%; FONT-FAMILY: Arial, Verdana, sans-serif
+}
+PRE {
+	FONT-SIZE: 75%; FONT-FAMILY: "Courier New", Courier, mono
+}
+CODE {
+	FONT-SIZE: 75%; FONT-FAMILY: "Courier New", Courier, mono
+}
+BODY {
+	BACKGROUND-POSITION: left top; BACKGROUND-IMAGE: url(/uber/css/nav_bkg.gif); BACKGROUND-REPEAT: repeat-x
+}
+TD {
+	FONT-FAMILY: Arial, sans-serif
+}

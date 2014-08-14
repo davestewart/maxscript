@@ -1,0 +1,147 @@
+[name]
+name=Wave World
+matchName=APC Wave World
+
+[properties]
+name=	View
+type=	OneD
+
+name=	Wireframe Controls
+type=	NO_VALUE
+
+name=	Horizontal Rotation
+type=	OneD
+
+name=	Vertical Rotation
+type=	OneD
+
+name=	Vertical Scale
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Height Map Controls
+type=	NO_VALUE
+
+name=	Brightness
+type=	OneD
+
+name=	Contrast
+type=	OneD
+
+name=	Gamma Adjustment
+type=	OneD
+
+name=	Render Dry Areas As
+type=	OneD
+
+name=	Transparency
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Simulation
+type=	NO_VALUE
+
+name=	Grid Resolution
+type=	OneD
+
+name=	Grid Res Downsamples
+type=	OneD
+
+name=	Wave Speed
+type=	OneD
+
+name=	Damping
+type=	OneD
+
+name=	Reflect Edges
+type=	OneD
+
+name=	Pre-roll (seconds)
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Ground
+type=	NO_VALUE
+
+name=	Ground
+type=	LAYER_INDEX
+
+name=	Steepness
+type=	OneD
+
+name=	Height
+type=	OneD
+
+name=	Wave Strength
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Producer 1
+type=	NO_VALUE
+
+name=	Type
+type=	OneD
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Height/Length
+type=	OneD
+
+name=	Width
+type=	OneD
+
+name=	Angle
+type=	OneD
+
+name=	Amplitude
+type=	OneD
+
+name=	Frequency
+type=	OneD
+
+name=	Phase
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Producer 2
+type=	NO_VALUE
+
+name=	Type
+type=	OneD
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Height/Length
+type=	OneD
+
+name=	Width
+type=	OneD
+
+name=	Angle
+type=	OneD
+
+name=	Amplitude
+type=	OneD
+
+name=	Frequency
+type=	OneD
+
+name=	Phase
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

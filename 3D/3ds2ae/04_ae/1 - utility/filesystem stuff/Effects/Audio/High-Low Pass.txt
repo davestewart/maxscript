@@ -1,0 +1,18 @@
+[name]
+name=High-Low Pass
+matchName=ADBE Aud HiLo
+
+[properties]
+name=	Filter Options
+type=	OneD
+
+name=	Cutoff Frequency
+type=	OneD
+
+name=	Dry Out
+type=	OneD
+
+name=	Wet Out
+type=	OneD
+
+

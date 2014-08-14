@@ -1,0 +1,39 @@
+[name]
+name=Transform
+matchName=ADBE Geometry2
+
+[properties]
+name=	Anchor Point
+type=	TwoD_SPATIAL
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Uniform Scale
+type=	OneD
+
+name=	Scale Height
+type=	OneD
+
+name=	Scale Width
+type=	OneD
+
+name=	Skew
+type=	OneD
+
+name=	Skew Axis
+type=	OneD
+
+name=	Rotation
+type=	OneD
+
+name=	Opacity
+type=	OneD
+
+name=	Use Composition's Shutter Angle
+type=	OneD
+
+name=	Shutter Angle
+type=	OneD
+
+

@@ -1,0 +1,677 @@
+
+		// combustion 3.0 by discreet. Workspace File. 
+		// 3dsmax - Render Elements
+
+ScriptInfo 1 0 1
+
+NewOperator 0x6ed73e76 0x32505a4d 1
+
+NewOperator 0x764521a0 0x2b271cba 2
+
+NewOperator 0x764521a0 0x2b271cba 3
+
+NewOperator 0x764521a0 0x2b271cba 4
+
+NewOperator 0x764521a0 0x2b271cba 5
+
+NewOperator 0x764521a0 0x2b271cba 6
+
+NewOperator 0x764521a0 0x2b271cba 7
+
+NewOperator 0x764521a0 0x2b271cba 8
+
+NewOperator 0x764521a0 0x2b271cba 9
+
+NewOperator 0x764521a0 0x2b271cba 10
+
+NewOperator 0x764521a0 0x2b271cba 11
+
+NewOperator 0x764521a0 0x2b271cba 12
+
+NewOperator 0x764521a0 0x2b271cba 13
+
+NewOperator 0x764521a0 0x2b271cba 14
+
+NewOperator 0x764521a0 0x2b271cba 15
+
+NewOperator 0x764521a0 0x2b271cba 16
+
+
+SetCurrentOperator 1
+	OperatorEnabled on
+	SetOperatorName "3dsmax - Render Elements"
+
+	CompositionSettings 640 480 1.0 30 1
+
+	NewLayer 3
+		SetName "Lighting"
+		ObjectVisible Off
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 4
+		SetName "Matte"
+		ObjectVisible Off
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 5
+		SetName "Z Depth"
+		ObjectVisible Off
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 6
+		SetName "Alpha"
+		ObjectVisible Off
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 7
+		SetName "Blend"
+		ObjectVisible Off
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 8
+		SetName "Atmosphere"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 9
+		SetName "Self-Illumination"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 3 on
+
+	NewLayer 10
+		SetName "Refraction"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 3 on
+
+	NewLayer 11
+		SetName "Reflection"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 3 on
+
+	NewLayer 12
+		SetName "Specular"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 3 on
+
+	NewLayer 13
+		SetName "Ink"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 14
+		SetName "Paint"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 15
+		SetName "Shadow"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 16
+		SetName "Diffuse"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLayer 17
+		SetName "Background"
+		ObjectVisible On
+		LayerTrim 0 0 -1
+
+		ResetChannel ~3/~9 1 on
+
+	NewLight 2
+		SetName "default light"
+		ObjectVisible On
+
+
+	NewCamera 1
+		SetName "default camera"
+		ObjectVisible On
+
+
+
+	CD :~399999999
+	ResetChannel ~5 0.1 on 0 0
+	ResetChannel ~6/~1 1.0 on 0 0
+	ResetChannel ~6/~2 1.0 on 0 0
+	ResetChannel ~6/~3 1.0 on 0 0
+	ResetChannel ~9/~6 640 off 0 0
+	ResetChannel ~9/~7 480 off 0 0
+	ResetChannel ~9/~9 0 off 0 0
+
+SetCurrentOperator 2
+	OperatorEnabled on
+	SetOperatorName "Lighting"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Lighting.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 3
+	OperatorEnabled on
+	SetOperatorName "Matte"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Matte.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 4
+	OperatorEnabled on
+	SetOperatorName "Z Depth"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Z Depth.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 0 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 5
+	OperatorEnabled on
+	SetOperatorName "Alpha"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Alpha.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 6
+	OperatorEnabled on
+	SetOperatorName "Blend"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Blend.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 7
+	OperatorEnabled on
+	SetOperatorName "Atmosphere"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Atmosphere.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 8
+	OperatorEnabled on
+	SetOperatorName "Self-Illumination"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Self-Illumination.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 0 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 9
+	OperatorEnabled on
+	SetOperatorName "Refraction"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Refraction.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 0 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 10
+	OperatorEnabled on
+	SetOperatorName "Reflection"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Reflection.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 0 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 11
+	OperatorEnabled on
+	SetOperatorName "Specular"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Specular.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 0 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 0 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 12
+	OperatorEnabled on
+	SetOperatorName "Ink"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Ink.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 13
+	OperatorEnabled on
+	SetOperatorName "Paint"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Paint.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 14
+	OperatorEnabled on
+	SetOperatorName "Shadow"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Shadow.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 15
+	OperatorEnabled on
+	SetOperatorName "Diffuse"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Diffuse.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 2 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 16
+	OperatorEnabled on
+	SetOperatorName "Background"
+
+	SetCurrentClip 0
+
+	Filename "\\Cray3\Showreel\Current Work Backup\03_Scripting\maxScript\max 5\3ds to ae\g buffer\gbuffer_Background.rla" 1 1 1 1
+
+	SetCurrentClip 1
+
+	SolidLayer 640 480 0.0 0.0 0.0 0
+
+		ResetChannel ~1 0 on
+		ResetChannel ~2 0 on
+		ResetChannel ~3 0 on
+		ResetChannel ~4 1 on
+		ResetChannel ~32/~1 0.0 on
+		ResetChannel ~32/~2 0.0 on
+		ResetChannel ~32/~3 0.0 on
+		ResetChannel ~32/~4 1 on
+		ResetChannel ~8 0 on
+		ResetChannel ~10 640 on
+		ResetChannel ~11 480 on
+		ResetChannel ~13 30 on
+		ResetChannel ~14 1.0 on
+		ResetChannel ~18 0 on
+		ResetChannel ~19 0 on
+		ResetChannel ~20 640 on
+		ResetChannel ~21 480 on
+
+SetCurrentOperator 1
+MakeConnection 0 0
+
+SetCurrentOperator 2
+MakeConnection 1 3
+
+SetCurrentOperator 3
+MakeConnection 1 4
+
+SetCurrentOperator 4
+MakeConnection 1 5
+
+SetCurrentOperator 5
+MakeConnection 1 6
+
+SetCurrentOperator 6
+MakeConnection 1 7
+
+SetCurrentOperator 7
+MakeConnection 1 8
+
+SetCurrentOperator 8
+MakeConnection 1 9
+
+SetCurrentOperator 9
+MakeConnection 1 10
+
+SetCurrentOperator 10
+MakeConnection 1 11
+
+SetCurrentOperator 11
+MakeConnection 1 12
+
+SetCurrentOperator 12
+MakeConnection 1 13
+
+SetCurrentOperator 13
+MakeConnection 1 14
+
+SetCurrentOperator 14
+MakeConnection 1 15
+
+SetCurrentOperator 15
+MakeConnection 1 16
+
+SetCurrentOperator 16
+MakeConnection 1 17
+
+Mon1ViewSetup 1
+SetCurrentView 0
+ViewOperator 1 1 0
+ViewOptions 1 8
+ViewSettings 1 0 0 0 0 off off off off off off 1 0 0.5 0.5 0 0.5 0
+
+CurrentFrame 0
+AudioSetup "" 0 0 0 0
+PlayRange 0 0

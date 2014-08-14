@@ -1,0 +1,27 @@
+[name]
+name=Linear Color Key
+matchName=ADBE Linear Color Key2
+
+[properties]
+name=	Preview
+type=	NO_VALUE
+
+name=	View
+type=	OneD
+
+name=	Key Color
+type=	COLOR
+
+name=	Match colors
+type=	OneD
+
+name=	Matching Tolerance
+type=	OneD
+
+name=	Matching Softness
+type=	OneD
+
+name=	Key Operation
+type=	OneD
+
+

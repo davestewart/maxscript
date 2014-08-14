@@ -1,0 +1,45 @@
+[name]
+name=Calculations
+matchName=ADBE Calculations
+
+[properties]
+name=	Input
+type=	NO_VALUE
+
+name=	Input Channel
+type=	OneD
+
+name=	Invert Input
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Second Source
+type=	NO_VALUE
+
+name=	Second Layer
+type=	LAYER_INDEX
+
+name=	Second Layer Channel
+type=	OneD
+
+name=	Second Layer Opacity
+type=	OneD
+
+name=	Invert Second Layer
+type=	OneD
+
+name=	Stretch Second Layer to Fit
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Blending Mode
+type=	OneD
+
+name=	Preserve Transparency
+type=	OneD
+
+

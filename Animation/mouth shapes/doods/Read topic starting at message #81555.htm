@@ -1,0 +1,1020 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://support.discreet.com/webboard/wbpx.dll/read?81555,19 -->
+<!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ --><HTML><HEAD><TITLE>Read topic starting at message #81555</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+
+<META content="MSHTML 5.50.4134.600" name=GENERATOR></HEAD>
+<BODY text=#0d0271 vLink=#00557d aLink=#f42804 link=#0000ff bgColor=#e7e6e8><A 
+name=#top><A name=#81555><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81555">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81555r">Reply/Quote</A> 
+      | <A href="mailto:3dsmax@davestewart.co.uk">Email Reply</A> <NOAUTH>| <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/delete?81555,19">Delete</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/edit?19,81555">Edit</A> 
+      </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81562">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19e#81555">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Simple modifier parameter wiring 
+      problem (1 of 11), Read 107 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?4543"></NOAUTH>Dave 
+      Stewart<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:3dsmax@davestewart.co.uk">3dsmax@davestewart.co.uk</A></U> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Saturday, January 19, 2002 07:15 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>I'm writing a simple modifier, which is going 
+very well. The spinners are hard-wired to the parameters, which are animateable, 
+and the feedback is two-way, as you would expect...
+<BLOCKQUOTE><FONT face="Courier New, Courier, mono"><I>Time-change &lt;-- 
+  --&gt; Spinner update</I></FONT></BLOCKQUOTE>using... 
+<BLOCKQUOTE><FONT face="Courier New, Courier, mono"><I>on matID set val do 
+  delegate.materialID = val</I></FONT></BLOCKQUOTE>...in the parameters rollout. 
+However, I have secondary interface items (checkbuttons), which also need to be 
+updated during a Time-change. Ive tried... 
+<BLOCKQUOTE><FONT face="Courier New, Courier, mono"><I>on spn1 changed val do 
+  ... update checkbutton code</I></FONT></BLOCKQUOTE>... in the interface rollout, 
+but the checkbuttons are just not updating when I drag the timeslider, even 
+though the spinner value is clearly changing. I have a feeling I should be using 
+
+<BLOCKQUOTE><FONT face="Courier New, Courier, mono"><I>on matID get val do 
+  ...</I></FONT></BLOCKQUOTE>...in the parameters rollout, but I've tried, and 
+don't understand how to use it. Any ideas? I was up till 6am last night, with no 
+joy. Lastly - can hardwired parameter-block values only be assigned to interface 
+items, or can I wire them to variables local to the interface rollout? This 
+would save me putting in a spinner that I don't really need. Thanks guys for 
+your input. Looking fwd to some hacking! Dave </FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81562><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81562">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81562r">Reply/Quote</A> 
+      | <A href="mailto:bobo@email.archlab.tuwien.ac.at">Email Reply</A> 
+      <NOAUTH>| Delete</DM> | Edit </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81555">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81565">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81562,19e#81562">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE><IMG alt="Posted via Email" 
+src="Read topic starting at message #81555_files/viaemail.gif" align=right> 
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: No Topic (2 of 11), Read 93 times 
+      <IMG src="Read topic starting at message #81555_files/new.gif"> 
+  </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?9"></NOAUTH>Borislav 
+      Petrov [FA]<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:bobo@email.archlab.tuwien.ac.at">bobo@email.archlab.tuwien.ac.at</A></U> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Saturday, January 19, 2002 08:47 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>max_MAXScript Listmanager wrote:<BR>&gt; 
+<BR>&gt; From: "Dave Stewart" &lt;3dsmax@davestewart.co.uk&gt;<BR>&gt; 
+<BR>...<BR>&gt; Lastly - can hardwired parameter-block values only be assigned 
+to interface items, or can I wire them to variables local to the interface 
+rollout? This would save me putting in a spinner that I don't really 
+need.<BR><BR><BR>Dave,<BR><BR>You don't have to wire a paramblock parameter to 
+an interface item - <BR>wiring parameter blocks to UI rollouts is 
+optional.<BR>You can simply read/write the parameter block's value as<BR>if it 
+was a local variable for the plug-in. (It is actually<BR>a kind of local 
+variable with the difference that it is being<BR>managed automatically, can 
+appear in trackview and is stored <BR>with the plug-in in the scene.<BR><BR>-- 
+<BR>Cheers,<BR><BR>Bobo<BR>_____________________________________________<BR>VR 
+Boboland - The New Home of 3dsmax Scripts <BR><A target=_new 
+href="http://www.scriptspot.com/bobo">http://www.scriptspot.com/bobo</A><BR></FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81565><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81565">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81565r">Reply/Quote</A> 
+      | <A href="mailto:3dsmax@davestewart.co.uk">Email Reply</A> <NOAUTH>| <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/delete?81565,19">Delete</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/edit?19,81565">Edit</A> 
+      </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81562">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81569">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81565,19e#81565">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (3 of 11), Read 93 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?4543"></NOAUTH>Dave 
+      Stewart<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:3dsmax@davestewart.co.uk">3dsmax@davestewart.co.uk</A></U> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Saturday, January 19, 2002 09:26 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>Cheers Bobo<BR>Can you give me an example of 
+syntax?<BR><BR>And do you knwo what handler would I use in the rollout to update 
+the UI on timeslider change? Or would I use a Time Callback Handler ?<BR></FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81569><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81569">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81569r">Reply/Quote</A> 
+      | <A href="mailto:3dsmax@davestewart.co.uk">Email Reply</A> <NOAUTH>| <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/delete?81569,19">Delete</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/edit?19,81569">Edit</A> 
+      </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81565">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81593">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81569,19e#81569">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (4 of 11), Read 90 times, 3 File Attachments <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?4543"></NOAUTH>Dave 
+      Stewart<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:3dsmax@davestewart.co.uk">3dsmax@davestewart.co.uk</A></U> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Saturday, January 19, 2002 10:48 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>OK...<BR>I've got the parameters as local 
+variable stuff... nice and straightforward :) I like that.<BR><BR>The purpose 
+for this plugin is basically a simple cartoon lip-sync modifier. A column of 
+image buttons (showing mouth shapes) will update a corresponding material on the 
+character.<BR><BR><IMG 
+src="Read topic starting at message #81555_files/lipsync.gif"> <BR>The script 
+works fine as is, setting the correct material when pressed, and creating keys, 
+but the problem arises when I scrub the time slider. I want the modifier to 
+actively know when the material #integer has changed, and update the 
+check-buttons accordingly.<BR><BR>This will make a VERY useful modifier for 
+anyone wanting to do cartoon lip synch. As well as that, it will enable me to 
+complete the current job I'm on without killing myself!<BR><BR><B>So, 
+essentially - I need to know how to update the modifier interface on timeslider 
+change.<BR><I>Please can someone help!</I></B> <BR><BR>Thanks again, 
+gurus,<BR>Dave </FONT>
+<P><FONT face="Arial, Helv" size=-1><A target=_new 
+href="http://support.discreet.com/webboard/wbpx.dll/upload/simpleMaterialMod08.ms"><IMG 
+height=40 alt=Document hspace=2 
+src="Read topic starting at message #81555_files/fa_doc-s.gif" width=40 
+align=left vspace=2 border=0> SIMPLEMATERIALMOD08.MS (4KB) <BR></A><BR 
+clear=all><A target=_new 
+href="http://support.discreet.com/webboard/wbpx.dll/upload/lipsync.gif"><IMG 
+height=40 alt=Image hspace=2 
+src="Read topic starting at message #81555_files/fa_image-s.gif" width=40 
+align=left vspace=2 border=0> LIPSYNC.GIF (4KB) <BR></A><BR clear=all><A 
+target=_new 
+href="http://support.discreet.com/webboard/wbpx.dll/upload/simpleMaterialMod09.ms"><IMG 
+height=40 alt=Document hspace=2 
+src="Read topic starting at message #81555_files/fa_doc-s.gif" width=40 
+align=left vspace=2 border=0> SIMPLEMATERIALMOD09.MS (4KB) <BR>...with 'Assign 
+Rndm MultMaterial' bttn</A> <BR clear=all><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81593><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81593">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81593r">Reply/Quote</A> 
+      | <A href="mailto:ofer_z@hotmail.com">Email Reply</A> <NOAUTH>| 
+      Delete</DM> | Edit </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81569">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81668">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81593,19e#81593">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (5 of 11), Read 71 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?1666"></NOAUTH>Ofer 
+      Zelichover<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:ofer_z@hotmail.com">ofer_z@hotmail.com</A></U> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Saturday, January 19, 2002 03:21 PM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>Dave,<BR><BR>looks like a very cool 
+script!<BR>to solve the problem, i would create a simple function to update the 
+buttons states, istead of using the oldBtn parameter (so that you won't depend 
+on the plugin history). something like:<BR><PRE><BR>
+fn updateBnStates n = (<BR>
+    chkbn1.state = n==1<BR>
+    chkbn2.state = n==2<BR>
+    .<BR>
+    .<BR>
+)<BR>
+</PRE><BR><BR>now, you don't need the "on matID set val" that you have now. when 
+you use the ui parameter in the parameters block, it hard-wires the ui and the 
+parameter. you do need it to set the buttons states.<BR><BR><PRE><BR>
+on MatID set val do params.updateBnStates val<BR>
+</PRE><BR><BR>hOpe this helps,<BR>o </FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81668><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81668">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81668r">Reply/Quote</A> 
+      | <A href="mailto:3dsmax@davestewart.co.uk">Email Reply</A> <NOAUTH>| <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/delete?81668,19">Delete</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/edit?19,81668">Edit</A> 
+      </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81593">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81683">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81668,19e#81668">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (6 of 11), Read 67 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?4543"></NOAUTH>Dave 
+      Stewart<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:3dsmax@davestewart.co.uk">3dsmax@davestewart.co.uk</A></U> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Sunday, January 20, 2002 03:19 PM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>
+<DIV 
+style="BORDER-RIGHT: #000080 2px solid; PADDING-RIGHT: 10px; BORDER-TOP: #000080 2px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #000080 2px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #000080 2px solid"><BR>Hi 
+Ofer,<BR>Thanks for your advice. Looks like it's a bit tidier than my code. I'm 
+still getting my head round that param block stuff.<BR><BR>Anyway - I could be 
+wrong, but I'm not sure if you completely got what I was trying to do.<BR><BR>As 
+I see it: the code you've written just replaces my 'oldBtn' stuff with a 
+button-state update function, that is called when the user presses a button, so 
+in effect, is no different to what I've already written.<BR><BR>
+<DIV 
+style="BORDER-RIGHT: #b1bfde 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #b1bfde 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #b1bfde 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #b1bfde 1px solid; BACKGROUND-COLOR: #d4d8e4">What 
+I need is a way for the button states to be automatically updated <B>when the 
+user changes the current time</B>, such as dragging the timeslider.<BR><BR>At 
+the moment I don't know what to put in the code!? Is it...
+<UL><BR>
+  <LI>on uiItem change do handler<BR>
+  <LI>when this parameters change do handler<BR>
+  <LI>something else<BR></LI></UL>... and <I>what</I> would be the syntax, and 
+<I>where</I> would I put it??<BR></DIV><BR>Sorry to be such a pain - I just want 
+to get the damn thing working (so I can give something back to this lovely max 
+community) !<BR><BR>Cheers 4 the continued input :)<BR>Looking fwd to a speedy 
+reply,<BR>Dave<BR><BR></DIV><BR></FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81683><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81683">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81683r">Reply/Quote</A> 
+      | <A href="mailto:ofer_z@hotmail.com">Email Reply</A> <NOAUTH>| 
+      Delete</DM> | Edit </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81668">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81710">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81683,19e#81683">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (7 of 11), Read 51 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?1666"></NOAUTH>Ofer 
+      Zelichover<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:ofer_z@hotmail.com">ofer_z@hotmail.com</A></U> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Sunday, January 20, 2002 05:34 PM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>Dave,<BR><BR>the first part of my answer was 
+as you described, just another way of doing what you have done before.<BR>the 
+second part refers to the problem at hand.<BR>i'll try to explain it again, 
+since i wasn't clear in my first explenation.<BR><BR>in your code you had this 
+line in the parameter block:<BR><I>on matID set val do delegate.materialID = val 
+</I><BR><BR>this line is not needed, since when you use the <B>ui</B> parameter 
+in the declerations in the parameters block, MXS automatically hard-wires that 
+parameter and the appropriate ui element.<BR><BR>now, you <B>CAN</B> use the 
+"<I>on matID set val ...</I>" to change the other parts of the ui. the "matID 
+set" handler will be called whenever the value of matID is changed, whether 
+direcly (using ui or assigning a value in MXS) or indirectly when moving the 
+time slider and the value is animated. so putting this line in the parameter 
+block should solve you problem:<BR></I>on matID set val do params.updateBnStates 
+val </I><BR><BR>hOpe this helps,<BR>o </FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81710><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81710">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81710r">Reply/Quote</A> 
+      | <A href="mailto:3dsmax@davestewart.co.uk">Email Reply</A> <NOAUTH>| <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/delete?81710,19">Delete</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/edit?19,81710">Edit</A> 
+      </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81683">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81718">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81710,19e#81710">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (8 of 11), Read 47 times, 1 File Attachment <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?4543"></NOAUTH>Dave 
+      Stewart<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:3dsmax@davestewart.co.uk">3dsmax@davestewart.co.uk</A></U> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Monday, January 21, 2002 03:25 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>Hi Ofer<BR>Yes, I did exactly that after your 
+first post... but I couldn't get the button updates working, so I assumed you 
+had misunderstood. Seeing as you <I>are</I> sure, here's the re-adjuested and 
+double-checked code.<BR><BR>It still doesn't work - I can't figure it - would 
+you like to check and make sure I havn't boobed it up?<BR><BR>Much 
+appreciation!<BR>(Have big plans for the final 
+version!)<BR><BR>Dave<BR>:)<BR><BR></FONT>
+<P><FONT face="Arial, Helv" size=-1><A target=_new 
+href="http://support.discreet.com/webboard/wbpx.dll/upload/simpleMaterialMod08%2003.ms"><IMG 
+height=40 alt=Document hspace=2 
+src="Read topic starting at message #81555_files/fa_doc-s.gif" width=40 
+align=left vspace=2 border=0> SIMPLEMATERIALMOD08 03.MS (4KB) <BR></A><BR 
+clear=all><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81718><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81718">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81718r">Reply/Quote</A> 
+      | <A href="mailto:ofer_z@hotmail.com">Email Reply</A> <NOAUTH>| 
+      Delete</DM> | Edit </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81710">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81733">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81718,19e#81718">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (9 of 11), Read 45 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?1666"></NOAUTH>Ofer 
+      Zelichover<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:ofer_z@hotmail.com">ofer_z@hotmail.com</A></U> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Monday, January 21, 2002 05:03 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>hey Dave,<BR><BR>sorry about that, i 
+remebered that working for me when i tested it before. it doesn't seem to work 
+although this is the way it should according to the help. maybe one of the FA's 
+can confirm it as a bug?<BR><BR>anyway, i'm still trying to find a work around. 
+i tried using the associated get handler, but i only seem to get max to crash 
+when using it, usually with an error saying that max cannont assign some type as 
+another type (FA's: another bug?)<BR><BR>if i'll find something i'll let you 
+know.<BR><BR>cheers,<BR>o </FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- readfull.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+<A name=#top><A name=#81733><!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages start here (no header) -->
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face="Arial, Helv" size=1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#top">TOP</A> 
+      | <A href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81733">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81733r">Reply/Quote</A> 
+      | <A href="mailto:swami@cfl.rr.com">Email Reply</A> <NOAUTH>| Delete</DM> 
+      | Edit </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81718">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81735">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81733,19e#81733">Entire 
+      Topic</A> </FONT></B></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (10 of 11), Read 39 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?123"></NOAUTH>Swami 
+      Lama [FA]<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:swami@cfl.rr.com">swami@cfl.rr.com</A></U> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Monday, January 21, 2002 06:48 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>I have passed this up to 
+QE...<BR><BR><BR>AssistivelYours,<BR><BR>s* [FA]<BR>a.k.a. "codeWarrior()" 
+</FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT><!-- Try to close as many tags as you can think of to avoid messing up subsequent messages --></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+<ADDRESS></ADDRESS></B></I></U></BIG>
+<BLOCKQUOTE></BLOCKQUOTE>
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+<H1></H1>
+<H2></H2>
+<H3></H3>
+<H4></H4>
+<H5></H5>
+<H6></H6><PRE></PRE><PRE></PRE>
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TABLE></TEXTAREA><!-- Do not close the BODY and HTML tags --><!-- read.html --><!-- Copyright (c)1999 O'Reilly & Associates, Inc. http://webboard.oreilly.com/ -->
+<SCRIPT language=JavaScript>
+	//<!--
+	var helpwindow = null;
+	function openhelpwindow(url) 
+	{
+	    if ((helpwindow == null) || (helpwindow.closed)) { 
+	         helpwindow = window.open(url,"help","width=425,height=425,resizable,scrollbars,toolbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location = url;		
+		}
+	}
+	//-->
+	</SCRIPT>
+
+<TABLE cellPadding=2 width="100%" bgColor=#b1bfde>
+  <TBODY>
+  <TR>
+    <TD><FONT face="Arial, Helv" size=1><B><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81735">Reply</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/post?19,81735r">Reply/Quote</A> 
+      | <A href="mailto:3dsmax@davestewart.co.uk">Email Reply</A> <NOAUTH>| <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/delete?81735,19">Delete</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/edit?19,81735">Edit</A> 
+      </NOAUTH><BR><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81555,19#81733">Previous</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next</A> 
+      | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81529,19">Previous 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81557,19">Next 
+      Topic</A> | <A 
+      href="http://support.discreet.com/webboard/wbpx.dll/read?81735,19e#81735">Entire 
+      Topic</A> </B></FONT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Topic:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Re: Simple modifier parameter wiring 
+      problem (11 of 11), Read 40 times <IMG 
+      src="Read topic starting at message #81555_files/new.gif"> </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Conf:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/confinfo?19">MAXScript</A> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>From:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1><NOAUTH><A 
+      href="http://support.discreet.com/webboard/wbpx.dll/userpeek?4543"></NOAUTH>Dave 
+      Stewart<NOAUTH></A></NOAUTH> <U><A 
+      href="mailto:3dsmax@davestewart.co.uk">3dsmax@davestewart.co.uk</A></U> 
+      </FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><FONT face="Arial, Helv" size=-1><B>Date:</B> 
+      </FONT></TD>
+    <TD><FONT face="Arial, Helv" size=-1>Monday, January 21, 2002 06:52 AM 
+      </FONT></TD></TR></TBODY></TABLE>
+<P><!-- This is where the msg body will appear --><FONT 
+face="Verdana, Arial, Helv" size=2>Nice one - thanks Ofer &amp; Swami!<BR><BR>I 
+think I'm gonna replace the checkbuttons with just normal buttons if this is the 
+case. It's a shame, as it will reduce the amount of user feedback, but the 
+plugin will still work for the meantime.<BR><BR>I'm planning to widen the scope 
+of the plugin to accomodate custom user-designed bitmaps. The plan is that the 
+plugin will work out the amount of sub-images in the cui bitmap and build the 
+amount of butons accordingly. Therefore, you could have a simple lip-sync set, a 
+complex lip-sync set, or use it for an entirely different purpose whatsoever. 
+Maybe eyes, game textures, etc.<BR><BR>Maybe I'll have a radio button set in the 
+top rollout that will let you dynamically specify the use of the plugin 
+according to an ini file: "Mouth shapes, Eyes, game tex, etc".<BR><BR>Should be 
+a good little plugin when I finish it off in a couple of weeks!<BR><BR>In the 
+meantime though - would be very cool if you let me know of any progress. Post 
+back here, or if it's a while mail me at <A 
+href="mailto:3dsmax@davestewart.co.uk">3dsmax@davestewart.co.uk</A><BR><BR>Cheers 
+m' Dears!<BR>Dave<BR></FONT>
+<P><FONT face="Arial, Helv" size=-1><!-- End loop --></FONT>
+<HR SIZE=0>
+<FONT face="Arial, Helv" size=-1><A 
+href="http://support.discreet.com/webboard/wbpx.dll/post?19">Post New Topic</A> 
+| <A href="http://support.discreet.com/webboard/wbpx.dll/post?19,81735">Reply 
+to: "Re: Simple modifier parameter wiring problem "</A> </FONT><BR>&nbsp; <!-- Do not close the BODY and HTML tags --></BODY></HTML>

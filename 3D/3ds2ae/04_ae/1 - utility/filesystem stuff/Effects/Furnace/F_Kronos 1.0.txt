@@ -1,0 +1,120 @@
+[name]
+name=F_Kronos 1.0
+matchName=F_Kronos 806
+
+[properties]
+name=	About
+type=	NO_VALUE
+
+name=	Mode
+type=	OneD
+
+name=	Retime By
+type=	OneD
+
+name=	Speed
+type=	OneD
+
+name=	Source Frame
+type=	OneD
+
+name=	Tuning
+type=	NO_VALUE
+
+name=	Vector Detail
+type=	OneD
+
+name=	Smoothing
+type=	NO_VALUE
+
+name=	Global Smoothness
+type=	OneD
+
+name=	Local Smoothness
+type=	OneD
+
+name=	Smoothing Iterations
+type=	OneD
+
+name=	Smoothing
+type=	NO_VALUE
+
+name=	Build From One Image
+type=	OneD
+
+name=	Correct Luminance Changes
+type=	OneD
+
+name=	Filtering
+type=	OneD
+
+name=	Error Threshold
+type=	OneD
+
+name=	Block Size
+type=	OneD
+
+name=	Weighting
+type=	NO_VALUE
+
+name=	Red Weight
+type=	OneD
+
+name=	Green Weight
+type=	OneD
+
+name=	Blue Weight
+type=	OneD
+
+name=	Weighting
+type=	NO_VALUE
+
+name=	Tuning
+type=	NO_VALUE
+
+name=	Shutter
+type=	NO_VALUE
+
+name=	Shutter Control
+type=	OneD
+
+name=	Shutter Time
+type=	OneD
+
+name=	Shutter Samples
+type=	OneD
+
+name=	Shutter
+type=	NO_VALUE
+
+name=	Matte
+type=	LAYER_INDEX
+
+name=	Matte Channel
+type=	OneD
+
+name=	Warp
+type=	LAYER_INDEX
+
+name=	Show
+type=	OneD
+
+name=	Source Crops
+type=	NO_VALUE
+
+name=	Left
+type=	OneD
+
+name=	Right
+type=	OneD
+
+name=	Bottom
+type=	OneD
+
+name=	Top
+type=	OneD
+
+name=	Source Crops
+type=	NO_VALUE
+
+

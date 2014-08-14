@@ -1,0 +1,30 @@
+[name]
+name=Wave Warp
+matchName=ADBE Wave Warp
+
+[properties]
+name=	Wave Type
+type=	OneD
+
+name=	Wave Height
+type=	OneD
+
+name=	Wave Width
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Wave Speed
+type=	OneD
+
+name=	Pinning
+type=	OneD
+
+name=	Phase
+type=	OneD
+
+name=	Antialiasing (Best Quality)
+type=	OneD
+
+

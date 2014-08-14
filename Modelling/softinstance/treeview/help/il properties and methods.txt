@@ -1,0 +1,23 @@
+show test.il
+  .ImageHeight : integer
+  .ImageWidth : integer
+  .MaskColor : OLE_COLOR
+  .UseMaskColor : boolean
+  .ListImages : IImages
+  .hImageList : OLE_HANDLE
+  .BackColor : OLE_COLOR
+OK
+showmethods test.il
+  .Overlay Key1:undefined Key2:undefined
+OK
+test.il.ListImages
+IImages
+show test.il.ListImages
+  .Count : integer
+  .Item[Index:undefined] : IImage
+OK
+showmethods test.il.ListImages
+  .Add Index:undefined Key:undefined Picture:undefined
+  .Clear()
+  .Remove Index:undefined
+OK

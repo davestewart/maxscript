@@ -1,0 +1,381 @@
+[name]
+name=Particular
+matchName=tc Particular
+
+[properties]
+name=	Preview
+type=	NO_VALUE
+
+name=	Emitter
+type=	NO_VALUE
+
+name=	Particles/sec
+type=	OneD
+
+name=	Emitter Type
+type=	OneD
+
+name=	Layer
+type=	LAYER_INDEX
+
+name=	Layer Sampling
+type=	OneD
+
+name=	Layer RGB Usage
+type=	OneD
+
+name=	Position XY
+type=	TwoD_SPATIAL
+
+name=	Position Z
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Direction Spread [%]
+type=	OneD
+
+name=	X Rotation
+type=	OneD
+
+name=	Y Rotation
+type=	OneD
+
+name=	Z Rotation
+type=	OneD
+
+name=	Velocity
+type=	OneD
+
+name=	Velocity Random [%]
+type=	OneD
+
+name=	Velocity from Motion [%]
+type=	OneD
+
+name=	Emitter Size X
+type=	OneD
+
+name=	Emitter Size Y
+type=	OneD
+
+name=	Emitter Size Z
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Particle
+type=	NO_VALUE
+
+name=	Life [sec]
+type=	OneD
+
+name=	Life Random [%]
+type=	OneD
+
+name=	Particle Type
+type=	OneD
+
+name=	Sphere Feather
+type=	OneD
+
+name=	Custom
+type=	NO_VALUE
+
+name=	Layer
+type=	LAYER_INDEX
+
+name=	Time Sampling
+type=	OneD
+
+name=	Number of Clips
+type=	OneD
+
+name=	Subframe Sampling
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Rotation
+type=	OneD
+
+name=	Rotation Speed
+type=	OneD
+
+name=	Size
+type=	OneD
+
+name=	Size Random [%]
+type=	OneD
+
+name=	Size over Life
+type=	NO_VALUE
+
+name=	Opacity
+type=	OneD
+
+name=	Opacity Random [%]
+type=	OneD
+
+name=	Opacity over Life
+type=	NO_VALUE
+
+name=	Set Color
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Color Random [%]
+type=	OneD
+
+name=	Color over Life
+type=	NO_VALUE
+
+name=	Transfer Mode
+type=	OneD
+
+name=	Transfer Mode over Life
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Physics
+type=	NO_VALUE
+
+name=	Physics Model
+type=	OneD
+
+name=	Gravity
+type=	OneD
+
+name=	Physics Time Factor
+type=	OneD
+
+name=	Air
+type=	NO_VALUE
+
+name=	Air Resistance
+type=	OneD
+
+name=	Spin Amplitude
+type=	OneD
+
+name=	Spin Frequency
+type=	OneD
+
+name=	Time Before Spin [sec]
+type=	OneD
+
+name=	Wind X
+type=	OneD
+
+name=	Wind Y
+type=	OneD
+
+name=	Wind Z
+type=	OneD
+
+name=	Turbulence Field
+type=	NO_VALUE
+
+name=	Affect Size
+type=	OneD
+
+name=	Affect Position
+type=	OneD
+
+name=	Time Before Affect [sec]
+type=	OneD
+
+name=	Scale
+type=	OneD
+
+name=	Complexity
+type=	OneD
+
+name=	Octave Multiplier
+type=	OneD
+
+name=	Octave Scale
+type=	OneD
+
+name=	Evolution Speed
+type=	OneD
+
+name=	Move with Wind [%]
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Spherical Field
+type=	NO_VALUE
+
+name=	Strength
+type=	OneD
+
+name=	Postition XY
+type=	TwoD_SPATIAL
+
+name=	Position Z
+type=	OneD
+
+name=	Radius
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+name=	Visualize Field
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Bounce
+type=	NO_VALUE
+
+name=	Floor Layer
+type=	LAYER_INDEX
+
+name=	Floor Mode
+type=	OneD
+
+name=	Wall Layer
+type=	LAYER_INDEX
+
+name=	Wall Mode
+type=	OneD
+
+name=	Collision Event
+type=	OneD
+
+name=	Bounce
+type=	OneD
+
+name=	Bounce Random [%]
+type=	OneD
+
+name=	Slide
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Aux System
+type=	NO_VALUE
+
+name=	Emit
+type=	OneD
+
+name=	Particles/sec
+type=	OneD
+
+name=	Life [sec]
+type=	OneD
+
+name=	Type
+type=	OneD
+
+name=	Velocity
+type=	OneD
+
+name=	Size
+type=	OneD
+
+name=	Size over Life
+type=	NO_VALUE
+
+name=	Opacity
+type=	OneD
+
+name=	Opacity over Life
+type=	NO_VALUE
+
+name=	Color over Life
+type=	NO_VALUE
+
+name=	Color From Main [%]
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Visibility
+type=	NO_VALUE
+
+name=	Far Vanish
+type=	OneD
+
+name=	Far Start Fade
+type=	OneD
+
+name=	Near Start Fade
+type=	OneD
+
+name=	Near Vanish
+type=	OneD
+
+name=	Near & Far Curves
+type=	OneD
+
+name=	Z Buffer
+type=	LAYER_INDEX
+
+name=	Z at Black
+type=	OneD
+
+name=	Z at White
+type=	OneD
+
+name=	Obscuration Layer
+type=	LAYER_INDEX
+
+name=	Also Obscure with
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Motion Blur
+type=	NO_VALUE
+
+name=	Motion Blur
+type=	OneD
+
+name=	Shutter Angle
+type=	OneD
+
+name=	Shutter Phase
+type=	OneD
+
+name=	Type
+type=	OneD
+
+name=	Levels
+type=	OneD
+
+name=	Opacity Boost
+type=	OneD
+
+name=	Disregard
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Render Mode
+type=	OneD
+
+

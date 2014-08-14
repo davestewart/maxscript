@@ -1,0 +1,198 @@
+<HTML>
+<HEAD>
+	<TITLE>jbLib</TITLE>
+	<STYLE TYPE="text/css">
+	<--
+		HR { color:rgb(140,140,140); height:1px; }
+		IMG { border-style:solid; border-width:1px; border-color:rgb(0,0,0); }
+		CODE { color:rgb(0,0,190); }
+		P.indent { padding:0pt 0pt 0pt 20pt }
+		DL.indent { padding:0pt 0pt 0pt 20pt }
+		DD { padding:3pt; }
+		LI { padding:0pt; }
+		BODY { color:rgb(0,0,0); background-color:rgb(220,220,220); font-family:"Veranda","Arial","sans-serif"; font-size:10pt; }
+		A { text-decoration:none; }
+		A:link { color:rgb(0,0,150); }
+		A:visited { color:rgb(127,0,0) }
+		A:hover { background-color:rgb(255,255,0); }
+	-->
+	</STYLE>
+</HEAD>
+
+<BODY>
+
+<A NAME="top"></A>
+<H1>jbLib</H1>
+<UL>
+	<LI CLASS="compact"><A HREF="#desc">Description</A></LI>
+	<LI CLASS="compact"><A HREF="#functions">Functions</A></LI>
+	<LI CLASS="compact"><A HREF="#bugs">Known Bugs/Limitations</A></LI>
+</UL>
+
+<A NAME="desc"></A>
+<HR>
+<H3>Description:</H3>
+<DIV ALIGN="left">
+	<P>jbLib is a MaxScript extension that contains a collection of new functions for use in MaxScript.</P>
+	<P>The current version is 7.  This is defined in a global read-only variable <CODE>jbLibVersion</CODE>, which you can use to check that jbLib.dlx is installed and up-to-date for your script.  If you use these functions, it is encouraged that you wrap your script in an <CODE>if</CODE> statement that does these checks, and gracefully bails if they fail. ie:<BR>
+<CODE><PRE>
+if (
+	local requiredVer = XXX
+	local str, failed = FALSE
+	if (jbLibVersion == undefined) then (
+		failed = TRUE; str = "This script requires jbLib.dlx to run properly."
+	) else if (requiredVer > jbLibVersion) then (
+		failed = TRUE; str = "The installed version of jbLib.dlx is out of date."
+	)
+	if (failed) then (
+		str += "\n\nYou can get the latest version at http://www.footools.com/.\n\nWould you like to connect there now?"
+		if (QueryBox str title:"Error") then ( try (ShellLaunch "http://www.footools.com/" "") catch () )
+		FALSE
+	) else ( TRUE )
+) then (
+... <B>-- your script body goes here</B>
+)
+</PRE></CODE>
+<P><I><B>Important:</B></I> replace "<CODE>XXX</CODE>" in the "<CODE>local requiredVer = XXX</CODE>" line above with the current value of <CODE>jbLibVersion</CODE> at the time you write the script.  This way, your script becomes "locked" to require the jbLib version you're currently using.
+<P>If your script is a macroscript, the script body would be wrapped inside the above <CODE>if</CODE> statement, and the macroscript definition (the <CODE>"macroScript myMacro category:"MyCategory""</CODE> lines) would go around all of the above.
+</DIV>
+<P><A HREF="#top">Back To Top...</A></P>
+
+<A NAME="functions"></A>
+<HR>
+<H3>Functions:</H3>
+<DL>
+	<DT><CODE><B>ApplyVertexColors</B> &lt;collapsedMesh&gt; &lt;lightModel&gt; &lt;doMix&gt; &lt;castShadows&gt; &lt;useMaps&gt;</CODE>
+		<DD>Equivalent to the built in "Apply Vertex Colors" utility, but modifies the mesh object itself instead of adding a modifier.<BR>
+		Returns <CODE>TRUE</CODE> on success, otherwise <CODE>FALSE</CODE>.<BR>
+		<CODE>collapsedMesh</CODE> must be a collapsed editable mesh node, with no modifiers applied.<BR>
+		<CODE>lightModel</CODE> is an integer, where 0 is "Scene Lights" and 1 is "Diffuse".<BR>
+		See the Max documentation on the "Apply Vertex Colors" utility for an explaination of the arguments.<BR>
+		Required jbLibVersion: 1
+
+	<DT><CODE><B>DeleteDirectory</B> &lt;pathName&gt;</CODE>
+		<DD>Deletes the given directory (which must be empty).  TRUE on success, otherwise FALSE.<BR>
+		Required jbLibVersion: 6
+
+	<DT><CODE><B>ElementFromFace</B> &lt;meshObject&gt; &lt;faceIndex&gt;</CODE>
+		<DD>Returns a bitarray with all the bits set that are in the same element as the given face index.<BR>
+		Required jbLibVersion: 1
+
+	<DT><CODE><B>EscapeHit</B></CODE>
+		<DD>Returns <CODE>TRUE</CODE> if the escape key has been hit since the last time function has been called, otherwise <CODE>FALSE</CODE>.<BR>
+		This lets you bypass maxscript's default escape handler and write scripts that can abort on their own when escape is hit.<BR>
+		<I>Note</I>: this will return <CODE>TRUE</CODE> <I>even if max does not have window focus</I>.<BR>
+		<I>Note 2</I>: be careful with this one, since it's easy to accidentally set "escapeEnable" to <CODE>FALSE</CODE>, and forget to call this function inside your main loop, at which point max will appear to have crashed (since you can't break out of the loop by holding escape).<BR>
+		Required jbLibVersion: 4<BR>
+		Example usage:<BR><BR>
+		<CODE>
+		escapeEnable = FALSE<BR>
+		do (<BR>
+			-- your code here<BR>
+		) while NOT EscapeHit()<BR>
+		escapeEnable = TRUE<BR>
+		</CODE><BR>
+
+	<DT><CODE><B>EvalTextureColorPoint</B> &lt;texture&gt; &lt;XYZ&gt; &lt;UVW&gt;</CODE>
+		<DD>Gets the color of any Max texture for the given position/uvw coordinates.<BR>
+		XYZ and UVW are Point3 values.  UVW "usually" ranges between [0,0,0] (at the lower left of the texture) to [1,1,0] (at the upper right of the texture).<BR>
+		Note: not both coordinates will always be used.<BR>
+		i.e. If the texture is a Noise texmap using World coordinates, the UVW coordinates are ignored<BR>
+		Conversely, if the Noise is using UVW mapping, the XYZ coordinates are ignored.<BR>
+		However, textures can have sub-textures, so both coordinates may be used in the different sub-textures.<BR>
+		Lastly, this function simply point samples the texture, and doesn't support "fancier" textures like (say) the raytrace texture.<BR>
+		Required jbLibVersion: 2
+
+	<DT><CODE><B>GetClosestVertex</B> &lt;meshObject&gt; &lt;point3&gt;</CODE>
+		<DD>Returns the index of the closest vertex in the meshObject to the given point3.<BR>
+		Required jbLibVersion: 1
+
+	<DT><CODE><B>GetHitDistances</B> &lt;meshObject&gt; &lt;point3 p1&gt; &lt;point3 p2&gt;</CODE>
+		<DD>Given a mesh, this will return a sorted array of distances to all the intersection points between two given points in world space (<CODE>p1</CODE> and <CODE>p2</CODE>).<BR>
+		A bit like <CODE>IntersectRay</CODE>, but returns all hit points along the "ray" instead of just the front-most.<BR>
+		<I>Note</I>: backfacing faces ARE included as well.<BR>
+		Required jbLibVersion: 4
+
+	<DT><CODE><B>GetRegistrySetting</B> &lt;rootKeyName&gt; &lt;keyPath&gt; &lt;valueName&gt;</CODE><BR>
+		<CODE><B>SetRegistrySetting</B> &lt;rootKeyName&gt; &lt;keyPath&gt; &lt;valueName&gt; &lt;value&gt;</CODE>
+		<DD>Gets/Sets a value to the Windows registry.  Yes, beware.<BR>
+		<CODE>rootKeyName</CODE> can be one of:
+		<UL>
+			<LI><CODE>#HKEY_CLASSES_ROOT</CODE>
+			<LI><CODE>#HKEY_CURRENT_CONFIG</CODE>
+			<LI><CODE>#HKEY_CURRENT_USER</CODE>
+			<LI><CODE>#HKEY_LOCAL_MACHINE</CODE> <I>(Get only)</I>
+			<LI><CODE>#HKEY_USERS</CODE> <I>(Get only)</I>
+		</UL>
+		<CODE>keyPath</CODE> is the full path to the key in question. (ie. <CODE>"Software\\Microsoft\\Internet Explorer"</CODE>)<BR>
+		<CODE>valueName</CODE> is the name of the value in question (ie. <CODE>"Download Directory"</CODE>)<BR>
+		<CODE>value</CODE> is the value to be set (ie. <CODE>"C:\\MyDownloads"</CODE>)<BR>
+		The return value for <CODE>Get</CODE> is the value in question, or undefined if it doesn't exist.<BR>
+		The return value for <CODE>Set</CODE> is <CODE>true</CODE> on success.<BR>
+		In both functions, a descriptive exception will be raised and printed to the listener if something goes wrong.<BR>
+		Suggested usage would therefore wrap the Get/Set calls in a <CODE>try()catch()</CODE> block.<BR>
+		Note: the only supported registry value type right now is REG_SZ (standard strings).<BR>
+		Required jbLibVersion: 5
+
+	<DT><CODE><B>GetSpaceWarpForce</B> &lt;spaceWarpNode&gt; &lt;point3&gt;</CODE>
+		<DD>Returns the force the given spacewarp node is exerting at the given point in space.<BR>
+		Use <CODE>SpaceWarpSupportsForce</CODE> to check if the given spacewarp will work or not.<BR>
+		Typically will work only with spacewarps that are designed to work with particle systems.<BR>
+		Required jbLibVersion: 1
+
+	<DT><CODE><B>GetUNCPath</B> &lt;filenamePath&gt;</CODE>
+		<DD>Returns a UNC style path given a filename string, or <CODE>undefined</CODE> if the path can't be converted (ie. is a local drive).<BR>
+		Required jbLibVersion: 1
+
+	<DT><CODE><B>IsActive</B> &lt;atmospheric | effect&gt;</CODE>
+		<DD>Returns TRUE if the atmospheric/effect is active, otherwise FALSE.<BR>
+		Only available in Max3 (built into Max4+)
+		Required jbLibVersion: 3
+
+	<DT><CODE><B>IsParticleSystem</B> &lt;node&gt;</CODE>
+		<DD>Returns true if the given node is a particle system.<BR>
+		Required jbLibVersion: 1
+
+	<DT><CODE><B>MoveFile</B> &lt;oldName&gt; &lt;newName&gt;</CODE>
+		<DD>Moves the given file (both <CODE>oldName</CODE> and <CODE>newName</CODE> must be full paths, including the filename).  TRUE on success, otherwise FALSE.<BR>
+		Required jbLibVersion: 6
+
+	<DT><CODE><B>scanlineRenderEx struct</B></CODE>
+		<DD>Constains extra variables that get/set values in the render dialog for the scanline renderer.  Note: some are write-only.<BR>
+		<UL>
+			<LI><CODE>antiAliasing <I>(boolean)</I></CODE>
+			<LI><CODE>shadows <I>(boolean)</I></CODE>
+			<LI><CODE>mapping <I>(boolean)</I></CODE>
+			<LI><CODE>filterMaps <I>(boolean)</I></CODE>
+			<LI><CODE>forceWireframe <I>(boolean)</I></CODE>
+			<LI><CODE>autoReflect <I>(boolean)</I></CODE>
+			<LI><CODE>imageMotionBlur <I>(boolean)</I></CODE>
+			<LI><CODE>objectMotionBlur <I>(boolean)</I></CODE>
+			<LI><CODE>wireThickness <I>(float, write only)</I></CODE>
+			<LI><CODE>autoReflectLevels <I>(integer, write only)</I></CODE>
+			<LI><CODE>objectBlurDuration <I>(float, write only)</I></CODE>
+			<LI><CODE>objectBlurSubdivisions <I>(integer, write only)</I></CODE>
+			<LI><CODE>objectBlurSamples <I>(integer, write only)</I></CODE>
+			<LI><CODE>imageBlurDuration <I>(float, write only)</I></CODE>
+		</UL>
+		Required jbLibVersion: 7
+
+	<DT><CODE><B>SpaceWarpSupportsForce</B> &lt;spaceWarpNode&gt;</CODE>
+		<DD>Returns TRUE if the spacewarp works with the <CODE>GetSpaceWarpForce</CODE> function.<BR>
+		Required jbLibVersion: 2
+</DL>
+<P><A HREF="#top">Back To Top...</A></P>
+
+<A NAME="bugs"></A>
+<HR>
+<H3>Known Bugs/Limitations:</H3>
+<UL>
+	<LI>EvalTextureColorPoint could easily have bugs.  But it's handy, so I'm including it.
+</UL>
+<P><A HREF="#top">Back To Top...</A></P>
+
+<HR>
+Bug reports/comments/suggestions: <A HREF="MAILTO:foo@footools.com">foo@footools.com</A><BR>
+<HR>
+</BODY>
+</HTML>

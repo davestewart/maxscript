@@ -1,0 +1,120 @@
+[name]
+name=Caustics
+matchName=APC Caustics
+
+[properties]
+name=	Bottom
+type=	NO_VALUE
+
+name=	Bottom
+type=	LAYER_INDEX
+
+name=	Scaling
+type=	OneD
+
+name=	Repeat Mode
+type=	OneD
+
+name=	If Layer Size Differs
+type=	OneD
+
+name=	Blur
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Water
+type=	NO_VALUE
+
+name=	Water Surface
+type=	LAYER_INDEX
+
+name=	Wave Height
+type=	OneD
+
+name=	Smoothing
+type=	OneD
+
+name=	Water Depth
+type=	OneD
+
+name=	Refractive Index
+type=	OneD
+
+name=	Surface Color
+type=	COLOR
+
+name=	Surface Opacity
+type=	OneD
+
+name=	Caustics Strength
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Sky
+type=	NO_VALUE
+
+name=	Sky
+type=	LAYER_INDEX
+
+name=	Scaling
+type=	OneD
+
+name=	Repeat Mode
+type=	OneD
+
+name=	If Layer Size Differs
+type=	OneD
+
+name=	Intensity
+type=	OneD
+
+name=	Convergence
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Lighting
+type=	NO_VALUE
+
+name=	Light Type
+type=	OneD
+
+name=	Light Intensity
+type=	OneD
+
+name=	Light Color
+type=	COLOR
+
+name=	Light Position
+type=	TwoD_SPATIAL
+
+name=	Light Height
+type=	OneD
+
+name=	Ambient Light
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Material
+type=	NO_VALUE
+
+name=	Diffuse Reflection
+type=	OneD
+
+name=	Specular Reflection
+type=	OneD
+
+name=	Highlight Sharpness
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

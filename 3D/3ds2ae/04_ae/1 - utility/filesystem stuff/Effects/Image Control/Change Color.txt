@@ -1,0 +1,33 @@
+[name]
+name=Change Color
+matchName=ADBE Change Color
+
+[properties]
+name=	View
+type=	OneD
+
+name=	Hue Transform
+type=	OneD
+
+name=	Lightness Transform
+type=	OneD
+
+name=	Saturation Transform
+type=	OneD
+
+name=	Color To Change
+type=	COLOR
+
+name=	Matching Tolerance
+type=	OneD
+
+name=	Matching Softness
+type=	OneD
+
+name=	Match Colors
+type=	OneD
+
+name=	Invert Color Correction Mask
+type=	OneD
+
+

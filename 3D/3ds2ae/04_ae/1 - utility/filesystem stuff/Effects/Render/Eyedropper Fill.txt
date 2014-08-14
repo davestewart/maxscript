@@ -1,0 +1,21 @@
+[name]
+name=Eyedropper Fill
+matchName=ADBE Eyedropper Fill
+
+[properties]
+name=	Sample Point
+type=	TwoD_SPATIAL
+
+name=	Sample Radius
+type=	OneD
+
+name=	Average Pixel Colors
+type=	OneD
+
+name=	Maintain Original Alpha
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

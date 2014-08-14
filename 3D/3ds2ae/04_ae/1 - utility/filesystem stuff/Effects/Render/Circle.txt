@@ -1,0 +1,42 @@
+[name]
+name=Circle
+matchName=ADBE Circle
+
+[properties]
+name=	Center
+type=	TwoD_SPATIAL
+
+name=	Radius
+type=	OneD
+
+name=	Edge
+type=	OneD
+
+name=	Contextual Slider
+type=	OneD
+
+name=	Feather
+type=	NO_VALUE
+
+name=	Feather Outer Edge
+type=	OneD
+
+name=	Feather Inner Edge
+type=	OneD
+
+name=	Feather Inner Edge
+type=	NO_VALUE
+
+name=	Invert Circle
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+

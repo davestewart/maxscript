@@ -1,0 +1,5 @@
+name "MaxScript Packager"
+description "Easily create zipped MaxScript (.mzp) package"
+version 1.0
+
+run "mzp creator 03.ms"

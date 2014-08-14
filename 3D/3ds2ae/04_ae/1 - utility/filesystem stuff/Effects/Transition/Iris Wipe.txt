@@ -1,0 +1,27 @@
+[name]
+name=Iris Wipe
+matchName=ADBE IRIS_WIPE
+
+[properties]
+name=	Iris Center
+type=	TwoD_SPATIAL
+
+name=	Iris Points
+type=	OneD
+
+name=	Outer Radius
+type=	OneD
+
+name=	Use Inner Radius
+type=	OneD
+
+name=	Inner Radius
+type=	OneD
+
+name=	Rotation
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+

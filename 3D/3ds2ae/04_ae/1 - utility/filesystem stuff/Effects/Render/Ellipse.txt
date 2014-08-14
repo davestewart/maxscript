@@ -1,0 +1,30 @@
+[name]
+name=Ellipse
+matchName=ADBE ELLIPSE
+
+[properties]
+name=	Center
+type=	TwoD_SPATIAL
+
+name=	Width
+type=	OneD
+
+name=	Height
+type=	OneD
+
+name=	Thickness
+type=	OneD
+
+name=	Softness
+type=	OneD
+
+name=	Inside Color
+type=	COLOR
+
+name=	Outside Color
+type=	COLOR
+
+name=	Composite On Original
+type=	OneD
+
+

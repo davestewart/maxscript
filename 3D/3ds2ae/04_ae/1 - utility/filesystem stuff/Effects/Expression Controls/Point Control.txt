@@ -1,0 +1,9 @@
+[name]
+name=Point Control
+matchName=ADBE Point Control
+
+[properties]
+name=	Point
+type=	TwoD_SPATIAL
+
+

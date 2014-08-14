@@ -1,0 +1,24 @@
+[name]
+name=Color Link
+matchName=ADBE Color Link
+
+[properties]
+name=	Source Layer
+type=	LAYER_INDEX
+
+name=	Sample
+type=	OneD
+
+name=	Clip (%)
+type=	OneD
+
+name=	Stencil Original Alpha
+type=	OneD
+
+name=	Opacity
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+

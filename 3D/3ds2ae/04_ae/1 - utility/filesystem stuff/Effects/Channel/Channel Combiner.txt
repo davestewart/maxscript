@@ -1,0 +1,30 @@
+[name]
+name=Channel Combiner
+matchName=ADBE Channel Combiner
+
+[properties]
+name=	Source Options
+type=	NO_VALUE
+
+name=	Use 2nd Layer
+type=	OneD
+
+name=	Source Layer
+type=	LAYER_INDEX
+
+name=	Source Layer
+type=	NO_VALUE
+
+name=	From
+type=	OneD
+
+name=	To
+type=	OneD
+
+name=	Invert
+type=	OneD
+
+name=	Solid Alpha
+type=	OneD
+
+

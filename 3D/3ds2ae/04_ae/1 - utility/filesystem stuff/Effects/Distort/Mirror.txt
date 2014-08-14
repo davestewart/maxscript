@@ -1,0 +1,12 @@
+[name]
+name=Mirror
+matchName=ADBE Mirror
+
+[properties]
+name=	Reflection Center
+type=	TwoD_SPATIAL
+
+name=	Reflection Angle
+type=	OneD
+
+

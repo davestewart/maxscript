@@ -1,0 +1,24 @@
+[name]
+name=Difference Matte
+matchName=ADBE Difference Matte2
+
+[properties]
+name=	View
+type=	OneD
+
+name=	Difference Layer
+type=	LAYER_INDEX
+
+name=	If Layer Sizes Differ
+type=	OneD
+
+name=	Matching Tolerance
+type=	OneD
+
+name=	Matching Softness
+type=	OneD
+
+name=	Blur Before Difference
+type=	OneD
+
+

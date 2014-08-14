@@ -1,0 +1,24 @@
+[name]
+name=Noise HLS Auto
+matchName=ADBE Noise HLS Auto2
+
+[properties]
+name=	Noise
+type=	OneD
+
+name=	Hue
+type=	OneD
+
+name=	Lightness
+type=	OneD
+
+name=	Saturation
+type=	OneD
+
+name=	Grain Size
+type=	OneD
+
+name=	Noise Animation Speed
+type=	OneD
+
+

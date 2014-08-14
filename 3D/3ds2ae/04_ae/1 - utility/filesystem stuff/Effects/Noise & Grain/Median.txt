@@ -1,0 +1,12 @@
+[name]
+name=Median
+matchName=ADBE Median
+
+[properties]
+name=	Radius
+type=	OneD
+
+name=	Operate On Alpha Channel
+type=	OneD
+
+

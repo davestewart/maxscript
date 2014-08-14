@@ -1,0 +1,51 @@
+[name]
+name=Roughen Edges
+matchName=ADBE Roughen Edges
+
+[properties]
+name=	Edge Type
+type=	OneD
+
+name=	Edge Color
+type=	COLOR
+
+name=	Border
+type=	OneD
+
+name=	Edge Sharpness
+type=	OneD
+
+name=	Fractal Influence
+type=	OneD
+
+name=	Scale
+type=	OneD
+
+name=	Stretch Width or Height
+type=	OneD
+
+name=	Offset (Turbulence)
+type=	TwoD_SPATIAL
+
+name=	Complexity
+type=	OneD
+
+name=	Evolution
+type=	OneD
+
+name=	Evolution Options
+type=	NO_VALUE
+
+name=	Cycle Evolution
+type=	OneD
+
+name=	Cycle (in Revolutions)
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	Random Seed
+type=	NO_VALUE
+
+

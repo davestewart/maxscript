@@ -1,0 +1,1482 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: redefinery.com: Effect Match Names Reference
+Date: Mon, 1 Aug 2005 15:19:16 +0100
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C596AC.61890C40"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C596AC.61890C40
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.redefinery.com/ae/fundamentals/effects/matchNames.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Den><HEAD><TITLE>redefinery.com: Effect Match Names =
+Reference</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1"><LINK=20
+title=3DXML href=3D"http://www.redefinery.com/rss.php" =
+type=3Dapplication/rss+xml=20
+rel=3Dalternate><LINK href=3D"favicon.ico" rel=3D"shortcut icon">
+<META http-equiv=3Dexpires content=3D-1>
+<META http-equiv=3Dpragma content=3Dno-cache>
+<META content=3D"redefinery (Jeff Almasol)" name=3Dauthor>
+<META content=3D"copyright =A9 1995-2005  all rights reserved." =
+name=3Dcopyright>
+<META content=3Dall name=3Drobots>
+<META content=3Dtrue name=3DMSSmartTagsPreventParsing>
+<META http-equiv=3Dimagetoolbar content=3Dno>
+<META content=3D"redefinery web site - online portfolio of jeff almasol" =
+
+name=3Ddescription>
+<META content=3D"redefinery, jeff almasol, jeffrey r. almasol" =
+name=3Dkeywords>
+<STYLE type=3Dtext/css>@import url( /redefinery.css );
+</STYLE>
+
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR></HEAD>
+<BODY>
+<DIV id=3Dbodycontent>
+<DIV class=3Dheader>
+<DIV class=3Dlogo><A title=3D"redefinery.com - click to return to the =
+home page"=20
+href=3D"http://www.redefinery.com/">redefinery</A></DIV>
+<DIV class=3Dmenu>
+<UL>
+  <LI class=3Dmenuactive><A title=3D"click to view my After Effects =
+scripts"=20
+  href=3D"http://www.redefinery.com/ae/">ae scripts</A>
+  <LI class=3Dmenuinactive><A=20
+  title=3D"click to view scripts i've created for Useful Assistants"=20
+  href=3D"http://www.redefinery.com/ua/">ua scripts</A>
+  <LI class=3Dmenuinactive><A=20
+  title=3D"click to view scripts i've created for Useful Things"=20
+  href=3D"http://www.redefinery.com/ut/">ut scripts</A>
+  <LI class=3Dmenuinactive><A title=3D"click to view samples of my work" =
+
+  href=3D"http://www.redefinery.com/gallery/">gallery</A>
+  <LI class=3Dmenuinactive><A title=3D"click to read more about me"=20
+  href=3D"http://www.redefinery.com/aboutme/">about =
+me</A></LI></UL></DIV></DIV>
+<DIV class=3Dbreadcrumbs><A href=3D"http://www.redefinery.com/">home</A> =
+&gt; <A=20
+href=3D"http://www.redefinery.com/ae/">ae scripts</A> &gt; <A=20
+href=3D"http://www.redefinery.com/ae/fundamentals/">Scripting =
+Fundamentals</A>=20
+&gt; <A =
+href=3D"http://www.redefinery.com/ae/fundamentals/effects/">Effects</A>=20
+&gt; <STRONG>Effect Match Names Reference</STRONG></DIV>
+<DIV class=3Dcontent>
+<H1>Effect Match Names Reference</H1>
+<P>This page lists the display names and internal matchNames for the =
+bundled=20
+effects, including the Cycore, Keylight, and Synthetic Aperture effects =
+(some of=20
+which are available only in the Professional version of After Effects). =
+Use=20
+these values when you need to reference an effect. Click a table heading =
+to sort=20
+by that criteria.</P>
+<TABLE cellSpacing=3D1 cellPadding=3D1 width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TH>Effect Category</TH>
+    <TH><A=20
+      =
+href=3D"http://www.redefinery.com/ae/fundamentals/effects/matchNames.php?=
+sort=3DdisplayName">Display=20
+      Name</A></TH>
+    <TH><A=20
+      =
+href=3D"http://www.redefinery.com/ae/fundamentals/effects/matchNames.php?=
+sort=3DmatchName">Match=20
+      Name</A></TH></TR>
+  <TR>
+    <TD>3D Channel</TD>
+    <TD>3D Channel Extract</TD>
+    <TD>ADBE AUX CHANNEL EXTRACT</TD></TR>
+  <TR>
+    <TD>3D Channel</TD>
+    <TD>Depth Matte</TD>
+    <TD>ADBE DEPTH MATTE</TD></TR>
+  <TR>
+    <TD>3D Channel</TD>
+    <TD>Depth of Field</TD>
+    <TD>ADBE DEPTH FIELD</TD></TR>
+  <TR>
+    <TD>3D Channel</TD>
+    <TD>Fog 3D</TD>
+    <TD>ADBE FOG_3D</TD></TR>
+  <TR>
+    <TD>3D Channel</TD>
+    <TD>ID Matte</TD>
+    <TD>ADBE ID MATTE</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Auto Color</TD>
+    <TD>ADBE AutoColor</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Auto Contrast</TD>
+    <TD>ADBE AutoContrast</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Auto Levels</TD>
+    <TD>ADBE AutoLevels</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Brightness &amp; Contrast</TD>
+    <TD>ADBE Brightness &amp; Contrast 2</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>CC Threshold</TD>
+    <TD>CC Threshold</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>CC Threshold RGB</TD>
+    <TD>CC Threshold RGB</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Channel Mixer</TD>
+    <TD>ADBE CHANNEL MIXER</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Color Balance</TD>
+    <TD>ADBE Color Balance 2</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Color Stabilizer</TD>
+    <TD>ADBE Deflicker</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Curves</TD>
+    <TD>ADBE CurvesCustom</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Hue/Saturation</TD>
+    <TD>ADBE HUE SATURATION</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Levels</TD>
+    <TD>ADBE Easy Levels</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Levels (Individual Controls)</TD>
+    <TD>ADBE Pro Levels</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Photo Filter</TD>
+    <TD>ADBE Photo Filter</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Posterize</TD>
+    <TD>ADBE Posterize</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Shadow/Highlight</TD>
+    <TD>ADBE ShadowHighlight</TD></TR>
+  <TR>
+    <TD>Adjust</TD>
+    <TD>Threshold</TD>
+    <TD>ADBE Threshold</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Backwards</TD>
+    <TD>ADBE Aud Reverse</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Bass &amp; Treble</TD>
+    <TD>ADBE Aud BT</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Delay</TD>
+    <TD>ADBE Aud Delay</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Flange &amp; Chorus</TD>
+    <TD>ADBE Aud_Flange</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>High-Low Pass</TD>
+    <TD>ADBE Aud HiLo</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Modulator</TD>
+    <TD>ADBE Aud Modulator</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Parametric EQ</TD>
+    <TD>ADBE Param EQ</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Reverb</TD>
+    <TD>ADBE Aud Reverb</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Stereo Mixer</TD>
+    <TD>ADBE Aud Stereo Mixer</TD></TR>
+  <TR>
+    <TD>Audio</TD>
+    <TD>Tone</TD>
+    <TD>ADBE Aud Tone</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Box Blur</TD>
+    <TD>ADBE Box Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>CC Radial Blur</TD>
+    <TD>CC Radial Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>CC Radial Fast Blur</TD>
+    <TD>CC Radial Fast Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>CC Vector Blur</TD>
+    <TD>CC Vector Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Channel Blur</TD>
+    <TD>ADBE Channel Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Compound Blur</TD>
+    <TD>ADBE Compound Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Directional Blur</TD>
+    <TD>ADBE Motion Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Fast Blur</TD>
+    <TD>ADBE Fast Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Gaussian Blur</TD>
+    <TD>ADBE Gaussian Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Radial Blur</TD>
+    <TD>ADBE Radial Blur</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Sharpen</TD>
+    <TD>ADBE Sharpen</TD></TR>
+  <TR>
+    <TD>Blur &amp; Sharpen</TD>
+    <TD>Unsharp Mask</TD>
+    <TD>ADBE Unsharp Mask2</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>3D Glasses</TD>
+    <TD>ADBE 3D Glasses</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Alpha Levels</TD>
+    <TD>ADBE Alpha Levels2</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Arithmetic</TD>
+    <TD>ADBE Arithmetic</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Blend</TD>
+    <TD>ADBE Blend</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>CC Composite</TD>
+    <TD>CC Composite</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Calculations</TD>
+    <TD>ADBE Calculations</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Channel Combiner</TD>
+    <TD>ADBE Channel Combiner</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Cineon Converter</TD>
+    <TD>ADBE Cineon Converter</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Compound Arithmetic</TD>
+    <TD>ADBE Compound Arithmetic</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Invert</TD>
+    <TD>ADBE Invert</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Minimax</TD>
+    <TD>ADBE Minimax</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Remove Color Matting</TD>
+    <TD>ADBE Remove Color Matting</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Set Channels</TD>
+    <TD>ADBE Set Channels</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Set Matte</TD>
+    <TD>ADBE Set Matte2</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Shift Channels</TD>
+    <TD>ADBE Shift Channels</TD></TR>
+  <TR>
+    <TD>Channel</TD>
+    <TD>Solid Composite</TD>
+    <TD>ADBE Solid Composite</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Bezier Warp</TD>
+    <TD>ADBE BEZMESH</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Bulge</TD>
+    <TD>ADBE Bulge</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Bend It</TD>
+    <TD>CC Bend It</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Bender</TD>
+    <TD>CC Bender</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Blobbylize</TD>
+    <TD>CC Blobbylize</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Flo Motion</TD>
+    <TD>CC Flo Motion</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Griddler</TD>
+    <TD>CC Griddler</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Lens</TD>
+    <TD>CC Lens</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Page Turn</TD>
+    <TD>CC Page Turn</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Power Pin</TD>
+    <TD>CC Power Pin</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Ripple Pulse</TD>
+    <TD>CC Ripple Pulse</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Slant</TD>
+    <TD>CC Slant</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Smear</TD>
+    <TD>CC Smear</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Split</TD>
+    <TD>CC Split</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Split 2</TD>
+    <TD>CC Split 2</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>CC Tiler</TD>
+    <TD>CC Tiler</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Corner Pin</TD>
+    <TD>ADBE Corner Pin</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Displacement Map</TD>
+    <TD>ADBE Displacement Map</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Liquify</TD>
+    <TD>ADBE LIQUIFY</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Magnify</TD>
+    <TD>ADBE Magnify</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Mesh Warp</TD>
+    <TD>ADBE MESH WARP</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Mirror</TD>
+    <TD>ADBE Mirror</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Offset</TD>
+    <TD>ADBE Offset</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Optics Compensation</TD>
+    <TD>ADBE Optics Compensation</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Polar Coordinates</TD>
+    <TD>ADBE Polar Coordinates</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Reshape</TD>
+    <TD>ADBE RESHAPE</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Ripple</TD>
+    <TD>ADBE Ripple</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Smear</TD>
+    <TD>ADBE SCHMEAR</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Spherize</TD>
+    <TD>ADBE Spherize</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Transform</TD>
+    <TD>ADBE Geometry2</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Turbulent Displace</TD>
+    <TD>ADBE Turbulent Displace</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Twirl</TD>
+    <TD>ADBE Twirl</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Warp</TD>
+    <TD>ADBE WRPMESH</TD></TR>
+  <TR>
+    <TD>Distort</TD>
+    <TD>Wave Warp</TD>
+    <TD>ADBE Wave Warp</TD></TR>
+  <TR>
+    <TD>Expression Controls</TD>
+    <TD>Angle Control</TD>
+    <TD>ADBE Angle Control</TD></TR>
+  <TR>
+    <TD>Expression Controls</TD>
+    <TD>Checkbox Control</TD>
+    <TD>ADBE Checkbox Control</TD></TR>
+  <TR>
+    <TD>Expression Controls</TD>
+    <TD>Color Control</TD>
+    <TD>ADBE Color Control</TD></TR>
+  <TR>
+    <TD>Expression Controls</TD>
+    <TD>Layer Control</TD>
+    <TD>ADBE Layer Control</TD></TR>
+  <TR>
+    <TD>Expression Controls</TD>
+    <TD>Point Control</TD>
+    <TD>ADBE Point Control</TD></TR>
+  <TR>
+    <TD>Expression Controls</TD>
+    <TD>Slider Control</TD>
+    <TD>ADBE Slider Control</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>CC Color Offset</TD>
+    <TD>CC Color Offset</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>CC Mr. Smoothie</TD>
+    <TD>CC Mr. Smoothie</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>CC Toner</TD>
+    <TD>CC Toner</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Change Color</TD>
+    <TD>ADBE Change Color</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Change To Color</TD>
+    <TD>ADBE Change To Color</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Color Balance (HLS)</TD>
+    <TD>ADBE Color Balance (HLS)</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Color Link</TD>
+    <TD>ADBE Color Link</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Colorama</TD>
+    <TD>APC Colorama</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Equalize</TD>
+    <TD>ADBE Equalize</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Gamma/Pedestal/Gain</TD>
+    <TD>ADBE Gamma/Pedestal/Gain2</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Grow Bounds</TD>
+    <TD>ADBE GROW BOUNDS</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>PS Arbitrary Map</TD>
+    <TD>ADBE PS Arbitrary Map</TD></TR>
+  <TR>
+    <TD>Image Control</TD>
+    <TD>Tint</TD>
+    <TD>ADBE Tint</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>CC Simple Wire Removal</TD>
+    <TD>CC Simple Wire Removal</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Color Difference Key</TD>
+    <TD>ADBE Color Difference Key</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Color Key</TD>
+    <TD>ADBE Color Key</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Color Range</TD>
+    <TD>ADBE Color Range</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Difference Matte</TD>
+    <TD>ADBE Difference Matte2</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Extract</TD>
+    <TD>ADBE Extract</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Inner/Outer Key</TD>
+    <TD>ADBE ATG Extract</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Keylight</TD>
+    <TD>Keylight 806</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Linear Color Key</TD>
+    <TD>ADBE Linear Color Key2</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Luma Key</TD>
+    <TD>ADBE Luma Key</TD></TR>
+  <TR>
+    <TD>Keying</TD>
+    <TD>Spill Suppressor</TD>
+    <TD>ADBE Spill Suppressor</TD></TR>
+  <TR>
+    <TD>Matte Tools</TD>
+    <TD>Matte Choker</TD>
+    <TD>ADBE Matte Choker</TD></TR>
+  <TR>
+    <TD>Matte Tools</TD>
+    <TD>Simple Choker</TD>
+    <TD>ADBE Simple Choker</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Add Grain</TD>
+    <TD>VISINF Grain Implant</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Dust &amp; Scratches</TD>
+    <TD>ADBE Dust &amp; Scratches</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Fractal Noise</TD>
+    <TD>ADBE Fractal Noise</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Match Grain</TD>
+    <TD>VISINF Grain Duplication</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Median</TD>
+    <TD>ADBE Median</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Noise</TD>
+    <TD>ADBE Noise</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Noise Alpha</TD>
+    <TD>ADBE Noise Alpha2</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Noise HLS</TD>
+    <TD>ADBE Noise HLS2</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Noise HLS Auto</TD>
+    <TD>ADBE Noise HLS Auto2</TD></TR>
+  <TR>
+    <TD>Noise &amp; Grain</TD>
+    <TD>Remove Grain</TD>
+    <TD>VISINF Grain Removal</TD></TR>
+  <TR>
+    <TD>Paint</TD>
+    <TD>Paint</TD>
+    <TD>ADBE Paint</TD></TR>
+  <TR>
+    <TD>Paint</TD>
+    <TD>Vector Paint</TD>
+    <TD>ADBE Vector Paint</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>Basic 3D</TD>
+    <TD>ADBE Basic 3D</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>Bevel Alpha</TD>
+    <TD>ADBE Bevel Alpha</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>Bevel Edges</TD>
+    <TD>ADBE Bevel Edges</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>CC Cylinder</TD>
+    <TD>CC Cylinder</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>CC Sphere</TD>
+    <TD>CC Sphere</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>CC Spotlight</TD>
+    <TD>CC Spotlight</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>Drop Shadow</TD>
+    <TD>ADBE Drop Shadow</TD></TR>
+  <TR>
+    <TD>Perspective</TD>
+    <TD>Radial Shadow</TD>
+    <TD>ADBE Radial Shadow</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>4-Color Gradient</TD>
+    <TD>ADBE 4ColorGradient</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Advanced Lightning</TD>
+    <TD>ADBE Lightning 2</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Audio Spectrum</TD>
+    <TD>ADBE AudSpect</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Audio Waveform</TD>
+    <TD>ADBE AudWave</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Beam</TD>
+    <TD>ADBE Laser</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>CC Glue Gun</TD>
+    <TD>CC Glue Gun</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>CC Light Burst 2.5</TD>
+    <TD>CC Light Burst 2.5</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>CC Light Rays</TD>
+    <TD>CC Light Rays</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>CC Light Sweep</TD>
+    <TD>CC Light Sweep</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Cell Pattern</TD>
+    <TD>ADBE Cell Pattern</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Checkerboard</TD>
+    <TD>ADBE Checkerboard</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Circle</TD>
+    <TD>ADBE Circle</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Ellipse</TD>
+    <TD>ADBE ELLIPSE</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Eyedropper Fill</TD>
+    <TD>ADBE Eyedropper Fill</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Fill</TD>
+    <TD>ADBE Fill</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Fractal</TD>
+    <TD>ADBE Fractal</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Grid</TD>
+    <TD>ADBE Grid</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Lens Flare</TD>
+    <TD>ADBE Lens Flare</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Lightning</TD>
+    <TD>ADBE Lightning</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Paint Bucket</TD>
+    <TD>ADBE Paint Bucket</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Radio Waves</TD>
+    <TD>APC Radio Waves</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Ramp</TD>
+    <TD>ADBE Ramp</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Scribble</TD>
+    <TD>ADBE Scribble Fill</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Stroke</TD>
+    <TD>ADBE Stroke</TD></TR>
+  <TR>
+    <TD>Render</TD>
+    <TD>Vegas</TD>
+    <TD>APC Vegas</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Ball Action</TD>
+    <TD>CC Ball Action</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Bubbles</TD>
+    <TD>CC Bubbles</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Drizzle</TD>
+    <TD>CC Drizzle</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Hair</TD>
+    <TD>CC Hair</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Mr. Mercury</TD>
+    <TD>CC Mr. Mercury</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC PS Classic</TD>
+    <TD>CC PS Classic</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC PS LE Classic</TD>
+    <TD>CC PS LE Classic</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Particle Systems II</TD>
+    <TD>CC Particle Systems II</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Particle World</TD>
+    <TD>CC Particle World</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Pixel Polly</TD>
+    <TD>CC Pixel Polly</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Rain</TD>
+    <TD>CC Rain</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Scatterize</TD>
+    <TD>CC Scatterize</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Snow</TD>
+    <TD>CC Snow</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>CC Star Burst</TD>
+    <TD>CC Star Burst</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>Card Dance</TD>
+    <TD>APC CardDanceCam</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>Caustics</TD>
+    <TD>APC Caustics</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>Foam</TD>
+    <TD>APC Foam</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>Particle Playground</TD>
+    <TD>ADBE Playgnd</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>Shatter</TD>
+    <TD>APC Shatter</TD></TR>
+  <TR>
+    <TD>Simulation</TD>
+    <TD>Wave World</TD>
+    <TD>APC Wave World</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Brush Strokes</TD>
+    <TD>ADBE Brush Strokes</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>CC Burn Film</TD>
+    <TD>CC Burn Film</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>CC Glass</TD>
+    <TD>CC Glass</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>CC Kaleida</TD>
+    <TD>CC Kaleida</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>CC RepeTile</TD>
+    <TD>CC RepeTile</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Color Emboss</TD>
+    <TD>ADBE Color Emboss</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Emboss</TD>
+    <TD>ADBE Emboss</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Find Edges</TD>
+    <TD>ADBE Find Edges</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Glow</TD>
+    <TD>ADBE Glo2</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Leave Color</TD>
+    <TD>ADBE Leave Color</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Mosaic</TD>
+    <TD>ADBE Mosaic</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Motion Tile</TD>
+    <TD>ADBE Tile</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Roughen Edges</TD>
+    <TD>ADBE Roughen Edges</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Scatter</TD>
+    <TD>ADBE Scatter</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Strobe Light</TD>
+    <TD>ADBE Strobe</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Texturize</TD>
+    <TD>ADBE Texturize</TD></TR>
+  <TR>
+    <TD>Stylize</TD>
+    <TD>Write-on</TD>
+    <TD>ADBE Write-on</TD></TR>
+  <TR>
+    <TD>Synthetic Aperture</TD>
+    <TD>SA Color Finesse</TD>
+    <TD>SYNTHAP VF Color Cure</TD></TR>
+  <TR>
+    <TD>Text</TD>
+    <TD>Basic Text</TD>
+    <TD>ADBE Basic Text2</TD></TR>
+  <TR>
+    <TD>Text</TD>
+    <TD>Numbers</TD>
+    <TD>ADBE Numbers2</TD></TR>
+  <TR>
+    <TD>Text</TD>
+    <TD>Path Text</TD>
+    <TD>ADBE Path Text</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>CC Force Motion Blur</TD>
+    <TD>CC Force Motion Blur</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>CC Time Blend</TD>
+    <TD>CC Time Blend</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>CC Time Blend FX</TD>
+    <TD>CC Time Blend FX</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>CC Wide Time</TD>
+    <TD>CC Wide Time</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>Echo</TD>
+    <TD>ADBE Echo</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>Posterize Time</TD>
+    <TD>ADBE Posterize Time</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>Time Difference</TD>
+    <TD>ADBE Difference</TD></TR>
+  <TR>
+    <TD>Time</TD>
+    <TD>Time Displacement</TD>
+    <TD>ADBE Time Displacement</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>Block Dissolve</TD>
+    <TD>ADBE Block Dissolve</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Glass Wipe</TD>
+    <TD>CC Glass Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Grid Wipe</TD>
+    <TD>CC Grid Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Image Wipe</TD>
+    <TD>CC Image Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Jaws</TD>
+    <TD>CC Jaws</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Light Wipe</TD>
+    <TD>CC Light Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Radial ScaleWipe</TD>
+    <TD>CC Radial ScaleWipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Scale Wipe</TD>
+    <TD>CC Scale Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>CC Twister</TD>
+    <TD>CC Twister</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>Card Wipe</TD>
+    <TD>APC CardWipeCam</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>Gradient Wipe</TD>
+    <TD>ADBE Gradient Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>Iris Wipe</TD>
+    <TD>ADBE IRIS_WIPE</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>Linear Wipe</TD>
+    <TD>ADBE Linear Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>Radial Wipe</TD>
+    <TD>ADBE Radial Wipe</TD></TR>
+  <TR>
+    <TD>Transition</TD>
+    <TD>Venetian Blinds</TD>
+    <TD>ADBE Venetian Blinds</TD></TR>
+  <TR>
+    <TD>Video</TD>
+    <TD>Broadcast Colors</TD>
+    <TD>ADBE Broadcast Colors</TD></TR>
+  <TR>
+    <TD>Video</TD>
+    <TD>Reduce Interlace Flicker</TD>
+    <TD>ADBE Reduce Interlace Flicker</TD></TR>
+  <TR>
+    <TD>Video</TD>
+    <TD>Timecode</TD>
+    <TD>ADBE Timecode</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Brightness &amp; Contrast</TD>
+    <TD>ADBE Brightness &amp; Contrast</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Color Balance</TD>
+    <TD>ADBE Color Balance</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Levels</TD>
+    <TD>ADBE Master Levels</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Noise Alpha</TD>
+    <TD>ADBE Noise Alpha</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Noise HLS</TD>
+    <TD>ADBE Noise HLS</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Noise HLS Auto</TD>
+    <TD>ADBE Noise HLS Auto</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Photoshop Bevel And Emboss</TD>
+    <TD>ADBE PSL Bevel Emboss</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Photoshop Drop Shadow</TD>
+    <TD>ADBE PSL Drop Shadow</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Photoshop Inner Glow</TD>
+    <TD>ADBE PSL Inner Glow</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Photoshop Inner Shadow</TD>
+    <TD>ADBE PSL Inner Shadow</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Photoshop Outer Glow</TD>
+    <TD>ADBE PSL Outer Glow</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Photoshop Solid Fill</TD>
+    <TD>ADBE PSL Solid Fill</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Transform</TD>
+    <TD>ADBE Geometry</TD></TR>
+  <TR>
+    <TD>_Obsolete</TD>
+    <TD>Unsharp Mask</TD>
+    <TD>ADBE Unsharp Mask</TD></TR></TBODY></TABLE></DIV>
+<DIV class=3Dfooter>
+<DIV class=3Dfreshdate>freshness date: 9-apr-2005</DIV>
+<DIV class=3Dlegalese>copyright =A9 1995- 2005 redefinery. all rights=20
+reserved.</DIV></DIV></DIV></BODY></HTML>
+
+------=_NextPart_000_0000_01C596AC.61890C40
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.redefinery.com/redefinery.css
+
+A {
+	FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000
+}
+A:hover {
+	COLOR: #587e88; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #71a2ae
+}
+A:visited {
+	COLOR: #99a9ad
+}
+BODY {
+	PADDING-RIGHT: 0em; PADDING-LEFT: 0em; FONT-SIZE: 100%; PADDING-BOTTOM: =
+0em; MARGIN: 0em; COLOR: #333333; PADDING-TOP: 0em; TEXT-ALIGN: center
+}
+#bodycontent {
+	PADDING-RIGHT: 0em; PADDING-LEFT: 0em; PADDING-BOTTOM: 0em; MARGIN: 0px =
+auto; WIDTH: 768px; PADDING-TOP: 0em; TEXT-ALIGN: left
+}
+UNKNOWN {
+	PADDING-TOP: 1.5em
+}
+H1 {
+	MARGIN-TOP: 1.2em; MARGIN-BOTTOM: 0.25em; FONT-FAMILY: "Trebuchet MS", =
+Arial, Helvetica, sans-serif
+}
+H2 {
+	MARGIN-TOP: 1.2em; MARGIN-BOTTOM: 0.25em; FONT-FAMILY: "Trebuchet MS", =
+Arial, Helvetica, sans-serif
+}
+H3 {
+	MARGIN-TOP: 1.2em; MARGIN-BOTTOM: 0.25em; FONT-FAMILY: "Trebuchet MS", =
+Arial, Helvetica, sans-serif
+}
+H4 {
+	MARGIN-TOP: 1.2em; MARGIN-BOTTOM: 0.25em; FONT-FAMILY: "Trebuchet MS", =
+Arial, Helvetica, sans-serif
+}
+H2 {
+	MARGIN-TOP: 1.5em
+}
+H3 {
+	MARGIN-TOP: 1.5em
+}
+H4 {
+	MARGIN-TOP: 1.5em
+}
+P {
+	FONT-SIZE: 0.8em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+LI {
+	FONT-SIZE: 0.8em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+DT {
+	FONT-SIZE: 0.8em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+DD {
+	FONT-SIZE: 0.8em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+H1 {
+	FONT-SIZE: 1.3em
+}
+H2 {
+	FONT-SIZE: 1.15em
+}
+H3 {
+	FONT-SIZE: 0.95em
+}
+H4 {
+	MARGIN-TOP: 2.75em; FONT-SIZE: 0.85em; BORDER-BOTTOM: #999999 1px =
+dotted
+}
+LI .newsdate {
+	DISPLAY: list-item; WIDTH: 7em; TEXT-ALIGN: left
+}
+LI .newstitle {
+	MARGIN-TOP: -1.2em; FONT-WEIGHT: bold
+}
+LI .newsdesc {
+	MARGIN-TOP: -1.2em; DISPLAY: block; MARGIN-BOTTOM: 1em; MARGIN-LEFT: =
+8em
+}
+OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+UL.bullets {
+	PADDING-LEFT: 0.5em; MARGIN-LEFT: 0.5em
+}
+UL.bullets LI {
+	PADDING-TOP: 0.5em
+}
+UL.news {
+	LIST-STYLE-TYPE: none
+}
+DL {
+	LIST-STYLE-TYPE: none
+}
+DT {
+	CLEAR: both; WIDTH: 7em
+}
+DD {
+	MARGIN-TOP: -1.2em; MARGIN-BOTTOM: 1em; MARGIN-LEFT: 8em
+}
+P TT {
+	FONT-SIZE: 1em; FONT-FAMILY: "Courier", monospace; WHITE-SPACE: pre
+}
+CODE {
+	PADDING-RIGHT: 0.75em; DISPLAY: block; PADDING-LEFT: 0.75em; FONT-SIZE: =
+0.75em; PADDING-BOTTOM: 0.75em; PADDING-TOP: 0.75em; FONT-FAMILY: =
+"Courier", monospace; WHITE-SPACE: pre; BACKGROUND-COLOR: #eeeeee
+}
+.code {
+	PADDING-RIGHT: 0.75em; DISPLAY: block; PADDING-LEFT: 0.75em; FONT-SIZE: =
+0.8em; PADDING-BOTTOM: 0.75em; PADDING-TOP: 0.75em; FONT-FAMILY: =
+"Courier", monospace; WHITE-SPACE: pre; BACKGROUND-COLOR: #eeeeee
+}
+TABLE {
+	MARGIN-BOTTOM: 1em; PADDING-TOP: 0em; BORDER-BOTTOM: #333333 1px solid
+}
+TH {
+	PADDING-RIGHT: 0.4em; PADDING-LEFT: 0em; FONT-WEIGHT: bold; FONT-SIZE: =
+0.8em; PADDING-BOTTOM: 0em; VERTICAL-ALIGN: top; COLOR: #000000; =
+PADDING-TOP: 1em; BORDER-BOTTOM: #333333 1px solid; FONT-FAMILY: Arial, =
+Helvetica, sans-serif; TEXT-ALIGN: left
+}
+TD {
+	PADDING-RIGHT: 0.4em; PADDING-LEFT: 0em; FONT-SIZE: 0.8em; =
+PADDING-BOTTOM: 0em; VERTICAL-ALIGN: top; PADDING-TOP: 0.12em; =
+BORDER-BOTTOM: #cccccc 0px dashed; FONT-FAMILY: Arial, Helvetica, =
+sans-serif; TEXT-ALIGN: left
+}
+TD.code2 {
+	FONT-SIZE: 0.8em; FONT-FAMILY: "Courier", monospace
+}
+.shaded {
+=09
+}
+.breadcrumbs {
+	CLEAR: both; PADDING-RIGHT: 0.25em; PADDING-LEFT: 0.5em; FONT-SIZE: =
+0.75em; PADDING-BOTTOM: 0.05em; COLOR: #333333; PADDING-TOP: 0em; =
+BORDER-BOTTOM: #cccccc 1px dotted; FONT-FAMILY: Arial, Helvetica, =
+sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.content {
+	PADDING-TOP: 1em
+}
+.footer {
+	CLEAR: both; BORDER-TOP: #cccccc 1px dotted; MARGIN-TOP: 2em; =
+FONT-SIZE: 0.7em; COLOR: #aaaaaa; FONT-FAMILY: Arial, Helvetica, =
+sans-serif
+}
+.freshdate {
+	FLOAT: left; WIDTH: 40%
+}
+.gallerycontent {
+=09
+}
+.gallerysection {
+	CLEAR: left; PADDING-TOP: 1em
+}
+.header {
+	BACKGROUND-IMAGE: url(images/header_framing.jpg)
+}
+.legalese {
+	FLOAT: right; WIDTH: 60%; WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+.logo {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.5em; COLOR: #ffffff; FONT-FAMILY: =
+"Trebuchet MS", Arial, Helvetica, sans-serif
+}
+.logo .home {
+	PADDING-RIGHT: 0.25em; PADDING-LEFT: 0.25em; PADDING-BOTTOM: 0.25em; =
+PADDING-TOP: 0.25em
+}
+.logo A {
+	PADDING-RIGHT: 0.25em; PADDING-LEFT: 0.25em; PADDING-BOTTOM: 0.25em; =
+COLOR: #ffffff; PADDING-TOP: 0.25em; TEXT-DECORATION: none
+}
+.logo A:visited {
+	COLOR: #ffffff
+}
+.logo A:hover {
+	COLOR: #333333; BACKGROUND-COLOR: #dddddd; TEXT-DECORATION: none
+}
+.menu {
+	PADDING-RIGHT: 0.25em; FONT-WEIGHT: bold; FONT-FAMILY: Arial, =
+Helvetica, sans-serif; WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+.menu A:hover {
+	PADDING-BOTTOM: 0.03em; COLOR: #333333; BACKGROUND-COLOR: #dddddd; =
+TEXT-DECORATION: none
+}
+.menu LI {
+	DISPLAY: inline; PADDING-BOTTOM: 0.03em; MARGIN-LEFT: 0.75em; =
+VERTICAL-ALIGN: bottom
+}
+.menu UL {
+	MARGIN: 0em
+}
+.menuactive {
+	BACKGROUND-COLOR: #ffffff
+}
+.menuactive A {
+	PADDING-RIGHT: 0.75em; PADDING-LEFT: 0.75em; COLOR: #333333; =
+TEXT-DECORATION: none
+}
+.menuinactive {
+	BACKGROUND-COLOR: #333333
+}
+.menuinactive A {
+	PADDING-RIGHT: 0.75em; PADDING-LEFT: 0.75em; COLOR: #cccccc; =
+TEXT-DECORATION: none
+}
+.nofloats {
+	CLEAR: left
+}
+.nowrap {
+	WHITE-SPACE: nowrap
+}
+.rss {
+	COLOR: #ff8800
+}
+A:link .rss {
+=09
+}
+.clearfloats {
+	CLEAR: both
+}
+.midbarblock {
+	MARGIN-TOP: 3em; DISPLAY: block; PADDING-BOTTOM: 5em; WIDTH: 768px; =
+WHITE-SPACE: nowrap; TEXT-ALIGN: center
+}
+.midbar {
+	FLOAT: left; WIDTH: 33.3%; TEXT-ALIGN: left
+}
+.midbar H2 {
+	MARGIN-TOP: 0em; FONT-SIZE: 0.95em; MARGIN-RIGHT: 1em; BORDER-BOTTOM: =
+#333333 1px dotted
+}
+.midbar P {
+	MARGIN-TOP: 0em; MARGIN-BOTTOM: 1.2em; FONT-FAMILY: Arial, Helvetica, =
+sans-serif
+}
+.midbar UL {
+	LIST-STYLE-TYPE: none
+}
+.midbar UL LI {
+	BORDER-TOP-WIDTH: 0px; MARGIN-TOP: 3px; FONT-WEIGHT: normal; COLOR: =
+#555555; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.sidebar {
+	PADDING-RIGHT: 0.5em; MARGIN-TOP: 2em; PADDING-LEFT: 0.5em; FLOAT: =
+right; MARGIN-BOTTOM: 6em; PADDING-BOTTOM: 0.5em; MARGIN-LEFT: 2em; =
+WIDTH: 14em; PADDING-TOP: 0.5em; BACKGROUND-COLOR: #eeeeee
+}
+.sidebar P {
+	MARGIN-TOP: 0em; MARGIN-BOTTOM: 1.2em; FONT-FAMILY: Arial, Helvetica, =
+sans-serif
+}
+.sidebar UL {
+	FONT-SIZE: 1.1em; MARGIN-BOTTOM: 2em; LIST-STYLE-TYPE: none
+}
+.sidebar UL LI {
+	BORDER-TOP: #cccccc 1px dotted; FONT-WEIGHT: bold; COLOR: #777777; =
+FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
+}
+.sidebar UL LI UL LI {
+	BORDER-TOP-WIDTH: 0px; MARGIN-TOP: 3px; FONT-WEIGHT: normal; COLOR: =
+#555555; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.thumbnail {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; =
+PADDING-TOP: 4px; TEXT-ALIGN: center
+}
+.thumbnail IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 0px
+}
+.thumbnailbox {
+	BORDER-RIGHT: #999999 1px solid; FLOAT: left; MARGIN-BOTTOM: 10px; =
+WIDTH: 110px; MARGIN-RIGHT: 10px; BORDER-BOTTOM: #999999 1px solid; =
+HEIGHT: 7.25em; BACKGROUND-COLOR: #eeeeee
+}
+.thumbnailcaption {
+	FONT-SIZE: 0.7em; FONT-FAMILY: Arial, Helvetica, sans-serif; =
+TEXT-ALIGN: center
+}
+.thumbnailboxsmall {
+	BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; =
+FLOAT: left; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 4px; WIDTH: 110px; =
+MARGIN-RIGHT: 10px; PADDING-TOP: 0px; BORDER-BOTTOM: #999999 1px solid; =
+BACKGROUND-COLOR: #eeeeee
+}
+.thumbnailboxwide {
+	BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 6px; PADDING-LEFT: 6px; =
+FLOAT: left; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 4px; MARGIN-RIGHT: =
+10px; PADDING-TOP: 2px; BORDER-BOTTOM: #999999 1px solid; =
+BACKGROUND-COLOR: #eeeeee
+}
+.featurebox {
+	CLEAR: left; PADDING-RIGHT: 0em; PADDING-LEFT: 0em; PADDING-BOTTOM: =
+0em; MARGIN: 1.5em 0em 0em; WIDTH: 480px; PADDING-TOP: 0em; WHITE-SPACE: =
+nowrap; HEIGHT: 240px
+}
+.featurebox IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; WIDTH: 480px; HEIGHT: 240px; BORDER-RIGHT-WIDTH: 0px
+}
+.featurebox A {
+	TEXT-DECORATION: none
+}
+.featurebox A:hover P {
+	COLOR: #333333; BACKGROUND-COLOR: #dddddd; TEXT-DECORATION: none
+}
+.featurebox P {
+	PADDING-RIGHT: 0.25em; MARGIN-TOP: 0em; DISPLAY: inline; PADDING-LEFT: =
+0.25em; FONT-WEIGHT: bold; FONT-SIZE: 1em; PADDING-BOTTOM: 0.25em; =
+COLOR: #dddddd; PADDING-TOP: 0.12em; FONT-FAMILY: Arial, Helvetica, =
+sans-serif; POSITION: absolute; BACKGROUND-COLOR: #666666
+}
+.featuresubboxes {
+	PADDING-RIGHT: 0em; DISPLAY: inline; PADDING-LEFT: 0em; PADDING-BOTTOM: =
+0em; MARGIN: 0em; WIDTH: 480px; PADDING-TOP: 0em; HEIGHT: 240px
+}
+.featuresubbox {
+	PADDING-RIGHT: 0em; DISPLAY: inline; PADDING-LEFT: 0em; PADDING-BOTTOM: =
+0em; MARGIN: 0em; WIDTH: 160px; PADDING-TOP: 0em; WHITE-SPACE: nowrap; =
+HEIGHT: 80px
+}
+.featuresubbox IMG {
+	BORDER-TOP-WIDTH: 0em; PADDING-RIGHT: 0em; PADDING-LEFT: 0em; =
+BORDER-LEFT-WIDTH: 0em; BORDER-BOTTOM-WIDTH: 0em; PADDING-BOTTOM: 0em; =
+WIDTH: 160px; PADDING-TOP: 0em; HEIGHT: 80px; BORDER-RIGHT-WIDTH: 0em
+}
+.featuresubbox A {
+	TEXT-DECORATION: none
+}
+.featuresubbox A:hover P {
+	COLOR: #333333; BACKGROUND-COLOR: #dddddd; TEXT-DECORATION: none
+}
+.featuresubbox P {
+	PADDING-RIGHT: 0.25em; MARGIN-TOP: 0em; DISPLAY: inline; PADDING-LEFT: =
+0.25em; FONT-WEIGHT: bold; FONT-SIZE: 0.7em; PADDING-BOTTOM: 0.25em; =
+COLOR: #dddddd; PADDING-TOP: 0.12em; FONT-FAMILY: Arial, Helvetica, =
+sans-serif; POSITION: absolute; BACKGROUND-COLOR: #666666
+}
+.comment {
+	COLOR: #999944
+}
+
+------=_NextPart_000_0000_01C596AC.61890C40--

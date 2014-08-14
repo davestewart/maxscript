@@ -1,0 +1,168 @@
+[name]
+name=Path Text
+matchName=ADBE Path Text
+
+[properties]
+name=	Information
+type=	NO_VALUE
+
+name=	Path Options
+type=	NO_VALUE
+
+name=	Shape Type
+type=	OneD
+
+name=	Control Points
+type=	NO_VALUE
+
+name=	Tangent 1/Circle Point
+type=	TwoD_SPATIAL
+
+name=	Vertex 1/Circle Center
+type=	TwoD_SPATIAL
+
+name=	Tangent 2
+type=	TwoD_SPATIAL
+
+name=	Vertex 2
+type=	TwoD_SPATIAL
+
+name=	
+type=	NO_VALUE
+
+name=	Custom Path
+type=	MASK_INDEX
+
+name=	Reverse Path
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Fill and Stroke
+type=	NO_VALUE
+
+name=	Options
+type=	OneD
+
+name=	Fill Color
+type=	COLOR
+
+name=	Stroke Color
+type=	COLOR
+
+name=	Stroke Width
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Character
+type=	NO_VALUE
+
+name=	Size
+type=	OneD
+
+name=	Tracking
+type=	OneD
+
+name=	Kerning
+type=	NO_VALUE
+
+name=	Kerning Pair
+type=	NO_VALUE
+
+name=	Kerning Value
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Orientation
+type=	NO_VALUE
+
+name=	Character Rotation
+type=	OneD
+
+name=	Perpendicular To Path
+type=	OneD
+
+name=	Vertical Writing
+type=	OneD
+
+name=	Rotate Roman Characters
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Horizontal Shear
+type=	OneD
+
+name=	Horizontal Scale
+type=	OneD
+
+name=	Vertical Scale
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Paragraph
+type=	NO_VALUE
+
+name=	Alignment
+type=	OneD
+
+name=	Left Margin
+type=	OneD
+
+name=	Right Margin
+type=	OneD
+
+name=	Line Spacing
+type=	OneD
+
+name=	Baseline Shift
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Advanced
+type=	NO_VALUE
+
+name=	Visible Characters
+type=	OneD
+
+name=	Fade Time
+type=	OneD
+
+name=	Mode
+type=	OneD
+
+name=	Jitter Settings
+type=	NO_VALUE
+
+name=	Baseline Jitter Max
+type=	OneD
+
+name=	Kerning Jitter Max
+type=	OneD
+
+name=	Rotation Jitter Max
+type=	OneD
+
+name=	Scale Jitter Max
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Composite On Original
+type=	OneD
+
+

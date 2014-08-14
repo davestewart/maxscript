@@ -1,0 +1,21 @@
+[name]
+name=Delay
+matchName=ADBE Aud Delay
+
+[properties]
+name=	Delay Time (milliseconds)
+type=	OneD
+
+name=	Delay Amount
+type=	OneD
+
+name=	Feedback
+type=	OneD
+
+name=	Dry Out
+type=	OneD
+
+name=	Wet Out
+type=	OneD
+
+

@@ -1,0 +1,48 @@
+[name]
+name=Glow
+matchName=ADBE Glo2
+
+[properties]
+name=	Glow Based On
+type=	OneD
+
+name=	Glow Threshold
+type=	OneD
+
+name=	Glow Radius
+type=	OneD
+
+name=	Glow Intensity
+type=	OneD
+
+name=	Composite Original
+type=	OneD
+
+name=	Glow Operation
+type=	OneD
+
+name=	Glow Colors
+type=	OneD
+
+name=	Color Looping
+type=	OneD
+
+name=	Color Loops
+type=	OneD
+
+name=	Color Phase
+type=	OneD
+
+name=	A & B Midpoint
+type=	OneD
+
+name=	Color A
+type=	COLOR
+
+name=	Color B
+type=	COLOR
+
+name=	Glow Dimensions
+type=	OneD
+
+

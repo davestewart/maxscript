@@ -1,0 +1,129 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: UI design
+Date: Wed, 17 Nov 2004 20:53:00 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_00C0_01C4CCE7.6C9FF330";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00C0_01C4CCE7.6C9FF330
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://cade.scope.edu/courseware/notes/mel/uidesign.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>UI design</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252"><LINK=20
+title=3D"bod style" href=3D"http://cade.scope.edu/bod.css" =
+type=3Dtext/css=20
+rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.2600.0" name=3DGENERATOR></HEAD>
+<BODY style=3D"MARGIN-LEFT: 20px">
+<H1>UI design</H1><BR>
+<OL>
+  <LI>
+  <P>Don't tie complex procedures to <A=20
+  =
+href=3D"http://cade.scope.edu/courseware/notes/mel/ui.html#immediate">imm=
+ediate=20
+  mode</A> controls.</P>
+  <LI>
+  <P>Anticipate user mistake and allow graceful exit.</P>
+  <LI>
+  <P>Use <A=20
+  =
+href=3D"http://cade.scope.edu/courseware/notes/mel/program.html#comment">=
+comments</A>=20
+  as procedure landmarks to facilitate maintenance of large scripts.</P>
+  <LI>
+  <P>Show (through <A=20
+  =
+href=3D"file:///C:/AW/Maya4.0/docs/en_US/html/Commands/waitCursor.html">w=
+aitCursor</A>,=20
+  for example) a slow procedure's working.</P>
+  <LI>
+  <P>Arrange parameters in decreasing order of importance, from left to =
+right=20
+  and from top to bottom.</P>
+  <LI>
+  <P>Group related parameters together using <A=20
+  =
+href=3D"http://cade.scope.edu/courseware/notes/mel/ui.html#grplayout">fra=
+meLayout=20
+  or tabLayout</A>.</P>
+  <LI>
+  <P>Parameter ranges and defaults should be consistent and =
+reasonable.</P>
+  <LI>
+  <P>Icons should be simple and markedly unique. Don't bother to =
+illustrate the=20
+  represented script's function.</P></LI></OL><BR>
+<H2>General precaution</H2>
+<OL>
+  <LI>
+  <P>Test complex procedures with small numbers.</P>
+  <LI>
+  <P>Beware of memory shortage in long accumulated procedures. You can =
+use <A=20
+  =
+href=3D"file:///C:/AW/Maya4.0/docs/en_US/html/Commands/flushUndo.html">fl=
+ushUndo</A>=20
+  and <A=20
+  =
+href=3D"file:///C:/AW/Maya4.0/docs/en_US/html/Commands/clearCache.html">c=
+learCache</A>=20
+  to reclaim memory, and <A=20
+  =
+href=3D"file:///C:/AW/Maya4.0/docs/en_US/html/Commands/memory.html">memor=
+y</A>=20
+  to check on memory availability.</P>
+  <LI>
+  <P>Use <A=20
+  =
+href=3D"file:///C:/AW/Maya4.0/docs/en_US/html/Commands/timerX.html">timer=
+X</A>=20
+  to time your script's execution.</P></LI></OL></BODY></HTML>
+
+------=_NextPart_000_00C0_01C4CCE7.6C9FF330
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://cade.scope.edu/bod.css
+
+BODY {
+	FONT-WEIGHT: 400; FONT-SIZE: 11pt; MARGIN: 35px 30px; FONT-FAMILY: =
+Arial; BACKGROUND-COLOR: white
+}
+H1 {
+	FONT-WEIGHT: 600; FONT-SIZE: 17pt; TEXT-ALIGN: center
+}
+H2 {
+	FONT-WEIGHT: 500; FONT-SIZE: 15pt; TEXT-ALIGN: center
+}
+B {
+	FONT-WEIGHT: 600
+}
+PRE {
+	FONT-WEIGHT: 400; FONT-SIZE: 10pt; MARGIN-LEFT: 25px; FONT-FAMILY: =
+"Courier New"
+}
+TABLE {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: 400; BORDER-LEFT-WIDTH: 1px; =
+FONT-SIZE: 11pt; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Arial; =
+BORDER-RIGHT-WIDTH: 1px
+}
+TH {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; =
+PADDING-TOP: 5px
+}
+TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; =
+PADDING-TOP: 5px
+}
+
+------=_NextPart_000_00C0_01C4CCE7.6C9FF330--

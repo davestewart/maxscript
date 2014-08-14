@@ -1,0 +1,21 @@
+[name]
+name=Basic 3D
+matchName=ADBE Basic 3D
+
+[properties]
+name=	Swivel
+type=	OneD
+
+name=	Tilt
+type=	OneD
+
+name=	Distance to Image
+type=	OneD
+
+name=	Specular Highlight
+type=	OneD
+
+name=	Preview
+type=	OneD
+
+

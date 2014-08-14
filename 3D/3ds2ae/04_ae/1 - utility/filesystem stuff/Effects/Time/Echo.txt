@@ -1,0 +1,21 @@
+[name]
+name=Echo
+matchName=ADBE Echo
+
+[properties]
+name=	Echo Time (seconds)
+type=	OneD
+
+name=	Number Of Echoes
+type=	OneD
+
+name=	Starting Intensity
+type=	OneD
+
+name=	Decay
+type=	OneD
+
+name=	Echo Operator
+type=	OneD
+
+

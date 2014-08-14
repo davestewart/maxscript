@@ -1,0 +1,24 @@
+[name]
+name=3D Glasses
+matchName=ADBE 3D Glasses
+
+[properties]
+name=	Left View
+type=	LAYER_INDEX
+
+name=	Right View
+type=	LAYER_INDEX
+
+name=	Convergence Offset
+type=	OneD
+
+name=	Swap Left-Right
+type=	OneD
+
+name=	3D View
+type=	OneD
+
+name=	Balance
+type=	OneD
+
+

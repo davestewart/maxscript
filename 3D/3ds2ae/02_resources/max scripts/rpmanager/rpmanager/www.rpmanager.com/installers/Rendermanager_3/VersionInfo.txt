@@ -1,0 +1,309 @@
+History, RPManager R6+R5
+_____________________________________________________
+
+3.13
+
+_FEATURES
+
+Exposure controls can now be controlled per pass, added to the 'Atmos' tab (now labelled 'Atmos+Exp')
+
+3.13+ now supports R6 and R5
+
+Enhanced Brazil/Rio preview override support to allows setting the sampling rate to specified values rather than just the 'disable' AA which would set it to 0/0.
+
+Submission to Rush now supported for 3dsmaxR5 - requires SFRender.exe from splutterfish is installed on each workstation/slave (get from smedge2 website)
+
+Submission to Smedge2 now supported for 3dsmaxR5 - requires SFRender.exe from splutterfish is installed on each workstation/slave (get from smedge2 website)
+
+Final Render multipass editing parameters extended, for final render Stage 1 SP2 only. Pre-SP2 not supported due to the extent of the changes. Note any parameters that do NOT appear in the RPM FR rollout are *still editable/restorable on a pass-by-pass basis*: edit the parameters required in the main 3dsmax render dialog, a single restored pass at a time (this applies to all renderers with RPM).
+
+New Visibility Set Membership Inspector/Editor added (Vis Sets Menu), inspect and edit object membership in a table interface.
+
+Object Properties Inspector/Editor added (Object Props menu). This allows editing selected parameters from a treelist interface: lights on/off, material display/edit, object cast/receive shadows, among others.
+
+_TWEAKS
+
+Optimised the speed and display of the 'Renderpassanager render alerts' messages display.
+
+_BUG FIXES
+
+Rendering Locally from a passes RC menu could error.
+
+Adding passes with Xref restore active could error if xref rollout not active or had not been active at some stage in the current session.
+
+Smedge pools were a bit messed up.
+
+Incorrect callback assigned for 3dsmaxR5 relating to Xref tracking - enabling xrefs no longer errors.
+
+Error when adding a pass with xrefs present in 3dsmax5 fixed.
+
+Hand entered callbacks were not being installed.
+
+_____________________________________________________
+
+3.122
+
+_BUG FIXES
+
+RPM was erroring when creating passes if the Advanced Lighting 'Radiosity' with an exposure control was enabled (including if the 'initial settings for tools options' was set to one of the DesignVIZ options)
+
+_____________________________________________________
+
+3.121
+
+_BUG FIXES
+
+Mental Ray RPM Rollout would error on opening.
+
+_____________________________________________________
+
+3.12
+
+_BUG FIXES
+
+Cancelling an RPM preview using escape could leave the preview indicator (red line top/bottom) object in scene.
+_____________________________________________________
+
+3.11
+
+_FEATURES
+After Effects integration updated:
+	- Footage now loaded with 'guess' Alpha Mode applied.
+	- Single frame passes now loaded as still rather than sequences.
+	- Other footage in the output directories no longer interfere with import
+	- Warning if first frame of any passes sequence, as defined by the output range, does not exist (without the first frame existing the sequence will not be loaded into AFX).
+	- Opacity values set up in QuickComp are now reproduced in the AE composite.
+
+
+_BUG FIXES
+
+Error checking added to paths picked when writing external compositing files (for combustion/AE)
+_____________________________________________________
+
+3.1
+
+_FEATURES
+
+Support for 3d party network rendering managers - a choice now of Backburner, Deadline, Smedge and Rush. Access this through the Customize/Preferences dialog. This is not a per-scene setting, it affects RPM for all scenes then opened, and relevant network data will be built as required if a scene is opened that was previously setup with a different network manager defined. 
+Set the rendering manager in the Preferences. It affects all scenes and is not a scene by scene setting. Note you will need to have the relevant rendering managers installed and configured correctly for RPManager to work with them.
+
+
+Combustion .cws files can now be saved from the Quick Compositor - using the 'External' buttons RC menu - or from the Output menu. This respects layering order, transfer mode, blending but not prepass of the quick compositor setup. Passes set to 'Ignore' have their visibility off in the resulting Combustion workspace. Useful just to get all passes into combustion quickly even if you do not setup the composite in RPManager.
+
+
+Mental Ray support much enhanced with the ability to modify many parameters on multiple passes at once using the Renderers rollout in RPM.
+
+
+Initial FinalRender Stage-1 (cebas) support - preview overrides are now available for finalrenderS1. Overrides include AA, GI, DOF, SSS, MTD, Mapping,MotionBlur,Blurry Relections among others.
+
+
+Updated Backburner support - you can now override the Render Frame timeout (which defaults to 50 minutes - it kills a frame rendering if it takes longer than 50 minutes).
+Also the Load Timeout and Unload timeout, as well as overriding the Enable Task blocking and whether the VFB is displayed during rendering.
+This relies on a new submission system that will need to take control of the queue if 'Use All Servers' is off for the pass(es): the render feedback keeps you updated as to the progress of this, but it can mean delays while the queue control times out, or if another submission is taking place it will need to wait for the duration of that submission.
+Note that if it cannot take control of the queue the job is submitted with >all servers assigned> and you will need to edit the servers assigned using queuemonitor.
+
+
+Added a 'Rename set based on pass name' option to the visiblity sets RC menu, to make the workflow of Alt- or Control- clicking the add pass button automatically creating visibility sets somewhat more attractive to use.
+
+
+Entering a path into the auto path root field with offer to create the directory if it does not exist.
+
+
+Define Object Properties dialog lists now shows active properties BOLD as well as highlighted - XP theme choice can make the selection alone almost invisible.
+
+
+Pass Priority and suspended/critical settings have moved to the Network Setup rollout.
+
+
+Pass Priority and suspended/critical can now be set as global, with a per pass priority offset value. This allows you to change a single value to control all your passes priorities, but also maintain relative priority differences between the passes.
+
+
+Select camera button added to the commom parameters rollout - next to the camera dropdown.
+
+
+Global Output Size is now available - if you have this on for any passes, they can all be changed by editing any one of the passes set as global. Allows you to work with a lower resolution setting, and easily change them all to a high resolution. With this off the settings are local to the pass as before.
+
+
+New preference settings: default state for the global pass priority and default state for  global output size enabled checkboxes. These both default to off.
+
+
+Updated licensing system - without a license RPM will not operate at all. A personal or evaluation license can be requested from www.rpmanager.com (2 pass limitation)
+
+
+Visibility Sets ignore non-renderable setting in the global viewport parameters broken out into cameras/lights/helpers. Note that you no longer need both a camera/light and its target added to a set; where before if a target was not part of a set the object was not unhidden, now the target inclusion doesn't matter.
+
+
+Render Element Property RPM UI accessible properties improved - Diffuse Element: Diffuse Lighting checkbox, Lighting Element: Lighting directOn/indirectOn/ShadowsOn checkboxes.
+
+
+'Save Bug Report...' menu item added to the Help menu. This simply saves the RPMversion, date, heapfree size, and the listener contents to a text file for ease of emailing to bugs@rpmanager.com.
+
+
+Scanline Renderer Global Supersampling options (new feature in 3dsmaxR6) available for in the Multiple Renderer Editing controls.
+
+
+Dockable, left or right, from the 'Customize' Menu. Undock from the same menu.
+
+swapped functionality of clicking on an RPManager Toolbar button - with Shift now closes if open, else just sets focus to the open RPManager dialog, bringing it to the front of any other dialogs.
+
+
+Synchronising the common render parameters if the user has edited the standard render dialogs common parameters no longer tries to update with the users settings by default - this can be turned back on using the Preference setting 'Offer to Sync Render Parameters'. (This feature tends to just get in the way)
+
+
+New Vray preview override added - global reflect/refract
+
+
+Preview overrides now able to override the nth frame setting (useful only when rendering a sequence with preview overrides on). Some controls were renamed to make space for the new nth Frame spinner.
+
+
+When creating visibility sets via the visibility set RC menu if you hold SHIFT when picking the menu item a set will be automatically created based on selected objects with the pass name assigned. If you hold down CONTROL it will do the same but base the set on all visible objects.
+
+
+_BUG FIXES
+
+Backburner not being correctly installed with throw a message indictating this rather than erroring. If the user cannot submit through the standard network submit then RPManager will not be able to either.
+
+The ambient light 'Blk' button was setting the ambient light color to the background color instead of black.
+
+
+Editing the End Frame parameter of a passes range in the Common Controls would not correctly update the animation end range until the pass was restored, fixed.
+
+
+Link UI Time Range checkbox no longer takes two clicks to enable
+
+
+Fixed possible error when auto creating Render Element paths.
+
+
+Fixed the browse button in the render element paths dialog.
+
+	
+Floating object capture floater no longer errors and opens instead when using the button in the object properties rollout.
+
+
+Generate visiblity for undo was using the global value rather than the scene value
+
+
+Duplicate Server .xml files could crash RPM on updating manager data.
+
+
+capture set override material store/restore was broken when dealing with pass counts over 6 or thereabouts.
+
+
+capture set override material names were incorrectly reported in the Capture Objects UI.
+
+
+'Remove all RPManager data' could leave the RPM UI enabled, editing would error.
+
+
+Deleting a pass while the Quick Comp rollout was visible could error under certain circumstances.
+
+
+closing RPManager will disconnect the current renderer from the stored renderer, so changes to RPM stored data can no longer be accidentally done while RPM is closed.
+
+
+Preview override rollout was not updating correctly when opening a new scene.
+
+
+Setting vray AA filter types would error in the full versions.
+
+
+Auto synching RPM global range with scene animation range once again tweaked to get it to work.
+
+_____________________________________________________
+
+3.03
+
+_FEATURES
+
+Backburner Network Rollout asks if you want to update the manager data if no servers detected in the server list
+
+Mental Ray support updated - many more controls in the renderers rollout
+
+Licensing system updated. Where the 3dsmax licensing is Flexlm AND the RPM license is NOT a site license the computernames of the machines that RPM will be licensed to will need to be part of the licensing.
+
+Help/Authorize Info dialog now displays computer name if a 3dsmax is licenced via Flexlm so this can be copied and sent during license requests.
+
+Help/AuthorizeInfo dialog now displays license status for newer licenses. Possible states are
+	Valid
+	HardwarelockID not license
+	Computername not license
+	License type mismatch (flexlm/local)
+If an older license is installed this status line does not contain any useful information.
+_____________________________________________________
+
+3.02
+
+_FEATURES
+
+Preview Overrides for Mental Ray - override AA sampling, disable Motion blur/GI/DOF/Caustics/FinalGather/Shadows/Displacement, and enable distributed renderer.
+
+Preview buttons group (bottom left of interface) indicates whether the preview overrides are on or off in the group caption ("Preview:O'rides ON/OFF")
+
+Render elements controls enabled for mental ray.
+
+Limited Multiple Renderer access for mental ray, framework in place: modifying the sampling settings is all that works at this stage.
+
+Support for Mental Ray DOF multipass effect through the RPM multipass settings - fStop can be set per pass.
+
+Object Properties Capture progress bar displays when passes added or duplicated.
+
+_BUGFIXES
+
+Adding render elements via the RPM controls was difficult since the list items did not correspond to the items actually added.
+
+Mental Ray DOF effect no longer errors RPM.
+
+Merging objects with object properties assigned and adding to capture sets will no longer error - any existing object properties are deleted on assign.
+
+Installer no longer writes over your output preset file and custom rollout and custom struct files if they are pre-existing.
+
+Installer only updates the RPMdlx.dlx plugin if detects an old version.
+
+Installer will fix a certain incorrect output preset if it detects it (image aspect incorrect for the 'Custom' 720x576 (pal) output.
+
+Script error when date format set to show verbose month fixed.
+_____________________________________________________
+
+3.01
+
+_FEATURES
+
+List of network servers in the network rollout now sorted by name.
+
+Network server list additional check by options - check selected, check unselected servers.
+
+Manager groups are now retrieved when using the 'Update Manager Data' button.
+
+_BUGFIXES
+
+Adding a pass when the network rollout was not visible would clear the checked server list (only affected submission if use all servers was off).
+
+Local and global server groups no longer error on retrieve if many servers are in the group; group storage reworked, any groups will need to be rebuilt.
+
+Submitting multiple passes with different format options (ie targa 24, targa 32) would not correctly set the format at render for network submissions and use the format set for the previously rendered pass - fixed.
+
+Locking the width and height of the output params and entering a new value for either would not always update the other value correctly.
+_____________________________________________________
+
+3.0
+
+_FEATURES
+
+Auto build output paths is now a hybrid of the older auto build system and the newer system: if 'enable auto build paths on submit' is not enabled for any passes, picking the 'Auto build all paths...' menu item or 'Auto' interface button will prompt for a root directory and build the paths for those passes using that root. Any passes with the auto path generation root set will be built using those settings. If all passes have auto build enabled no output path is requested.
+This returns the old behavior which is quick and requires almost no setup, with the new auto build path behavior intact, and in both cases builds the output paths and output filename as defined in the output preferences.
+Cancelling the prompt to pick the root directory will cancel the auto build operation.
+
+New options for the output path construction: using certain keywords in the 'Strings_..' fields returns other data. The keywords are '#username', '#machinename', and "#date" (+ options). 
+
+#username inserts the current username as logged in
+#machinename inserts the name of the computer
+#date requires some extra data: which parts of the date to include by index, and a divider to separate them. ie entering #date321_ inserts '2004_04_26' into the path when your regional settings are Australia. '#date21-' inserts '04-26'. 
+Note that the specifics returned are dependent on your regional settings, but based on US settings the indices would correspond to:
+1: month
+2:day
+3:year
+4:hour
+5:minutes
+6:seconds
+7:AM/PM

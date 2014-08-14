@@ -1,0 +1,12 @@
+<Root_Element>
+   <Child_Element attribute="attribute">
+      <Child_Element attribute="attribute">
+         <Element>Child_Element</Element>
+         <Element/>
+         <Element Attribute1="value" Attribute2="value"/>
+         text
+      </Child_Element>
+      <Child_Element attribute="attribute">Child_Element</Child_Element>
+   </Child_Element>
+   <Child_Element attribute="attribute">Child_Element</Child_Element>
+</Root_Element>

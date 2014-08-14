@@ -1,0 +1,30 @@
+[name]
+name=Strobe Light
+matchName=ADBE Strobe
+
+[properties]
+name=	Strobe Color
+type=	COLOR
+
+name=	Blend With Original
+type=	OneD
+
+name=	Strobe Duration (secs)
+type=	OneD
+
+name=	Strobe Period (secs)
+type=	OneD
+
+name=	Random Strobe Probablity
+type=	OneD
+
+name=	Strobe
+type=	OneD
+
+name=	Strobe Operator
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+

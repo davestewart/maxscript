@@ -1,0 +1,449 @@
+<html>
+
+<!-- Mirrored from www.rpmanager.com/tutorials/tutorialOne_basicUse.htm by HTTrack Website Copier/3.x [XR&CO'2004], Tue, 12 Oct 2004 15:14:12 GMT -->
+<head>
+<title>RPManager Tutorial One - Basic Use</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"
+>
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<link rel="stylesheet" href="../styles.css" type="text/css">
+</head>
+
+<body bgcolor="#000000" text="#000000" link="#99CC00" onLoad="MM_preloadImages('../images/siteMiddleShortS_04-over.jpg','../images/siteMiddleShortS_07-over.jpg','../images/siteTop_news-over.jpg','../images/siteTop_about-over.jpg','../images/siteTop_screenshot-over.jpg','../images/siteTop_downloads-over.jpg','../images/siteTop_purchase-over.jpg','../images/siteTop_tutorials-over.jpg','../images/siteTop_email-over.jpg','../images/siteTop_freeTools-over.jpg')">
+<table width="787" border="0" align="center" cellpadding="0" cellspacing="0" background="../images/bj.jpg">
+  <!--DWLayoutTable-->
+  <tr>
+    <td height="22" colspan="5" valign="top"><TABLE WIDTH=800 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+        <TR> 
+          <TD COLSPAN=17> <IMG NAME="siteTop_bg01" SRC="../images/siteTop_bg01.jpg" WIDTH=800 HEIGHT=10></TD>
+        </TR>
+        <TR> 
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_02.jpg" WIDTH=33 HEIGHT=12></TD>
+          <TD> <A HREF="../news.htm"> <IMG SRC="../images/siteTop_news.jpg" NAME="siteTop_news" WIDTH=32 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTop_news','','../images/siteTop_news-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_04.jpg" WIDTH=39 HEIGHT=12></TD>
+          <TD> <A HREF="#"
+ONMOUSEOVER="changeImages('siteTop_bg01', 'images/siteTop_bg01-siteTop_about_.jpg'); return true;"
+ONMOUSEOUT="changeImages('siteTop_bg01', 'images/siteTop_bg01.jpg'); return true;"> 
+            </A><A HREF="../about.htm"><IMG SRC="../images/siteTop_about.jpg" NAME="siteTop_about" WIDTH=39 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTop_about','','../images/siteTop_about-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_06.jpg" WIDTH=35 HEIGHT=12></TD>
+          <TD> <A HREF="../screenshots.htm"> <IMG SRC="../images/siteTop_screenshot.jpg" NAME="siteTop_screenshot" WIDTH=86 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTop_screenshot','','../images/siteTop_screenshot-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_08.jpg" WIDTH=33 HEIGHT=12></TD>
+          <TD> <A HREF="../download.htm"> <IMG SRC="../images/siteTop_downloads.jpg" NAME="siteTop_downloads" WIDTH=66 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTop_downloads','','../images/siteTop_downloads-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_10.jpg" WIDTH=32 HEIGHT=12></TD>
+          <TD> <A HREF="../purchase.htm"> <IMG SRC="../images/siteTop_purchase.jpg" NAME="siteTop_purchase" WIDTH=63 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTop_purchase','','../images/siteTop_purchase-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_12.jpg" WIDTH=29 HEIGHT=12></TD>
+          <TD> <A HREF="../tutorials.htm"> <IMG SRC="../images/siteTop_tutorials-black.jpg" NAME="siteTop_tutorials" WIDTH=67 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTop_tutorials','','../images/siteTop_tutorials-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_14.jpg" WIDTH=28 HEIGHT=12></TD>
+          <TD> <A HREF="../freeTools.htm"> <IMG SRC="../images/siteTopS_15.jpg" NAME="siteTopS_15" WIDTH=75 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTopS_15','','../images/siteTop_freeTools-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_16.jpg" WIDTH=90 HEIGHT=12></TD>
+          <TD> <A HREF="mailto:rpmanager@rpmanager.com"> <IMG SRC="../images/siteTop_email.jpg" NAME="siteTop_email" WIDTH=34 HEIGHT=8 BORDER=0 onMouseOver="MM_swapImage('siteTop_email','','../images/siteTop_email-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+          <TD ROWSPAN=2> <IMG SRC="../images/siteTopS_18.jpg" WIDTH=19 HEIGHT=12></TD>
+        </TR>
+        <TR> 
+          <TD> <IMG SRC="../images/siteTopS_19.jpg" WIDTH=32 HEIGHT=4></TD>
+          <TD> <IMG SRC="../images/siteTopS_20.jpg" WIDTH=39 HEIGHT=4></TD>
+          <TD> <IMG SRC="../images/siteTopS_21.jpg" WIDTH=86 HEIGHT=4></TD>
+          <TD> <IMG SRC="../images/siteTopS_22.jpg" WIDTH=66 HEIGHT=4></TD>
+          <TD> <IMG SRC="../images/siteTopS_23.jpg" WIDTH=63 HEIGHT=4></TD>
+          <TD> <IMG SRC="../images/siteTopS_24.jpg" WIDTH=67 HEIGHT=4></TD>
+          <TD> <IMG SRC="../images/siteTopS_25.jpg" WIDTH=75 HEIGHT=4></TD>
+          <TD> <IMG SRC="../images/siteTopS_26.jpg" WIDTH=34 HEIGHT=4></TD>
+        </TR>
+      </TABLE></td>
+  </tr>
+  <tr>
+    <td height="76" colspan="5" valign="top"><TABLE WIDTH=800 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+      <TR>
+        <TD ROWSPAN=5> <IMG SRC="../images/siteMiddleShortS_01.jpg" WIDTH=726 HEIGHT=76></TD>
+        <TD COLSPAN=3> <IMG SRC="../images/siteMiddleShortS_02.jpg" WIDTH=57 HEIGHT=6></TD>
+        <TD ROWSPAN=5> <IMG SRC="../images/siteMiddleShortS_03.jpg" WIDTH=17 HEIGHT=76></TD>
+      </TR>
+      <TR>
+        <TD COLSPAN=3> <A HREF="../support.htm"> <IMG SRC="../images/siteMiddleShortS_04.jpg" NAME="siteMiddleShortS_04" WIDTH=57 HEIGHT=9 BORDER=0 onMouseOver="MM_swapImage('siteMiddleShortS_04','','../images/siteMiddleShortS_04-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+      </TR>
+      <TR>
+        <TD COLSPAN=3> <IMG SRC="../images/siteMiddleShortS_05.jpg" WIDTH=57 HEIGHT=25></TD>
+      </TR>
+      <TR>
+        <TD ROWSPAN=2> <IMG SRC="../images/siteMiddleShortS_06.jpg" WIDTH=22 HEIGHT=36></TD>
+        <TD> <A HREF="../index.htm"> <IMG SRC="../images/siteMiddleShortS_07.jpg" NAME="siteMiddleShortS_07" WIDTH=33 HEIGHT=9 BORDER=0 onMouseOver="MM_swapImage('siteMiddleShortS_07','','../images/siteMiddleShortS_07-over.jpg',1)" onMouseOut="MM_swapImgRestore()"></A></TD>
+        <TD ROWSPAN=2> <IMG SRC="../images/siteMiddleShortS_08.jpg" WIDTH=2 HEIGHT=36></TD>
+      </TR>
+      <TR>
+        <TD> <IMG SRC="../images/siteMiddleShortS_09.jpg" WIDTH=33 HEIGHT=27></TD>
+      </TR>
+    </TABLE></td>
+  </tr>
+  <tr>
+    <td height="19" colspan="5" valign="top" background="../images/bj.jpg"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="31" height="823" background="../images/bj.jpg">&nbsp;</td>
+    <td width="142" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="142" height="283" valign="top" background="../images/bj.jpg" class="body"><p class="boldBody">Tutorial
+              One -<br>
+              Basic Use</p>
+          </td>
+        </tr>
+        <tr>
+          <td height="540">&nbsp;</td>
+        </tr>
+        </table>
+    </td>
+    <td width="21" background="../images/bj.jpg">&nbsp;</td>
+    <td width="550" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="550" height="579" valign="top" background="../images/bj.jpg"><p class="body">NOTE: 
+              This tutorial assumes RPManager or RPManagerLite is correctly installed. 
+              Also, with version 3.1 and 2.1 of RPManager the free and evaluation 
+              licenses support up to 2 passes only, so this tutorial will be modified 
+              somewhat in the future.</p>
+            <p class="body">You can download a screen capture of this tutorial
+              being completed <a href="tutorialOne/tutorialOneQT.zip"; style="text-decoration:none; color:#99CC00">here</a>.(
+              1.8meg zip, quicktime format)</p>
+            <p class="body">              Download and open <a href="tutorialOne/RPM_tuteOne_starterScene.zip"; style="text-decoration:none; color:#99CC00">this</a> scene,
+                  your perspective viewport should look something like this:</p>
+            <p class="body"><img src="tutorialOne/screen01.jpg" width="250" height="181"></p>
+            <p class="body"><br>
+              Open RPManager or RPManagerLite. If this
+              is the first time you have opened it, it will offer to convert
+            your production and draft setups to passes - say no to this dialog.</p>
+            <p class="body">In
+                  the RPM interface click the '+' button to add a pass. You can
+              also add a pass from the 'Passes' menu. </p>
+            <blockquote>
+              <p class="body">Note: When creating a pass in a scene that already 
+                has a camera active, that camera is used. If only one camera exists, 
+                that camera is used regardless. If no camera exists, RPM will 
+                automatically create one. If multiple cameras exist and none is 
+                actively viewed, it will prompt you for which camera to assign 
+                to the pass being created (camera assignment can be easily changed 
+                later). In this scene only one camera exists so it is automatically 
+                used. Current settings at time of pass creation are used for defining 
+                pass setup - active atmospherics, renderer setup (including draft/production), 
+                output resolution etc.</p>
+            </blockquote>            
+            <p class="body">When you add a pass the pass name is automatically
+              highlighted for editing, enter the name 'Background' for the pass
+              name. <a href="tutorialOne/screenImages/One.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Screenshot</a></p>
+            <p class="body">Optmise the interface a little by clicking the
+              small '-' button positioned just below the Add Pass button - this
+              will hide some items we do not need for the moment. <a href="tutorialOne/screenImages/Two.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Screenshot</a> (you
+              can also resize the pass list)</p>
+            <p class="body">We will now add the background elements to our
+                'Background' pass so that only those elements are rendered in
+              this pass. There is already a selection set assigned to the background
+                and floor elements, we will use this. From the 'Visibility Sets'
+                menu, pick the 'Import Selection Sets...' item. In the dialog
+              that
+                <a href="tutorialOne/screenImages/Three.gif" target="_blank"; style="text-decoration:none; color:#99CC00">opens</a> check
+            the item in the list and hit the 'Import Checked' button.</p>
+            <p class="body">Right Click on the area of the pass name in the 'Visibility
+              Sets' column of the main pass list, and from the Assign a Visibility
+              Set submenu <a href="tutorialOne/screenImages/four.gif" target="_blank"; style="text-decoration:none; color:#99CC00">pick the
+              BG_and_floor</a> set we just imported.
+              This assigns the visibility set to the pass - you can see the visibility
+              set column reflects the assignment - and the pass is isolated.              </p>
+            <blockquote>
+              <p class="body">Note you can temporarily turn off visibility set
+                activity in the viewport so assignments are not immediately active
+                if that is your
+                  preferred workflow. Also, lights and other non renderable objects
+                  are not affected by visibility sets unless you want them to
+                be.</p>
+            </blockquote>            
+            <p class="body">Next to assign a set to the creature: First, unhide
+              all objects, then add another pass using the Add Pass button. Name
+              it 'Creature'.
+              Select the object named creature in the viewport (the spikey thing
+              with legs) and Right Click in the visibility set column of this
+              new pass - pick the first item, 'Create Visibility Set'. This brings
+              up the <a href="tutorialOne/screenImages/Five.gif" target="_blank"; style="text-decoration:none; color:#99CC00">create visibility
+              set dialog</a>. The set is
+              automatically named to the pass name and highlighted for editing.
+              The default
+              options are what we want - created from selected objects and assigned
+              to the current pass - so either hit the 'Create' button or if the
+              name field is still highlighted you can use the 'Shift-Enter' short
+              cut to OK from there. This creates the set and assigns to the pass.
+              (Note it did not isolate the pass, this is an option in the create
+              visibility set dialog and its default setting is controllable
+              via the global defaults.)</p>
+            <p class="body">Confirm that both sets are correctly assigned by
+              clicking first on the Background item in the pass list, and then
+              on the Creature item. You should see the each pass isolated as
+              you select the pass name.</p>
+            <p class="body"><font color="#FF0000">NOTE:</font> 3.1+ and 2.1+ versions 
+              will not create more than 2 passes. To continue with the tutorial 
+              it might make sense to delete the background pass we created as 
+              the volume light information is still useful:</p>
+            <p class="body"> Our last pass to add in this tutorial is the volume 
+              light pass - there is a volume light assigned, and we want it to 
+              appear on only one new pass, and some hold out meshes to also block 
+              the light:<br>
+              Add a new pass, name it 'VolumeLight'. We want the creature and 
+              the rectangular panel on the floor to be included in this pass as 
+              matte objects, so will use multiple instanced objects to achieve 
+              this (we could use object properties in the non-Lite version of 
+              RPManager to have a more optimised scene, but this is a tutorial 
+              for both). Unhide all, then select the objects named 'Creature' 
+              and 'FloorLight', and clone them as instances.</p>
+            <p class="body">With them still selected RC in the visibility sets
+              column and create a selection set from selected objects - this
+              time turn on the
+              'isolate set on assign' option in the create dialog so when created
+              the pass is isolated. Assign a completely black material to both
+              objects, there is one in the ME already (it  helps to assign
+              a new wire color to cloned instanced objects to make it clearer,
+              in wireframe view,
+              what
+              is
+              currently
+              visible).</p>
+            <p class="body">We need to control the volume light per pass.<br>
+              Currently the volume light is on for all passes. This is reported
+              in the main pass list <a href="tutorialOne/screenImages/six.gif" target="_blank"; style="text-decoration:none; color:#99CC00">here</a>. (this column has a RC menu that can
+              also be used to control atmospherics). Change to the Atmospherics
+              controls by <a href="tutorialOne/screenImages/seven.gif" target="_blank"; style="text-decoration:none; color:#99CC00">clicking
+              on the 'Atmos' tab</a>. This brings up the Atmospherics
+              controls. The checkboxes here control on a pass by pass basis what
+            is active or inactive.</p>
+            <p class="body">Activate the 'Background' pass by clicking on it
+              in the pass list. Turn off the active checkbox for the volume light.
+              Do the same for the 'Creature' pass. The atm reporting in the pass
+              list reflects these <a href="tutorialOne/screenImages/eight.gif" target="_blank"; style="text-decoration:none; color:#99CC00">changes</a>.</p>
+            <p class="body">Do a preview of the passes as they stand by clicking
+              on the Preview/Checked button in the bottom left of the interface.
+              This will preview
+                all passes and then load the previews along with alpha channel
+                into Ramplayer (scene info stamping and preview history are off
+                by default and will be covered in a later tutorial). <a href="tutorialOne/screenImages/nine.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Screenshot</a>.</p>
+            <p class="body">Note that the volume light pass is incorrect - we
+              need to include the floor as a black object as the light should
+              not be seen below the ground plane. Close the ramplayer.</p>
+            <p class="body">Select the Volume Light Pass in the pass list
+              to restore it. Unhide all objects and select the floor object,
+              clone as instance
+                  and assign the black material we used before. RC in the volume
+                  lights Visibility Set column, and pick the <a href="tutorialOne/screenImages/ten.gif" target="_blank"; style="text-decoration:none; color:#99CC00">'Add
+                Selected Objects to Visibility Set'</a> item.</p>
+            <blockquote>
+              <p class="body">This adds the object to
+                    the visibility set, and by default isolates the set (behavior
+                    on
+                    adding/removing
+                    is controlled using the 'isolate set when objects added/removed'
+                    item in the same RC menu).</p>
+            </blockquote>            
+            <p class="body">Click on the Preview/Selected button in the bottom
+              left of the interface to preview just the current pass that we
+              have modified.
+                It now looks <a href="tutorialOne/screenImages/eleven.gif" target="_blank"; style="text-decoration:none; color:#99CC00">correct</a>.</p>
+            <p class="body">Next we will setup the output ranges. The background
+              pass needs only be a single frame. The other two need to both be
+              the active
+                time range. <br>
+                Select the 'background' pass and change to the 'Common Params'
+                tab. In the time output group set the radio button to 'Single'.
+                Note the main pass list displays the updated ranges.</p>
+            <p class="body">Next to setup the output files and output formats.              </p>
+            <blockquote>
+              <p class="body"><font color="#FF0000">IMPORTANT</font> Due to a
+                limitation in bitmap output access in 3dsmax, if you have set
+                the file output
+                format using the main render
+                dialog,
+                  RPM cannot then set the output parameters *for that output
+                type* ie if you have set a targa output, RPM cannot set targa
+                parameters.
+                This is fine if all your passes are to be the same type - ie
+                targa -
+                but
+                if
+                you
+                want
+                to
+                mix RPF
+                files
+                with
+                different
+                channels
+                etc.
+                  you will need to do an extra step to workaround this problem:
+                simply set the output, using the main render dialog, to a format
+                you will not be using. ie BMP. Make sure neither draft nor production
+                has the format you want to use assigned.<br>
+                Then use the controls
+                  in RPM to set your output names and types. This
+                  is usually only
+                  a problem
+                  if
+                  you
+                  are converting old scenes to RPM, or if you accidentally use
+                the main render dialog to set your file output. </p>
+            </blockquote>            
+            <p class="body">In this scene the production renderer has never had
+              the output set so there is no need to set the
+              main render dialog to a dummy output file.</p>
+            <p class="body">Next, use the Auto Path
+              generation of RPM to build some output paths (note the auto path
+              generation references an unencrypted maxscript function you can
+              customise to your own needs)<br>
+              From the 'Output' menu in RPManager, pick the <a href="tutorialOne/screenImages/twelve.gif" target="_blank"; style="text-decoration:none; color:#99CC00">'Auto
+            build all paths...'</a>            item.</p>
+            <blockquote>
+              <p class="body"> The way the default system works is that it requests
+                    that you select a single directory as your root directory,
+                and an output format. Once chosen, RPM automatically builds a directory
+                    for each pass, named for the pass, and an output path for each
+                    pass pointing to that directory.<br>
+              </p>
+            </blockquote>            
+            <p class="body">Create a new empty directory (and enter it), 
+              pick the targa output format, and hit the 'Save' button. You will
+              be asked for the output format for the images, set to 32 bit premultiplied
+              if not already and OK.</p>
+            <p class="body">Passes have been set for each pass, and we will use
+              the Output Inspector to check them. From the Output Menu pick 'inspect
+              output paths/format'. This brings up <a href="tutorialOne/screenImages/thirteen.gif" target="_blank"; style="text-decoration:none; color:#99CC00">this
+              dialog</a>. Using this dialog
+              you can edit output paths (entering a path that does not exist
+              automatically
+              creates that path if possible), as well as edit the output parameters
+              of each pass. For this tutorial we will set the background pass
+              to 24 bit - select the background pass in the lower 'output setup'
+              listbox, and RC on the '32' under the bit depth label. Set to 24
+              bit. <a href="tutorialOne/screenImages/fourteen.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Screenshot</a>.</p>
+            <p class="body">Close this dialog when done.</p>
+            <p class="body"><br>
+              Last steps are to apply some network settings, check for submission
+                errors, and submit the job:</p>
+            <p class="body">We only want one server assigned
+                  to the 'Background'
+                  pass
+                  since
+                  it is
+                  a single
+                  frame,
+                  and will
+                  use the Network controls to set this.<br>
+                Click on the <a href="tutorialOne/screenImages/fifteen.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Network
+                tab</a> to display the network controls,
+                  then, assuming your manager is running, press the 'Update manager
+                  data' button. This retrieves a list of servers from the manager
+                  (stored in the ini file so you do not need to do this every
+                  time). With the Background pass active, turn off the 'Global
+                Submission Setup' to convert this passes settings to local,
+            and then turn off the 'Use All Servers' checkbox. </p>
+            <blockquote>
+              <p class="body">Note: if you had turned off the 'Use All Servers'
+                first, this would have affected the Global setups, and hence
+                all the other passes that are using the global setup (which they
+                do
+                by default).</p>
+            </blockquote>            
+            <p class="body">Now check a single
+                  server
+                  in the server list, this will be the only one assigned to this
+                  pass. (note you can
+                  RC here for some checking shortcuts). The other two passes
+              are still set to global which is using all servers which is what
+              we want. Click on them in the pass list to restore to visibly confirm
+              if you like.</p>            
+            <p class="body">We want to identify this job on the queue when
+              submitted - 'background' and 'Creature' is not terribly descriptive
+                when working on many
+              jobs at once. Rather than adding to the length of each pass name,
+                we will use use the global pass prefix to enter a unique name
+                that will be
+               prefixed to each pass when submitted to the network queue. Enter
+              'TutorialOne' in the 'Prefix' field below and to the right of the
+            main pass list. <a href="tutorialOne/screenImages/sixteen.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Screenshot</a>.
+            (note the layout of the Network controls has changed slightly in
+            the 1.95 version you can download).</p>
+              <p class="body">Press the 'Alerts' button in bottom right of
+                the RPM interface, this brings up this dialog listing the current
+              alerts. We have not tailored the alerts to our scene, so move this
+              dialog to the side (it can be resized smaller) and change to the
+                <a href="tutorialOne/screenImages/seventeen.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Warnings
+            tab</a> in the RPM tab interface.</p>            
+              <p class="body">In the 'Output size warnings' press the 'Get Current'
+              button (this retrieves the current output size and uses that).
+              Also turn off the 'single frame' warning and all the multipass
+              warnings, then press the 'Recheck Scene' button in the Alerts dialog.
+              This leaves us with just <a href="tutorialOne/screenImages/eighteen.gif" target="_blank"; style="text-decoration:none; color:#99CC00">these</a> alerts
+              which are fine - they indicate difference in frame ranges which
+              is what we want.</p>
+              <p class="body">In the bottom of the
+              RPM interface press the Net Submission/Checked button. This displays
+              the Submission
+              dialog (very similar to the alerts dialog and also
+                allows rechecking of warnings). We have already checked our warnings
+                so press the <a href="tutorialOne/screenImages/nineteen.gif" target="_blank"; style="text-decoration:none; color:#99CC00">'Net
+                Submit'</a> button in the bottom left of the dialog.
+                Assuming
+                the
+                manager can
+              be found he submission takes place, and you end up with <a href="tutorialOne/screenImages/twenty.gif" target="_blank"; style="text-decoration:none; color:#99CC00">this</a>. Press
+              the 'Open queueman' button, connect to the manager in queuemonitor
+              and you should see your passes submitted. <a href="tutorialOne/screenImages/twentyOne.gif" target="_blank"; style="text-decoration:none; color:#99CC00">Screenshot</a>.</p>
+              <p class="body">That's it for this tutorial. After you passes have
+            rendered composite them together in your package of choice.</p>            <p class="body">&nbsp;</p></td>
+        </tr>
+        <tr>
+          <td height="579" valign="top" background="../images/bj.jpg"><!--DWLayoutEmptyCell-->&nbsp;</td>
+        </tr>
+    </table>
+    </td>
+    <td width="56" valign="top" background="../images/bj.jpg"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr background="../images/bottomBar.jpg">
+    <td height="21" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.rpmanager.com/tutorials/tutorialOne_basicUse.htm by HTTrack Website Copier/3.x [XR&CO'2004], Tue, 12 Oct 2004 15:14:12 GMT -->
+</html>

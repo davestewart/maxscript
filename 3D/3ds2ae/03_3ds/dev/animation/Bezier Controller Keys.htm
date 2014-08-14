@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Bezier Controller Keys</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META TIME_STAMP="9/9/2003 12:18:37 PM" CONVERTER="RTFtoHTM v2.3" 
+KEYWORDS="Bezier controller keys;keys, Bezier Controller" 
+DOCFILE="max_objects_2.doc" HELP_BUILD="9/9/2003  12:18:37 PM" 
+COPYRIGHT="© 1998-2003 Discreet, a division of Autodesk, Last updated: %date."><LINK 
+href="mk:@MSITStore:C:\Design\1_3D\3dsmax6\Help\maxscript.chm::/ktx.css" 
+rel=Stylesheet>
+<SCRIPT language=javascript src="Bezier Controller Keys_files/20B.tmp"></SCRIPT>
+
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY vLink=blue link=blue>
+<H1>Bezier Controller Keys</H1>
+<P class=BodyFirst>For Bezier controller keys, the following properties are 
+accessible: 
+<P class=BodyBold>Properties 
+<P 
+class=code>&lt;key&gt;.<B>time</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+time value or number (interpreted as frames) 
+<P 
+class=code>&lt;key&gt;.<B>selected</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean&nbsp;&nbsp;-- 
+specifies whether the key is selected 
+<P 
+class=code>&lt;key&gt;.<B>value</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;varies&nbsp;&nbsp;&nbsp;-- 
+class determined by its containing controller 
+<P 
+class=code>&lt;key&gt;.<B>inTangent</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;varies&nbsp;&nbsp;&nbsp;-- 
+float or point3 (see below) 
+<P 
+class=code>&lt;key&gt;.<B>outTangent</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;varies&nbsp;&nbsp;&nbsp;-- 
+float or point3 (see below) 
+<P 
+class=code>&lt;key&gt;.<B>inTangentType</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+see list of permitted names below 
+<P 
+class=code>&lt;key&gt;.<B>outTangentType</B>&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+see list of permitted names below 
+<P class=code>&lt;key&gt;.<B>inTangentLength </B>Float&nbsp;&nbsp;&nbsp;&nbsp; 
+<P 
+class=code>&lt;key&gt;.<B>outTangentLength</B>&nbsp;&nbsp;Float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+<P class=code>&lt;key&gt;<B>.freeHandle </B>Boolean&nbsp;&nbsp; 
+<P 
+class=code>&lt;key&gt;.<B>x_locked</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean&nbsp;&nbsp;default: 
+true 
+<P class=code>&lt;key&gt;.<B>y_locked </B>Boolean&nbsp;&nbsp;default: true 
+<P 
+class=code>&lt;key&gt;.<B>z_locked</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean&nbsp;&nbsp;default: 
+true 
+<P 
+class=codeLast>&lt;key&gt;.<B>constantVelocity</B>&nbsp;&nbsp;Boolean&nbsp;&nbsp;default: 
+false 
+<P class=Body>The .<B>inTangent</B> and .<B>outTangent</B> values are Floats in 
+keys of float controllers and Point3s for the other appropriate controllers. 
+Default value is 0 for float controllers, [0,0,0] otherwise. 
+<P class=Body>The .<B>inTangentType</B> and .<B>outTangentType</B> properties 
+have symbolic name values representing the 6 possible tangent types available in 
+the drop-down menu in the Bezier key property dialog: 
+<P class=code>#smooth (default) 
+<P class=code>#linear 
+<P class=code>#step 
+<P class=code>#fast 
+<P class=code>#slow 
+<P class=code>#custom 
+<P class=codeLast>#auto 
+<P class=Body><B>.inTangentLength</B> and .<B>outTangentLength</B>, (typically a 
+fraction from 0 to 1) represent how long the handle is towards the adjacent key. 
+For example, a value of 0.5 means the handle reaches halfway from the current 
+key to the adjacent key, and a value of 1 reaches all the way. If the handle 
+reaches beyond the adjacent key, it will be greater than one. If there is no 
+previous key, the value of <B>.inTangentLength</B> will be -1. 
+<P class=Body>There is a check box to the key property/Master Point control 
+dialog found in the Motion Panel. It is called Free Handle. When Free Handle is 
+checked, the user can move the horizontal handle where ever s/he feels. 
+Otherwise, s/he is constrained, to prevent discontinuities. 
+<P class=Body>Correspondingly, there is a bezier key property called 
+<B>.freeHandle</B> that implements the functionality described above. 
+<P class=ScriptHead>Examples: 
+<P class=code>c = bezier_position 
+()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+create and assign new controller 
+<P class=codeLast>$bar.pos.controller = c 
+<P class=code>k = addNewKey c 
+0f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+add a key at frame 0 
+<P class=code>k.value = 
+[10,0,0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+set value there 
+<P class=codeLast>k.outTangentType = 
+#slow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- and outgoing 
+tangent type 
+<P class=code>k = addNewKey c 
+100f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+add another key at 100 
+<P class=code>k.value = 
+[200,10,0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+set value 
+<P class=code>k.inTangentType = 
+#custom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- make inTangent 
+custom 
+<P class=code>k.inTangent = [0.2, 0.02, 0.112]&nbsp;&nbsp;-- set its tangents 
+<P class=codeLast>k.x_locked = 
+false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+and unlock handles 
+<P class=SeeAlso><B>Note</B>: There are a fair number of classes that don't 
+implement the <B>showproperties</B> method. MAXKey is one of them. 
+<B>getPropNames</B> is not implemented for it either. 
+<P class=SeeAlso>See also 
+<P class=BodyLink><A 
+href="mk:@MSITStore:C:\Design\1_3D\3dsmax6\Help\maxscript.chm::/maxkey_common_properties_operators_and_methods.htm">Key 
+Common Properties, Operators, and Methods</A> 
+<P class=BodyLink><A 
+href="mk:@MSITStore:C:\Design\1_3D\3dsmax6\Help\maxscript.chm::/value_common_properties_operators_and_methods.htm">Value 
+Common Properties, Operators, and Methods</A> 
+<HR>
+
+<P class=Body><A title="Click here to comment on this topic." 
+href="javascript:doComments()">Comments</A> </P></BODY></HTML>

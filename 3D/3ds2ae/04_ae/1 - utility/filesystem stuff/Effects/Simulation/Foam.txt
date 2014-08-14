@@ -1,0 +1,144 @@
+[name]
+name=Foam
+matchName=APC Foam
+
+[properties]
+name=	View
+type=	OneD
+
+name=	Producer
+type=	NO_VALUE
+
+name=	Producer Point
+type=	TwoD_SPATIAL
+
+name=	Producer X Size
+type=	OneD
+
+name=	Producer Y Size
+type=	OneD
+
+name=	Producer Orientation
+type=	OneD
+
+name=	Zoom Producer Point
+type=	OneD
+
+name=	Production Rate
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Bubbles
+type=	NO_VALUE
+
+name=	Size
+type=	OneD
+
+name=	Size Variance
+type=	OneD
+
+name=	Lifespan
+type=	OneD
+
+name=	Bubble Growth Speed
+type=	OneD
+
+name=	Strength
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Physics
+type=	NO_VALUE
+
+name=	Initial Speed
+type=	OneD
+
+name=	Initial Direction
+type=	OneD
+
+name=	Wind Speed
+type=	OneD
+
+name=	Wind Direction
+type=	OneD
+
+name=	Turbulence
+type=	OneD
+
+name=	Wobble Amount
+type=	OneD
+
+name=	Repulsion
+type=	OneD
+
+name=	Pop Velocity
+type=	OneD
+
+name=	Viscosity
+type=	OneD
+
+name=	Stickiness
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Zoom
+type=	OneD
+
+name=	Universe Size
+type=	OneD
+
+name=	Rendering
+type=	NO_VALUE
+
+name=	Blend Mode
+type=	OneD
+
+name=	Bubble Texture
+type=	OneD
+
+name=	Bubble Texture Layer
+type=	LAYER_INDEX
+
+name=	Bubble Orientation
+type=	OneD
+
+name=	Environment Map
+type=	LAYER_INDEX
+
+name=	Reflection Strength
+type=	OneD
+
+name=	Reflection Convergence
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Flow Map
+type=	NO_VALUE
+
+name=	Flow Map
+type=	LAYER_INDEX
+
+name=	Flow Map Steepness
+type=	OneD
+
+name=	Flow Map Fits
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Simulation Quality
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+

@@ -1,0 +1,15 @@
+[name]
+name=Unsharp Mask
+matchName=ADBE Unsharp Mask2
+
+[properties]
+name=	Amount
+type=	OneD
+
+name=	Radius
+type=	OneD
+
+name=	Threshold
+type=	OneD
+
+

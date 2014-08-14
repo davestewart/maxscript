@@ -1,0 +1,81 @@
+[name]
+name=Lightning
+matchName=ADBE Lightning
+
+[properties]
+name=	Start point
+type=	TwoD_SPATIAL
+
+name=	End point
+type=	TwoD_SPATIAL
+
+name=	Segments
+type=	OneD
+
+name=	Amplitude
+type=	OneD
+
+name=	Detail Level
+type=	OneD
+
+name=	Detail Amplitude
+type=	OneD
+
+name=	Branching
+type=	OneD
+
+name=	Rebranching
+type=	OneD
+
+name=	Branch Angle
+type=	OneD
+
+name=	Branch Seg. Length
+type=	OneD
+
+name=	Branch Segments
+type=	OneD
+
+name=	Branch Width
+type=	OneD
+
+name=	Speed
+type=	OneD
+
+name=	Stability
+type=	OneD
+
+name=	Fixed Endpoint
+type=	OneD
+
+name=	Width
+type=	OneD
+
+name=	Width Variation
+type=	OneD
+
+name=	Core Width
+type=	OneD
+
+name=	Outside Color
+type=	COLOR
+
+name=	Inside Color
+type=	COLOR
+
+name=	Pull Force
+type=	OneD
+
+name=	Pull Direction
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+name=	Simulation
+type=	OneD
+
+

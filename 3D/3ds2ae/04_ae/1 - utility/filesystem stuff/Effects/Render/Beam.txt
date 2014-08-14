@@ -1,0 +1,39 @@
+[name]
+name=Beam
+matchName=ADBE Laser
+
+[properties]
+name=	Starting Point
+type=	TwoD_SPATIAL
+
+name=	Ending Point
+type=	TwoD_SPATIAL
+
+name=	Length
+type=	OneD
+
+name=	Time
+type=	OneD
+
+name=	Starting Thickness
+type=	OneD
+
+name=	Ending Thickness
+type=	OneD
+
+name=	Softness
+type=	OneD
+
+name=	Inside Color
+type=	COLOR
+
+name=	Outside Color
+type=	COLOR
+
+name=	3D Perspective
+type=	OneD
+
+name=	Composite On Original
+type=	OneD
+
+

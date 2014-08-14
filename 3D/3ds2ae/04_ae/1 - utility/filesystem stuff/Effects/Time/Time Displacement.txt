@@ -1,0 +1,18 @@
+[name]
+name=Time Displacement
+matchName=ADBE Time Displacement
+
+[properties]
+name=	Time Displacement Layer
+type=	LAYER_INDEX
+
+name=	Max Displacement Time [sec]
+type=	OneD
+
+name=	Time Resolution [fps]
+type=	OneD
+
+name=	If Layer Sizes Differ
+type=	OneD
+
+

@@ -1,0 +1,36 @@
+[name]
+name=Write-on
+matchName=ADBE Write-on
+
+[properties]
+name=	Brush Position
+type=	TwoD_SPATIAL
+
+name=	Color
+type=	COLOR
+
+name=	Brush Size
+type=	OneD
+
+name=	Brush Hardness
+type=	OneD
+
+name=	Brush Opacity
+type=	OneD
+
+name=	Stroke Length (secs)
+type=	OneD
+
+name=	Brush Spacing (secs)
+type=	OneD
+
+name=	Paint Time Properties
+type=	OneD
+
+name=	Brush Time Properties
+type=	OneD
+
+name=	Paint Style
+type=	OneD
+
+

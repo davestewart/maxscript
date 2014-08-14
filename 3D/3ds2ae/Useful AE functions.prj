@@ -1,0 +1,30 @@
+<project version="Crimson Editor 3.60">
+	<localfile path="E:\03_Scripting\3ds2ae\04_ae\1 - utility\save str to file.jsx" />
+	<localfile path="E:\03_Scripting\3ds2ae\04_ae\1 - utility\walk properties.jsx" />
+</project>
+
+<workspace version="Crimson Editor 3.60">
+	<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\jsx\maxObjects.jsx" linenum="1" placement="0:1:-1:-1:-4:-23:228:228:980:828" />
+	<localfile path="E:\03_Scripting\maxScript\max 5\cameraToViewport.ms" linenum="29" placement="0:1:-1:-1:-4:-23:57:57:809:660" />
+	<localfile path="E:\03_Scripting\maxScript\max 5\ray stuff 01.ms" linenum="1" placement="0:1:-1:-1:-4:-20:114:114:866:717" />
+	<localfile path="E:\03_Scripting\maxScript\max 4\selection set changed\sel_change_03.ms" linenum="9" placement="0:1:-1:-1:-4:-25:95:95:847:698" />
+	<localfile path="E:\03_Scripting\maxScript\max 4\spline inout point tool\splineInOut 01.ms" linenum="1" placement="0:1:-1:-1:-4:-20:114:114:866:717" />
+	<localfile path="E:\03_Scripting\maxScript\max 4\view text\view_text 03.ms" linenum="1" placement="0:1:-1:-1:-4:-20:133:133:885:736" />
+	<localfile path="H:\research\3dsmax\scripts\Wad-O-MXSWads!-v1_02\Wad-O-Functions!-v1_50\Group&HierarchyStuff\MAXr3Script-copyhierarchy.ms" linenum="13" placement="0:1:-1:-1:-4:-23:247:247:999:844" />
+	<localfile path="E:\03_Scripting\maxScript\max 5\vertigo\vertigo 01.ms" linenum="3" placement="0:1:-1:-1:-4:-25:57:57:809:654" />
+	<localfile path="H:\research\3dsmax\scripts\Wad-O-MXSWads!-v1_02\Wad-O-Functions!-v1_50\DavidMiller-PixelRatio-v01\DavidMiller-PixelRatio-v01.ms" linenum="17" placement="0:1:-1:-1:-4:-25:76:76:828:673" />
+	<localfile path="E:\03_Scripting\3ds2ae\04_ae\5 - effects\posToEffect 01.jsx" linenum="1" placement="0:1:-1:-1:-4:-25:209:209:961:812" />
+	<localfile path="E:\03_Scripting\3ds2ae\04_ae\5 - effects\dump effects properties 03.jsx" linenum="20" placement="0:1:-1:-1:-4:-25:252:252:995:843" />
+	<localfile path="E:\03_Scripting\3ds2ae\04_ae\1 - utility\file and folder creation 02.jsx" linenum="10" placement="0:1:-1:-1:-4:-25:0:0:743:591" />
+	<localfile path="C:\Design\1_3D\3dsMax8\stdplugs\stdscripts\baseLib\xmlIO.ms" linenum="16" placement="0:1:-1:-1:-4:-25:0:0:683:597" />
+	<localfile path="E:\03_Scripting\maxScript\max 8\Borders\getproperty tests.ms" linenum="9" placement="0:1:-1:-1:-4:-25:22:24:731:614" />
+	<localfile path="E:\03_Scripting\maxScript\max 8\viewport layout\vplayout 05.ms" linenum="1" placement="0:1:-1:-1:-4:-25:44:48:753:638" />
+	<localfile path="E:\03_Scripting\maxScript\max 4\render settings\replaceAll2.ms" linenum="20" placement="0:1:-1:-1:-4:-25:66:72:775:662" />
+	<localfile path="H:\work archive\1_animation\2005\2005-05 - Time Slice Films\1 - scripting\Kronos Utility 1.2.jsx" linenum="127" placement="0:1:-1:-1:-4:-25:88:96:797:686" />
+	<localfile path="E:\03_Scripting\maxScript\forum posts\programming\sortBoth function.ms" linenum="9" placement="0:1:-1:-1:-4:-25:88:96:789:678" />
+	<localfile path="Z:\scriptFilein.ms" linenum="24" placement="0:1:-1:-1:-4:-25:110:120:811:702" />
+	<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro settings 06.ms" linenum="15" placement="0:1:-1:-1:-4:-25:242:264:951:888" />
+	<localfile path="E:\03_Scripting\maxScript\max 5\3ds to ae\camera data to AE.ms" linenum="13" placement="0:1:-1:-1:-4:-25:242:264:951:854" />
+	<localfile path="E:\03_Scripting\3ds2ae\03_3ds\dev\animation\original 3ds2ae\3ds2ae 04.ms" linenum="32" placement="0:1:-1:-1:-4:-25:264:288:973:878" />
+</workspace>
+

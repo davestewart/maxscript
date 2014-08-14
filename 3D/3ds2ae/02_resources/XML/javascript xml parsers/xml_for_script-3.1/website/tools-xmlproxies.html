@@ -1,0 +1,146 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--
+// =========================================================================
+//
+// tools-xmlproxies.html - Blurb about the XML proxy tool included with XML for <SCRIPT>
+//
+// =========================================================================
+//
+// Copyright (C) 2001, 2002 - David Joham (djoham@yahoo.com)
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-->
+
+
+<head>
+    <title>
+        XML for &lt;SCRIPT&gt; Cross Platform XML Parsing in JavaScript - Server-Side Proxies Sample Application
+    </title>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
+</head>
+
+<body onload="configureJSNavigation()">
+
+    <form name="frmForm" id="frmForm" method="get" action="noaction">
+        <!-- logo -->
+        <div id="logo" class="titleLogo">
+            <img src="./images/titleImage.jpg" width="459" height="75" alt="XML for &lt;SCRIPT&gt; logo">
+        </div>
+
+        <!-- main page square -->
+        <div class="mainContentArea">
+            <br>
+        </div>
+
+        <!-- navigation bar -->
+        <div class="leftImage"></div>
+
+        <!-- credit where credit is due -->
+        <p>
+            <a href="http://validator.w3.org/check/referer"><img src="./images/valid-html401.png" class="validHTMLImage" alt="HTML 4.01 strict HTML" /></a><br />
+            <a href="http://www.sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=14016&amp;type=1" class="sourceForgeImage" alt="Visit Sourceforge.net" title="Visit Sourceforge.net"/></a><br>
+        </p>
+        <p>
+        <div class="linkBar">
+            <div class="hoverNavigation"><a class="navigation" href="./../index.html">Home</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./documentation.html">Documentation</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./caseStudies.html">Case&nbsp;Studies</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./sampleApplications.html" >Sample&nbsp;Code&nbsp;(Parsers)</a></div>
+            <div class="currentLocation">Sample&nbsp;Code&nbsp;(Tools)</div>
+			<div class="hoverNavigationIndent"><a class="navigation" href="./tools.html">Overview</a></div>
+            <div class="hoverNavigationCurrentLocationIndent">Server-Side&nbsp;Proxies</div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./tools-loadLocalXML.html">Load Local XML Data</a></div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./tools-savingxml.html">Saving XML</a></div>
+            <div class="lastHoverNavigationIndent"><a class="navigation" href="./tools-escapingxml.html">Escaping XML</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./contributedAddOns.html">Contributed&nbsp;Add-ons</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./testSuites.html">Test&nbsp;Suites</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./history.html">History</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./mailingLists.html">Mailing&nbsp;Lists</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./download.html">Download</a></div>
+        </div>
+
+
+        <div  class="contentDiv">
+            <div class="contentDivBackground">
+                <div class="pageHeader">
+                    Tools Sample Applications - Server-Side Proxies
+                </div>
+
+                <div>
+                    <div class="accent" style="margin-top: 10px">
+                        XML Proxy
+                    </div>
+
+                    <p>
+                        In many cases, it is useful to load XML from another file on your web server or from another web server entirely and manipulate it with XML for &lt;SCRIPT&gt;.
+                        With JavaScript, the former is possible with a little effort. However, the latter is impossible due to the JavaScript
+                        security sandbox your code must live in. This makes it impossible, for example, to load and manipulate an external RSS news
+                        stream directly from JavaScript.
+                    </p>
+
+                    <p>
+                        XML for &lt;SCRIPT&gt; attempts to make both loading files from your server and from external servers both
+                        possible and simple. It does this by abstracting the many different methods for browser-server communications in a
+                        simple-to-use API. To allow for XML to be loaded from external domains, XML for &lt;SCRIPT&gt; provides a number of server-side
+                        proxies that load the external XML on behalf of the JavaScript and returns it to the browser in such a manner that
+                        reading and manipulation is possible. See the documentation for more details on the implementation of this feature.
+                    </p>
+
+
+                    <p>
+                        NOTE: SourceForge.net <a class="documentationLink" href="http://sourceforge.net/docman/display_doc.php?docid=14267&amp;group_id=1#outboundconnectivity">does not allow outbound connections</a>
+                        from their hosting servers. Sadly, this makes it impossible to demonstrate XML for &lt;SCRIPT&gt;'s
+                        proxies from the SourceForge hosting environment.
+                        If you would like to see this tool in action, please download and install one of
+                        XML for &lt;SCRIPT&gt;'s available proxies to your own web server and run
+                        the xmlIOProxy Test Suite from that machine.
+                    </p>
+
+                    <p>
+                        For your convenience, you may also download the Java Proxy Reference Implementation
+                        (available from the download page) to quickly
+                        set up an environment for the demonstration of this tool.
+                    </p>
+
+                    <p>
+                        You may find more information about XML for &lt;SCRIPT&gt;'s available proxies
+                        and the Java Proxy Reference Implementation in the
+                        <a class="documentationLink" href="documentation-xmlproxies.html">
+                        "Documentation" -> "Server-Side Proxies"</a> section of the web site.
+                    </p>
+
+                    <p>
+                        This limitation is specific to SourceForge only, and is not a limitation of the proxy in any way.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+IMPORTANT ONLY FOR LW IMPORT
+
+after camera import do:
+
+1 Select camera
+
+2 Hit M to open motion options
+Here you will see plugn "RV_Orient" (Included in script folder)
+
+3 Select Rv_orient and press Edit button
+
+4 Chose Aim and Up nulls in the empty fields.
+

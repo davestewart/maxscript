@@ -1,0 +1,27 @@
+For those of you that already have a grab bag of maxscript extension dlx (like Larry's agni_dlx), I've attached source for a function that will launch a dos command in a hidden window. 
+
+"HiddenDOSCommand" looks DOSCommand, but runs more like ShellLaunch. 
+ 
+The calling syntax is:
+
+HiddenDOSCommand <command string to execute> [startpath:unsupplied] [prompt:unsupplied] [donotwait:false]
+
+"startpath" allows you to set the starting folder for the command.
+
+"prompt" allows you to set the prompt that appears on the Max prompt line (just below the viewports). If you don't change it, the command string is displayed.
+
+"donotwait" allows you to decide whether or not you want to return control to back to maxscript while the command runs, or wait for completion.
+
+NOTE: You must redirect any output generated to a file if you are interested in text that would normally be printed to the console. 
+
+Example usage:
+
+HiddenDOSCommand "dir > %temp%\\hiddencmdout.tmp" startpath:"c:\\" 
+cmd = "echo The time is " + localTime + " >> %temp%\\hiddencmdout.tmp"
+HiddenDOSCommand cmd
+HiddenDOSCommand "notepad %temp%\\hiddencmdout.tmp" prompt:"Waiting for Notepad to exit"
+HiddenDOSCommand "del hiddencmd.tmp" startpath:"%temp%" donotwait:true
+
+
+
+

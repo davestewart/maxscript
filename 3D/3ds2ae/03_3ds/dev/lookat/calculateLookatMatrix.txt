@@ -1,0 +1,220 @@
+From: msquared <msquared@digitalwizards.com.au>
+To: Swami <swami@worldramp.net>
+Subject: Re: calculateLookatMatrix()
+Date: Monday, January 24, 2000 4:49 AM
+
+On Wed, 19 Jan 2000, Swami wrote:
+
+> Hello M^2,
+> 
+> HAPPY NEW YEAR!
+
+Hey, same to you, I hope you had a good one.  :-)
+
+> I have been attempting to decipher your calculateLookatMatrix() function 
+> and need some help.  Hopefully you can tell me...
+
+OK, I'll brief you on how calculateLookAtMatrix() generates a matrix to
+make an object look at something...
+
+Firstly, how a matrix works...
+
+A MAX matrix consists of 3 rows, that represent the X axis, Y axis, Z
+axis, and location respectively.  Each row is a point3 vector.
+
+The first row indicates where in 3D space the object's X axis will point.
+The second row indicates where in 3D space the object's Y axis will point.
+The third row indicates where in 3D space the object's Z axis will point.
+The fourth row indicates where in 3D space the object's origin will be
+located.  You can easily test this last point by changing
+obj.transform.row4 to be a location on space.
+
+The identity matrix is:
+
+   X Y Z
+  [1,0,0]  X axis
+  [0,1,0]  Y axis
+  [0,0,1]  Z axis
+  [0,0,0]  origin
+
+The labels show that the object's X axis points along the world's X axis
+(X axis row is [1,0,0]).  The same is true for Y and Z axis.  The origin
+is at [0,0,0], which places the object's origin at the world's origin.
+
+
+So, how do you generate a useful matrix to point something somewhere?
+
+Firstly, I recommend you play with an object by rotating it a little, then
+having a look at its transformation matrix, and note how the first three
+rows correspond to where the axis handles are located in the view.
+
+Note the following useful properties about a normal transformation matrix: 
+
+  * The axis vectors are one unit long (unless the object is scaled).
+  * The axis vectors are all at right angles to one another.
+
+Hold your right hand palm-up with your fingers all pointing forward.
+Extend your thumb to the right, keep your index finger pointing forwards,
+point your middle finger up, and curl up your ring and little fingers.
+Your thumb is X, index is Y, and middle finger is Z.  This orientation of
+axis is known as the "right hand rule".  Do the same with your left hand,
+and the same axis mapping to fingers creates the left hand rule.  Note
+that when you hold your left hand with palm down, X and Y are the same,
+but Z is now down.
+
+OK, now for some simple mathematics:  The cross product of two vectors
+yields another that is at right-angle to both original vectors (unless
+both original vectors are coincident).  The cross product in MAX follows
+the right-hand rule, which means that X cross Y yields Z, Y cross Z yields
+Z, and Z cross X yields Y.  Baer this in mind when examining
+calculateLookatMatrix() (examined further down).
+
+Also, he length of the result of the cross-product is related to how close
+to being at right-angles the original two vectors are.  Assuming the
+original two vectors are unit length (that is one unit long):  If the
+original vectors are at right angles, the cross product will be one unit
+long.  If the original vectors are coincident, the cross product will be
+zero units long (this is because you can't find a -single- vector that is
+at right angles to two coincident vectors, there are an infinite number
+of them). 
+
+The act of converting a vector to a unit vector (ie: a vector of length
+one) is referred to as "normalizing" the vector, hence MAX provides the
+normalize() function to do this.
+
+
+Now for the analysis of calculateLookatMatrix():
+
+function calculateLookatMatrix orientation origin target up:[0,0,1] =
+(
+  local lookatmatrix = matrix3 1
+  lookatmatrix.row1 = normalize(target-origin)
+  lookatmatrix.row2 = normalize (cross up lookatmatrix.row1)
+  lookatmatrix.row3 = normalize (cross lookatmatrix.row1 lookatmatrix.row2)
+  lookatmatrix.row4 = origin
+  orientation * lookatmatrix
+)
+
+
+Start with an identity matrix:
+
+  local lookatmatrix = matrix3 1
+
+
+We want the X axis of the result to coincide with a vector from the target
+to the origin:
+
+  lookatmatrix.row1 = normalize(target-origin)
+
+
+We want the Z axis of the result to be as close to the specified "up"
+vector as possible.  We achieve this by pretending that it is the Z axis,
+and calculating a Y axis.  Note that this means that the Y axis will be at
+right angle to the X axis and the initial up vector:
+
+  lookatmatrix.row2 = normalize (cross up lookatmatrix.row1)
+
+
+Chances are, the up vector wasn't at right angles to the initial lookat
+vector (target-origin).  So, we generate a Z axis that is right angle to X
+and Y.  This will create a "proper" transformation matrix, as all
+axis vectors will be right angle to one another.  Note that this means
+that the Z vector will be as close to the up vector as it can, but
+constrained by the rule that it must be right angle to the X axis.  This
+is what I refer to as the Z axis "tending toward" the up vector:
+
+  lookatmatrix.row3 = normalize (cross lookatmatrix.row1 lookatmatrix.row2)
+
+
+Now, we translate the matrix so that the resultant transformation is
+relative to the position that was specified as the origin:
+
+  lookatmatrix.row4 = origin
+
+
+Now, we can perform a little magic that makes calculateLookatMatrix() much
+more useful (I'll explain below):
+
+  orientation * lookatmatrix
+
+
+The last line there allows you to apply calculateLookatMatrix() to another
+transformation matrix of some sort.  Normally, you would pass an identity
+matrix as orientation.  This would produce a matrix that moves X to point
+towards target and Z to tend towards up.  However, what if you wanted the
+object's Y axis to point toward target, and its X axis to tend toward the
+up vector?  To do this, you provide an orientation matrix to perform the
+following transformation:
+
+  * Y axis -> X axis
+  * X axis -> Z axis
+
+This means that the Y axis of the object becomes the X axis for the lookat
+calculation, and the X axis of the object becomes the Z axis for the
+lookat calculation, resulting in Y pointing at the target, and X tending
+toward the up vector.  How do you generate this orientation matrix?
+Remember what a matrix's 4 rows represent:
+
+  * X axis' final orientation
+  * Y axis' final orientation
+  * Z axis' final orientation
+  * origin's final location
+
+With that in mind, you want your orientation matrix to contain:
+
+  * Z vector (you want this axis to point along Z)
+  * X vector (you want this axis to point along X)
+  * ? vector (you want this axis right angle to X and Y)
+  * [0,0,0]
+
+To calculate the third row (Z result), perform a cross product of the
+first and second.  The result is probably something like this (done in my
+head, so you want to check the 3rd row :-) :
+
+  * [0,0,1]
+  * [1,0,0]
+  * [0,1,0]
+  * [0,0,0]
+
+You feed this matrix into calculateLookatMatrix() as an orientation
+matrix, and it will force Z to look at the target, and will tend Y toward
+up.
+
+
+> Here's what I want to do...
+> 
+> Make an object follow a path on a mesh surface so it is always pointing 
+> forward AND aligned with the face normal.  I am shooting a ray thru the 
+> surface to get the intersection point and the face normal.
+
+It seems as though you might be able to use calculateLookatMatrix() as
+follows:
+
+  * Use the intersection of the ray and the surface as the origin.
+  * Project a point along the normal from the origin, and use that
+    as the target.
+  * Use the direction you mean as "forward" for the up vector.
+  * Finally, generate a matrix that transforms your object so that:
+      * Whatever vector in that object should follow the surface normal
+        ends up as the X axis.  This might be the object's Z axis?
+      * Whatever vector in that object should face "forward" ends up
+        as the Z axis.
+    Use this matrix as the orientation matrix for calculateLookatMatrix().
+
+This will calculate the transformation matrix of the object at a given
+point in time.  Animating that is your next mission.  :-)
+
+
+> P.S. - I have been studying matrices and specifically how they work in 
+> MAXScript.  I have a fair understanding, but some things still elude me.  I 
+> am confident, that with time, I will master them!  "Never give up.  Never 
+> surrender." (quote from 'Galaxy Quest', funny movie, go see...).
+
+Hehe.  :-)  Hopefully this will help you somewhat.  Sorry for the delay,
+but I've been rather busy of late...  :-/
+
+
+                  2
+Best regards, /|/|
+             /   |
+ 

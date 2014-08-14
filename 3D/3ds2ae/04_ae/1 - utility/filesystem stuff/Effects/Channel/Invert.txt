@@ -1,0 +1,12 @@
+[name]
+name=Invert
+matchName=ADBE Invert
+
+[properties]
+name=	Channel
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

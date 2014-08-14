@@ -1,0 +1,21 @@
+[name]
+name=Warp
+matchName=ADBE WRPMESH
+
+[properties]
+name=	Warp Style
+type=	OneD
+
+name=	Warp Axis
+type=	OneD
+
+name=	Bend
+type=	OneD
+
+name=	Horizontal Distortion
+type=	OneD
+
+name=	Vertical Distortion
+type=	OneD
+
+

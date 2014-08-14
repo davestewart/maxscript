@@ -1,0 +1,24 @@
+[name]
+name=Auto Color
+matchName=ADBE AutoColor
+
+[properties]
+name=	Temporal Smoothing (seconds)
+type=	OneD
+
+name=	Scene Detect
+type=	OneD
+
+name=	Black Clip
+type=	OneD
+
+name=	White Clip
+type=	OneD
+
+name=	Snap Neutral Midtones
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

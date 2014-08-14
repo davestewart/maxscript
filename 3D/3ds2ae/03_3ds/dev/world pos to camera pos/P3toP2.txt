@@ -1,0 +1,182 @@
+Topic:  Plotting 2d point from 3d coordinate (1 of 6), Read 68 times   
+Conf:  MAXScript  
+From:  Stephen Lebed slebed@mechnology.com  
+Date:  Tuesday, January 11, 2005 12:58 PM  
+
+I've been digging through the maxscript help files and I can't seem to find a way of doing a setpixel from a 3d coordinate point. I think I may have the answer, but I'm not sure how to implement the camera transform to the coordinate. Any help or pointer to some code I could look at would be greatly appreciated. 
+
+Stephen Lebed
+VFX Supervisor
+
+
+
+
+ 
+
+ 
+ 
+ 
+TOP ... Post ... Reply ... Reply/Quote ... Email Reply ... Delete ... Edit 
+Previous ... Next ... Previous Topic ... Next Topic ... Entire Topic  
+Topic:  Plotting 2d point from 3d coordinate (2 of 6), Read 53 times   
+Conf:  MAXScript  
+From:  Alex McLeod  
+Date:  Wednesday, January 12, 2005 12:32 AM  
+
+This is fairly simple in principle but slightly tricky in practice.
+
+You need a transform matrix for the camera, but not just the matrix returned by $camera01.transform. You need to adjust that matrix to take into account FOV and render settings. To plot a 3D point into 2D taking the camera's perspective into account, you multiply the point by that matrix then divide its new X and Y values by its new Z value.
+
+
+--this will return a camera transform matrix, ignoring perspective for now:
+cam = $camera01
+ct = cam.transform
+ctd = cam.target_distance
+f = cam.fov
+d =cam.dir
+p = cam.pos
+row1 = ct.row1*((2*tan(f/2))*ctd)
+row2 = (ct.row2*((2*tan(f/2))*ctd))*(renderheight/renderwidth as float)/renderpixelaspect
+row3 = d * ctd
+cameratransform = inverse (matrix3 row1 row2 row3 p)
+
+
+--this will transform your point into camera space, still sans perspective:
+newpoint3 = oldpoint3 * cameratransform
+
+--this will sort out the perspective:
+newpoint3.x /= newpoint3.z
+newpoint3.y /= newpoint3.z
+
+--this will get you a pixel location:
+pixloc = ([-newpoint3.x, newpoint3.y] + 0.5) * your_image_dimensions
+
+--and a Z-depth if you need one:
+zdepth = newpoint3.z * ctd
+
+
+Note that if newpoint3.Z is positive you don't want to plot the point at all, because it's behind the camera. What's that, you say? Shouldn't negative Z be behind the camera? Well - not in Max. In Max, the camera's direction is out its backside and the VFB/RLA/RPF Z-buffer channel is filled with negative values. To be consistent with the scanline, I'm using Max-style negative Z.
+
+Note also that this isn't high-performance code. A high-performance version would be one long line of code, too ugly to print in public. ; )
+
+
+
+
+ 
+
+ 
+ 
+ 
+TOP ... Post ... Reply ... Reply/Quote ... Email Reply ... Delete ... Edit 
+Previous ... Next ... Previous Topic ... Next Topic ... Entire Topic  
+Topic:  Plotting 2d point from 3d coordinate (3 of 6), Read 47 times   
+Conf:  MAXScript  
+From:  Martin Breidt  
+Date:  Wednesday, January 12, 2005 02:51 AM  
+
+Cool post, thanks Alex!
+
+>Note also that this isn't
+>high-performance code. A
+>high-performance version would
+>be one long line of code, too
+>ugly to print in public. ; )
+
+I'd be really interested in the ugly (and fast) version of this. Don't be shy, ugly can be interesting... ;)
+
+-- MartinB
+
+
+
+
+ 
+
+ 
+ 
+ 
+TOP ... Post ... Reply ... Reply/Quote ... Email Reply ... Delete ... Edit 
+Previous ... Next ... Previous Topic ... Next Topic ... Entire Topic  
+Topic:  Plotting 2d point from 3d coordinate (5 of 6), Read 34 times   
+Conf:  MAXScript  
+From:  Alex McLeod  
+Date:  Wednesday, January 12, 2005 09:54 PM  
+
+>I'd be really interested in
+>the ugly (and fast) version of
+>this. Don't be shy, ugly can
+>be interesting... ;)
+
+
+Well, this is about as ugly as a one-liner gets (sorry about the message width!), but I wouldn't advise using it, it's not all that fast. Assuming 'cam' and 'oldpoint3' are the camera and the point you're transforming:
+
+pixloc=your_image_dimensions*([0.5,0.5]+([-1,1,1]*(np=(np=(oldpoint3*(inverse(matrix3(cam.transform.row1*((2*tan(cam.fov/2))*cam.target_distance))((cam.transform.row2*((2*tan(cam.fov/2))*cam.target_distance))*(1.0*renderheight/renderwidth)/renderpixelaspect)(cam.dir*cam.target_distance)cam.pos))))/[np.z,np.z,1])))
+
+This isn't really useful as high-performance code, however. For one thing it repeatedly interrogates the camera's transform, target distance and FOV - but more importantly it's not that likely that you'd want to get a fresh perspective transform every time you wanted to plot a point. The smarter way would be to get the transform once for any given frame, then keep using the same transform to plot all your points. Then it doesn't matter if getting the transform is inefficient, as you're only doing it occasionally.
+
+
+--use this once per frame for any camera 'cam':
+cameratransform=inverse(matrix3(cam.transform.row1*((2*tan(cam.fov/2))*cam.target_distance))((cam.transform.row2*((2*tan(cam.fov/2))*cam.target_distance))*(1.0*renderheight/renderwidth)/renderpixelaspect)(cam.dir*cam.target_distance)cam.pos)
+
+
+--and this, for each point 'oldpoint3':
+pixloc=your_image_dimensions*([0.5,0.5]+([-1,1,1]*(np=(np=(oldpoint3*cameratransform))/[np.z,np.z,1])))
+
+
+On reflection even that could probably be optimised somewhat. Note that the "(np=(np=(" is deliberate.
+
+If you want to keep the Z value, replace the point2 values with point3s so Z isn't lost to the automatic class conversion. If you want to plot a motion-blurred point, get two camera transforms, taken from half a frame apart, and two point positions, half a frame apart. Get two pixel locations, one using the first transform & point, the second using the second transform & point. Draw a line between the two pixel locations, with an opacity inversely proportional to its length.
+
+
+
+
+ 
+
+ 
+ 
+ 
+TOP ... Post ... Reply ... Reply/Quote ... Email Reply ... Delete ... Edit 
+Previous ... Next ... Previous Topic ... Next Topic ... Entire Topic  
+Topic:  Plotting 2d point from 3d coordinate (6 of 6), Read 32 times   
+Conf:  MAXScript  
+From:  Martin Breidt  
+Date:  Thursday, January 13, 2005 01:24 AM  
+
+Thanks Alex,
+
+that's a nasty one-liner, agreed.
+But cool to have it, stored it away in my 'good to know' folder. :)
+
+-- MartinB
+
+
+
+
+ 
+
+ 
+ 
+ 
+TOP ... Post ... Reply ... Reply/Quote ... Email Reply ... Delete ... Edit 
+Previous ... Next ... Previous Topic ... Next Topic ... Entire Topic  
+Topic:  Plotting 2d point from 3d coordinate (4 of 6), Read 40 times   
+Conf:  MAXScript  
+From:  Stephen Lebed slebed@mechnology.com  
+Date:  Wednesday, January 12, 2005 01:17 PM  
+
+Thanks Alex! It looks simple when I can see it in front of me. The code looks like something I remember in old issues of compute! magazine, back in the stone ages of CG.
+
+Stephen Lebed
+VFX Supervisor 
+
+
+
+ 
+
+ 
+ 
+ 
+
+--------------------------------------------------------------------------------
+Post New Topic | Reply to: "Plotting 2d point from 3d coordinate" 
+Watch this Topic 
+  

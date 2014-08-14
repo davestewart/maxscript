@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+	function addNode(txt){
+		var txt = document.createTextNode(txt);
+		document.getElementById('div').appendChild(txt); 
+		}
+	
+	function addLink(href,text,classStr){
+	
+		if(text == undefined)text = href
+	
+		var lnk = document.createElement('a');
+		var txt = document.createTextNode(text);
+		var brk = document.createElement('br');
+	
+		lnk.setAttribute('href', href);
+		if(classStr != undefined)lnk.setAttribute('class', classStr);
+	
+		newLink = document.getElementById('div').appendChild(lnk); 
+		newText = newLink.appendChild(txt); 
+	
+		newLink.appendChild(brk)
+		}
+
+//	function 
+
+	function maxCmd(command){
+		
+		var argStr = ""
+		for(i = 1; i < arguments.length; i++){
+			argStr	+= "\"" + arguments[i] + "\""
+			if(i<arguments.length-1)argStr += ','
+			}
+		argStr = "#(" +argStr+ ")"
+	
+		window.navigate("javascript:'" + command + ' ' + argStr + "';void(0)")
+		}
+
+	function maxCmd(str){
+		window.navigate("javascript:'maxCmd: " +str+ "';void(0)")
+		}
+
+
+</script>
+</head>
+
+<body>
+<p>
+	
+<input type="button" onclick="maxCmd('test 20')" value="3dsmax"/>
+<input type="button" onclick="maxCmd('sphere radius:20')" value="Sphere"/>
+<input type="button" onclick="addLink('http://www.google.com')" value="Add Link"/>
+<input type="button" onclick="test()" value="Call function"/>
+<input type="button" onclick="maxCmd('test','space ! \ # $ % & \' ( ) * + , - . / ')" value="3dsmax"/>
+
+
+<div id="div">
+	<input type="button" name="Button" value="Add text" onClick="addNode('What the fuck!?')">
+	<input type="button" name="Button" value="Add link" onClick="addLink('http://www.google.com')">
+</div>
+</body>
+</html>

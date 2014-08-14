@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK href="css.css" type=text/css rel=stylesheet>
+<title>AltWOWCtl1</title>
+</head>
+
+<body bgcolor="#FFFFCC" scroll="auto" vlink="#0000FF">
+
+<p align="justify">This webbrowser control is associated with the WowController 
+WOW control, which is set to be in &quot;Controller Mode&quot; and hidden.&nbsp; WowController forwards all of the Events from IDocHostUIHandler and 
+DWebBrowserEvents2 of the webbrowser through its events interface.&nbsp; You use 
+this mode of WOW when having problems tabbing around to other controls on the 
+form.&nbsp; The WOW control allows you to set your own 
+&quot;external&quot; COM object so that you can call any method on your custom external 
+object's interface directly from the webpage using Javascript.&nbsp; The default 
+custom interface that WOW provides has only two methods: RaiseEvent and 
+RaiseEvent2.&nbsp; Clicking on the HTML elements below cause these methods to be 
+called, which in turn cause the WOW control's OnRaiseEvent and OnRaiseEvent2 
+events to be fired.</p>
+
+<div align="center">
+  <center>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+  <tr>
+    <td align="center" nowrap><a href="#" onclick="window.external.raiseEvent(this, 'Fire OnRaiseEvent link clicked','')">Fire OnRaiseEvent</a></td>
+    <td width="25" align="center">&nbsp;</td>
+    <td align="center"><button onclick="window.external.raiseEvent2('Fire OnRaiseEvent2 button clicked','')">Fire OnRaiseEvent2</button></td>
+  </tr>
+</table>
+
+  </center>
+</div>
+
+</body>
+
+</html>

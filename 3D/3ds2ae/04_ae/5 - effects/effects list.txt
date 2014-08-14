@@ -1,0 +1,3226 @@
+
+
+3D Channel
+
+	[3D Channel Extract]
+		matchName=	ADBE AUX CHANNEL EXTRACT
+
+		name=		3D Channel
+		name=		Black Point
+		name=		White Point
+
+	[Depth Matte]
+		matchName=	ADBE DEPTH MATTE
+
+		name=		Depth
+		name=		Feather
+		name=		Invert
+
+	[Depth of Field]
+		matchName=	ADBE DEPTH FIELD
+
+		name=		Focal Plane
+		name=		Maximun Radius
+		name=		Focal Plane Thickness
+		name=		Focal Bias
+
+	[Fog 3D]
+		matchName=	ADBE FOG_3D
+
+		name=		Fog Color
+		name=		Fog Start Depth
+		name=		Fog End Depth
+		name=		Fog Opacity
+		name=		Scattering Density
+		name=		Foggy Background
+		name=		Gradient Layer
+		name=		Layer Contribution
+
+	[ID Matte]
+		matchName=	ADBE ID MATTE
+
+		name=		Aux. Channel
+		name=		ID Selection
+		name=		Feather
+		name=		Invert
+		name=		Use Coverage
+
+
+Adjust
+
+	[Auto Color]
+		matchName=	ADBE AutoColor
+
+		name=		Temporal Smoothing (seconds)
+		name=		Scene Detect
+		name=		Black Clip
+		name=		White Clip
+		name=		Snap Neutral Midtones
+		name=		Blend With Original
+
+	[Auto Contrast]
+		matchName=	ADBE AutoContrast
+
+		name=		Temporal Smoothing (seconds)
+		name=		Scene Detect
+		name=		Black Clip
+		name=		White Clip
+		name=		Blend With Original
+
+	[Auto Levels]
+		matchName=	ADBE AutoLevels
+
+		name=		Temporal Smoothing (seconds)
+		name=		Scene Detect
+		name=		Black Clip
+		name=		White Clip
+		name=		Blend With Original
+
+	[Brightness & Contrast]
+		matchName=	ADBE Brightness & Contrast 2
+
+		name=		Brightness
+		name=		Contrast
+
+	[Channel Mixer]
+		matchName=	ADBE CHANNEL MIXER
+
+		name=		Red-Red
+		name=		Red-Green
+		name=		Red-Blue
+		name=		Red-Const
+		name=		Green-Red
+		name=		Green-Green
+		name=		Green-Blue
+		name=		Green-Const
+		name=		Blue-Red
+		name=		Blue-Green
+		name=		Blue-Blue
+		name=		Blue-Const
+		name=		Monochrome
+
+	[Color Balance]
+		matchName=	ADBE Color Balance 2
+
+		name=		Shadow Red Balance
+		name=		Shadow Green Balance
+		name=		Shadow Blue Balance
+		name=		Midtone Red Balance
+		name=		Midtone Green Balance
+		name=		Midtone Blue Balance
+		name=		Hilight Red Balance
+		name=		Hilight Green Balance
+		name=		Hilight Blue Balance
+		name=		Preserve Luminosity
+
+	[Color Stabilizer]
+		matchName=	ADBE Deflicker
+
+		name=		Stabilize
+		name=		Black Point
+		name=		Mid Point
+		name=		White Point
+		name=		Sample Size
+
+	[Curves]
+		matchName=	ADBE CurvesCustom
+
+		name=		Curves
+
+	[Hue/Saturation]
+		matchName=	ADBE HUE SATURATION
+
+		name=		Channel Control
+		name=		Channel Range
+		name=		Master Hue
+		name=		Master Saturation
+		name=		Master Lightness
+		name=		Colorize
+		name=		Colorize Hue
+		name=		Colorize Saturation
+		name=		Colorize Lightness
+
+	[Levels]
+		matchName=	ADBE Easy Levels
+
+		name=		Channel:
+		name=		Histogram
+		name=		Input Black
+		name=		Input White
+		name=		Gamma
+		name=		Output Black
+		name=		Output White
+
+	[Levels (Individual Controls)]
+		matchName=	ADBE Pro Levels
+
+		name=		Channel:
+		name=		Histogram
+		name=		RGB
+		name=		Input Black
+		name=		Input White
+		name=		Gamma
+		name=		Output Black
+		name=		Output White
+		name=		RGB
+		name=		Red
+		name=		Red Input Black
+		name=		Red Input White
+		name=		Red Gamma
+		name=		Red Output Black
+		name=		Red Output White
+		name=		Red
+		name=		Green
+		name=		Green Input Black
+		name=		Green Input White
+		name=		Green Gamma
+		name=		Green Output Black
+		name=		Green Output White
+		name=		Green
+		name=		Blue
+		name=		Blue Input Black
+		name=		Blue Input White
+		name=		Blue Gamma
+		name=		Blue Output Black
+		name=		Blue Output White
+		name=		Blue
+		name=		Alpha
+		name=		Alpha Input Black
+		name=		Alpha Input White
+		name=		Alpha Gamma
+		name=		Alpha Output Black
+		name=		Alpha Output White
+		name=		Alpha
+
+	[Photo Filter]
+		matchName=	ADBE Photo Filter
+
+		name=		Filter
+		name=		Color
+		name=		Density
+		name=		Preserve Luminosity
+
+	[Posterize]
+		matchName=	ADBE Posterize
+
+		name=		Level
+
+	[Shadow/Highlight]
+		matchName=	ADBE ShadowHighlight
+
+		name=		Auto Amounts
+		name=		Shadow Amount
+		name=		Highlight Amount
+		name=		Temporal Smoothing (seconds)
+		name=		Scene Detect
+		name=		More Options
+		name=		Shadow Tonal Width
+		name=		Shadow Radius
+		name=		Highlight Tonal Width
+		name=		Highlight Radius
+		name=		Color Correction
+		name=		Midtone Contrast
+		name=		Black Clip
+		name=		White Clip
+		name=		More Options
+		name=		Blend With Original
+
+	[Threshold]
+		matchName=	ADBE Threshold
+
+		name=		Level
+
+
+Audio
+
+	[Backwards]
+		matchName=	ADBE Aud Reverse
+
+		name=		Swap Channels
+
+	[Bass & Treble]
+		matchName=	ADBE Aud BT
+
+		name=		Bass
+		name=		Treble
+
+	[Delay]
+		matchName=	ADBE Aud Delay
+
+		name=		Delay Time (milliseconds)
+		name=		Delay Amount
+		name=		Feedback
+		name=		Dry Out
+		name=		Wet Out
+
+	[Flange & Chorus]
+		matchName=	ADBE Aud_Flange
+
+		name=		Voice Separation Time (ms)
+		name=		Voices
+		name=		Modulation Rate
+		name=		Modulation Depth
+		name=		Voice Phase Change
+		name=		Invert Phase
+		name=		Stereo Voices
+		name=		Dry Out
+		name=		Wet Out
+
+	[High-Low Pass]
+		matchName=	ADBE Aud HiLo
+
+		name=		Filter Options
+		name=		Cutoff Frequency
+		name=		Dry Out
+		name=		Wet Out
+
+	[Modulator]
+		matchName=	ADBE Aud Modulator
+
+		name=		Modulation Type
+		name=		Modulation Rate
+		name=		Modulation Depth
+		name=		Amplitude Modulation
+
+	[Parametric EQ]
+		matchName=	ADBE Param EQ
+
+		name=		Frequency Response
+		name=		Band 1 Enabled
+		name=		Frequency
+		name=		Bandwidth
+		name=		Boost/Cut
+		name=		Band 2 Enabled
+		name=		Frequency
+		name=		Bandwidth
+		name=		Boost/Cut
+		name=		Band 3 Enabled
+		name=		Frequency
+		name=		Bandwidth
+		name=		Boost/Cut
+
+	[Reverb]
+		matchName=	ADBE Aud Reverb
+
+		name=		Reverb Time (ms)
+		name=		Diffusion
+		name=		Decay
+		name=		Brightness
+		name=		Dry Out
+		name=		Wet Out
+
+	[Stereo Mixer]
+		matchName=	ADBE Aud Stereo Mixer
+
+		name=		Left Level
+		name=		Right Level
+		name=		Left Pan
+		name=		Right Pan
+		name=		Invert Phase
+
+	[Tone]
+		matchName=	ADBE Aud Tone
+
+		name=		Waveform options
+		name=		Frequency 1
+		name=		Frequency 2
+		name=		Frequency 3
+		name=		Frequency 4
+		name=		Frequency 5
+		name=		Level
+
+
+Blur and Sharpen
+
+	[Box Blur]
+		matchName=	ADBE Box Blur
+
+		name=		Blur Radius
+		name=		Iterations
+		name=		Blur Dimensions
+		name=		Repeat Edge Pixels
+
+	[Channel Blur]
+		matchName=	ADBE Channel Blur
+
+		name=		Red Blurriness
+		name=		Green Blurriness
+		name=		Blue Blurriness
+		name=		Alpha Blurriness
+		name=		Edge Behavior
+		name=		Blur Dimensions
+
+	[Compound Blur]
+		matchName=	ADBE Compound Blur
+
+		name=		Blur Layer
+		name=		Maximum Blur
+		name=		If Layer Sizes Differ
+		name=		Invert Blur
+
+	[Directional Blur]
+		matchName=	ADBE Motion Blur
+
+		name=		Direction
+		name=		Blur Length
+
+	[Fast Blur]
+		matchName=	ADBE Fast Blur
+
+		name=		Blurriness
+		name=		Blur Dimensions
+		name=		Repeat Edge Pixels
+
+	[Gaussian Blur]
+		matchName=	ADBE Gaussian Blur
+
+		name=		Blurriness
+		name=		Blur Dimensions
+
+	[Radial Blur]
+		matchName=	ADBE Radial Blur
+
+		name=		
+		name=		Amount
+		name=		Center
+		name=		Type
+		name=		Antialiasing (Best Quality)
+
+	[Sharpen]
+		matchName=	ADBE Sharpen
+
+		name=		Sharpen Amount
+
+	[Unsharp Mask]
+		matchName=	ADBE Unsharp Mask2
+
+		name=		Amount
+		name=		Radius
+		name=		Threshold
+
+
+Channel
+
+	[3D Glasses]
+		matchName=	ADBE 3D Glasses
+
+		name=		Left View
+		name=		Right View
+		name=		Convergence Offset
+		name=		Swap Left-Right
+		name=		3D View
+		name=		Balance
+
+	[Alpha Levels]
+		matchName=	ADBE Alpha Levels2
+
+		name=		Input Black Level
+		name=		Input White Level
+		name=		Gamma
+		name=		Output Black Level
+		name=		Output White Level
+
+	[Arithmetic]
+		matchName=	ADBE Arithmetic
+
+		name=		Operator
+		name=		Red Value
+		name=		Green Value
+		name=		Blue Value
+		name=		Clipping
+
+	[Blend]
+		matchName=	ADBE Blend
+
+		name=		Blend With Layer
+		name=		Mode
+		name=		Blend With Original
+		name=		If Layer Sizes Differ
+
+	[Calculations]
+		matchName=	ADBE Calculations
+
+		name=		Input
+		name=		Input Channel
+		name=		Invert Input
+		name=		
+		name=		Second Source
+		name=		Second Layer
+		name=		Second Layer Channel
+		name=		Second Layer Opacity
+		name=		Invert Second Layer
+		name=		Stretch Second Layer to Fit
+		name=		
+		name=		Blending Mode
+		name=		Preserve Transparency
+
+	[Channel Combiner]
+		matchName=	ADBE Channel Combiner
+
+		name=		Source Options
+		name=		Use 2nd Layer
+		name=		Source Layer
+		name=		Source Layer
+		name=		From
+		name=		To
+		name=		Invert
+		name=		Solid Alpha
+
+	[Cineon Converter]
+		matchName=	ADBE Cineon Converter
+
+		name=		Conversion Type
+		name=		10 Bit Black Point
+		name=		Internal Black Point
+		name=		10 Bit White Point
+		name=		Internal White Point
+		name=		Gamma
+		name=		Highlight Rolloff
+
+	[Compound Arithmetic]
+		matchName=	ADBE Compound Arithmetic
+
+		name=		Second Source Layer
+		name=		Operator
+		name=		Operate on Channels
+		name=		Overflow Behavior
+		name=		Stretch Second Source to Fit
+		name=		Blend With Original
+
+	[Invert]
+		matchName=	ADBE Invert
+
+		name=		Channel
+		name=		Blend With Original
+
+	[Minimax]
+		matchName=	ADBE Minimax
+
+		name=		Operation
+		name=		Radius
+		name=		Channel
+		name=		Direction
+
+	[Remove Color Matting]
+		matchName=	ADBE Remove Color Matting
+
+		name=		Background Color
+
+	[Set Channels]
+		matchName=	ADBE Set Channels
+
+		name=		Source Layer 1
+		name=		Set Red To Source 1's
+		name=		Source Layer 2
+		name=		Set Green To Source 2's
+		name=		Source Layer 3
+		name=		Set Blue To Source 3's
+		name=		Source Layer 4
+		name=		Set Alpha To Source 4's
+		name=		If Layer Sizes Differ
+
+	[Set Matte]
+		matchName=	ADBE Set Matte2
+
+		name=		Take Matte From Layer
+		name=		Use For Matte
+		name=		Invert Matte
+		name=		If Layer Sizes Differ
+		name=		Composite Matte with Original
+		name=		Premultiply Matte Layer
+
+	[Shift Channels]
+		matchName=	ADBE Shift Channels
+
+		name=		Take Alpha From
+		name=		Take Red From
+		name=		Take Green From
+		name=		Take Blue From
+
+	[Solid Composite]
+		matchName=	ADBE Solid Composite
+
+		name=		Source Opacity
+		name=		Color
+		name=		Opacity
+		name=		Blending Mode
+
+
+Distort
+
+	[Bezier Warp]
+		matchName=	ADBE BEZMESH
+
+		name=		Top Left Vertex
+		name=		Top Left Tangent
+		name=		Top Right Tangent
+		name=		Right Top Vertex
+		name=		Right Top Tangent
+		name=		Right Bottom Tangent
+		name=		Bottom Right Vertex
+		name=		Bottom Right Tangent
+		name=		Bottom Left Tangent
+		name=		Left Bottom Vertex
+		name=		Left Bottom Tangent
+		name=		Left Top Tangent
+		name=		Quality
+
+	[Bulge]
+		matchName=	ADBE Bulge
+
+		name=		Horizontal Radius
+		name=		Vertical Radius
+		name=		Bulge Center
+		name=		Bulge Height
+		name=		Taper Radius
+		name=		Antialiasing (Best Qual Only)
+		name=		Pinning
+
+	[Corner Pin]
+		matchName=	ADBE Corner Pin
+
+		name=		Upper Left
+		name=		Upper Right
+		name=		Lower Left
+		name=		Lower Right
+
+	[Displacement Map]
+		matchName=	ADBE Displacement Map
+
+		name=		Displacement Map Layer
+		name=		Use For Horizontal Displacement
+		name=		Max Horizontal Displacement
+		name=		Use For Vertical Displacement
+		name=		Max Vertical Displacement
+		name=		Displacement Map Behavior
+		name=		Edge Behavior
+
+	[Liquify]
+		matchName=	ADBE LIQUIFY
+
+		name=		Tools
+		name=		Tool Options
+		name=		Brush Size
+		name=		Brush Pressure
+		name=		Freeze Area Mask
+		name=		Turbulent Jitter
+		name=		Clone Offset
+		name=		Reconstruction Mode
+		name=		Tool Options
+		name=		View Options
+		name=		View Mesh
+		name=		Mesh Size
+		name=		Mesh Color
+		name=		View Options
+		name=		Distortion Mesh
+		name=		Distortion Mesh Offset
+		name=		Distortion Percentage
+
+	[Magnify]
+		matchName=	ADBE Magnify
+
+		name=		Shape
+		name=		Center
+		name=		Magnification
+		name=		Link
+		name=		Size
+		name=		Feather
+		name=		Opacity
+		name=		Scaling
+		name=		Blending Mode
+		name=		Resize Layer
+
+	[Mesh Warp]
+		matchName=	ADBE MESH WARP
+
+		name=		Rows
+		name=		Columns
+		name=		Quality
+		name=		Distortion Mesh
+
+	[Mirror]
+		matchName=	ADBE Mirror
+
+		name=		Reflection Center
+		name=		Reflection Angle
+
+	[Offset]
+		matchName=	ADBE Offset
+
+		name=		Shift Center To
+		name=		Blend With Original
+
+	[Optics Compensation]
+		matchName=	ADBE Optics Compensation
+
+		name=		Field Of View (FOV)
+		name=		Reverse Lens Distortion
+		name=		FOV Orientation
+		name=		View Center
+		name=		Optimal Pixels (Invalidates Rev
+		name=		Resize
+
+	[Polar Coordinates]
+		matchName=	ADBE Polar Coordinates
+
+		name=		Interpolation
+		name=		Type of Conversion
+
+	[Reshape]
+		matchName=	ADBE RESHAPE
+
+		name=		Source Mask
+		name=		Destination Mask
+		name=		Boundary Mask
+		name=		Percent
+		name=		Elasticity
+		name=		Correspondence Points
+		name=		Interpolation Method
+
+	[Ripple]
+		matchName=	ADBE Ripple
+
+		name=		Radius
+		name=		Center of Ripple
+		name=		Type of Conversion
+		name=		Wave Speed
+		name=		Wave Width
+		name=		Wave Height
+		name=		Ripple Phase
+
+	[Smear]
+		matchName=	ADBE SCHMEAR
+
+		name=		Source Mask
+		name=		Boundary Mask
+		name=		Mask Offset
+		name=		Mask Rotation
+		name=		Mask Scale
+		name=		Percent
+		name=		Elasticity
+		name=		Interpolation Method
+
+	[Spherize]
+		matchName=	ADBE Spherize
+
+		name=		Radius
+		name=		Center of Sphere
+
+	[Transform]
+		matchName=	ADBE Geometry2
+
+		name=		Anchor Point
+		name=		Position
+		name=		Uniform Scale
+		name=		Scale Height
+		name=		Scale Width
+		name=		Skew
+		name=		Skew Axis
+		name=		Rotation
+		name=		Opacity
+		name=		Use Composition's Shutter Angle
+		name=		Shutter Angle
+
+	[Turbulent Displace]
+		matchName=	ADBE Turbulent Displace
+
+		name=		Displacement
+		name=		Amount
+		name=		Size
+		name=		Offset (Turbulence)
+		name=		Complexity
+		name=		Evolution
+		name=		Evolution Options
+		name=		Cycle Evolution
+		name=		Cycle (in Revolutions)
+		name=		Random Seed
+		name=		Random Seed
+		name=		Pinning
+		name=		Resize Layer
+		name=		Antialiasing for Best Quality
+
+	[Turbulent Displace 1]
+		matchName=	ADBE Turbulent Displace
+
+		name=		Displacement
+		name=		Amount
+		name=		Size
+		name=		Offset (Turbulence)
+		name=		Complexity
+		name=		Evolution
+		name=		Evolution Options
+		name=		Cycle Evolution
+		name=		Cycle (in Revolutions)
+		name=		Random Seed
+		name=		Random Seed
+		name=		Pinning
+		name=		Resize Layer
+		name=		Antialiasing for Best Quality
+
+	[Twirl]
+		matchName=	ADBE Twirl
+
+		name=		Angle
+		name=		Twirl Radius
+		name=		Twirl Center
+
+	[Warp]
+		matchName=	ADBE WRPMESH
+
+		name=		Warp Style
+		name=		Warp Axis
+		name=		Bend
+		name=		Horizontal Distortion
+		name=		Vertical Distortion
+
+	[Wave Warp]
+		matchName=	ADBE Wave Warp
+
+		name=		Wave Type
+		name=		Wave Height
+		name=		Wave Width
+		name=		Direction
+		name=		Wave Speed
+		name=		Pinning
+		name=		Phase
+		name=		Antialiasing (Best Quality)
+
+
+Expression Controls
+
+	[Angle Control]
+		matchName=	ADBE Angle Control
+
+		name=		Angle
+
+	[Checkbox Control]
+		matchName=	ADBE Checkbox Control
+
+		name=		Checkbox
+
+	[Color Control]
+		matchName=	ADBE Color Control
+
+		name=		Color
+
+	[Layer Control]
+		matchName=	ADBE Layer Control
+
+		name=		Layer
+
+	[Point Control]
+		matchName=	ADBE Point Control
+
+		name=		Point
+
+	[Slider Control]
+		matchName=	ADBE Slider Control
+
+		name=		Slider
+
+
+Furnace
+
+	[F_Kronos 1.0]
+		matchName=	F_Kronos 806
+
+		name=		About
+		name=		Mode
+		name=		Retime By
+		name=		Speed
+		name=		Source Frame
+		name=		Tuning
+		name=		Vector Detail
+		name=		Smoothing
+		name=		Global Smoothness
+		name=		Local Smoothness
+		name=		Smoothing Iterations
+		name=		Smoothing
+		name=		Build From One Image
+		name=		Correct Luminance Changes
+		name=		Filtering
+		name=		Error Threshold
+		name=		Block Size
+		name=		Weighting
+		name=		Red Weight
+		name=		Green Weight
+		name=		Blue Weight
+		name=		Weighting
+		name=		Tuning
+		name=		Shutter
+		name=		Shutter Control
+		name=		Shutter Time
+		name=		Shutter Samples
+		name=		Shutter
+		name=		Matte
+		name=		Matte Channel
+		name=		Warp
+		name=		Show
+		name=		Source Crops
+		name=		Left
+		name=		Right
+		name=		Bottom
+		name=		Top
+		name=		Source Crops
+
+	[F_Steadiness 1.0]
+		matchName=	F_Steadiness 806
+
+		name=		About
+		name=		Stabilize To
+		name=		Source Frame
+		name=		Frames To Smooth Over
+		name=		Scale
+		name=		Rotate
+		name=		Translate
+		name=		Perspective
+		name=		Filtering
+		name=		Analysis
+		name=		Alternate Motion Source
+		name=		Step Size
+		name=		Invert Transform
+		name=		Show Motion Source
+		name=		Use Analysis Region
+		name=		Analysis Region
+		name=		Top Left
+		name=		Top Right
+		name=		Bottom Left
+		name=		Bottom Right
+		name=		Analysis Region
+		name=		Analysis
+		name=		Source Crops
+		name=		X Method
+		name=		Y Method
+		name=		Edge Colour
+		name=		Edge Colour Alpha
+		name=		Left
+		name=		Right
+		name=		Bottom
+		name=		Top
+		name=		Source Crops
+
+
+Image Control
+
+	[Change Color]
+		matchName=	ADBE Change Color
+
+		name=		View
+		name=		Hue Transform
+		name=		Lightness Transform
+		name=		Saturation Transform
+		name=		Color To Change
+		name=		Matching Tolerance
+		name=		Matching Softness
+		name=		Match Colors
+		name=		Invert Color Correction Mask
+
+	[Change To Color]
+		matchName=	ADBE Change To Color
+
+		name=		From
+		name=		To
+		name=		Change
+		name=		Change By
+		name=		Tolerance
+		name=		Hue
+		name=		Lightness
+		name=		Saturation
+		name=		Saturation
+		name=		Softness
+		name=		View Correction Matte
+
+	[Color Balance (HLS)]
+		matchName=	ADBE Color Balance (HLS)
+
+		name=		Hue
+		name=		Lightness
+		name=		Saturation
+
+	[Color Link]
+		matchName=	ADBE Color Link
+
+		name=		Source Layer
+		name=		Sample
+		name=		Clip (%)
+		name=		Stencil Original Alpha
+		name=		Opacity
+		name=		Blending Mode
+
+	[Colorama]
+		matchName=	APC Colorama
+
+		name=		Input Phase
+		name=		Get Phase From
+		name=		Add Phase
+		name=		Add Phase From
+		name=		Add Mode
+		name=		Phase Shift
+		name=		
+		name=		Output Cycle
+		name=		Use Preset Palette
+		name=		Output Cycle
+		name=		Cycle Repetitions
+		name=		Interpolate Palette
+		name=		
+		name=		Modify
+		name=		Modify
+		name=		Modify Alpha
+		name=		Change Empty Pixels
+		name=		
+		name=		Pixel Selection
+		name=		Matching Color
+		name=		Matching Tolerance
+		name=		Matching Softness
+		name=		Matching Mode
+		name=		
+		name=		Masking
+		name=		Mask Layer
+		name=		Masking Mode
+		name=		
+		name=		Composite Over Layer
+		name=		Blend With Original
+
+	[Equalize]
+		matchName=	ADBE Equalize
+
+		name=		Equalize
+		name=		Amount to Equalize
+
+	[Gamma/Pedestal/Gain]
+		matchName=	ADBE Gamma/Pedestal/Gain2
+
+		name=		Black Stretch
+		name=		Red Gamma
+		name=		Red Pedestal
+		name=		Red Gain
+		name=		Green Gamma
+		name=		Green Pedestal
+		name=		Green Gain
+		name=		Blue Gamma
+		name=		Blue Pedestal
+		name=		Blue Gain
+
+	[Grow Bounds]
+		matchName=	ADBE GROW BOUNDS
+
+		name=		Pixels
+
+	[PS Arbitrary Map]
+		matchName=	ADBE PS Arbitrary Map
+
+		name=		Phase
+		name=		Apply Phase Map To Alpha
+
+	[Tint]
+		matchName=	ADBE Tint
+
+		name=		Map Black To
+		name=		Map White To
+		name=		Amount to Tint
+
+
+Keying
+
+	[Color Difference Key]
+		matchName=	ADBE Color Difference Key
+
+		name=		Preview
+		name=		View
+		name=		Key Color
+		name=		Color Matching Accuracy
+		name=		Partial A In Black
+		name=		Partial A In White
+		name=		Partial A Gamma
+		name=		Partial A Out Black
+		name=		Partial A Out White
+		name=		Partial B In Black
+		name=		Partial B In White
+		name=		Partial B Gamma
+		name=		Partial B Out Black
+		name=		Partial B Out White
+		name=		Matte In Black
+		name=		Matte In White
+		name=		Matte Gamma
+
+	[Color Key]
+		matchName=	ADBE Color Key
+
+		name=		Key Color
+		name=		Color Tolerance
+		name=		Edge Thin
+		name=		Edge Feather
+
+	[Color Range]
+		matchName=	ADBE Color Range
+
+		name=		Preview
+		name=		Fuzziness
+		name=		Color Space
+		name=		Min (L, Y, R)
+		name=		Max (L, Y, R)
+		name=		Min (a, U, G)
+		name=		Max (a, U, G)
+		name=		Min (b, V, B)
+		name=		Max (b, V, B)
+
+	[Difference Matte]
+		matchName=	ADBE Difference Matte2
+
+		name=		View
+		name=		Difference Layer
+		name=		If Layer Sizes Differ
+		name=		Matching Tolerance
+		name=		Matching Softness
+		name=		Blur Before Difference
+
+	[Extract]
+		matchName=	ADBE Extract
+
+		name=		Histogram
+		name=		Channel
+		name=		Black Point
+		name=		White Point
+		name=		Black Softness
+		name=		White Softness
+		name=		Invert
+
+	[Inner/Outer Key]
+		matchName=	ADBE ATG Extract
+
+		name=		Foreground (Inside)
+		name=		Additional Foreground
+		name=		Foreground 2
+		name=		Foreground 3
+		name=		Foreground 4
+		name=		Foreground 5
+		name=		Foreground 6
+		name=		Foreground 7
+		name=		Foreground 8
+		name=		Foreground 9
+		name=		Foreground 10
+		name=		
+		name=		Background (Outside)
+		name=		Additional Background
+		name=		Background 2
+		name=		Background 3
+		name=		Background 4
+		name=		Background 5
+		name=		Background 6
+		name=		Background 7
+		name=		Background 8
+		name=		Background 9
+		name=		Background 10
+		name=		
+		name=		Single Mask Highlight Radius
+		name=		Cleanup Foreground
+		name=		Cleanup 1
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 2
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 3
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 4
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 5
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 6
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 7
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 8
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		
+		name=		Cleanup Background
+		name=		Cleanup 1
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 2
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 3
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 4
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 5
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 6
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 7
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		Cleanup 8
+		name=		Path
+		name=		Brush Radius
+		name=		Brush Pressure
+		name=		
+		name=		
+		name=		Edge Thin
+		name=		Edge Feather
+		name=		Edge Threshold
+		name=		Invert Extraction
+		name=		Blend with Original
+
+	[Linear Color Key]
+		matchName=	ADBE Linear Color Key2
+
+		name=		Preview
+		name=		View
+		name=		Key Color
+		name=		Match colors
+		name=		Matching Tolerance
+		name=		Matching Softness
+		name=		Key Operation
+
+	[Luma Key]
+		matchName=	ADBE Luma Key
+
+		name=		Key Type
+		name=		Threshold
+		name=		Tolerance
+		name=		Edge Thin
+		name=		Edge Feather
+
+	[Spill Suppressor]
+		matchName=	ADBE Spill Suppressor
+
+		name=		Color To Suppress
+		name=		Color Accuracy
+		name=		Suppression
+
+
+Matte Tools
+
+	[Matte Choker]
+		matchName=	ADBE Matte Choker
+
+		name=		Geometric Softness 1
+		name=		Choke 1
+		name=		Gray Level Softness 1
+		name=		Geometric Softness 2
+		name=		Choke 2
+		name=		Gray Level Softness 2
+		name=		Iterations
+
+	[Simple Choker]
+		matchName=	ADBE Simple Choker
+
+		name=		View
+		name=		Choke Matte
+
+
+Noise & Grain
+
+	[Add Grain]
+		matchName=	VISINF Grain Implant
+
+		name=		Viewing Mode
+		name=		Preset
+		name=		Preview Region
+		name=		Center
+		name=		Width
+		name=		Height
+		name=		Show Box
+		name=		Box Color
+		name=		
+		name=		Settings
+		name=		Intensity
+		name=		Size
+		name=		Softness
+		name=		Aspect Ratio
+		name=		Channel Intensities
+		name=		Red Intensity
+		name=		Green Intensity
+		name=		Blue Intensity
+		name=		
+		name=		Channel Size
+		name=		Red Size
+		name=		Green Size
+		name=		Blue Size
+		name=		
+		name=		
+		name=		Color
+		name=		Monochromatic
+		name=		Saturation
+		name=		Tint Amount
+		name=		Tint Color
+		name=		
+		name=		Application
+		name=		Blending Mode
+		name=		Shadows
+		name=		Midtones
+		name=		Highlights
+		name=		Midpoint
+		name=		Channel Balance
+		name=		Red Shadows
+		name=		Red Midtones
+		name=		Red Highlights
+		name=		Green Shadows
+		name=		Green Midtones
+		name=		Green Highlights
+		name=		Blue Shadows
+		name=		Blue Midtones
+		name=		Blue Highlights
+		name=		
+		name=		
+		name=		Animation
+		name=		Animation Speed
+		name=		Animate Smoothly
+		name=		Random Seed
+		name=		
+		name=		Blend with Original
+		name=		Amount
+		name=		Combine Match and Mask Using
+		name=		Blur Matte
+		name=		Color Matching
+		name=		Match Color Using
+		name=		Matching Color
+		name=		Matching Tolerance
+		name=		Matching Softness
+		name=		Invert Match
+		name=		
+		name=		Masking Layer
+		name=		Mask Layer
+		name=		Masking Mode
+		name=		If Mask Size Differs
+		name=		
+		name=		
+
+	[Dust & Scratches]
+		matchName=	ADBE Dust & Scratches
+
+		name=		Radius
+		name=		Threshold
+		name=		Operate on Alpha channel
+
+	[Fractal Noise]
+		matchName=	ADBE Fractal Noise
+
+		name=		Fractal Type
+		name=		Noise Type
+		name=		Invert
+		name=		Contrast
+		name=		Brightness
+		name=		Overflow
+		name=		Transform
+		name=		Rotation
+		name=		Uniform Scaling
+		name=		Scale
+		name=		Scale Width
+		name=		Scale Height
+		name=		Offset Turbulence
+		name=		Perspective Offset
+		name=		
+		name=		Complexity
+		name=		Sub Settings
+		name=		Sub Influence (%)
+		name=		Sub Scaling
+		name=		Sub Rotation
+		name=		Sub Offset
+		name=		Center Subscale
+		name=		
+		name=		Evolution
+		name=		Evolution Options
+		name=		Cycle Evolution
+		name=		Cycle (in Revolutions)
+		name=		Random Seed
+		name=		Random Seed
+		name=		Opacity
+		name=		Blending Mode
+
+	[Match Grain]
+		matchName=	VISINF Grain Duplication
+
+		name=		Viewing Mode
+		name=		Noise Source Layer
+		name=		Preview Region
+		name=		Center
+		name=		Width
+		name=		Height
+		name=		Show Box
+		name=		Box Color
+		name=		
+		name=		Compensate for Existing Noise
+		name=		Tweaking
+		name=		Intensity
+		name=		Size
+		name=		Softness
+		name=		Aspect Ratio
+		name=		Channel Intensities
+		name=		Red Intensity
+		name=		Green Intensity
+		name=		Blue Intensity
+		name=		
+		name=		Channel Size
+		name=		Red Size
+		name=		Green Size
+		name=		Blue Size
+		name=		
+		name=		
+		name=		Color
+		name=		Monochromatic
+		name=		Saturation
+		name=		Tint Amount
+		name=		Tint Color
+		name=		
+		name=		Application
+		name=		Blending Mode
+		name=		Shadows
+		name=		Midtones
+		name=		Highlights
+		name=		Midpoint
+		name=		Channel Balance
+		name=		Red Shadows
+		name=		Red Midtones
+		name=		Red Highlights
+		name=		Green Shadows
+		name=		Green Midtones
+		name=		Green Highlights
+		name=		Blue Shadows
+		name=		Blue Midtones
+		name=		Blue Highlights
+		name=		
+		name=		
+		name=		Sampling
+		name=		Source Frame
+		name=		Number of Samples
+		name=		Sample Size
+		name=		Sample Box Color
+		name=		Sample Selection
+		name=		Noise Sample Points
+		name=		1
+		name=		2
+		name=		3
+		name=		4
+		name=		5
+		name=		6
+		name=		7
+		name=		8
+		name=		9
+		name=		10
+		name=		
+		name=		Intensity
+		name=		1
+		name=		2
+		name=		3
+		name=		4
+		name=		5
+		name=		6
+		name=		7
+		name=		8
+		name=		9
+		name=		10
+		name=		
+		name=		
+		name=		Animation
+		name=		Animation Speed
+		name=		Animate Smoothly
+		name=		Random Seed
+		name=		
+		name=		Blend with Original
+		name=		Amount
+		name=		Combine Match and Mask Using
+		name=		Blur Matte
+		name=		Color Matching
+		name=		Match Color Using
+		name=		Matching Color
+		name=		Matching Tolerance
+		name=		Matching Softness
+		name=		Invert Match
+		name=		
+		name=		Masking Layer
+		name=		Mask Layer
+		name=		Masking Mode
+		name=		If Mask Size Differs
+		name=		
+		name=		
+
+	[Median]
+		matchName=	ADBE Median
+
+		name=		Radius
+		name=		Operate On Alpha Channel
+
+	[Noise]
+		matchName=	ADBE Noise
+
+		name=		Amount of Noise
+		name=		Noise Type
+		name=		Clipping
+
+	[Noise Alpha]
+		matchName=	ADBE Noise Alpha2
+
+		name=		Noise
+		name=		Amount
+		name=		Original Alpha
+		name=		Overflow
+		name=		Contextual Control
+		name=		Noise Options (Animation)
+		name=		Cycle Noise
+		name=		Cycle (in Revolutions)
+		name=		Cycle (in Revolutions)
+
+	[Noise HLS]
+		matchName=	ADBE Noise HLS2
+
+		name=		Noise
+		name=		Hue
+		name=		Lightness
+		name=		Saturation
+		name=		Grain Size
+		name=		Noise Phase
+
+	[Noise HLS Auto]
+		matchName=	ADBE Noise HLS Auto2
+
+		name=		Noise
+		name=		Hue
+		name=		Lightness
+		name=		Saturation
+		name=		Grain Size
+		name=		Noise Animation Speed
+
+	[Remove Grain]
+		matchName=	VISINF Grain Removal
+
+		name=		Viewing Mode
+		name=		Preview Region
+		name=		Center
+		name=		Width
+		name=		Height
+		name=		Show Box
+		name=		Box Color
+		name=		
+		name=		Noise Reduction Settings
+		name=		Noise Reduction
+		name=		Passes
+		name=		Mode
+		name=		Channel Noise Reduction
+		name=		Red Noise Reduction
+		name=		Green Noise Reduction
+		name=		Blue Noise Reduction
+		name=		
+		name=		
+		name=		Fine Tuning
+		name=		Chroma Suppression
+		name=		Texture
+		name=		Noise Size Bias
+		name=		Clean Solid Areas
+		name=		
+		name=		Temporal Filtering
+		name=		Enable
+		name=		Amount
+		name=		Motion Sensitivity
+		name=		
+		name=		Unsharp Mask
+		name=		Amount
+		name=		Radius
+		name=		Threshold
+		name=		
+		name=		Sampling
+		name=		Source Frame
+		name=		Number of Samples
+		name=		Sample Size
+		name=		Sample Box Color
+		name=		Sample Selection
+		name=		Noise Sample Points
+		name=		1
+		name=		2
+		name=		3
+		name=		4
+		name=		5
+		name=		6
+		name=		7
+		name=		8
+		name=		9
+		name=		10
+		name=		
+		name=		
+		name=		Blend with Original
+		name=		Amount
+		name=		Combine Match and Mask Using
+		name=		Blur Matte
+		name=		Color Matching
+		name=		Match Color Using
+		name=		Matching Color
+		name=		Matching Tolerance
+		name=		Matching Softness
+		name=		Invert Match
+		name=		
+		name=		Masking Layer
+		name=		Mask Layer
+		name=		Masking Mode
+		name=		If Mask Size Differs
+		name=		
+		name=		
+
+
+Paint
+
+	[Paint]
+		matchName=	ADBE Paint
+
+		name=		Paint on Transparent
+*		name=		Strokes
+
+	[Vector Paint]
+		matchName=	ADBE Vector Paint
+
+		name=		Brush Settings
+		name=		Playback Mode
+		name=		Playback Speed
+		name=		Wiggle Control
+		name=		Enable Wiggling
+		name=		Wiggles/sec
+		name=		Displacement Variation
+		name=		Displacement Detail
+		name=		Pressure Variation
+		name=		Pressure Detail
+		name=		Individual Stroke Seeds
+		name=		
+		name=		Composite Paint
+
+
+Perspective
+
+	[Basic 3D]
+		matchName=	ADBE Basic 3D
+
+		name=		Swivel
+		name=		Tilt
+		name=		Distance to Image
+		name=		Specular Highlight
+		name=		Preview
+
+	[Bevel Alpha]
+		matchName=	ADBE Bevel Alpha
+
+		name=		Edge Thickness
+		name=		Light Angle
+		name=		Light Color
+		name=		Light Intensity
+
+	[Bevel Edges]
+		matchName=	ADBE Bevel Edges
+
+		name=		Edge Thickness
+		name=		Light Angle
+		name=		Light Color
+		name=		Light Intensity
+
+	[Drop Shadow]
+		matchName=	ADBE Drop Shadow
+
+		name=		Shadow Color
+		name=		Opacity
+		name=		Direction
+		name=		Distance
+		name=		Softness
+		name=		Shadow Only
+
+	[Radial Shadow]
+		matchName=	ADBE Radial Shadow
+
+		name=		Shadow Color
+		name=		Opacity
+		name=		Light Source
+		name=		Projection Distance
+		name=		Softness
+		name=		Render
+		name=		Color Influence
+		name=		Shadow Only
+		name=		Resize Layer
+
+
+Render
+
+	[4-Color Gradient]
+		matchName=	ADBE 4ColorGradient
+
+		name=		Positions & Colors
+		name=		Point 1
+		name=		Color 1
+		name=		Point 2
+		name=		Color 2
+		name=		Point 3
+		name=		Color 3
+		name=		Point 4
+		name=		Color 4
+		name=		Color 4
+		name=		Blend
+		name=		Jitter
+		name=		Opacity
+		name=		Blending Mode
+
+	[Advanced Lightning]
+		matchName=	ADBE Lightning 2
+
+		name=		Lightning Type
+		name=		Origin
+		name=		Contextual Control
+		name=		Conductivity State
+		name=		Core Settings
+		name=		Core Radius
+		name=		Core Opacity
+		name=		Core Color
+		name=		Core Color
+		name=		Glow Settings
+		name=		Glow Radius
+		name=		Glow Opacity
+		name=		Glow Color
+		name=		Glow Color
+		name=		Alpha Obstacle
+		name=		Turbulence
+		name=		Forking
+		name=		Decay
+		name=		Decay Main Core
+		name=		Composite on Original
+		name=		Expert Settings
+		name=		Complexity
+		name=		Min. Forkdistance
+		name=		Termination Threshold
+		name=		Main Core Collision Only
+		name=		Fractal Type
+		name=		Core Drain
+		name=		Fork Strength
+		name=		Fork Variation
+		name=		Fork Variation
+
+	[Audio Spectrum]
+		matchName=	ADBE AudSpect
+
+		name=		Audio Layer
+		name=		Start Point
+		name=		End Point
+		name=		Path
+		name=		Use Polar Path
+		name=		Start Frequency
+		name=		End Frequency
+		name=		Frequency bands
+		name=		Maximum Height
+		name=		Audio Duration (milliseconds)
+		name=		Audio Offset (milliseconds)
+		name=		Thickness
+		name=		Softness
+		name=		Inside Color
+		name=		Outside Color
+		name=		Blend Overlapping Colors
+		name=		Hue Interpolation
+		name=		Dynamic Hue Phase
+		name=		Color Symmetry
+		name=		Display Options
+		name=		Side Options
+		name=		Duration Averaging
+		name=		Composite On Original
+
+	[Audio Waveform]
+		matchName=	ADBE AudWave
+
+		name=		Audio Layer
+		name=		Start Point
+		name=		End Point
+		name=		Path
+		name=		Displayed Samples
+		name=		Maximum Height
+		name=		Audio Duration (milliseconds)
+		name=		Audio Offset (milliseconds)
+		name=		Thickness
+		name=		Softness
+		name=		Random Seed (Analog)
+		name=		Inside Color
+		name=		Outside Color
+		name=		Waveform Options
+		name=		Display Options
+		name=		Composite On Original
+
+	[Beam]
+		matchName=	ADBE Laser
+
+		name=		Starting Point
+		name=		Ending Point
+		name=		Length
+		name=		Time
+		name=		Starting Thickness
+		name=		Ending Thickness
+		name=		Softness
+		name=		Inside Color
+		name=		Outside Color
+		name=		3D Perspective
+		name=		Composite On Original
+
+	[Cell Pattern]
+		matchName=	ADBE Cell Pattern
+
+		name=		Cell Pattern
+		name=		Invert
+		name=		Contextual Slider
+		name=		Overflow
+		name=		Disperse
+		name=		Size
+		name=		Offset
+		name=		Tiling Options
+		name=		Enable Tiling
+		name=		Cells Horizontal
+		name=		Cells Vertical
+		name=		Cells Vertical
+		name=		Evolution
+		name=		Evolution Options
+		name=		Cycle Evolution
+		name=		Cycle (in Revolutions)
+		name=		Random Seed
+		name=		
+
+	[Checkerboard]
+		matchName=	ADBE Checkerboard
+
+		name=		Anchor
+		name=		Size From
+		name=		Corner
+		name=		Width
+		name=		Height
+		name=		Feather
+		name=		Width
+		name=		Height
+		name=		Height
+		name=		Color
+		name=		Opacity
+		name=		Blending Mode
+
+	[Circle]
+		matchName=	ADBE Circle
+
+		name=		Center
+		name=		Radius
+		name=		Edge
+		name=		Contextual Slider
+		name=		Feather
+		name=		Feather Outer Edge
+		name=		Feather Inner Edge
+		name=		Feather Inner Edge
+		name=		Invert Circle
+		name=		Color
+		name=		Opacity
+		name=		Blending Mode
+
+	[Ellipse]
+		matchName=	ADBE ELLIPSE
+
+		name=		Center
+		name=		Width
+		name=		Height
+		name=		Thickness
+		name=		Softness
+		name=		Inside Color
+		name=		Outside Color
+		name=		Composite On Original
+
+	[Eyedropper Fill]
+		matchName=	ADBE Eyedropper Fill
+
+		name=		Sample Point
+		name=		Sample Radius
+		name=		Average Pixel Colors
+		name=		Maintain Original Alpha
+		name=		Blend With Original
+
+	[Fill]
+		matchName=	ADBE Fill
+
+		name=		Fill Mask
+		name=		All Masks
+		name=		Color
+		name=		Invert
+		name=		Horizontal Feather
+		name=		Vertical Feather
+		name=		Opacity
+
+	[Fractal]
+		matchName=	ADBE Fractal
+
+		name=		Set Choice
+		name=		Equation
+		name=		Mandelbrot
+		name=		X (Real)
+		name=		Y (Imaginary)
+		name=		Magnification
+		name=		Escape Limit
+		name=		
+		name=		Julia
+		name=		X (Real)
+		name=		Y (Imaginary)
+		name=		Magnification
+		name=		Escape Limit
+		name=		
+		name=		Post-inversion offset
+		name=		X (Real)
+		name=		Y (Imaginary)
+		name=		
+		name=		Color
+		name=		Overlay
+		name=		Transparency
+		name=		Palette
+		name=		Hue
+		name=		Cycle Steps
+		name=		Cycle Offset
+		name=		Edge Highlight (Force LQ)
+		name=		
+		name=		High Quality Settings
+		name=		Oversample Method
+		name=		Oversample Factor
+		name=		
+
+	[Grid]
+		matchName=	ADBE Grid
+
+		name=		Anchor
+		name=		Size From
+		name=		Corner
+		name=		Width
+		name=		Height
+		name=		Border
+		name=		Feather
+		name=		Width
+		name=		Height
+		name=		Height
+		name=		Invert Grid
+		name=		Color
+		name=		Opacity
+		name=		Blending Mode
+
+	[Lens Flare]
+		matchName=	ADBE Lens Flare
+
+		name=		Flare Center
+		name=		Flare Brightness
+		name=		Lens Type
+		name=		Blend With Original
+
+	[Lightning]
+		matchName=	ADBE Lightning
+
+		name=		Start point
+		name=		End point
+		name=		Segments
+		name=		Amplitude
+		name=		Detail Level
+		name=		Detail Amplitude
+		name=		Branching
+		name=		Rebranching
+		name=		Branch Angle
+		name=		Branch Seg. Length
+		name=		Branch Segments
+		name=		Branch Width
+		name=		Speed
+		name=		Stability
+		name=		Fixed Endpoint
+		name=		Width
+		name=		Width Variation
+		name=		Core Width
+		name=		Outside Color
+		name=		Inside Color
+		name=		Pull Force
+		name=		Pull Direction
+		name=		Random Seed
+		name=		Blending Mode
+		name=		Simulation
+
+	[Paint Bucket]
+		matchName=	ADBE Paint Bucket
+
+		name=		Fill Point
+		name=		Fill Selector
+		name=		Tolerance
+		name=		View Threshold
+		name=		Stroke
+		name=		Contextual Slider
+		name=		Invert Fill
+		name=		Color
+		name=		Opacity
+		name=		Blending Mode
+
+	[Radio Waves]
+		matchName=	APC Radio Waves
+
+		name=		Producer Point
+		name=		Parameters are set at
+		name=		Render Quality
+		name=		Wave Type
+		name=		Polygon
+		name=		Sides
+		name=		Curve Size
+		name=		Curvyness
+		name=		Star
+		name=		Star Depth
+		name=		
+		name=		Image Contour
+		name=		Source Layer
+		name=		Source Center
+		name=		Value Channel
+		name=		Invert Input
+		name=		Value Threshold
+		name=		Pre-Blur
+		name=		Tolerance
+		name=		Contour
+		name=		
+		name=		Mask
+		name=		Mask
+		name=		
+		name=		Wave Motion
+		name=		Frequency
+		name=		Expansion
+		name=		Orientation
+		name=		Direction
+		name=		Velocity
+		name=		Spin
+		name=		Lifespan (sec) 
+		name=		Reflection
+		name=		
+		name=		Stroke
+		name=		Profile
+		name=		Color
+		name=		Opacity
+		name=		Fade-in Time
+		name=		Fade-out Time
+		name=		Start Width
+		name=		End Width
+		name=		
+
+	[Ramp]
+		matchName=	ADBE Ramp
+
+		name=		Start of Ramp
+		name=		Start Color
+		name=		End of Ramp
+		name=		End Color
+		name=		Ramp Shape
+		name=		Ramp Scatter
+		name=		Blend With Original
+
+	[Scribble]
+		matchName=	ADBE Scribble Fill
+
+		name=		Scribble
+		name=		Mask
+		name=		Fill Type
+		name=		Edge Options
+		name=		Edge Width
+		name=		End Cap
+		name=		Join
+		name=		Miter Limit
+		name=		Start/End Apply To
+		name=		
+		name=		Color
+		name=		Opacity
+		name=		Angle
+		name=		Stroke Width
+		name=		Stroke Options
+		name=		Curviness
+		name=		Curviness Variation
+		name=		Spacing
+		name=		Spacing Variation
+		name=		Path Overlap
+		name=		Path Overlap Variation
+		name=		
+		name=		Start
+		name=		End
+		name=		Fill Paths Sequentially
+		name=		Wiggle Type
+		name=		Wiggles/Second
+		name=		Random Seed
+		name=		Composite
+
+	[Stroke]
+		matchName=	ADBE Stroke
+
+		name=		Path
+		name=		All Masks
+		name=		Stroke Sequentially
+		name=		Color
+		name=		Brush Size
+		name=		Brush Hardness
+		name=		Opacity
+		name=		Start
+		name=		End
+		name=		Spacing
+		name=		Paint Style
+
+	[Vegas]
+		matchName=	APC Vegas
+
+		name=		Stroke
+		name=		Image Contours
+		name=		Input Layer
+		name=		Invert Input
+		name=		If Layer Sizes Differ
+		name=		Channel
+		name=		Threshold
+		name=		Pre-Blur
+		name=		Tolerance
+		name=		Render
+		name=		Selected Contour
+		name=		Shorter Contours Have
+		name=		
+		name=		Mask/Path
+		name=		Path
+		name=		
+		name=		Segments
+		name=		Segments
+		name=		Length
+		name=		Segment Distribution
+		name=		Rotation
+		name=		Random Phase
+		name=		Random Seed
+		name=		
+		name=		Rendering
+		name=		Blend Mode
+		name=		Color
+		name=		Width
+		name=		Hardness
+		name=		Start Opacity
+		name=		Mid-point Opacity
+		name=		Mid-point Position
+		name=		End Opacity
+		name=		
+
+
+Simulation
+
+	[Card Dance]
+		matchName=	APC CardDanceCam
+
+		name=		Rows & Columns
+		name=		Rows
+		name=		Columns
+		name=		Back Layer
+		name=		Gradient Layer 1
+		name=		Gradient Layer 2
+		name=		Rotation Order
+		name=		Transformation Order
+		name=		X Position
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		Y Position
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		Z Position
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		X Rotation
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		Y Rotation
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		Z Rotation
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		X Scale
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		Y Scale
+		name=		Source
+		name=		Multiplier
+		name=		Offset
+		name=		
+		name=		Camera System
+		name=		Camera Position
+		name=		X Rotation
+		name=		Y Rotation
+		name=		Z Rotation
+		name=		X,Y Position
+		name=		Z Position
+		name=		Focal Length
+		name=		Transform Order
+		name=		
+		name=		Corner Pins
+		name=		Upper Left  Corner
+		name=		Upper Right Corner
+		name=		Lower Left  Corner
+		name=		Lower Right Corner
+		name=		Auto Focal Length
+		name=		Focal Length
+		name=		
+		name=		Lighting
+		name=		Light Type
+		name=		Light Intensity
+		name=		Light Color
+		name=		Light Position
+		name=		Light Depth
+		name=		Ambient Light
+		name=		
+		name=		Material
+		name=		Diffuse Reflection
+		name=		Specular Reflection
+		name=		Highlight Sharpness
+		name=		
+
+	[Caustics]
+		matchName=	APC Caustics
+
+		name=		Bottom
+		name=		Bottom
+		name=		Scaling
+		name=		Repeat Mode
+		name=		If Layer Size Differs
+		name=		Blur
+		name=		
+		name=		Water
+		name=		Water Surface
+		name=		Wave Height
+		name=		Smoothing
+		name=		Water Depth
+		name=		Refractive Index
+		name=		Surface Color
+		name=		Surface Opacity
+		name=		Caustics Strength
+		name=		
+		name=		Sky
+		name=		Sky
+		name=		Scaling
+		name=		Repeat Mode
+		name=		If Layer Size Differs
+		name=		Intensity
+		name=		Convergence
+		name=		
+		name=		Lighting
+		name=		Light Type
+		name=		Light Intensity
+		name=		Light Color
+		name=		Light Position
+		name=		Light Height
+		name=		Ambient Light
+		name=		
+		name=		Material
+		name=		Diffuse Reflection
+		name=		Specular Reflection
+		name=		Highlight Sharpness
+		name=		
+
+	[Foam]
+		matchName=	APC Foam
+
+		name=		View
+		name=		Producer
+		name=		Producer Point
+		name=		Producer X Size
+		name=		Producer Y Size
+		name=		Producer Orientation
+		name=		Zoom Producer Point
+		name=		Production Rate
+		name=		
+		name=		Bubbles
+		name=		Size
+		name=		Size Variance
+		name=		Lifespan
+		name=		Bubble Growth Speed
+		name=		Strength
+		name=		
+		name=		Physics
+		name=		Initial Speed
+		name=		Initial Direction
+		name=		Wind Speed
+		name=		Wind Direction
+		name=		Turbulence
+		name=		Wobble Amount
+		name=		Repulsion
+		name=		Pop Velocity
+		name=		Viscosity
+		name=		Stickiness
+		name=		
+		name=		Zoom
+		name=		Universe Size
+		name=		Rendering
+		name=		Blend Mode
+		name=		Bubble Texture
+		name=		Bubble Texture Layer
+		name=		Bubble Orientation
+		name=		Environment Map
+		name=		Reflection Strength
+		name=		Reflection Convergence
+		name=		
+		name=		Flow Map
+		name=		Flow Map
+		name=		Flow Map Steepness
+		name=		Flow Map Fits
+		name=		
+		name=		Simulation Quality
+		name=		Random Seed
+
+	[Particle Playground]
+		matchName=	ADBE Playgnd
+
+		name=		Cannon
+		name=		Position
+		name=		Barrel Radius
+		name=		Particles Per Second
+		name=		Direction
+		name=		Direction Random Spread
+		name=		Velocity
+		name=		Velocity Random Spread
+		name=		Color
+		name=		Particle Radius
+		name=		
+		name=		Grid
+		name=		Position
+		name=		Width
+		name=		Height
+		name=		Particles Across
+		name=		Particles Down
+		name=		Color
+		name=		Particle Radius
+		name=		
+		name=		Layer Exploder
+		name=		Explode Layer
+		name=		Radius of New Particles
+		name=		Velocity Dispersion
+		name=		
+		name=		Particle Exploder
+		name=		Radius of New Particles
+		name=		Velocity Dispersion
+		name=		Affects
+		name=		Particles from
+		name=		Selection Map
+		name=		Characters
+		name=		Older/Younger than
+		name=		Age Feather
+		name=		
+		name=		
+		name=		Layer Map
+		name=		Use Layer
+		name=		Time Offset Type
+		name=		Time Offset
+		name=		Affects
+		name=		Particles from
+		name=		Selection Map
+		name=		Characters
+		name=		Older/Younger than
+		name=		Age Feather
+		name=		
+		name=		
+		name=		Gravity
+		name=		Force
+		name=		Force Random Spread
+		name=		Direction
+		name=		Affects
+		name=		Particles from
+		name=		Selection Map
+		name=		Characters
+		name=		Older/Younger than
+		name=		Age Feather
+		name=		
+		name=		
+		name=		Repel
+		name=		Force
+		name=		Force Radius
+		name=		Repeller
+		name=		Particles from
+		name=		Selection Map
+		name=		Characters
+		name=		Older/Younger than
+		name=		Age Feather
+		name=		
+		name=		Affects
+		name=		Particles from
+		name=		Selection Map
+		name=		Characters
+		name=		Older/Younger than
+		name=		Age Feather
+		name=		
+		name=		
+		name=		Wall
+		name=		Boundary
+		name=		Affects
+		name=		Particles from
+		name=		Characters
+		name=		Older/Younger than
+		name=		
+		name=		
+		name=		Persistent Property Mapper
+		name=		Use Layer As Map
+		name=		Affects
+		name=		Particles from
+		name=		Characters
+		name=		Older/Younger than
+		name=		Age Feather
+		name=		
+		name=		Map Red to
+		name=		Min
+		name=		Max
+		name=		Map Green to
+		name=		Min
+		name=		Max
+		name=		Map Blue to
+		name=		Min
+		name=		Max
+		name=		
+		name=		Ephemeral Property Mapper
+		name=		Use Layer As Map
+		name=		Affects
+		name=		Particles from
+		name=		Characters
+		name=		Older/Younger than
+		name=		Age Feather
+		name=		
+		name=		Map Red to
+		name=		Operator
+		name=		Min
+		name=		Max
+		name=		Map Green to
+		name=		Operator
+		name=		Min
+		name=		Max
+		name=		Map Blue to
+		name=		Operator
+		name=		Min
+		name=		Max
+		name=		
+
+	[Shatter]
+		matchName=	APC Shatter
+
+		name=		View
+		name=		Render
+		name=		Shape
+		name=		Pattern
+		name=		Custom Shatter Map
+		name=		White Tiles Fixed
+		name=		Repetitions
+		name=		Direction
+		name=		Origin
+		name=		Extrusion Depth
+		name=		
+		name=		Force 1
+		name=		Position
+		name=		Depth
+		name=		Radius
+		name=		Strength
+		name=		
+		name=		Force 2
+		name=		Position
+		name=		Depth
+		name=		Radius
+		name=		Strength
+		name=		
+		name=		Gradient
+		name=		Shatter Threshold
+		name=		Gradient Layer
+		name=		Invert Gradient
+		name=		
+		name=		Physics
+		name=		Rotation Speed
+		name=		Tumble Axis
+		name=		Randomness
+		name=		Viscosity
+		name=		Mass Variance
+		name=		Gravity
+		name=		Gravity Direction
+		name=		Gravity Inclination
+		name=		
+		name=		Textures
+		name=		Color
+		name=		Opacity
+		name=		Front Mode
+		name=		Front Layer
+		name=		Side Mode
+		name=		Side Layer
+		name=		Back Mode
+		name=		Back Layer
+		name=		
+		name=		Camera System
+		name=		Camera Position
+		name=		X Rotation
+		name=		Y Rotation
+		name=		Z Rotation
+		name=		X,Y Position
+		name=		Z Position
+		name=		Focal Length
+		name=		Transform Order
+		name=		
+		name=		Corner Pins
+		name=		Upper Left  Corner
+		name=		Upper Right Corner
+		name=		Lower Left  Corner
+		name=		Lower Right Corner
+		name=		Auto Focal Length
+		name=		Focal Length
+		name=		
+		name=		Lighting
+		name=		Light Type
+		name=		Light Intensity
+		name=		Light Color
+		name=		Light Position
+		name=		Light Depth
+		name=		Ambient Light
+		name=		
+		name=		Material
+		name=		Diffuse Reflection
+		name=		Specular Reflection
+		name=		Highlight Sharpness
+		name=		
+
+	[Wave World]
+		matchName=	APC Wave World
+
+		name=		View
+		name=		Wireframe Controls
+		name=		Horizontal Rotation
+		name=		Vertical Rotation
+		name=		Vertical Scale
+		name=		
+		name=		Height Map Controls
+		name=		Brightness
+		name=		Contrast
+		name=		Gamma Adjustment
+		name=		Render Dry Areas As
+		name=		Transparency
+		name=		
+		name=		Simulation
+		name=		Grid Resolution
+		name=		Grid Res Downsamples
+		name=		Wave Speed
+		name=		Damping
+		name=		Reflect Edges
+		name=		Pre-roll (seconds)
+		name=		
+		name=		Ground
+		name=		Ground
+		name=		Steepness
+		name=		Height
+		name=		Wave Strength
+		name=		
+		name=		Producer 1
+		name=		Type
+		name=		Position
+		name=		Height/Length
+		name=		Width
+		name=		Angle
+		name=		Amplitude
+		name=		Frequency
+		name=		Phase
+		name=		
+		name=		Producer 2
+		name=		Type
+		name=		Position
+		name=		Height/Length
+		name=		Width
+		name=		Angle
+		name=		Amplitude
+		name=		Frequency
+		name=		Phase
+		name=		
+
+
+Stylize
+
+	[Brush Strokes]
+		matchName=	ADBE Brush Strokes
+
+		name=		Stroke Angle
+		name=		Brush Size
+		name=		Stroke Length
+		name=		Stroke Density
+		name=		Stroke Randomness
+		name=		Paint Surface
+		name=		Blend With Original
+
+	[Color Emboss]
+		matchName=	ADBE Color Emboss
+
+		name=		Direction
+		name=		Relief
+		name=		Contrast
+		name=		Blend With Original
+
+	[Emboss]
+		matchName=	ADBE Emboss
+
+		name=		Direction
+		name=		Relief
+		name=		Contrast
+		name=		Blend With Original
+
+	[Find Edges]
+		matchName=	ADBE Find Edges
+
+		name=		Invert
+		name=		Blend With Original
+
+	[Glow]
+		matchName=	ADBE Glo2
+
+		name=		Glow Based On
+		name=		Glow Threshold
+		name=		Glow Radius
+		name=		Glow Intensity
+		name=		Composite Original
+		name=		Glow Operation
+		name=		Glow Colors
+		name=		Color Looping
+		name=		Color Loops
+		name=		Color Phase
+		name=		A & B Midpoint
+		name=		Color A
+		name=		Color B
+		name=		Glow Dimensions
+
+	[Leave Color]
+		matchName=	ADBE Leave Color
+
+		name=		Amount to Decolor
+		name=		Color To Leave
+		name=		Tolerance
+		name=		Edge Softness
+		name=		Match colors
+
+	[Mosaic]
+		matchName=	ADBE Mosaic
+
+		name=		Horizontal Blocks
+		name=		Vertical Blocks
+		name=		Sharp Colors
+
+	[Motion Tile]
+		matchName=	ADBE Tile
+
+		name=		Tile Center
+		name=		Tile Width
+		name=		Tile Height
+		name=		Output Width
+		name=		Output Height
+		name=		Mirror Edges
+		name=		Phase
+		name=		Horizontal Phase Shift
+
+	[Roughen Edges]
+		matchName=	ADBE Roughen Edges
+
+		name=		Edge Type
+		name=		Edge Color
+		name=		Border
+		name=		Edge Sharpness
+		name=		Fractal Influence
+		name=		Scale
+		name=		Stretch Width or Height
+		name=		Offset (Turbulence)
+		name=		Complexity
+		name=		Evolution
+		name=		Evolution Options
+		name=		Cycle Evolution
+		name=		Cycle (in Revolutions)
+		name=		Random Seed
+		name=		Random Seed
+
+	[Scatter]
+		matchName=	ADBE Scatter
+
+		name=		Scatter Amount
+		name=		Grain
+		name=		Scatter Randomness
+
+	[Strobe Light]
+		matchName=	ADBE Strobe
+
+		name=		Strobe Color
+		name=		Blend With Original
+		name=		Strobe Duration (secs)
+		name=		Strobe Period (secs)
+		name=		Random Strobe Probablity
+		name=		Strobe
+		name=		Strobe Operator
+		name=		Random Seed
+
+	[Texturize]
+		matchName=	ADBE Texturize
+
+		name=		Texture Layer
+		name=		Light Direction
+		name=		Texture Contrast
+		name=		Texture Placement
+
+	[Write-on]
+		matchName=	ADBE Write-on
+
+		name=		Brush Position
+		name=		Color
+		name=		Brush Size
+		name=		Brush Hardness
+		name=		Brush Opacity
+		name=		Stroke Length (secs)
+		name=		Brush Spacing (secs)
+		name=		Paint Time Properties
+		name=		Brush Time Properties
+		name=		Paint Style
+
+
+Text
+
+	[Basic Text]
+		matchName=	ADBE Basic Text2
+
+		name=		Position
+		name=		Fill and Stroke
+		name=		Display Options
+		name=		Fill Color
+		name=		Stroke Color
+		name=		Stroke Width
+		name=		
+		name=		Size
+		name=		Tracking
+		name=		Line Spacing
+		name=		Composite On Original
+
+	[Numbers]
+		matchName=	ADBE Numbers2
+
+		name=		Format
+		name=		Type
+		name=		Random Values
+		name=		Value/Offset/Random Max
+		name=		Decimal Places
+		name=		Current Time/Date
+		name=		
+		name=		Fill and Stroke
+		name=		Position
+		name=		Display Options
+		name=		Fill Color
+		name=		Stroke Color
+		name=		Stroke Width
+		name=		
+		name=		Size
+		name=		Tracking
+		name=		Proportional Spacing
+		name=		Composite On Original
+
+	[Path Text]
+		matchName=	ADBE Path Text
+
+		name=		Information
+		name=		Path Options
+		name=		Shape Type
+		name=		Control Points
+		name=		Tangent 1/Circle Point
+		name=		Vertex 1/Circle Center
+		name=		Tangent 2
+		name=		Vertex 2
+		name=		
+		name=		Custom Path
+		name=		Reverse Path
+		name=		
+		name=		Fill and Stroke
+		name=		Options
+		name=		Fill Color
+		name=		Stroke Color
+		name=		Stroke Width
+		name=		
+		name=		Character
+		name=		Size
+		name=		Tracking
+		name=		Kerning
+		name=		Kerning Pair
+		name=		Kerning Value
+		name=		
+		name=		Orientation
+		name=		Character Rotation
+		name=		Perpendicular To Path
+		name=		Vertical Writing
+		name=		Rotate Roman Characters
+		name=		
+		name=		Horizontal Shear
+		name=		Horizontal Scale
+		name=		Vertical Scale
+		name=		
+		name=		Paragraph
+		name=		Alignment
+		name=		Left Margin
+		name=		Right Margin
+		name=		Line Spacing
+		name=		Baseline Shift
+		name=		
+		name=		Advanced
+		name=		Visible Characters
+		name=		Fade Time
+		name=		Mode
+		name=		Jitter Settings
+		name=		Baseline Jitter Max
+		name=		Kerning Jitter Max
+		name=		Rotation Jitter Max
+		name=		Scale Jitter Max
+		name=		
+		name=		
+		name=		Composite On Original
+
+
+Time
+
+	[Echo]
+		matchName=	ADBE Echo
+
+		name=		Echo Time (seconds)
+		name=		Number Of Echoes
+		name=		Starting Intensity
+		name=		Decay
+		name=		Echo Operator
+
+	[Posterize Time]
+		matchName=	ADBE Posterize Time
+
+		name=		Frame Rate
+
+	[Time Difference]
+		matchName=	ADBE Difference
+
+		name=		Target
+		name=		Time Offset (sec)
+		name=		Contrast
+		name=		Absolute Difference
+		name=		Alpha Channel
+
+	[Time Displacement]
+		matchName=	ADBE Time Displacement
+
+		name=		Time Displacement Layer
+		name=		Max Displacement Time [sec]
+		name=		Time Resolution [fps]
+		name=		If Layer Sizes Differ
+
+
+Transition
+
+	[Block Dissolve]
+		matchName=	ADBE Block Dissolve
+
+		name=		Transition Completion
+		name=		Block Width
+		name=		Block Height
+		name=		Feather
+		name=		Soft Edges (Best Quality)
+
+	[Card Wipe]
+		matchName=	APC CardWipeCam
+
+		name=		Transition Completion
+		name=		Transition Width
+		name=		Back Layer
+		name=		Rows & Columns
+		name=		Rows
+		name=		Columns
+		name=		Card Scale
+		name=		Flip Axis
+		name=		Flip Direction
+		name=		Flip Order
+		name=		Gradient Layer
+		name=		Timing Randomness
+		name=		Random Seed
+		name=		Camera System
+		name=		Camera Position
+		name=		X Rotation
+		name=		Y Rotation
+		name=		Z Rotation
+		name=		X,Y Position
+		name=		Z Position
+		name=		Focal Length
+		name=		Transform Order
+		name=		
+		name=		Corner Pins
+		name=		Upper Left  Corner
+		name=		Upper Right Corner
+		name=		Lower Left  Corner
+		name=		Lower Right Corner
+		name=		Auto Focal Length
+		name=		Focal Length
+		name=		
+		name=		Lighting
+		name=		Light Type
+		name=		Light Intensity
+		name=		Light Color
+		name=		Light Position
+		name=		Light Depth
+		name=		Ambient Light
+		name=		
+		name=		Material
+		name=		Diffuse Reflection
+		name=		Specular Reflection
+		name=		Highlight Sharpness
+		name=		
+		name=		Position Jitter
+		name=		X Jitter Amount
+		name=		X Jitter Speed
+		name=		Y Jitter Amount
+		name=		Y Jitter Speed
+		name=		Z Jitter Amount
+		name=		Z Jitter Speed
+		name=		
+		name=		Rotation Jitter
+		name=		X Rot Jitter Amount
+		name=		X Rot Jitter Speed
+		name=		Y Rot Jitter Amount
+		name=		Y Rot Jitter Speed
+		name=		Z Rot Jitter Amount
+		name=		Z Rot Jitter Speed
+		name=		
+
+	[Gradient Wipe]
+		matchName=	ADBE Gradient Wipe
+
+		name=		Transition Completion
+		name=		Transition Softness
+		name=		Gradient Layer
+		name=		Gradient Placement
+		name=		Invert Gradient
+
+	[Iris Wipe]
+		matchName=	ADBE IRIS_WIPE
+
+		name=		Iris Center
+		name=		Iris Points
+		name=		Outer Radius
+		name=		Use Inner Radius
+		name=		Inner Radius
+		name=		Rotation
+		name=		Feather
+
+	[Linear Wipe]
+		matchName=	ADBE Linear Wipe
+
+		name=		Transition Completion
+		name=		Wipe Angle
+		name=		Feather
+
+	[Radial Wipe]
+		matchName=	ADBE Radial Wipe
+
+		name=		Transition Completion
+		name=		Start Angle
+		name=		Wipe Center
+		name=		Wipe
+		name=		Feather
+
+	[Venetian Blinds]
+		matchName=	ADBE Venetian Blinds
+
+		name=		Transition Completion
+		name=		Direction
+		name=		Width
+		name=		Feather
+
+
+Trapcode
+
+	[Particular]
+		matchName=	tc Particular
+
+		name=		Preview
+		name=		Emitter
+		name=		Particles/sec
+		name=		Emitter Type
+		name=		Layer
+		name=		Layer Sampling
+		name=		Layer RGB Usage
+		name=		Position XY
+		name=		Position Z
+		name=		Direction
+		name=		Direction Spread [%]
+		name=		X Rotation
+		name=		Y Rotation
+		name=		Z Rotation
+		name=		Velocity
+		name=		Velocity Random [%]
+		name=		Velocity from Motion [%]
+		name=		Emitter Size X
+		name=		Emitter Size Y
+		name=		Emitter Size Z
+		name=		
+		name=		Particle
+		name=		Life [sec]
+		name=		Life Random [%]
+		name=		Particle Type
+		name=		Sphere Feather
+		name=		Custom
+		name=		Layer
+		name=		Time Sampling
+		name=		Number of Clips
+		name=		Subframe Sampling
+		name=		
+		name=		Rotation
+		name=		Rotation Speed
+		name=		Size
+		name=		Size Random [%]
+		name=		Size over Life
+		name=		Opacity
+		name=		Opacity Random [%]
+		name=		Opacity over Life
+		name=		Set Color
+		name=		Color
+		name=		Color Random [%]
+		name=		Color over Life
+		name=		Transfer Mode
+		name=		Transfer Mode over Life
+		name=		
+		name=		Physics
+		name=		Physics Model
+		name=		Gravity
+		name=		Physics Time Factor
+		name=		Air
+		name=		Air Resistance
+		name=		Spin Amplitude
+		name=		Spin Frequency
+		name=		Time Before Spin [sec]
+		name=		Wind X
+		name=		Wind Y
+		name=		Wind Z
+		name=		Turbulence Field
+		name=		Affect Size
+		name=		Affect Position
+		name=		Time Before Affect [sec]
+		name=		Scale
+		name=		Complexity
+		name=		Octave Multiplier
+		name=		Octave Scale
+		name=		Evolution Speed
+		name=		Move with Wind [%]
+		name=		
+		name=		Spherical Field
+		name=		Strength
+		name=		Postition XY
+		name=		Position Z
+		name=		Radius
+		name=		Feather
+		name=		Visualize Field
+		name=		
+		name=		
+		name=		Bounce
+		name=		Floor Layer
+		name=		Floor Mode
+		name=		Wall Layer
+		name=		Wall Mode
+		name=		Collision Event
+		name=		Bounce
+		name=		Bounce Random [%]
+		name=		Slide
+		name=		
+		name=		
+		name=		Aux System
+		name=		Emit
+		name=		Particles/sec
+		name=		Life [sec]
+		name=		Type
+		name=		Velocity
+		name=		Size
+		name=		Size over Life
+		name=		Opacity
+		name=		Opacity over Life
+		name=		Color over Life
+		name=		Color From Main [%]
+		name=		
+		name=		Visibility
+		name=		Far Vanish
+		name=		Far Start Fade
+		name=		Near Start Fade
+		name=		Near Vanish
+		name=		Near & Far Curves
+		name=		Z Buffer
+		name=		Z at Black
+		name=		Z at White
+		name=		Obscuration Layer
+		name=		Also Obscure with
+		name=		
+		name=		Motion Blur
+		name=		Motion Blur
+		name=		Shutter Angle
+		name=		Shutter Phase
+		name=		Type
+		name=		Levels
+		name=		Opacity Boost
+		name=		Disregard
+		name=		
+		name=		Render Mode
+
+	[Shine]
+		matchName=	tc Shine
+
+		name=		Pre-Process
+		name=		Threshold
+		name=		Use Mask
+		name=		Mask Radius
+		name=		Mask Feather
+		name=		
+		name=		Source Point
+		name=		Ray Length
+		name=		Shimmer
+		name=		Amount
+		name=		Detail
+		name=		Source Point affects Shimmer
+		name=		Radius
+		name=		Reduce flickering
+		name=		Phase
+		name=		Use Loop
+		name=		Revolutions in Loop
+		name=		
+		name=		Boost Light
+		name=		Colorize
+		name=		Colorize...
+		name=		Base On...
+		name=		Highligts
+		name=		Mid High
+		name=		Midtones
+		name=		Mid Low
+		name=		Shadows
+		name=		Edge Thickness
+		name=		
+		name=		Source Opacity [%]
+		name=		Shine Opacity [%]
+		name=		Transfer Mode
+
+	[Starglow]
+		matchName=	tc Starglow
+
+		name=		Preset
+		name=		Input Channel
+		name=		Pre-Process
+		name=		Threshold
+		name=		Threshold Soft
+		name=		Use Mask
+		name=		Mask Radius
+		name=		Mask Feather
+		name=		Mask Position
+		name=		
+		name=		Streak Length
+		name=		Boost Light
+		name=		Individual Lengths
+		name=		Up
+		name=		Down
+		name=		Left
+		name=		Right
+		name=		Up Left
+		name=		Up Right
+		name=		Down Left
+		name=		Down Right
+		name=		
+		name=		Individual Colors
+		name=		Up
+		name=		Down
+		name=		Left
+		name=		Right
+		name=		Up Left
+		name=		Up Right
+		name=		Down Left
+		name=		Down Right
+		name=		Down Right
+		name=		Colormap A
+		name=		Type/Preset
+		name=		Highligts
+		name=		Mid High
+		name=		Midtones
+		name=		Mid Low
+		name=		Shadows
+		name=		
+		name=		Colormap B
+		name=		Type/Preset
+		name=		Highligts
+		name=		Mid High
+		name=		Midtones
+		name=		Mid Low
+		name=		Shadows
+		name=		
+		name=		Colormap C
+		name=		Type/Preset
+		name=		Highligts
+		name=		Mid High
+		name=		Midtones
+		name=		Mid Low
+		name=		Shadows
+		name=		
+		name=		Shimmer
+		name=		Amount
+		name=		Detail
+		name=		Phase
+		name=		Use Loop
+		name=		Revolutions in Loop
+		name=		
+		name=		Source Opacity [%]
+		name=		Starglow Opacity [%]
+		name=		Transfer Mode
+
+
+Video
+
+	[Broadcast Colors]
+		matchName=	ADBE Broadcast Colors
+
+		name=		Broadcast Locale
+		name=		How to Make Color Safe
+		name=		Maximum Signal Amplitude (IRE)
+
+	[Reduce Interlace Flicker]
+		matchName=	ADBE Reduce Interlace Flicker
+
+		name=		Softness
+
+	[Timecode]
+		matchName=	ADBE Timecode
+
+		name=		Display Format
+		name=		Time Units
+		name=		Drop Frame
+		name=		Starting Frame
+		name=		Text Position
+		name=		Text Size
+		name=		Text Color
+

@@ -1,0 +1,21 @@
+[name]
+name=Color Stabilizer
+matchName=ADBE Deflicker
+
+[properties]
+name=	Stabilize
+type=	OneD
+
+name=	Black Point
+type=	TwoD_SPATIAL
+
+name=	Mid Point
+type=	TwoD_SPATIAL
+
+name=	White Point
+type=	TwoD_SPATIAL
+
+name=	Sample Size
+type=	OneD
+
+

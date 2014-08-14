@@ -1,0 +1,21 @@
+[name]
+name=Leave Color
+matchName=ADBE Leave Color
+
+[properties]
+name=	Amount to Decolor
+type=	OneD
+
+name=	Color To Leave
+type=	COLOR
+
+name=	Tolerance
+type=	OneD
+
+name=	Edge Softness
+type=	OneD
+
+name=	Match colors
+type=	OneD
+
+

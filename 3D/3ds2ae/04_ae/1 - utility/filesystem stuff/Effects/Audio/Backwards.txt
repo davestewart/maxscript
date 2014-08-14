@@ -1,0 +1,9 @@
+[name]
+name=Backwards
+matchName=ADBE Aud Reverse
+
+[properties]
+name=	Swap Channels
+type=	OneD
+
+

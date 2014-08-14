@@ -1,0 +1,27 @@
+[name]
+name=Cineon Converter
+matchName=ADBE Cineon Converter
+
+[properties]
+name=	Conversion Type
+type=	OneD
+
+name=	10 Bit Black Point
+type=	OneD
+
+name=	Internal Black Point
+type=	OneD
+
+name=	10 Bit White Point
+type=	OneD
+
+name=	Internal White Point
+type=	OneD
+
+name=	Gamma
+type=	OneD
+
+name=	Highlight Rolloff
+type=	OneD
+
+

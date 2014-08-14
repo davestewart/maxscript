@@ -1,0 +1,111 @@
+<XML>
+   <controllers>
+      <controller classOf="linear_float">
+         <key time="" selected="" value=""/>
+      </controller>
+      <controller classOf="linear_position">
+         <key time="" selected="" value=""/>
+      </controller>
+      <controller classOf="linear_rotation">
+         <key time="" selected="" value=""/>
+      </controller>
+      <controller classOf="linear_scale">
+         <key time="" selected="" value=""/>
+      </controller>
+      <controller classOf="prs"/>
+      <controller classOf="lookat"/>
+      <controller classOf="bezier_float">
+         <key time="" selected="" value="" x_locked="" y_locked="" z_locked="" constantVelocity="" inTangent="" outTangent="" inTangentType="" outTangentType=""/>
+      </controller>
+      <controller classOf="bezier_position">
+         <key time="" selected="" value="" x_locked="" y_locked="" z_locked="" constantVelocity="" inTangent="" outTangent="" inTangentType="" outTangentType=""/>
+      </controller>
+      <controller classOf="bezier_rotation">
+         <key time="" selected="" value="" x_locked="" y_locked="" z_locked="" constantVelocity="" inTangent="" outTangent="" inTangentType="" outTangentType=""/>
+      </controller>
+      <controller classOf="bezier_point3">
+         <key time="" selected="" x_locked="" y_locked="" z_locked="" constantVelocity="" value="" inTangent="" outTangent="" inTangentType="" outTangentType=""/>
+      </controller>
+      <controller classOf="bezier_scale">
+         <key time="" selected="" value="" x_locked="" y_locked="" z_locked="" constantVelocity="" inTangent="" outTangent="" inTangentType="" outTangentType=""/>
+      </controller>
+      <controller classOf="bezier_color">
+         <key time="" selected="" value="" x_locked="" y_locked="" z_locked="" constantVelocity="" inTangent="" outTangent="" inTangentType="" outTangentType=""/>
+      </controller>
+      <controller classOf="boolean_float">
+         <key time="" selected="" value=""/>
+      </controller>
+      <controller classOf="Path_Constraint"/>
+      <controller classOf="Euler_XYZ"/>
+      <controller classOf="Position_Expression"/>
+      <controller classOf="Point3_Expression"/>
+      <controller classOf="Float_Expression"/>
+      <controller classOf="Scale_Expression"/>
+      <controller classOf="Local_Euler_XYZ"/>
+      <controller classOf="Position_Constraint"/>
+      <controller classOf="Orientation_Constraint"/>
+      <controller classOf="LookAt_Constraint"/>
+      <controller classOf="Slave_Control"/>
+      <controller classOf="BipSlave_Control"/>
+      <controller classOf="tcb_float">
+         <key time="" selected="" value="" tension="" continuity="" bias="" easeTo="" easeFrom=""/>
+      </controller>
+      <controller classOf="tcb_position">
+         <key time="" selected="" value="" tension="" continuity="" bias="" easeTo="" easeFrom=""/>
+      </controller>
+      <controller classOf="tcb_rotation">
+         <key time="" selected="" value="" tension="" continuity="" bias="" easeTo="" easeFrom=""/>
+      </controller>
+      <controller classOf="tcb_point3">
+         <key time="" selected="" value="" tension="" continuity="" bias="" easeTo="" easeFrom=""/>
+      </controller>
+      <controller classOf="tcb_scale">
+         <key time="" selected="" value="" tension="" continuity="" bias="" easeTo="" easeFrom=""/>
+      </controller>
+      <controller classOf="Barycentric_Morph_Controller"/>
+      <controller classOf="Cubic_Morph_Controller"/>
+      <controller classOf="IKControl"/>
+      <controller classOf="Color_RGB"/>
+      <controller classOf="ScaleXYZ"/>
+      <controller classOf="Point3_XYZ"/>
+      <controller classOf="Position_XYZ"/>
+      <controller classOf="TVDummyControl"/>
+      <controller classOf="rotation_script"/>
+      <controller classOf="Rotation_Wire"/>
+      <controller classOf="point3_script"/>
+      <controller classOf="Point3_Wire"/>
+      <controller classOf="float_script"/>
+      <controller classOf="Float_Wire"/>
+      <controller classOf="float_list"/>
+      <controller classOf="point3_list"/>
+      <controller classOf="position_list"/>
+      <controller classOf="rotation_list"/>
+      <controller classOf="scale_list"/>
+      <controller classOf="Block_Control"/>
+      <controller classOf="position_script"/>
+      <controller classOf="Position_Wire"/>
+      <controller classOf="IKChainControl"/>
+      <controller classOf="scale_script"/>
+      <controller classOf="Scale_Wire"/>
+      <controller classOf="transform_script"/>
+      <controller classOf="Link_Constraint"/>
+      <controller classOf="Noise_float"/>
+      <controller classOf="Noise_position"/>
+      <controller classOf="Noise_point3"/>
+      <controller classOf="Noise_rotation"/>
+      <controller classOf="Noise_scale"/>
+      <controller classOf="On_Off"/>
+      <controller classOf="Attachment"/>
+      <controller classOf="LOD_Controller"/>
+      <controller classOf="IK_ControllerMatrix3Controller"/>
+      <controller classOf="Surface_position"/>
+      <controller classOf="Missing_Float_Control"/>
+      <controller classOf="Missing_Point3_Control"/>
+      <controller classOf="Missing_Matrix3_Control"/>
+      <controller classOf="Missing_Position_Control"/>
+      <controller classOf="Missing_Rotation_Control"/>
+      <controller classOf="Missing_Scale_Control"/>
+      <controller classOf="Missing_Morph_Control"/>
+      <controller classOf="Master_Controller_plugin_not_found"/>
+   </controllers>
+</XML>

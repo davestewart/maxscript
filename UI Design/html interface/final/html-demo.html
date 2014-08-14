@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>MaxScript test</title>
+<style type="text/css">
+<!--
+html{
+	margin:0px;
+	padding:0px;
+	height:100%;
+	}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding:10px 10px 0px 10px;
+	margin:0px;
+	border: solid 1px #000000;
+	height:100%;
+	}
+a, a:link {
+	color: #0066FF;
+}
+a:hover {
+	color:#CC0000;
+}
+input {
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	width:480px;
+	padding:0px;
+	margin:0px;
+	margin-bottom:5px;
+}
+div {
+	margin: 5px;
+	margin-bottom:20px;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	width: 500px;
+}
+h1 {
+	font-size: 13px;
+	margin: 0px 0px 5px;
+	padding: 0px;
+	background-color: #CCCCCC;
+	color: #0066FF;
+}
+.code{
+	background-color:#eeeeee;
+	}
+p {
+	margin: 0px 0px 10px;
+	padding: 0px;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript" src="maxHtml.js"></script>
+</head>
+<body>
+<div id="div1">
+	<h1>Predefined scripts</h1>
+	<p>The following MaxScript commands are hardcoded into the links. Click them to see what happens!<br>
+		You can see the output in the bottom &quot;Output&quot; panel. </p>
+	<table width="100%"  border="0" cellspacing="5" cellpadding="0">
+		<tr valign="top">
+			<td width="50%"><a href="javascript:maxCmd('for i = 1 to 10 do (cone radius:(random 1 20) pos:(random [-100,-100,-100] [100,100,100]) wirecolor:(random black white))')">Create 10 random cones...</a><br>
+				<a href="javascript:maxCmd('b = box name:&quot;box 01&quot; heightSegs:10 height:200 isSelected:true')">Create a box...</a><br>
+				<a href="javascript:maxCmd('addmodifier b (bend())')">Add bend modifier</a><br>
+				<a href="javascript:maxCmd('b.modifiers[1].bendAngle = 90')">Set bend to 90</a><br>
+				<a href="javascript:maxCmd('delete objects')">Delete objects</a>
+			</td>
+			<td width="50%" id="maxDefined"></td>
+		</tr>
+	</table>
+</div>
+<div id="div2">
+	<h1>User-defined scripts</h1>
+	<p>In this box you can try out your own MaxScript commands: </p>
+	<input type="text" id="tfMaxScript" value="b=box pos:(random [0,0,0] [100/2,100,100]) name:(if 1&lt;2 then &quot;dave&quot; else &quot;bill&quot;)">
+	<br>
+	<input type="button" name="Submit" value="Send command to max" onClick="maxCmd(document.getElementById('tfMaxScript').value)">
+</div>
+<div id="debug">
+	<h1>Output</h1>
+	<table width="100%" border="0" cellspacing="5" cellpadding="3">
+		<tr valign="top">
+			<td width="64" height="30">maxscript:</td>
+			<td width="521" height="30" id="tfJavaScript" class="code">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td height="30">javascript:</td>
+			<td height="30" id="tfUrl" class="code">&nbsp;</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

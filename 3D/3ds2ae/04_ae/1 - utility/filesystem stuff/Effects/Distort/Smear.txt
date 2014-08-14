@@ -1,0 +1,30 @@
+[name]
+name=Smear
+matchName=ADBE SCHMEAR
+
+[properties]
+name=	Source Mask
+type=	MASK_INDEX
+
+name=	Boundary Mask
+type=	MASK_INDEX
+
+name=	Mask Offset
+type=	TwoD_SPATIAL
+
+name=	Mask Rotation
+type=	OneD
+
+name=	Mask Scale
+type=	OneD
+
+name=	Percent
+type=	OneD
+
+name=	Elasticity
+type=	OneD
+
+name=	Interpolation Method
+type=	OneD
+
+

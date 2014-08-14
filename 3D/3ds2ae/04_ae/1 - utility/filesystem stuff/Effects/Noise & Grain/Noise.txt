@@ -1,0 +1,15 @@
+[name]
+name=Noise
+matchName=ADBE Noise
+
+[properties]
+name=	Amount of Noise
+type=	OneD
+
+name=	Noise Type
+type=	OneD
+
+name=	Clipping
+type=	OneD
+
+

@@ -1,0 +1,99 @@
+[name]
+name=Fractal Noise
+matchName=ADBE Fractal Noise
+
+[properties]
+name=	Fractal Type
+type=	OneD
+
+name=	Noise Type
+type=	OneD
+
+name=	Invert
+type=	OneD
+
+name=	Contrast
+type=	OneD
+
+name=	Brightness
+type=	OneD
+
+name=	Overflow
+type=	OneD
+
+name=	Transform
+type=	NO_VALUE
+
+name=	Rotation
+type=	OneD
+
+name=	Uniform Scaling
+type=	OneD
+
+name=	Scale
+type=	OneD
+
+name=	Scale Width
+type=	OneD
+
+name=	Scale Height
+type=	OneD
+
+name=	Offset Turbulence
+type=	TwoD_SPATIAL
+
+name=	Perspective Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Complexity
+type=	OneD
+
+name=	Sub Settings
+type=	NO_VALUE
+
+name=	Sub Influence (%)
+type=	OneD
+
+name=	Sub Scaling
+type=	OneD
+
+name=	Sub Rotation
+type=	OneD
+
+name=	Sub Offset
+type=	TwoD_SPATIAL
+
+name=	Center Subscale
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Evolution
+type=	OneD
+
+name=	Evolution Options
+type=	NO_VALUE
+
+name=	Cycle Evolution
+type=	OneD
+
+name=	Cycle (in Revolutions)
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	Random Seed
+type=	NO_VALUE
+
+name=	Opacity
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+

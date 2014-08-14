@@ -1,0 +1,15 @@
+[name]
+name=Broadcast Colors
+matchName=ADBE Broadcast Colors
+
+[properties]
+name=	Broadcast Locale
+type=	OneD
+
+name=	How to Make Color Safe
+type=	OneD
+
+name=	Maximum Signal Amplitude (IRE)
+type=	OneD
+
+

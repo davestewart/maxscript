@@ -1,0 +1,12 @@
+[name]
+name=Spherize
+matchName=ADBE Spherize
+
+[properties]
+name=	Radius
+type=	OneD
+
+name=	Center of Sphere
+type=	TwoD_SPATIAL
+
+

@@ -1,0 +1,9 @@
+[name]
+name=Curves
+matchName=ADBE CurvesCustom
+
+[properties]
+name=	Curves
+type=	CUSTOM_VALUE
+
+

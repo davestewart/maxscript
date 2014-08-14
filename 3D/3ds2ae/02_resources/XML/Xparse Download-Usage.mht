@@ -1,0 +1,106 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Xparse Download/Usage
+Date: Thu, 18 Nov 2004 01:50:33 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.jeremie.com/Dev/XML/download.jer
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Xparse Download/Usage</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"" name=3Ddescription>
+<META content=3D"MSHTML 6.00.2600.0" name=3DGENERATOR></HEAD>
+<BODY vLink=3D#101080 aLink=3D#101080 bgColor=3D#f0f0f8>
+<TABLE width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD width=3D"30%" bgColor=3D#ffe0e0>
+      <TABLE height=3D"100%" width=3D"100%">
+        <TBODY>
+        <TR align=3Dmiddle>
+          <TD width=3D"23%"><FONT face=3DVerdana color=3D#600808 =
+size=3D+1><A=20
+            =
+href=3D"http://www.jeremie.com/Dev/XML/index.jer"><B>^</B></A></FONT></TD=
+>
+          <TD width=3D"11%"><FONT face=3DVerdana color=3D#600808=20
+            size=3D+0><B>J</B></FONT></TD>
+          <TD width=3D"11%"><FONT face=3DVerdana color=3D#600808=20
+            size=3D+0><B>e</B></FONT></TD>
+          <TD width=3D"11%"><FONT face=3DVerdana color=3D#600808=20
+            size=3D+0><B>r</B></FONT></TD>
+          <TD width=3D"11%"><FONT face=3DVerdana color=3D#600808=20
+            size=3D+0><B>e</B></FONT></TD>
+          <TD width=3D"11%"><FONT face=3DVerdana color=3D#600808=20
+            size=3D+0><B>m</B></FONT></TD>
+          <TD width=3D"11%"><FONT face=3DVerdana color=3D#600808=20
+            size=3D+0><B>i</B></FONT></TD>
+          <TD width=3D"11%"><FONT face=3DVerdana color=3D#600808=20
+            size=3D+0><B>e</B></FONT></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright colSpan=3D7><FONT =
+face=3DVerdana=20
+            color=3D#086008 =
+size=3D+1>Tech</FONT></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=3Dcenter align=3Dmiddle width=3D"70%"><FONT =
+face=3DVerdana=20
+      size=3D+2><I>Xparse Download/Usage</I></FONT> </TD></TR>
+  <TR>
+    <TD bgColor=3D#600808 colSpan=3D2 height=3D5>
+      <TABLE width=3D"100%">
+        <TBODY>
+        <TR>
+          <TD></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<P>As it currently works(until DOM support is added), it is simply a =
+function=20
+that takes a string and parses it, extracting the tags and their =
+attributes. It=20
+collects the tags and all of the textual information into some objects, =
+then=20
+returns the object as one main "root" object.</P>
+<P>For now, the API is extreemly simple and only for read-only purposes. =
+There=20
+are four types of objects, listed here with each of their properties:=20
+<UL>
+  <LI>An Element: &lt;tag&gt;=20
+  <UL>
+    <LI>type - "element"=20
+    <LI>name - string containing the elements name=20
+    <LI>attributes - array containing name=3Dvalue pairs for each =
+attribute=20
+    <LI>contents - array containing objects for everything within the =
+tag=20
+  </LI></UL>
+  <LI>PI's - Processing Instructions: &lt;? some data ?&gt;=20
+  <UL>
+    <LI>type - "pi"=20
+    <LI>value - string containing the data in the pi for the target =
+</LI></UL>
+  <LI>Comments: &lt;!-- my comment --&gt;=20
+  <UL>
+    <LI>type - "comment"=20
+    <LI>value - string containing the text in the comment </LI></UL>
+  <LI>Textual Information=20
+  <UL>
+    <LI>type - "chardata"=20
+    <LI>value - string containing the text </LI></UL></LI></UL>
+<P></P>
+<P>Download the source JavaScript library clicking(right-click/save-as) =
+<A=20
+href=3D"http://www.jeremie.com/Dev/XML/xparse.js">here</A>. Use it by =
+including it=20
+into your web page: <TT>&lt;SCRIPT =
+SRC=3D"xparse.js"&gt;&lt;/SCRIPT&gt;</TT> </P>
+<CENTER>
+<H2><A =
+href=3D"http://www.jeremie.com/Dev/XML/">Back</A></H2></CENTER><BR><BR>
+<CENTER><TT>[=A9 Copyright 1998 <A =
+href=3D"http://www.jeremie.com/">Jeremie</A>, All=20
+Rights Reserved]</TT></CENTER>
+<CENTER><TT>[Modified Monday October 19th 1998, 10:09:06 PM CST By <A=20
+href=3D"mailto:jer@jeremie.com">jer@jeremie.com</A>]</TT></CENTER><BR></B=
+ODY></HTML>

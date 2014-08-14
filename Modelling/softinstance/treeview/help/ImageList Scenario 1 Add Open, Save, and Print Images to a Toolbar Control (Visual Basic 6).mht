@@ -1,0 +1,1173 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: ImageList Scenario 1: Add Open, Save, and Print Images to a Toolbar Control (Visual Basic 6)
+Date: Thu, 12 Jan 2006 23:56:42 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C617D3.D6070380"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file://E:\03_Scripting\maxScript\max 5\softinstance\treeview\help\_new\vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--TOOLBAR_EXEMPT--><HTML xmlns:tool =3D=20
+"http://www.microsoft.com/tooltip"><HEAD><TITLE>ImageList Scenario 1: =
+Add Open, Save, and Print Images to a Toolbar Control (Visual Basic =
+6)</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META=20
+content=3D"Toolbars typically contain a row of buttons where each button =
+performs a frequently used operation when pressed. Toolbar buttons often =
+save screen space by using images to represent the operation."=20
+name=3DDescription>
+<META content=3Dall name=3DRobots>
+<META content=3D"" name=3DKeywords>
+<META content=3Den-us name=3DMS.LOCALE>
+<META content=3Dmsdn name=3DAuthor><LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fi=
+les/ie4.css"=20
+type=3Dtext/css rel=3Dstylesheet><LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fi=
+les/ie5.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<STYLE>BODY {
+	MARGIN: 0px; FONT-FAMILY: verdana,arial,helvetica
+}
+</STYLE>
+<LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fi=
+les/default.css"=20
+type=3Dtext/css rel=3Dstylesheet><xml id=3DxmlPageContext><eyebrow =
+findmenu=3D"false">
+	<item label=3D"MSDN Home" url=3D"/default.asp"/>
+	<item label=3D"MSDN Library" url=3D"/library/default.asp"/>
+	<item label=3D"Development Tools and Languages" =
+url=3D"/library/en-us/dnanchor/html/vistoolsanchor.asp" id=3D"msdnlib4" =
+xmlsrc=3D"/library/en-us/toc/msdnlib/msdnlib4_.xml"/><item =
+label=3D"Visual Studio 6.0" =
+url=3D"/library/en-us/dnanchor/html/vs60anchor.asp" =
+id=3D"msdnlib40"/><item label=3D"Visual Basic 6.0" =
+url=3D"/library/en-us/dnanchor/html/vb6anchor.asp" id=3D"msdnlib41" =
+xmlsrc=3D"/library/en-us/toc/msdnlib/msdnlib41_.xml"/><item =
+label=3D"Product Documentation" id=3D"msdnlib42"/><item label=3D"Using =
+Visual Basic" id=3D"vbcon9833" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon9833_.xml"/><item =
+label=3D"Component Tools Guide (Pro, Enterprise only)" =
+url=3D"/library/en-us/vbcon98/html/vbconComponentToolsGuide.asp" =
+id=3D"vbcon98545"/><item label=3D"Using the ActiveX Controls" =
+url=3D"/library/en-us/vbcon98/html/vbconusingtheactivexcontrols.asp" =
+id=3D"vbcon98557" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon98557_.xml"/><item =
+label=3D"Using the ImageList Control" =
+url=3D"/library/en-us/vbcon98/html/vbconusingimagelistcontrol.asp" =
+id=3D"vbcon98570" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon98570_.xml"/><item =
+label=3D"ImageList Scenario: Add Open, Save, and Print Images to a =
+Toolbar Control" =
+url=3D"/library/en-us/vbcon98/html/vbconimagelistscenario1addopensaveprin=
+timagestotoolbarcontrol.asp" =
+id=3D"vbcon98572"/></eyebrow></xml><!--VENUS_START--><!---VENUS_END---><L=
+INK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fi=
+les/css.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.2900.2802" name=3DGENERATOR></HEAD>
+<BODY text=3D#000000 bgColor=3D#ffffff leftMargin=3D0 topMargin=3D0 =
+MARGINHEIGHT=3D"0"=20
+MARGINWIDTH=3D"0">
+<TABLE height=3D24 cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+bgColor=3D#ffffff=20
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD class=3Deyebrow vAlign=3Dcenter align=3Dleft =
+width=3D"100%">&nbsp;&nbsp; <A=20
+      class=3Dsmall href=3D"http://msdn.microsoft.com/default.asp" =
+target=3D_top>MSDN=20
+      Home</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      href=3D"http://msdn.microsoft.com/library/default.asp" =
+target=3D_top>MSDN=20
+      Library</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/dnanchor/html/vistoolsanchor.asp"=20
+      target=3D_top>Development Tools and Languages</A>&nbsp;&gt;&nbsp; =
+<A=20
+      class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/dnanchor/html/vs60anchor.asp"=20
+      target=3D_top>Visual Studio 6.0</A>&nbsp;&gt;&nbsp; <A =
+class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/dnanchor/html/vb6anchor.asp"=20
+      target=3D_top>Visual Basic 6.0</A>&nbsp;&gt;&nbsp; <A =
+class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconComponentToolsGuide.asp"=20
+      target=3D_top>Component Tools Guide (Pro, Enterprise=20
+      only)</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconusingtheactivexcontrols.asp"=20
+      target=3D_top>Using the ActiveX Controls</A>&nbsp;&gt;&nbsp; <A =
+class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconusingimagelistcontrol.asp"=20
+      target=3D_top>Using the ImageList Control</A><A=20
+      =
+href=3D"http://msdn.microsoft.com/library/en-us/vbcon98/html/"></A>=20
+  </TD></TR></TBODY></TABLE>
+<TABLE class=3DclsContainer style=3D"TABLE-LAYOUT: fixed" =
+cellSpacing=3D0=20
+cellPadding=3D15 width=3D"100%" border=3D0 float=3D"left">
+  <TBODY>
+  <TR>
+    <TD =
+vAlign=3Dtop><!--TOOLBAR_START--><!--TOOLBAR_EXEMPT--><!--TOOLBAR_END--><=
+!-----------------><!--BEGIN_CONTENT--><!----------------->
+      <DIV style=3D"DISPLAY: none"></DIV><!--REMOVED HH1.x ALINK-->
+      <P align=3Dright><FONT size=3D1><I>Visual Basic =
+Concepts</I></FONT></P>
+      <H1><A=20
+      =
+name=3Dvbconimagelistscenario1addopensaveprintimagestotoolbarcontrol></A>=
+ImageList=20
+      Scenario: Add Open, Save, and Print Images to a Toolbar =
+Control</H1>
+      <P><A=20
+      =
+href=3D"http://msdn.microsoft.com/library/en-us/vbcon98/dt_vbconImageList=
+Scenario1AddOpenSavePrintImagesToToolbarControlC.asp">See=20
+      Also</A></P>
+      <P>Toolbars typically contain a row of buttons where each button =
+performs=20
+      a frequently used operation when pressed. Toolbar buttons often =
+save=20
+      screen space by using images to represent the operation. In this =
+scenario,=20
+      three common functions =97 opening, saving, and printing a file =
+=97 are=20
+      represented by images assigned to Button objects of a Toolbar =
+control. The=20
+      images and buttons commonly used to represent these functions are =
+shown=20
+      here:</P>
+      <P><IMG alt=3D""=20
+      =
+src=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/he=
+lp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fil=
+es/avtct84a.gif"=20
+      border=3D0></P>
+      <P>These objects are used in the following example:=20
+      <UL type=3Ddisc>
+        <LI>ImageList control named "imlTool"<BR><BR>
+        <LI>Toolbar control named "tbrStandard" </LI></UL>
+      <P class=3Dlabel><B>To add images to a Toolbar control</B>=20
+      <OL>
+        <LI>Add images to the ImageList and assign unique Key property =
+values to=20
+        each object.<BR><BR>
+        <LI>Associate the ImageList with the Toolbar control.<BR><BR>
+        <LI>Assign images to Button objects using the <B>Buttons =
+</B>tab.=20
+      </LI></OL>
+      <H2>Add Images to the ImageList and Assign Unique Key Property =
+Values</H2>
+      <P class=3Dlabel><B>To add ListImage objects at design time</B>=20
+      <OL>
+        <LI>Right-click the <B>ImageList</B> control and click =
+<B>Properties</B>=20
+        to display the <B>Property Pages </B>dialog box.<BR><BR>
+        <LI>Click the <B>Images</B> tab.<BR><BR>
+        <LI>Click <B>Insert Picture </B>to display the <B>Select Picture =
+
+        </B>dialog box.<BR><BR>
+        <LI>Use the dialog box to find the bitmap files in the following =
+table.=20
+        The bitmaps can be found in the samples directory.<BR><BR>
+        <LI>After finding a file, click the file, and click <B>Open</B>, =
+or=20
+        double-click the file to open insert it into the ImageList=20
+        control.<BR><BR>
+        <LI>In the <B>Images </B>tab, click the <B>Key </B>box and type =
+the Key=20
+        property value, as found in the following table. The <B>Images =
+</B>tab=20
+        should resemble the figure below.=20
+        <TABLE cols=3D2 cellPadding=3D5 rules=3Drows border=3D1 =
+frame=3Dbelow>
+          <TBODY>
+          <TR vAlign=3Dtop>
+            <TD class=3Dlabel width=3D"34%"><B>File</B></TD>
+            <TD class=3Dlabel width=3D"66%"><B>Key</B></TD></TR>
+          <TR vAlign=3Dtop>
+            <TD width=3D"34%">open.gif</TD>
+            <TD width=3D"66%">open</TD></TR>
+          <TR vAlign=3Dtop>
+            <TD width=3D"34%">save.gif</TD>
+            <TD width=3D"66%">save</TD></TR>
+          <TR vAlign=3Dtop>
+            <TD width=3D"34%">print.gif</TD>
+            <TD =
+width=3D"66%">print</TD></TR></TBODY></TABLE><BR></LI></OL>
+      <P class=3Dlabel><B>Images tab with three ListImage =
+objects</B></P>
+      <P><IMG alt=3D""=20
+      =
+src=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/he=
+lp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fil=
+es/avtct055.gif"=20
+      border=3D0></P>
+      <H2>Associate the ImageList with the Toolbar Control</H2>
+      <P>Before you can assign the images to Button objects, you must =
+first=20
+      associate the ImageList with the Toolbar control.</P>
+      <P class=3Dlabel><B>To associate an ImageList with a Toolbar =
+control</B>=20
+      <OL>
+        <LI>Right-click on the <B>Toolbar</B> control and click =
+<B>Properties=20
+        </B>to display the control's <B>Property Pages</B>, as shown in =
+the=20
+        figure below.<BR><BR>
+        <LI>On the <B>General </B>tab, select the name of the ImageList =
+control=20
+        from the <B>ImageList </B>box. </LI></OL>
+      <P class=3Dlabel><B>Associate an ImageList with a Toolbar =
+control</B></P>
+      <P><IMG alt=3D""=20
+      =
+src=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/he=
+lp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fil=
+es/avtct056.gif"=20
+      border=3D0></P>
+      <H2>Assign Images to Button Objects Using the Buttons Tab</H2>
+      <P class=3Dlabel><B>To assign an image to a Button object</B>=20
+      <OL>
+        <LI>Click the <B>Buttons</B> tab (on the Toolbar control's =
+<B>Property=20
+        Pages </B>dialog box) to display the Buttons tab, shown in the =
+figure=20
+        below.<BR><BR>
+        <LI>Click <B>Insert Button </B>to insert a new Button =
+object.<BR><BR>
+        <LI>Click the <B>Image </B>box and type the Key value of a =
+ListImage=20
+        object.<BR><BR>
+        <LI>Click <B>Apply</B>.<BR><BR>
+        <LI>Repeat steps 2 to 4 to add more buttons, and assign images =
+to the=20
+        new Button objects. </LI></OL>
+      <P class=3Dlabel><B>Add Button objects and assign Images using the =
+Buttons=20
+      tab</B></P>
+      <P><IMG alt=3D""=20
+      =
+src=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/he=
+lp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fil=
+es/avtct057.gif"=20
+      =
+border=3D0></P><!-----------------><!--END_CONTENT--><!----------------->=
+</TD></TR></TBODY></TABLE><BR=20
+style=3D"OVERFLOW: hidden; LINE-HEIGHT: 1px" clear=3Dall>
+<TABLE id=3DmsviFooter cellSpacing=3D0 cellPadding=3D0 width=3D"100%">
+  <TBODY>
+  <TR vAlign=3Dbottom>
+    <TD id=3DmsviFooter2=20
+    style=3D"FILTER: =
+progid:DXImageTransform.Microsoft.Gradient(startColorStr=3D'#FFFFFF', =
+endColorStr=3D'#669AFF', gradientType=3D'1')">
+      <DIV id=3DmsviLocalFooter><NOBR><A=20
+      href=3D"http://go.microsoft.com/?linkid=3D317027">Manage Your =
+Profile</A>=20
+      |</NOBR><WBR><NOBR><A=20
+      =
+href=3D"http://msdn.microsoft.com/isapi/gomscom.asp?target=3D/legal/"=20
+      target=3D_parent>Legal</A> |</NOBR><WBR><NOBR><A=20
+      href=3D"http://go.microsoft.com/?linkid=3D2028439" =
+target=3D_parent>Contact=20
+      Us</A> |</NOBR><WBR><NOBR><A =
+href=3D"http://msdn.microsoft.com/flash/"=20
+      target=3D_parent>MSDN Flash Newsletter</A></NOBR></DIV>
+      <DIV id=3DmsviGlobalFooter><SPAN dir=3Dltr>=A9 2006 Microsoft =
+Corporation. All=20
+      rights reserved.&nbsp;</SPAN><NOBR><A=20
+      href=3D"http://www.microsoft.com/info/cpyright.mspx">Terms of =
+Use</A>=20
+      |</NOBR><WBR><NOBR><A=20
+      =
+href=3D"http://msdn.microsoft.com/library/toolbar/3.0/trademarks/en-us.ms=
+px">Trademarks</A>=20
+      |</NOBR><WBR><NOBR><A=20
+      href=3D"http://www.microsoft.com/info/privacy.mspx">Privacy=20
+      Statement</A></NOBR></DIV></TD>
+    <TD width=3D105 bgColor=3D#669aff><IMG title=3D"" height=3D29 =
+alt=3DMicrosoft=20
+      =
+src=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/he=
+lp/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_fil=
+es/text.jpg"=20
+      width=3D105 border=3D0></TD></TR></TBODY></TABLE>
+<TABLE height=3D58 cellSpacing=3D0 cellPadding=3D0 width=3D"100%">
+  <TBODY>
+  <TR vAlign=3Dtop>
+    <TD>
+      <DIV style=3D"WIDTH: 200px"></DIV></TD>
+    <TD=20
+    style=3D"FILTER: =
+progid:DXImageTransform.Microsoft.Gradient(startColorStr=3D'#FFFFFF', =
+endColorStr=3D'#669AFF', gradientType=3D'1')"=20
+    width=3D"100%"></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/avtct84a.gif
+
+R0lGODdhSAAYAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgICAgMDAwP8AAAD/AP//AAAA//8A/wD/
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAASAAYAAAI/wARCBxI
+sKDBgwgTKlx4EMCDhxAjSpz4wCHFixMtYtxYUaBDhggPfARpUOQDkiUBeDyJkqDJli5HwkQgcuVM
+gS9v5pxZE4FMhACCpmTpM6jRo0cH7iSINKlSlT6JNhyoEipNmQAGWC1Y9anUlRS39vy5UChOrFqB
+mr36NSrSjjFtelzLde3OrFuZpj37VaPEvGNZAljwYEHTvHyp7jWI1yvXikch24U60iHhy4XhFry7
+mOvipX4jdoUa2CPm04jZKk7t8zPWw0KrkqYsOLNh2GY5az08wLVghaPPyh1cOGvv48et6kbO3Pdc
+3GZnDy/ePHlMosZxO/dZ8sABj9yFR2U1bbw6YLS7nTZOHJ7ggvfPnw4v3xyx7qYet0M32r50UdwH
+3YdUfsphlVBX8o2n00/7TSbVfpvRdpNqC7ZFkn88kYXSUi0F5t2HIIYookkjliiiQyam6B1lDbbo
+4osvTijjjAoFBAA7
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/avtct055.gif
+
+R0lGODdhogE6AfcAAAAAAIAAAACAAICAAAAAgIAAgACAgICAgMDAwP8AAAD/AP//AAAA//8A/wD/
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAogE6AQAI/wAfCBxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIUeEBAA8QiBxJsqTJkyhTqlzJsqXLlzBjypxJs6bN
+mzhz6tzJM+XHkASCCh1KtKjRo0iTKl3KtKnTp1CjSp1KtarVq1izat1qFMFPBFzDih1LtqzZs2jT
+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
+fPr17WdVnV//fv79/f8HMEABByTQroAAADs=
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/avtct056.gif
+
+R0lGODdhogE6AfcAAAAAAIAAAACAAICAAAAAgIAAgACAgICAgMDAwP8AAAD/AP//AAAA//8A/wD/
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAogE6AQAI/wAfCBxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIUeEBAA8QiBxJsqTJkyhTqlzJsqXLlzBjypxJs6bN
+mzhz6tzJM+XHkASCCh1KtKjRo0iTKl3KtKnTp1CjSp1KtarVq1izat1qFMFPBFzDih1LtqzZs2jT
+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
+ZP34n//6v//8z0gBAQA7
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/avtct057.gif
+
+R0lGODdhogE6AfcAAAAAAIAAAACAAICAAAAAgIAAgACAgICAgMDAwP8AAAD/AP//AAAA//8A/wD/
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAogE6AQAI/wAfCBxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIUeEBAA8QiBxJsqTJkyhTqlzJsqXLlzBjypxJs6bN
+mzhz6tzJM+XHkASCCh1KtKjRo0iTKl3KtKnTp1CjSp1KtarVq1izat1qFMFPBFzDih1LtqzZs2jT
+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
+vP/8x+/61F/91n/92G9Gur/93N/93r/9AQEAOw==
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/text.jpg
+
+/9j/4AAQSkZJRgABAQEAGAAYAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAdAGkDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD90/8A
+gmF8N9P8bfHbXtd1zS7LVdF8E+BtRujb6jZw39m+ta7fWWkadHNb3Mcls2dOfXbiNpFdkltUMcZb
+MsX6eeKf2bfCHi/9rDwT8Q73w34ctPh78O/hfp9zHYwaXplto3iHxz4k8UeI9P8ADsM9rDBHaagl
+jbebqRfEjLfx+HonWSG6Cn8uP2Nf2l/hh+zp8K/jc+rXWsL8UvGUDxeEbax0ea6s2fQvDupf8Iyb
+vVFZYrKOfxDrd2txnzGhht1uGjb92rfUNj/wUI+EhP7OXhy+1HxP/wAIx4I0O11T4pXh0G4kuNT8
+VeH/AASui+GdHtbZJt+oWEPim7m8UXV5+5RL/QNDkjMitcRD+9vFjh/xXznxL4qzvhrKs+hlccir
+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
+KKKKACiiigD/2Q==
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/ie4.css
+
+BODY {
+	MARGIN: 0px; FONT-FAMILY: verdana,arial,helvetica
+}
+TABLE.clsContainer {
+	HEIGHT: 78%
+}
+A:link {
+	COLOR: #003399
+}
+A:visited {
+	COLOR: #660099
+}
+A:hover {
+	COLOR: #ff3300
+}
+H1 {
+	FONT-SIZE: 165%; MARGIN: 0px
+}
+H2 {
+	MARGIN-TOP: 1em; FONT-SIZE: 125%; MARGIN-BOTTOM: 0px
+}
+H3 {
+	FONT-SIZE: 115%; MARGIN-BOTTOM: 0px
+}
+H4 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+H5 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+H6 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+DIV.clsDocBody {
+	MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px
+}
+TD {
+	FONT-SIZE: 68%
+}
+TH {
+	FONT-SIZE: 68%
+}
+P {
+	MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 1em; LINE-HEIGHT: 1.5em
+}
+PRE {
+	PADDING-RIGHT: 5pt; MARGIN-TOP: 1em; PADDING-LEFT: 5pt; BACKGROUND: =
+#eeeeee; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 5pt; MARGIN-LEFT: 0px; =
+PADDING-TOP: 5pt
+}
+SPAN.db PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+SPAN.ci PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+SPAN.di PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+PRE.clsCode {
+	FONT-SIZE: 110%; FONT-FAMILY: 'courier new',courier,serif
+}
+CODE.clsText {
+	FONT-SIZE: 110%; FONT-FAMILY: 'courier new',courier,serif
+}
+PRE.clsCCCode {
+	FONT-SIZE: 120%; BACKGROUND: none transparent scroll repeat 0% 0%; =
+FONT-FAMILY: 'courier new',courier,serif
+}
+PRE.clsSyntax {
+	FONT-SIZE: 100%; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+HR {
+	COLOR: #cccccc; HEIGHT: 1px
+}
+UL {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 25px
+}
+OL {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 25px
+}
+UL LI {
+	MARGIN-BOTTOM: 0.5em; LINE-HEIGHT: 1.5em
+}
+UL LI LI {
+	LIST-STYLE-TYPE: disc
+}
+OL LI {
+	MARGIN-BOTTOM: 0.7em
+}
+INPUT.clsButton {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; MARGIN-LEFT: 5px; COLOR: #ffffff; =
+BACKGROUND-COLOR: #6699cc
+}
+P.small {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+normal; FONT-VARIANT: normal
+}
+P.smallWhite {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+P.author {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+italic; FONT-VARIANT: normal
+}
+P.NoLeftMar {
+	MARGIN-LEFT: -15px
+}
+A.small {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+normal; FONT-VARIANT: normal; TEXT-DECORATION: underline
+}
+A.smallWhite {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal; TEXT-DECORATION: =
+underline
+}
+.CODE {
+	FONT-WEIGHT: normal
+}
+.CODE2 {
+	FONT-WEIGHT: normal; BACKGROUND-COLOR: #cccccc
+}
+.DATE {
+	COLOR: #999999
+}
+.VRULE {
+	BORDER-LEFT: #cccccc 1px solid
+}
+TITLE.open {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+TITLE.closed {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #000000; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+TABLE.DATA {
+	PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 5px; =
+PADDING-BOTTOM: 5px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 5px; =
+BORDER-COLLAPSE: collapse
+}
+TH.DATA {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; =
+BACKGROUND-COLOR: #eeeeee
+}
+TD.DATA {
+	BORDER-RIGHT: #cccccc 1px solid; FONT-WEIGHT: normal; BORDER-BOTTOM: =
+#cccccc 1px solid
+}
+TABLE.clsCCDCInfo {
+	BACKGROUND-COLOR: #eeeeee
+}
+.LOCATION {
+	FONT-WEIGHT: normal; FONT-SIZE: 24px; COLOR: #cccccc; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.footer {
+	FONT: bold xx-small Verdana
+}
+.footer:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.footer:hover {
+	COLOR: #ff3300
+}
+DIV.artstyle {
+	FONT-WEIGHT: normal; FONT-SIZE: 7pt; COLOR: #000000; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, =
+sans-serif
+}
+TABLE.clsStd TH {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px; BACKGROUND-COLOR: #ddd; =
+TEXT-ALIGN: left
+}
+TABLE.clsStd TD {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px; BACKGROUND-COLOR: #eee
+}
+P.clsRef {
+	MARGIN-TOP: 12pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 0em
+}
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/ie5.css
+
+BODY {
+	FONT-FAMILY: verdana
+}
+TABLE.clsComment {
+	FONT-FAMILY: verdana
+}
+TABLE.clsNavLinks A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsComment A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsTeasers A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsNavLinks TD {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: x-small; =
+PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-BOTTOM: #000000 1px solid; =
+FONT-FAMILY: verdana
+}
+TABLE.clsNavLinks TD TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: =
+0px; PADDING-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; =
+BORDER-BOTTOM: 0px
+}
+DIV.clsError {
+	FONT-SIZE: 68%
+}
+TABLE DIV.clsContainer {
+	BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 68%; PADDING-BOTTOM: 10px; =
+WIDTH: 100%; PADDING-TOP: 10px; POSITION: relative; BACKGROUND-COLOR: =
+#cccccc
+}
+TABLE TABLE DIV.clsContainer {
+	BORDER-TOP: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+TD.clsHDN TABLE {
+	DISPLAY: none
+}
+SPAN.clsRespond {
+	PADDING-RIGHT: 10px; WIDTH: 50%; TEXT-ALIGN: right
+}
+SPAN.clsSig {
+	WIDTH: 49%
+}
+SPAN.clsToggle {
+	LEFT: 2px; POSITION: absolute; TOP: 0.65em
+}
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/default.css
+
+.eyebrow {
+	BORDER-RIGHT: #999999 0px solid; BORDER-TOP: #999999 0px solid; =
+BORDER-LEFT: #999999 0px solid; BORDER-BOTTOM: #999999 1px solid; =
+BACKGROUND-COLOR: #ffffff
+}
+
+------=_NextPart_000_0000_01C617D3.D6070380
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/_new/vbconimagelistscenario1addopensaveprintimagestotoolbarcontrol_files/css.css
+
+BODY {
+	MARGIN: 0px
+}
+#msviRegionIdGraphic {
+	PADDING-LEFT: 7px
+}
+#msviGlobalToolbar {
+	PADDING-LEFT: 1px
+}
+#msviGlobalToolbar A {
+	FONT: 65% Verdana; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.gt0 {
+	BORDER-RIGHT: #3568cc 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: =
+#3568cc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 100%; PADDING-BOTTOM: =
+2px; BORDER-LEFT: #3568cc 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: =
+#3568cc 1px solid
+}
+.gt1 {
+	BORDER-RIGHT: #adc9ff 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: =
+#adc9ff 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 100%; BACKGROUND: =
+#5781d5; PADDING-BOTTOM: 2px; BORDER-LEFT: #adc9ff 1px solid; =
+PADDING-TOP: 0px; BORDER-BOTTOM: #adc9ff 1px solid
+}
+.gtsep {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 2px; FONT: 65% =
+Verdana; COLOR: #adc9ff; PADDING-TOP: 0px
+}
+#msviBanner {
+	TEXT-ALIGN: right
+}
+#msviGlobalSearch {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 6px; FONT: 65% Verdana; PADDING-TOP: =
+5px; TEXT-ALIGN: left
+}
+#msviSearchForm {
+	MARGIN: -1px 0px 0px
+}
+#msviSearchBox {
+	FONT: 110% Tahoma; WIDTH: 235px; xheight: 18px
+}
+#msviGoButton {
+	PADDING-RIGHT: 0.2em; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0em; FONT: =
+110% Tahoma; MARGIN-LEFT: 6px; PADDING-TOP: 0em; POSITION: relative; =
+TOP: 1px
+}
+#msviNoSearch {
+	WIDTH: 271px
+}
+#msviMastheadHR {
+	BACKGROUND: #3366cc; OVERFLOW: hidden; HEIGHT: 1px
+}
+#msviLocalToolbar {
+	PADDING-RIGHT: 0px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 0px; =
+FONT-SIZE: 100%; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 2px; PADDING-TOP: =
+2px; BORDER-BOTTOM: #999 1px solid
+}
+#msviLocalToolbar TD {
+	FONT-SIZE: 100%
+}
+#msviLocalToolbar A {
+	FONT: 70% Verdana; COLOR: black; TEXT-DECORATION: none
+}
+.lt0 {
+	BORDER-RIGHT: #f1f1f1 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: =
+#f1f1f1 1px solid; PADDING-LEFT: 6px; BACKGROUND: #f1f1f1; =
+PADDING-BOTTOM: 0px; BORDER-LEFT: #f1f1f1 1px solid; PADDING-TOP: 0px; =
+BORDER-BOTTOM: #f1f1f1 1px solid
+}
+.lt1 {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #999 1px =
+solid; PADDING-LEFT: 6px; BACKGROUND: #ccc; PADDING-BOTTOM: 0px; =
+BORDER-LEFT: #999 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #999 1px =
+solid
+}
+.ltsep {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 0px; FONT: 70% =
+Verdana; COLOR: #a9a9a9; PADDING-TOP: 0px
+}
+.localToolbar FORM {
+	MARGIN: 0px
+}
+.localToolbar INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT: 70% =
+Tahoma, Helvetica; MARGIN-RIGHT: 8px; PADDING-TOP: 0px
+}
+#msviHomePageLink {
+	PADDING-LEFT: 2px; WIDTH: 176px
+}
+#msviHomePageLink TD {
+	FONT-SIZE: 100%
+}
+#msviHomePageLink A {
+	BORDER-RIGHT: #f1f1f1 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: =
+#f1f1f1 1px solid; DISPLAY: block; PADDING-LEFT: 6px; BACKGROUND: =
+#f1f1f1; PADDING-BOTTOM: 2px; MARGIN: 0px; BORDER-LEFT: #f1f1f1 1px =
+solid; PADDING-TOP: 2px; BORDER-BOTTOM: #f1f1f1 1px solid; WHITE-SPACE: =
+nowrap
+}
+#msviHomePageLink A:hover {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #999 1px =
+solid; DISPLAY: block; PADDING-LEFT: 6px; BACKGROUND: #ccc; =
+PADDING-BOTTOM: 2px; MARGIN: 0px; BORDER-LEFT: #999 1px solid; =
+PADDING-TOP: 2px; BORDER-BOTTOM: #999 1px solid
+}
+#msviFooter {
+	BORDER-TOP: #3366cc 1px solid; FONT: 70% Tahoma, Helvetica; POSITION: =
+absolute
+}
+#msviFooter TD {
+	FONT-SIZE: 100%
+}
+#msviLocalFooter {
+	PADDING-LEFT: 10px; MARGIN: 0px; PADDING-TOP: 8px
+}
+#msviGlobalFooter {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 13px; MARGIN: 0px; PADDING-TOP: =
+10px
+}
+#msviFooter A {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+COLOR: #03c; MARGIN-RIGHT: 2px
+}
+#msviFooter A:visited {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+COLOR: #03c
+}
+#msviFooter A:hover {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+COLOR: #f60
+}
+#msviFooter NOBR {
+	COLOR: #a9a9a9; MARGIN-RIGHT: 5px
+}
+
+------=_NextPart_000_0000_01C617D3.D6070380--

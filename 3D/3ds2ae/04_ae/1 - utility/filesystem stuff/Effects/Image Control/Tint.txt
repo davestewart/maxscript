@@ -1,0 +1,15 @@
+[name]
+name=Tint
+matchName=ADBE Tint
+
+[properties]
+name=	Map Black To
+type=	COLOR
+
+name=	Map White To
+type=	COLOR
+
+name=	Amount to Tint
+type=	OneD
+
+

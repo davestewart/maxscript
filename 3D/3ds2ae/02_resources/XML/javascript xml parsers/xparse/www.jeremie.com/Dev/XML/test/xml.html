@@ -1,0 +1,79 @@
+<HTML>
+<BODY BGCOLOR="#F0F0F8">
+<H3>Enter some XML and hit Process</H3>
+<form name="myForm">
+<textarea name="src" rows="15" cols="40" style="width=100%;"><?xml version="1.0" ?>
+
+
+<sample type="XML">
+<p>This is some <i>sample</i> text.</p>
+<p>It does support <breath/> empty tags.</p>
+<p>When you <event>press</event> the button,
+the parser will process this text and a simple javascript
+loop will regenerate it.</p>
+</sample>
+
+
+<comment>
+This section contains
+&lt;!-- a comment --&gt;
+in the middle of it
+</comment>
+
+
+<pi>
+This section contains
+<? a processing instruction ?>
+in the middle of it.
+PI's are embedded information for applications.
+</pi>
+
+
+<CDATA>
+This is a special section that
+<tag>contains &lt;![CDATA[ a CDATA </tag>section]]&gt; in</tag>
+the middle of it.
+</CDATA>
+
+</textarea>
+<BR>
+<INPUT TYPE="radio" NAME="type" VALUE="tree" CHECKED> Dynamic Tree<BR>
+<INPUT TYPE="radio" NAME="type" VALUE="regen"> Regenerate XML<BR>
+<input type="button" value="Process!" onclick="parent.process();return true;">
+<SMALL>(May take some time on large XML files)</SMALL>
+</form>
+<SCRIPT>
+parent.process();
+
+function urlDemo()
+{
+	document.forms['urlForm'].url.value = document.forms['urlForm'].demo.options[document.forms['urlForm'].demo.selectedIndex].value;
+}
+</SCRIPT>
+<HR>
+<FORM NAME="urlForm">
+Enter a URL to an <FONT SIZE="+1" COLOR="red"><B>XML</B></FONT> file to
+load it in the text box:<BR>
+<INPUT TYPE="text" SIZE="35" NAME="url" VALUE="http://">
+<INPUT TYPE="button" VALUE="Load" onclick="parent.loadurl();return true;">
+<BR>
+Or select a predefined URL then hit Load:<BR>
+<SELECT NAME="demo" onChange="urlDemo();">
+<OPTION></OPTION>
+<OPTION VALUE="http://www.jeremie.com/JS/XML/all.xml">My XML JumpStart</OPTION>
+<OPTION VALUE="http://www.microsoft.com/xml/parser/samples/email.xml">Microsoft's  XML Email example</OPTION>
+<OPTION VALUE="http://docs.sun.com:80/ab2/coll.47.4/x86INFOLIB/@xmlChunk/4895">A Chapter from docs.sun.com</OPTION>
+<OPTION VALUE="http://www.scripting.com/97/12/news27.xml">Scripting News in XML(Dec 28th)</OPTION>
+<OPTION VALUE="http://www.insidedhtml.com/xml/weather/WeatherReport.xml">InsideDHTML Weather Report Demo</OPTION>
+<OPTION VALUE="http://www.insidedhtml.com/xml/poetry/poems.asp?date=01011998">InsideDTHML Poetry Sample</OPTION>
+<OPTION VALUE="http://www.microstar.com/XML/donne.xml">Poetry marked up by David Megginson</OPTION>
+</SELECT>
+</FORM>
+<BR>
+<CENTER><TT>[&copy; 1998 <A HREF="http://www.jeremie.com/" TARGET="_top">Jeremie</A>, All Rights Reserved]</TT></CENTER>
+</BODY>
+</HTML>
+
+
+
+

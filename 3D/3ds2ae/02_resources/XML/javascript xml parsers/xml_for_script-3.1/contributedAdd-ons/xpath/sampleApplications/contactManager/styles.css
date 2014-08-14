@@ -1,0 +1,109 @@
+
+
+/*
+// =========================================================================
+//
+// styles.css -  stylesheet definitions for contactManager.html
+//
+// =========================================================================
+//
+// Copyright (C) 2001 - David Joham (djoham@yahoo.com)
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+*/
+
+
+/*********************************  BODY ELEMENTS  *********************************/
+
+body {
+    background-image: url(../../website/images/page_background.gif);
+    background-repeat: repeat;
+    color: #2F39FB;
+}
+
+/*********************************  DIV ELEMENTS  *********************************/
+
+
+/*********************************  INPUT ELEMENTS  *********************************/
+
+input.data {
+    width: 350px;
+    color: blue;
+    background: white;
+    margin-top: 5px;
+}
+
+input.actionButton {
+    width: 70px;
+    color: blue;
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+input.actionButton[disabled] {
+    color: gray;
+}
+
+input.data[disabled] {
+    background: #E4E5EE;
+}
+
+input.navigation {
+    width: 30px;
+    color: black;
+    font-weight: bolder;
+}
+
+input.navigation[disabled] {
+    color: gray;
+}
+
+
+/*********************************  TABLE ELEMENTS  *********************************/
+
+table.border {
+    width: 100%;
+}
+
+
+/*********************************  TEXTAREA ELEMENTS  *********************************/
+
+textarea.database {
+    position: absolute;
+    left: -2000px;
+    visibility: hidden;
+}
+
+/*********************************  TD ELEMENTS  *********************************/
+
+td.data {
+    width: 90%;
+}
+
+
+td.label {
+    width: 10%;
+    padding-right: 15px;
+    text-align: right;
+    color: blue;
+}
+
+td.navigation {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

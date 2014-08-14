@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0099)http://www.macromedia.com/support/flash/publishexport/scriptingwithflash/scriptingwithflash_08.html -->
+<HTML><HEAD><TITLE>Macromedia Flash - Scripting with Flash 5: Scripting for the ActiveX control</TITLE><!-- #BeginTemplate "/Templates/support_2colrnav.dwt" --><!-- #BeginEditable "head" -->
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=Content-Language content=en-US><!-- mmV=d65v1 project --><!-- #EndEditable -->
+<SCRIPT language=Javascript>
+
+function swapImage(imgName,newImg){
+if ((navigator.appName == 'Netscape' && parseFloat(navigator.appVersion) >= 3) || (parseFloat(navigator.appVersion) >= 4)){
+eval('document.' + imgName + '.src = "' + newImg + '"');
+}
+}
+
+</SCRIPT>
+<!-- css detection --><!-- PC IE--><LINK 
+href="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pc_ie.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 5.50.4134.600" name=GENERATOR></HEAD>
+<BODY vLink=#ff3300 aLink=#ff3300 link=#ff3300 bgColor=#ffffff leftMargin=0 
+topMargin=0 marginheight="0" marginwidth="0">
+<DIV align=center>
+<TABLE height=68 cellSpacing=0 cellPadding=0 width=750 bgColor=#eeeeee border=0 
+summary="global navigation">
+  <TBODY>
+  <TR vAlign=top align=left bgColor=#eeeeee>
+    <TD><!-- #BeginEditable "global_nav" --><!-- start VBSCRIPT plugin detection-->
+      <SCRIPT language=VBScript>
+Private i, x, MM_FlashControlVersion
+On Error Resume Next
+x = null
+MM_FlashControlVersion = 0
+var Flashmode
+FlashMode = False
+For i = 9 To 1 Step -1
+	Set x = CreateObject("ShockwaveFlash.ShockwaveFlash." & i)
+	
+	MM_FlashControlInstalled = IsObject(x)
+	
+	If MM_FlashControlInstalled Then
+		MM_FlashControlVersion = CStr(i)
+		Exit For
+	End If
+Next
+FlashMode = (MM_FlashControlVersion >= 5)
+If FlashMode = True Then
+ document.write "<!-- d65v1 Flash --><table width=""750"" border=""0"" cellspacing=""0"" cellpadding=""0"" align=""center""><tr><td align=""left"" valign=""top"" width=""1"" bgcolor=""#EEEEEE""><a href=""/help/accessibility.html"" target=""_top""><img src=""/images/pixel.gif"" width=""1"" height=""1"" alt=""accessibility"" border=""0""></a><br><img src=""/uber/nav/bg_sliver_67.gif"" width=""1"" height=""67"" alt="""" border=""0""></td><td align=""left"" valign=""top"" width=""749""><object classid=""clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"" codebase=""http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,30,0"" width=""749"" height=""68""><param name=movie value=""/uber/nav/global.swf""><param name=quality value=high><param name=""BGCOLOR"" value=""#EEEEEE""><param name=""salign"" value=""tl""><param name=""menu"" value=""0""><embed src=""/uber/nav/global.swf"" quality=high pluginspage=""http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"" type=""application/x-shockwave-flash"" width=""749"" height=""68"" bgcolor=""#EEEEEE"" salign=""tl"" menu=""0""></embed></object></td></tr></table>"
+Else
+ document.write "<!-- d65v1 static --><table width=""750"" border=""0"" cellspacing=""0"" cellpadding=""0""><form method=""get"" target=""_top"" action=""http://search.atomz.com/search/"" name=""""><tr><td rowspan=""2"" align=""left"" valign=""top"" width=""1""><a href=""/help/accessibility.html"" target=""_top""><img src=""/images/pixel.gif"" width=""1"" height=""1"" alt=""accessibility"" border=""0""></a><br><img src=""/uber/nav/bg_sliver_67.gif"" width=""1"" height=""67"" alt="""" border=""0""></td><td rowspan=""2"" align=""left"" valign=""top"" width=""120""><a href=""/"" target=""_top""><img src=""/uber/nav/pure_images/gn_mm_logo.gif"" width=""120"" height=""68"" border=""0"" alt=""Macromedia Logo""></a></td><td align=""left"" valign=""top"" width=""447""><img src=""/uber/nav/pure_images/gn_uppernav.gif"" width=""458"" height=""44"" alt=""Upper Navigation Bar"" usemap=""#UpperNavMap"" border=""0""></td><td width=""238"" align=""left"" valign=""top"" bgcolor=""#EEEEEE""><table border=""0"" cellspacing=""0"" cellpadding=""0""><tr><td align=""left"" valign=""top""><img src=""/images/pixel.gif"" width=""10"" height=""8"" border=""0"" alt="" ""></td><td align=""left"" valign=""top""><img src=""/images/pixel.gif"" width=""1"" height=""1"" alt="""" border=""0""></td></tr><tr><td align=""left"" valign=""top""><!-- default 'entire site' collection, 'any' value, Macromedia account--><input type=""hidden"" name=""sp-k"" value=""""><input type=""hidden"" name=""sp-p"" value=""any""><input type=""hidden"" name=""sp-a"" value=""sp1001395b""><input type=""text"" name=""sp-q"" size=""10"" style=""font: 10px Verdana,Geneva,sans-serif; color: #000000; background-color: #C1E4F2; border-color: #FFFFFF; border: 1px groove #FFFFFF; height=16px; width: 80px;"" alt=""Enter search text here.""></td><td nowrap>&nbsp;<input type=""image"" border=""0"" name=""Search"" src=""/uber/nav/pure_images/gn_search.gif"" width=""46"" height=""18"" alt=""Search""><img src=""/uber/nav/pure_images/gn_divider.gif"" width=""18"" height=""18"" alt="" ""><a href=""/help/"" target=""_top""><img src=""/uber/nav/pure_images/gn_help.gif"" width=""11"" height=""18"" border=""0"" alt=""Help""></a></td></tr></table></td></tr><tr><td colspan=""2"" align=""left"" valign=""top""><img src=""/uber/nav/pure_images/gn_lowernav.gif"" width=""629"" height=""24"" alt=""Lower Navigation Bar"" usemap=""#LowerNavMap"" border=""0""></td></tr></form></table><table border=""0"" cellspacing=""0"" cellpadding=""0"" width=""750""><tr><td align=""center"" valign=""top"" bgcolor=""#FFFFFF""><img src=""/uber/nav/static_warning.gif"" width=""750"" height=""23"" usemap=""#NonFlash"" border=""0"" alt=""Non-Flash Warning""></td></tr></table><map name=""LowerNavMap""><area shape=""rect"" coords=""127,3,215,22"" href=""/software/"" target=""_top"" alt=""Products"" title=""Products""><area shape=""rect"" coords=""220,4,302,21"" href=""/support/"" target=""_top"" alt=""Support"" title=""Support""><area shape=""rect"" coords=""308,4,452,21"" href=""/desdev/"" target=""_top"" alt=""Designer Developer"" title=""Designer Developer""><area shape=""rect"" coords=""462,3,558,21"" href=""/downloads/"" target=""_top"" alt=""Downloads"" title=""Downloads""><area shape=""rect"" coords=""569,3,625,21"" href=""/store/"" target=""_top"" alt=""Store"" title=""Store""></map><map name=""UpperNavMap""><area shape=""rect"" coords=""227,9,316,26"" href=""/international/selector/"" target=""_top"" alt=""International"" title=""International""><area shape=""rect"" coords=""324,9,382,27"" href=""/sitemap/"" target=""_top"" alt=""Site Map"" title=""Site Map""><area shape=""rect"" coords=""390,9,445,27"" href=""/macromedia/"" target=""_top"" alt=""Company"" title=""Company""></map><map name=""NonFlash""><area shape=""rect"" coords=""246,4,373,20"" href=""/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"" target=""_top"" alt=""Install Macromedia Flash Player 5"" title=""Install Macromedia Flash Player 5""><area shape=""rect"" coords=""591,6,637,18"" href=""/mediapref.cgi?m=f5&r=self"" target=""_top"" alt=""If you have the Flash Player 5, click here."" title=""If you have the Flash Player 5, click here.""></map>"
+End If
+</SCRIPT>
+<!-- end VBSCRIPT PLUGIN DETECTION --><NOSCRIPT><!-- d65v1 static -->
+      <TABLE cellSpacing=0 cellPadding=0 width=750 border=0>
+        <FORM name="" action=http://search.atomz.com/search/ method=get 
+        target=_top>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left width=1 rowSpan=2><A target=_top 
+            href="http://www.macromedia.com/help/accessibility.html"><IMG 
+            height=1 alt=accessibility 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+            width=1 border=0></A><BR><IMG height=67 alt="" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/bg_sliver_67.gif" 
+            width=1 border=0></TD>
+          <TD vAlign=top align=left width=120 rowSpan=2><A target=_top 
+            href="http://www.macromedia.com/"><IMG height=68 
+            alt="Macromedia Logo" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/gn_mm_logo.gif" 
+            width=120 border=0></A></TD>
+          <TD vAlign=top align=left width=447><IMG height=44 
+            alt="Upper Navigation Bar" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/gn_uppernav.gif" 
+            width=458 useMap=#UpperNavMap border=0></TD>
+          <TD vAlign=top align=left width=238 bgColor=#eeeeee>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left><IMG height=8 alt=" " 
+                  src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+                  width=10 border=0></TD>
+                <TD vAlign=top align=left><IMG height=1 alt="" 
+                  src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+                  width=1 border=0></TD></TR>
+              <TR>
+                <TD vAlign=top align=left><!-- default 'entire site' collection, 'any' value, Macromedia account--><INPUT 
+                  type=hidden name=sp-k><INPUT type=hidden value=any 
+                  name=sp-p><INPUT type=hidden value=sp1001395b name=sp-a><INPUT 
+                  style="BORDER-RIGHT: #ffffff 1px groove; BORDER-TOP: #ffffff 1px groove; FONT: 10px Verdana,Geneva,sans-serif; BORDER-LEFT: #ffffff 1px groove; WIDTH: 80px; COLOR: #000000; BORDER-BOTTOM: #ffffff 1px groove; HEIGHT: 16px; BACKGROUND-COLOR: #c1e4f2" 
+                  alt="Enter search text here." size=10 name=sp-q></TD>
+                <TD noWrap>&nbsp;<INPUT type=image height=18 alt=Search 
+                  width=46 
+                  src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/gn_search.gif" 
+                  border=0 name=Search><IMG height=18 alt=" " 
+                  src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/gn_divider.gif" 
+                  width=18><A target=_top 
+                  href="http://www.macromedia.com/help/"><IMG height=18 alt=Help 
+                  src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/gn_help.gif" 
+                  width=11 border=0></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=top align=left colSpan=2><IMG height=24 
+            alt="Lower Navigation Bar" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/gn_lowernav.gif" 
+            width=629 useMap=#LowerNavMap border=0></TD></TR></FORM></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=750 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=middle bgColor=#ffffff><IMG height=23 
+            alt="Non-Flash Warning" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/static_warning.gif" 
+            width=750 useMap=#NonFlash border=0></TD></TR></TBODY></TABLE><MAP 
+      name=LowerNavMap><AREA title=Products shape=RECT target=_top 
+        alt=Products coords=127,3,215,22 
+        href="http://www.macromedia.com/software/"><AREA title=Support 
+        shape=RECT target=_top alt=Support coords=220,4,302,21 
+        href="http://www.macromedia.com/support/"><AREA 
+        title="Designer Developer" shape=RECT target=_top 
+        alt="Designer Developer" coords=308,4,452,21 
+        href="http://www.macromedia.com/desdev/"><AREA title=Downloads 
+        shape=RECT target=_top alt=Downloads coords=462,3,558,21 
+        href="http://www.macromedia.com/downloads/"><AREA title=Store shape=RECT 
+        target=_top alt=Store coords=569,3,625,21 
+        href="http://www.macromedia.com/store/"></MAP><MAP 
+        name=UpperNavMap><AREA title=International shape=RECT target=_top 
+        alt=International coords=227,9,316,26 
+        href="http://www.macromedia.com/international/selector/"><AREA 
+        title="Site Map" shape=RECT target=_top alt="Site Map" 
+        coords=324,9,382,27 href="http://www.macromedia.com/sitemap/"><AREA 
+        title=Company shape=RECT target=_top alt=Company coords=390,9,445,27 
+        href="http://www.macromedia.com/macromedia/"></MAP><MAP 
+        name=NonFlash><AREA title="Install Macromedia Flash Player 5" shape=RECT 
+        target=_top alt="Install Macromedia Flash Player 5" coords=246,4,373,20 
+        href="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"><AREA 
+        title="If you have the Flash Player 5, click here." shape=RECT 
+        target=_top alt="If you have the Flash Player 5, click here." 
+        coords=591,6,637,18 
+        href="http://www.macromedia.com/mediapref.cgi?m=f5&amp;r=self"></MAP></NOSCRIPT><!-- #EndEditable --></TD></TR></TBODY></TABLE><!-- #BeginEditable "topic_nav" -->
+<TABLE height=22 cellSpacing=0 cellPadding=0 width=750 border=0>
+  <TBODY>
+  <TR vAlign=top align=left>
+    <TD colSpan=2><IMG height=6 alt="" 
+      src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+      width=1></TD></TR>
+  <TR><!-- #BeginEditable "breadcrumbs_and_international" -->
+    <TD class=mmcrumb vAlign=top align=left width=662 height=10><IMG height=10 
+      alt="" 
+      src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+      width=60> <A target=_top href="http://www.macromedia.com/"><FONT 
+      color=#666666>Home</FONT></A> &gt; <A target=_top 
+      href="http://www.macromedia.com/software/"><FONT 
+      color=#666666>Products</FONT></A> &gt; <A target=_top 
+      href="http://www.macromedia.com/software/flash/"><FONT 
+      color=#666666>Flash</FONT></A> &gt; <A 
+      href="http://www.macromedia.com/support/flash/"><FONT 
+      color=#666666>Support</FONT></A> &gt; <A 
+      href="http://www.macromedia.com/support/flash/publishexport.html"><FONT 
+      color=#666666>Publishing and Exporting</FONT></A></TD>
+    <TD align=right></TD></TR><!-- #EndEditable -->
+  <TR>
+    <TD colSpan=2><IMG height=2 alt="" 
+      src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+      width=1></TD></TR>
+  <TR vAlign=bottom>
+    <TD vAlign=top align=left colSpan=2><!-- #BeginEditable "header" -->
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR vAlign=top align=left>
+          <TD><IMG height=45 alt="Flash Icon" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/h1_icon.gif" 
+            width=55></TD>
+          <TD><IMG height=58 
+            alt="Macromedia Flash Support Center - Publishing and Exporting" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/h1_publishexport.gif" 
+            width=282></TD></TR></TBODY></TABLE><!-- #EndEditable --></TD></TR></TBODY></TABLE><!-- #EndEditable -->
+<TABLE cellSpacing=0 cellPadding=0 width=745 border=0 summary="main body">
+  <TBODY>
+  <TR>
+    <TD width=60 height=5><IMG height=5 alt="" 
+      src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+      width=60></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD></TD>
+    <TD width="100%"><!-- #BeginEditable "content" --><SPAN 
+      class=heading1>Scripting for the ActiveX control</SPAN>
+      <P><SPAN class=mmbody>When you use Flash methods to control an Active X 
+      control, several additional properties and events are available to you. 
+      The values you pass to these properties and events depend on the context 
+      in which the ActiveX control is placed. Most commonly, scripting for the 
+      ActiveX control occurs within the context of a Web browser, although 
+      scripting for the ActiveX control can also occur within another 
+      application, such as Director or Authorware.</SPAN>
+      <P>
+      <TABLE cellSpacing=0 cellPadding=4>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=14><IMG height=10 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/tri.gif" 
+            width=14 vspace=2></TD>
+          <TD vAlign=top><SPAN class=mmbody>Properties</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>ReadyState (get only)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Returns the state of the Flash 
+            movie. Use to check for availability. 0=Loading, 1=Uninitialized, 
+            2=Loaded, 3=Interactive, 4=Complete. Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result:= 
+            GetSpriteProperty(IconID@"IconTitle",#ReadyState)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>TotalFrames (get only)</CODE></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Returns the total number of frames 
+            in the movie. This is not available until the movie has loaded. 
+            Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#TotalFrames)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>FrameNum (get or set)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Returns or determines the 
+            currently displayed frame of the movie. Setting this property 
+            advances or rewinds the movie. Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#FrameNum)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#FrameNum,frame)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>Playing or IsPlaying (get or set)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Specifies whether the movie is 
+            playing. Returns true if the movie is currently playing, false if it 
+            is paused. Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#Playing)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#IsPlaying)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#Playing,state)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#IsPlaying,state)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>Quality (get or set)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Returns or specifies the current 
+            rendering quality (0=Low, 1=High, 2=AutoLow, 3=AutoHigh). Authorware 
+            syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#Quality)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#Quality,setting)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>ScaleMode (get or set)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Returns or specifies the scale 
+            mode for the Flash movie (0=ShowAll, 1= NoBorder, 2 = ExactFit). 
+            Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#ScaleMode)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#ScaleMode,mode)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>AlignMode (get or set)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Returns or specifies the align 
+            mode of bit flags. (Left=+1, Right=+2, Top=+4, Bottom=+8). 
+            Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#AlignMode)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#AlignMode,mode)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>Loop (get or set)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Specifies the loop state of the 
+            Flash movie. Returns true if the movie loops, false to play once. 
+            Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#Loop)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#Loop,state)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>Movie (get or set)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Returns or specifies the URL 
+            source for the movie file. Setting this property will load a new 
+            movie. Authorware syntax:</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>result := 
+            GetSpriteProperty(IconID@"IconTitle",#Movie)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD 
+            vAlign=top><CODE>SetSpriteProperty(IconID@"IconTitle",#Movie,source)</CODE> 
+          </TD></TR>
+        <TR>
+          <TD vAlign=top width=14><IMG height=10 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/tri.gif" 
+            width=14 vspace=2></TD>
+          <TD vAlign=top><SPAN class=mmbody>Events</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>OnProgress(percent)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Generated as the Flash movie is 
+            downloading.</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>OnReadyStateChange(state)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Generated when the ready state of 
+            the control changes. The possible states are: 0=Loading, 
+            1=Uninitialized, 2=Loaded, 3=Interactive, 4=Complete.</SPAN></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><CODE>FSCommand(command, args)</CODE> </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD vAlign=top><SPAN class=mmbody>Generated when an 
+            </SPAN><CODE>FSCommand</CODE> <SPAN class=mmbody>action is performed 
+            in the movie with a URL and the URL starts with 
+            </SPAN><CODE>FSCommand</CODE> <SPAN class=mmbody>:. Use this to 
+            create a response to a frame or button action in the Flash movie. 
+            </SPAN></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE border=0>
+        <TBODY>
+        <TR>
+          <TD><A 
+            onmouseover="swapImage('back','/support/flash/images/contentsover.gif'); window.status='To Table of Contents';return true" 
+            onmouseout="swapImage('back','/support/flash/images/contents.gif')" 
+            href="http://www.macromedia.com/support/flash/publishexport/scriptingwithflash/index.html"><IMG 
+            alt="To Table of Contents" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/contents.gif" 
+            vspace=1 border=0 name=back></A></TD>
+          <TD><A 
+            onmouseover="swapImage('prev','/support/flash/images/prevover.gif'); window.status='Back to previous document';return true" 
+            onmouseout="swapImage('prev','/support/flash/images/prev.gif')" 
+            href="http://www.macromedia.com/support/flash/publishexport/scriptingwithflash/scriptingwithflash_07.html"><IMG 
+            alt="Back to Previous document" 
+            src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/prev.gif" 
+            vspace=1 border=0 name=prev></A></TD></TR></TBODY></TABLE><!-- #EndEditable --></P></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=745 summary="bottom body">
+  <TBODY>
+  <TR vAlign=top align=left>
+    <TD width="1%" rowSpan=2><IMG height=1 alt="" 
+      src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif" 
+      width=60></TD>
+    <TD><IMG height=20 alt="" 
+      src="Macromedia Flash - Scripting with Flash 5 Scripting for the ActiveX control_files/pixel.gif"></TD></TR>
+  <TR vAlign=top align=left>
+    <TD><SPAN class=fineprint><!-- #BeginEditable "footer" --><NOINDEX><!-- d65v1 footer_2k_sc.html --><FONT 
+      color=#333333>©1995-2002 Macromedia, Inc. <A target=_top 
+      href="http://www.macromedia.com/help/copyright.html"><FONT 
+      color=#999999>All rights reserved.</FONT></A><BR><A target=_top 
+      href="http://www.macromedia.com/help/accessibility.html"><FONT 
+      color=#999999>Accessibility</FONT></A> | <A target=_top 
+      href="http://www.macromedia.com/help/privacy.html"><FONT 
+      color=#999999>Privacy policy</FONT></A> | <A target=_top 
+      href="http://www.macromedia.com/macromedia/contact/"><FONT 
+      color=#999999>Contact us</FONT></A> | <A target=_top 
+      href="http://www.macromedia.com/sitemap/"><FONT color=#999999>Site 
+      Map</FONT></A></FONT><BR><BR></NOINDEX><!-- #EndEditable --></SPAN><BR>&nbsp;</TD></TR></TBODY></TABLE></DIV><!-- #EndTemplate --></BODY></HTML>

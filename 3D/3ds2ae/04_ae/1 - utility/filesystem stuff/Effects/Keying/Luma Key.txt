@@ -1,0 +1,21 @@
+[name]
+name=Luma Key
+matchName=ADBE Luma Key
+
+[properties]
+name=	Key Type
+type=	OneD
+
+name=	Threshold
+type=	OneD
+
+name=	Tolerance
+type=	OneD
+
+name=	Edge Thin
+type=	OneD
+
+name=	Edge Feather
+type=	OneD
+
+

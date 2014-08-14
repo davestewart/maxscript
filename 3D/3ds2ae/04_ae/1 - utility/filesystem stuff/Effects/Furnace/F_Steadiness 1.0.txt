@@ -1,0 +1,102 @@
+[name]
+name=F_Steadiness 1.0
+matchName=F_Steadiness 806
+
+[properties]
+name=	About
+type=	NO_VALUE
+
+name=	Stabilize To
+type=	OneD
+
+name=	Source Frame
+type=	OneD
+
+name=	Frames To Smooth Over
+type=	OneD
+
+name=	Scale
+type=	OneD
+
+name=	Rotate
+type=	OneD
+
+name=	Translate
+type=	OneD
+
+name=	Perspective
+type=	OneD
+
+name=	Filtering
+type=	OneD
+
+name=	Analysis
+type=	NO_VALUE
+
+name=	Alternate Motion Source
+type=	LAYER_INDEX
+
+name=	Step Size
+type=	OneD
+
+name=	Invert Transform
+type=	OneD
+
+name=	Show Motion Source
+type=	OneD
+
+name=	Use Analysis Region
+type=	OneD
+
+name=	Analysis Region
+type=	NO_VALUE
+
+name=	Top Left
+type=	TwoD_SPATIAL
+
+name=	Top Right
+type=	TwoD_SPATIAL
+
+name=	Bottom Left
+type=	TwoD_SPATIAL
+
+name=	Bottom Right
+type=	TwoD_SPATIAL
+
+name=	Analysis Region
+type=	NO_VALUE
+
+name=	Analysis
+type=	NO_VALUE
+
+name=	Source Crops
+type=	NO_VALUE
+
+name=	X Method
+type=	OneD
+
+name=	Y Method
+type=	OneD
+
+name=	Edge Colour
+type=	COLOR
+
+name=	Edge Colour Alpha
+type=	OneD
+
+name=	Left
+type=	OneD
+
+name=	Right
+type=	OneD
+
+name=	Bottom
+type=	OneD
+
+name=	Top
+type=	OneD
+
+name=	Source Crops
+type=	NO_VALUE
+
+

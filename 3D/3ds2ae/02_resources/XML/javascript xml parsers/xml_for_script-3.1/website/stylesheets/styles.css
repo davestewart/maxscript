@@ -1,0 +1,636 @@
+/*
+// =========================================================================
+//
+// styles.css -  stylesheet definitions for the main XML for <SCRIPT> web site
+//
+// =========================================================================
+//
+// Copyright (C) 2001, 2002 - David Joham (djoham@yahoo.com)
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+*/
+
+/*********************************  A ELEMENTS  *********************************/
+a {
+    text-decoration: none;
+    color: #101862;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #101862;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+a.documentationLink {
+    white-space: nowrap;
+}
+
+
+a.navigation {
+    color: #FFFFFF;
+}
+
+a.navigation:visited {
+    color: #FFFFFF;
+}
+
+a.navigation:hover {
+    color: red;
+}
+
+/*********************************  BODY ELEMENTS  *********************************/
+
+body {
+    background: #5765AE; /* used to make NS4 have a background that at least sorta looks good */
+    background-image: url(../images/page_background.gif);
+    background-repeat: repeat;
+    margin: 0px 0px 0px 0px;
+    font-family: verdana,geneva,arial,helvetica,sans-serif;
+    font-size: 12px;
+}
+
+/*********************************  DIV ELEMENTS  *********************************/
+
+div.accent {
+    font-weight: bolder;
+    color: #101862;
+}
+
+div.backToTop {
+    margin-bottom: 5px;
+    text-align: right;
+    background-color: #bfc9f2;
+}
+
+div.caseStudyImage {
+    text-align: center;
+}
+
+div.centerCode {
+    text-align: center;
+}
+
+div.contentDiv {
+    z-index:1;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    width:495px;
+    margin: 0px 0px 0px 0px;
+    cursor: default;
+    top: 107px;
+    left: 269px;
+    border: 2px solid #333;
+    background-image: url(../images/content_background.gif);
+    background-repeat: repeat;
+}
+
+
+/*this is a nasty hack to get IE (Win32) users
+to be able to select content. Since IE doesn't
+support the following selector, IE won't use it.
+Allowing IE to get the position: absolute makes
+it so that content cannot be reliably selected
+with the mouse for some reason. */
+form > div.contentDiv {
+    position: absolute;
+}
+
+div.contentDivBackground {
+    z-index:3;
+    position: relative;
+    padding: 5px 5px 5px 5px;
+    width:485px;
+    margin: 0px 0px 0px 0px;
+    cursor: default;
+    top: 0px;left: 0px;
+    background-image: url(../images/content_gradiant.gif);
+    background-repeat: repeat-x;
+}
+
+div.currentLocation {
+    font-weight: bolder;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-right: 60px;
+    margin-top: 5px;
+    color: #34D2FF;
+    background-image: url(../images/navigation-minus.gif);
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+
+div.docTitle {
+    font-weight: bolder;
+    color: #101862;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-bottom: solid #101862 1px;
+}
+
+div.header {
+    font-weight: bolder;
+}
+
+
+div.hoverNavigation {
+    width: 114px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    background-image: url(../images/navigation-plus.gif);
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    white-space: nowrap;
+    border: none 1px;
+}
+
+div.hoverNavigationIndentPlusNode {
+    width: 114px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 32px;
+    padding-left: 15px;
+    padding-right: 60px;
+    white-space: nowrap;
+    background-image: url(../images/navigation-plus.gif);
+    background-repeat: no-repeat;
+}
+
+
+
+div.hoverNavigationIndent {
+    width: 114px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 36px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    border-left: solid white 1px;
+    background-image: url(../images/navigation-node.gif);
+    background-repeat: no-repeat;
+}
+
+div.hoverNavigationIndentSubNode {
+    width: 114px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    border-left: solid white 1px;
+    background-image: url(../images/navigation-node.gif);
+    background-repeat: no-repeat;
+}
+
+
+div.hoverNavigationIndentSubNodeSpacer {
+    width: 114px;
+    margin-left: 36px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    border-left: solid white 1px;
+    background-repeat: no-repeat;
+    white-space: nowrap;
+}
+
+div.hoverNavigationCurrentLocationIndent {
+	font-weight: bolder;
+    color: #34D2FF;
+    width: 213px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 36px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    border-left: solid white 1px;
+    background-image: url(../images/navigation-node.gif);
+    background-repeat: no-repeat;
+}
+
+div.hoverNavigationCurrentLocationIndentMinusNode {
+	font-weight: bolder;
+    color: #34D2FF;
+    width: 213px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 32px;
+    padding-left: 15px;
+    padding-right: 60px;
+    white-space: nowrap;
+    white-space: nowrap;
+    background-image: url(../images/navigation-minus.gif);
+    background-repeat: no-repeat;
+}
+
+
+div.lastHoverNavigationIndent {
+    width: 114px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 36px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    background-image: url(../images/navigation-lastnode.gif);
+    background-repeat: no-repeat;
+    white-space: nowrap;
+}
+
+div.lastHoverNavigationIndentSubNode {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 114px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    background-image: url(../images/navigation-lastnode.gif);
+    background-repeat: no-repeat;
+}
+
+
+div.hoverNavigationCurrentLocationIndentSubNode {
+	font-weight: bolder;
+    color: #34D2FF;
+    width: 114px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    border-left: solid white 1px;
+    background-image: url(../images/navigation-node.gif);
+    background-repeat: no-repeat;
+}
+
+
+div.lastHoverNavigationCurrentLocationIndentSubNode {
+	font-weight: bolder;
+    color: #34D2FF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 114px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    background-image: url(../images/navigation-lastnode.gif);
+    background-repeat: no-repeat;
+}
+
+
+div.lastHoverNavigationCurrentLocationIndent {
+	font-weight: bolder;
+    color: #34D2FF;
+    width: 213px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 36px;
+    padding-left: 10px;
+    padding-right: 60px;
+    white-space: nowrap;
+    background-image: url(../images/navigation-lastnode.gif);
+    background-repeat: no-repeat;
+    white-space: nowrap;
+}
+
+div.indentFour {
+    padding-left: 40px;
+}
+
+div.indentOne {
+    padding-left: 10px;
+}
+
+div.indentThree {
+    padding-left: 30px;
+}
+
+div.indentTwo {
+    padding-left: 20px;
+}
+
+
+div.leftImage {
+    z-index:2;
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    width:240px;
+    height:796px;
+    margin: 0px 10px 0px 0px;
+    cursor: default;
+    top: 11px;left: 10px;
+    background-image: url(../images/menu.jpg);
+    background-repeat: no-repeat;
+}
+
+div.linkBar {
+    z-index:3;
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    width:213px;
+    margin: 0px 10px 0px 0px;
+    top: 215px;
+    left: 40px;
+}
+
+div.mainContentArea {
+    z-index:1;
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    width:100%;
+    height:600px;
+    margin: 0px 0px 0px 0px;
+    cursor: default;
+    top: 0px;left: 0px;
+    background-image: url(../images/page_gradiant.gif);
+    background-repeat: repeat-x;
+}
+
+div.pageHeader {
+    font-weight: bolder;
+    color: #101862;
+    border-bottom: solid #101862 1px;
+    text-align: center;
+}
+
+div.param {
+    font-weight: bolder;
+    color: #101862;
+}
+
+div.popupCommandLink {
+    width: 213px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+div.titleLogo {
+     z-index:3;
+     position: absolute;
+     padding: 0px 0px 0px 0px;
+     width:459px;
+     height:75px;
+     margin: 0px 0px 0px 0px;
+     cursor: default;
+     top: 12px;
+     left: 287px;
+}
+
+div.whatsnew {
+    background-image: url(../images/bluebullet.gif);
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+
+/*********************************  DT ELEMENTS  *********************************/
+
+dt {
+    font-weight: bolder;
+}
+
+
+/*********************************  IMG ELEMENTS  *********************************/
+
+
+img.navImage {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 175px;
+    height: 796px;
+}
+
+
+img.sourceForgeImage {
+    position: absolute;
+    top: 120px;
+    left: 95px;
+    border: none;
+    z-index: 3;
+    height: 31px;
+    width: 88px;
+}
+
+
+img.thumbnailImage {
+    border: none;
+}
+
+
+img.titlePicture {
+    position: absolute;
+    top: 10px;
+    left: 250px;
+    border-bottom: solid black 2px;
+}
+
+img.validHTMLImage {
+    position: absolute;
+    top: 80px;
+    left: 95px;
+    border: none;
+    z-index: 3;
+    height: 31px;
+    width: 88px;
+}
+
+
+/*********************************  INPUT ELEMENTS  *********************************/
+
+input.launchButton {
+    border: solid #101C73 2px;
+    color: #101C73;
+    cursor: pointer;
+}
+
+/*********************************  P ELEMENTS  *********************************/
+p.w3cReturnHome {
+    text-align: center;
+    font-weight: bold;
+    border: solid black 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/*********************************  SPAN ELEMENTS  *********************************/
+
+
+span.accent {
+    font-weight: bolder;
+    color: #101862;
+}
+
+span.boldHeading {
+    font-weight: bolder;
+}
+
+span.boldBlueHeading {
+	font-weight: bold;
+    color: #101C73;
+}
+
+
+span.classicDomTestSuiteTabText, span.classicDomSamplesTabText {
+    position: absolute;
+    top: 10px;
+    left: 210px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.saxTestSuiteTabText, span.saxSamplesTabText, span.saxDocumentationTabText {
+    position: absolute;
+    top: 10px;
+    left: 328px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.domTabText {
+    position: absolute;
+    top: 10px;
+    left: 230px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+
+span.faqTabText {
+    position: absolute;
+    top: 10px;
+    left: 140px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.generalTabText {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.toolSamplesIntroductionTabText {
+    position: absolute;
+    top: 10px;
+    left: 11px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.toolsTabText {
+    position: absolute;
+    top: 10px;
+    left: 420px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+
+span.w3cDomTestSuiteTabText, span.w3cDomSamplesTabText {
+    position: absolute;
+    top: 10px;
+    left: 125px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+span.xmlIOEscapeXMLTablText {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+
+span.xmlIOLoadXMLTabText {
+    position: absolute;
+    top: 10px;
+    left: 118px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.xmlIOProxyTestSuiteTabText {
+    position: absolute;
+    top: 10px;
+    left: 404px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.xmlIOSaveXMLTabText {
+    position: absolute;
+    top: 10px;
+    left: 214px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+span.xmlRecordsetTabText {
+    position: absolute;
+    top: 10px;
+    left: 118px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*********************************  LI ELEMENTS  *********************************/
+li {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}

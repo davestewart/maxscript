@@ -1,0 +1,114 @@
+Transform
+	Anchor Point
+	Position
+	Scale
+	Rotation
+		Z Rotation
+		X Rotation
+		Y Rotation
+	Orientation
+	Opacity
+
+
+Material Options
+	Casts Shadows
+	Accepts Shadows
+	Accepts Lights
+	Ambient
+	Diffuse
+	Specular
+	Shininess
+	Light Transmission
+	Metal
+
+
+Targetted Objects
+	Point of Interest
+
+
+
+Adjustment
+	Common
+
+Null
+	Common
+
+Targetted Objects
+	Point of Interest
+
+Camera
+	[Point of Interest]
+	Transform
+	Zoom
+	Depth of Field
+	Focus Distance
+	Aperture
+	Blur Level
+
+
+Lights
+	Intensity
+	Color
+
+Ambient
+	Intensity
+	Color
+
+Point
+	Position
+
+	Intensity
+	Color
+
+	Casts Shadows
+	Shadow Darkness
+	Shadow Diffusion
+
+Spot
+	Point of Interest
+	Position
+	Z Rotation
+	X Rotation
+	Y Rotation
+	Orientation
+
+	Intensity
+	Color
+
+	Cone Angle
+	Cone Feather
+
+	Casts Shadows
+	Shadow Darkness
+	Shadow Diffusion
+
+Parallel
+	Point of Interest
+	Position
+
+	Intensity
+	Color
+
+	Casts Shadows
+	Shadow Darkness
+	Point of Interest
+
+Text
+	Transform
+
+	Source Text
+	Path
+	Anchor Point Grouping
+	Grouping Alignment
+	Inter-Character Blending
+	Fill & Stroke
+	Point of Interest
+
+Solid
+	Transform
+	Mask
+		Mask Feather
+		Mask Opacity
+		Mask Expansion
+		Mask Shape
+

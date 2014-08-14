@@ -1,0 +1,60 @@
+[name]
+name=Cell Pattern
+matchName=ADBE Cell Pattern
+
+[properties]
+name=	Cell Pattern
+type=	OneD
+
+name=	Invert
+type=	OneD
+
+name=	Contextual Slider
+type=	OneD
+
+name=	Overflow
+type=	OneD
+
+name=	Disperse
+type=	OneD
+
+name=	Size
+type=	OneD
+
+name=	Offset
+type=	TwoD_SPATIAL
+
+name=	Tiling Options
+type=	NO_VALUE
+
+name=	Enable Tiling
+type=	OneD
+
+name=	Cells Horizontal
+type=	OneD
+
+name=	Cells Vertical
+type=	OneD
+
+name=	Cells Vertical
+type=	NO_VALUE
+
+name=	Evolution
+type=	OneD
+
+name=	Evolution Options
+type=	NO_VALUE
+
+name=	Cycle Evolution
+type=	OneD
+
+name=	Cycle (in Revolutions)
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

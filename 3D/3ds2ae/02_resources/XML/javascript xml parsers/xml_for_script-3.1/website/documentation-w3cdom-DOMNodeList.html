@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--
+// =========================================================================
+//
+// documentation-w3cdom-DOMNodeList.html - W3C DOM Parser DOMNodeList Object Documentation for XML for <SCRIPT>
+//
+// =========================================================================
+//
+// Copyright (C) 2001, 2002, 2003 - David Joham (djoham@yahoo.com)
+//
+// Some information sourced from http://xml.apache.org/xerces2-j/javadocs/api/index.html
+// this information is Copyright © 1999-2003 Apache XML Project. All Rights Reserved.
+//
+// Additional inspiration and fact cross-checking from http://www.devguru.com
+// a site I found very useful
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-->
+
+
+<head>
+    <title>
+        XML for &lt;SCRIPT&gt; Cross Platform XML Parsing in JavaScript - W3C DOM Parser DOMNodeList Object Documentation
+    </title>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
+</head>
+
+<body onload="configureJSNavigation()">
+    <div>
+        <a name="backToTop"></a>
+    </div>
+
+    <form name="frmForm" id="frmForm" method="get" action="noaction">
+        <!-- logo -->
+        <div id="logo" class="titleLogo">
+            <img src="./images/titleImage.jpg" width="459" height="75" alt="XML for &lt;SCRIPT&gt; logo">
+        </div>
+
+        <!-- main page square -->
+        <div class="mainContentArea">
+            <br>
+        </div>
+
+        <!-- navigation bar -->
+        <div class="leftImage"></div>
+
+        <!-- credit where credit is due -->
+        <p>
+            <a href="http://validator.w3.org/check/referer"><img src="./images/valid-html401.png" class="validHTMLImage" alt="HTML 4.01 strict HTML" /></a><br />
+            <a href="http://www.sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=14016&amp;type=1" class="sourceForgeImage" alt="Visit Sourceforge.net" title="Visit Sourceforge.net"/></a><br>
+        </p>
+        <p>
+        <div class="linkBar">
+            <div class="hoverNavigation"><a class="navigation" href="./../index.html">Home</a></div>
+            <div class="currentLocation">Documentation</div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation.html">Overview</a></div>
+			<div class="hoverNavigationIndent"><a class="navigation" href="./documentation-faq.html">FAQ</a></div>
+            <div class="hoverNavigationCurrentLocationIndent">W3C DOM</div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation-classicdom.html">Classic DOM</a></div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation-sax.html">SAX</a></div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation-xmlproxies.html">Server-Side&nbsp;Proxies</a></div>
+            <div class="lastHoverNavigationIndent"><a class="navigation" href="./documentation-tools.html">Tools</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./caseStudies.html">Case&nbsp;Studies</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./sampleApplications.html" >Sample&nbsp;Code&nbsp;(Parsers)</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./tools.html">Sample&nbsp;Code&nbsp;(Tools)</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./contributedAddOns.html">Contributed&nbsp;Add-ons</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./testSuites.html">Test&nbsp;Suites</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./history.html">History</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./mailingLists.html">Mailing&nbsp;Lists</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./download.html">Download</a></div>
+        </div>
+
+
+        <div  class="contentDiv">
+            <div class="contentDivBackground">
+
+                <div class="pageHeader">
+                    W3C DOM Parser DOMNodeList Object Documentation
+                </div>
+
+
+                <div>
+                    <p style="margin-top: 15px">
+                        This page contains the XML for &lt;SCRIPT&gt; DOMNodeList object documentation.
+                    </p>
+
+                    <p class="w3cReturnHome">
+                        <a href="documentation-w3cdom.html">Return to W3C DOM Parser Documentation Main Page</a>
+                    </p>
+
+                    <dl>
+                        <dt>
+                            CONTENTS<br>
+                        </dt>
+                        <dd>
+                            <a href="#objectDescription">DOMNodeList - object description</a>
+                        </dd>
+                        <dd>
+                            &nbsp;
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt>
+                                    Native Methods:
+                                </dt>
+                                <dd>
+                                    <a href="#DOMNodeListGetLength">DOMNodeList - getLength method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMNodeListItem">DOMNodeList - item method</a>
+                                </dd>
+                            </dl>
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt>
+                                    Inherited Methods:
+                                </dt>
+                                <dd>
+                                    The DOMNodeList object has no inherited W3C methods
+                                </dd>
+                            </dl>
+                        </dd>
+                    </dl>
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMNodeList - object description
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="objectDescription"></a>
+                    <div class="docTitle">
+                        DOMNodeList - object description
+                    </div>
+
+                    <p>
+                        The DOMNodeList interface provides the abstraction of an ordered collection of
+                        nodes. DOMNodeLists are returned when DOM methods such as getElementsByTagName and
+                        getChildNodes are invoked.
+                    </p>
+
+                    <p>
+                        DOMNodeList objects in the DOM are live - meaning changes to the DOMNodeList are visible
+                        in the DOMDocument as soon as they happen.
+                    </p>
+
+                    <p>
+                        The items in the NodeList are accessible via an integral index, starting from 0.
+                    </p>
+
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMNodeList - getLength method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMNodeListGetLength"></a>
+                    <div class="docTitle">
+                        DOMNodeList - getLength method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domNodeList.getLength();<br>
+                        - or -<br>
+                        domNodeList.length;
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        int - the number of DOMNodes included in the DOMNodeList
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The getLength method of the DOMNodeList returns the number of nodes included in the
+                        DOMNodeList.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>If a DOM query (such as getElementsByTagName) is
+                        called that finds no applicable nodes, the returned object is a complete DOMNodeList,
+                        *not* a null object. This DOMNodeList will include no DOMNodes and will return 0
+                        when its getLength method is called.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>It is also possible to access the length of the
+                        DOMNodeList by accessing the length property. This property should be treated as
+                        read-only and should never be set in code.
+                    </p>
+
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOTNODE&gt;"<br>
+                            + "&lt;TAG1&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;!--comment--&gt;"<br>
+                            + "&lt;![CDATA[this child is of &lt;&lt;&lt;&gt;nodeType CDATA]]&gt;"<br>
+                            + "&lt;?hello world?&gt;"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOTNODE&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the root node<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the "TAG1" element<br>
+                            var tag1 = docRoot.getElementsByTagName("TAG1").item(0);<br>
+                            <br>
+                            //call getChildNodes to get a DOMNodeList object<br>
+                            //NOTE: getChildNodes does *not* return an array.<br>
+                            //It returns a DOMNodeList object<br>
+                            var domNodeList = tag1.getChildNodes();<br>
+                            <br>
+                            //call the getLength method of the DOMNodeList object<br>
+                            //the following should be 4<br>
+                            alert(domNodeList.getLength());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMNodeList - item method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMNodeListItem"></a>
+                    <div class="docTitle">
+                        DOMNodeList - item method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domNodeList.item(&lt;index&gt;);<br>
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        int index - The zero-based index of the node to return
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMNode.html">DOMNode</a> - the DOMNode at &lt;index&gt; or null if &lt;index&gt; out of bounds
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        In order to access a specific node in a DOMNodeList, the DOMNodeList object provides
+                        the index method. The index method allows for a specific DOMNode to be returned from the
+                        DOMNodeList via a zero-based index.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOTNODE&gt;"<br>
+                            + "&lt;TAG1&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;!--this is a comment node--&gt;"<br>
+                            + "&lt;![CDATA[this is a CDATA node]]&gt;"<br>
+                            + "&lt;?hello this is a processing instruction node?&gt;"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOTNODE&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the root node<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 element<br>
+                            var tag1 = docRoot.getFirstChild();<br>
+                            <br>
+                            //call getChildNodes on tag1 to get a DOMNodeList object<br>
+                            //NOTE: getChildNodes does *not* return an array.<br>
+                            //It returns a DOMNodeList object<br>
+                            var domNodeList = tag1.getChildNodes();<br>
+                            <br>
+                            //call the getLength method of the DOMNodeList object<br>
+                            //the following should be 4<br>
+                            alert(domNodeList.getLength());<br>
+                            <br>
+                            //get each DOMNode in the DOMNodeList<br>
+                            //and display its value. Remember, the item method<br>
+                            //of the DOMNodeList is zero-based.<br>
+                            <br>
+                            var node;<br>
+                            <br>
+                            //get the "Hello World" node from the DOMNodeList<br>
+                            node = domNodeList.item(0);<br>
+                            <br>
+                            //the following should be "Hello World"<br>
+                            alert(node.getNodeValue());<br>
+                            <br>
+                            <br>
+                            //get the comment node from the DOMNodeList<br>
+                            node = domNodeList.item(1);<br>
+                            <br>
+                            //the following should be "this is a comment node"<br>
+                            alert(node.getNodeValue());<br>
+                            <br>
+                            <br>
+                            //get the CDATA node from the DOMNodeList<br>
+                            node = domNodeList.item(2);<br>
+                            <br>
+                            //the following should be "this is a CDATA node"<br>
+                            alert(node.getNodeValue());<br>
+                            <br>
+                            <br>
+                            //get the processing instruction node from the DOMNodeList<br>
+                            node = domNodeList.item(3);<br>
+                            <br>
+                            //the following should be "this is a processing instruction node"<br>
+                            alert(node.getNodeValue());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+</body>
+</html>

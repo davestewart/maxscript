@@ -1,0 +1,9 @@
+[name]
+name=Layer Control
+matchName=ADBE Layer Control
+
+[properties]
+name=	Layer
+type=	LAYER_INDEX
+
+

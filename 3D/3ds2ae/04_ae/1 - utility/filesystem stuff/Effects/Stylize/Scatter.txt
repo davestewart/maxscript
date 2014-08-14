@@ -1,0 +1,15 @@
+[name]
+name=Scatter
+matchName=ADBE Scatter
+
+[properties]
+name=	Scatter Amount
+type=	OneD
+
+name=	Grain
+type=	OneD
+
+name=	Scatter Randomness
+type=	OneD
+
+

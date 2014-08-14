@@ -1,0 +1,12 @@
+[name]
+name=Directional Blur
+matchName=ADBE Motion Blur
+
+[properties]
+name=	Direction
+type=	OneD
+
+name=	Blur Length
+type=	OneD
+
+

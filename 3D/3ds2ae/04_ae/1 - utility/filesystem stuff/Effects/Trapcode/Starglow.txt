@@ -1,0 +1,204 @@
+[name]
+name=Starglow
+matchName=tc Starglow
+
+[properties]
+name=	Preset
+type=	OneD
+
+name=	Input Channel
+type=	OneD
+
+name=	Pre-Process
+type=	NO_VALUE
+
+name=	Threshold
+type=	OneD
+
+name=	Threshold Soft
+type=	OneD
+
+name=	Use Mask
+type=	OneD
+
+name=	Mask Radius
+type=	OneD
+
+name=	Mask Feather
+type=	OneD
+
+name=	Mask Position
+type=	TwoD_SPATIAL
+
+name=	
+type=	NO_VALUE
+
+name=	Streak Length
+type=	OneD
+
+name=	Boost Light
+type=	OneD
+
+name=	Individual Lengths
+type=	NO_VALUE
+
+name=	Up
+type=	OneD
+
+name=	Down
+type=	OneD
+
+name=	Left
+type=	OneD
+
+name=	Right
+type=	OneD
+
+name=	Up Left
+type=	OneD
+
+name=	Up Right
+type=	OneD
+
+name=	Down Left
+type=	OneD
+
+name=	Down Right
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Individual Colors
+type=	NO_VALUE
+
+name=	Up
+type=	OneD
+
+name=	Down
+type=	OneD
+
+name=	Left
+type=	OneD
+
+name=	Right
+type=	OneD
+
+name=	Up Left
+type=	OneD
+
+name=	Up Right
+type=	OneD
+
+name=	Down Left
+type=	OneD
+
+name=	Down Right
+type=	OneD
+
+name=	Down Right
+type=	NO_VALUE
+
+name=	Colormap A
+type=	NO_VALUE
+
+name=	Type/Preset
+type=	OneD
+
+name=	Highligts
+type=	COLOR
+
+name=	Mid High
+type=	COLOR
+
+name=	Midtones
+type=	COLOR
+
+name=	Mid Low
+type=	COLOR
+
+name=	Shadows
+type=	COLOR
+
+name=	
+type=	NO_VALUE
+
+name=	Colormap B
+type=	NO_VALUE
+
+name=	Type/Preset
+type=	OneD
+
+name=	Highligts
+type=	COLOR
+
+name=	Mid High
+type=	COLOR
+
+name=	Midtones
+type=	COLOR
+
+name=	Mid Low
+type=	COLOR
+
+name=	Shadows
+type=	COLOR
+
+name=	
+type=	NO_VALUE
+
+name=	Colormap C
+type=	NO_VALUE
+
+name=	Type/Preset
+type=	OneD
+
+name=	Highligts
+type=	COLOR
+
+name=	Mid High
+type=	COLOR
+
+name=	Midtones
+type=	COLOR
+
+name=	Mid Low
+type=	COLOR
+
+name=	Shadows
+type=	COLOR
+
+name=	
+type=	NO_VALUE
+
+name=	Shimmer
+type=	NO_VALUE
+
+name=	Amount
+type=	OneD
+
+name=	Detail
+type=	OneD
+
+name=	Phase
+type=	OneD
+
+name=	Use Loop
+type=	OneD
+
+name=	Revolutions in Loop
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Source Opacity [%]
+type=	OneD
+
+name=	Starglow Opacity [%]
+type=	OneD
+
+name=	Transfer Mode
+type=	OneD
+
+

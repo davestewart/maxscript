@@ -1,0 +1,48 @@
+[name]
+name=4-Color Gradient
+matchName=ADBE 4ColorGradient
+
+[properties]
+name=	Positions & Colors
+type=	NO_VALUE
+
+name=	Point 1
+type=	TwoD_SPATIAL
+
+name=	Color 1
+type=	COLOR
+
+name=	Point 2
+type=	TwoD_SPATIAL
+
+name=	Color 2
+type=	COLOR
+
+name=	Point 3
+type=	TwoD_SPATIAL
+
+name=	Color 3
+type=	COLOR
+
+name=	Point 4
+type=	TwoD_SPATIAL
+
+name=	Color 4
+type=	COLOR
+
+name=	Color 4
+type=	NO_VALUE
+
+name=	Blend
+type=	OneD
+
+name=	Jitter
+type=	OneD
+
+name=	Opacity
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+

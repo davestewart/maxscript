@@ -1,0 +1,12 @@
+[name]
+name=Paint
+matchName=ADBE Paint
+
+[properties]
+name=	Paint on Transparent
+type=	OneD
+
+*name=	Strokes
+type=	Strokes
+
+

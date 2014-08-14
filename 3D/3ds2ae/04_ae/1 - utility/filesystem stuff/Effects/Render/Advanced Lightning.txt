@@ -1,0 +1,96 @@
+[name]
+name=Advanced Lightning
+matchName=ADBE Lightning 2
+
+[properties]
+name=	Lightning Type
+type=	OneD
+
+name=	Origin
+type=	TwoD_SPATIAL
+
+name=	Contextual Control
+type=	TwoD_SPATIAL
+
+name=	Conductivity State
+type=	OneD
+
+name=	Core Settings
+type=	NO_VALUE
+
+name=	Core Radius
+type=	OneD
+
+name=	Core Opacity
+type=	OneD
+
+name=	Core Color
+type=	COLOR
+
+name=	Core Color
+type=	NO_VALUE
+
+name=	Glow Settings
+type=	NO_VALUE
+
+name=	Glow Radius
+type=	OneD
+
+name=	Glow Opacity
+type=	OneD
+
+name=	Glow Color
+type=	COLOR
+
+name=	Glow Color
+type=	NO_VALUE
+
+name=	Alpha Obstacle
+type=	OneD
+
+name=	Turbulence
+type=	OneD
+
+name=	Forking
+type=	OneD
+
+name=	Decay
+type=	OneD
+
+name=	Decay Main Core
+type=	OneD
+
+name=	Composite on Original
+type=	OneD
+
+name=	Expert Settings
+type=	NO_VALUE
+
+name=	Complexity
+type=	OneD
+
+name=	Min. Forkdistance
+type=	OneD
+
+name=	Termination Threshold
+type=	OneD
+
+name=	Main Core Collision Only
+type=	OneD
+
+name=	Fractal Type
+type=	OneD
+
+name=	Core Drain
+type=	OneD
+
+name=	Fork Strength
+type=	OneD
+
+name=	Fork Variation
+type=	OneD
+
+name=	Fork Variation
+type=	NO_VALUE
+
+

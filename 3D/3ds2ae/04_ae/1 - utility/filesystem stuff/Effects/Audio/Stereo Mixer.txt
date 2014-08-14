@@ -1,0 +1,21 @@
+[name]
+name=Stereo Mixer
+matchName=ADBE Aud Stereo Mixer
+
+[properties]
+name=	Left Level
+type=	OneD
+
+name=	Right Level
+type=	OneD
+
+name=	Left Pan
+type=	OneD
+
+name=	Right Pan
+type=	OneD
+
+name=	Invert Phase
+type=	OneD
+
+

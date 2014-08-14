@@ -1,0 +1,30 @@
+[name]
+name=Motion Tile
+matchName=ADBE Tile
+
+[properties]
+name=	Tile Center
+type=	TwoD_SPATIAL
+
+name=	Tile Width
+type=	OneD
+
+name=	Tile Height
+type=	OneD
+
+name=	Output Width
+type=	OneD
+
+name=	Output Height
+type=	OneD
+
+name=	Mirror Edges
+type=	OneD
+
+name=	Phase
+type=	OneD
+
+name=	Horizontal Phase Shift
+type=	OneD
+
+

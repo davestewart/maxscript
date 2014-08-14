@@ -1,0 +1,588 @@
+global string $cams[];
+
+
+global proc exportCameraUI()
+{
+	global string $cams[];
+	global string $gTimeRangeSlider;
+	string $fs;
+	
+	if( `window -ex ecuiWindow` )
+		deleteUI ecuiWindow;
+		
+	string $sel[] = `ls -sl`;
+	if( size($sel) )
+	{
+		$fs = $sel[0];
+		string $shp[] = `listRelatives -s $sel[0]`;
+		string $rel[] = `listRelatives -p -f $shp[0]`;
+		if( `nodeType $shp[0]` != "camera" )
+			$fs = "";
+		else
+			$fs = $rel[0];
+	}
+	
+	int $indx = lookForCameras($fs);
+	
+	window -t "Export Camera" -s true -tb true -mnb true -mxb true -ret -vis false ecuiWindow;
+	scrollLayout -hst 0 -vst 0 -en true -cr true;
+		columnLayout -cal "left" -cat "both" 5 -adj true;
+			frameLayout -label "Export Maya camera to MAX" -collapsable true -borderStyle "in" -bv false -mh 5 -mw 5;
+				columnLayout -co both 5 -adj true;
+					frameLayout -label "Export options" -labelAlign "top" -collapsable false -borderStyle "in" -mh 5 -mw 5 eoFrame;
+						columnLayout -cal "left" -cat "both" 5 -adj true column1;
+							text -label "Camera" -al "left";
+							separator -st "single" -h 5;
+							textScrollList -nr 3 -ams false -aas false -dcc "showSel" camToExport;
+							for( $k=0; $k<size($cams)-2; $k++ )
+								textScrollList -e -a $cams[$k] camToExport;
+							if( $fs == "" )
+								textScrollList -e -sii 1 camToExport;
+							else
+								textScrollList -e -sii $indx camToExport;
+							separator -st "none" -h 5;
+							checkBoxGrp -numberOfCheckBoxes 1 -label "Full paths in the list" -cal 1 left -v1 true 
+										-on1 ("longNames(1)") -of1 ("shortNames(1)") camToExportName;
+							text -label "Time range" -al "left";
+							separator -st "single" -h 5;
+							radioCollection rcOptions;
+				        	int $gst = `getAttr defaultRenderGlobals.startFrame`;
+        					int $get = `getAttr defaultRenderGlobals.endFrame`;
+				        	int $rst = `rangeControl -q -minRange $gTimeRangeSlider`;
+        					int $ret = `rangeControl -q -maxRange $gTimeRangeSlider`;
+	   						radioButton -label ("RenderGlobals [" + $gst + " - " + $get + "]") -align left -sl rbGlobals;
+		   					radioButton -label ("Time slider [" + $rst + " - " + $ret + "]") -align left rbSlider;
+			   				radioButton -label "User defined" -align left -cc setUser rbUser;
+						    intFieldGrp -numberOfFields 1 -cal 1 right -label "Start time " -value1 1 -en false ifStart;
+						    intFieldGrp -numberOfFields 1 -cal 1 right -label "End time   " -value1 50 -en false ifEnd;
+							separator -st "none" -h 15;
+							text -label "Output file" -al "left";
+							separator -st "single" -h 5;
+							button -label "Browse" -align "center" -en true -h 26 -w 120 -c setFileName bFileName;
+							separator -st "none" -h 15;
+							setParent..;
+						setParent..;
+					setParent..;
+				setParent..;
+			frameLayout -label "Import MAX camera to Maya" -collapsable true -borderStyle "in" -bv false -mh 5 -mw 5;
+				columnLayout -co both 5 -adj true;
+					frameLayout -label "Import options" -labelAlign "top" -collapsable false -borderStyle "in" -mh 5 -mw 5 ioFrame;
+						columnLayout -cal "left" -cat "both" 5 -adj true column1;
+							text -label "Camera" -al "left";
+							separator -st "single" -h 5;
+							textScrollList -nr 3 -ams false -aas false camToImport;
+							for( $km in $cams )
+								textScrollList -e -a $km camToImport;
+							textScrollList -e -sii 1 camToImport;
+							separator -st "none" -h 5;
+							checkBoxGrp -numberOfCheckBoxes 1 -label "Full paths in the list" -cal 1 left -v1 true 
+										-on1 ("longNames(0)") -of1 ("shortNames(0)") camToImportName;
+							separator -st "none" -h 15;
+							text -label "Input file" -al "left";
+							separator -st "single" -h 5;
+							button -label "Browse" -align "center" -en true -h 26 -w 120 -c getFileName ibFileName;
+							setParent..;
+						setParent..;
+					setParent..;
+				setParent..;
+			separator -st "none" -h 15;
+			button -label "Close" -align "center" -en true -c "deleteUI ecuiWindow" bExit;
+   	showWindow ecuiWindow;
+}
+
+
+global proc showSel()
+{
+	global string $cams[];
+	int $sl[];
+	$sl = `textScrollList -q -sii camToExport`;
+	select -r $cams[$sl[0]-1];	
+}
+
+
+global proc int lookForCameras( string $sc )
+{
+	global string $cams[];
+	string $camsName[];
+	int $indx = 0;
+	
+	clear($cams);
+	string $camsArray[] = `ls -ca`;
+	int $as = size($camsArray);
+	for( $i=0; $i<$as; $i++ )
+	{
+		string $r[] = `listRelatives -f -p $camsArray[$i]`;
+		$cams[$i] = $r[0];
+		if( $cams[$i] == $sc )
+			$indx = $i+1;
+	}
+	$cams[$i] = "[selected item]";
+	$cams[$i+1] = "[new camera]";
+	return($indx);
+}
+
+
+global proc shortNames(int $j)
+{
+	global string $cams[];
+	string $buff[];
+	int $tn, $li, $sl[];
+	if($j)
+	{
+		$sl = `textScrollList -q -sii camToExport`;
+		textScrollList -e -ra camToExport;
+	}
+	else
+	{
+		$sl = `textScrollList -q -sii camToImport`;
+		textScrollList -e -ra camToImport;
+	}
+	for( $i=0; $i<size($cams); $i++ )
+	{
+		$tn = `tokenize $cams[$i] "|" $buff`;
+		if($j)
+		{
+			if($i < size($cams)-2)
+				textScrollList -e -a $buff[$tn-1] camToExport;
+		}
+		else
+			textScrollList -e -a $buff[$tn-1] camToImport;
+	}
+	if($j)
+		textScrollList -e -sii $sl[0] camToExport;
+	else
+		textScrollList -e -sii $sl[0] camToImport;
+}
+
+global proc longNames(int $j)
+{
+	global string $cams[];
+	int $sl[];
+	if($j)
+	{
+		$sl = `textScrollList -q -sii camToExport`;
+		textScrollList -e -ra camToExport;
+	}
+	else
+	{
+		$sl = `textScrollList -q -sii camToImport`;
+		textScrollList -e -ra camToImport;
+	}
+	for( $i=0; $i<size($cams); $i++ )
+		if($j)
+		{
+			if( $i < size($cams)-2 )	
+				textScrollList -e -a $cams[$i] camToExport;
+		}
+		else
+			textScrollList -e -a $cams[$i] camToImport;
+	if($j)
+		textScrollList -e -sii $sl[0] camToExport;
+	else
+		textScrollList -e -sii $sl[0] camToImport;
+}
+
+
+global proc setupExport( string $fn, string $mask )
+{
+	global string $cams[];
+	global string $gTimeRangeSlider;
+
+	string $fileName;
+	string $buff[];
+	int $nt = `tokenize $mask "." $buff`;
+	$fileName = $fn + "." + $buff[1];
+	string $selOpt = `radioCollection -q -sl rcOptions`;
+	switch( $selOpt )
+	{
+    	case "rbGlobals":
+        	int $startTime = `getAttr defaultRenderGlobals.startFrame`;
+        	int $endTime = `getAttr defaultRenderGlobals.endFrame`;
+        	break;
+    	case "rbSlider":
+        	int $startTime = `rangeControl -q -minRange $gTimeRangeSlider`;
+        	int $endTime = `rangeControl -q -maxRange $gTimeRangeSlider`;
+        	break;
+    	case "rbUser":
+        	int $startTime = `intFieldGrp -q -v1 ifStart`;
+        	int $endTime = `intFieldGrp -q -v1 ifEnd`;
+	}
+	int $camIndex[] = `textScrollList -q -sii camToExport`;
+   	string $cameraName = $cams[$camIndex[0]-1];
+   	exportCamera( $fileName, $cameraName, $startTime, $endTime );
+}
+
+
+global proc setupImport( string $fn, string $mask )
+{
+	global string $cams[];
+	string $CamName;
+	int $camIndex[] = `textScrollList -q -sii camToImport`;
+   	string $camName = $cams[$camIndex[0]-1];
+   	if( $camName == "[selected item]")
+   	{
+   		string $sel[] = `ls -sl`;
+   		if(size($sel) == 0)
+   			$camName = "";
+   		else
+   			$camName = $sel[0];
+   	}
+   	if( $camName == "[new camera]")
+   	{
+   		string $cn = `createNode camera`;
+   		string $rels[] = `listRelatives -p $cn`;
+   		$camName = $rels[0];
+   		select -r $camName;
+   	}
+	importCamera( $fn, $camName );
+}
+
+global proc setFileName()
+{
+	string $fname = `fileBrowserDialog -m 1 -fc "setupExport" -ft "*.cam" -an "ExportCamera" -om "SaveAs"`;
+}
+
+
+global proc getFileName()
+{
+	// string $cnode = `textFieldGrp -q -text tCamera`;
+	string $fname = `fileBrowserDialog -m 0 -fc "setupImport" -ft "*.cam" -an "ImportCamera" -om "Import"`;
+}
+
+global proc setUser()
+{
+	int $state = `radioButton -q -sl rbUser`;
+	intFieldGrp -e -en $state ifStart;
+	intFieldGrp -e -en $state ifEnd;
+}
+
+global proc setBrowse()
+{
+	if( `textFieldGrp -q -text tCamera` == "" )
+		button -e -en false bFileName;
+	else
+		button -e -en true bFileName;	
+}
+
+
+global proc setIBrowse()
+{
+	if( `textFieldGrp -q -text itCamera` == "" )
+		button -e -en false ibFileName;
+	else
+		button -e -en true ibFileName;	
+}
+
+
+
+
+global proc float AEcalculateFOV( string $cam )
+{
+	string $rel[] = `listRelatives -s $cam`;
+	float $focal = `getAttr ($rel[0] + ".focalLength")`;
+	float $aperture = `getAttr ($rel[0] + ".horizontalFilmAperture")`;
+
+	float $fov = (0.5 * $aperture) / ($focal * 0.03937);
+	$fov = 2.0 * atan ($fov);
+	$fov = 57.29578 * $fov; 
+
+    return $fov;
+}
+
+global proc AEadjustFocal( string $focalStr, string $horStr )
+{
+	float $fov = `floatSliderGrp -q -value fovGrp`;
+	float $aperture = `getAttr $horStr`;
+	float $focal = tan (0.00872665 * $fov);
+	$focal = (0.5 * $aperture) / ($focal * 0.03937);
+	
+	setAttr $focalStr $focal;
+}
+
+
+global proc exportCamera( string $fn, string $cn, int $ts, int $te )
+{
+	float $trn[3];
+	float $rot[3];
+	int $ResX, $ResY, $aov;
+	float $dar, $par, $hfa, $fl;
+	string $lineTrans, $lineRot, $lineTemp;
+	
+	$ResX = `getAttr defaultResolution.width`;
+	$ResY = `getAttr defaultResolution.height`;
+	$dar = `getAttr defaultResolution.deviceAspectRatio`;
+	$par = ((float)$ResY/(float)$ResX)*$dar;
+	string $rel[] = `listRelatives $cn`;
+	if( `attributeExists "horizontalFilmAperture" $rel[0]`)
+	{
+		$hfa  = `getAttr ($rel[0] + ".horizontalFilmAperture")`;
+		$fl = `getAttr ($rel[0] + ".focalLength")`;
+	}
+	else
+	{
+		error "The selected node is not a camera!\n";
+		return;
+	}
+	
+	$fileID = `fopen $fn "w"`;
+	if( !$fileID )
+	{
+		error "Error opening the file for writing!\n";
+		return;
+	}
+	
+	// print comments
+	//
+	fprint $fileID "// Camera file\n//\n// Exported from Maya v4.0\n//\n// Information :\n//\n";
+	string $dir = `file -query -sceneName`;
+	if( size($dir) == 0)
+		$dir = "<untitled>";
+	fprint $fileID ("//		Scene name:  " + $dir + "\n");
+	fprint $fileID ("//		Camera name: " + $cn  + "\n//\n\n");
+	
+	// print resolution
+	//
+	fprint $fileID "// Resolution\n//\n";
+	fprint $fileID "ResX="; $lineTemp = $ResX + "\n"; fprint $fileID $lineTemp;
+	fprint $fileID "ResY="; $lineTemp = $ResY + "\n"; fprint $fileID $lineTemp; fprint $fileID "\n";
+
+	// print ratios
+	//
+	fprint $fileID "// Aspect ratios\n//\n";
+	fprint $fileID "DivAspR="; $lineTemp = $dar + "\n"; fprint $fileID $lineTemp;
+	fprint $fileID "PixAspR="; $lineTemp = $par + "\n"; fprint $fileID $lineTemp; fprint $fileID "\n";
+
+	// print horizontalFilmAperture
+	//
+	fprint $fileID "// Horizontal Film Aperture\n//\n";
+	fprint $fileID "CamApert="; $lineTemp = $hfa; fprint $fileID $lineTemp; fprint $fileID "\n\n";
+	
+	// print focalLength
+	//
+	fprint $fileID "// Focal length\n";	fprint $fileID "//\n";
+	fprint $fileID "FocLen="; $lineTemp = $fl; fprint $fileID $lineTemp; fprint $fileID "\n\n";
+	
+	// print the starting frame
+	//
+	$lineTemp = $ts + "\n";
+	fprint $fileID "// Start frame\n//\n"; 
+	fprint $fileID "StartFrame="; fprint $fileID $lineTemp;
+	fprint $fileID "\n// Transformation and rotation data\n//\n\n";
+	
+	// print translate and rotate for every frame
+	//
+	int $ot = `currentTime -q`;
+	for( $ct = $ts; $ct <= $te; $ct++ )
+	{
+		$lineTrans = "";
+		$lineRot = "";
+		currentTime -e $ct;
+		$trn = `xform -q -a -ws -t $cn`;
+		$lineTrans = $trn[0] + " " + $trn[1] + " " + $trn[2] + " ";
+		$rot = `xform -q -a -ws -ro $cn`;
+		$lineRot = $rot[0] + " " + $rot[1] + " " + $rot[2] + "\n";
+		fprint $fileID $lineTrans;
+		fprint $fileID $lineRot;
+	}
+	fclose $fileID;
+	currentTime -e $ot;
+   	confirmDialog -title "Done" -message "Maya camera data exported!" -ma center -button "OK" ;
+}
+
+
+global proc string skipWhiteSpace( int $fi )
+{
+	string $line = "";
+	while( (size($line) <= 2) || (`substring $line 1 1` == "/") )
+	{
+		$line = `fgetline $fi`;
+		$line = strip($line);
+	}
+	return( $line );
+}
+
+global proc importCamera( string $fn, string $cn )
+{
+	int $ResX, $ResY, $StartFrame;
+	float $DivAspR, $PixAspR, $CamApert, $FocLen;
+	
+	int $sframe, $cf = 0, $nt;
+	float $trx[3], $rot[3], $fov;
+	string $buff[], $line = "";
+
+	int $isCam = 1;
+
+	if( $cn == "" )
+	{
+		confirmDialog -title "Error" -message "Oops!\nThere's nothing selected...\n" -ma center -button "OK";
+		return;
+	}
+
+	string $rel[] = `listRelatives $cn`;
+	if( !`attributeExists "horizontalFilmAperture" $rel[0]`)
+	{
+	   	string $ans = `confirmDialog -title "Warning" -message "The selected node is not a camera!\nPress [Yes] if You want to attach the motion data \nto this node otherwise press [No]\n" -ma center -button "Yes" -button "No"`;
+	   	if( $ans == "Yes" )
+	   		$isCam = 0;
+	   	else
+	   		return;
+	}
+
+	$fileID = `fopen $fn "r"`;
+	if( !$fileID )
+	{
+		error "Error opening the file for reading!\n";
+		return;
+	}
+	
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+	
+	// read ResX
+	//
+	clear( $buff );
+	int $nt = `tokenize $line "=" $buff`;
+	if( ($nt != 2) || ($buff[0] != "ResX") )
+	{
+		error "File corrupt! [ResX]\n";
+		return;
+	}
+	else
+		$ResX = $buff[1];
+		
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+
+	// read ResY
+	//
+	clear( $buff );
+	int $nt = `tokenize $line "=" $buff`;
+	if( ($nt != 2) || ($buff[0] != "ResY") )
+	{
+		error "File corrupt! [ResY]\n";
+		return;
+	}
+	else
+		$ResY = $buff[1];
+	
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+
+	// read DivAspR
+	//
+	clear( $buff );
+	int $nt = `tokenize $line "=" $buff`;
+	if( ($nt != 2) || ($buff[0] != "DivAspR") )
+	{
+		error "File corrupt! [DivAspR]\n";
+		return;
+	}
+	else
+		$DivAspR = $buff[1];
+
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+
+	// read PixAspR
+	//
+	clear( $buff );
+	int $nt = `tokenize $line "=" $buff`;
+	if( ($nt != 2) || ($buff[0] != "PixAspR") )
+	{
+		error "File corrupt! [PixAspR]\n";
+		return;
+	}
+	else
+		$PixAspR = $buff[1];
+
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+
+	// read CamApert
+	//
+	clear( $buff );
+	int $nt = `tokenize $line "=" $buff`;
+	if( ($nt != 2) || ($buff[0] != "CamApert") )
+	{
+		error "File corrupt! [CamApert]\n";
+		return;
+	}
+	else
+		$CamApert = $buff[1];
+
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+
+	// read FocLen
+	//
+	clear( $buff );
+	int $nt = `tokenize $line "=" $buff`;
+	if( ($nt != 2) || ($buff[0] != "FocLen") )
+	{
+		error "File corrupt! [FocLen]\n";
+		return;
+	}
+	else
+		$FocLen = $buff[1];
+
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+
+	// read StartFrame
+	//
+	clear( $buff );
+	int $nt = `tokenize $line "=" $buff`;
+	if( ($nt != 2) || ($buff[0] != "StartFrame") )
+	{
+		error "File corrupt! [StartFrame]\n";
+		return;
+	}
+	else
+		$StartFrame = $buff[1];
+
+	// skip comments
+	//
+	$line = skipWhiteSpace( $fileID );
+		
+	// read lines until EOF
+	//
+	while( !`feof $fileID`)
+	{
+		if( (size($line) <= 2) || (`substring $line 1 1` != "/") )
+		{
+			$nt = `tokenize $line " " $buff`;
+			for( $i = 0; $i < 3; $i++ )
+			{
+				$trx[$i] = $buff[$i];
+				$rot[$i] = $buff[$i+3];
+			}
+			clear($buff);
+			setKeyframe -at translateX -t ($cf+$StartFrame) -v $trx[0] $cn;
+			setKeyframe -at translateY -t ($cf+$StartFrame) -v $trx[1] $cn;
+			setKeyframe -at translateZ -t ($cf+$StartFrame) -v $trx[2] $cn;
+			setKeyframe -at rotateX    -t ($cf+$StartFrame) -v $rot[0] $cn;
+			setKeyframe -at rotateY    -t ($cf+$StartFrame) -v $rot[1] $cn;
+			setKeyframe -at rotateZ    -t ($cf+$StartFrame) -v $rot[2] $cn;
+    	}
+		$line = `fgetline $fileID`;
+		$cf++;
+	}
+	fclose $fileID;
+	if( $isCam )
+	{
+		setAttr "defaultResolution.width" $ResX;
+		setAttr "defaultResolution.height" $ResY;
+		setAttr "defaultResolution.deviceAspectRatio" $DivAspR;
+		string $rel[] = `listRelatives $cn`;
+		setAttr ($rel[0] + ".horizontalFilmAperture") $CamApert;
+		setAttr ($rel[0] + ".focalLength") $FocLen;
+	}
+   	confirmDialog -title "Done" -message "MAX camera data imported!" -ma center -button "OK" ;
+}

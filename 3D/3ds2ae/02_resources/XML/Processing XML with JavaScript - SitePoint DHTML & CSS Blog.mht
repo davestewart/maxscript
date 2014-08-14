@@ -1,0 +1,2904 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Processing XML with JavaScript - SitePoint DHTML & CSS Blog
+Date: Sat, 22 Jan 2005 18:33:45 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0000_01C500B0.E824D820";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sitepoint.com/blog-post-view.php?id=181637
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Den xml:lang=3D"en" =
+xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD><TITLE>Processing XML with =
+JavaScript - SitePoint DHTML & CSS Blog</TITLE>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3Dall name=3Drobots>
+<META=20
+content=3D"SitePoint.com - With a vast variety of web design tutorials =
+and articles coupled with a vibrant and well informed community, =
+SitePoint the natural place to go to grow your online business"=20
+name=3Ddescription>
+<META=20
+content=3D"CSS positioning, XHTML standards, tableless design, =
+accessability, freelance web design, PHP MySQL tutorial, page tutorial, =
+teaching dotnet, standards compliant, PHP web programming tutorial, =
+graphics, selecting a web hosting service, xhtml complaint site, kevin =
+yank, development tutorials, database lesson, apache web server lessons, =
+Flash books, free design help, where can i find web programming help"=20
+name=3Dkeywords><LINK href=3D"/favicon.ico" rel=3D"shortcut icon"><LINK =
+media=3Dall=20
+href=3D"http://www.sitepoint.com/search.css" type=3Dtext/css =
+rel=3Dstylesheet><!--google search hilight : must be the first sheet =
+called --><LINK=20
+media=3Dall href=3D"http://www.sitepoint.com/css/standard.css?ref=3D" =
+type=3Dtext/css=20
+rel=3Dstylesheet><LINK media=3Dall=20
+href=3D"http://www.sitepoint.com/css/format.css?random=3D" =
+type=3Dtext/css=20
+rel=3Dstylesheet><LINK media=3Dall =
+href=3D"http://www.sitepoint.com/css/tabs.css"=20
+type=3Dtext/css rel=3Dstylesheet><LINK media=3Dprint=20
+href=3D"http://www.sitepoint.com/printstyle.css" type=3Dtext/css =
+rel=3Dstylesheet><!-- Print only css  --><LINK title=3D"RSS - Articles"=20
+href=3D"/recent.rdf" type=3Dapplication/rdf+xml rel=3Dalternate><LINK=20
+title=3D"RSS - Books" href=3D"/books.rdf" type=3Dapplication/rdf+xml=20
+rel=3Dalternate><LINK title=3D"RSS - Blogs" href=3D"/blogs.rdf"=20
+type=3Dapplication/rdf+xml rel=3Dalternate><LINK title=3D"RSS - Forums"=20
+href=3D"/forums/featured.rdf" type=3Dapplication/rdf+xml =
+rel=3Dalternate><!--Browser is iewin--><!-- Good Lord! this is a new and =
+groovy browser!! --><LINK=20
+media=3Dscreen,projection,tv=20
+href=3D"http://www.sitepoint.com/css/structure.css?ref=3D" =
+type=3Dtext/css=20
+rel=3Dstylesheet>
+<SCRIPT src=3D"http://www.sitepoint.com/js/utilities.js"=20
+type=3Dtext/javascript></SCRIPT>
+
+<SCRIPT src=3D"http://www.sitepoint.com/popup/popupjs.php?zoneid=3D1"=20
+type=3Dtext/javascript></SCRIPT>
+
+<SCRIPT src=3D"http://www.sitepoint.com/js/ut-c.js" =
+type=3Dtext/javascript></SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>
+
+<!-- /* these browsers don't need help with the footer */
+window.onload =3D function() {
+	externalLinks();
+	};
+-->
+
+</SCRIPT>
+
+<STYLE type=3Dtext/css>.notifycomment {
+	BORDER-RIGHT: #ddd 1px dashed; PADDING-RIGHT: 10px; BORDER-TOP: #ddd =
+1px dashed; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #ddd =
+1px dashed; PADDING-TOP: 10px; BORDER-BOTTOM: #ddd 1px dashed; =
+BACKGROUND-COLOR: #efe
+}
+</STYLE>
+
+<META content=3D"MSHTML 6.00.2800.1106" name=3DGENERATOR></HEAD>
+<BODY>
+<DIV id=3Dskip><A accessKey=3D2=20
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D181637#content">=
+Skip=20
+Navigation</A></DIV>
+<DIV id=3Dheader><!--<div id=3D"news"><div class=3D"announce" =
+id=3D"hzad">&nbsp;</div></div>-->
+<DIV id=3Dnews>
+<DIV class=3Dannounce id=3Dtsunami_hzad><A style=3D"COLOR: #ffffff"=20
+href=3D"http://www.sitepoint.com/launch/16a888">Help those devastated by =
+the=20
+tsunamis. Donate to the American Red Cross International Response=20
+Fund.</A></DIV></DIV><A title=3DHome accessKey=3D1=20
+href=3D"http://www.sitepoint.com/"><IMG id=3Dlogo height=3D50=20
+alt=3D"Empowering Web Developers Since 1997"=20
+src=3D"http://www.sitepoint.com/images/sitepoint-logo.gif" =
+width=3D160></A> </DIV><!-- tabs - absolutely positioned -->
+<DIV id=3Dnavcontainer>
+<DIV id=3Dtagline>Empowering Web Developers Since 1997</DIV>
+<UL id=3Dnavlist>
+  <LI><A id=3Dtaba title=3D"One of the web=91s largest repositories of =
+=91web know-how=92"=20
+  href=3D"http://www.sitepoint.com/">Articles</A> </LI>
+  <LI><A id=3Dtabb title=3D"SitePoint=91s renowned web development =
+books" accessKey=3D5=20
+  href=3D"http://www.sitepoint.com/books/">Books</A> </LI>
+  <LI><A class=3Dactive id=3Dtabc=20
+  title=3D"Daily comment across a range of web subjects by some of the =
+top experts in their field"=20
+  accessKey=3D7 href=3D"http://www.sitepoint.com/blogs/">Blogs</A> </LI>
+  <LI><A id=3Dtabd title=3D"Our friendly, vibrant and well-informed =
+community"=20
+  accessKey=3D6 href=3D"http://www.sitepoint.com/forums/">Forums</A> =
+</LI></UL></DIV>
+<DIV id=3Dtabbar></DIV><!-- /tabs - absolutely positioned -->
+<DIV id=3Dcontainer><!-- *********  Start Column 2 ******** -->
+<DIV id=3Dcol2o>
+<DIV id=3Dcol2>
+<DIV id=3Dmaintab><A name=3Dcontent></A><!-- Crumb trail -->
+<DIV id=3Dgoogleblogs></DIV>
+<DIV class=3Dline>&nbsp;</DIV><SPAN class=3Dcrumb><A=20
+href=3D"http://www.sitepoint.com/blogs/">Blogs</A> =BB <A=20
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5">Stylish =
+Scripting</A> =BB=20
+Processing XML with JavaScript </SPAN>
+<DIV class=3Dline>&nbsp;</DIV><!-- End Crumb trail --><A =
+name=3Dcontent></A>
+<H1>Processing XML with JavaScript</H1>
+<H5>DHTML &amp; CSS Blog: Stylish Scripting</H5>
+<P><SPAN class=3Dregular_author>by <A title=3D"Simon Willison's Author =
+Profile"=20
+href=3D"http://www.sitepoint.com/articlelist/345">Simon =
+Willison</A></SPAN></P>
+<DIV class=3Dline>&nbsp;</DIV>
+<H5><SPAN class=3Ddate>Jul 15th, 2004 @ 10:07 PM MDT</SPAN></H5>
+<P>I came across a situation at work today where I needed to take an XML =
+string=20
+from a textarea and perform DOM manipulations on it using JavaScript. =
+After some=20
+digging around, I remembered an open source library called Sarissa I had =
+checked=20
+out a few days ago. <A =
+href=3D"http://sarissa.sourceforge.net/">Sarissa</A> is a=20
+remarkably useful piece of code: it offers a unified interface in both =
+Internet=20
+Explorer and Mozilla for handling HTTP requests, processing XML =
+documents and=20
+fragments and performing XSLT transformations. The IE functions are =
+mostly=20
+provided using ActiveX objects, while the Mozilla functions take =
+advantage of=20
+Mozilla's <A href=3D"http://www.mozilla.org/xmlextras/">XML Extras</A>=20
+package.</P>
+<P>Using Sarissa, converting a string containing XML in to a regular DOM =
+node=20
+can be done using the following:</P>
+<P></P><PRE class=3Dcode>var dom =3D Sarissa.getDomDocument();
+var xml =3D '&lt;example&gt;This is XML!&lt;/example&gt;';
+dom.loadXML(xml);
+</PRE>
+<P></P>
+<P>'dom' can then be treated as a DOM node, and manipulated using the =
+regular=20
+DOM API functions (appendChild, childNodes and so on). To convert the =
+node back=20
+to XML, simply access it's 'xml' property:</P>
+<P></P><PRE class=3Dcode>var xml_again =3D dom.xml;
+</PRE>
+<P></P>
+<P>Sarissa has one disadvantage: the library itself is a hefty 24 KB. As =
+the=20
+application I'm working on only needs to work with Mozilla, I decided to =
+dig in=20
+to the Sarissa source code to see how the above could be achieved =
+without the=20
+compatibility layer. Here's the equivalent Mozilla specific code, making =
+direct=20
+calls to additional classes provided by Mozilla's XML extras:</P>
+<P></P><PRE class=3Dcode>var xml =3D '&lt;example&gt;This is =
+XML!&lt;/example&gt;';
+var dom =3D (new DOMParser()).parseFromString(xml, "text/xml");
+</PRE>
+<P></P>
+<P>And to convert back to a string:</P>
+<P></P><PRE class=3Dcode>var xml_again =3D (new =
+XMLSerializer()).serializeToString(dom);
+</PRE>
+<P></P>
+<P>Unfortunately, as far as I can tell the only official documentation =
+for the=20
+XML extras package takes the form of a <A=20
+href=3D"http://lxr.mozilla.org/seamonkey/source/extensions/xmlextras/test=
+s/">test=20
+suite</A>.</P>
+<P class=3Dwrapright><A=20
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D181637#postcomme=
+nt">(Post a=20
+comment)</A></P><A name=3Dcomments></A>
+<H3>Comments</H3>
+<DIV id=3Dblogcomments>
+<H4><IMG height=3D19 alt=3DBlogged=20
+src=3D"http://www.sitepoint.com/images/icons/blogcomment.gif"=20
+width=3D25>Comment</H4>
+<P>There's <EM>some</EM> further documention at XULPlanet's <A=20
+href=3D"http://xulplanet.com/references/objref/">Scriptable Object =
+Reference</A>=20
+under "XML Objects". DOMParser seems to relatively complete. =
+XMLSerializer less=20
+so (but comments can be added).</P>
+<P><EM>&nbsp;&nbsp;Posted by: <A=20
+href=3D"http://www.sitepointforums.com/member.php?action=3Dgetinfo&amp;us=
+ername=3DHarryF">HarryF</A>=20
+from <A href=3D"http://www.phppatterns.com/">phppatterns.com</A> Jul =
+16th, 2004 @=20
+4:25 AM MDT</EM></P>
+<DIV class=3Dline>&nbsp;</DIV>
+<H4><IMG height=3D19 alt=3DBlogged=20
+src=3D"http://www.sitepoint.com/images/icons/blogcomment.gif"=20
+width=3D25>Comment</H4>
+<P>Excellent - thanks for the link. It looks like it's mostly generated =
+from the=20
+IDL files, but at least it's there and linkable.</P>
+<P><EM>&nbsp;&nbsp;Posted by: <A=20
+href=3D"http://www.sitepointforums.com/member.php?action=3Dgetinfo&amp;us=
+ername=3DSkunk">Skunk</A>=20
+from <A href=3D"http://simon.incutio.com/">simon.incutio.com</A> Jul =
+16th, 2004 @=20
+8:58 AM MDT</EM></P>
+<DIV class=3Dline>&nbsp;</DIV>
+<DIV id=3Dpostcomment><A name=3Dpostcomment></A>
+<FORM id=3Dbuyform action=3D/blog-post-view.php#postcomment =
+method=3Dpost>
+<H4>Post a comment - </H4>
+<P><LABEL for=3Dyourname_id>Your name:</LABEL><SPAN =
+class=3Delement><INPUT=20
+id=3Dyourname_id name=3Dyourname></SPAN>&nbsp;</P>
+<P><STRONG>OR</STRONG> log into the <A=20
+href=3D"http://www.sitepoint.com/forums/">SitePoint Forums</A>:</P>
+<P><LABEL for=3Dusername_id>Username:</LABEL><SPAN =
+class=3Delement><INPUT=20
+id=3Dusername_id name=3Dusername></SPAN>&nbsp;</P>
+<P><LABEL for=3Dpassword_id>Password:</LABEL><SPAN =
+class=3Delement><INPUT=20
+id=3Dpassword_id type=3Dpassword name=3Dpassword></SPAN>&nbsp;</P>
+<P><LABEL for=3Dcomment_id><SPAN class=3Drequired>*</SPAN>Comment: =
+</LABEL><SPAN=20
+class=3Delement><TEXTAREA id=3Dcomment_id style=3D"HEIGHT: 90px" =
+name=3Dcomment rows=3D8 cols=3D45></TEXTAREA></SPAN>&nbsp;</P>
+<P><LABEL for=3Dsubmit_id></LABEL><SPAN class=3Delement><INPUT =
+id=3Dsubmit_id type=3Dsubmit value=3D"Post my comment" =
+name=3Dsubmit></SPAN>&nbsp;</P>
+<P><INPUT type=3Dhidden value=3D181637 name=3Did></P>
+<P><SMALL><SPAN style=3D"FONT-SIZE: 80%; COLOR: #ff0000">*</SPAN><SPAN=20
+style=3D"FONT-SIZE: 80%"> denotes required=20
+field</SPAN></SMALL></P></FORM></DIV></DIV></DIV><!-- maintab =
+--></DIV><!-- col2 --></DIV><!-- col2o --><!-- ***************  Start =
+Column 1 ************   -->
+<DIV id=3Dcol1o>
+<DIV id=3Dcol1><!-- Search -->
+<FORM action=3D/search/search.php method=3Dget>
+<DIV class=3Dbar id=3Dsearch><INPUT type=3Dhidden value=3D10 name=3Dps> =
+<INPUT class=3Dtbox=20
+name=3Dq><BR><INPUT class=3Dbutton type=3Dsubmit value=3DSearch =
+name=3Dsubmit>=20
+</DIV></FORM><!-- Left Nav -->
+<H3>Your Blogmaster is...</H3>
+<H4><IMG class=3Dimgleft alt=3D"Simon Willison"=20
+src=3D"http://www.sitepoint.com/graphics/author_simon-willison.jpg"> =
+Simon=20
+Willison </H4>
+<P>Simon is a seasoned Web developer from the UK, currently working in =
+Lawrence,=20
+Kansas. He specializes in both client- and server-side development, and =
+recently=20
+became a member of the <A class=3Dsublink =
+href=3D"http://www.webstandards.org/"=20
+rel=3Dexternal>Web Standards project</A>. Visit him at <A =
+class=3Dsublink=20
+href=3D"http://simon.incutio.com/" =
+rel=3Dexternal>http://simon.incutio.com/</A>, and=20
+at <A class=3Dsublink =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5"=20
+rel=3Dexternal>Stylish Scripting: SitePoint's DHTML and CSS =
+Blog</A>.</P>
+<H3>July 2004</H3>
+<TABLE=20
+style=3D"BORDER-RIGHT: #ddd 1px solid; BORDER-TOP: #ddd 1px solid; =
+BORDER-LEFT: #ddd 1px solid; BORDER-BOTTOM: #ddd 1px solid; =
+BORDER-COLLAPSE: collapse"=20
+width=3D"100%">
+  <TBODY>
+  <TR style=3D"BACKGROUND: #ecf0f4">
+    <TH>S</TH>
+    <TH>M</TH>
+    <TH>T</TH>
+    <TH>W</TH>
+    <TH>T</TH>
+    <TH>F</TH>
+    <TH>S</TH></TR>
+  <TR>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right"></TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right"></TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right"></TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right"></TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">1=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ffffdd; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right"><A=20
+      =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D178920">2</A> =
+</TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ffffdd; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right"><A=20
+      =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D179105">3</A> =
+</TD></TR>
+  <TR>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">4=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">5=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">6=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ffffdd; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right"><A=20
+      =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D179923">7</A> =
+</TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">8=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">9=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">10=20
+    </TD></TR>
+  <TR>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">11=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">12=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ffffdd; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right"><A=20
+      =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D181192">13</A> =
+</TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">14=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ffffdd; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right"><A=20
+      =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D181637">15</A> =
+</TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">16=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">17=20
+    </TD></TR>
+  <TR>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">18=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ffffdd; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right"><A=20
+      =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D182191">19</A> =
+</TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">20=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">21=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">22=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">23=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">24=20
+    </TD></TR>
+  <TR>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">25=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ffffdd; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right"><A=20
+      =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D183888">26</A> =
+</TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">27=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">28=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">29=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: right">30=20
+    </TD>
+    <TD=20
+    style=3D"PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 80%; =
+BACKGROUND: #ecf0f4; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: =
+right">31=20
+    </TD></TR></TBODY></TABLE>
+<H3>Stylish Scripting Archives</H3>
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D420=
+">January=20
+  2005</A> (1)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D419=
+">December=20
+  2004</A> (4)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D418=
+">November=20
+  2004</A> (4)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D416=
+">September=20
+  2004</A> (3)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D415=
+">August=20
+  2004</A> (3)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D414=
+">July=20
+  2004</A> (9)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D413=
+">June=20
+  2004</A> (5)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D412=
+">May=20
+  2004</A> (11)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D411=
+">April=20
+  2004</A> (9)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5&amp;month=3D410=
+">March=20
+  2004</A> (5) </LI></UL>
+<H3>Recently in Stylish Scripting</H3>
+<UL>
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D222195">2005: =
+The=20
+  year of the DOM</A> (17)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D216588">Auto=20
+  complete comes of age</A> (33)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D216264">The=20
+  Web-Smart palette</A> (3)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D215919">Blank =
+alt=20
+  attributes</A> (8)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D213920">Lists =
+that=20
+  don't look like lists</A> (8)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D213655">HTCs =
+and=20
+  Service Pack 2</A> (7)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D212242">QuirksMo=
+de=20
+  bug reports</A> (6)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D211431">Opacity =
+
+  and DHTML</A> (7)=20
+  <LI><A=20
+  =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D210968">Presenta=
+tions=20
+  with s5</A> (5)=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-post-view.php?id=3D197199">CSS =
+tricks=20
+  in both dimensions</A> (8) </LI></UL>
+<H3>Suggest a Post </H3>
+<P>Got a good idea for an article/post? Spotted something for Simon =
+might be=20
+interested in? Or maybe you just have a question? <STRONG>Let Simon=20
+know!</STRONG></P>
+<FORM style=3D"MARGIN: 15px" action=3D/authorcontact_process =
+method=3Dpost>
+<P><LABEL for=3Dname>Your Name</LABEL></P>
+<P><INPUT id=3Dname name=3Dname></P>
+<P><LABEL for=3Demail>Your Email Address</LABEL></P>
+<P><INPUT id=3Demail name=3Demail></P>
+<P><LABEL for=3Dmessage>Your Message</LABEL><BR></P>
+<P><TEXTAREA id=3Dmessage style=3D"WIDTH: 90%" name=3Dmessage rows=3D8 =
+cols=3D6></TEXTAREA></P>
+<P><INPUT style=3D"WIDTH: 100%" type=3Dsubmit value=3D"Send message" =
+name=3Dsender>=20
+<INPUT type=3Dhidden value=3D345 name=3Dauthorid> <INPUT type=3Dhidden =
+value=3D1 name=3Dbid>=20
+</P></FORM>
+<H3>SitePoint Blogs</H3>
+<UL>
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D8">.NET</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D7">ColdFusion</A>=
+=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D13">Design</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D5">DHTML &amp;=20
+  CSS</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D1">Flash</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D16">Java/J2EE</A>=
+=20
+  <LI><A href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D6">Open =
+Source</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D9">PHP</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D14">Selling Web=20
+  Design Services</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D10">Usability =
+&amp;=20
+  IA</A>=20
+  <LI><A =
+href=3D"http://www.sitepoint.com/blog-view.php?blogid=3D12">XML</A>=20
+</LI></UL></DIV><!--/ col1 --></DIV><!--/ col1o --><!-- ***************  =
+Start Column 3 ************   -->
+<DIV id=3Dcol3o>
+<DIV id=3Dcol3>
+<H3 class=3Dnomargin>SitePoint Kits</H3>
+<DIV class=3Dbookbox><BR>
+<H5><A class=3Dsublink =
+href=3D"http://www.sitepoint.com/launch/71e2e6/">Grow your=20
+Web Design Business one client at a time!</A></H5>
+<DIV class=3Dwrapcenter><IMG height=3D132 alt=3D"The Web Design Business =
+Kit"=20
+src=3D"http://www.sitepoint.com/images/books/freelance1/smallkit2.gif"=20
+width=3D170></DIV></DIV>
+<P><STRONG>=91The Web Design Business Kit=91</STRONG> gives you =
+effective ways to=20
+grow your Web design business like you wouldn=92t believe!<BR></P>
+<P class=3Dwrapright><A class=3Dsublink=20
+href=3D"http://www.sitepoint.com/launch/71e2e6/">Tell me more..</A></P>
+<P>&nbsp;</P>
+<H3 class=3Dnomargin>SitePoint Books</H3>
+<DIV class=3Dbookbox><BR>
+<DIV class=3Dwrap>
+<H5><A title=3D"101 real-world CSS problems and answers!"=20
+href=3D"http://www.sitepoint.com/launch/f0e764/"><IMG class=3Dwrapleft =
+height=3D88=20
+alt=3D"The CSS Anthology: 100 Essential Tips, Tricks &amp; Hacks"=20
+src=3D"http://www.sitepoint.com/images/books/cssant1/bookcv-thumb-new.gif=
+"=20
+width=3D68>The CSS Anthology: 101 Essential Tips, Tricks &amp; =
+Hacks</A></H5>
+<P>by Rachel Andrew</P></DIV>
+<DIV class=3Dline></DIV>
+<DIV class=3Dwrap>
+<H5><A title=3D"Learn to build over 60 real-world Flash applications!"=20
+href=3D"http://www.sitepoint.com/launch/e0c08e/"><IMG class=3Dwrapright =
+height=3D92=20
+alt=3D"The Flash Anthology: Cool Effects &amp; Practical ActionScript"=20
+src=3D"http://www.sitepoint.com/images/books/flashant1/book_thb.gif" =
+width=3D63>The=20
+Flash Anthology: Cool Effects &amp; Practical ActionScript </A></H5>
+<P>by Steve Grosvenor</P></DIV>
+<DIV class=3Dline></DIV>
+<DIV class=3Dwrap>
+<H5><A title=3D"Learn how to build ASP.NET Websites from scratch!"=20
+href=3D"http://www.sitepoint.com/launch/3cbff2"><IMG class=3Dwrapright =
+height=3D84=20
+alt=3D"Build Your Own ASP.NET Website Using C# &amp; VB.NET"=20
+src=3D"http://www.sitepoint.com/images/books/aspnet1/photo-left-thb.gif" =
+
+width=3D61>Build Your Own ASP.NET Website<BR>Using C# &amp; =
+VB.NET</A></H5>
+<P>by Zak Ruvalcaba</P></DIV>
+<DIV class=3Dline></DIV>
+<DIV class=3Dwrap>
+<H5><A title=3D"Advanced PHP technique to take you well beyond the =
+hobbyist"=20
+href=3D"http://www.sitepoint.com/launch/6d310c/"><IMG class=3Dwrapleft=20
+style=3D"MARGIN-BOTTOM: 15px" height=3D82 alt=3D"The PHP Anthology"=20
+src=3D"http://www.sitepoint.com/images/books/phpant1/thunb-new.gif" =
+width=3D75>The=20
+PHP Anthology</A></H5>
+<P>by Harry Fuecks</P></DIV>
+<DIV class=3Dline></DIV>
+<DIV class=3Dwrap>
+<H5><A title=3D"Based on Kevin=92s famous set of beginner=92s tutorials" =
+
+href=3D"http://www.sitepoint.com/launch/ed1713/"><IMG class=3Dwrapright =
+height=3D94=20
+alt=3D"Build Your Own Database Driven Website Using PHP &amp; MySQL"=20
+src=3D"http://www.sitepoint.com/images/books/phpmysql1/thumb-new.gif"=20
+width=3D65>Build Your Own Database Driven Website Using PHP &amp; =
+MySQL</A></H5>
+<P>by Kevin Yank</P></DIV>
+<DIV class=3Dline></DIV>
+<DIV class=3Dwrap>
+<H5><A=20
+title=3D"One of the original, groundbreaking books to bring CSS layout =
+to a wide audience"=20
+href=3D"http://www.sitepoint.com/launch/55f42d/"><IMG class=3Dwrapleft =
+height=3D98=20
+alt=3D"HTML Utopia: Designing Without Tables Using CSS"=20
+src=3D"http://www.sitepoint.com/images/books/css1/thumb-new.gif" =
+width=3D65> HTML=20
+Utopia: Designing Without Tables Using CSS</A></H5>
+<P>by Dan Shafer</P></DIV></DIV>
+<H3>SitePoint Classics</H3>
+<P>Some of SitePoint=92s all time reader favorites. </P>
+<UL>
+  <LI><A title=3D"Kevin Yank's groundbreaking beginners PHP tutorial"=20
+  =
+href=3D"http://www.sitepoint.com/article/driven-website-php-amp-mysql">Si=
+tePoint=92s=20
+  =91Getting Started with PHP=92 Tutorial</A>=20
+  <LI><A title=3D"Leave the tables to IKEA - Get CSSexy Baby, =
+GRRRRrrr!!"=20
+  =
+href=3D"http://www.sitepoint.com/article/websites-tables-parts-1-2">CSS =
+Tutorial=20
+  - Design Sites Without Tables</A>=20
+  <LI><A title=3D"Timely advice for every freelance web designer"=20
+  href=3D"http://www.sitepoint.com/article/guide-signed-contract">Step =
+By Step=20
+  Guide to a Signed Contract</A>=20
+  <LI><A title=3D"Steve Grosvenor bring you Flash from the gods"=20
+  href=3D"http://www.sitepoint.com/article/flash-anthology-1">Flash =
+Tutorial -=20
+  Cool Effects &amp; Practical ActionScript</A>=20
+  <LI><A title=3D"Get the Lowdown on RSS"=20
+  href=3D"http://www.sitepoint.com/article/get-off-your-rss">What is =
+RSS?</A>=20
+  <LI><A title=3D"An Extract from Harry's 'PHP Anthology' Book"=20
+  =
+href=3D"http://www.sitepoint.com/article/php-anthology-2-5-caching">Advan=
+ced PHP=20
+  Tutorial on Caching</A> </LI></UL>
+<H3>Using BB Code</H3>
+<P>Feel free to make use any of the following <STRONG>BB code</STRONG> =
+when=20
+making comments.</P>
+<TABLE id=3Dbbcode summary=3D"Available BB Code">
+  <TBODY>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [b] This is bold text[/b]">[b]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [i] This is italics =
+text[/i]">[i]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [u] This is underlined =
+text[/u]">[u]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [s] This is struck =
+text[/s]">[s]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [sub] This is subscript =
+[/sub]">[sub]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [sup] This is superscript =
+[/sup]">[sup]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [small] This is small =
+[/small]">[small]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [php] This is php code =
+[/php]">[php]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [quote] This is quoted text =
+[/quote]">[quote]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [code] This is code =
+[/code]">[code]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [email]anything@example.com =
+[/email]">[email]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [color=3D#ff0000] This is very Red =
+[/color]">[color=3D#aaaaaa]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [size=3D5] This is size 5 (which is =
+little)[/size]">[size=3D5]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [font=3Darial] This font is Arial =
+[/font]">[font=3Darial]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [align=3Dright] This text is aligned to the =
+right [/align]">[align=3Dleft|right]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: =
+[img]http://www.example.com/images/image.jpg[/img]">[img]</SPAN></TD></TR=
+>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [url=3Dhttp://www.example.com] A nice URL =
+[/url]">[url=3Dblah]</SPAN></TD></TR><!--<tr><td class=3D"postday"><span =
+title=3D"Example: [list] [li]This is my first numbered list item [/li] =
+[/list]">[list]</span></td></tr>-->
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [ulist] [li]This is my first unordered list item =
+[/li] [/ulist]">[ulist]</SPAN></TD></TR>
+  <TR>
+    <TD class=3Dpostday><SPAN=20
+      title=3D"Example: [li] This is a list item (either type) =
+[/li]">[li]</SPAN></TD></TR></TBODY></TABLE></DIV></DIV></DIV><!-- end =
+container -->
+<DIV id=3Dstats>
+<UL>
+  <LI>Subscribers: 137,608=20
+  <LI>Forum Members: 59,866=20
+  <LI>Total Articles: 805 </LI></UL></DIV><!-- end stats -->
+<DIV id=3Dfooter>
+<DIV id=3Dtertiary><A =
+href=3D"http://www.sitepoint.com/mediakit">Advertise</A> | <A=20
+href=3D"http://www.sitepoint.com/about/html-title">About&nbsp;Us</A> | =
+<A=20
+href=3D"http://www.sitepoint.com/contact">Contact&nbsp;Us</A> | <A =
+accessKey=3D3=20
+href=3D"http://www.sitepoint.com/sitemap">Site Map</A> | <A=20
+href=3D"http://www.sitepoint.com/about/writeforus">Write&nbsp;For&nbsp;Us=
+</A> | <A=20
+href=3D"http://www.sitepoint.com/syndication/">RSS</A> | <A =
+accessKey=3D4=20
+href=3D"http://www.sitepoint.com/search/search.php">Search</A> | <A =
+accessKey=3D8=20
+href=3D"http://www.sitepoint.com/privacy/">Privacy</A> | <A=20
+href=3D"http://www.sitepoint.com/glossary.php?q=3DA">Glossary</A> | <A=20
+title=3D"Launch a window to view this site's Accesskeys" accessKey=3D0=20
+onclick=3D"acpopup(this.href,'console',450,280);return false;"=20
+href=3D"http://www.sitepoint.com/accesskeys/">AccessKeys</A> </DIV>The =
+contents of=20
+this webpage are copyright =A9 1998-2005 SitePoint Pty. Ltd. All Rights=20
+Reserved.<BR>
+<DIV class=3Dshuffle2><A id=3Dwebdev title=3D"Visit our development =
+site"=20
+href=3D"http://www.sitepoint.com.au/">Web Development by SitePoint, =
+Melbourne,=20
+Australia. </A>- <A id=3Deditor title=3D"Visit the home of Editize"=20
+href=3D"http://www.editize.com/">Content Management System using =
+Editize</A>=20
+<BR><A id=3Dhosting title=3D"Visit our hosting company"=20
+href=3D"http://www.venturesonline.com/">SitePoint.com is proudly hosted =
+by=20
+VenturesOnline.com</A> - <A id=3Ddomain title=3D"Domain Registrations"=20
+href=3D"http://www.domainguru.com/">&nbsp; Cheap Domain Registrations=20
+&nbsp;&nbsp;</A> </DIV></DIV><!-- end footer -->
+<SCRIPT=20
+src=3D"http://advertpro.sitepoint.com/advertpro/adscript.php?region=3D36&=
+amp;did=3Dgoogleblogs"=20
+type=3Dtext/javascript></SCRIPT>
+
+<SCRIPT=20
+src=3D"http://advertpro.sitepoint.com/advertpro/adscript.php?region=3D20&=
+amp;did=3Dhzad"=20
+type=3Dtext/javascript></SCRIPT>
+</BODY></HTML>
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/sitepoint-logo.gif
+
+R0lGODlhoAAyAMQAAJ2zxjNmmf9mABpMef///0lwlY6nvWGDo87Z4gE6bLHC0tvj6sPQ3AA+cAAz
+Zn2atOjt8QA2aeHo7nSTrg5AcPD09uzw9PP2+G+Nqv+ZM//MmZnM//z9/fb4+v/+/vn6/CH5BAAA
+AAAALAAAAACgADIAAAX/ICGOZGmeaKqubOu+cCzPdG3feK7vfO//wKBwSMsIjsjkUUNsOoMejXIq
+yDyvWJ2RmmRmv+CXlIu0hs/o05Ys8Kbf4Sj7aIbbv2uy+85vjtl1fYJCeVx7g4g8f2SBiY45hVSH
+XxwFDQWIlQ6YP4tcjWENoiQMBgd2DqkzpacpkVOTYAcNrSIDo3AHEbUwtw2PNb7ALMLAHAjIFS7F
+KAgMCBIsHRAsFc4IFzIICyjMJwGp4eLhGyYcIuDj6uUsBgEJ8KIDD8ojor8E9/q4BB0PA/AiRAjA
+gASCAwFMDUg14AA3EwgKRAiX4EC0EeFELED4AEM6BxQOUBOxT5+JDerU/wVIgTKluJUrCsBLEAAh
+BXkX8+EqeU9EhXcJBhQIIDABgBEIJoYbsNCB0RIMKDAsIBUkAoyqCEgYRyFA06c6eX5zKY7dWLKp
+zJ5QAI/CVZ+WaNnjF9bEAXgGRiwYECHBwwVKKRQksCDdUREQquYVMYFhBxEZ+4k78PgDhlQJ3tZV
+0RItzBOdyX4+MQHeaMIAUs/FR5IuAQSmSygQ2KqCUgUkFiQAebHxphKGIWclEM7AOREcDKTitFnF
+R7JqgaNNmwLAzAc5T/RcXeIBvAclLAikMELgABMFUk2wlWrxiAfLhTvA6gA3KczcV4R2eZrE/pT9
+jfABUPHU9IACx7XGWv9zIsg000wCRfiQQMyNoJwDMIUz2AgApEIeccOF85BekTGYwnMuRUcCiimp
+OIIFBwCUwD4DbLidgsA9CGGEEQwmEAYmdAiSfJqJoEAqEchH30gvlngjZ9NhyFKUAZYAASsB3DOA
+BTjmN4KDQK5AmwkXngeiAxsa6aGSbJbgpGsnRukiOnLCgMBNDSz25JMEYADPemIOZFd8BDR1mIWp
+ZBjicCS8uSCU01VJwH8qnYBAavatKAp4DN4zIgEMxGaCBSMK5ECRHVR1mG+8EJCeA4uVWGKjw3nq
+AovrxDmdimzN+KkEeNr3ZJZ5luBgpgRA8AAF7ikVwGMiHJDocYk5lan/kANkc+YIVZ1QIrHu6Ufl
+lJGaA1RIqU3gSwHHPQmAPBNYIoIEMhbwAEIRhkmAUg7M4w5Dn7LlVAEYyATShiV2a0KJ7zYwQLyP
+nkUWBXMSgKs4FI8a40xaPgCticuahJiDCUQ4j7b7MjQOBh+PwEBT4QRQZMKM0kdCyHzewQEDABhg
+AABprgCBAgAogPK8Paf2qQhKIaCAzwxwmQLPPxepw9BFHz3MEEptzcMrSsQSxqxe1yDHHKCgQXbZ
+RczRBh9rsx2DJ1SkLffdJIDdBd58l3A2IH0HPoLeSIgtuNd0T2H34V4TvgTjfCeuxOKQA+P425XL
+LXkSlGeeyOWGey76Ceikl2766TCEAAA7
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/icons/blogcomment.gif
+
+R0lGODlhGQATAMQAAP///+/y9d/l7NDZ47/M2bbF06+/z6a4yqG0x6CzxpCmvICas3+ZsniTrm2K
+p2GBoGKBoVBzlkBmjDxjiiVRfCBNeRBAcAg5awAzZgAfQAAAAAAAAAAAAAAAAAAAAAAAACH5BAUU
+AAAALAAAAAAZABMAAAVzICCOZGmeaKqiWOu6a4mdczzWQHanQoNFAhFOJ0w5ABOMpCgiAnAjgzDZ
+AkAoNFMgEpC4JIvLYeSERiuFyC8Yzp4iFgaBcHu9UAHLS2orKVwPFQF9JAQuBAIJhCMDLoOLJBgP
+ZpAYCBaQJUtLmSMLAJ99IQA7
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/graphics/author_simon-willison.jpg
+
+/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM
+DAwMEAwODxAPDgwTExQUExMcGxsbHCAgICAgICAgICD/2wBDAQcHBw0MDRgQEBgaFREVGiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCABDADgDASIA
+AhEBAxEB/8QAHAAAAgMBAAMAAAAAAAAAAAAAAAcFBggEAgMJ/8QANxAAAQMCBQEGBAQFBQAAAAAA
+AQIDBAURAAYHEiETFCIxMkFRI2FxgQgVM0IkYnKhsTRSU8Hw/8QAGQEAAwEBAQAAAAAAAAAAAAAA
+AgMEBQYA/8QAIxEAAgEEAgICAwAAAAAAAAAAAAECAxEhMRITBCJBUWFxkf/aAAwDAQACEQMRAD8A
+cmqusNPySluDGY/MK7JTuai3shtPot0+P0HrhIvfiI1YlKbeYciRmnirY2GQod1ViObnjx5PhiK1
+InSJOf67U3FgusyNjCVc2ST0bAfy7uMVzSugSa1nKoUPyRW0OLZWsHd3PAj5lOEzqNMpp0U0OCk6
+s6gSe0CXV2GVR9iLdBF1LUkKVYbfS+Iiu63aoRZK26dNZeQ2LrccYbSCfRI48cV9oyWK9LRJUNl9
+xA4stPcKvuEjEBmht+VSpXZz31IXb+rC+2Q10YnfTvxUaqTGlHtEZDgKgi7Le1W0A2+vOGvo/rHm
+HOboizam2xPc5io6KOm5Yd5B8p3C3vjFbL70d1K0EpW2q4+Rw4NH602xVC6tZS+yWpUN9PipQV/a
+x8cOlNoRCEZL8m3Yc+Yh5EWptobfc4Yeb/TdIFyADylVgTbnj1wY8ai83JoPbm/RpMthXqCkBxOD
+FEYctEspcTE+q85bWdat0iSlEhzcB/ydVP8Ai+LlpairRUSewuMN1aVaQ1JWfiJaUhTQtbw3FS/n
+f09cQjkRqfq7V6UpCnpUqsFTKT5LBdrfceOHbqDkRhjMDU2NGYTG7Oy2hspOyzQKCCEFJPB98Q1d
+s0qGl+jP9XqmYafW50WTMgvygPhJaJ7qgfBY9QrwPzxxwMzLXT3VymlBbJKXgEkhN+Rci4F/AXw0
+0aEz8xVhUxKokFuQrqOuHe4VhPsAEn04ucXPNejlATQ8vUKJGSJrgUzNcB6S3ytu6uotIJISry+N
+hxgPgN7sY4rNOnzqg5KYg9FDnJQFJPPv8sWfTunvRJrnafhOJSlRim+8ovZSkm/ASDcgg/XF3Ojt
+Sy9nhinTmrrDgDb4dKW3EX4cBAPP/rY7dV9Mo+Ws0UOdMkokRZseW+G2kqCkpjrbslSjy4bPeaw+
+mD5XwLULZHxG1hyrUaWunRVbXCx0kt+107QOMGMy5C6Sq6HWFfAU4jpA3vbf8wL2wY3IU429dMwp
+Tlf22MjLld01jal1eVUpfZMzwaspuO28bBwuO9NIbPAKSk94eIIxpyeGTGV1W0uJA8qhfHz41dSG
+dRq/0UfHelOrKrWUkoVcFs+IP0xv+lPdroUKQtfVL8ZpwuWtu3IB3W+d8ZL2zVviJR6SxVl11yoO
+lMWHHJMOEOVL/nWkeA9hihZ3zjmZrMbNOEtuRVojzj7EnYY8VtKxdlBG5a9yP7nDIfy2zFk1epya
+jNQucEpDMdfTSlLY7trAm/3wgK246/mglEqbER1AkuOEPL9gq6wm/wB8SF28l1hVyfVs3LVVY5Ak
+r6rTKuUjgX2H6i/GF3+JXOC152p1Bh8vUmM2G1KN0pckHqLB9+7swysjQ6g1Upsisvtqhw/iNvpG
+xsAAlSgP293k4U1BybXdTM05lznBYdNPlOvpD6xZB5s20g+pDaUE+2GUY3kBXlxiQ+npvXkGwT3m
++B/VgxecqaP5tpNQMuVHKWWtqlK+STc4MdE3HUdI5pKW3ti/1mYnQM+z5blPDrSpLrrUgEm/e/d7
+WxrHQ/M5zFphQwVlNQiwWG3SRa4RdtKvmD0sI78VUObTJIStgdGSVIhPhPm6qisgq+SRb7YeWgL9
+PVpNQOzbS7FjCNIUB3roUSL/AFCtw+uMNrJt39f4ducM4xaLEdXUmSgpHn8yL+nI/wC8Z4Yzi3VM
+1JfWz1kvOfpAX4w8tZY0Z3LUqS68GUNI3OrIKgE/RNzhRwMuuUCRFZdprKmZBYbk1Vbix01yXyz0
+7NNvFu/G1Tm1Cj3b3wjg2U9iikejWLNiXMjT6bTlqiMvKajr2cKfK1jegH0bSnze/himZezTm3I8
+WjTMuTH2qHKu3Mp6l72uuLFSlJVcXWFXFgDhk5moUNdOzKxMgJkmluxHIkZx8lohxCQgfp/CueVA
+bucQdJjw6rl9qI1Q4jTplO9OI7KUI4S1Tmp5cDgZ3by3ICbbOLE3wapuwt1k2MDLGpszMsOQhDg6
+yWz2iKfMlJ4un/cMGK9lClQBV4KYdIbbpkiRTmHJxkK7UDPjIloAaDZRZG+yiXOfTBhvi0utPLyJ
+8qr2NYWB/Zwy3QcwUKTCrUFqdG2KUG3RexAuCD4jwwgtO35GWMwSKXRHnItOfRucilankX55AdK9
+v2wYMV01dEsnZkvmnMFZcZIVLX4+nd/xbFXQ2w+hufIZakT4qv4WY82h19qx3DpurCloseeDgwY8
+oL6ClNnIiPGDy5QZbEqd/rXwhO9793xVWuvvC/OLBEpdLmI/L5cGM/AUUPGKtlst9VKA0ley1twb
+QEg+NhbBgwXFClJj2y9QKI3TI7yYLHWdLclxwoSpRebTtQ5uNzuSkWB9BgwYMTscj//Z
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/books/freelance1/smallkit2.gif
+
+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
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/books/cssant1/bookcv-thumb-new.gif
+
+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
+VKADDBhvBBjg3wQXNnkRtvB/t6PhHIQAADs=
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/books/flashant1/book_thb.gif
+
+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
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/books/aspnet1/photo-left-thb.gif
+
+R0lGODlhPQBUAPcAAAApTuHj5v1TAJa4vv6sakt7m/+DKBlRdejQuJmZmf//6bFWI9TEvNbk7XGU
+qOW6koe00P6WUjVIUzlojPJoIcyZZv/oxffy9dbY3fLczrKotAFCYrrAz2GHpHSgwGFeVvW2iS9d
+fP/o3KejqcW+wP6MQe7u74p9ciRtpc7O1f/cvZuXpf9mAP+nWhBJbP/Mmbm2t35PNVx9j6qAZaW8
+z/3PrszMzImlrxBThLXM3/55KTFki2lOP2OTtgA5Wv/28OTl7v6tcoemvv/v5ghBY/9mAN3W3PzA
+lLS0ts/EwjdzoPSSP/b8/+7j0/+MNPD39//n1jZ6sFNzgP2NW/28hCpfgv/XtVaDp729vv/fxf5y
+HtykcNdjF+Slbb3V4aKZiubw95OSkB9diAAvW4ZyahxDXfPXu6XE3P1kC+TDn5620PyweghKY8ze
+6Pt0Bv9mM/2USf/u3a6lrENecSVyrCNSeXmdt4SryMS+xfnDlf/Bnf/lzv/49ra7u1JDR+bf5O3n
+6ABCbPb39s/NxWOLreHu9uKBN2uavjxmjPqCO9XV1010lefWvNfQy/+ZMwAzZv/OpfOfZf6cU8DK
+vqa6uT9pk+De5ZWvt+y6jcbE0P//+KBWKIqOheDRuHimxVmLrx1MbxZajT58pP2sh/7VvPt/R/1a
+EunDmj6Ft/qLSf+kYf+kcf94HryUcf/45e7v9aKuuvXs4efm5v/ezjNmmYlONf6fWv////t6D8TF
+xejt7gAxU5W4z/3FluPSxafE13ibqv5tG/f5/AhEaBJNc8TX5P6zcjNjhZJjPv+6bTFumyNZfP/V
+rf+aSf/tz2yVtf9pEFiAm7CssMC7x5mZmd3m70Jthv+4hf6EMK7K4LbKwuff1Ex0iDpMbpmZmY2n
+vNnQ1en1+76ffKCrpd/d4P+SQp6+28/e7OjWx4usx8fI2ENzmQ06ZAhHary1vaSbpcWIXNfeyrtn
+JXidvmiLrx9hlv6MOv5bAHtZS/16M7WutUl/phdTfv+2fP6+jf///yH5BAUUAP8ALAAAAAA9AFQA
+AAj/AP8JHEiwoMGDCBMqXDjwlkOGECNKvCXMEp4VCaRhsaGInAlBDyWKjOhQkAlZRmyQ0CdtxIoV
+I0ZIc5erIyCQI3M2dAimkMOft0w+qJBpmr6Y796teCcNhg1wHkGG1GnwVqE7d7IJA9MA6K1Uo7xe
+kEUuRS59GkYoTZBAJpaaAT5OFXnrSY4cvO706PHk5w9Ts7wKLmnCEgYb7vTJUfoSpoaNHXXhVHir
+wScPWX+pEfazVKnBoEFf0FV2mjs5GNmyfSeHZooABSm2yZYu3aEcP6eYGhI69I8pWXoLK5wC8Qi2
+I0jErubhV7ZzhZjcIvUmGJTeoU9RiIPdqwlFMPSl/4gN9EeWUW8EROLTHfS3Y2o6FLqb40nfwSYC
+gHOngVzBUVN4pkMwpuQzigjthVZNBzl0Q8M++3zyiSd38MLLL79U4xAg5Nigjz6yFFTDKCTqkUUc
+Q2ShSYK96RFME+ecg1cPHnggio1d8aGIRRpoYEJBpOgh5CirlAINND+wGJo//nil4StQeuFTLIME
+QIIG+lxQUCkCdOmlAPkoKeZgsTRiCX8wCFJQCSy06eY9EYwp50/bmInmLQXZ4+abq8w5ZwopGIEW
+FgZhs2eb9zTp55jqYICBYnjgSZABh7JwDySLjpkJOYpoIIcNkg6kQ6UskJKpkhdMY0kKPYJjECuk
+Bv92aoKvZBKADT0aYZAWlUIzRDh2vCKMhrOCBkQmsuTSI2wFzeFHLQtwgcY9rFSmhCfpYFtMhsUC
+BU4SQODRoy4GHRDIucOU4Qc+NNyVzRkQePBED4f84kUDDfAyKzg2yMKfBloWVMcwBA9zbiBjEBHC
+IsCokQMY58DbQzE0POPBXT79mQI5aKpJkDDLbFDwyMP44AMAu2zggjUOfJNNITLy4kEPv/iZSUdo
+uSNMQU+EIDLJBW+wTDtEEAEAyj4MM0EHLheTsZybkgNpqALpEjLQBG+wAQ2L2FFFBwdo7cMuR4/h
+wsJ20NDAfe0JkoklnWqQi0EBXI21D4TksEgHiHj/QY8LQoRwzARhm7zL4UQcsIgDarTxSm+6TKPf
+hzYY1EbYWBO8TjSECOE5KFWc8Qw9vEygRgEu1KG11ofv4sMBiHTAixdgeBUuEB7qo4hBxRCjdeYm
+LzM4EVU88wwv9NAzjBA+VGIHPdHUscsyLojdug8uHNOBEDkUYkQmumTSo38FpQDKwYFkLrbKBxww
+ASGLTGAHAMfA+8wVXXfgehUH+LD62K5jRzQUoQs8fChEQOLCJnggASKca3VY+x/22ueDY9ghHR1Q
+wzPscMECrIMQBRjD7wrmg2iQQxZY+BAgDFKDPXFhATGYAzEA6L+fAW0DNRTaMAhBCyFc0A7P+AY9
+/+ZBj6SR0AGy8Jc73PEKg+SBVDUIhxeEsIiQjWEMNSThMQpwgBmazAdEqMMx1vGMAjyjA7/4RNHW
+SIQbAOJMS6SaQDBRKQHUACixsAEsOnCMkn3RBwWYxyF6UIAqtGMZy8DiFxFJCN8FrR2wMAE5YAAD
+PBwEBHU01S1+8IM4xMEVCnAFOfoADGt40QU72EcPIFAJeiACAkQ4xgFKhjg2EoEYHPhOeCpnkDVU
+6h6a5GQcREBMEQwBlApI1g24AQofjGEfLpjAFZ5xAHPUoRJX+MQOiNCOPy4jExcAx4fIV5Au/DIw
+fPjBEIqZhT24EwqedAUohzCIccggBMMYAwA2cP+FhR0vGpXwxCc8eIBjKOIVuUNgQSLxyz3cgg9D
+8KREobCHLFi0ncSMqDOcYYF4kNIaRLjiGCZQhQJ4gheVmEcdrOERPMDAHT8yiC1IdZ0fiMCdIpCo
+RLOgAhW0cw/FJKY8XRGLSSyzmVeswjIqsYtoyMIEWHjpzgwSAVIhaAh76KkK3GnRd0IBCu28KDx1
+GoeNbtSjDsDnFR0ACECkMFJVgcM9DoUG3ojgojz1KV5xSsyKWnSYQSWmNhzwDG0oYJQOgAUg/KUP
+UBmECUuY6558dYs9WMEKPYUEJPSK169SlK+BlcU+lFCP0jZhqEkwwR8oubuqRPZQvtKECKygWRX/
+aPa2VsgCM3qahbF6MqjuHEAoxEBcHFzCFXHIwCBeYQRKMis29pCsm4LxAz701QrMoO1tb6sC2m7V
+s4AVagFwQF4xBGIdyEVHIwQBHpgeRBDYkG6bqCvbu+LVosy4LTOyQFvM9nQPOh0CEj4QghDwowzA
+QK4vwCEIG/QBCwEryA8MIF8WUPcWOqUoXre7WdsyY7cW9a0rmrEEOMDDEM4YwhB8gYELJOEtUy3I
+EGB1KC2wx6Z93W8vILEHSFBhu5i1gAo+HGJ4/mAN5SBAM16AYwYE4AJ4oIkcBTIEXFTKxg7x5BCs
+QAARSIIAcYAEHLZ7CgaowBk1oII/ttrOIZAC/xuqwIY/+OBJBjwVD1gYz0FEYOUas+cWQ4DCEGqg
+Cn9IQhUqyIMkanBbaaDCAZ2gQgQi4I/eQmINkjaAAcpBBU+mFhAkIIGuDrKHPu9JB5pI9Q96QYUj
+wMEJkoBDEPphi0LveByoiAIqtgBnVRDAH6qQhC3sAQdfR0APsUjCBf6ABSwotCAZMLWbUK3qa3wZ
+G/YgQKFVYQ9slGDRWPAAHTpwCm1POgK+VoUtqEAFAkhiDU0YxAWM0OyYGsQMbkBDBIIx7VRr4gfX
+6LYWIrCGYADbHrGOQA1ecIowgODDL1BFBOBAcVsEwd32sEcQ1CsMcGABDxEWUb5LgIZ+q/ri8f+V
+xBEIcA1bYOMaEShHDY7Qj370Ir816EQeeloDisMBG9iQRBBYLAwbwBghNci3DkreJmprYgi/PkIJ
++nGNa6xB3f0oQRBeQAUn9KIX14BEGhxgZmZAIQjlOHcE+tEIclzA6DYQhCA4U5Be5DsV0Ji2QyAa
+BFVY4RpBqLoxCGALAhTbFi6nQj8kcdlxpKG2tlB7BHrRiD9AGQ820IUuXvGEGP/jCCNnOgt04JDq
++mPdBIhA1a9BgKCXAxsGsIU/2A0JZzBCGVewgO61bQtJ+J4Ug9B8qG3gqADooi8D8YcbWJAI0ZP+
+oXxQgcVtgWmqo70ZzWAFGmxhBernFh1fEMf/fi1gjC+7WxXJPkmoSZAL4stCWAPpBwv07Xx/c7If
+qlAFj8G+Bp9jIxF6cA2xtwZr5gzMYAGM8Azw4AQt4AS4IAnJdgHkEGpYgAS58BomMFW3YAwsAA2J
+IF1Ytkk/sAftRgC9UAO9YAwRkHFJRgAl8G1BQAW90AmUcAmEgAKicAIzcAJkEAbxJgyKEGpIYIGK
+EADw9w+30AIdmAp7ogVJUnrRd3WFxmjBJgkZx4L2EAFUYAytEAVRoATKoAwogAJ0UIZYAA5AiAd4
+IA0WiAFAgHwC0QwdyCZu4oRewQekcHGqYAya9QK2UALlEIjloANOoApUYA9kQAfKIAalFYak/zUO
+f1B0UYYEfWAD5HB8DeEIS7gnwcAbd5gFveAPfecPvQAHVsiCOqADWhcEuDAHoUAMUsAJojCLYtAH
+snABuZALfYAEWFCEcPgPfKCJwZAK0kVZgsEHUPACF0cAQSAJ/XAkwaAFwaAD5dAMxuAEXCAPyNAP
+yVAB4yUFCAAEJpCLlJQLGHB8oXIBmtiB0oUGCHKMdAYJ+KcK/SB9aHCP0MAKgTh4BsAKktBuLbAE
+EsAJaQAlaggDG2EJGUgQtxALedAM0nYP1zEYfFCRWeAP/UAAVGAFz6gDEaADcGAPtmAM2EBxxqAK
+JWAAidAFDHABgHCQeKAIb0g1t8AETBAO2/9wChBpKbJCkZwEBTWwBmvQh3CgaZJgAPZgDLIWBEEA
+B6noBImQBMIwgSTgDpaIibEhDHIXDjiJCZjgiT/xBIXAGQ+lYoP2dSd4BCKJDfroe/1wBEewBhFA
+AMYQCYPQcRT4Gkd4EBTxBFwZDponFbdQDTmQDWtTetUFBaHoD5DgD5MGBwTAchAHl3D5AGgIDiTw
+cef4iwjhEMJgH5qnC3JRFzlgL4dZlmB1WYrXDzVglipGUTeVBuTQYHhmAwrpeQzRl08Qmo/jEDHi
+HGNZHiOYBSqmTnHASchZeYKQi+6QArLAmSQhDJ+5m5p3AQ7xBF6QDb/QBl0BFOmEnOBZXTbUAAiX
+5w6bSRUC4ZmgqXn+VgizwQttUDsUWZEOoQ4mMI6hZoS4SRUlIQihaZ0O0QDF4AU5ICWhIQjqMBZG
+hwXoiJ4HoZUmoXkmQJ/DUpqhET6a0CFO8QQe46B8KXf+GZgg2htAkAKaYAS5QAIB0HkeShkQagIi
+uiKgwSlAaJss2qILQRHTWZ0X4G9e0XZ8ABWv0KE4mpsvep+CUJF/dgsbI4EmAJ1FaqTrmaRKmgJF
++KRTFqUQoaNPcJ8TKgsEpAv7qaUjoZtPkEQ3SqYeGhQgSncMERAAOw==
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/books/phpant1/thunb-new.gif
+
+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
+/Cq0pNqvNcAGWwMGJysGSwu2gQAAOw==
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/books/phpmysql1/thumb-new.gif
+
+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
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/images/books/css1/thumb-new.gif
+
+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
+gZd5aabdUKZsSqNO+qZyOqeSEAgAOw==
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Content-Location: http://www.sitepoint.com/search.css
+
+#col2 SPAN.searchword {
+	BACKGROUND-COLOR: #ffff99
+}
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sitepoint.com/css/standard.css?ref=
+
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #fff; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: small Verdana, Geneva, Arial, =
+Helvetica, sans-serif; COLOR: #333; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-RIGHT: #fff 0px; BORDER-TOP: #fff 0px; BORDER-LEFT: #fff 0px; =
+BORDER-BOTTOM: #fff 0px
+}
+UNKNOWN {
+	PADDING-LEFT: 28px! important; BACKGROUND: =
+url(/images/icons/autoscroll2.png); WIDTH: 0px! important; HEIGHT: 28px! =
+important
+}
+H1 {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #036; =
+FONT-FAMILY: 'Trebuchet MS', Arial, Helvetica, sans-serif
+}
+H2 {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #036; =
+FONT-FAMILY: 'Trebuchet MS', Arial, Helvetica, sans-serif
+}
+H3 {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #036; =
+FONT-FAMILY: 'Trebuchet MS', Arial, Helvetica, sans-serif
+}
+H1 {
+	FONT-SIZE: 220%
+}
+H2 {
+	FONT-SIZE: 160%; PADDING-TOP: 5px
+}
+H3 {
+	CLEAR: right; BORDER-RIGHT: #7088b0 1px solid; PADDING-RIGHT: 0px; =
+BORDER-TOP: #7088b0 1px solid; PADDING-LEFT: 0px; BACKGROUND: #e8ecf0; =
+PADDING-BOTTOM: 3px; FONT: 150%/1.1 Arial, Helvetica, sans-serif; =
+BORDER-LEFT: #7088b0 1px solid; PADDING-TOP: 25px; BORDER-BOTTOM: =
+#7088b0 1px solid
+}
+H4 {
+	FONT: bold 100% Verdana, Arial, Helvetica, sans-serif
+}
+H5 {
+	FONT-SIZE: 100%
+}
+H6 {
+	FONT-WEIGHT: normal
+}
+P {
+	LINE-HEIGHT: 130%
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #06c
+}
+A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #036
+}
+A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #f60! =
+important
+}
+ADDRESS {
+	PADDING-LEFT: 30px; BACKGROUND: none transparent scroll repeat 0% 0%; =
+FONT: bold italic small/1.4em Verdana,Arial,Helvetica,sans-serif; COLOR: =
+#036
+}
+BLOCKQUOTE {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: right; MARGIN: =
+10px 0px 10px 10px; FONT: bold 13px/1.4em Verdana, Arial, =
+Helvetica,sans-serif; WIDTH: 30%; COLOR: #036
+}
+BLOCKQUOTE H6 {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #036! =
+important; TEXT-ALIGN: right
+}
+CAPTION {
+	FONT-SIZE: 12px
+}
+DL {
+	MARGIN-TOP: 10px
+}
+DT {
+	FONT: bold 100%/1.4em Verdana,Arial,Helvetica,sans-serif
+}
+DD {
+	BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-BOTTOM: 15px; =
+FONT: small/1.4em Verdana,Arial,Helvetica,sans-serif; COLOR: #333! =
+important
+}
+TD {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 5px
+}
+TD A {
+	FONT-WEIGHT: bold; COLOR: #06c
+}
+TH {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FONT: 85% =
+Verdana,Arial,Helvetica,sans-serif; COLOR: #666
+}
+P LABEL {
+	CLEAR: left; FONT-WEIGHT: bold; FLOAT: left; WIDTH: 25%
+}
+LEGEND {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; FONT: bold small/1.4em Verdana,Arial,Helvetica,sans-serif; =
+PADDING-TOP: 0px
+}
+CODE {
+	FONT-SIZE: 115%! important; BACKGROUND: #ffffff; COLOR: #900
+}
+#phpmysql1 {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 20px; =
+PADDING-TOP: 13px
+}
+#phpant1 {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 20px; =
+PADDING-TOP: 13px
+}
+#css1 {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 20px; =
+PADDING-TOP: 13px
+}
+#freelance1 {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 20px; =
+PADDING-TOP: 13px
+}
+#aspnet1 {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 20px; =
+PADDING-TOP: 13px
+}
+#flashant1 {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 20px; =
+PADDING-TOP: 13px
+}
+#cssant1 {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 20px; =
+PADDING-TOP: 13px
+}
+#phpmysql1 {
+	BORDER-RIGHT: #ff6600 2px solid; BORDER-TOP: #ff6600 2px solid; =
+BORDER-LEFT: #ff6600 2px solid; BORDER-BOTTOM: #ff6600 2px solid
+}
+#phpant1 {
+	BORDER-RIGHT: #993399 2px solid; BORDER-TOP: #993399 2px solid; =
+BORDER-LEFT: #993399 2px solid; BORDER-BOTTOM: #993399 2px solid
+}
+#css1 {
+	BORDER-RIGHT: #cc0000 2px solid; BORDER-TOP: #cc0000 2px solid; =
+BORDER-LEFT: #cc0000 2px solid; BORDER-BOTTOM: #cc0000 2px solid
+}
+#freelance1 {
+	BORDER-RIGHT: #c71585 2px solid; BORDER-TOP: #c71585 2px solid; =
+BORDER-LEFT: #c71585 2px solid; BORDER-BOTTOM: #c71585 2px solid
+}
+#aspnet1 {
+	BORDER-RIGHT: #66cc33 2px solid; BORDER-TOP: #66cc33 2px solid; =
+BORDER-LEFT: #66cc33 2px solid; BORDER-BOTTOM: #66cc33 2px solid
+}
+#flashant1 {
+	BORDER-RIGHT: #ffcc00 2px solid; BORDER-TOP: #ffcc00 2px solid; =
+BORDER-LEFT: #ffcc00 2px solid; BORDER-BOTTOM: #ffcc00 2px solid
+}
+#cssant1 {
+	BORDER-RIGHT: #889900 2px solid; BORDER-TOP: #889900 2px solid; =
+BORDER-LEFT: #889900 2px solid; BORDER-BOTTOM: #889900 2px solid
+}
+.glossary {
+	BORDER-BOTTOM: green 1px dashed; TEXT-DECORATION: none
+}
+A.nl {
+	FONT-SIZE: 85%; COLOR: #333; TEXT-DECORATION: none
+}
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sitepoint.com/css/format.css?random=
+
+#col1 H3 {
+	BORDER-RIGHT: #3a5e8d 0px solid; PADDING-RIGHT: 2px; BORDER-TOP: =
+#b0c0d0 1px solid; PADDING-LEFT: 10px; BACKGROUND: #036; PADDING-BOTTOM: =
+1px; MARGIN: 0px; FONT: bold 95%/1.1 Verdana,Arial,Helvetica,sans-serif; =
+BORDER-LEFT: #b0c4de 0px solid; COLOR: #fff; PADDING-TOP: 2px; =
+BORDER-BOTTOM: black 1px solid; POSITION: relative
+}
+#col3 H3 {
+	BORDER-RIGHT: #3a5e8d 0px solid; PADDING-RIGHT: 2px; BORDER-TOP: =
+#b0c0d0 1px solid; PADDING-LEFT: 10px; BACKGROUND: #036; PADDING-BOTTOM: =
+1px; MARGIN: 0px; FONT: bold 95%/1.1 Verdana,Arial,Helvetica,sans-serif; =
+BORDER-LEFT: #b0c4de 0px solid; COLOR: #fff; PADDING-TOP: 2px; =
+BORDER-BOTTOM: black 1px solid; POSITION: relative
+}
+#col1 H4 {
+	MARGIN: 10px 0px 0px 10px; FONT: bold 100% =
+Verdana,Arial,Helvetica,sans-serif
+}
+#col3 H4 {
+	MARGIN: 10px 0px 0px 10px; FONT: bold 100% =
+Verdana,Arial,Helvetica,sans-serif
+}
+#col1 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 7px; MARGIN: =
+0px; LINE-HEIGHT: 1.3; PADDING-TOP: 5px; BORDER-BOTTOM: #b0c0d0 1px =
+solid
+}
+#col3 UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 7px; MARGIN: =
+0px; LINE-HEIGHT: 1.3; PADDING-TOP: 5px; BORDER-BOTTOM: #b0c0d0 1px =
+solid
+}
+#col1 OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 7px; MARGIN: =
+0px; LINE-HEIGHT: 1.3; PADDING-TOP: 5px; BORDER-BOTTOM: #b0c0d0 1px =
+solid
+}
+#col3 OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 7px; MARGIN: =
+0px; LINE-HEIGHT: 1.3; PADDING-TOP: 5px; BORDER-BOTTOM: #b0c0d0 1px =
+solid
+}
+#col1 LI {
+	MARGIN: 3px 0px 3px 25px; FONT: bold 75%/1.1 =
+Verdana,Arial,Helvetica,sans-serif
+}
+#col3 LI {
+	MARGIN: 3px 3px 15px 25px; FONT: bold 75%/1.1 =
+Verdana,Arial,Helvetica,sans-serif
+}
+#col1 P {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 2px; FONT: 80% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px
+}
+#col3 P {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 2px; FONT: 80% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px
+}
+#col3 IMG {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: =
+1px; PADDING-TOP: 1px
+}
+#col3 H5 {
+	MARGIN: 0px; FONT: bold 82% Verdana,Arial,Helvetica,sans-serif
+}
+#col3 P {
+	MARGIN: 10px; FONT: 80% Verdana,Arial,Helvetica,sans-serif
+}
+.third P {
+	CLEAR: both; MARGIN: 14px 8px 0px 14px
+}
+.third H3 {
+	MARGIN-TOP: 0px! important; BORDER-BOTTOM: #c6d3e7 1px solid
+}
+.twothirds H3 {
+	MARGIN-TOP: 0px! important; BORDER-BOTTOM: #c6d3e7 1px solid
+}
+.third H6 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; PADDING-BOTTOM: 20px; MARGIN: =
+0px 0px 8px; COLOR: #555; PADDING-TOP: 2px; BORDER-BOTTOM: #c6d3e7 1px =
+solid
+}
+.third H5 {
+	FONT-SIZE: 11px! important; MARGIN: 10px 0px 0px
+}
+.third H5 A.blogpost {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 25px; FONT-SIZE: =
+11px! important; BACKGROUND: url(/images/icons/blog.gif) no-repeat left =
+top; PADDING-BOTTOM: 3px; MARGIN: 10px 0px 0px; PADDING-TOP: 3px
+}
+.third H5 A.blogpost:hover {
+	BACKGROUND: url(/images/icons/blog-ani.gif) no-repeat left top
+}
+#blogcomments {
+	MARGIN-LEFT: 18px
+}
+#maintab P Q {
+	BORDER-RIGHT: #bcd 1px solid; PADDING-RIGHT: 12px; BORDER-TOP: #bcd 1px =
+solid; DISPLAY: block; PADDING-LEFT: 12px; PADDING-BOTTOM: 12px; MARGIN: =
+25px 10px 35px; FONT: italic 85%/122% =
+Verdana,Arial,Helvetica,sans-serif; BORDER-LEFT: #bcd 1px solid; COLOR: =
+#678; PADDING-TOP: 12px; BORDER-BOTTOM: #bcd 1px solid; POSITION: =
+relative
+}
+UNKNOWN {
+	LINE-HEIGHT: 150%
+}
+PRE.code {
+	BORDER-RIGHT: #6c87b0 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: =
+#6c87b0 1px solid; PADDING-LEFT: 15px; BACKGROUND: #fffff8; =
+PADDING-BOTTOM: 0px; MARGIN: 1em; FONT: small "Courier New", Courier, =
+monospace; OVERFLOW: auto; BORDER-LEFT: #6c87b0 1px solid; WIDTH: 95%; =
+COLOR: #385a72; PADDING-TOP: 10px; BORDER-BOTTOM: #6c87b0 1px solid; =
+HEIGHT: 150px
+}
+H4 SPAN.expert_author {
+	FONT-SIZE: 70%; COLOR: #f60
+}
+H4 SPAN.credit {
+	FONT-SIZE: 70%; COLOR: #555
+}
+.crumb {
+	MARGIN: 0px; FONT: bold x-small/1em Verdana,Arial,Helvetica,sans-serif; =
+COLOR: #666; BACKGROUND-COLOR: transparent
+}
+.crumb A {
+	COLOR: #06c; BACKGROUND-COLOR: transparent
+}
+#tertiary A:link {
+	COLOR: #ddd! important; BACKGROUND-COLOR: transparent
+}
+#tertiary A:visited {
+	COLOR: #ccc! important; BACKGROUND-COLOR: transparent
+}
+#footer A:hover {
+	COLOR: #fff! important; BACKGROUND-COLOR: transparent
+}
+.shuffle1 {
+	Z-INDEX: -1; POSITION: absolute
+}
+#search INPUT.button {
+	MARGIN: 0px 0px 5px
+}
+#search INPUT.tbox {
+	MARGIN: 0px 0px 5px 5px; WIDTH: 90%! important
+}
+#col1 LI {
+	FONT: bold 75%/1.4em Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: =
+0px; LIST-STYLE-TYPE: none
+}
+H3 {
+	CLEAR: right; BORDER-RIGHT: #7088b0 1px solid; PADDING-RIGHT: 10px; =
+BORDER-TOP: #7088b0 1px solid; PADDING-LEFT: 10px; BACKGROUND: #e8ecf0; =
+PADDING-BOTTOM: 3px; MARGIN: 35px 0px 10px; FONT: bold 130% =
+Arial,Helvetica,sans-serif; BORDER-LEFT: #7088b0 1px solid; COLOR: #036; =
+PADDING-TOP: 3px; BORDER-BOTTOM: #7088b0 1px solid
+}
+.h3insert {
+	MARGIN-TOP: -31px; FLOAT: right; MARGIN-RIGHT: 6px
+}
+.h3insert {
+	MARGIN-TOP: -31px; FLOAT: right; MARGIN-RIGHT: 6px
+}
+H3.withinsert {
+	PADDING-RIGHT: 44px; OVERFLOW: visible
+}
+H3.withinsert {
+	PADDING-RIGHT: 44px; OVERFLOW: visible
+}
+#navitem UL LI {
+	LIST-STYLE-IMAGE: url(/images/icons/bulc.gif)
+}
+#navitem UL LI A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FONT: bold 100%/1.4em =
+Verdana,Arial,Helvetica,sans-serif; COLOR: #06c
+}
+#navitem UL LI A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FONT: bold 100%/1.4em =
+Verdana,Arial,Helvetica,sans-serif; COLOR: #036
+}
+#navitem UL LI A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; LIST-STYLE-IMAGE: =
+url(/images/icons/buld.gif); COLOR: #f60
+}
+#col1 LI.navitem-atv A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; LIST-STYLE-IMAGE: =
+url(/images/icons/buld.gif); MARGIN: 0px; FONT: bold x-small/1.4em =
+Verdana,Arial,Helvetica,sans-serif; COLOR: #f60; LIST-STYLE-TYPE: none
+}
+#col1 LI.navitem-atv A:visited {
+	COLOR: #d50
+}
+#hzad A:link {
+	COLOR: #ffebcd
+}
+#footer A:link {
+	COLOR: #ffdab9
+}
+#hzad A:visited {
+	COLOR: #ffdab9
+}
+#footer A:visited {
+	COLOR: #ffdab9
+}
+#hzad A:hover {
+	COLOR: #fff
+}
+#footer A:hover {
+	COLOR: #fff
+}
+.imgleft {
+	FLOAT: left; MARGIN: 0px 10px 10px 0px
+}
+#bio IMG {
+	FLOAT: left; MARGIN: 0px 10px 10px 0px
+}
+.imgright {
+	FLOAT: right; MARGIN: 0px 0px 10px 10px
+}
+.highper {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #f60! =
+important
+}
+.line {
+	CLEAR: both; MARGIN: 0px 0px 15px; BORDER-BOTTOM: #c0d0e0 1px solid; =
+POSITION: relative
+}
+.noborder {
+	BORDER-RIGHT: #000 0px; BORDER-TOP: #000 0px; BORDER-LEFT: #000 0px; =
+BORDER-BOTTOM: #000 0px
+}
+.nomargin {
+	MARGIN: 0px
+}
+.breaker {
+	CLEAR: both
+}
+.wrapper {
+	DISPLAY: block; MARGIN-BOTTOM: 25px; LINE-HEIGHT: 1.1
+}
+.wrap {
+	CLEAR: left; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: =
+0px; MARGIN: 0px; LINE-HEIGHT: 1.1; PADDING-TOP: 0px; POSITION: relative
+}
+.wrapleft {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 5px! important; BORDER-TOP: 0px; =
+PADDING-LEFT: 0px; FLOAT: left! important; PADDING-BOTTOM: 0px; MARGIN: =
+0px; BORDER-LEFT: 0px; LINE-HEIGHT: 1.1; PADDING-TOP: 0px; =
+BORDER-BOTTOM: 0px
+}
+.wrapright {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: right! important; =
+MARGIN-LEFT: 10px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.wrapcenter {
+	CLEAR: both; BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; =
+PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; =
+WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; TEXT-ALIGN: center
+}
+.wrapcenter IMG {
+	FLOAT: none! important
+}
+.rgt {
+	PADDING-RIGHT: 10px; PADDING-TOP: 5px; TEXT-ALIGN: right! important
+}
+.lft {
+	PADDING-LEFT: 10px; PADDING-TOP: 5px; TEXT-ALIGN: left! important
+}
+#sorry {
+	DISPLAY: none
+}
+.boxes {
+	CLEAR: both; BORDER-RIGHT: #c0d0e0 1px solid; PADDING-RIGHT: 10px; =
+BORDER-TOP: #c0d0e0 1px solid; PADDING-LEFT: 10px; BACKGROUND: #fafaff; =
+PADDING-BOTTOM: 15px; MARGIN: 20px 0px 15px; BORDER-LEFT: #c0d0e0 1px =
+solid; COLOR: #333; PADDING-TOP: 7px; BORDER-BOTTOM: #c0d0e0 1px solid
+}
+.boxes LI {
+	CLEAR: both
+}
+.detail {
+	BORDER-RIGHT: #c0d0e0 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: =
+#c0d0e0 1px solid; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; =
+MARGIN: 0px 0px 0px 10px; BORDER-LEFT: #c0d0e0 1px solid; WIDTH: 170px; =
+COLOR: #333; PADDING-TOP: 8px; BORDER-BOTTOM: #c0d0e0 1px solid; =
+BACKGROUND-COLOR: #fff
+}
+.detail LI {
+	FONT-SIZE: 11px; LINE-HEIGHT: 1.7
+}
+.textad {
+	BORDER-RIGHT: #06c 2px dashed; PADDING-RIGHT: 8px; BORDER-TOP: #06c 2px =
+dashed; PADDING-LEFT: 8px; BACKGROUND: none transparent scroll repeat 0% =
+0%; PADDING-BOTTOM: 15px; MARGIN: 5px; BORDER-LEFT: #06c 2px dashed; =
+COLOR: #333; PADDING-TOP: 8px; BORDER-BOTTOM: #06c 2px dashed
+}
+.textad P IMG {
+	DISPLAY: inline; FLOAT: left; POSITION: relative
+}
+.textad P A {
+	COLOR: #333! important; TEXT-DECORATION: none
+}
+.textad P A.sublink {
+	COLOR: #06c! important; TEXT-DECORATION: underline
+}
+.textad P A:hover {
+	COLOR: red! important; TEXT-DECORATION: underline
+}
+#adz {
+	FLOAT: right; MARGIN: 15px 7px 15px 15px; WIDTH: 200px; COLOR: #333; =
+LINE-HEIGHT: 1.5; POSITION: relative; BACKGROUND-COLOR: #fff; =
+TEXT-ALIGN: center
+}
+#adz LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 85%; PADDING-BOTTOM: =
+5px; LINE-HEIGHT: 1.2; PADDING-TOP: 5px; LIST-STYLE-TYPE: square; =
+TEXT-ALIGN: left
+}
+#adz H4 A {
+	FONT: bold 110% Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: =
+#c00! important
+}
+#adz UL LI.click {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; =
+LIST-STYLE-IMAGE: url(/images/icons/i.gif); PADDING-BOTTOM: 10px; =
+PADDING-TOP: 10px; LIST-STYLE-TYPE: none
+}
+#adz UL LI.down {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: =
+110%; LIST-STYLE-IMAGE: url(/images/icons/pdf2.gif); PADDING-BOTTOM: =
+10px; COLOR: #c00! important; PADDING-TOP: 10px; LIST-STYLE-TYPE: none
+}
+#adz H5 {
+	COLOR: white; BACKGROUND-COLOR: #9acd32; TEXT-ALIGN: center
+}
+#dostuff {
+	CLEAR: right; BORDER-RIGHT: #dfe0df 1px solid; PADDING-RIGHT: 5px; =
+BORDER-TOP: #dfe0df 1px solid; MARGIN-TOP: 20px; PADDING-LEFT: 5px; =
+PADDING-BOTTOM: 20px; BORDER-LEFT: #dfe0df 1px solid; LINE-HEIGHT: 1.4; =
+PADDING-TOP: 20px; BORDER-BOTTOM: #dfe0df 1px solid; TEXT-ALIGN: center
+}
+#feedback {
+	MARGIN: 0px
+}
+#news {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: #ff6600; =
+PADDING-BOTTOM: 4px; FONT: small/120% =
+Verdana,Arial,Helvetica,sans-serif; COLOR: #ffffcc; PADDING-TOP: 4px; =
+HEIGHT: 16px; TEXT-ALIGN: center
+}
+#news A:hover {
+	COLOR: #fff! important
+}
+.bookmarkicon {
+	BACKGROUND: url(/images/icons/bookmark.gif) no-repeat left top
+}
+.printicon {
+	BACKGROUND: url(/images/icons/print.gif) no-repeat left top
+}
+.emailicon {
+	BACKGROUND: url(/images/icons/send.gif) no-repeat left top
+}
+.feedbackicon {
+	BACKGROUND: url(/images/icons/feedback.gif) no-repeat left top
+}
+.articlesuggesticon {
+	BACKGROUND: url(/images/icons/feedback.gif) no-repeat left top
+}
+.linkicon {
+	PADDING-LEFT: 20px! important; BACKGROUND: url(/images/icons/link.gif) =
+no-repeat
+}
+.blogcommenticon {
+	PADDING-LEFT: 30px! important; BACKGROUND: =
+url(/images/icons/blogcomment.gif) no-repeat left top
+}
+#hiliteon {
+	DISPLAY: none; BACKGROUND: url(/images/icons/hilite.gif) #fff no-repeat
+}
+#hiliteoff {
+	DISPLAY: none; BACKGROUND: url(/images/icons/hilite-off.gif) #fff =
+no-repeat
+}
+.printicon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+.emailicon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+.feedbackicon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+.articlesuggesticon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+.bookmarkicon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+#hiliteon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+#hiliteoff {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+.blogcomment {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+.linkicon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 23px! important; =
+PADDING-BOTTOM: 3px! important; FONT: bold 85% =
+Verdana,Arial,Helvetica,sans-serif; MARGIN-RIGHT: 10px; PADDING-TOP: =
+3px! important; WHITE-SPACE: nowrap
+}
+.forumicon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 35px! important; =
+BACKGROUND: url(/images/icons/comment.gif) no-repeat left top; =
+PADDING-BOTTOM: 3px! important; PADDING-TOP: 3px! important
+}
+.icon {
+	PADDING-LEFT: 25px; BACKGROUND: url(/images/icons/forum.gif) no-repeat =
+left 50%
+}
+.blogtitle {
+	FONT-SIZE: 75%
+}
+.blogtopic {
+	FONT: bold 16px arial, sans-serif; MARGIN-LEFT: 15px! important; COLOR: =
+#036! important
+}
+.blogicon {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 25px! important; =
+BACKGROUND: url(/images/icons/blog.gif) no-repeat left center; =
+PADDING-BOTTOM: 3px! important; PADDING-TOP: 3px! important
+}
+.blogicon A:link {
+	BACKGROUND: #fff
+}
+.blogicon A:hover {
+	BACKGROUND: #fff
+}
+.bloglist {
+	LIST-STYLE-IMAGE: url(/images/icons/blog.gif)
+}
+.tiny {
+	FONT: x-small Verdana,Arial,Helvetica,sans-serif
+}
+.subtext {
+	FONT: x-small Verdana,Arial,Helvetica,sans-serif
+}
+.sublink {
+	FONT: bold 11px/1.1 Verdana,Arial,Helvetica,sans-serif
+}
+.nowrap {
+	WHITE-SPACE: nowrap
+}
+.next {
+	PADDING-LEFT: 12px; BACKGROUND: url(/images/icons/forwardc.gif) =
+no-repeat left 50%; FONT: bold 100% Verdana,Arial,Helvetica,sans-serif; =
+COLOR: #06c
+}
+#col2 TABLE {
+	MARGIN: 15px 0px; WIDTH: 98%! important; BORDER-COLLAPSE: collapse
+}
+#col2 TABLE TD {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 1px solid; FONT-SIZE: =
+85%; BORDER-LEFT: #fff 1px solid; BORDER-BOTTOM: #fff 1px solid
+}
+.sortable {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; COLOR: #06c; PADDING-TOP: 0px; BACKGROUND-COLOR: #e8ecf0; =
+TEXT-ALIGN: left; TEXT-DECORATION: underline
+}
+.sortable TH {
+	TEXT-ALIGN: center
+}
+.sortarrow {
+	BACKGROUND-COLOR: #e8ecf0; TEXT-DECORATION: none
+}
+.row1 {
+	FONT: 80% Verdana,Arial,Helvetica,sans-serif; BACKGROUND-COLOR: #fff
+}
+.row2 {
+	FONT: 80% Verdana,Arial,Helvetica,sans-serif; BACKGROUND-COLOR: #f7f8f9
+}
+.hilite {
+	COLOR: #f00! important
+}
+.required {
+	FONT-WEIGHT: bold; COLOR: red
+}
+#columnist {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 30px; BACKGROUND: =
+url(/images/icons/columnist2.gif) #c0d0e0 no-repeat; LEFT: -11px; =
+PADDING-BOTTOM: 0px; FONT: bold 11px Verdana,Arial,Helvetica,sans-serif; =
+VERTICAL-ALIGN: bottom; WIDTH: 150px; COLOR: #036; PADDING-TOP: 2px; =
+POSITION: relative! important; TOP: -16px; HEIGHT: 18px
+}
+H5#column {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; BACKGROUND: =
+url(/images/icons/star.gif) #fff no-repeat left 50%; PADDING-BOTTOM: =
+3px; FONT: bold 11px Verdana,Arial,Helvetica,sans-serif; COLOR: #036; =
+PADDING-TOP: 4px; BORDER-BOTTOM: #c0d0e0 1px solid
+}
+.expertcolumn {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 26px; BACKGROUND: =
+url(/images/icons/columnist2.gif) #c0d0e0 no-repeat; LEFT: -1px; =
+PADDING-BOTTOM: 0px; FONT: bold 11px Verdana,Arial,Helvetica,sans-serif; =
+VERTICAL-ALIGN: bottom; COLOR: #036; PADDING-TOP: 2px; POSITION: =
+relative; TOP: -14px; HEIGHT: 18px
+}
+.expertcolumntitle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; BACKGROUND: =
+url(/images/icons/star.gif) #fff no-repeat 0% 83%; PADDING-BOTTOM: 0px; =
+FONT: bold 11px Verdana,Arial,Helvetica,sans-serif; COLOR: #036; =
+PADDING-TOP: 0px
+}
+.expert_author {
+	FONT: bold 80% Verdana,sans-serif; COLOR: #ff6600
+}
+.regular_author {
+	FONT: bold 80% Verdana,sans-serif; COLOR: #5f5f5f
+}
+LI.hz {
+	CLEAR: none; PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! =
+important; FLOAT: left; PADDING-BOTTOM: 0px! important; MARGIN: 0px =
+0.5%; OVERFLOW: visible; WIDTH: 25px; PADDING-TOP: 0px! important; =
+LIST-STYLE-TYPE: none; TEXT-ALIGN: center
+}
+LI.hz INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+UNKNOWN {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: =
+8px; PADDING-TOP: 5px
+}
+.stacker {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #fff 1px =
+solid; DISPLAY: block; PADDING-LEFT: 8px; MIN-HEIGHT: 240px; FLOAT: =
+left; PADDING-BOTTOM: 8px; MARGIN: 1px; BORDER-LEFT: #fff 1px solid; =
+WIDTH: 135px; PADDING-TOP: 8px; BORDER-BOTTOM: #fff 1px solid; HEIGHT: =
+auto
+}
+.announce {
+	FONT-WEIGHT: bold; MARGIN: 0px 15px; COLOR: #ffc; BACKGROUND-COLOR: =
+transparent
+}
+.bar {
+	BACKGROUND: #036; MARGIN-BOTTOM: 0px! important; COLOR: #fff; =
+LINE-HEIGHT: 1.1; POSITION: relative
+}
+#tagline {
+	FONT: bold italic 86% Verdana,Arial,Helvetica,sans-serif; WIDTH: 100%; =
+COLOR: #036; POSITION: absolute; TOP: -30px; TEXT-ALIGN: center
+}
+#banner {
+	BACKGROUND: #036; FONT: bold italic 11px =
+Verdana,Arial,Helvetica,sans-serif; POSITION: relative; TEXT-ALIGN: =
+center
+}
+.bookbox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; BACKGROUND: #fafaff; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 90%; =
+PADDING-TOP: 0px
+}
+.bookbox P {
+	PADDING-BOTTOM: 25px! important; MARGIN: 0px; FONT: bold 80%/1.1 Arial, =
+Helvetica, sans-serif; COLOR: #000
+}
+.bookbox P IMG {
+	FLOAT: none; MARGIN: 10px 0px
+}
+.bookbox H5 {
+	MARGIN: 5px; FONT: bold 100%/1.1 Arial, Helvetica, sans-serif; COLOR: =
+#c00
+}
+.bookbox H5 A {
+	COLOR: #c00
+}
+#logo {
+	MARGIN: 13px 0px 13px 15px; WIDTH: 160px; HEIGHT: 50px
+}
+#maintab {
+	PADDING-RIGHT: 25px; PADDING-LEFT: 25px; BACKGROUND: #fff; =
+PADDING-BOTTOM: 25px; CURSOR: default; COLOR: #333; PADDING-TOP: 25px
+}
+.xhtml {
+	CLEAR: both; BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; =
+PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 20px 0px; BORDER-LEFT: =
+0px; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; TEXT-ALIGN: =
+center
+}
+#bio {
+	Z-INDEX: 100; FLOAT: right; MARGIN-LEFT: 7px; WIDTH: 200px; POSITION: =
+relative
+}
+#search INPUT.button {
+	MARGIN: 0px 0px 5px
+}
+#search INPUT.tbox {
+	MARGIN: 5px 10px 0px; WIDTH: 90%! important
+}
+#stats {
+	RIGHT: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; FONT: =
+bold 10px/20px Verdana,Arial,Helvetica,sans-serif; COLOR: #333333; =
+POSITION: absolute; TOP: 28px; TEXT-ALIGN: right
+}
+#tertiary {
+	CLEAR: both; PADDING-RIGHT: 3px; PADDING-LEFT: 3px; Z-INDEX: 1; =
+BACKGROUND: #036; PADDING-BOTTOM: 3px; MARGIN: 3px 0px; FONT: 10px =
+Arial,Verdana,Helvetica,sans-serif; COLOR: #adadad; PADDING-TOP: 3px; =
+POSITION: relative; TEXT-ALIGN: center
+}
+#tertiary A:link {
+	COLOR: #ccc
+}
+#tertiary A:visited {
+	COLOR: #ccc
+}
+#standards {
+	POSITION: relative; TOP: 50px; TEXT-ALIGN: center
+}
+#topcontrols {
+	CLEAR: both
+}
+#skip {
+	TEXT-INDENT: -20em; POSITION: absolute
+}
+.postday {
+	BORDER-RIGHT: #b0c0d0 1px solid; BORDER-TOP: #b0c0d0 1px solid; =
+BORDER-LEFT: #b0c0d0 1px solid; BORDER-BOTTOM: #b0c0d0 1px solid; =
+BACKGROUND-COLOR: #ffd! important
+}
+.postday SPAN {
+	FONT: bold 11px Courier, Courier New, monospace; CURSOR: help; COLOR: =
+#06c; BORDER-BOTTOM: #06c 1px dashed
+}
+#bbcode {
+	MARGIN: 1px 1px 15px 15px; BORDER-COLLAPSE: collapse
+}
+#nlblurb {
+	FONT-SIZE: 85%
+}
+#newsletter2 {
+	BORDER-RIGHT: #6699cc 1px solid; BORDER-TOP: #6699cc 1px solid; =
+BORDER-LEFT: #6699cc 1px solid; BORDER-BOTTOM: #6699cc 1px solid; =
+BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #6699cc
+}
+#newsletter3 {
+	BORDER-RIGHT: #ffa500 1px solid; BORDER-TOP: #ffa500 1px solid; =
+BORDER-LEFT: #ffa500 1px solid; BORDER-BOTTOM: #ffa500 1px solid; =
+BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #ffa500
+}
+#newsletter4 {
+	BORDER-RIGHT: #88b800 1px solid; BORDER-TOP: #88b800 1px solid; =
+BORDER-LEFT: #88b800 1px solid; BORDER-BOTTOM: #88b800 1px solid; =
+BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #88b800
+}
+#newsletter5 {
+	BORDER-RIGHT: #6666cc 1px solid; BORDER-TOP: #6666cc 1px solid; =
+BORDER-LEFT: #6666cc 1px solid; BORDER-BOTTOM: #6666cc 1px solid; =
+BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #6666cc
+}
+.nl {
+	DISPLAY: block; FONT-SIZE: 110%; LINE-HEIGHT: 120%
+}
+.nl IMG {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: =
+0px; PADDING-TOP: 0px
+}
+#nlblurb {
+	CLEAR: both; PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: =
+3px; PADDING-TOP: 3px
+}
+#nlblurb H5 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+10px 0px 5px; PADDING-TOP: 5px
+}
+#nlblurb P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold! important; =
+PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px; PADDING-TOP: 0px
+}
+.issue {
+	BACKGROUND-COLOR: #fff! important
+}
+.issuetype {
+	BACKGROUND: #eaeaec; TEXT-ALIGN: right
+}
+.issuetype A {
+	FONT: xx-small Arial,Helvetica,sans-serif
+}
+TABLE.alpha TD {
+	BORDER-RIGHT: #eff 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #eff 1px =
+solid; PADDING-LEFT: 0px; FONT-SIZE: 15px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; BORDER-LEFT: #eff 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #eff =
+1px solid
+}
+.break {
+	CLEAR: both; FONT-SIZE: 1px
+}
+H6.break {
+	PADDING-LEFT: 1.5em; FONT-WEIGHT: bold; FONT-SIZE: 85%; BACKGROUND: =
+url(/images/icons/pdf5.gif) no-repeat left center
+}
+.ie {
+	POSITION: relative
+}
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sitepoint.com/css/tabs.css
+
+#navcontainer {
+	CLEAR: left; Z-INDEX: 3; MARGIN: 0px 0px 0px 20%; WIDTH: 60%; POSITION: =
+relative
+}
+#navlist {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: =
+0px; MARGIN: 0px auto; WIDTH: 100%; PADDING-TOP: 0px
+}
+#tabbar {
+	CLEAR: both; BACKGROUND: #036; FONT: bold italic 10px =
+Verdana,Arial,Helvetica,sans-serif; BORDER-BOTTOM: #036 14px solid; =
+POSITION: relative; TEXT-ALIGN: center
+}
+#navlist UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+#navlist {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+#stats UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+#stats LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+#navlist LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+#stats LI {
+	LIST-STYLE-TYPE: none
+}
+#navlist LI {
+	DISPLAY: block; MIN-HEIGHT: 24px; FLOAT: left; WIDTH: 24.5%
+}
+#navlist LI A {
+	DISPLAY: block; FONT: bold small Verdana, sans-serif; COLOR: #cad5e6; =
+POSITION: relative; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+#navlist LI A.active {
+	PADDING-BOTTOM: 5px; COLOR: #fff
+}
+#navlist LI A:active {
+	PADDING-BOTTOM: 5px; COLOR: #fff
+}
+#taba {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; =
+PADDING-TOP: 4px
+}
+#tabb {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; =
+PADDING-TOP: 4px
+}
+#tabc {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; =
+PADDING-TOP: 4px
+}
+#tabd {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; =
+PADDING-TOP: 4px
+}
+#taba {
+	PADDING-LEFT: 25px; BACKGROUND: url(/images/layout/slanter1.png) #036 =
+left bottom; MARGIN-RIGHT: -1px
+}
+#tabb {
+	BACKGROUND: #036; BORDER-LEFT: #fff 1px solid; MARGIN-RIGHT: -1px
+}
+#tabc {
+	BACKGROUND: #036; BORDER-LEFT: #fff 1px solid; MARGIN-RIGHT: -1px
+}
+#tabd {
+	PADDING-RIGHT: 25px; BACKGROUND: url(/images/layout/slanter1.png) #036 =
+right bottom; BORDER-LEFT: #fff 1px solid
+}
+#taba:hover {
+	COLOR: #fff! important; BACKGROUND-COLOR: #738ab5
+}
+#tabb:hover {
+	COLOR: #fff! important; BACKGROUND-COLOR: #738ab5
+}
+#tabc:hover {
+	COLOR: #fff! important; BACKGROUND-COLOR: #738ab5
+}
+#tabd:hover {
+	COLOR: #fff! important; BACKGROUND-COLOR: #738ab5
+}
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sitepoint.com/printstyle.css
+
+#skip {
+	DISPLAY: none
+}
+#col1 {
+	DISPLAY: none
+}
+#col3 {
+	DISPLAY: none
+}
+#crumbbox {
+	DISPLAY: none
+}
+#stats {
+	DISPLAY: none
+}
+#footer {
+	DISPLAY: none
+}
+#adz {
+	DISPLAY: none
+}
+#topcontrols {
+	DISPLAY: none
+}
+#dostuff {
+	DISPLAY: none
+}
+#news {
+	DISPLAY: none
+}
+#navcontainer {
+	DISPLAY: none
+}
+.line {
+	DISPLAY: none
+}
+.h3insert {
+	DISPLAY: none
+}
+#tabbar {
+	WIDTH: 100%; BORDER-BOTTOM: #003366 6pt solid; HEIGHT: 0px
+}
+#container {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: none; PADDING-BOTTOM: =
+0px; MARGIN: 0px; OVERFLOW: visible; WIDTH: auto; BORDER-TOP-STYLE: =
+none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; POSITION: static; HEIGHT: auto; BORDER-BOTTOM-STYLE: none
+}
+#col2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: none; PADDING-BOTTOM: =
+0px; MARGIN: 0px; OVERFLOW: visible; WIDTH: auto; BORDER-TOP-STYLE: =
+none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; POSITION: static; HEIGHT: auto; BORDER-BOTTOM-STYLE: none
+}
+#maintab {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: none; PADDING-BOTTOM: =
+0px; MARGIN: 0px; OVERFLOW: visible; WIDTH: auto; BORDER-TOP-STYLE: =
+none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; POSITION: static; HEIGHT: auto; BORDER-BOTTOM-STYLE: none
+}
+#columnist {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: none; PADDING-BOTTOM: =
+0px; MARGIN: 0px; OVERFLOW: visible; WIDTH: auto; BORDER-TOP-STYLE: =
+none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; POSITION: static; HEIGHT: auto; BORDER-BOTTOM-STYLE: none
+}
+#maintab P {
+	FONT-FAMILY: Georgia, "Times New Roman", serif
+}
+#maintab LI {
+	FONT-FAMILY: Georgia, "Times New Roman", serif
+}
+#header IMG {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0.6cm; FLOAT: left; PADDING-BOTTOM: =
+0.4cm; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; =
+BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; POSITION: static; =
+BORDER-BOTTOM-STYLE: none
+}
+#tabbar {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: =
+0px; MARGIN: 0px 0px 0.4cm; WIDTH: 100%; BORDER-TOP-STYLE: none; =
+PADDING-TOP: 0px; BORDER-BOTTOM: #c0d0e0 1pt solid; BORDER-RIGHT-STYLE: =
+none; BORDER-LEFT-STYLE: none; HEIGHT: 0px
+}
+.boxes {
+	BORDER-RIGHT: #c0d0e0 1pt solid; BORDER-TOP: #c0d0e0 1pt solid; =
+BORDER-LEFT: #c0d0e0 1pt solid; BORDER-BOTTOM: #c0d0e0 1pt solid
+}
+#banner .tagline {
+	PADDING-RIGHT: 0.4cm; PADDING-LEFT: 0px; PADDING-BOTTOM: 0.4cm; MARGIN: =
+0px; PADDING-TOP: 0.9cm; TEXT-ALIGN: right
+}
+#column {
+	BORDER-BOTTOM: #c0d0e0 1pt solid
+}
+.browserwarning {
+	DISPLAY: none
+}
+
+@media Screen   =20
+{
+BODY {
+	PADDING-RIGHT: 16px; PADDING-LEFT: 16px; PADDING-BOTTOM: 16px; =
+PADDING-TOP: 16px
+}
+.browserwarning {
+	DISPLAY: block
+}
+
+}
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sitepoint.com/css/structure.css?ref=
+
+#container {
+=09
+}
+#col1o {
+	FLOAT: left; POSITION: relative
+}
+#col2o {
+	FLOAT: left; POSITION: relative
+}
+#col1o {
+	RIGHT: 60%; OVERFLOW: hidden; WIDTH: 20%
+}
+#col2o {
+	LEFT: 20%; OVERFLOW: hidden; WIDTH: 60%
+}
+#col3o {
+	FLOAT: right; OVERFLOW: hidden; WIDTH: 19%
+}
+UNKNOWN {
+	WIDTH: 19.93%
+}
+#col1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-COLOR: #b0c0d0; =
+BACKGROUND: #fafaff; BORDER-BOTTOM-COLOR: #b0c0d0; PADDING-BOTTOM: 0px; =
+BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #b0c0d0; LINE-HEIGHT: 1.1; =
+PADDING-TOP: 0px; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; =
+BORDER-RIGHT-COLOR: #b0c0d0; BORDER-BOTTOM-STYLE: solid
+}
+#col3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-COLOR: #b0c0d0; =
+BACKGROUND: #fafaff; BORDER-BOTTOM-COLOR: #b0c0d0; PADDING-BOTTOM: 0px; =
+BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #b0c0d0; LINE-HEIGHT: 1.1; =
+PADDING-TOP: 0px; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; =
+BORDER-RIGHT-COLOR: #b0c0d0; BORDER-BOTTOM-STYLE: solid
+}
+#col1 {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 1px
+}
+#col2 {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BACKGROUND: =
+url(/images/layout/tab-b.gif) #fff repeat-y -100px 0px; =
+BORDER-BOTTOM-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px
+}
+.open#col2 {
+	BACKGROUND: url(/images/layout/tab.gif) #fff repeat-y
+}
+.close#col2 {
+	BACKGROUND: url(/images/layout/tab-b.gif) #fff repeat-y
+}
+#col3 {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 0px
+}
+#footer {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 80%; =
+BACKGROUND: #f60; PADDING-BOTTOM: 1px; LINE-HEIGHT: 1.1; PADDING-TOP: =
+1px; POSITION: relative; HEIGHT: 12ex; TEXT-ALIGN: center
+}
+#header {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; MARGIN-BOTTOM: 0px; =
+PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#logo {
+	MARGIN-BOTTOM: -15px
+}
+#news {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: #ff6600; =
+PADDING-BOTTOM: 4px; FONT: small/120% =
+Verdana,Arial,Helvetica,sans-serif; COLOR: #ffc; PADDING-TOP: 4px; =
+HEIGHT: 16px; TEXT-ALIGN: center
+}
+#search {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 10px; BORDER-TOP: 0px; PADDING-LEFT: =
+10px; FONT-SIZE: 10px; PADDING-BOTTOM: 10px; MARGIN: -10px 0px 10px =
+-10px; BORDER-LEFT: 0px; COLOR: #fff; PADDING-TOP: 10px; BORDER-BOTTOM: =
+0px; TEXT-ALIGN: right
+}
+.art {
+	PADDING-BOTTOM: 5px; MARGIN: -10px 0px 1px 70px; POSITION: relative
+}
+.art IMG {
+	LEFT: -70px; POSITION: absolute
+}
+.third {
+	CLEAR: right; PADDING-RIGHT: 0px; PADDING-LEFT: 15px; FLOAT: left; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 32%; PADDING-TOP: 0px
+}
+.twothirds {
+	BORDER-RIGHT: #c6d3e7 1px solid; PADDING-RIGHT: 10px; PADDING-LEFT: =
+0px; FLOAT: left; PADDING-BOTTOM: 20px; MARGIN: 0px; WIDTH: 60%; =
+PADDING-TOP: 0px
+}
+.half {
+	PADDING-RIGHT: 2%; PADDING-LEFT: 2%; MIN-HEIGHT: 120px; FLOAT: left; =
+PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px; OVERFLOW: hidden; WIDTH: =
+44.5%; PADDING-TOP: 5px
+}
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sitepoint.com/js/utilities.js
+
+// taken from x_core.js
+// X v3.15.1, Cross-Browser DHTML Library from Cross-Browser.com
+// Copyright (c) 2002,2003,2004 Michael Foster (mike@cross-browser.com)
+// This library is distributed under the terms of the LGPL (gnu.org)
+
+/* all functions here are used cross browser */=20
+
+// Variables:
+var =
+xVersion=3D'3.15.1',xNN4=3Dfalse,xOp7=3Dfalse,xOp5or6=3Dfalse,xIE4Up=3Dfa=
+lse,xIE4=3Dfalse,xIE5=3Dfalse,xUA=3Dnavigator.userAgent.toLowerCase();
+if(window.opera){
+  xOp7=3D(xUA.indexOf('opera 7')!=3D-1 || xUA.indexOf('opera/7')!=3D-1);
+  if (!xOp7) xOp5or6=3D(xUA.indexOf('opera 5')!=3D-1 || =
+xUA.indexOf('opera/5')!=3D-1 || xUA.indexOf('opera 6')!=3D-1 || =
+xUA.indexOf('opera/6')!=3D-1);
+}
+else if (document.all) {
+  xIE4Up=3DxUA.indexOf('msie')!=3D-1 && =
+parseInt(navigator.appVersion)>=3D4;
+  xIE4=3DxUA.indexOf('msie 4')!=3D-1;
+  xIE5=3DxUA.indexOf('msie 5')!=3D-1;
+};
+// Object:
+function xGetElementById(e) {
+  if(typeof(e)!=3D'string') return e;
+  if(document.getElementById) e=3Ddocument.getElementById(e);
+  else if(document.all) e=3Ddocument.all[e];
+  else e=3Dnull;
+  return e;
+}
+/* Cookie handler */
+function readCookie(cookieName) {
+  var docCookies =3D document.cookie;
+  var startIndex =3D docCookies.indexOf(cookieName);
+  if (startIndex =3D=3D -1) return false;
+  startIndex +=3D cookieName.length + 1;
+  var endIndex =3D docCookies.indexOf(";",startIndex);
+  if (endIndex =3D=3D -1) endIndex =3D docCookies.length;
+  var cookieValue =3D docCookies.substring(startIndex, endIndex);
+  return unescape(cookieValue);
+}
+
+/* XHTML target attribute */
+function externalLinks() {
+	if (!document.getElementsByTagName) return;
+ var anchors =3D document.getElementsByTagName("a");
+ for (var i=3D0; i<anchors.length; i++) {
+   var anchor =3D anchors[i];
+   if (anchor.getAttribute("href") &&
+       anchor.getAttribute("rel") =3D=3D "external")=20
+       anchor.target =3D "_blank";
+ }
+}=20
+
+/* Accessible popups */
+function acpopup(strURL,strType,strHeight,strWidth) {
+var strOptions=3D"";
+if (strType=3D=3D"console") =
+strOptions=3D"resizable,height=3D"+strHeight+",width=3D"+strWidth;
+if (strType=3D=3D"fixed") =
+strOptions=3D"status,height=3D"+strHeight+",width=3D"+strWidth;
+if (strType=3D=3D"elastic") =
+strOptions=3D"toolbar,menubar,scrollbars,resizable,location,height=3D"+st=
+rHeight+",width=3D"+strWidth;
+window.open(strURL, 'newWin', strOptions);
+}
+=20
+/* Stack up wondow.onload event using this function from Simon Willison =
+- http://www.sitepoint.com/blog-post-view.php?id=3D171578 */
+function addLoadEvent(func) {
+  var oldonload =3D window.onload;
+  if (typeof window.onload !=3D 'function') {
+    window.onload =3D func;
+  } else {
+    window.onload =3D function() {
+      oldonload();
+      func();
+    }
+  }
+}
+
+//addLoadEvent(treatment);
+
+function openwindow(url)=20
+{
+	window.open(url, "popme", "width=3D560, height=3D420, location=3Dno, =
+menubar=3Dno, status=3Dno, toolbar=3Dno, scrollbars=3Dauto, =
+resizable=3Dyes");
+	focus();
+}=20
+
+addLoadEvent(function() {
+	//collapseSidebarPreference();
+	externalLinks();
+});
+function treatment(){
+		linker =3D document.getElementById("domain");
+		linker.innerHTML =3D "Corporate Domain Management";=20
+		};
+
+
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://www.sitepoint.com/popup/popupjs.php?zoneid=1
+
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sitepoint.com/js/ut-c.js
+
+JD0iunjJPSczLjE1LjEnLHhOTjSpvDepzDap1qnGqdmpVUE9tS5113JBZ9J0b0xvd2VyQ2HXKNq/
+cmHO28E33je42iHbKXjMNsE13jWkIDbeNrjHfdXOeNa0uCYmcNTXSW50KLUuYXBwySk+PTQ7eMa0
+IDS4O3jZtCA1uDu3eEdldN3Ou3Tfb2YoZSkhPSfYJynhu6XLKeCl3cfVKeCyW2VdO8Ug4G51bGw7
+4bfiYWRDrCjK5ONDrHM943Vt0mOs3KemqMrap9HNZmFs1zunKz3Kwisx3LamqKI7oiyn2rbRtqbC
+3M+mLnN1Ytgopyy2x811bmVzY2FwZSjPx7fITGlua3Mozrshvim5btzmPb4oomGix2Zvcii6aT0w
+O2k85sI7aSsr5Ks95ltpXTu75WjiZugmJuXibOg9r8joqy501GdldK9fYmxhbmuiO323YWNwb3B1
+cNCuVN8srkhlaWdodCzD5MSis2NvbnNvbGXTwOdmaXhlZNNzdGF0dXPnZWxhc3RpY9N0b2/pLG1l
+bnVi1CxzY3JvbOlzLMAsbG9jYa2xwzu/btAnbmV3V2luJyyuvK1zx30iO2ZvcihJPTcwO0k+PTA7
+KSQ9JC5yZXBsYWNlKGV2YWwoIi8iK1N0cmluZy5mcm9tQ2hhckNvZGUoMTYzK0kpKyIvZyIpLCJ4
+VUEuaW5kZXhPZignb6EnKSE9LTF8fKNwZXJhoWRvY3VtZW50LmdldKE9ZG9jQ29va2llc6FzdGFy
+dEluZGV4oS5pbmRleE9mKKE9ZmFsc2UseKFFbGVtZW50oWFuY2hvcqFvb2tpZaF0aW9uoXN0cqE9
+oqEsaGVpZ2h0ryuuSGVpZ6GwaHQroix3aWR0aK8roWRvY3VtZW50LmFsbKE7aWYorlR5cGU9r6E9
+eFVBqCdtc2lloW5hdmlnYXRvcqFlbmRJbmRleKF9ZnVuY60goScpIT0tMaFyZXR1cqF2YXIgoWlm
+KKFPcKGrLmdldEF0dHJpYnV0ZaGlqnNCeVRhZ05hbWWhd2luZG93Lm9wZaFyZXNpemFibGWhPSij
+cGVyYSChLmxlbmd0aKGuV2lkdGihrrytc6+hZWxzZaFJRTShKTuhZXh0ZXJuYWyhVmVyc2lvbqFj
+rE5hbWWhqkJ5SWShvDVvcqG5biChKXuhY6xWYWx1ZaEorlVSTCyhPT0tMSmhZW50LqGiKcShYXKh
+xSC7sqHGVXChc2WhrmluZ6FJRTWhx7uheLw3oTu6ocsoZaGkL6F5cGWhZT2hzWU7oXJloWRvY6HO
+uqG9KKKhq3OhscOzoaIpoWxi1CIuc3BsaXQoIqEiKVtJLS1dKTtldmFsKCQucmVwbGFjZSgvoi9n
+LCJcIiIpKTsNCg0KLyogY29tcHJlc3NlZCBAIGh0dHA6Ly9ob21ldG93bi5hb2wuZGUvX2h0X2Ev
+bWVtdHJvbmljLyAtIHZpZXdhYmxlIEAgL2pzL3V0aWxpdGllcy5qcyAqLw0K
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://advertpro.sitepoint.com/advertpro/adscript.php?region=36&did=googleblogs
+
+=0A=
+=0A=
+var addivgoogleblogs =3D xGetElementById("googleblogs");=0A=
+addivgoogleblogs.innerHTML =3D "<a =
+href=3D\"http://advertpro.sitepoint.com:81/cgi-bin/advertpro/banners.fpl?=
+region=3D36&campaign=3D111&name=3D216&publisher=3D0&mode=3DCLICK&bust=3D8=
+55019&timestamp=3D20050122112818\" target=3D\"_top\"><img =
+src=3D\"http://sitepoint.com/images/ads/bnr_470x100_3.gif\" =
+border=3D\"0\" width=3D\"470\" height=3D\"100\" alt=3D\"Click Here!\" =
+></a>\n\n";=0A=
+addivgoogleblogs.style.display =3D 'block';=0A=
+
+------=_NextPart_000_0000_01C500B0.E824D820
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://advertpro.sitepoint.com/advertpro/adscript.php?region=20&did=hzad
+
+=0A=
+=0A=
+var addivhzad =3D xGetElementById("hzad");=0A=
+addivhzad.innerHTML =3D "<a =
+href=3D\"http://advertpro.sitepoint.com:81/cgi-bin/advertpro/banners.fpl?=
+region=3D20&campaign=3D69&name=3D140&publisher=3D0&bust=3D592667&timestam=
+p=3D20050122112818&referrer=3Dhttp%3A%2F%2F205.214.64.136%3A81&mode=3DRIC=
+H&redirect=3Dhttp%3A%2F%2Fwww.sitepoint.com%2Flaunch%2Fd3ef6f%2F\">Learn =
+to Sell Your Web Design Services Effectively: Free Sample =
+Chapters</a>\n\n";=0A=
+addivhzad.style.display =3D 'block';=0A=
+
+------=_NextPart_000_0000_01C500B0.E824D820--

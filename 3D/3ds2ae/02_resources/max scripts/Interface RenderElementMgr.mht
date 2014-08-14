@@ -1,0 +1,736 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Interface: RenderElementMgr
+Date: Mon, 18 Oct 2004 13:11:39 +0100
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0000_01C4B514.00CCED60";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C4B514.00CCED60
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: mk:@MSITStore:C:\Design\1_3D\3dsmax6\help\maxscript.chm::/interface_renderelementmgr.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Interface: RenderElementMgr</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META TIME_STAMP=3D"9/9/2003 1:22:41 PM" CONVERTER=3D"RTFtoHTM v2.3"=20
+KEYWORDS=3D"Interface RenderElementMgr" DOCFILE=3D"magma_reference.doc"=20
+HELP_BUILD=3D"9/9/2003  1:22:41 PM"=20
+COPYRIGHT=3D"=A9 1998-2003 Discreet, a division of Autodesk, Last =
+updated: %date."><LINK=20
+href=3D"mk:@MSITStore:C:\Design\1_3D\3dsmax6\help\maxscript.chm::/ktx.css=
+"=20
+rel=3DStylesheet>
+<SCRIPT language=3Djavascript=20
+src=3D"mk:@MSITStore:C:\Design\1_3D\3dsmax6\help\maxscript.chm::/acad.js"=
+></SCRIPT>
+
+<META content=3D"MSHTML 6.00.2600.0" name=3DGENERATOR></HEAD>
+<BODY vLink=3Dblue link=3Dblue>
+<H1>Interface: RenderElementMgr</H1>
+<P class=3DBodyBold>RenderElementMgr interfaces:=20
+<P class=3Dcode>Interface: <B>RenderElementMgr</B>=20
+<P class=3Dcode>&lt;boolean&gt;<B>AddRenderElement</B>=20
+&lt;maxObject&gt;<B>element</B>=20
+<P class=3DIndent2>Adds a specific element. Returns <B>True</B> if =
+successful,=20
+<B>False</B> otherwise=20
+<P class=3Dcode>&lt;boolean&gt;<B>RemoveRenderElement</B>=20
+&lt;maxObject&gt;<B>element</B>=20
+<P class=3DIndent2>Removes a specific element. Returns <B>True</B> is =
+successful,=20
+<B>False</B> otherwise.=20
+<P class=3Dcode>&lt;void&gt;<B>RemoveAllRenderElements</B>()=20
+<P class=3DIndent2>Removes all elements in the list.=20
+<P class=3Dcode>&lt;integer&gt;<B>NumRenderElements</B>()=20
+<P class=3DIndent2>Returns number of elements in list=20
+<P class=3Dcode>&lt;maxObject&gt;<B>GetRenderElement</B>=20
+&lt;integer&gt;<B>index</B>=20
+<P class=3DIndent2>Returns a specific element, index is 0 based.=20
+<P class=3Dcode>&lt;void&gt;<B>SetElementsActive</B> =
+&lt;boolean&gt;<B>active</B>=20
+<P class=3DIndent2>Sets a boolean indicating elements are active, ie. =
+will be=20
+created during a render.=20
+<P class=3Dcode>&lt;boolean&gt;<B>GetElementsActive</B>()=20
+<P class=3DIndent2>Gets a boolean indicating elements are active, ie. =
+will be=20
+created during a render.=20
+<P class=3Dcode>&lt;void&gt;<B>SetDisplayElements</B>=20
+&lt;boolean&gt;<B>display</B>=20
+<P class=3DIndent2>Sets boolean indicating elements will be displayed =
+after they=20
+are created.=20
+<P class=3Dcode>&lt;boolean&gt;<B>GetDisplayElements</B>()=20
+<P class=3DIndent2>Gets boolean indicating elements will be displayed =
+after they=20
+are created.=20
+<P class=3Dcode>&lt;void&gt;<B>SetCombustionOutputEnabled</B>=20
+&lt;boolean&gt;<B>enabled</B>=20
+<P class=3DIndent2>Enables or disables output to combustion .cws file.=20
+<P class=3Dcode>&lt;boolean&gt;<B>GetCombustionOutputEnabled</B>()=20
+<P class=3DIndent2>Gets boolean indicating enabled output to combustion =
+.cws file.=20
+
+<P class=3Dcode>&lt;void&gt;<B>SetCombustionOutputPath</B>=20
+&lt;string&gt;<B>pathname</B>=20
+<P class=3DIndent2>Sets the filename of the .cws file.=20
+<P class=3Dcode>&lt;string&gt;<B>GetCombustionOutputPath</B>()=20
+<P class=3DIndent2>Gets the filename of the .cws file.=20
+<P class=3Dcode>&lt;void&gt;<B>SetRenderElementFilename</B> =
+&lt;integer&gt;index=20
+&lt;string&gt;filename=20
+<P class=3DIndent2>Set the output file name for the indexed render =
+element to the=20
+specified filename string.=20
+<P class=3Dcode>&lt;string&gt;<B>GetRenderElementFilename</B> =
+&lt;integer&gt;index=20
+
+<P class=3DIndent2>Get the output file name of the indexed render =
+element.=20
+<P class=3DBody>
+<P class=3DScriptHead>Example:=20
+<P class=3DcodeFirst>-- set a list of render elements.=20
+<P class=3Dcode>elementlist =3D=20
+#(specular,diffuse,self_illumination,reflection,refraction,shadowrenderel=
+ement,atmosphere,blend,z_depth,alpha,backgroundrenderelement)=20
+
+<P class=3Dcode>re =3D maxOps.GetCurRenderElementMgr() -- get the =
+current render=20
+element manager=20
+<P class=3Dcode>re.removeallrenderelements() -- remove all =
+renderelements=20
+<P class=3Dcode>re.numrenderelements() -- get number of render elements=20
+<P class=3Dcode>prod =3D maxOps.GetRenderElementMgr #Production=20
+<P class=3Dcode>draft =3D maxOps.GetRenderElementMgr #Draft=20
+<P class=3Dcode>prod.numrenderelements()=20
+<P class=3Dcode>draft.numrenderelements()=20
+<P class=3Dcode>rendoutputfilename =3D "c:\\test.tga"=20
+<P class=3Dcode>-- adds all renderelements to be rendered.=20
+<P class=3Dcode>for n in elementlist do=20
+<P class=3Dcode>(=20
+<P class=3DcodeIndent>re.addrenderelement (n elementname:("foo_" + (n as =
+string)))=20
+
+<P class=3DcodeIndent>format "\nAdded % renderelement" n=20
+<P class=3Dcode>)=20
+<P class=3Dcode>rendsavefile =3D true=20
+<P class=3Dcode>setsilentmode true -- used to avoid error message when =
+checking=20
+the filename of element=20
+<P class=3Dcode>renderSceneDialog.open()&nbsp;&nbsp;-- open Render =
+Dialog=20
+<P class=3Dcode>-- get all render elements set and return name of render =
+element=20
+and output filename=20
+<P class=3Dcode>for n =3D 0 to (prod.numrenderelements()- 1) do=20
+<P class=3Dcode>(=20
+<P class=3DcodeIndent>el =3D re.getrenderelement n=20
+<P class=3DcodeIndent>format "\nGetting % render element" el.elementname =
+
+<P class=3DcodeIndent>format "\nRender element outputfilename: %"=20
+(re.GetRenderElementFileName n)=20
+<P class=3Dcode>)=20
+<P class=3DSeeAlso>See also=20
+<P class=3DBodyLink><A=20
+href=3D"mk:@MSITStore:C:\Design\1_3D\3dsmax6\help\maxscript.chm::/interfa=
+ce_maxops.htm">MaxOps=20
+Interface</A>=20
+<HR>
+
+<P class=3DBody><A title=3D"Click here to comment on this topic."=20
+href=3D"javascript:doComments()">Comments</A> </P></BODY></HTML>
+
+------=_NextPart_000_0000_01C4B514.00CCED60
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: mk:@MSITStore:C:\Design\1_3D\3dsmax6\help\maxscript.chm::/ktx.css
+
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: navy; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: navy; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+H4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN-LEFT: 9pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+HR {
+	MARGIN-TOP: 48pt
+}
+P {
+	MARGIN-TOP: 3pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; MARGIN-LEFT: =
+6pt; COLOR: black; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+BODY {
+	FONT-WEIGHT: normal; COLOR: black; FONT-FAMILY: Verdana, 'MS Sans =
+Serif', SansSerif; BACKGROUND-COLOR: #fff5ee
+}
+.Body {
+	FONT-SIZE: 10pt; PADDING-BOTTOM: 3pt; FONT-FAMILY: Verdana, 'MS Sans =
+Serif', SansSerif
+}
+.BodyBold {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: black; PADDING-TOP: 9pt; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.BodyFirst {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; PADDING-BOTTOM: 3pt; COLOR: =
+black; PADDING-TOP: 3pt; FONT-FAMILY: Verdana, 'MS Sans Serif', =
+SansSerif
+}
+.PathAnnotation {
+	BORDER-RIGHT: lightgrey double; PADDING-RIGHT: 6pt; BORDER-TOP: =
+lightgrey double; PADDING-LEFT: 6pt; FONT-SIZE: 10pt; PADDING-BOTTOM: =
+6pt; MARGIN: 12pt 12pt 9pt 0pt; BORDER-LEFT: lightgrey double; COLOR: =
+black; PADDING-TOP: 6pt; BORDER-BOTTOM: lightgrey double; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif; BACKGROUND-COLOR: papayawhip
+}
+.Caption {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 6pt; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+.CaptionIndent {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; MARGIN-LEFT: 9pt; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+.gloss {
+	MARGIN-TOP: -6pt; FONT-SIZE: 7pt; MARGIN-BOTTOM: -14pt; MARGIN-LEFT: =
+0pt; COLOR: navy; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Graphic {
+	PADDING-BOTTOM: 4px; PADDING-TOP: 5px; FONT-FAMILY: Verdana, 'MS Sans =
+Serif', SansSerif
+}
+.Indent {
+	PADDING-LEFT: 12pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Indent2 {
+	PADDING-LEFT: 18pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Indent3 {
+	PADDING-LEFT: 30pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Parameter {
+	FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ParameterIndent {
+	MARGIN-LEFT: 18pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.WriterComment {
+	COLOR: green; FONT-STYLE: italic; FONT-FAMILY: Verdana, 'MS Sans =
+Serif', SansSerif
+}
+.Super {
+	FONT-SIZE: 70%; VERTICAL-ALIGN: super; FONT-FAMILY: Verdana, 'MS Sans =
+Serif', SansSerif
+}
+OL {
+	MARGIN-TOP: 6px; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+UL {
+	MARGIN-TOP: 6px; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+UL {
+	MARGIN-LEFT: 27px; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+LI {
+	MARGIN-TOP: 6px; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Bullet {
+	FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.IndentBullet {
+	PADDING-LEFT: 18pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Number {
+	FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.code {
+	PADDING-LEFT: 6pt; FONT-SIZE: 10pt; FONT-FAMILY: Courier New, monospace
+}
+.codeLast {
+	PADDING-LEFT: 6pt; FONT-SIZE: 10pt; PADDING-BOTTOM: 4pt; FONT-FAMILY: =
+Courier New, monospace
+}
+.boldcode {
+	MARGIN-TOP: 6px; FONT-SIZE: 10pt; MARGIN-LEFT: 18px; FONT-FAMILY: =
+Courier New, monospace
+}
+.code {
+	FONT-FAMILY: Courier New, monospace
+}
+.codeLast {
+	MARGIN-BOTTOM: 12px; FONT-FAMILY: Courier New, monospace
+}
+.boldcode {
+	FONT-WEIGHT: bold; FONT-FAMILY: Courier New, monospace
+}
+.charCode {
+	FONT-SIZE: 10pt; FONT-FAMILY: Courier New, monospace
+}
+.charCodeBold {
+	FONT-SIZE: 10pt; FONT-FAMILY: Courier New, monospace
+}
+.charCodeLink {
+	FONT-SIZE: 10pt; FONT-FAMILY: Courier New, monospace
+}
+.charCode {
+	FONT-FAMILY: Courier New, monospace
+}
+.charCodeBold {
+	FONT-WEIGHT: bold; FONT-FAMILY: Courier New, monospace
+}
+.charCodeLink {
+	FONT-FAMILY: Courier New, monospace
+}
+TABLE {
+	MARGIN-TOP: 12pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; MARGIN-BOTTOM: =
+6pt; COLOR: black; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+TR {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif; valign: top
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND-IMAGE: none; =
+VERTICAL-ALIGN: top; COLOR: black; BACKGROUND-REPEAT: repeat; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif; BACKGROUND-COLOR: =
+#ede4d0; TEXT-ALIGN: left
+}
+TABLE P {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; MARGIN-LEFT: 0px; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Procedures {
+	FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: navy; PADDING-TOP: 18pt; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Interface {
+	FONT-WEIGHT: bold; FONT-SIZE: 13pt; PADDING-BOTTOM: 3pt; COLOR: navy; =
+PADDING-TOP: 12pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ProcHeading {
+	PADDING-LEFT: 6pt; FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; =
+PADDING-TOP: 6pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ProcBullet {
+	PADDING-LEFT: 9pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif; LIST-STYLE-TYPE: disc
+}
+OL .ProcIndent {
+	PADDING-LEFT: 9pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+UL .ProcIndent {
+	PADDING-LEFT: 9pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ROParameter {
+	PADDING-LEFT: 21pt; FONT-SIZE: 10pt; COLOR: black; TEXT-INDENT: -9pt; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif; TEXT-ALIGN: left
+}
+.ROBody {
+	PADDING-LEFT: 6pt; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+.ROHeading {
+	PADDING-LEFT: 6pt; FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; =
+PADDING-TOP: 6pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.GBHeading {
+	PADDING-LEFT: 12pt; FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; =
+PADDING-TOP: 6pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.GBBody {
+	PADDING-LEFT: 18pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.GBParameter {
+	PADDING-LEFT: 27pt; FONT-SIZE: 10pt; COLOR: black; TEXT-INDENT: -9pt; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif; TEXT-ALIGN: left
+}
+.GBParamBody {
+	PADDING-LEFT: 27pt; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+.ROParamBody {
+	PADDING-LEFT: 21pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ProcBody {
+	PADDING-LEFT: 15pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.GBBodyCaption {
+	PADDING-LEFT: 18pt; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.GBParamCaption {
+	PADDING-LEFT: 27pt; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.GBBullet {
+	PADDING-LEFT: 27pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif; LIST-STYLE-TYPE: disc
+}
+.GBIndent {
+	PADDING-LEFT: 36pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ROGraphic {
+	PADDING-LEFT: 6pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ROBullet {
+	PADDING-LEFT: 21pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif; LIST-STYLE-TYPE: disc
+}
+.ROIndent {
+	PADDING-LEFT: 30pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ROCaption {
+	PADDING-LEFT: 12pt; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ProcNumber {
+	PADDING-LEFT: 9pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+OL .ProcCaption {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+UL .ProcCaption {
+	PADDING-LEFT: 9pt; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+OL .ProcNumBullet {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+UL .ProcNumBullet {
+	PADDING-LEFT: 9pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+OL .ProcIndent2 {
+	PADDING-LEFT: 6pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+UL .ProcIndent2 {
+	PADDING-LEFT: 15pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.SeeAlso {
+	PADDING-LEFT: 3pt; FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; =
+PADDING-TOP: 6pt; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.BodyLink {
+	PADDING-LEFT: 9pt; FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+.BodyCaption {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 6pt; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+.ROBodyCaption {
+	PADDING-LEFT: 6pt; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.ROParamCaption {
+	PADDING-LEFT: 21pt; FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+TABLE P .TableHeader {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+TABLE P .TableBody {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+.codeInd2Last {
+	PADDING-LEFT: 30pt; FONT-SIZE: 10pt; PADDING-BOTTOM: 4pt; FONT-FAMILY: =
+'Courier New', monospace
+}
+.codeInd2 {
+	PADDING-LEFT: 30pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: =
+'Courier New', monospace
+}
+.ScriptHead {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; PADDING-TOP: 9pt; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+OL .code_Numbered {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+'Courier New', monospace
+}
+.code_Numbered {
+	PADDING-LEFT: 6pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: =
+'Courier New', monospace
+}
+.code_NumberedLast {
+	PADDING-LEFT: 6pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; =
+PADDING-BOTTOM: 4pt; COLOR: black; FONT-FAMILY: 'Courier New', monospace
+}
+.BodyBullet {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+.BodyNumber {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: =
+Verdana, 'MS Sans Serif', SansSerif
+}
+.BulletFirst {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; PADDING-TOP: 4pt; =
+FONT-FAMILY: SansSerif, 'MS Sans Serif', Verdana
+}
+.codeInd3 {
+	PADDING-LEFT: 42pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: 'Courier New', monospace
+}
+.codeInd3Last {
+	PADDING-LEFT: 42pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; =
+PADDING-BOTTOM: 4pt; COLOR: black; FONT-FAMILY: 'Courier New', monospace
+}
+.codeIndent {
+	PADDING-LEFT: 18pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: 'Courier New', monospace
+}
+.codeIndLast {
+	PADDING-LEFT: 18pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; =
+PADDING-BOTTOM: 4pt; COLOR: black; FONT-FAMILY: 'Courier New', monospace
+}
+.Indent4 {
+	PADDING-LEFT: 42pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; =
+FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.IndentFirst {
+	PADDING-LEFT: 12pt; FONT-WEIGHT: normal; FONT-SIZE: 10pt; =
+PADDING-BOTTOM: 4pt; COLOR: black; FONT-FAMILY: Verdana, 'MS Sans =
+Serif', SansSerif
+}
+.Normal {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; PADDING-BOTTOM: 3pt; COLOR: =
+black; FONT-FAMILY: Verdana, 'MS Sans Serif', SansSerif
+}
+.Query {
+	FONT-WEIGHT: 300; FONT-SIZE: 8pt; COLOR: gray; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+.ToDo {
+	FONT-WEIGHT: 300; FONT-SIZE: 8pt; COLOR: gray; FONT-FAMILY: Verdana, =
+'MS Sans Serif', SansSerif
+}
+
+------=_NextPart_000_0000_01C4B514.00CCED60
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: mk:@MSITStore:C:\Design\1_3D\3dsmax6\help\maxscript.chm::/acad.js
+
+// acad.js - JavaScript functions for Banff Help Files
+//=20
+// v.0.11: 04may00 - fixed "display/collapse" all hidden text message so =
+
+//		     it changes when clicked
+// v.0.10: 03may00 - adjusted the height of the Comments dialog
+// v.0.09: 26apr00 - added control of 'click4more' image in toggleLeadin
+//		     added control of 'click4more' image in toggleProc
+//		     deleted csJump function
+//		     added localizable constants
+// v.0.08: 06apr00 - updated autoExpand so it really works!
+// v.0.07: 27mar00 - added doComments function
+// v.0.06: 22mar00 - added build_hhrun_object
+// v.0.05: 01mar00 - added extra "/" to jumpHTM
+// v.0.04: 29feb00 - updated jumpCHM
+// v.0.03: 09dec99 - added autoExpand
+// v.0.02: 08dec99 - added jumpHTM and jumpCHM
+// v.0.01: 30nov99 - the beginning
+//
+//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+// Constants:
+
+var strclick4more   =3D "Click for more...";
+var strclick2hide   =3D "Click to hide...";
+var strcollapsetext =3D "Collapse all hidden text on this page.";
+
+//=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+// acOnload - placeholder for future functionality
+function acOnload() {
+//  autoExpand(0);
+}
+
+function doComments() {
+  var stitle =3D document.title;
+  var surl   =3D location.href;
+  var i =3D surl.indexOf("::");
+  if( i =3D=3D -1 ) {
+    i =3D surl.lastIndexOf("/");=20
+    chmpath =3D surl.substring(0,i+1);
+  } else {
+    chmpath =3D surl.substring(0,i+3);
+  }
+  window.open(chmpath+"comments.htm#"+stitle+" =
+["+surl+"]",null,"height=3D450,width=3D450,resizable=3Dyes,directories=3D=
+no,location=3Dno,menubar=3Dno,status=3Dno,toolbar=3Dno" );
+}
+
+
+// Jump to local non-compiled HTML file from a CHM
+// jumpHTM('drivers.htm');
+function jumpHTM(file) {
+  var path =3D location.pathname;
+  var i =3D path.lastIndexOf("\\");
+  var j =3D path.indexOf(":", 3);
+  path =3D path.substring(j+1,i+1);
+  location.href =3D "file:///" + path + file;
+}
+
+// Jump to a local CHM file from a non-compiled HTML file
+// jumpCHM('acad_acr.chm::/acr_l30.html');
+function jumpCHM(file_topic) {
+  var path =3D location.pathname;
+  var i =3D path.lastIndexOf("\\");
+  path =3D path.substring(1,i+1);
+  location.href =3D "ms-its:" + path + file_topic;
+}
+
+// Builds a ShortCut object to launch a CHM (with local path)
+// build_hhrun_object -=20
+//
+function build_hhrun_object(file) {
+  var path =3D location.pathname;
+  var i =3D path.lastIndexOf("\\");
+  var j =3D path.indexOf(":", 3);
+  path =3D path.substring(j+1,i+1);
+  document.writeln("<OBJECT id=3Dhhrun =
+type=3D'application/x-oleobject'");
+  document.writeln("  =
+classid=3D'clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11'");
+  document.writeln("  codebase=3D'hhctrl.ocx#Version=3D4,73,8561,0'>");
+  document.writeln(" <PARAM name=3D'Command' value=3D'ShortCut'>");
+  document.writeln(" <PARAM name=3D'Item1' value=3D',hh.exe," + path + =
+file + "'>");
+  document.writeln(" <PARAM name=3D'Window'  value=3D'bogus.html'>");
+  document.writeln("</OBJECT>");
+}
+
+function getpath() {
+  var path =3D location.pathname;
+  var i =3D path.lastIndexOf("\\");
+  var j =3D path.indexOf(":", 3);
+  path =3D path.substring(j+1,i+1);
+  return path;
+}
+
+function MakeArray(n) {
+  this.length =3D n;
+  for (var i =3D 1; i <=3D n; i++) {=20
+    this[i] =3D 0;
+  }
+  return this;
+}
+
+function toggleLeadin() {
+  if( leadin.style.display =3D=3D "" ) {
+    leadin.style.display =3D "none";
+    click4more.src =3D "chickletred.gif";
+    click4more.title =3D strclick4more;
+  }
+  else {
+    leadin.style.display=3D"";
+    click4more.src =3D "chickletred2.gif";
+    click4more.title =3D strclick2hide;
+  }
+}
+
+var lastspan =3D new MakeArray(5);
+var lastlink =3D new MakeArray(5);
+function togglespan( level, spanname, linkname ) {
+  if( spanname.style.display =3D=3D "" ) {
+    spanname.style.display =3D "none";
+    lastspan[level] =3D 0;
+    lastlink[level] =3D 0;
+    if( linkname !=3D null ) {
+      linkname.style.fontWeight =3D "";
+    }
+  }
+  else {
+    spanname.style.display=3D"";
+    if( lastspan[level] !=3D 0 ) {=20
+      lastspan[level].style.display =3D "none";=20
+      lastlink[level].style.fontWeight =3D "";
+    }
+    lastspan[level] =3D spanname;
+    if( linkname !=3D null ) {
+      lastlink[level] =3D linkname;
+      linkname.style.fontWeight =3D "bold";
+    }
+  }
+}
+
+var allon =3D 0;
+//var showall1 =3D 0;
+function showAll() {
+  if( allon =3D=3D 1 ) {
+    document.location.href =3D document.location.href;
+  }
+  else {
+    for ( i=3D0; i < document.all.length; i++ ) {
+      document.all.item(i).style.display =3D "";
+    }
+    allon =3D 1;
+    //if( showall1 !=3D 0 ) {
+      document.all.showall1.innerText =3D strcollapsetext;
+    //  showall2.innerText =3D "";
+    //}
+  }
+}
+
+function autoExpand( exp ) {
+  if( exp =3D=3D 1 ) { showAll(); }
+}
+
+function toggleproc( procname, imgname, anchor ){
+  var i =3D document.location.href.lastIndexOf("#");
+  var cur_href =3D "";
+  if( i > 0 ) { cur_href =3D document.location.href.substring(0,i); }
+  if( procname.style.display =3D=3D "" ) {
+    procname.style.display =3D "none";
+    imgname.src =3D "right.gif";
+    procmore.title =3D strclick4more;
+  }
+  else {
+    procname.style.display=3D"";
+    imgname.src =3D "down.gif";
+    procmore.title =3D strclick2hide;
+  }
+}
+
+
+
+
+
+------=_NextPart_000_0000_01C4B514.00CCED60--

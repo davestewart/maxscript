@@ -1,0 +1,33 @@
+[name]
+name=Flange & Chorus
+matchName=ADBE Aud_Flange
+
+[properties]
+name=	Voice Separation Time (ms)
+type=	OneD
+
+name=	Voices
+type=	OneD
+
+name=	Modulation Rate
+type=	OneD
+
+name=	Modulation Depth
+type=	OneD
+
+name=	Voice Phase Change
+type=	OneD
+
+name=	Invert Phase
+type=	OneD
+
+name=	Stereo Voices
+type=	OneD
+
+name=	Dry Out
+type=	OneD
+
+name=	Wet Out
+type=	OneD
+
+

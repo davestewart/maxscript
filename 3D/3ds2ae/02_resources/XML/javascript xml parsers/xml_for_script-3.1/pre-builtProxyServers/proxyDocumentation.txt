@@ -1,0 +1,138 @@
+
+This documentation will allow you to implement your own server-side proxies to be used with XML for <SCRIPT>'s xmlIOProxy routines.
+
+NOTE:
+    The reference implementation of the server-side proxy is the Java Servlet implementation.
+
+NOTE:
+    The character encoding of your proxy needs to match the character encoding that your web server is configured to output. If the webserver's
+    character encoding and the encoding of the proxy's return page do not match, unexpected behavior can occur.
+
+
+The proxy takes four parameters on the querystring using the GET method. The four parameters are:
+
+1) resourceID
+2) guid
+3) callbackFunction
+4) authenticationCode
+
+resourceID: This parameter tells the proxy what resource to go and get. This list is kept in the proxy and is zero based.
+			 
+guid: Due to the multi-threaded nature of this JavaScript API, a guid is passed around to all of the individual components so that the programmer can keep track of what is being returned where.
+			 
+callbackFunction: This is the function that will be called by the JavaScript API once the proxy has returned control back to JavaScript
+
+authenticationCode: A small attempt at security. The proxy will not return data unless the correct authenticationCode is passed in. 
+
+
+When called, the proxy *always* returns the following HTML:
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head>
+    <title>
+        Proxy Data
+    </title>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</head>
+<body onload="top.__getXMLFromIFrame('" + <guid parameter> + "', '" + <callbackFunction parameter> + "', '"  + <returnCode> + "', document.getElementById('xmlData').value)">
+<div style="position: absolute; left: -2000px;">
+<textarea id="xmlData" rows="1" cols="1">
+[data]
+</textarea>
+</div>
+</body>
+</html>
+
+where <guid parameter>, <callbackFunction parameter>, and <returnCode> are replaced with the parameters the proxy received on the GET request, or in the case of returnCode, the result of the following use cases.
+
+When returned, the line of HTML will really look something like the following:
+<body onload="top.__getXMLFromIFrame('guid12345', 'callbackFunc', 'success', document.getElementById('xmlData').value)">
+
+The [data] value will be specified as described in the use cases below.
+
+
+Use cases: 
+
+resourceIDString missing or null:
+[data] == The required parameter 'resourceID' was not found.
+returnCode parameter == "error"
+
+
+guid missing or null:
+[data] == The required parameter 'guid' was not found.
+returnCode parameter == "error"
+guid parameter == "unknown"
+
+
+callbackFunction missing or null:
+[data] == The required parameter 'callbackFunction' was not found.
+returnCode parameter == "error"
+callbackFunction parameter == "unknown"
+
+
+clientAuthenticationCode missing or null:
+[data] == The required parameter 'authenticationCode' was not found.
+returnCode parameter == "error"
+
+
+clientAuthenticationCode invalid:
+[data] == Authentication failure.
+returnCode parameter == "error"
+
+
+resourceID negative or larger than allowed:
+[data] == The resourceID passed in was not valid.
+returnCode parameter == "error"
+
+
+
+serverAuthenticationCode not changed from default of "authentication code not set":
+[data] == The authentication code on the proxy has not been set. The proxy can not function until the authentication code is set.
+returnCode parameter == "error"
+
+
+when proxy goes and gets the requested resourceID, it gets a 404 back:
+[data] == The requested URL (<url>) was not found.
+returnCode parameter == "error"
+NOTE: <url> is replaced with the URL attempted
+
+
+when proxy goes and gets the requested resourceID, it gets an unknown host back:
+[data] == The requested URL (<url>) was not found.
+returnCode parameter == "error"
+NOTE: <url> is replaced with the URL attempted
+
+
+
+when proxy goes and gets the requested resourceID, it gets any other error back:
+[data] == as much error information as possible. The reference implementation returns the java stack trace
+returnCode parameter == "error"
+
+
+
+everything goes great!
+[data] == everything returned from the URL referenced by the resourceID with the following substitutions:
+          "<" is replaced by "«" (ascii char 171)
+          ">" is replaced by "»" (ascii char 187)
+          "&" is replaced by "§" (ascii char 167)
+returnCode parameter == "success"
+
+
+
+These use cases are listed in the order the reference proxy checks them. When there is a case that two or more errors can be reported at the same time (for example, a null authenticationCode will trigger the null catch and the invalid catch), the first error condition that is set takes priority. See the Java Servlet reference proxy for more information.
+
+
+NOTE:
+	If you would like to hook your custom proxy up to the existing test suite, you will need to use
+	these resources in this order:
+	
+	0 = http://xmljs.sourceforge.net/testSuites/proxyTest/remoteXML.xml
+    1 = http://xmljs.sourceforge.net/tools/xmlIOProxy/idontexist.xml
+    2 = http://unknown.host.exception
+	          
+
+
+
+
+
+ 

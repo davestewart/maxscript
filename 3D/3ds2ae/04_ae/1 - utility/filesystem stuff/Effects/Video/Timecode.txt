@@ -1,0 +1,27 @@
+[name]
+name=Timecode
+matchName=ADBE Timecode
+
+[properties]
+name=	Display Format
+type=	OneD
+
+name=	Time Units
+type=	OneD
+
+name=	Drop Frame
+type=	OneD
+
+name=	Starting Frame
+type=	OneD
+
+name=	Text Position
+type=	TwoD_SPATIAL
+
+name=	Text Size
+type=	OneD
+
+name=	Text Color
+type=	COLOR
+
+

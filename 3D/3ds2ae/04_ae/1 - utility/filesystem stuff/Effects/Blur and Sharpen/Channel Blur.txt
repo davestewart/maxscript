@@ -1,0 +1,24 @@
+[name]
+name=Channel Blur
+matchName=ADBE Channel Blur
+
+[properties]
+name=	Red Blurriness
+type=	OneD
+
+name=	Green Blurriness
+type=	OneD
+
+name=	Blue Blurriness
+type=	OneD
+
+name=	Alpha Blurriness
+type=	OneD
+
+name=	Edge Behavior
+type=	OneD
+
+name=	Blur Dimensions
+type=	OneD
+
+

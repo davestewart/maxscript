@@ -1,0 +1,33 @@
+[name]
+name=Color Range
+matchName=ADBE Color Range
+
+[properties]
+name=	Preview
+type=	NO_VALUE
+
+name=	Fuzziness
+type=	OneD
+
+name=	Color Space
+type=	OneD
+
+name=	Min (L, Y, R)
+type=	OneD
+
+name=	Max (L, Y, R)
+type=	OneD
+
+name=	Min (a, U, G)
+type=	OneD
+
+name=	Max (a, U, G)
+type=	OneD
+
+name=	Min (b, V, B)
+type=	OneD
+
+name=	Max (b, V, B)
+type=	OneD
+
+

@@ -1,0 +1,45 @@
+[name]
+name=Bezier Warp
+matchName=ADBE BEZMESH
+
+[properties]
+name=	Top Left Vertex
+type=	TwoD_SPATIAL
+
+name=	Top Left Tangent
+type=	TwoD_SPATIAL
+
+name=	Top Right Tangent
+type=	TwoD_SPATIAL
+
+name=	Right Top Vertex
+type=	TwoD_SPATIAL
+
+name=	Right Top Tangent
+type=	TwoD_SPATIAL
+
+name=	Right Bottom Tangent
+type=	TwoD_SPATIAL
+
+name=	Bottom Right Vertex
+type=	TwoD_SPATIAL
+
+name=	Bottom Right Tangent
+type=	TwoD_SPATIAL
+
+name=	Bottom Left Tangent
+type=	TwoD_SPATIAL
+
+name=	Left Bottom Vertex
+type=	TwoD_SPATIAL
+
+name=	Left Bottom Tangent
+type=	TwoD_SPATIAL
+
+name=	Left Top Tangent
+type=	TwoD_SPATIAL
+
+name=	Quality
+type=	OneD
+
+

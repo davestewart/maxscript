@@ -1,0 +1,30 @@
+[name]
+name=Fog 3D
+matchName=ADBE FOG_3D
+
+[properties]
+name=	Fog Color
+type=	COLOR
+
+name=	Fog Start Depth
+type=	OneD
+
+name=	Fog End Depth
+type=	OneD
+
+name=	Fog Opacity
+type=	OneD
+
+name=	Scattering Density
+type=	OneD
+
+name=	Foggy Background
+type=	OneD
+
+name=	Gradient Layer
+type=	LAYER_INDEX
+
+name=	Layer Contribution
+type=	OneD
+
+

@@ -1,0 +1,958 @@
+  <scene>
+  <world>
+  <objects>
+  <object name="Bone01" classOf="BoneGeometry" superClassOf="GeometryClass" isAnimated="false" id="2">
+  <transform classOf="IKControl">
+  <properties>
+  <PosXActive classOf="BooleanClass">false</PosXActive> 
+  <PosXLLimited classOf="BooleanClass">false</PosXLLimited> 
+  <PosXULimited classOf="BooleanClass">false</PosXULimited> 
+  <PosXLimited classOf="BooleanClass">false</PosXLimited> 
+  <PosXLLimit classOf="Float">0.0</PosXLLimit> 
+  <PosXULimit classOf="Float">0.0</PosXULimit> 
+  <PosYActive classOf="BooleanClass">false</PosYActive> 
+  <PosYLLimited classOf="BooleanClass">false</PosYLLimited> 
+  <PosYULimited classOf="BooleanClass">false</PosYULimited> 
+  <PosYLimited classOf="BooleanClass">false</PosYLimited> 
+  <PosYLLimit classOf="Float">0.0</PosYLLimit> 
+  <PosYULimit classOf="Float">0.0</PosYULimit> 
+  <PosZActive classOf="BooleanClass">false</PosZActive> 
+  <PosZLLimited classOf="BooleanClass">false</PosZLLimited> 
+  <PosZULimited classOf="BooleanClass">false</PosZULimited> 
+  <PosZLimited classOf="BooleanClass">false</PosZLimited> 
+  <PosZLLimit classOf="Float">0.0</PosZLLimit> 
+  <PosZULimit classOf="Float">0.0</PosZULimit> 
+  <RotXActive classOf="BooleanClass">true</RotXActive> 
+  <RotXLLimited classOf="BooleanClass">false</RotXLLimited> 
+  <RotXULimited classOf="BooleanClass">false</RotXULimited> 
+  <RotXLimited classOf="BooleanClass">false</RotXLimited> 
+  <RotXLLimit classOf="Float">0.0</RotXLLimit> 
+  <RotXULimit classOf="Float">0.0</RotXULimit> 
+  <RotYActive classOf="BooleanClass">true</RotYActive> 
+  <RotYLLimited classOf="BooleanClass">false</RotYLLimited> 
+  <RotYULimited classOf="BooleanClass">false</RotYULimited> 
+  <RotYLimited classOf="BooleanClass">false</RotYLimited> 
+  <RotYLLimit classOf="Float">0.0</RotYLLimit> 
+  <RotYULimit classOf="Float">0.0</RotYULimit> 
+  <RotZActive classOf="BooleanClass">true</RotZActive> 
+  <RotZLLimited classOf="BooleanClass">false</RotZLLimited> 
+  <RotZULimited classOf="BooleanClass">false</RotZULimited> 
+  <RotZLimited classOf="BooleanClass">false</RotZLimited> 
+  <RotZLLimit classOf="Float">0.0</RotZLLimit> 
+  <RotZULimit classOf="Float">0.0</RotZULimit> 
+  <PrefPosX classOf="Float">-64.7262</PrefPosX> 
+  <PrefPosY classOf="Float">29.3582</PrefPosY> 
+  <PrefPosZ classOf="Float">0.0</PrefPosZ> 
+  <PrefXAngle classOf="Float">0.0</PrefXAngle> 
+  <PrefYAngle classOf="Float">0.0</PrefYAngle> 
+  <PrefZAngle classOf="Float">23.1031</PrefZAngle> 
+  <fk_sub_control classOf="SubAnim">
+  <controller classOf="prs">
+  <properties>
+  <position classOf="Point3">
+  <controller classOf="Position_XYZ">
+  <properties>
+  <x_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">-64.7262</value> 
+  </addons>
+  </controller>
+  </x_Position>
+  <y_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">29.3582</value> 
+  </addons>
+  </controller>
+  </y_Position>
+  <z_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </z_Position>
+  </properties>
+  <addons>
+  <value classOf="Point3">[-64.7262,29.3582,0]</value> 
+  </addons>
+  </controller>
+  </position>
+  <rotation classOf="Quat">
+  <controller classOf="Euler_XYZ">
+  <properties>
+  <axisOrder classOf="Integer">1</axisOrder> 
+  <x_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </x_rotation>
+  <y_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </y_rotation>
+  <z_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">23.1031</value> 
+  </addons>
+  </controller>
+  </z_rotation>
+  </properties>
+  <addons>
+  <value classOf="Quat">(quat 0 0 -0.200249 0.979745)</value> 
+  </addons>
+  </controller>
+  </rotation>
+  <scale classOf="Point3">
+  <controller classOf="bezier_scale">
+  <properties /> 
+  <addons>
+  <value classOf="Point3">[1,1,1]</value> 
+  </addons>
+  </controller>
+  </scale>
+  </properties>
+  <addons>
+  <value classOf="Matrix3">(matrix3 [0.919801,0.392386,0] [-0.392386,0.919801,0] [0,0,1] [-64.7262,29.3582,0])</value> 
+  </addons>
+  </controller>
+  </fk_sub_control>
+  </properties>
+  </transform>
+  <baseObject classOf="BoneGeometry">
+  <properties>
+  <width classOf="Float">10.0</width> 
+  <height classOf="Float">10.0</height> 
+  <Taper classOf="Float">90.0</Taper> 
+  <length classOf="Float">63.2842</length> 
+  <sidefins classOf="BooleanClass">false</sidefins> 
+  <sidefinssize classOf="Float">5.0</sidefinssize> 
+  <sidefinsstarttaper classOf="Float">10.0</sidefinsstarttaper> 
+  <sidefinsendtaper classOf="Float">10.0</sidefinsendtaper> 
+  <frontfin classOf="BooleanClass">false</frontfin> 
+  <frontfinsize classOf="Float">5.0</frontfinsize> 
+  <frontfinstarttaper classOf="Float">10.0</frontfinstarttaper> 
+  <frontfinendtaper classOf="Float">10.0</frontfinendtaper> 
+  <backfin classOf="BooleanClass">false</backfin> 
+  <backfinsize classOf="Float">5.0</backfinsize> 
+  <backfinstarttaper classOf="Float">10.0</backfinstarttaper> 
+  <backfinendtaper classOf="Float">10.0</backfinendtaper> 
+  <genmap classOf="BooleanClass">false</genmap> 
+  </properties>
+  <customAttributes /> 
+  </baseObject>
+  <modifiers /> 
+  <children>
+  <object name="Bone02" classOf="BoneGeometry" superClassOf="GeometryClass" isAnimated="false" id="3">
+  <transform classOf="IKControl">
+  <properties>
+  <PosXActive classOf="BooleanClass">false</PosXActive> 
+  <PosXLLimited classOf="BooleanClass">false</PosXLLimited> 
+  <PosXULimited classOf="BooleanClass">false</PosXULimited> 
+  <PosXLimited classOf="BooleanClass">false</PosXLimited> 
+  <PosXLLimit classOf="Float">0.0</PosXLLimit> 
+  <PosXULimit classOf="Float">0.0</PosXULimit> 
+  <PosYActive classOf="BooleanClass">false</PosYActive> 
+  <PosYLLimited classOf="BooleanClass">false</PosYLLimited> 
+  <PosYULimited classOf="BooleanClass">false</PosYULimited> 
+  <PosYLimited classOf="BooleanClass">false</PosYLimited> 
+  <PosYLLimit classOf="Float">0.0</PosYLLimit> 
+  <PosYULimit classOf="Float">0.0</PosYULimit> 
+  <PosZActive classOf="BooleanClass">false</PosZActive> 
+  <PosZLLimited classOf="BooleanClass">false</PosZLLimited> 
+  <PosZULimited classOf="BooleanClass">false</PosZULimited> 
+  <PosZLimited classOf="BooleanClass">false</PosZLimited> 
+  <PosZLLimit classOf="Float">0.0</PosZLLimit> 
+  <PosZULimit classOf="Float">0.0</PosZULimit> 
+  <RotXActive classOf="BooleanClass">true</RotXActive> 
+  <RotXLLimited classOf="BooleanClass">false</RotXLLimited> 
+  <RotXULimited classOf="BooleanClass">false</RotXULimited> 
+  <RotXLimited classOf="BooleanClass">false</RotXLimited> 
+  <RotXLLimit classOf="Float">0.0</RotXLLimit> 
+  <RotXULimit classOf="Float">0.0</RotXULimit> 
+  <RotYActive classOf="BooleanClass">true</RotYActive> 
+  <RotYLLimited classOf="BooleanClass">false</RotYLLimited> 
+  <RotYULimited classOf="BooleanClass">false</RotYULimited> 
+  <RotYLimited classOf="BooleanClass">false</RotYLimited> 
+  <RotYLLimit classOf="Float">0.0</RotYLLimit> 
+  <RotYULimit classOf="Float">0.0</RotYULimit> 
+  <RotZActive classOf="BooleanClass">true</RotZActive> 
+  <RotZLLimited classOf="BooleanClass">false</RotZLLimited> 
+  <RotZULimited classOf="BooleanClass">false</RotZULimited> 
+  <RotZLimited classOf="BooleanClass">false</RotZLimited> 
+  <RotZLLimit classOf="Float">0.0</RotZLLimit> 
+  <RotZULimit classOf="Float">0.0</RotZULimit> 
+  <PrefPosX classOf="Float">63.2842</PrefPosX> 
+  <PrefPosY classOf="Float">1.95719e-006</PrefPosY> 
+  <PrefPosZ classOf="Float">0.0</PrefPosZ> 
+  <PrefXAngle classOf="Float">0.0</PrefXAngle> 
+  <PrefYAngle classOf="Float">0.0</PrefYAngle> 
+  <PrefZAngle classOf="Float">-66.5622</PrefZAngle> 
+  <fk_sub_control classOf="SubAnim">
+  <controller classOf="prs">
+  <properties>
+  <position classOf="Point3">
+  <controller classOf="Position_XYZ">
+  <properties>
+  <x_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">63.2842</value> 
+  </addons>
+  </controller>
+  </x_Position>
+  <y_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">1.95719e-006</value> 
+  </addons>
+  </controller>
+  </y_Position>
+  <z_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </z_Position>
+  </properties>
+  <addons>
+  <value classOf="Point3">[63.2842,1.95719e-006,0]</value> 
+  </addons>
+  </controller>
+  </position>
+  <rotation classOf="Quat">
+  <controller classOf="Euler_XYZ">
+  <properties>
+  <axisOrder classOf="Integer">1</axisOrder> 
+  <x_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </x_rotation>
+  <y_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </y_rotation>
+  <z_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">-66.5622</value> 
+  </addons>
+  </controller>
+  </z_rotation>
+  </properties>
+  <addons>
+  <value classOf="Quat">(quat 0 0 0.548747 0.835988)</value> 
+  </addons>
+  </controller>
+  </rotation>
+  <scale classOf="Point3">
+  <controller classOf="bezier_scale">
+  <properties /> 
+  <addons>
+  <value classOf="Point3">[1,1,1]</value> 
+  </addons>
+  </controller>
+  </scale>
+  </properties>
+  <addons>
+  <value classOf="Matrix3">(matrix3 [0.397753,-0.917493,0] [0.917493,0.397753,0] [0,0,1] [63.2842,1.95719e-006,0])</value> 
+  </addons>
+  </controller>
+  </fk_sub_control>
+  </properties>
+  </transform>
+  <baseObject classOf="BoneGeometry">
+  <properties>
+  <width classOf="Float">10.0</width> 
+  <height classOf="Float">10.0</height> 
+  <Taper classOf="Float">90.0</Taper> 
+  <length classOf="Float">65.6154</length> 
+  <sidefins classOf="BooleanClass">false</sidefins> 
+  <sidefinssize classOf="Float">5.0</sidefinssize> 
+  <sidefinsstarttaper classOf="Float">10.0</sidefinsstarttaper> 
+  <sidefinsendtaper classOf="Float">10.0</sidefinsendtaper> 
+  <frontfin classOf="BooleanClass">false</frontfin> 
+  <frontfinsize classOf="Float">5.0</frontfinsize> 
+  <frontfinstarttaper classOf="Float">10.0</frontfinstarttaper> 
+  <frontfinendtaper classOf="Float">10.0</frontfinendtaper> 
+  <backfin classOf="BooleanClass">false</backfin> 
+  <backfinsize classOf="Float">5.0</backfinsize> 
+  <backfinstarttaper classOf="Float">10.0</backfinstarttaper> 
+  <backfinendtaper classOf="Float">10.0</backfinendtaper> 
+  <genmap classOf="BooleanClass">false</genmap> 
+  </properties>
+  <customAttributes /> 
+  </baseObject>
+  <modifiers /> 
+  <children>
+  <object name="Bone03" classOf="BoneGeometry" superClassOf="GeometryClass" isAnimated="false" id="4">
+  <transform classOf="IKControl">
+  <properties>
+  <PosXActive classOf="BooleanClass">false</PosXActive> 
+  <PosXLLimited classOf="BooleanClass">false</PosXLLimited> 
+  <PosXULimited classOf="BooleanClass">false</PosXULimited> 
+  <PosXLimited classOf="BooleanClass">false</PosXLimited> 
+  <PosXLLimit classOf="Float">0.0</PosXLLimit> 
+  <PosXULimit classOf="Float">0.0</PosXULimit> 
+  <PosYActive classOf="BooleanClass">false</PosYActive> 
+  <PosYLLimited classOf="BooleanClass">false</PosYLLimited> 
+  <PosYULimited classOf="BooleanClass">false</PosYULimited> 
+  <PosYLimited classOf="BooleanClass">false</PosYLimited> 
+  <PosYLLimit classOf="Float">0.0</PosYLLimit> 
+  <PosYULimit classOf="Float">0.0</PosYULimit> 
+  <PosZActive classOf="BooleanClass">false</PosZActive> 
+  <PosZLLimited classOf="BooleanClass">false</PosZLLimited> 
+  <PosZULimited classOf="BooleanClass">false</PosZULimited> 
+  <PosZLimited classOf="BooleanClass">false</PosZLimited> 
+  <PosZLLimit classOf="Float">0.0</PosZLLimit> 
+  <PosZULimit classOf="Float">0.0</PosZULimit> 
+  <RotXActive classOf="BooleanClass">true</RotXActive> 
+  <RotXLLimited classOf="BooleanClass">false</RotXLLimited> 
+  <RotXULimited classOf="BooleanClass">false</RotXULimited> 
+  <RotXLimited classOf="BooleanClass">false</RotXLimited> 
+  <RotXLLimit classOf="Float">0.0</RotXLLimit> 
+  <RotXULimit classOf="Float">0.0</RotXULimit> 
+  <RotYActive classOf="BooleanClass">true</RotYActive> 
+  <RotYLLimited classOf="BooleanClass">false</RotYLLimited> 
+  <RotYULimited classOf="BooleanClass">false</RotYULimited> 
+  <RotYLimited classOf="BooleanClass">false</RotYLimited> 
+  <RotYLLimit classOf="Float">0.0</RotYLLimit> 
+  <RotYULimit classOf="Float">0.0</RotYULimit> 
+  <RotZActive classOf="BooleanClass">true</RotZActive> 
+  <RotZLLimited classOf="BooleanClass">false</RotZLLimited> 
+  <RotZULimited classOf="BooleanClass">false</RotZULimited> 
+  <RotZLimited classOf="BooleanClass">false</RotZLimited> 
+  <RotZLLimit classOf="Float">0.0</RotZLLimit> 
+  <RotZULimit classOf="Float">0.0</RotZULimit> 
+  <PrefPosX classOf="Float">65.6154</PrefPosX> 
+  <PrefPosY classOf="Float">-1.1099e-006</PrefPosY> 
+  <PrefPosZ classOf="Float">0.0</PrefPosZ> 
+  <PrefXAngle classOf="Float">0.0</PrefXAngle> 
+  <PrefYAngle classOf="Float">0.0</PrefYAngle> 
+  <PrefZAngle classOf="Float">-51.0771</PrefZAngle> 
+  <fk_sub_control classOf="SubAnim">
+  <controller classOf="prs">
+  <properties>
+  <position classOf="Point3">
+  <controller classOf="Position_XYZ">
+  <properties>
+  <x_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">65.6154</value> 
+  </addons>
+  </controller>
+  </x_Position>
+  <y_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">-1.1099e-006</value> 
+  </addons>
+  </controller>
+  </y_Position>
+  <z_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </z_Position>
+  </properties>
+  <addons>
+  <value classOf="Point3">[65.6154,-1.1099e-006,0]</value> 
+  </addons>
+  </controller>
+  </position>
+  <rotation classOf="Quat">
+  <controller classOf="Euler_XYZ">
+  <properties>
+  <axisOrder classOf="Integer">1</axisOrder> 
+  <x_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </x_rotation>
+  <y_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </y_rotation>
+  <z_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">-51.0771</value> 
+  </addons>
+  </controller>
+  </z_rotation>
+  </properties>
+  <addons>
+  <value classOf="Quat">(quat 0 0 0.431118 0.902295)</value> 
+  </addons>
+  </controller>
+  </rotation>
+  <scale classOf="Point3">
+  <controller classOf="bezier_scale">
+  <properties /> 
+  <addons>
+  <value classOf="Point3">[1,1,1]</value> 
+  </addons>
+  </controller>
+  </scale>
+  </properties>
+  <addons>
+  <value classOf="Matrix3">(matrix3 [0.628274,-0.777992,0] [0.777992,0.628274,0] [0,0,1] [65.6154,-1.1099e-006,0])</value> 
+  </addons>
+  </controller>
+  </fk_sub_control>
+  </properties>
+  </transform>
+  <baseObject classOf="BoneGeometry">
+  <properties>
+  <width classOf="Float">10.0</width> 
+  <height classOf="Float">10.0</height> 
+  <Taper classOf="Float">90.0</Taper> 
+  <length classOf="Float">55.6362</length> 
+  <sidefins classOf="BooleanClass">false</sidefins> 
+  <sidefinssize classOf="Float">5.0</sidefinssize> 
+  <sidefinsstarttaper classOf="Float">10.0</sidefinsstarttaper> 
+  <sidefinsendtaper classOf="Float">10.0</sidefinsendtaper> 
+  <frontfin classOf="BooleanClass">false</frontfin> 
+  <frontfinsize classOf="Float">5.0</frontfinsize> 
+  <frontfinstarttaper classOf="Float">10.0</frontfinstarttaper> 
+  <frontfinendtaper classOf="Float">10.0</frontfinendtaper> 
+  <backfin classOf="BooleanClass">false</backfin> 
+  <backfinsize classOf="Float">5.0</backfinsize> 
+  <backfinstarttaper classOf="Float">10.0</backfinstarttaper> 
+  <backfinendtaper classOf="Float">10.0</backfinendtaper> 
+  <genmap classOf="BooleanClass">false</genmap> 
+  </properties>
+  <customAttributes /> 
+  </baseObject>
+  <modifiers /> 
+  <children>
+  <object name="Bone04" classOf="BoneGeometry" superClassOf="GeometryClass" isAnimated="false" id="5">
+  <transform classOf="IKControl">
+  <properties>
+  <PosXActive classOf="BooleanClass">false</PosXActive> 
+  <PosXLLimited classOf="BooleanClass">false</PosXLLimited> 
+  <PosXULimited classOf="BooleanClass">false</PosXULimited> 
+  <PosXLimited classOf="BooleanClass">false</PosXLimited> 
+  <PosXLLimit classOf="Float">0.0</PosXLLimit> 
+  <PosXULimit classOf="Float">0.0</PosXULimit> 
+  <PosYActive classOf="BooleanClass">false</PosYActive> 
+  <PosYLLimited classOf="BooleanClass">false</PosYLLimited> 
+  <PosYULimited classOf="BooleanClass">false</PosYULimited> 
+  <PosYLimited classOf="BooleanClass">false</PosYLimited> 
+  <PosYLLimit classOf="Float">0.0</PosYLLimit> 
+  <PosYULimit classOf="Float">0.0</PosYULimit> 
+  <PosZActive classOf="BooleanClass">false</PosZActive> 
+  <PosZLLimited classOf="BooleanClass">false</PosZLLimited> 
+  <PosZULimited classOf="BooleanClass">false</PosZULimited> 
+  <PosZLimited classOf="BooleanClass">false</PosZLimited> 
+  <PosZLLimit classOf="Float">0.0</PosZLLimit> 
+  <PosZULimit classOf="Float">0.0</PosZULimit> 
+  <RotXActive classOf="BooleanClass">true</RotXActive> 
+  <RotXLLimited classOf="BooleanClass">false</RotXLLimited> 
+  <RotXULimited classOf="BooleanClass">false</RotXULimited> 
+  <RotXLimited classOf="BooleanClass">false</RotXLimited> 
+  <RotXLLimit classOf="Float">0.0</RotXLLimit> 
+  <RotXULimit classOf="Float">0.0</RotXULimit> 
+  <RotYActive classOf="BooleanClass">true</RotYActive> 
+  <RotYLLimited classOf="BooleanClass">false</RotYLLimited> 
+  <RotYULimited classOf="BooleanClass">false</RotYULimited> 
+  <RotYLimited classOf="BooleanClass">false</RotYLimited> 
+  <RotYLLimit classOf="Float">0.0</RotYLLimit> 
+  <RotYULimit classOf="Float">0.0</RotYULimit> 
+  <RotZActive classOf="BooleanClass">true</RotZActive> 
+  <RotZLLimited classOf="BooleanClass">false</RotZLLimited> 
+  <RotZULimited classOf="BooleanClass">false</RotZULimited> 
+  <RotZLimited classOf="BooleanClass">false</RotZLimited> 
+  <RotZLLimit classOf="Float">0.0</RotZLLimit> 
+  <RotZULimit classOf="Float">0.0</RotZULimit> 
+  <PrefPosX classOf="Float">55.6362</PrefPosX> 
+  <PrefPosY classOf="Float">2.30602e-005</PrefPosY> 
+  <PrefPosZ classOf="Float">0.0</PrefPosZ> 
+  <PrefXAngle classOf="Float">0.0</PrefXAngle> 
+  <PrefYAngle classOf="Float">0.0</PrefYAngle> 
+  <PrefZAngle classOf="Float">-48.02</PrefZAngle> 
+  <fk_sub_control classOf="SubAnim">
+  <controller classOf="prs">
+  <properties>
+  <position classOf="Point3">
+  <controller classOf="Position_XYZ">
+  <properties>
+  <x_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">55.6362</value> 
+  </addons>
+  </controller>
+  </x_Position>
+  <y_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">2.30602e-005</value> 
+  </addons>
+  </controller>
+  </y_Position>
+  <z_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </z_Position>
+  </properties>
+  <addons>
+  <value classOf="Point3">[55.6362,2.30602e-005,0]</value> 
+  </addons>
+  </controller>
+  </position>
+  <rotation classOf="Quat">
+  <controller classOf="Euler_XYZ">
+  <properties>
+  <axisOrder classOf="Integer">1</axisOrder> 
+  <x_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </x_rotation>
+  <y_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </y_rotation>
+  <z_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">-48.02</value> 
+  </addons>
+  </controller>
+  </z_rotation>
+  </properties>
+  <addons>
+  <value classOf="Quat">(quat 0 0 0.406896 0.913475)</value> 
+  </addons>
+  </controller>
+  </rotation>
+  <scale classOf="Point3">
+  <controller classOf="bezier_scale">
+  <properties /> 
+  <addons>
+  <value classOf="Point3">[1,1,1]</value> 
+  </addons>
+  </controller>
+  </scale>
+  </properties>
+  <addons>
+  <value classOf="Matrix3">(matrix3 [0.668872,-0.743378,0] [0.743378,0.668872,0] [0,0,1] [55.6362,2.30602e-005,0])</value> 
+  </addons>
+  </controller>
+  </fk_sub_control>
+  </properties>
+  </transform>
+  <baseObject classOf="BoneGeometry">
+  <properties>
+  <width classOf="Float">10.0</width> 
+  <height classOf="Float">10.0</height> 
+  <Taper classOf="Float">90.0</Taper> 
+  <length classOf="Float">45.8531</length> 
+  <sidefins classOf="BooleanClass">false</sidefins> 
+  <sidefinssize classOf="Float">5.0</sidefinssize> 
+  <sidefinsstarttaper classOf="Float">10.0</sidefinsstarttaper> 
+  <sidefinsendtaper classOf="Float">10.0</sidefinsendtaper> 
+  <frontfin classOf="BooleanClass">false</frontfin> 
+  <frontfinsize classOf="Float">5.0</frontfinsize> 
+  <frontfinstarttaper classOf="Float">10.0</frontfinstarttaper> 
+  <frontfinendtaper classOf="Float">10.0</frontfinendtaper> 
+  <backfin classOf="BooleanClass">false</backfin> 
+  <backfinsize classOf="Float">5.0</backfinsize> 
+  <backfinstarttaper classOf="Float">10.0</backfinstarttaper> 
+  <backfinendtaper classOf="Float">10.0</backfinendtaper> 
+  <genmap classOf="BooleanClass">false</genmap> 
+  </properties>
+  <customAttributes /> 
+  </baseObject>
+  <modifiers /> 
+  <children>
+  <object name="Bone05" classOf="BoneGeometry" superClassOf="GeometryClass" isAnimated="false" id="6">
+  <transform classOf="IKControl">
+  <properties>
+  <PosXActive classOf="BooleanClass">false</PosXActive> 
+  <PosXLLimited classOf="BooleanClass">false</PosXLLimited> 
+  <PosXULimited classOf="BooleanClass">false</PosXULimited> 
+  <PosXLimited classOf="BooleanClass">false</PosXLimited> 
+  <PosXLLimit classOf="Float">0.0</PosXLLimit> 
+  <PosXULimit classOf="Float">0.0</PosXULimit> 
+  <PosYActive classOf="BooleanClass">false</PosYActive> 
+  <PosYLLimited classOf="BooleanClass">false</PosYLLimited> 
+  <PosYULimited classOf="BooleanClass">false</PosYULimited> 
+  <PosYLimited classOf="BooleanClass">false</PosYLimited> 
+  <PosYLLimit classOf="Float">0.0</PosYLLimit> 
+  <PosYULimit classOf="Float">0.0</PosYULimit> 
+  <PosZActive classOf="BooleanClass">false</PosZActive> 
+  <PosZLLimited classOf="BooleanClass">false</PosZLLimited> 
+  <PosZULimited classOf="BooleanClass">false</PosZULimited> 
+  <PosZLimited classOf="BooleanClass">false</PosZLimited> 
+  <PosZLLimit classOf="Float">0.0</PosZLLimit> 
+  <PosZULimit classOf="Float">0.0</PosZULimit> 
+  <RotXActive classOf="BooleanClass">true</RotXActive> 
+  <RotXLLimited classOf="BooleanClass">false</RotXLLimited> 
+  <RotXULimited classOf="BooleanClass">false</RotXULimited> 
+  <RotXLimited classOf="BooleanClass">false</RotXLimited> 
+  <RotXLLimit classOf="Float">0.0</RotXLLimit> 
+  <RotXULimit classOf="Float">0.0</RotXULimit> 
+  <RotYActive classOf="BooleanClass">true</RotYActive> 
+  <RotYLLimited classOf="BooleanClass">false</RotYLLimited> 
+  <RotYULimited classOf="BooleanClass">false</RotYULimited> 
+  <RotYLimited classOf="BooleanClass">false</RotYLimited> 
+  <RotYLLimit classOf="Float">0.0</RotYLLimit> 
+  <RotYULimit classOf="Float">0.0</RotYULimit> 
+  <RotZActive classOf="BooleanClass">true</RotZActive> 
+  <RotZLLimited classOf="BooleanClass">false</RotZLLimited> 
+  <RotZULimited classOf="BooleanClass">false</RotZULimited> 
+  <RotZLimited classOf="BooleanClass">false</RotZLimited> 
+  <RotZLLimit classOf="Float">0.0</RotZLLimit> 
+  <RotZULimit classOf="Float">0.0</RotZULimit> 
+  <PrefPosX classOf="Float">45.8531</PrefPosX> 
+  <PrefPosY classOf="Float">7.71879e-006</PrefPosY> 
+  <PrefPosZ classOf="Float">0.0</PrefPosZ> 
+  <PrefXAngle classOf="Float">0.0</PrefXAngle> 
+  <PrefYAngle classOf="Float">0.0</PrefYAngle> 
+  <PrefZAngle classOf="Float">0.0</PrefZAngle> 
+  <fk_sub_control classOf="SubAnim">
+  <controller classOf="prs">
+  <properties>
+  <position classOf="Point3">
+  <controller classOf="Position_XYZ">
+  <properties>
+  <x_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">45.8531</value> 
+  </addons>
+  </controller>
+  </x_Position>
+  <y_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">7.71879e-006</value> 
+  </addons>
+  </controller>
+  </y_Position>
+  <z_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </z_Position>
+  </properties>
+  <addons>
+  <value classOf="Point3">[45.8531,7.71879e-006,0]</value> 
+  </addons>
+  </controller>
+  </position>
+  <rotation classOf="Quat">
+  <controller classOf="Euler_XYZ">
+  <properties>
+  <axisOrder classOf="Integer">1</axisOrder> 
+  <x_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </x_rotation>
+  <y_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </y_rotation>
+  <z_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </z_rotation>
+  </properties>
+  <addons>
+  <value classOf="Quat">(quat 0 0 0 1)</value> 
+  </addons>
+  </controller>
+  </rotation>
+  <scale classOf="Point3">
+  <controller classOf="bezier_scale">
+  <properties /> 
+  <addons>
+  <value classOf="Point3">[1,1,1]</value> 
+  </addons>
+  </controller>
+  </scale>
+  </properties>
+  <addons>
+  <value classOf="Matrix3">(matrix3 [1,0,0] [0,1,0] [0,0,1] [45.8531,7.71879e-006,0])</value> 
+  </addons>
+  </controller>
+  </fk_sub_control>
+  </properties>
+  </transform>
+  <baseObject classOf="BoneGeometry">
+  <properties>
+  <width classOf="Float">10.0</width> 
+  <height classOf="Float">10.0</height> 
+  <Taper classOf="Float">90.0</Taper> 
+  <length classOf="Float">10.0</length> 
+  <sidefins classOf="BooleanClass">false</sidefins> 
+  <sidefinssize classOf="Float">5.0</sidefinssize> 
+  <sidefinsstarttaper classOf="Float">10.0</sidefinsstarttaper> 
+  <sidefinsendtaper classOf="Float">10.0</sidefinsendtaper> 
+  <frontfin classOf="BooleanClass">false</frontfin> 
+  <frontfinsize classOf="Float">5.0</frontfinsize> 
+  <frontfinstarttaper classOf="Float">10.0</frontfinstarttaper> 
+  <frontfinendtaper classOf="Float">10.0</frontfinendtaper> 
+  <backfin classOf="BooleanClass">false</backfin> 
+  <backfinsize classOf="Float">5.0</backfinsize> 
+  <backfinstarttaper classOf="Float">10.0</backfinstarttaper> 
+  <backfinendtaper classOf="Float">10.0</backfinendtaper> 
+  <genmap classOf="BooleanClass">false</genmap> 
+  </properties>
+  <customAttributes /> 
+  </baseObject>
+  <modifiers /> 
+  </object>
+  </children>
+  </object>
+  </children>
+  </object>
+  </children>
+  </object>
+  </children>
+  </object>
+  <object name="IK Chain01" classOf="IK_Chain_Object" superClassOf="helper" isAnimated="true" id="8">
+  <transform classOf="IKChainControl">
+  <properties>
+  <swivelAngle classOf="Float">0.0</swivelAngle> 
+  <startJoint classOf="BoneGeometry" superClassOf="GeometryClass">
+  <properties>
+  <width classOf="Float">10.0</width> 
+  <height classOf="Float">10.0</height> 
+  <Taper classOf="Float">90.0</Taper> 
+  <length classOf="Float">63.2842</length> 
+  <sidefins classOf="BooleanClass">false</sidefins> 
+  <sidefinssize classOf="Float">5.0</sidefinssize> 
+  <sidefinsstarttaper classOf="Float">10.0</sidefinsstarttaper> 
+  <sidefinsendtaper classOf="Float">10.0</sidefinsendtaper> 
+  <frontfin classOf="BooleanClass">false</frontfin> 
+  <frontfinsize classOf="Float">5.0</frontfinsize> 
+  <frontfinstarttaper classOf="Float">10.0</frontfinstarttaper> 
+  <frontfinendtaper classOf="Float">10.0</frontfinendtaper> 
+  <backfin classOf="BooleanClass">false</backfin> 
+  <backfinsize classOf="Float">5.0</backfinsize> 
+  <backfinstarttaper classOf="Float">10.0</backfinstarttaper> 
+  <backfinendtaper classOf="Float">10.0</backfinendtaper> 
+  <genmap classOf="BooleanClass">false</genmap> 
+  </properties>
+  </startJoint>
+  <endJoint classOf="BoneGeometry" superClassOf="GeometryClass">
+  <properties>
+  <width classOf="Float">10.0</width> 
+  <height classOf="Float">10.0</height> 
+  <Taper classOf="Float">90.0</Taper> 
+  <length classOf="Float">10.0</length> 
+  <sidefins classOf="BooleanClass">false</sidefins> 
+  <sidefinssize classOf="Float">5.0</sidefinssize> 
+  <sidefinsstarttaper classOf="Float">10.0</sidefinsstarttaper> 
+  <sidefinsendtaper classOf="Float">10.0</sidefinsendtaper> 
+  <frontfin classOf="BooleanClass">false</frontfin> 
+  <frontfinsize classOf="Float">5.0</frontfinsize> 
+  <frontfinstarttaper classOf="Float">10.0</frontfinstarttaper> 
+  <frontfinendtaper classOf="Float">10.0</frontfinendtaper> 
+  <backfin classOf="BooleanClass">false</backfin> 
+  <backfinsize classOf="Float">5.0</backfinsize> 
+  <backfinstarttaper classOf="Float">10.0</backfinstarttaper> 
+  <backfinendtaper classOf="Float">10.0</backfinendtaper> 
+  <genmap classOf="BooleanClass">false</genmap> 
+  </properties>
+  </endJoint>
+  <IKSolver classOf="String">IKHISolver</IKSolver> 
+  <autoEnable classOf="BooleanClass">true</autoEnable> 
+  <autoSnap classOf="BooleanClass">true</autoSnap> 
+  <dispGoal classOf="BooleanClass">true</dispGoal> 
+  <goalSize classOf="Float">30.0</goalSize> 
+  <dispEffector classOf="BooleanClass">false</dispEffector> 
+  <effectorSize classOf="Float">40.0</effectorSize> 
+  <dispVH classOf="BooleanClass">true</dispVH> 
+  <vhSize classOf="Float">1.0</vhSize> 
+  <vhLength classOf="Float">75.0</vhLength> 
+  <dispSolver classOf="BooleanClass">false</dispSolver> 
+  <posThresh classOf="Float">0.1</posThresh> 
+  <rotThresh classOf="Float">0.1</rotThresh> 
+  <iterations classOf="Integer">40</iterations> 
+  <useVHTarget classOf="BooleanClass">true</useVHTarget> 
+  <VHTarget classOf="UndefinedClass">undefined</VHTarget> 
+  <SAParent classOf="Integer">1</SAParent> 
+  <IK_goal classOf="SubAnim">
+  <controller classOf="prs">
+  <properties>
+  <position classOf="Point3">
+  <controller classOf="Position_XYZ">
+  <properties>
+  <x_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <keys>
+  <key time="0f" selected="false" value="0.30519" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="20f" selected="false" value="-85.4891" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="44f" selected="false" value="180.76" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="87f" selected="false" value="37.7183" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  </keys>
+  </controller>
+  </x_Position>
+  <y_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <keys>
+  <key time="0f" selected="false" value="-74.2825" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="20f" selected="false" value="-40.6184" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="-0.562501" outTangent="0.562501" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="44f" selected="false" value="57.7178" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="-0.376859" outTangent="0.376859" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="87f" selected="false" value="94.0459" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  </keys>
+  </controller>
+  </y_Position>
+  <z_Position classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <keys>
+  <key time="0f" selected="false" value="0.0" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="20f" selected="false" value="0.0" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="44f" selected="false" value="0.0" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  <key time="87f" selected="false" value="0.0" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" inTangent="0.0" outTangent="0.0" inTangentType="#auto" outTangentType="#auto" /> 
+  </keys>
+  </controller>
+  </z_Position>
+  </properties>
+  </controller>
+  </position>
+  <rotation classOf="Quat">
+  <controller classOf="Euler_XYZ">
+  <properties>
+  <axisOrder classOf="Integer">1</axisOrder> 
+  <x_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </x_rotation>
+  <y_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </y_rotation>
+  <z_rotation classOf="Float">
+  <controller classOf="bezier_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">0.0</value> 
+  </addons>
+  </controller>
+  </z_rotation>
+  </properties>
+  <addons>
+  <value classOf="Quat">(quat 0 0 0 1)</value> 
+  </addons>
+  </controller>
+  </rotation>
+  <scale classOf="Point3">
+  <controller classOf="bezier_scale">
+  <properties /> 
+  <addons>
+  <value classOf="Point3">[1,1,1]</value> 
+  </addons>
+  </controller>
+  </scale>
+  </properties>
+  <addons>
+  <value classOf="Matrix3">(matrix3 [1,0,0] [0,1,0] [0,0,1] [139.159,38.9443,0])</value> 
+  </addons>
+  </controller>
+  </IK_goal>
+  <enabled classOf="Float">
+  <controller classOf="boolean_float">
+  <properties /> 
+  <addons>
+  <value classOf="Float">1.0</value> 
+  </addons>
+  </controller>
+  </enabled>
+  </properties>
+  </transform>
+  <baseObject classOf="IK_Chain_Object">
+  <properties /> 
+  <customAttributes /> 
+  </baseObject>
+  <modifiers /> 
+  </object>
+  </objects>
+  </world>
+  </scene>

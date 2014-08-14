@@ -1,0 +1,48 @@
+[name]
+name=Turbulent Displace
+matchName=ADBE Turbulent Displace
+
+[properties]
+name=	Displacement
+type=	OneD
+
+name=	Amount
+type=	OneD
+
+name=	Size
+type=	OneD
+
+name=	Offset (Turbulence)
+type=	TwoD_SPATIAL
+
+name=	Complexity
+type=	OneD
+
+name=	Evolution
+type=	OneD
+
+name=	Evolution Options
+type=	NO_VALUE
+
+name=	Cycle Evolution
+type=	OneD
+
+name=	Cycle (in Revolutions)
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	Random Seed
+type=	NO_VALUE
+
+name=	Pinning
+type=	OneD
+
+name=	Resize Layer
+type=	OneD
+
+name=	Antialiasing for Best Quality
+type=	OneD
+
+

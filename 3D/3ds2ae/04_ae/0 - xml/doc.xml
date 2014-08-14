@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root url="../mp3/">
+	<dir url="chilled/">
+		<dir url="funk/">
+			<file url="Barry Adamson - Saturn In Summertime.mp3"/>
+			<file url="Commodores - Machine Gun.mp3"/>
+			<file url="Down to the Bone - Joy is A Good Groove.mp3"/>
+			<file url="Down to the Bone - Long Way From Brooklyn.mp3"/>
+			<file url="Primal Scream - Struttin'.mp3"/>
+			<file url="Stevia - Cubehead.mp3"/>
+			<file url="The Herbaliser Band - Shattered Soul.mp3"/>
+			<file url="Various Artists - Call Me Mister Tibbs (Main Title).mp3"/>
+		</dir>
+		<file url="Minnie Riperton - Inside my Love.mp3"/>
+		<file url="The Grid - Flotation (Subsonic Grid Mix).mp3"/>
+	</dir>
+	<dir url="disco and hedkandi/">
+		<file url="Aquarian Dream - You're A Star (Us, 1978).mp3"/>
+		<file url="Duke - So In Love With you (Full Intention Mix).mp3"/>
+		<file url="Michael Moog - That Sound (Full Intention Mix).mp3"/>
+		<file url="The Fog - Been A Long Time (Full Intention 12 Mix).mp3"/>
+		<file url="The Fog - Been A Long Time (Full Intention Radio Edit).mp3"/>
+	</dir>
+	<dir url="girlie/">
+		<file url="Atomic Kitten - Be With you (Milky 7 Edit).mp3"/>
+		<file url="Atomic Kitten - Be With you (Radio Edit).mp3"/>
+		<file url="Atomic Kitten - Be With you.mp3"/>
+		<file url="Club 69 - Take A Ride.mp3"/>
+		<file url="Dj Sammy - Boys of Summer.mp3"/>
+		<file url="Grace Jones - La Vie En Rose.mp3"/>
+		<file url="Kylie Minogue - Love at First Sight.mp3"/>
+		<file url="Mambana - Mambana - Libre.mp3"/>
+		<file url="Mambana - No Reason.mp3"/>
+		<file url="Sophie Ellis-Bextor - Murder on the Dancefloor.mp3"/>
+		<file url="Stars on 54 - If you Could Read my Mind (Original Club Mix).mp3"/>
+	</dir>
+	<dir url="old skool/">
+		<file url="Engelbert Humperdinck - Lesbian Seagull.mp3"/>
+		<file url="Gerry Rafferty - Baker Street.mp3"/>
+		<file url="Hall and Oates - I Can't Go For That.mp3"/>
+		<file url="Jamiroquai - Deeper Underground.mp3"/>
+		<file url="Steppenwolf - Born to Be Wild.mp3"/>
+		<file url="Various Artists - Sporting Highlights.mp3"/>
+	</dir>
+	<dir url="soft dance/">
+		<file url="Artemis - Brazilian Sunrise.mp3"/>
+		<file url="Groove Armada - Easy.mp3"/>
+		<file url="Jason Nevins feat. Holly - I`m In Heaven.mp3"/>
+		<file url="Phats &amp; Small - Brighton Beach.mp3"/>
+	</dir>
+	<dir url="sound bite/">
+		<file url="Electric Six - Gay Bar.mp3"/>
+		<file url="Unkle - Getting Ahead In the Lucrative Field of Artist Management.mp3"/>
+	</dir>
+	<dir url="trance and techno/">
+		<file url="Boogie Pimps - Somebody to Love.wma"/>
+		<file url="Chris &amp; James - Fox Force Five (Play Boys Fully Loaded Dub - Big C's Break of Dawn Mix).mp3"/>
+		<file url="Claudio Coccoluto - One Love Mix.mp3"/>
+		<file url="Gypsy - I Trance you (Paradiso Mix).mp3"/>
+		<file url="Helicopter - On Ya Way (Original Mix).mp3"/>
+		<file url="Layo and Bushwacka - Love Story [Tim Deluxe Remix].mp3"/>
+		<file url="Mr Roy - Something About you (Original Mix).mp3"/>
+		<file url="Salt Tank - Eugina.mp3"/>
+		<file url="The Ones - Absolutely Flawless.mp3"/>
+		<file url="The Ones - Flawless (Club Mix).mp3"/>
+	</dir>
+	<dir url="tv/">
+		<file url="Chips Theme (Seasons 2-6).mp3"/>
+		<file url="Glen Larson &amp; Stu Phillips - Knight Rider End Title Arrangement.mp3"/>
+		<file url="Jerrold Immel - Dallas 79.mp3"/>
+		<file url="Ronnie Hazlehurst and His Orchestra - The Two Ronnies.mp3"/>
+		<file url="Ulysses in the 31st Century - End Theme.mp3"/>
+		<file url="Ulysses in the 31st Century - Main Theme.mp3"/>
+	</dir>
+</root>

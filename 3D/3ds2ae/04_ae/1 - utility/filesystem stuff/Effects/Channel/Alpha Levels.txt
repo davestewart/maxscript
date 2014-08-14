@@ -1,0 +1,21 @@
+[name]
+name=Alpha Levels
+matchName=ADBE Alpha Levels2
+
+[properties]
+name=	Input Black Level
+type=	OneD
+
+name=	Input White Level
+type=	OneD
+
+name=	Gamma
+type=	OneD
+
+name=	Output Black Level
+type=	OneD
+
+name=	Output White Level
+type=	OneD
+
+

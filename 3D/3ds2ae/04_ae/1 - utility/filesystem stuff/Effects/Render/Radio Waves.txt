@@ -1,0 +1,135 @@
+[name]
+name=Radio Waves
+matchName=APC Radio Waves
+
+[properties]
+name=	Producer Point
+type=	TwoD_SPATIAL
+
+name=	Parameters are set at
+type=	OneD
+
+name=	Render Quality
+type=	OneD
+
+name=	Wave Type
+type=	OneD
+
+name=	Polygon
+type=	NO_VALUE
+
+name=	Sides
+type=	OneD
+
+name=	Curve Size
+type=	OneD
+
+name=	Curvyness
+type=	OneD
+
+name=	Star
+type=	OneD
+
+name=	Star Depth
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Image Contour
+type=	NO_VALUE
+
+name=	Source Layer
+type=	LAYER_INDEX
+
+name=	Source Center
+type=	TwoD_SPATIAL
+
+name=	Value Channel
+type=	OneD
+
+name=	Invert Input
+type=	OneD
+
+name=	Value Threshold
+type=	OneD
+
+name=	Pre-Blur
+type=	OneD
+
+name=	Tolerance
+type=	OneD
+
+name=	Contour
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Mask
+type=	NO_VALUE
+
+name=	Mask
+type=	MASK_INDEX
+
+name=	
+type=	NO_VALUE
+
+name=	Wave Motion
+type=	NO_VALUE
+
+name=	Frequency
+type=	OneD
+
+name=	Expansion
+type=	OneD
+
+name=	Orientation
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Velocity
+type=	OneD
+
+name=	Spin
+type=	OneD
+
+name=	Lifespan (sec) 
+type=	OneD
+
+name=	Reflection
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Stroke
+type=	NO_VALUE
+
+name=	Profile
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Fade-in Time
+type=	OneD
+
+name=	Fade-out Time
+type=	OneD
+
+name=	Start Width
+type=	OneD
+
+name=	End Width
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

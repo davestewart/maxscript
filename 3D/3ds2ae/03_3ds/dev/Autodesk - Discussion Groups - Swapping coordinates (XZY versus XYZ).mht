@@ -1,0 +1,1345 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Autodesk - Discussion Groups - Swapping coordinates (XZY versus XYZ)
+Date: Fri, 2 Mar 2007 16:03:41 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C75CE4.58C801B0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3028
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://discussion.autodesk.com/thread.jspa?threadID=547320
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Deng xml:lang=3D"en" =
+xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD><TITLE>Autodesk - =
+Discussion Groups - Swapping coordinates (XZY versus XYZ)</TITLE><LINK=20
+href=3D"http://discussion.autodesk.com/ad_discgroup.css" type=3Dtext/css =
+
+rel=3Dstylesheet><LINK href=3D"http://discussion.autodesk.com/style.jsp" =
+
+type=3Dtext/css rel=3Dstylesheet>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"" name=3Dkeywords>
+<META content=3D"" name=3Ddescription>
+<META content=3D123112 name=3Dsiteid>
+<META content=3D"Autodesk, Inc." name=3Dauthor>
+<META content=3D"MSHTML 6.00.2900.3059" name=3DGENERATOR></HEAD>
+<BODY><!--WEBSIDESTORY CODE HBX1.0 (Universal)--><!--COPYRIGHT 1997-2004 =
+WEBSIDESTORY,INC. ALL RIGHTS RESERVED. U.S.PATENT No. 6,393,479B1. MORE =
+INFO:http://websidestory.com/privacy-->
+<SCRIPT language=3Djavascript>=0A=
+var _hbEC=3D0,_hbE=3Dnew Array;function =
+_hbEvent(a,b){b=3D_hbE[_hbEC++]=3Dnew Object();b._N=3Da;b._C=3D0;return =
+b;}=0A=
+var =
+hbx=3D_hbEvent("pv");hbx.vpc=3D"HBX0100u";hbx.gn=3D"ehg-autodesk.hitbox.c=
+om";=0A=
+=0A=
+//BEGIN EDITABLE SECTION=0A=
+//CONFIGURATION VARIABLES=0A=
+hbx.acct=3D"DM540517O4DA94EN3";//ACCOUNT NUMBER(S)=0A=
+hbx.pn=3D"547320";//PAGE NAME(S)=0A=
+hbx.mlc=3D"/Discussion+Groups/Autodesk+3ds+Max/MAXScript/Thread";//MULTI-=
+LEVEL CONTENT CATEGORY=0A=
+hbx.pndef=3D"";//DEFAULT PAGE NAME=0A=
+hbx.ctdef=3D"full";//DEFAULT CONTENT CATEGORY=0A=
+hbx.lt=3D"auto";//LINK TRACKING=0A=
+hbx.seg=3D"dguser";//VISITOR SEGMENTATION=0A=
+ =0A=
+//END EDITABLE SECTION=0A=
+=0A=
+//REQUIRED SECTION. CHANGE "YOURSERVER" TO VALID LOCATION ON YOUR WEB =
+SERVER (HTTPS IF FROM SECURE SERVER)=0A=
+</SCRIPT>
+
+<SCRIPT language=3Djavascript1.1 =
+src=3D"http://images.autodesk.com/hbe/hbx.js"=20
+defer></SCRIPT>
+<!--END WEBSIDESTORY CODE--><A name=3Dtop></A>
+<DIV id=3Dcontainer>
+<DIV id=3Dbranding><IMG alt=3D"Autodesk - Discussion Groups"=20
+src=3D"http://discussion.autodesk.com/images/banner_half.jpg" =
+useMap=3D#links> <MAP=20
+id=3Dmap name=3Dlinks><AREA shape=3DRECT alt=3D"Discussion Groups" =
+coords=3D30,30,280,70=20
+  href=3D"http://discussion.autodesk.com/index.jspa"><AREA shape=3DRECT=20
+  alt=3Dautodesk.com coords=3D590,30,755,70=20
+  href=3D"http://www.autodesk.com/siteselect"></MAP></DIV>
+<DIV id=3Dtopnav><NOBR><A =
+href=3D"http://discussion.autodesk.com/ground.jspa">Ground=20
+Rules</A> - <A =
+href=3D"http://discussion.autodesk.com/help.jspa">Help</A>=20
+&nbsp;|&nbsp; <A=20
+href=3D"http://discussion.autodesk.com/login!withRedirect.jspa">Login</A>=
+=20
+</NOBR></DIV>
+<DIV id=3Dsearch>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D698 border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <FORM name=3Dsearchform action=3Dsearch.jspa method=3Dget><INPUT =
+type=3Dhidden=20
+      value=3D25 name=3DnumResults> <INPUT type=3Dhidden value=3Dfalse=20
+      name=3DinputEntered> <INPUT type=3Dhidden =
+value=3Dthread-threaded|217=20
+      name=3Dsource> <INPUT=20
+      onfocus=3D"this.value =3D ''; =
+this.form.inputEntered.value=3Dtrue;" size=3D15=20
+      value=3D"Search Groups" name=3Dq>&nbsp;&nbsp; <SELECT =
+name=3DobjID> <OPTION=20
+        value=3Df217 selected>MAXScript</OPTION> <OPTION =
+value=3Dc122>All Autodesk=20
+        3ds Max Groups</OPTION></SELECT> <INPUT class=3Dsubmit=20
+      onclick=3D"if ( this.form.inputEntered.value !=3D 'true') { =
+this.form.q.value =3D '' }"=20
+      type=3Dimage =
+src=3D"http://discussion.autodesk.com/images/btn_search.gif"=20
+      value=3DSearch name=3Dsearch> </FORM></TD>
+    <TD align=3Dright><A=20
+      =
+href=3D"http://discussion.autodesk.com/forum.jspa?forumID=3D217&amp;threa=
+dID=3D547320">&lt;=20
+      Back to Topic Index</A></TD></TR></TBODY></TABLE></DIV>
+<DIV id=3Dnav><A =
+href=3D"http://discussion.autodesk.com/index.jspa">Discussion=20
+Groups Index</A> &gt; <A=20
+href=3D"http://discussion.autodesk.com/index2.jspa?categoryID=3D122">Auto=
+desk 3ds=20
+Max Groups</A> &gt; <A=20
+href=3D"http://discussion.autodesk.com/forum.jspa?forumID=3D217">MAXScrip=
+t</A> &gt;=20
+Swapping coordinates (XZY versus XYZ) </DIV>
+<DIV id=3Dmaincontent-wide>
+<TABLE id=3Dholder>
+  <TBODY>
+  <TR>
+    <TD><!-- Main Content -->
+      <P>You currently have browse capabilities only. Please <A=20
+      =
+href=3D"http://discussion.autodesk.com/login!withRedirect.jspa">log =
+in</A>=20
+      for additional capabilities.</P><BR>
+      <TABLE class=3Dtpc_wide cellSpacing=3D0 cellPadding=3D0 =
+width=3D698 border=3D0>
+        <TBODY>
+        <TR class=3Dtpc_head>
+          <TD><B>Swapping coordinates (XZY versus XYZ)</B> (5 replies) =
+</TD>
+          <TD align=3Dright></TD></TR>
+        <TR class=3Dtpc_body>
+          <TD><B>Posted by:</B> EvilArcana <BR><B>Date:</B> Feb/26/07 - =
+20:11=20
+            (GMT) </TD>
+          <TD vAlign=3Dtop align=3Dright><NOBR><A=20
+            title=3D"Click to reply to this thread"=20
+            =
+href=3D"http://discussion.autodesk.com/post!reply.jspa?messageID=3D550048=
+9"><IMG=20
+            alt=3DReply =
+src=3D"http://discussion.autodesk.com/images/btn_reply.gif"=20
+            vspace=3D6></A> </NOBR></TD></TR>
+        <TR class=3Dtpc_body>
+          <TD colSpan=3D2>
+            <P>I'm doing the export for X-Plane as I mentioned in the =
+texture=20
+            coordinates thread...but I have a different problem I =
+thought I'd=20
+            mention.<BR><BR>X-Plane considers Y as the vertical and Z as =
+the=20
+            Y...what I've been doing is just swapping the coordinates =
+and=20
+            exporting as XZY instead of XYZ...but there's some =
+weirdness...do I=20
+            need to do any kind of math or signing to those values? When =
+I swap=20
+            them, they appear in x-plane in the righ torinetation but =
+the=20
+            texture is reveresed like looking through a mirror...if I =
+don't=20
+            swap, the normals are facing the wrong direction.=20
+      </P></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D698 border=3D0>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD colSpan=3D3>
+            <HR class=3Dgray_sm>
+          </TD></TR>
+        <TR>
+          <TD vAlign=3Dtop align=3Dleft width=3D15><IMG=20
+            src=3D"http://discussion.autodesk.com/images/bracket_1.gif"> =
+&nbsp;=20
+</TD>
+          <TD vAlign=3Dtop align=3Dright width=3D10><IMG class=3Darrowb =
+alt=3D""=20
+            =
+src=3D"http://discussion.autodesk.com/images/arrowb.gif"></TD>
+          <TD>
+            <P><B>Reply From:</B> davestewart <BR><B>Date:</B> Feb/27/07 =
+- 08:28=20
+            (GMT) </P></TD>
+          <TD vAlign=3Dtop width=3D42><NOBR><A=20
+            title=3D"Click to reply to this thread"=20
+            =
+href=3D"http://discussion.autodesk.com/post!reply.jspa?messageID=3D550111=
+0"><IMG=20
+            alt=3DReply =
+src=3D"http://discussion.autodesk.com/images/btn_reply.gif"=20
+            vspace=3D6></A> </NOBR></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD><B>Re: Swapping coordinates (XZY versus XYZ)</B><BR>I was =
+doing=20
+            something like this a while ago and I'm pretty sure it was =
+as simple=20
+            as swapping the Y and Z values and reversing one of=20
+            them.<BR><BR>newValue =3D [x,-z,y] -- or [x,z,-y] </TD>
+          <TD></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D698 border=3D0>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD colSpan=3D3>
+            <HR class=3Dgray_sm>
+          </TD></TR>
+        <TR>
+          <TD vAlign=3Dtop align=3Dleft width=3D15><IMG=20
+            src=3D"http://discussion.autodesk.com/images/bracket_2.gif"> =
+&nbsp;=20
+</TD>
+          <TD vAlign=3Dtop align=3Dright width=3D10><IMG class=3Darrowb =
+alt=3D""=20
+            =
+src=3D"http://discussion.autodesk.com/images/arrowb.gif"></TD>
+          <TD>
+            <P><B>Reply From:</B> Stokes <BR><B>Date:</B> Feb/27/07 - =
+16:30=20
+            (GMT) </P></TD>
+          <TD vAlign=3Dtop width=3D42><NOBR><A=20
+            title=3D"Click to reply to this thread"=20
+            =
+href=3D"http://discussion.autodesk.com/post!reply.jspa?messageID=3D550161=
+6"><IMG=20
+            alt=3DReply =
+src=3D"http://discussion.autodesk.com/images/btn_reply.gif"=20
+            vspace=3D6></A> </NOBR></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD><B>Re: Swapping coordinates (XZY versus XYZ)</B><BR>Would =
+this=20
+            work?<BR><BR>obj.transform =3D obj.transform * (matrix3 =
+[1,0,0]=20
+            [0,0,1] [0,-1,0] [0,0,0]) </TD>
+          <TD></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D698 border=3D0>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD colSpan=3D3>
+            <HR class=3Dgray_sm>
+          </TD></TR>
+        <TR>
+          <TD vAlign=3Dtop align=3Dright width=3D45><IMG=20
+            src=3D"http://discussion.autodesk.com/images/bracket_2.gif"> =
+&nbsp;=20
+</TD>
+          <TD vAlign=3Dtop align=3Dright width=3D10><IMG class=3Darrowb =
+alt=3D""=20
+            =
+src=3D"http://discussion.autodesk.com/images/arrowb.gif"></TD>
+          <TD>
+            <P><B>Reply From:</B> ScriptChimp <BR><B>Date:</B> Feb/27/07 =
+- 19:23=20
+            (GMT) </P></TD>
+          <TD vAlign=3Dtop width=3D42><NOBR><A=20
+            title=3D"Click to reply to this thread"=20
+            =
+href=3D"http://discussion.autodesk.com/post!reply.jspa?messageID=3D550199=
+2"><IMG=20
+            alt=3DReply =
+src=3D"http://discussion.autodesk.com/images/btn_reply.gif"=20
+            vspace=3D6></A> </NOBR></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD><B>Re: Swapping coordinates (XZY versus =
+XYZ)</B><BR>Couldn't you=20
+            rotate the object export/parse, then rotate back?<BR><BR>Say =
+-90 in=20
+            X?<BR><BR>The easiest way to sort out what's actually =
+happening is=20
+            to make a 3d axis (coloured cones pointing in<BR>the =
+positive of=20
+            XYZ) and export it. This will tell you whether the X-plane =
+stuff is=20
+            left or right handed coords.<BR>And give you a visual way to =
+sort=20
+            out what you actually have to do.<BR><BR>A more analogue =
+approach is=20
+            to take your left and and make a gun (thumb straight up, =
+index=20
+            finger pointing<BR>away from you and middle finger =
+perpendicular to=20
+            your palm. No, I'm not crazy...<BR><BR>What you have is a =
+left=20
+            handed axis...thumb is +Z, middle finger is +X, and index =
+finger is=20
+            +Y.<BR>If you point your left thumb a positive axis the curl =
+of your=20
+            fingers represents the positive rotation<BR>for that=20
+            axis.<BR><BR>Hope that made sense...<BR><BR>Chimp. </TD>
+          <TD></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D698 border=3D0>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD colSpan=3D3>
+            <HR class=3Dgray_sm>
+          </TD></TR>
+        <TR>
+          <TD vAlign=3Dtop align=3Dright width=3D75><IMG=20
+            src=3D"http://discussion.autodesk.com/images/bracket_2.gif"> =
+&nbsp;=20
+</TD>
+          <TD vAlign=3Dtop align=3Dright width=3D10><IMG class=3Darrowb =
+alt=3D""=20
+            =
+src=3D"http://discussion.autodesk.com/images/arrowb.gif"></TD>
+          <TD>
+            <P><B>Reply From:</B> zyzyx <BR><B>Date:</B> Mar/02/07 - =
+13:47 (GMT)=20
+            </P></TD>
+          <TD vAlign=3Dtop width=3D42><NOBR><A=20
+            title=3D"Click to reply to this thread"=20
+            =
+href=3D"http://discussion.autodesk.com/post!reply.jspa?messageID=3D550602=
+3"><IMG=20
+            alt=3DReply =
+src=3D"http://discussion.autodesk.com/images/btn_reply.gif"=20
+            vspace=3D6></A> </NOBR></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD><B>Re: Swapping coordinates (XZY versus =
+XYZ)</B><BR>ScriptChimp=20
+            is wright, you rotate the object -90 in X, and when you are =
+done=20
+            with export, you rotate it back 90 in X. And I think this=20
+            coordinates system is actualy a right hand....look here : <A =
+
+            href=3D"http://www.toymaker.info/Games/html/matrices.html"=20
+            =
+target=3D_blank>http://www.toymaker.info/Games/html/matrices.html</A>.<BR=
+><BR>You=20
+            could do something like this: node.transform =3D=20
+            node.transform*(rotateXMatrix -90);<BR><BR>For the other =
+coordinates=20
+            system, the left handed, you first do the rotation by -90 =
+degrees in=20
+            X, and then swap Z by multiplying by -1:<BR>node.transform =
+=3D=20
+            node.transform*((rotateXMatrix -90)*(Matrix3 [1,0,0] [0,1,0] =
+
+            [0,0,-1] [0,0,0])); </TD>
+          <TD></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D698 border=3D0>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD colSpan=3D3>
+            <HR class=3Dgray_sm>
+          </TD></TR>
+        <TR>
+          <TD vAlign=3Dtop align=3Dright width=3D105><IMG=20
+            src=3D"http://discussion.autodesk.com/images/bracket_2.gif"> =
+&nbsp;=20
+</TD>
+          <TD vAlign=3Dtop align=3Dright width=3D10><IMG class=3Darrowb =
+alt=3D""=20
+            =
+src=3D"http://discussion.autodesk.com/images/arrowb.gif"></TD>
+          <TD>
+            <P><B>Reply From:</B> Remdul <BR><B>Date:</B> Mar/02/07 - =
+15:50=20
+            (GMT) </P></TD>
+          <TD vAlign=3Dtop width=3D42><NOBR><A=20
+            title=3D"Click to reply to this thread"=20
+            =
+href=3D"http://discussion.autodesk.com/post!reply.jspa?messageID=3D550623=
+0"><IMG=20
+            alt=3DReply =
+src=3D"http://discussion.autodesk.com/images/btn_reply.gif"=20
+            vspace=3D6></A> </NOBR></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD><B>Re: Swapping coordinates (XZY versus XYZ)</B><BR>XZ-Y =
+often=20
+            does the trick, also for rotations (including quaternions, =
+leave the=20
+            4th component (W) untouched).<BR><BR>Keep in mind that when =
+you=20
+            export Camera orientations, you have to do some voodoo. =
+Cameras have=20
+            their own weird coordinate system, I never managed to come =
+up with=20
+            code that can convert their orientation because of all the=20
+            exceptions that apply to them. Just don't export camera=20
+            orientations! </TD>
+          <TD></TD></TR></TBODY></TABLE><BR><!--End Main Content =
+--></TD></TR></TBODY></TABLE></DIV>
+<DIV id=3Dfooter>
+<P id=3Dcopyright>=C2=A9 Copyright 2006 Autodesk, Inc. All rights =
+reserved. <A=20
+href=3D"http://www.autodesk.com/trademark">Legal Notices &amp; =
+Trademarks</A> - <A=20
+href=3D"http://www.autodesk.com/privacy">Privacy Policy</A>=20
+</P></DIV></DIV></BODY></HTML>
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://discussion.autodesk.com/images/banner_half.jpg
+
+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
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://discussion.autodesk.com/images/btn_reply.gif
+
+R0lGODlhJgANAOYAAMLCwv39/f7+/vv6+/z7/PT09Pj4+PLy8vLy8/r5+fPz8/X19Uqy1Pf29/Hx
+8fn5+ff29vb19Uuz1f3+/Tyt0Umy04TJ4Pr6+/Hx8kuz1PLx8lm41/Py8kmx0/z9/Pb19vn6+fr6
++v38/Pf39nXD3HTC2/T09fv8/Pr7+/Lz8/v8++fv8tvs8v39/vz8+77h7J3R4q/b6Z/T5B+hy3fE
+3ubu8fb39/Hy8Vi31t3t857S43jF32a92dDq8cfi68fi6jus0drr8K/Z6N7u9b3f68vm7jus0PX1
+9oLI3trr8fLx8enx87ve6Vq52JDN4dzt8+Tt8Mzm7+vz9qzY5li41/z7+/X29We+2oTK4Dur0Gi+
+2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAAAAAAALAAAAAAmAA0AAAf/gACCg4SFhoeIgwIBAhMtE4uNLZEClZaXmI6RkIIeIgGgAZ6ho6Gm
+p6elAYInLgQqBAStErRNPbG4ubE7ubCtr1WCAyEDFygXwxLGQxQDzs/QAxLQxsPFIYIPDwkgCQna
+Gd1PFAk5FBk0CRlaFOkZUhve5NrcIIIG+Pn4Mwz8UQZXYrzYwILBCwMEGSBkEQOLPnyCIIxoAMEG
+xREMIBQBsqQBAwsgkzBo0MACkZFCLFAJYkMixQaCFkRY8CHCEZkVajohsYCEjJ4rKsgIGnTBAiM5
+Z878YEVQgacFTEAtEbUAjho1eHSYUqADkg5MClAVq6Mq1AKCFChAwCGF2rVtL9UimEu3A126PrJA
+iQtXgSAHGg5gcKAEsGAHhg8oVgxj8WIYPw4bxnAjkeXLiQIBADs=
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://discussion.autodesk.com/images/bracket_1.gif
+
+R0lGODlhCgAUAIAAAMzMzP///yH5BAAAAAAALAAAAAAKABQAAAIaRI5omcvnXmSzPXVhDlWBD4Zb
+p2UkN6amehUAOw==
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://discussion.autodesk.com/images/arrowb.gif
+
+R0lGODlhCQAJAKIAABBwz9/s+VCW3P///wBmzAAAAAAAAAAAACH5BAAAAAAALAAAAAAJAAkAAAMa
+OCHUEgq0CdYck128h+cT4WVXFkhhpWjEMyQAOw==
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://discussion.autodesk.com/images/bracket_2.gif
+
+R0lGODlhCgAUAIAAAMzMzP///yH5BAAAAAAALAAAAAAKABQAAAIYRI5omcvnXmSzPXVhDlWBD4Lb
+SJbmiT4FADs=
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://discussion.autodesk.com/images/btn_search.gif
+
+R0lGODlhPQATAOYAAMLCwv7+/v////f39/z8/PPz8/X19fb29vT09P39/fn5+fj4+Pr6+vv7+0K/
+5DK647nm9IXV7CG14UPA5TG54hGv37bj8YXU7Lfk8oTT67fl8snr9ev3+iG04crs9tfu9ITU69nv
+9gCq3drx+IbV7XXQ62TK6aff8Oz3+8rs97jl82TK6Mbo8iG04Mbo87Xi8FPF52PJ6Or2+Zfb78fp
+81TF55TY7en1+JXZ7kO/5brn9Ofz9pfb8CK14drw9+fy9aXe76Xd7nPO6WPJ55ba7uj09wAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAAAAAAALAAAAAA9ABMAAAf/gACCg4SFhoeIiYqHAo2Oj5CRkpOUlY+Clpmam5SCAZ+goaKjpKWm
+p6GeqKusraWCCbGyKToosre4ubcptrq+vwmCBMPDEz0TFTzEy8zNxBMQztLTw8LEEA/DHhXDHBAc
+xB7fBBweHiMEI9EE0BDo1PDVAA30DTISJBv1Gw8kD/omapSQ4ENFhRIbZjwo8aDBhH4VVNSbSLEi
+RUEMMma8EQGGhAgMTETQ0JGBhhAnJGjQ8CCjhBAMiITIcYJBBJAac+rcmVOQgp8KMGD4WUQCDQcr
+LlzAoWCFgwsPhDr4KQKoAgdDlVrdyrWrAkELwi6w0MHCgg8VPsQAscAFkAUiiRbsKGvBQdgOLhZ0
++ODALAi2YgMLHhxY0IDDhzO0ENHCxoAfDhxQYDFACIUhFIK8cHCYBQUKGQY4eDEgQ2jEqFOrRm14
+tevXsGPLHiDogO3buHPr3s27t2/cggwIH068uPHjyJMrJy4IgfPn0KNLn069unXoggpo3869u/fv
+4MOL576ovPnz5QMBADs=
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://discussion.autodesk.com/ad_discgroup.css
+
+ {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; COLOR: #000; PADDING-TOP: 0px; FONT-FAMILY: =
+arial,verdana,helvetica,sans-serif
+}
+HTML {
+	HEIGHT: 100%
+}
+BODY {
+	HEIGHT: 100%
+}
+BODY {
+	FONT-SIZE: 70%; BACKGROUND: url(images/white_bg.gif) #f2f2f2 repeat-y
+}
+A {
+	COLOR: #0082b4; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #46a9de
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:active {
+	TEXT-DECORATION: underline
+}
+INPUT {
+	FONT-SIZE: 11px; LINE-HEIGHT: 14px
+}
+SELECT {
+	FONT-SIZE: 11px; LINE-HEIGHT: 14px
+}
+TEXTAREA {
+	FONT-SIZE: 11px; LINE-HEIGHT: 14px
+}
+OPTION {
+	FONT-SIZE: 11px; LINE-HEIGHT: 14px
+}
+INPUT {
+	PADDING-LEFT: 2px
+}
+INPUT {
+	BORDER-RIGHT: #666 1px solid; BORDER-TOP: #666 1px solid; BORDER-LEFT: =
+#666 1px solid; BORDER-BOTTOM: #666 1px solid
+}
+TEXTAREA {
+	BORDER-RIGHT: #666 1px solid; BORDER-TOP: #666 1px solid; BORDER-LEFT: =
+#666 1px solid; BORDER-BOTTOM: #666 1px solid
+}
+.inpt_spl {
+	WIDTH: 150px
+}
+#container {
+	BACKGROUND: #fff; WIDTH: 760px; POSITION: absolute
+}
+#branding {
+	DISPLAY: inline; FONT-SIZE: 11px; MARGIN: 0px; WIDTH: 760px; =
+LINE-HEIGHT: 14px; POSITION: relative; TOP: -1px
+}
+#topnav {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 40px; FONT-SIZE: 11px; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 14px; PADDING-TOP: 3px
+}
+#topnav A {
+	COLOR: #0082b4
+}
+#topnav A:visited {
+	COLOR: #0082b4
+}
+#topnav A.selected {
+	COLOR: #000
+}
+#topnav A.selected:visited {
+	COLOR: #000
+}
+#nav {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 40px; FONT-SIZE: 11px; =
+PADDING-BOTTOM: 5px; MARGIN: 0px; LINE-HEIGHT: 14px; PADDING-TOP: 10px
+}
+#nav A {
+	COLOR: #0082b4
+}
+#nav A:visited {
+	COLOR: #0082b4
+}
+#nav A.selected {
+	COLOR: #000
+}
+#nav A.selected:visited {
+	COLOR: #000
+}
+#search {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 40px; FONT-SIZE: 11px; =
+PADDING-BOTTOM: 0px; LINE-HEIGHT: 14px; PADDING-TOP: 7px
+}
+#search INPUT {
+	BORDER-RIGHT: #666 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #666 1px =
+solid; PADDING-LEFT: 3px; MARGIN-BOTTOM: 2px; PADDING-BOTTOM: 2px; =
+BORDER-LEFT: #666 1px solid; COLOR: #666; PADDING-TOP: 1px; =
+BORDER-BOTTOM: #666 1px solid
+}
+#search INPUT.submit {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; =
+BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; =
+MARGIN: 1px 0px 0px; VERTICAL-ALIGN: top; PADDING-TOP: 0px; =
+BORDER-RIGHT-WIDTH: 0px
+}
+#search SELECT {
+	MARGIN-BOTTOM: 2px; VERTICAL-ALIGN: bottom
+}
+.button {
+	VERTICAL-ALIGN: top
+}
+#alert {
+	LEFT: 440px; WIDTH: 300px; POSITION: absolute; TOP: 105px; TEXT-ALIGN: =
+right
+}
+#maincontent {
+	PADDING-RIGHT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 160px; =
+PADDING-BOTTOM: 0px; MARGIN: 0px 12px 0px 39px; WIDTH: 549px; =
+PADDING-TOP: 14px
+}
+#maincontent-wide {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px =
+12px 0px 39px; WIDTH: 709px; PADDING-TOP: 0px
+}
+#holder {
+	CLEAR: none; BORDER-COLLAPSE: collapse
+}
+#footer {
+	CLEAR: both; PADDING-RIGHT: 0px; BORDER-TOP: #ccc 1px solid; =
+PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 11px; MARGIN: 43px =
+12px 0px 39px; WIDTH: 709px; PADDING-TOP: 11px
+}
+#footer P {
+	PADDING-LEFT: 1px; COLOR: #666
+}
+#footer #copyright {
+=09
+}
+#footer A {
+	COLOR: #0094c1
+}
+#footer A:visited {
+	COLOR: #0094c1
+}
+.hide {
+	OVERFLOW: hidden; WIDTH: 0px; POSITION: absolute; HEIGHT: 0px
+}
+#holder P {
+	PADDING-LEFT: 1px
+}
+#holder DIV {
+	PADDING-LEFT: 1px
+}
+#holder DIV P {
+	PADDING-LEFT: 0px
+}
+#holder DIV DIV {
+	PADDING-LEFT: 0px
+}
+#holder A B {
+	COLOR: #0082b4
+}
+#holder A STRONG {
+	COLOR: #0082b4
+}
+#holder A:visited B {
+	COLOR: #46a9de
+}
+#holder A:visited STRONG {
+	COLOR: #46a9de
+}
+#holder P {
+	MARGIN: 0px 0px 1em; LINE-HEIGHT: 15px
+}
+#holder UL {
+	MARGIN: 0px 0px 1em; LINE-HEIGHT: 15px
+}
+#holder OL {
+	MARGIN: 0px 0px 1em; LINE-HEIGHT: 15px
+}
+#holder UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px =
+0px 1em; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#holder UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 26px; BACKGROUND: =
+url(images/bullet.gif) no-repeat 11px 7px; PADDING-BOTTOM: 0px; =
+PADDING-TOP: 0px
+}
+#holder OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 22px; LIST-STYLE-POSITION: outside; =
+PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#holder DIV.divider {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(images/tick.gif) =
+no-repeat; PADDING-BOTTOM: 0px; MARGIN: 11px 0px 0px; PADDING-TOP: 12px
+}
+TD.frame-border {
+	BORDER-RIGHT: #999 1px solid; BORDER-LEFT: #999 1px solid; =
+BORDER-BOTTOM: #999 1px solid
+}
+.border_btm {
+	BORDER-BOTTOM: #ccc 1px solid
+}
+TD.leftcol {
+	PADDING-RIGHT: 11px; VERTICAL-ALIGN: top; WIDTH: 252px
+}
+TD.rightcol {
+	VERTICAL-ALIGN: top; WIDTH: 255px
+}
+TD.col_w85 {
+	PADDING-LEFT: 1px; VERTICAL-ALIGN: top; WIDTH: 84px
+}
+.tpc {
+	MARGIN: 21px 0px; WIDTH: 518px
+}
+.tpc2 {
+	MARGIN: 5px 0px 21px; WIDTH: 518px
+}
+.tpc_wide {
+	MARGIN: 0px 0px 15px; WIDTH: 698px
+}
+.tpc_head {
+	VERTICAL-ALIGN: middle; BACKGROUND-COLOR: #e9e9e9
+}
+.tpc_head TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; =
+PADDING-TOP: 3px; HEIGHT: 16px
+}
+.tpc_body TD {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 6px; =
+PADDING-TOP: 12px; BACKGROUND-COLOR: #f5f5f5
+}
+.gray_row {
+	BACKGROUND-COLOR: #f5f5f5
+}
+.pad5 TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px
+}
+.pad5 TH {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 11px; COLOR: #000
+}
+.new {
+	FONT-WEIGHT: bold; COLOR: #f00
+}
+.red {
+	COLOR: #f00
+}
+.small {
+	FONT-SIZE: 10px
+}
+HR.gray {
+	MARGIN: 3px 0px 14px; COLOR: #ccc; HEIGHT: 1px
+}
+HR.gray_sm {
+	COLOR: #ccc; HEIGHT: 1px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 0px
+}
+.icon {
+	MARGIN: 0px 5px 0px 0px; VERTICAL-ALIGN: middle
+}
+.arrowb {
+	MARGIN: 3px 3px 0px 0px; WIDTH: 9px; HEIGHT: 9px
+}
+
+------=_NextPart_000_0000_01C75CE4.58C801B0
+Content-Type: application/x-js
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://images.autodesk.com/hbe/hbx.js
+
+//hbx.js,HBX1.5,COPYRIGHT 1997-2005 WEBSIDESTORY,INC. ALL RIGHTS =
+RESERVED. U.S.PATENT No.6,393,479B1 & 6,766,370. =
+INFO:http://websidestory.com/privacy=0A=
+var _vjs=3D"HBX0150.01u";=0A=
+var =
+_dl=3D".exe,.zip,.wav,.wmv,.mp3,.mov,.mpg,.avi,.doc,.pdf,.xls,.ppt,.gz";=0A=
+function _NA(a){return new Array(a?a:0)}function _NO(){return new =
+Object()}=0A=
+var =
+_mn=3D_hbq=3D"",_hbA=3D_NA(),_hud=3D"undefined",_lv=3D_NO(),_ec=3D_if=3D_=
+ll=3D_hec=3D_hfs=3D_hfc=3D_fvf=3D_ic=3D_pC=3D_fc=3D_pv=3D0,_hbi=3Dnew =
+Image(),_hbin=3D_NA(),_pA=3D_NA();=0A=
+_lv.id=3D_lv.pos=3D_lv.l=3D"";_hbE=3D_D("hbE")?_hbE:"";_hbEC=3D_D("hbEC")=
+?_hbEC:0;var _ex=3D"expires=3DWed, 1 Jan 2020 00:00:00 =
+GMT",_lvm=3D150,_lidt=3D"lid",_lpost=3D"lpos";=0A=
+function _D(v){return(typeof =
+eval("window._"+v)!=3D_hud)?eval("window._"+v):""}function =
+_DD(v){return(typeof v!=3D_hud)?1:0}=0A=
+function _A(v,c){return escape((_D("lc")=3D=3D"y"&&_DD(c))?_TL(v):v)}=0A=
+function _B(){return 0}function _GP(){return =
+location.protocol=3D=3D"https:"?"https://":"http://"}=0A=
+function _IC(a,b,c){return a.charAt(b)=3D=3Dc?1:0}function =
+_II(a,b,c){return a.indexOf(b,c?c:0)}function _IL(a){return =
+a!=3D_hud?a.length:0}=0A=
+function _IF(a,b,c){return a.lastIndexOf(b,c?c:_IL(a))}function =
+_IP(a,b){return a.split(b)}=0A=
+function _IS(a,b,c){return b>_IL(a)?"":a.substring(b,c!=3Dnull?c:_IL(a))}=0A=
+function =
+_RP(a,b,c,d){d=3D_II(a,b);if(d>-1){a=3D_RP(_IS(a,0,d)+","+_IS(a,d+_IL(b),=
+_IL(a)),b,c)}return a}=0A=
+function _TL(a){return a.toLowerCase()}function _TS(a){return =
+a.toString()}function _TV(){_hbSend()}function _SV(a,b,c){_hbSet(a,b,c)}=0A=
+function _VS(a,b){eval("_"+a+"=3D'"+b+"'")}=0A=
+function =
+_VC(a,b,c,d){b=3D_IP(a,",");for(c=3D0;c<_IL(b);c++){d=3D_IP(b[c],"|");_VS=
+(d[0],(_D(d[0]))?_D(d[0]):d[1]?d[1]:"")}}=0A=
+function =
+_VL(a,b){for(a=3D0;a<_hbEC;a++){_pv=3D_hbE[a];if(_pv._N=3D=3D"pv"){for(b =
+in _pv){if(_EE(b)){_VS(b,_pv[b])}}}}=0A=
+_VC("pn|PUT+PAGE+NAME+HERE,mlc|CONTENT+CATEGORY,elf|n,dlf|n,dft|n,pndef|t=
+itle,ctdef|full,cp|null,hcn|")}_VL();=0A=
+function =
+_ER(a,b,c){_hbi.src=3D_GP()+_gn+"/HG?hc=3D"+_mn+"&hb=3D"+_A(_acct)+"&hec=3D=
+1&vjs=3D"+_vjs+"&vpc=3DERR&ec=3D1&err=3D"+((typeof =
+a=3D=3D"string")?_A(a+"-"+c):"Unknown")}=0A=
+function _EE(a){return(a!=3D"_N"&&a!=3D"_C")?1:0}_EV(window,"error",_ER);=0A=
+function _hbSend(c,a,i){a=3D"";_hec++;for(i in _hbA)if(typeof =
+_hbA[i]!=3D"function")a+=3D"&"+i+"=3D"+_hbA[i];_Q(_hbq+"&hec=3D"+_hec+a+_=
+hbSendEV());_hbA=3D_NA()}=0A=
+function =
+_hbSet(a,b,c,d,e){d=3D_II(_hbq,"&"+a+"=3D");if(d>-1){e=3D_II(_hbq,"&",d+1=
+);e=3De>d?e:_IL(_hbq);if(a=3D=3D"n"||a=3D=3D"vcon"){_hbq=3D_IS(_hbq,0,d)+=
+"&"+a+"=3D"+b+=0A=
+_IS(_hbq,e);_hec=3D-1;if(a=3D=3D"n"){_pn=3Db}else{_mlc=3Db}}else{_hbq=3D_=
+IS(_hbq,0,d)+_IS(_hbq,e)}}if((a!=3D"n")&&(a!=3D"vcon"))_hbA[a]=3D(c=3D=3D=
+0)?b:_A(b)}=0A=
+function =
+_hbRedirect(a,b,c,d,e,f,g){_SV("n",a);_SV("vcon",b);if(_DD(d)&&_IL(d)>0){=
+d=3D_IC(d,0,"&")?_IS(d,1,_IL(d)):d;e=3D_IP(d,"&");for(f=3D0;f<_IL(e);=0A=
+f++){g=3D_IP(e[f],"=3D");_SV(g[0],g[1])}}_TV();if(c!=3D""){_SV("hec",0);s=
+etTimeout("location.href=3D'"+c+"'",500)}}=0A=
+function =
+_hbSendEV(a,b,c,d,e,f,x,i){a=3D'',c=3D'',e=3D_IL(_hbE);for(b=3D0;b<e;b++)=
+{c=3D_hbE[b];for(var d in =
+c){if(_EE(d)&&c[d].match){x=3Dc[d].match(/\[\]/g);=0A=
+if(x!=3Dnull&&_IL(x)>c._C)c._C=3D_IL(x)}}for(d in =
+c){if(_EE(d)&&c[d].match){x=3Dc[d].match(/\[\]/g);x=3D(x=3D=3Dnull)?0:_IL=
+(x);for(i=3Dx;i<c._C;i++)c[d]+=3D"[]"}}}=0A=
+for(b=3D0;b<e;b++){c=3D_hbE[b];for(f=3Db+1;f<e;f++){if(_hbE[f]!=3Dnull&&c=
+._N=3D=3D_hbE[f]._N){for(d in =
+c){if(_EE(d)&&_hbE[f]!=3Dnull)c[d]+=3D"[]"+_hbE[f][d];=0A=
+_hbE[f][d]=3D""}}}for(d in =
+c){if(_EE(d)&&c._N!=3D""&&c._N!=3D"pv"){a+=3D"&"+c._N+"."+d+"=3D"+_RP(_A(=
+c[d]),"%5B%5D",",")}}}_hbE=3D_NA();_hbEC=3D0;return a}=0A=
+function =
+_hbM(a,b,c,d){_SV('n',a);_SV('vcon',b);if(_IL(c)>0)_SV(c,d);_TV()}=0A=
+function _hbPageView(p,m){_hec=3D-1;_hbM(p,m,"")}function =
+_hbExitLink(n){_hbM(_pn,_mlc,"el",n)}function =
+_hbDownload(n){_hbM(_pn,_mlc,"fn",n)}=0A=
+function =
+_hbVisitorSeg(n,p,m){_SV("n",p);_SV("vcon",m);_SV("seg",n,1);_TV()}functi=
+on _hbCampaign(n,p,m){_hbM(p,m,"cmp",n)}=0A=
+function _hbFunnel(n,p,m){_hbM(p,m,"fnl",n)}function =
+_hbGoalPage(n,p,m){_hbM(p,m,"gp",n)}=0A=
+function _hbLink(a,b,c){_SV("lid",a);if(_DD(b))_SV("lpos",b);_TV()}=0A=
+function =
+_LE(a,b,c,d,e,f,g,h,i,j,k,l){b=3D"([0-9A-Za-z\\-]*\\.)",c=3Dlocation.host=
+name,d=3Da.href,h=3D'',i=3D'';eval("__f=3D/"+b+"*"+b+"/");if(_DD(__f)){__=
+f.exec(c);=0A=
+j=3D(_DD(_elf))?_elf:"";if(j!=3D"n"){if(_II(j,"!")>-1){h=3D_IS(j,0,_II(j,=
+"!"));i=3D_IS(j,_II(j,"!")+1,_IL(j))}else{h=3Dj}}k=3D0;if(_DD(_elf)&&_elf=
+!=3D"n"){=0A=
+if(_IL(i)){l=3D_IP(i,",");for(g=3D0;g<_IL(l);g++)if(_II(d,l[g])>-1)return=
+}if(_IL(h)){l=3D_IP(h,",");for(g=3D0;g<_IL(h);g++)if(_II(d,l[g])>-1)k=3D1=
+}}=0A=
+if(_II(a.hostname,RegExp.$2)<0||k){	e=3D_IL(d)-1;return =
+_IC(d,e,'/')?_IS(d,0,e):d}}}=0A=
+function =
+_LD(a,b,c,d,e,f){b=3Da.pathname,d=3D'',e=3D'';b=3D_IS(b,_IF(b,"/")+1,_IL(=
+b));c=3D(_DD(_dlf))?_dlf:"";if(c!=3D"n"){if(_II(c,"!")>-1){d=3D","+=0A=
+_IS(c,0,_II(c,"!"));e=3D","+_IS(c,_II(c,"!")+1,_IL(c))}else{d=3D","+c}}f=3D=
+_II(b,"?");b=3D(f>-1)?_IS(b,0,f):b;if(_IF(b,".")>-1){f=3D_IS(b,_IF(b,".")=
+,_IL(b));=0A=
+if(_II(_dl+d,f)>-1&&_II(e,f)<0){var =
+dl=3Db;if(_DD(_dft)){if(_dft=3D=3D"y"&&a.name){dl=3Da.name}else =
+if(_dft=3D=3D"full"){dl=3Da.pathname}}return dl}}}=0A=
+function =
+_LP(a,b,c){for(c=3D0;c<_IL(a);c++){if(b=3D=3D0){if(_IL(_lv.l)<_lvm)_LV(a[=
+c]);else break}else if(b=3D=3D1)_EV(a[c],'mousedown',_LT)}}=0A=
+function =
+_LV(a,b,c){b=3D_LN(a);c=3Db[0]+b[1];if(_IL(c)){_lv.id+=3D_A(b[0])+",";_lv=
+.pos+=3D_A(b[1])+",";_lv.l+=3Dc}}=0A=
+function =
+_LN(a,b,c,d){b=3Da.href;b+=3Da.name?a.name:"";c=3D_LVP(b,_lidt);d=3D_LVP(=
+b,_lpost);return[c,d]}=0A=
+function =
+_LT(e){if((e.which&&e.which=3D=3D1)||(e.button&&e.button=3D=3D1)){var =
+a=3Ddocument.all?window.event.srcElement:this;for(var =
+i=3D0;i<4;i++){if(a.tagName&&=0A=
+_TL(a.tagName)!=3D"a"&&_TL(a.tagName)!=3D"area"){a=3Da.parentElement}}var=
+ =
+b=3D_LN(a),c=3D'',d=3D'';a.lid=3Db[0];a.lpos=3Db[1];if(_D("lt")&&_lt!=3D"=
+manual"){if((a.tagName&&=0A=
+_TL(a.tagName)=3D=3D"area")){if(!_IL(a.lid)){if(a.parentNode){if(a.parent=
+Node.name)a.lid=3Da.parentNode.name;else =
+a.lid=3Da.parentNode.id}}if(!_IL(a.lpos))=0A=
+a.lpos=3Da.coords}else{if(_IL(a.lid)<1)a.lid=3D_LS(a.text?a.text:a.innerT=
+ext?a.innerText:"");if(!_IL(a.lid)||_II(_TL(a.lid),"<img")>-1)a.lid=3D_LI=
+(a)}}=0A=
+if(!_IL(a.lpos)&&_D("lt")=3D=3D"auto_pos"&&a.tagName&&_TL(a.tagName)!=3D"=
+area"){c=3Ddocument.links;for(d=3D0;d<_IL(c);d++){if(a=3D=3Dc[d]){a.lpos=3D=
+d+1;break}}}=0A=
+var _f=3D0,j=3D'',k=3D'',l=3D(a.protocol)?_TL(a.protocol):"";=0A=
+if(l&&l!=3D"mailto:"&&l!=3D"javascript:"){j=3D_LE(a),k=3D_LD(a);if(_DD(k)=
+)a.fn=3Dk;else if(_DD(j))a.el=3Dj}=0A=
+if(_D("lt")&&_IC(_lt,0,"n")!=3D1&&_DD(a.lid)&&_IL(a.lid)>0){_SV("lid",a.l=
+id);if(_DD(a.lpos))_SV("lpos",a.lpos);_f=3D1}if(_DD(a.fn)){_SV("fn",a.fn)=
+;_f=3D2}=0A=
+else if(_DD(a.el)){_SV("el",a.el);_f=3D1}if(_f>0){_TV()}}}=0A=
+function =
+_LVP(a,b,c,d,e){c=3D_II(a,"&"+b+"=3D");c=3Dc<0?_II(a,"?"+b+"=3D"):c;if(c>=
+-1){d=3D_II(a,'&',c+_IL(b)+2);e=3D_IS(a,c+_IL(b)+2,d>-1?d:_IL(a));=0A=
+if(!_ec){if(!(_II(e,"//")=3D=3D0))return e}else return e}return ""}=0A=
+function _LI(a){var =
+b=3D""+a.innerHTML,bu=3D_TL(b),i=3D_II(bu,"<img");if(bu&&i>-1){eval("__f=3D=
+/ src\s*=3D\s*['\"]?([^'\" ]+)['\"]?/i");__f.exec(b);=0A=
+if(RegExp.$1)b=3DRegExp.$1}return b}=0A=
+function _LSP(a,b,c,d){d=3D_IP(a,b);return d.join(c)}=0A=
+function =
+_LS(a,b,c,d,e,f,g){c=3D_D("lim")?_lim:100;b=3D(_IL(a)>c)?_A(_IS(a,0,c)):_=
+A(a);b=3D_LSP(b,"%0A","%20");b=3D_LSP(b,"%0D","%20");b=3D_LSP(b,"%09","%2=
+0");=0A=
+c=3D_IP(b,"%20");d=3D_NA();e=3D0;for(f=3D0;f<_IL(c);f++){g=3D_RP(c[f],"%2=
+0","");if(_IL(g)>0){d[e++]=3Dg}}b=3Dd.join("%20");return unescape(b)}=0A=
+function =
+_EM(a,b,c,d){a=3D_D("fv");b=3D_II(a,";"),c=3DparseInt(a);d=3D3;if(_TL(a)=3D=
+=3D"n"){d=3D999;_fv=3D""}else =
+if(b>-1){d=3D_IS(a,0,b);_fv=3D_IS(a,b+1,_IL(a))}=0A=
+else if(c>0){d=3Dc;_fv=3D""}return d}=0A=
+function _FF(e){var a=3D(_bnN)?this:_EVO(e);_hlf=3D(a.lf)?a.lf:""}=0A=
+function =
+_FU(e){if(_hfs=3D=3D0&&_IL(_hlf)>0&&_fa=3D=3D1){_hfs=3D1;if(_hfc){_SV("sf=
+","1")}else =
+if(_IL(_hlf)>0){_SV("lf",_hlf)}_TV();_hlf=3D"",_hfs=3D0,_hfc=3D0}}=0A=
+function _FO(e){var =
+a=3Dtrue;if(_DD(this._FS))eval("try{a=3Dthis._FS()}catch(e){}");if(a!=3Df=
+alse)_hfc=3D1;return a}=0A=
+function _FA(a,b,c,d,e,f,g,h,i,ff,fv,s){b=3Da.forms;ff=3Dnew =
+Object();f=3D_EM();for(c=3D0;c<_IL(b);c++){ff=3Db[c],d=3D0,s=3D0,e=3Dff.e=
+lements,fv=3Deval(_D("fv"));=0A=
+if(_DD(fv)&&_TL(_TS(fv))!=3D"n"&&fv!=3D""&&typeof =
+fv=3D=3D"function"){_fv=3Dnew =
+Function("if("+_fv+"()){_fvf=3D0;_hfc=3D1}");_EV(ff,"submit",_fv),_fvf=3D=
+1,_fa=3D1}=0A=
+g=3Dff.name?ff.name:"forms["+c+"]";for(h=3D0;h<_IL(e);h++){if(e[h].type&&=
+"hiddenbuttonsubmitimagereset".indexOf(e[h].type)<0&&d++>=3Df)break}if(d>=
+=3Df){_fa=3D1;=0A=
+for(h=3D0;h<_IL(e);h++){i=3De[h];if(i.type&&"hiddenbuttonsubmitimagereset=
+".indexOf(i.type)<0){i.lf=3Dg+".";i.lf+=3D(i.name&&i.name!=3D"")?i.name:"=
+elements["+h+"]";=0A=
+_EV(i,"focus",_FF)}}ff._FS=3Dnull;ff._FS=3Dff.onsubmit;if(_DD(ff._FS)&&ff=
+._FS!=3Dnull){ff.onsubmit=3D_FO}else =
+if(!(_bnN&&_bv<5)&&_hM&&!(_bnI&&!_I5)){if((!_bnI)||=0A=
+(_II(navigator.userAgent,"Opera")>-1)){ff.onsubmit=3D_FO}else{_EV(ff,"sub=
+mit",_FO);=0A=
+eval("try{document.forms["+c+"]._FS=3Ddocument.forms["+c+"].submit;docume=
+nt.forms["+c+"].submit=3D_FO;throw ''}catch(E){}")}}}}}=0A=
+function _GR(a,b,c,d){if(!_D("hrf"))return =
+a;if(_II(_hrf,"http",0)>-1)return =
+_hrf;b=3Dwindow.location.search;b=3D_IL(b)>1?_IS(b,1,_IL(b)):"";=0A=
+c=3D_II(b,_hrf+"=3D");if(c>-1){ =
+d=3D_II(b,"&",c+1);d=3Dd>c?d:_IL(b);b=3D_IS(b,c+_IL(_hrf)+1,d)}return(b!=3D=
+_hud&&_IL(b)>0)?b:a}=0A=
+function =
+_PO(a,b,c,d,e,f,g){d=3Dlocation,e=3Dd.pathname,f=3D_IS(e,_IF(e,"/")+1),g=3D=
+document.title;if(a&&b=3D=3Dc){return(_pndef=3D=3D"title"&&g!=3D""&&g!=3D=
+d&&=0A=
+!(_bnN&&_II(g,"http")>0))?g:f?f:_pndef}else{return =
+b=3D=3Dc?(e=3D=3D""||e=3D=3D"/")?"/":_IS(e,(_ctdef!=3D"full")?_IF(e,"/",_=
+IF(e,"/")-2):_II(e,"/"),_IF(e,"/"))=0A=
+:(b=3D=3D"/")?b:((_II(b,"/")?"/":"")+(_IF(b,"/")=3D=3D_IL(b)-1?_IS(b,0,_I=
+L(b)-1):b))}}=0A=
+function _PP(a,b,c,d){return =
+""+(c>-1?_PO(b,_IS(a,0,c),d)+";"+_PP(_IS(a,c+1),b,_II(_IS(a,c+1),";")):_P=
+O(b,a,d))}=0A=
+_mlc=3D_PP(_mlc,0,_II( =
+_mlc,";"),"CONTENT+CATEGORY");_pn=3D_PP(_pn,1,_II(_pn,";"),"PUT+PAGE+NAME=
++HERE");=0A=
+function _NN(a){return =
+_D(a)!=3D"none"}if(_NN("lt")){_LP(document.links,0)}=0A=
+function _E(a){var b=3D"";var d=3D_IP(a,",");for(var =
+c=3D0;c<_IL(d);c++)b+=3D"&"+d[c]+"=3D"+_A(_D(d[c]));return b}=0A=
+function =
+_F(a,b){return(!_II(a,"?"+b+"=3D"))?0:_II(a,"&"+b+"=3D")}function =
+_G(a,b,c,d){var =
+e=3D_F(a,b);if(d&&e<0&&top&&window!=3Dtop){e=3D_F(_tls,b);=0A=
+if(e>-1)a=3D_tls};return(e>-1)?_IS(a,e+2+_IL(b),(_II(a,"&",e+1)>-1)?_II(a=
+,"&",e+1):_IL(a)):c}=0A=
+function =
+_H(a,b,c){if(!a)a=3Dc;if(_I5||_N6){eval("try{_vv=3D_G(location.search,'"+=
+a+"','"+b+"',1)}"+__c+"{}")}else{_vv=3D_G(location.search,a,b,1)}return =
+unescape(_vv)}=0A=
+function =
+_I(a,b,c,d){__f=3D_IS(a,_II(a,"?"));if(b){if(_I5||_N6){eval("try{_hra=3D_=
+G(__f,_hqsr,_hra,0)}"+__c+"{}")}else{_hra=3D_G(__f,_hqsr,_hra,0)}};=0A=
+if(c&&!_hra){if(_I5||_N6){eval("try{_hra=3D_G(location.search,_hqsp,_hra,=
+1)}"+__c+"{}")}else{_hra=3D_G(location.search,_hqsp,_hra,1)}};=0A=
+if(d&&!_hra)_hra=3Dd;return _hra}function =
+_J(a,b,c,d){c=3D_II(a,"CP=3D");d=3D_II(a,b,c+3);return(c<0)?"null":_IS(a,=
+c+3,(d<0)?_IL(a):d)}=0A=
+var =
+__r=3D".referrer",_rf=3D_A(eval("document"+__r)),_et=3D0,_oe=3D0,_we=3D0,=
+_ar=3D"",_hM=3D(!(_II(navigator.userAgent,"Mac")>-1)),_tls=3D"";=0A=
+_bv=3DparseInt(navigator.appVersion);_bv=3D(_bv>99)?(_bv/100):_bv;var =
+__f,_hrat=3D_D("hra"),_hra=3D"",__c=3D"catch(_e)",_hbi=3Dnew =
+Image(),_fa=3D0,_hlfs=3D0,_hoc=3D0,=0A=
+_hlf=3D'',_ce=3D'',_ln=3D'',_pl=3D'',_bn=3Dnavigator.appName,_bn=3D(_II(_=
+bn,"Microsoft")?_bn:"MSIE"),_bnN=3D(_bn=3D=3D"Netscape"),_bnI=3D(_bn=3D=3D=
+"MSIE"),=0A=
+_hck=3D"*; path=3D/; "+(_D("cpd")&&_D("cpd")!=3D""?(" =
+domain=3D."+_D("cpd")+"; =
+"):"")+_ex,_N6=3D(_bnN&&_bv>4),_I5=3Dfalse,_ss=3D"na",_sc=3D"na",_sv=3D11=
+,_cy=3D"u",_hp=3D"u",=0A=
+_tp=3D_D("ptc");if(_bn=3D=3D"MSIE"){var =
+_nua=3Dnavigator.userAgent,_is=3D_II(_nua,_bn),_if=3D_II(_nua,".",_is);if=
+(_if>_is)_I5=3D_nua.substring(_is+5,_if)>=3D5}=0A=
+if(_N6||_I5)eval("try{_tls=3Dtop.location.search}catch(_e){}")=0A=
+function =
+_PV(){_dcmpe=3D_H(_D("dcmpe"),_D("dcmpe"),"DCMPE");_dcmpre=3D_H(_D("dcmpr=
+e"),_D("dcmpre"),"DCMPRE");_vv=3D"";_cmp=3D_H(_D("cmpn"),_D("cmp"),"CMP")=
+;=0A=
+_gp=3D_H(_D("gpn"),_D("gp"),"GP");_dcmp=3D_H(_D("dcmpn"),_D("dcmp"),"DCMP=
+");if(_II(_cmp,"SFS-")>-1){document.cookie=3D"HBCMP=3D"+_cmp+"; =
+path=3D/;"+=0A=
+(_D("cpd")&&_D("cpd")!=3D""?(" domain=3D."+_D("cpd")+"; =
+"):"")+_ex}if(_bnI&&_bv>3)_ln=3Dnavigator.userLanguage;=0A=
+if(_bnN){if(_bv>3)_ln=3Dnavigator.language;if(_bv>2)for(var =
+i=3D0;i<_IL(navigator.plugins);i++)_pl+=3Dnavigator.plugins[i].name+":"};=
+_cp=3D_D("cp");=0A=
+if(location.search&&_TL(_cp)=3D=3D"null")_cp=3D_J(location.search,"&");if=
+(_II(document.cookie,"CP=3D")>-1){=0A=
+_ce=3D"y";_hd=3D_J(document.cookie,"*");if(_TL(_hd)!=3D"null"&&_cp=3D=3D"=
+null"){_cp=3D_hd}else{document.cookie=3D"CP=3D"+_cp+_hck}}else{document.c=
+ookie=3D"CP=3D"+_cp+_hck;=0A=
+_ce=3D(_II(document.cookie,"CP=3D")>-1)?"y":"n"};if(window.screen){_sv=3D=
+12;_ss=3Dscreen.width+"*"+screen.height;_sc=3D_bnI?screen.colorDepth:scre=
+en.pixelDepth;=0A=
+if(_sc=3D=3D_hud)_sc=3D"na"};_ra=3D_NA();if(_ra.toSource||(_bnI&&_ra.shif=
+t))_sv=3D13;if(_I5&&_hM){if(_II(""+navigator.appMinorVersion,"Privacy")>-=
+1)_ce=3D"p";=0A=
+if(document.body&&document.body.addBehavior){document.body.addBehavior("#=
+default#homePage");_hp=3Ddocument.body.isHomePage(location.href)?"y":"n";=0A=
+document.body.addBehavior("#default#clientCaps");_cy=3Ddocument.body.conn=
+ectionType}};var =
+_hcc=3D(_DD(_hcn))?_D("hcv"):"";if(!_D("gn"))_gn=3D"ehg.hitbox.com";=0A=
+if(_D("ct")&&!_D("mlc"))_mlc=3D_ct;_ar=3D_GP()+_gn+"/HG?hc=3D"+_mn+"&hb=3D=
+"+_A(_acct)+"&cd=3D1&hv=3D6&n=3D"+_A(_pn,1)+"&con=3D&vcon=3D"+_A(_mlc,1)+=
+"&tt=3D"+_D("lt")+=0A=
+"&ja=3D"+(navigator.javaEnabled()?"y":"n")+"&dt=3D"+(new =
+Date()).getHours()+"&zo=3D"+(new =
+Date()).getTimezoneOffset()+"&lm=3D"+Date.parse(document.lastModified)=0A=
++(_tp?("&pt=3D"+_tp):"")+_E((_bnN?"bn,":"")+"ce,ss,sc,sv,cy,hp,ln,vpc,vjs=
+,hec,pec,cmp,gp,dcmp,dcmpe,dcmpre,cp,fnl")+"&seg=3D"+_D("seg")+"&epg=3D"+=
+_D("epg")+=0A=
+"&cv=3D"+_A(_hcc)+"&gn=3D"+_A(_D("hcn"))+"&ld=3D"+_A(_D("hlt"))+"&la=3D"+=
+_A(_D("hla"))+"&c1=3D"+_A(_D("hc1"))+"&c2=3D"+_A(_D("hc2"))+"&c3=3D"+_A(_=
+D("hc3"))+"&c4=3D"+=0A=
+_A(_D("hc4"))+"&customerid=3D"+_A(_D("ci")?_ci:_D("cid"))+"&lv.id=3D"+_lv=
+.id+"&lv.pos=3D"+_lv.pos+"&ttt=3D"+_lidt+","+_lpost;=0A=
+if(_I5||_N6){eval("try{_rf=3D_A(top.document"+__r+")+''}"+__c+"{_rf=3D_A(=
+document"+__r+")+''}")}=0A=
+else{if(top.document&&_IL(parent.frames)>1){_rf=3D_A(eval("document"+__r)=
+)+""}else =
+if(top.document){_rf=3D_A(eval("top.document"+__r))+""}}if((_rf=3D=3D_hud=
+)||=0A=
+(_rf=3D=3D""))_rf=3D"bookmark";_rf=3Dunescape(_rf);_rf=3D_GR(_rf);_hra=3D=
+_I(_rf,_D("hqsr"),_D("hqsp"),_hrat);_ar+=3D"&ra=3D"+_A(_hra)+"&rf=3D"+_A(=
+_IS(_rf,0,500))+=0A=
+"&pl=3D"+_A(_pl)+_hbSendEV();if(_D("onlyMedia")!=3D"y")_hbi.src=3D_ar+"&h=
+id=3D"+Math.random();_hbq=3D_IS(_ar,0,_II(_ar,"&hec"));_hbE=3D_NA()}_PV()=
+;=0A=
+function _Q(a){var b=3D"";b=3Dnew =
+Image();b.src=3Da+"&hid=3D"+Math.random()}=0A=
+function =
+__X(a){if(_ec=3D=3D0){_ec=3D1;a=3Ddocument;if(_NN("lt")||_NN("dlf")||_NN(=
+"elf")){_LP(a.links,1)}if(_NN("fv"))_FA(a)}}=0A=
+function =
+_EV(a,b,c){if(a.addEventListener){a.addEventListener(b,c,false)}else =
+if(a.attachEvent){a.attachEvent("on"+b,c)}}=0A=
+function _EVO(e){return document.all?window.event.srcElement:this} =0A=
+_EV(window,"load",__X);_EV(window,"unload",_FU);eval('setTimeout("__X()",=
+3000)');
+------=_NextPart_000_0000_01C75CE4.58C801B0--

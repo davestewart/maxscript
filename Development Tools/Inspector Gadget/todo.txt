@@ -1,0 +1,15 @@
+mxs / .net expression / path / array of path instances
+Copy / paste properties + instances, etc 
+Attempt  copy/paste sub properties
+Parse methods / events of selected item and load into new list, or perhaps a right-click menu
+Then, pass all properties to method and see what happens
+Pick object button
+Create soft instances!?
+"Inspect object with Inspector Gadget" option in context menu
+Create Help pages
+Make examples page a new HTML page that people can edit themselves
+Alternatively, make it a separate examples.ms with its own functions and menu system
+Add a top menu with Scene, Materials, .net, etc
+Context-sensitive help on items, ie System.IO.FilesystemWatcher takes you to the msdn page
+Maybe read it into a pane?
+Test function

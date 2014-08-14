@@ -1,0 +1,15 @@
+[name]
+name=Spill Suppressor
+matchName=ADBE Spill Suppressor
+
+[properties]
+name=	Color To Suppress
+type=	COLOR
+
+name=	Color Accuracy
+type=	OneD
+
+name=	Suppression
+type=	OneD
+
+

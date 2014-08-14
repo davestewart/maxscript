@@ -1,0 +1,36 @@
+rollout r1 "Flash Load Bitmap Test" width:312 height:344
+(
+	-- interface
+		ActiveXControl ax "{D27CDB6E-AE6D-11CF-96B8-444553540000}" pos:[8,8] width:296 height:300
+		button btn1 "Load Image 1" pos:[8,312] width:144 height:24
+		button btn2 "Load Image 2" pos:[160,312] width:144 height:24
+	
+	-- variables
+	
+		/* BE SURE TO EDIT THIS PATH! */
+		local flashPath	="E:/03_Scripting/maxScript/max 8/Flash load bitmap/"
+		
+	-- functions
+		fn flashLoadBitmap bmp =
+			(
+			ax.SetVariable "bitmap" (flashPath + bmp)
+			ax.TCallLabel "_root" "loadBitmap"
+			)
+	
+	-- handlers
+		on r1 open do
+			(
+			ax.movie		= flashPath + "loadBitmap.swf" -- flash movie
+			ax.Scale		= "NoScale" -- no scale
+			ax.SAlign		= "TL" -- top left
+			ax.Menu			= false
+			)
+
+		on btn1 pressed do flashLoadBitmap "bitmap1.jpg"
+		on btn2 pressed do flashLoadBitmap "bitmap2.jpg"
+	
+)
+
+destroydialog r1
+createdialog r1
+

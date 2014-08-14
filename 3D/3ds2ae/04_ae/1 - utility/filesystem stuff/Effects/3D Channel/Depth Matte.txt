@@ -1,0 +1,15 @@
+[name]
+name=Depth Matte
+matchName=ADBE DEPTH MATTE
+
+[properties]
+name=	Depth
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+name=	Invert
+type=	OneD
+
+

@@ -1,0 +1,12 @@
+[name]
+name=Polar Coordinates
+matchName=ADBE Polar Coordinates
+
+[properties]
+name=	Interpolation
+type=	OneD
+
+name=	Type of Conversion
+type=	OneD
+
+

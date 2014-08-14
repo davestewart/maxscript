@@ -1,0 +1,27 @@
+[name]
+name=Extract
+matchName=ADBE Extract
+
+[properties]
+name=	Histogram
+type=	NO_VALUE
+
+name=	Channel
+type=	OneD
+
+name=	Black Point
+type=	OneD
+
+name=	White Point
+type=	OneD
+
+name=	Black Softness
+type=	OneD
+
+name=	White Softness
+type=	OneD
+
+name=	Invert
+type=	OneD
+
+

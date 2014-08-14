@@ -1,0 +1,6 @@
+name "Inspector Gadget"
+description "Allows you to inspect and edit any property"
+version "1.0"
+
+run "iterators 02.ms"
+run "inspector gadget 06.ms"

@@ -1,0 +1,96 @@
+.body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #CCCCCC;
+	text-decoration: none;
+	list-style-position: outside;
+	list-style-image: url(images/bullet.jpg);
+	list-style-type: circle;
+	line-height: normal;
+
+
+
+}
+.headerOne {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bolder;
+	color: #FFFFFF;
+}
+.HeaderSmall {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: normal}
+.boldBody {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #FFFFFF}
+.boldSmalHeader {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: bold}
+.bodyBlack {  color: #000000; font-family: Arial, Helvetica, sans-serif}
+.bodyItalic {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #CCCCCC;
+	font-style: italic;
+
+}
+.bodyList {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #CCCCCC;
+	text-decoration: none;
+	list-style-position: outside;
+	list-style-type: circle;
+	list-style-image: url(images/bullet.jpg);
+
+
+
+
+}
+.bordered {
+	background-color: #006699;
+}
+.boldBodyRED {
+	color: #FF0000;
+	font-size: 11px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+
+
+}
+.bodyBoldSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+
+}
+.bodyBoldSmallGreen {
+	color: #009966;
+	font-weight: bold;
+}
+.bodyBigger {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #CCCCCC;
+	text-decoration: none;
+	list-style-position: outside;
+	list-style-image: url(images/bullet.jpg);
+	list-style-type: circle;
+}
+.boldBodyUnderlined {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: underline;
+
+}
+.bodyItalicbigger {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #CCCCCC;
+	font-style: italic;
+}

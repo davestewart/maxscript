@@ -1,0 +1,203 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: BFF
+Date: Fri, 5 Nov 2004 19:52:48 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.scriptspot.com/bobo/darkmoon/bff/using.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1441
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>BFF</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2800.1476" name=3DGENERATOR>
+<META content=3D"Borislav Petrov" name=3DAuthor></HEAD>
+<BODY text=3D#ffffff vLink=3D#c0c0c0 aLink=3D#ff0000 link=3D#99ccff=20
+bgColor=3D#000000>&nbsp;=20
+<DIV align=3Dleft>
+<TABLE height=3D215 width=3D636 align=3Dleft border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <H1><FONT face=3D"Times New Roman" size=3D+4><I>BFF=20
+Usage</I></FONT></H1></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#006666 height=3D21><B><FONT=20
+      face=3DArial,Helvetica>INSTALLING BFF</FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104>
+      <UL>
+        <LI><FONT face=3DArial,Helvetica>Copy the ZIP distribution file =
+to any=20
+        directory that is NOT listed in the 3ds max Plugins paths or =
+Startup=20
+        scripts settings.</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>Unzip the distribution file =
+</FONT>
+        <LI><FONT face=3DArial,Helvetica>Launch 3ds max - version 4, 5 =
+or 6</FONT>=20
+
+        <LI><FONT face=3DArial,Helvetica>Go to Main =
+Menu&gt;MAXScript&gt;Run=20
+        Script...</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>Find and select the BFF .ms =
+file </FONT>
+        <LI><FONT face=3DArial,Helvetica>Go to Main =
+Menu&gt;Customize&gt;Customize=20
+        User Interface...</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>In the Toolbars tab, locate the =
+Category=20
+        "Bobo_s Tools"</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>Drag the entry "BFF_Exporter" =
+to a=20
+        toolbar.</FONT> </LI></UL></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#006666 height=3D21><B><FONT=20
+      face=3DArial,Helvetica>EXPORTING A SCENE USING =
+BFF</FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104>
+      <UL>
+        <LI><FONT face=3DArial,Helvetica>Press the button on the toolbar =
+to open=20
+        the Exporter dialog.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>The dialog provides options to =
+export or=20
+        skip specific object classes. Check the ones you want to export. =
+
+        Usually, you will just leave these settings to their=20
+        defaults.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>The Preferences group lets you =
+control=20
+        some additional features: </FONT>
+        <UL>
+          <LI><FONT face=3DArial,Helvetica>Check "Collapse Stack" to =
+force stack=20
+          collapsing. Generally, BFF will collapse most objects to =
+Editable Mesh=20
+          as it does not support most modifiers. Some objects can =
+preserve their=20
+          modifier stack though, for example a Box or Sphere primitive =
+or a Text=20
+          shape with an Extrude modifier on top will be exported =
+correclty=20
+          preserving the stack. Checking this option will force BFF to =
+export=20
+          even these objects as meshes.<BR>&nbsp;</FONT>=20
+          <LI><FONT face=3DArial,Helvetica>Uncheck the "Animation" =
+button to=20
+          disallow the export of Postion/Rotation and Scale animation=20
+          controllers.<BR>&nbsp; </FONT>
+          <LI><FONT face=3DArial,Helvetica>Uncheck the "Material Editor" =
+button to=20
+          disable the export of the 24 Material Editor =
+materials.<BR>&nbsp;=20
+          </FONT>
+          <LI><FONT face=3DArial,Helvetica>Check the "ZIP Archive" =
+button to=20
+          create a ZIP file containing all exported files. The files =
+will NOT be=20
+          deleted from the disk, so you will end up with a ZIPped and =
+regular=20
+          version of the export. You can use the ZIP file to copy to =
+another=20
+          machine and import there.<BR>&nbsp; </FONT>
+          <LI><FONT face=3DArial,Helvetica>Uncheck the "Progress Report" =
+button to=20
+          disable the progress dialog which appears when importing. This =
+might=20
+          be useful when exporting to MAX 2.5 which does not support the =
+
+          features of the progress dialog.<BR>&nbsp; </FONT>
+          <LI><FONT face=3DArial,Helvetica>Check the "Selected Only" =
+button to=20
+          export only the selected portions of the scene.<BR>&nbsp;=20
+        </FONT></LI></UL>
+        <LI><FONT face=3DArial,Helvetica>To export the current scene, =
+press the=20
+        "EXPORT SCENE" resp. "EXPORT SELECTED OBJECTS" button. A file =
+selection=20
+        dialog will open. Enter the name of the export file to write to =
+and=20
+        press the "Save" button. You can export to any directory you =
+want. Note=20
+        that a number of sub-directories will be created at the target =
+path to=20
+        accomodate all exported data.</FONT>
+        <P> </P></LI></UL></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#006666 height=3D21><B><FONT=20
+      face=3DArial,Helvetica>IMPORTING A BFF SCENE </FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104>
+      <UL>
+        <LI><FONT face=3DArial,Helvetica>You don't need an importer - =
+the BFF=20
+        export generates a set of MAXScript files and BFF data files =
+which=20
+        already include the necessary importer code. This also means =
+that while=20
+        the results from different BFF exporter versions might look and =
+work=20
+        differently, they will always import correctly and are =
+independent of=20
+        future changes to the file format.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>You can import the scene in any =
+3ds max=20
+        version - 3.x, 4.x, 5.x or 6. (2.5 is only partially supported =
+when no=20
+        Progress Dialog info is included). Only the objects and data =
+supported=20
+        by the target platform will be imported, the rest will be =
+skipped. For=20
+        example, you cannot import texture coordinates to 2.5 at all and =
+only=20
+        using a DLX extension to 3.x<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>To import a scene, go to Main=20
+        Menu&gt;MAXScript&gt;Run Script.... and select the base .MS file =
+
+        exported by BFF. This will set the current directory to the path =
+the=20
+        base file is located in and will ensure the import can proceed =
+through=20
+        all other files. Trying to evaluate a base .MS file without =
+using the=20
+        Run Script... dialog might lead to incomplete imports.<BR>&nbsp; =
+</FONT>
+        <LI><FONT face=3DArial,Helvetica>A Reset Scene prompt will =
+appear - if you=20
+        want to merge the scene with your current scene, press No. If =
+you want=20
+        to replace the scene, select Yes.<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>A progress dialog will open (as =
+long as=20
+        it has been included on export) showing you information about =
+the=20
+        importing process. Tasks will be marked with &gt;, success =
+messages with=20
+        +. failure messages with --, warnings with !!<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica><B>NOTE</B>: In order to import =
+texture=20
+        coordinates to 3D Studio MAX R3.x, you will need to install an=20
+        additional MAXScript Extension - <A=20
+        =
+href=3D"http://www.scriptspot.com/Extensions/Wads/Wad-O-Extensions!-v3_2/=
+MAXr3Scripts-Extensions-SimonFeltman-MultiMap.zip">MultiMap=20
+        DLX by Simon Feltman</A>. BFF will try both the 3ds max 4 =
+mapping=20
+        methods and the R3 MultiMap methods and use the one that works =
+without=20
+        additionally checking the current software version. If the DLX =
+is not=20
+        installed under R3, no texture mapping coordinates will be=20
+        imported!</FONT> </LI></UL></TD></TR></TBODY></TABLE></DIV><BR>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

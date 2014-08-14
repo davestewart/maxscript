@@ -1,0 +1,27 @@
+[name]
+name=Fill
+matchName=ADBE Fill
+
+[properties]
+name=	Fill Mask
+type=	MASK_INDEX
+
+name=	All Masks
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Invert
+type=	OneD
+
+name=	Horizontal Feather
+type=	OneD
+
+name=	Vertical Feather
+type=	OneD
+
+name=	Opacity
+type=	OneD
+
+

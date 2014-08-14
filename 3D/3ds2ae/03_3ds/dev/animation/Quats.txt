@@ -1,0 +1,53 @@
+From: scottgodfrey@cox.net
+Sent: 28 September 2004 15:48
+To: dave@davestewart.co.uk
+Subject: Quats
+
+This is what we have codewise.  Probably can't help any further.  They create a rotation matrix from the quat but swap elements 4,5,6 to 8,9,10. In one case an axis had to be rotated 180 degrees (pi) in order to get it to be right.  Probably real easy if you know matrices, but at this point I don't.
+
+void tQuaternion::mConvertToMatrix (tMatrix &matrix) const
+{
+	float xx = fX * fX;
+	float xy = fX * fY;
+	float xz = fX * fZ;
+	float xw = fX * fW;
+
+	float yy = fY * fY;
+	float yz = fY * fZ;
+	float yw = fY * fW;
+
+	float zz = fZ * fZ;
+	float zw = fZ * fW;
+
+	tMtx4x4 &mat4x4 = matrix.mGetMtx4x4 ();
+	float *theMatrix = (float *)(&mat4x4);
+	theMatrix[0] = 1.f - 2.f * (yy + zz);
+	theMatrix[1] = 2.f * (xy - zw);
+	theMatrix[2] = 2.f * (xz + yw);
+
+	theMatrix[4] = 2.f * (xy + zw);
+	theMatrix[5] = 1.f - 2.f * (xx + zz);
+	theMatrix[6] = 2.f * (yz - xw);
+
+	theMatrix[8] = 2.f * (xz - yw);
+	theMatrix[9] = 2.f * (yz + xw);
+	theMatrix[10] = 1.f - 2.f * (xx + yy);
+	theMatrix[3] = theMatrix[7] = theMatrix[11] = theMatrix[12] = theMatrix[13] = theMatrix[14] = 0.f;
+	theMatrix[15] = 1.0f;
+}
+
+
+Point3 gGetDirectionFromMaxQuaternion(const tQuaternion &rotation) {
+	tMatrix temp;
+	rotation.mConvertMaxQuatToMatrix (temp);
+	temp.mRotYRadians(kPi);
+	tMtx4x4 &mat4x4 = temp.mGetMtx4x4 ();
+	tPoint3 lookAtPoint;
+	float *theMatrix = (float *)(&mat4x4);
+	lookAtPoint.mSet(theMatrix[2], theMatrix[6], theMatrix[10]);
+	lookAtPoint.mNormalize();
+	return lookAtPoint;
+}
+
+
+

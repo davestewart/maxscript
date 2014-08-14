@@ -1,0 +1,15 @@
+[name]
+name=Twirl
+matchName=ADBE Twirl
+
+[properties]
+name=	Angle
+type=	OneD
+
+name=	Twirl Radius
+type=	OneD
+
+name=	Twirl Center
+type=	TwoD_SPATIAL
+
+

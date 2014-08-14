@@ -1,0 +1,12 @@
+[name]
+name=Simple Choker
+matchName=ADBE Simple Choker
+
+[properties]
+name=	View
+type=	OneD
+
+name=	Choke Matte
+type=	OneD
+
+

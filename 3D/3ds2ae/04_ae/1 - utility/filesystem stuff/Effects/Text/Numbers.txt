@@ -1,0 +1,60 @@
+[name]
+name=Numbers
+matchName=ADBE Numbers2
+
+[properties]
+name=	Format
+type=	NO_VALUE
+
+name=	Type
+type=	OneD
+
+name=	Random Values
+type=	OneD
+
+name=	Value/Offset/Random Max
+type=	OneD
+
+name=	Decimal Places
+type=	OneD
+
+name=	Current Time/Date
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Fill and Stroke
+type=	NO_VALUE
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Display Options
+type=	OneD
+
+name=	Fill Color
+type=	COLOR
+
+name=	Stroke Color
+type=	COLOR
+
+name=	Stroke Width
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Size
+type=	OneD
+
+name=	Tracking
+type=	OneD
+
+name=	Proportional Spacing
+type=	OneD
+
+name=	Composite On Original
+type=	OneD
+
+

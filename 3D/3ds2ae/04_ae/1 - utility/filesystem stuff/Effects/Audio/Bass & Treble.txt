@@ -1,0 +1,12 @@
+[name]
+name=Bass & Treble
+matchName=ADBE Aud BT
+
+[properties]
+name=	Bass
+type=	OneD
+
+name=	Treble
+type=	OneD
+
+

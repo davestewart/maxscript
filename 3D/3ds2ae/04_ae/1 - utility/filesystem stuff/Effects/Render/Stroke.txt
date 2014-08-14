@@ -1,0 +1,39 @@
+[name]
+name=Stroke
+matchName=ADBE Stroke
+
+[properties]
+name=	Path
+type=	MASK_INDEX
+
+name=	All Masks
+type=	OneD
+
+name=	Stroke Sequentially
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Brush Size
+type=	OneD
+
+name=	Brush Hardness
+type=	OneD
+
+name=	Opacity
+type=	OneD
+
+name=	Start
+type=	OneD
+
+name=	End
+type=	OneD
+
+name=	Spacing
+type=	OneD
+
+name=	Paint Style
+type=	OneD
+
+

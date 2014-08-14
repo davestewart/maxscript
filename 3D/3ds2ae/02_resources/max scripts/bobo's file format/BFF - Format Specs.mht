@@ -1,0 +1,239 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: BFF
+Date: Fri, 5 Nov 2004 19:53:05 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.scriptspot.com/bobo/darkmoon/bff/specs.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1441
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>BFF</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2800.1476" name=3DGENERATOR>
+<META content=3D"Borislav Petrov" name=3DAuthor></HEAD>
+<BODY text=3D#ffffff vLink=3D#c0c0c0 aLink=3D#ff0000 link=3D#c0c0c0=20
+bgColor=3D#000000>&nbsp;=20
+<DIV align=3Dleft>
+<TABLE height=3D215 width=3D636 align=3Dleft border=3D0>
+  <TBODY>
+  <TR>
+    <TD width=3D628 height=3D21><I><B><FONT face=3D"Times New Roman" =
+size=3D7>BFF -=20
+      Format Specs</FONT></B></I></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT=20
+      face=3DArial,Helvetica>GENERAL INFORMATION</FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104>
+      <UL>
+        <LI><FONT face=3DArial,Helvetica>The BFF Export format is =
+self-contained=20
+        and requires no importer. It is currently under development and =
+will=20
+        change constantly from version to version as new features are=20
+        implemented.&nbsp;<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>BFF writes a MAXScript (.ms) =
+file with=20
+        user-specified name to the desired location.<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>The file contains the basic =
+scene=20
+        information, material definition and calls to load every single =
+scene=20
+        object (new in 0.4.0). Now you can remark single lines to =
+disable=20
+        specific objects manually!<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>The file will start with =
+remarks about=20
+        the source scene and max version, date and time of export etc. =
+The file=20
+        will contain further remarks to make reading and editing the =
+scene by=20
+        hand easier.&nbsp;<BR>&nbsp;&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>Materials are exported first. =
+Instanced=20
+        materials are exported just once and referenced by all objects =
+that use=20
+        them. A material contains the whole tree including sub-materials =
+and=20
+        maps. New in 0.4.0 - all 24 Material Editor materials can be =
+included in=20
+        the export.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>Objects and their properties, =
+their=20
+        modifiers with their properties and general object properties =
+are=20
+        written out next to single .ms files in the sub-folder /Objects. =
+These=20
+        .ms files are referenced by the main .ms file.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>At the end of the main file, =
+hierarchy=20
+        linking information will be stored if =
+available.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>When an Editable Mesh has to be =
+exported,=20
+        a new sub-folder "Meshes" will be created. An external .BFF file =
+will be=20
+        written to that directory. It will have the name of the exported =
+object.=20
+        This file will be referenced by the respective .ms object file. =
+The .BFF=20
+        file is an ASCII data file with detailed remarks. It can be =
+edited by=20
+        hand when needed. See below for an actual file =
+example.<BR>&nbsp;</FONT>=20
+
+        <LI><FONT face=3DArial,Helvetica>When a SplineShape has to be =
+expored, a=20
+        new sub-folder "Splines" will be created. An external .BFF file =
+will be=20
+        written to that directory. Name and content are similar to the =
+mesh file=20
+        but describe a Spline Shape. See below for an actual file=20
+        example.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>When a Mesh or SplineShape =
+object is=20
+        exported for the first time, a set of importer functions will be =
+written=20
+        out. These functions will be used to read back the external =
+data. These=20
+        functions are basically a built-in importer =
+module.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>When any of the external files =
+is missing=20
+        during import, the object will not be imported.<BR>&nbsp;</FONT> =
+
+        <LI><FONT face=3DArial,Helvetica>Every exported code line will =
+be enclosed=20
+        in error trapping code. When the line cannot be evaluated by the =
+
+        importing platform (because it is not supported by MAXScript on =
+the=20
+        respective 3ds max version, or because a plug-in is missing), =
+the=20
+        respective information will be skipped and not imported.</FONT>=20
+    </LI></UL></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT=20
+      face=3DArial,Helvetica>SAMPLE MESH DEFINITION .BFF FILE =
+</FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#ffffff height=3D104><FONT =
+face=3DArial,Helvetica><FONT=20
+      =
+color=3D#008000>---------------------------------------------------------=
+----------<BR>--=20
+      BFF Mesh Definition For [Box01]<BR>-- Version 0.4.0 - 09/20/2003 =
+<BR>--=20
+      Exporter by Borislav 'Bobo' Petrov <BR>-- =
+http://www.scriptspot.com/bobo/=20
+      =
+<BR>-------------------------------------------------------------------<B=
+R>--=20
+      SOURCE SCENE NAME: [Untitled] <BR>-- EXPORT DATE: [21.09.2003 =
+13:15:37]=20
+      <BR>-- SOURCE VERSION: [5.1]=20
+      =
+<BR>-------------------------------------------------------------------<B=
+R></FONT><FONT=20
+      color=3D#000000>8</FONT><FONT color=3D#008000> --Vertex =
+Count<BR></FONT><FONT=20
+      color=3D#000000>12</FONT><FONT color=3D#008000> --Face =
+Count<BR></FONT><FONT=20
+      color=3D#000000>1</FONT><FONT color=3D#008000> --Supported Texture =
+Channels=20
+      Count<BR></FONT><FONT color=3D#000000>1</FONT><FONT =
+color=3D#008000> --Texture=20
+      Channel Number<BR></FONT><FONT color=3D#000000>12 </FONT><FONT=20
+      color=3D#008000>--Texture Vertex Count <BR></FONT><FONT =
+color=3D#000000>12=20
+      </FONT><FONT color=3D#008000>--Texture Faces Count =
+<BR></FONT><FONT=20
+      color=3D#000000>2 </FONT><FONT color=3D#008000>--Available Texture =
+
+      Channels<BR>--VERTEX LIST:<BR></FONT><FONT color=3D#000000>1,=20
+      [-12.7147,-11.5897,0]<BR>2, [12.7147,-11.5897,0]<BR>3,=20
+      [-12.7147,11.5897,0]<BR>4, [12.7147,11.5897,0]<BR>5,=20
+      [-12.7147,-11.5897,32.9405]<BR>6, [12.7147,-11.5897,32.9405]<BR>7, =
+
+      [-12.7147,11.5897,32.9405]<BR>8, =
+[12.7147,11.5897,32.9405]</FONT><FONT=20
+      color=3D#008000><BR>--FACE LIST IN FORMAT<BR>--Index FaceDef MatID =
+
+      SmoothingGroup Edge1 Edge2 Egde3<BR></FONT><FONT =
+color=3D#000000>1, [1,3,4],=20
+      2, 2, true, true, false <BR>2, [4,2,1], 2, 2, true, true, false =
+<BR>3,=20
+      [5,6,8], 1, 4, true, true, false <BR>4, [8,7,5], 1, 4, true, true, =
+false=20
+      <BR>5, [1,2,6], 5, 8, true, true, false <BR>6, [6,5,1], 5, 8, =
+true, true,=20
+      false <BR>7, [2,4,8], 4, 16, true, true, false <BR>8, [8,6,2], 4, =
+16,=20
+      true, true, false <BR>9, [4,3,7], 6, 32, true, true, false <BR>10, =
+
+      [7,8,4], 6, 32, true, true, false <BR>11, [3,1,5], 3, 64, true, =
+true,=20
+      false <BR>12, [5,7,3], 3, 64, true, true, false </FONT><FONT=20
+      color=3D#008000><BR>--TEXTURE VERTEX LIST FOR CHANNEL =
+0<BR></FONT><FONT=20
+      color=3D#000000>1, [0,0,0]<BR>2, [1,0,0]<BR>3, [0,1,0]<BR>4, =
+[1,1,0]<BR>5,=20
+      [0,0,0]<BR>6, [1,0,0]<BR>7, [0,1,0]<BR>8, [1,1,0]<BR>9, =
+[0,0,0]<BR>10,=20
+      [1,0,0]<BR>11, [0,1,0]<BR>12, [1,1,0]</FONT><FONT=20
+      color=3D#008000><BR>--TEXTURE FACES LIST FOR CHANNEL =
+0<BR></FONT><FONT=20
+      color=3D#000000>1, [10,12,11]<BR>2, [11,9,10]<BR>3, =
+[9,10,12]<BR>4,=20
+      [12,11,9]<BR>5, [5,6,8]<BR>6, [8,7,5]<BR>7, [1,2,4]<BR>8, =
+[4,3,1]<BR>9,=20
+      [5,6,8]<BR>10, [8,7,5]<BR>11, [1,2,4]<BR>12, [4,3,1]</FONT><FONT=20
+      color=3D#008000><BR>-----------------<BR>-- End Of File=20
+      =
+--<BR>-----------------<BR><BR></FONT>-----------------</FONT></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT=20
+      face=3DArial,Helvetica>SAMPLE SPLINE DEFINITION .BFF FILE =
+</FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#ffffff height=3D104><FONT =
+face=3DArial,Helvetica><FONT=20
+      =
+color=3D#008000>---------------------------------------------------------=
+----------<BR>--=20
+      BFF Spline Definition For [Line01]<BR>-- Version 0.4.1 - =
+09/22/2003 <BR>--=20
+      Exporter by Borislav 'Bobo' Petrov <BR>-- =
+http://www.scriptspot.com/bobo/=20
+      =
+<BR>-------------------------------------------------------------------<B=
+R>--=20
+      SOURCE SCENE NAME: [Untitled] <BR>-- EXPORT DATE: [22.09.2003 =
+04:03:24]=20
+      <BR>-- SOURCE VERSION: [5.1]=20
+      =
+<BR>-------------------------------------------------------------------</=
+FONT><BR><FONT=20
+      color=3D#000000>1</FONT><FONT color=3D#008000> --Spline =
+Count</FONT><FONT=20
+      color=3D#000000><BR>4 </FONT><FONT color=3D#008000>--Spline Knot=20
+      Count</FONT><FONT color=3D#000000><BR>false </FONT><FONT=20
+      color=3D#008000>--Spline Closed?</FONT><FONT =
+color=3D#000000><BR></FONT><FONT=20
+      color=3D#008000>--KNOT LIST FOR SPLINE 1</FONT><FONT =
+color=3D#000000><BR>1,=20
+      #corner, [-73.2207,-8.17267,0], [-73.2207,-8.17267,0],=20
+      [-57.064,23.1459,0]<BR>2, #bezier, [-22.1398,25.3922,0],=20
+      [-40.9072,54.4644,0], [-3.37238,-3.68002,0]<BR>3, #bezier,=20
+      [48.3506,-22.7013,0], [37.9584,-45.9921,0], =
+[58.7428,0.589452,0]<BR>4,=20
+      #corner, [47.0099,5.4818,0], [52.8763,3.03563,0],=20
+      [47.0099,5.4818,0]<BR></FONT><FONT =
+color=3D#008000>-----------------<BR>--=20
+      End Of File=20
+  =
+--<BR>-----------------<BR></FONT>-----------------</FONT></TD></TR></TBO=
+DY></TABLE></DIV><BR></BODY></HTML>

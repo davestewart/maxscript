@@ -1,0 +1,88 @@
+<scene>
+   <preferences warnings="true" useLoacalSpace="true"/>
+   <objects>
+      <layer class="camera, light, plane, text, shape" parent="" transferMode="" inPoint="" outPoint="" duration="" visible="" width="" height="">
+         <transform>
+            <position>
+               <key f="" x="" y="" z=""/>
+            </position>
+            <pointOfInterest>
+               <key f="" v=""/>
+            </pointOfInterest>
+            <rotation>
+               <key f="" x="" y="" z=""/>
+            </rotation>
+            <scale>
+               <key f="" x="" y="" z=""/>
+            </scale>
+            <anchorPoint>
+               <key f="" x="" y="" z=""/>
+            </anchorPoint>
+            <opacity/>
+         </transform>
+         <source url="" comment=""/>
+         <effect>
+            <property>
+               <key f="" v=""/>
+            </property>
+         </effect>
+         <mask mode="add" closed="true">
+            <vertex x="" x_in="" x_out="" y="" y_in="" y_out=""/>
+         </mask>
+         <materialOptions CastsShadows="" AcceptsShadows="" AcceptsLights="">
+            <Ambient>
+               <key f="" v=""/>
+            </Ambient>
+            <Diffuse>
+               <key f="" v=""/>
+            </Diffuse>
+            <Specular>
+               <key f="" v=""/>
+            </Specular>
+            <Shininess>
+               <key f="" v=""/>
+            </Shininess>
+            <Metal>
+               <key f="" v=""/>
+            </Metal>
+            <LightTransmission>
+               <key f="" v=""/>
+            </LightTransmission>
+         </materialOptions>
+      </layer>
+      <camera>
+         <options>
+            <Zoom>
+               <key f="" v=""/>
+            </Zoom>
+            <DepthOfField>
+               <key f="" v=""/>
+            </DepthOfField>
+            <Aperture>
+               <key f="" v=""/>
+            </Aperture>
+            <BlurLevel>
+               <key f="" v=""/>
+            </BlurLevel>
+         </options>
+      </camera>
+      <light>
+         <options>
+            <intensity>
+               <key f="" v=""/>
+            </intensity>
+            <color>
+               <key f="" r="" g="" b=""/>
+            </color>
+            <shadowDarkness>
+               <key f="" v=""/>
+            </shadowDarkness>
+         </options>
+      </light>
+   </objects>
+   <renders>
+      <footage source="" transferMode="">
+         <gBuffer n1="teapot" n2="sphere" n3="box"/>
+      </footage>
+   </renders>
+</scene>

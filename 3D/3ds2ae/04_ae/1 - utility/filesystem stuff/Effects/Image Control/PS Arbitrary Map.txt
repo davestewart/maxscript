@@ -1,0 +1,12 @@
+[name]
+name=PS Arbitrary Map
+matchName=ADBE PS Arbitrary Map
+
+[properties]
+name=	Phase
+type=	OneD
+
+name=	Apply Phase Map To Alpha
+type=	OneD
+
+

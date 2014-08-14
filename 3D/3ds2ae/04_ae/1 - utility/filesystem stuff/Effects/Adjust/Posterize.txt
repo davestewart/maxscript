@@ -1,0 +1,9 @@
+[name]
+name=Posterize
+matchName=ADBE Posterize
+
+[properties]
+name=	Level
+type=	OneD
+
+

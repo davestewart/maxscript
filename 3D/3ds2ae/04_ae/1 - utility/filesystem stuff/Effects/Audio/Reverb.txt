@@ -1,0 +1,24 @@
+[name]
+name=Reverb
+matchName=ADBE Aud Reverb
+
+[properties]
+name=	Reverb Time (ms)
+type=	OneD
+
+name=	Diffusion
+type=	OneD
+
+name=	Decay
+type=	OneD
+
+name=	Brightness
+type=	OneD
+
+name=	Dry Out
+type=	OneD
+
+name=	Wet Out
+type=	OneD
+
+

@@ -1,0 +1,34 @@
+Adobe After Effects 7.0 Keyframe Data
+
+	Units Per Second	25
+	Source Width	307
+	Source Height	307
+	Source Pixel Aspect Ratio	1
+	Comp Pixel Aspect Ratio	1
+
+Transform	Anchor Point
+	Frame	X pixels	Y pixels	Z pixels	
+	2	153.5	303.5	0	
+
+Transform	Position
+	Frame	X pixels	Y pixels	Z pixels	
+	2	120	275	0	
+
+Effects	Corner Pin #1	Upper Left #2
+	Frame	X pixels	Y pixels	
+	2	0	0	
+
+Effects	Corner Pin #1	Upper Right #3
+	Frame	X pixels	Y pixels	
+	2	307	0	
+
+Effects	Corner Pin #1	Lower Left #4
+	Frame	X pixels	Y pixels	
+	2	0	307	
+
+Effects	Corner Pin #1	Lower Right #5
+	Frame	X pixels	Y pixels	
+	2	307	307	
+
+
+End of Keyframe Data

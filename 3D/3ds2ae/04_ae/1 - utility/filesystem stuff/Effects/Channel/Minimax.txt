@@ -1,0 +1,18 @@
+[name]
+name=Minimax
+matchName=ADBE Minimax
+
+[properties]
+name=	Operation
+type=	OneD
+
+name=	Radius
+type=	OneD
+
+name=	Channel
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+

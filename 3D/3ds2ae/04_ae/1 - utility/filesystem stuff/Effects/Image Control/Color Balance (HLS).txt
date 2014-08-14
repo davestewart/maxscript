@@ -1,0 +1,15 @@
+[name]
+name=Color Balance (HLS)
+matchName=ADBE Color Balance (HLS)
+
+[properties]
+name=	Hue
+type=	OneD
+
+name=	Lightness
+type=	OneD
+
+name=	Saturation
+type=	OneD
+
+

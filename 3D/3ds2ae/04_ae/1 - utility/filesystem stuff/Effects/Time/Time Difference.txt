@@ -1,0 +1,21 @@
+[name]
+name=Time Difference
+matchName=ADBE Difference
+
+[properties]
+name=	Target
+type=	LAYER_INDEX
+
+name=	Time Offset (sec)
+type=	OneD
+
+name=	Contrast
+type=	OneD
+
+name=	Absolute Difference
+type=	OneD
+
+name=	Alpha Channel
+type=	OneD
+
+

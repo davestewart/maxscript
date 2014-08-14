@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>MaxScript test</title>
+<style type="text/css">
+<!--
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin:10px 10px 0px 10px;
+	padding:0px;
+	width:520px;
+	}
+a, a:link {
+	color: #000000;
+}
+a:hover {
+	color:#CC0000;
+}
+input {
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	width:500px;
+}
+div {
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	width: 300px;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+
+
+
+	function maxLink(href,text,idStr,classStr){
+		if(text == undefined)text = href
+		href = "javascript:maxCmd('" +href+ "')"
+		addLink(href,text,idStr,classStr)
+		}
+
+	function addLink(href,text,idStr,classStr){
+	
+		if(text == undefined)text = href
+	
+/*
+		text = text.split("'").join("\'")
+		href = href.split("'").join("\'")
+*/
+		var lnk = document.createElement('a');
+		var txt = document.createTextNode(text);
+		var brk = document.createElement('br');
+	
+		lnk.setAttribute('href', href);
+		if(classStr != undefined)lnk.setAttribute('class', classStr);
+	
+		newLink = document.body.appendChild(lnk); 
+		newText = newLink.appendChild(txt); 
+	
+		newLink.appendChild(brk)
+		}
+
+	function maxCmd(str){
+		try{
+			str = str.split("'").join("\\'")
+	
+			url	= "javascript:'maxscript:" +str+ "';void(0)"
+	
+			document.getElementById('tfJavaScript').value = str
+			document.getElementById('tfUrl').value = url
+	
+			window.navigate(url)
+			}
+		catch(err){
+			alert('There was a problem with the string sent to match; possibly escaped quotes?')
+			}
+}
+
+
+
+
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<a href="javascript:maxCmd('for i = 1 to 10 do (sphere radius:(random 1 20) pos:(random [-100,-100,-100] [100,100,100]) wirecolor:(random black white))')">Create 10 random spheres...</a><br>
+	<a href="javascript:maxCmd('b = box name:&quot;box 01&quot; heightSegs:10 height:200 isSelected:true')">Create a box...</a><br>
+    <a href="javascript:maxCmd('addmodifier b (bend())')">Add bend modifier</a><br>
+    <a href="javascript:maxCmd('b.modifiers[1].bendAngle = 90')">Set bend to 90</a>
+</div>
+<div id="div2">
+	<input type="text" id="tfMaxScript" value="b=box pos:(random [0,0,0] [100/2,100,100]) name:(if 1&lt;2 then &quot;dave&quot; else &quot;bill&quot;)">
+	<input type="text" id="tfJavaScript" disabled="true">
+	<input type="text" id="tfUrl" disabled="true">
+	<input type="button" name="Submit" value="Send command to max" onClick="maxCmd(document.getElementById('tfMaxScript').value)">
+</div>
+</body>
+</html>

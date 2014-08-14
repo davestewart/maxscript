@@ -1,0 +1,216 @@
+[name]
+name=Remove Grain
+matchName=VISINF Grain Removal
+
+[properties]
+name=	Viewing Mode
+type=	OneD
+
+name=	Preview Region
+type=	NO_VALUE
+
+name=	Center
+type=	TwoD_SPATIAL
+
+name=	Width
+type=	OneD
+
+name=	Height
+type=	OneD
+
+name=	Show Box
+type=	OneD
+
+name=	Box Color
+type=	COLOR
+
+name=	
+type=	NO_VALUE
+
+name=	Noise Reduction Settings
+type=	NO_VALUE
+
+name=	Noise Reduction
+type=	OneD
+
+name=	Passes
+type=	OneD
+
+name=	Mode
+type=	OneD
+
+name=	Channel Noise Reduction
+type=	NO_VALUE
+
+name=	Red Noise Reduction
+type=	OneD
+
+name=	Green Noise Reduction
+type=	OneD
+
+name=	Blue Noise Reduction
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Fine Tuning
+type=	NO_VALUE
+
+name=	Chroma Suppression
+type=	OneD
+
+name=	Texture
+type=	OneD
+
+name=	Noise Size Bias
+type=	OneD
+
+name=	Clean Solid Areas
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Temporal Filtering
+type=	NO_VALUE
+
+name=	Enable
+type=	OneD
+
+name=	Amount
+type=	OneD
+
+name=	Motion Sensitivity
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Unsharp Mask
+type=	NO_VALUE
+
+name=	Amount
+type=	OneD
+
+name=	Radius
+type=	OneD
+
+name=	Threshold
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Sampling
+type=	NO_VALUE
+
+name=	Source Frame
+type=	OneD
+
+name=	Number of Samples
+type=	OneD
+
+name=	Sample Size
+type=	OneD
+
+name=	Sample Box Color
+type=	COLOR
+
+name=	Sample Selection
+type=	OneD
+
+name=	Noise Sample Points
+type=	NO_VALUE
+
+name=	1
+type=	TwoD_SPATIAL
+
+name=	2
+type=	TwoD_SPATIAL
+
+name=	3
+type=	TwoD_SPATIAL
+
+name=	4
+type=	TwoD_SPATIAL
+
+name=	5
+type=	TwoD_SPATIAL
+
+name=	6
+type=	TwoD_SPATIAL
+
+name=	7
+type=	TwoD_SPATIAL
+
+name=	8
+type=	TwoD_SPATIAL
+
+name=	9
+type=	TwoD_SPATIAL
+
+name=	10
+type=	TwoD_SPATIAL
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Blend with Original
+type=	NO_VALUE
+
+name=	Amount
+type=	OneD
+
+name=	Combine Match and Mask Using
+type=	OneD
+
+name=	Blur Matte
+type=	OneD
+
+name=	Color Matching
+type=	NO_VALUE
+
+name=	Match Color Using
+type=	OneD
+
+name=	Matching Color
+type=	COLOR
+
+name=	Matching Tolerance
+type=	OneD
+
+name=	Matching Softness
+type=	OneD
+
+name=	Invert Match
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Masking Layer
+type=	NO_VALUE
+
+name=	Mask Layer
+type=	LAYER_INDEX
+
+name=	Masking Mode
+type=	OneD
+
+name=	If Mask Size Differs
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+

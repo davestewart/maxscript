@@ -1,0 +1,36 @@
+[name]
+name=Color Balance
+matchName=ADBE Color Balance 2
+
+[properties]
+name=	Shadow Red Balance
+type=	OneD
+
+name=	Shadow Green Balance
+type=	OneD
+
+name=	Shadow Blue Balance
+type=	OneD
+
+name=	Midtone Red Balance
+type=	OneD
+
+name=	Midtone Green Balance
+type=	OneD
+
+name=	Midtone Blue Balance
+type=	OneD
+
+name=	Hilight Red Balance
+type=	OneD
+
+name=	Hilight Green Balance
+type=	OneD
+
+name=	Hilight Blue Balance
+type=	OneD
+
+name=	Preserve Luminosity
+type=	OneD
+
+

@@ -1,0 +1,30 @@
+obj=RSro2.RSArr[index]
+
+frame: <number> | #current 
+
+fromframe: obj[4].x
+toframe: obj[4].y 
+outputwidth: obj[2].x
+outputheight: obj[2].y
+shadows: RSArr[i][5]
+antiAliasing: RSArr[i][6]
+autoReflect: RSArr[i][7]
+mapping: RSArr[i][8]
+filterMaps: RSArr[i][9]
+
+outputfile: obj[11]
+
+objectMotionBlur: <boolean> 
+imageMotionBlur: <boolean>
+
+scanlineRender.shadows
+
+renderhiddenobjects: <boolean> 
+
+renderatmosphericeffects: <boolean> 
+
+frame: <number> | #current
+framerange: <interval> | #active
+rendStart
+rendEnd
+#active

@@ -1,0 +1,117 @@
+[name]
+name=Levels (Individual Controls)
+matchName=ADBE Pro Levels
+
+[properties]
+name=	Channel:
+type=	OneD
+
+name=	Histogram
+type=	CUSTOM_VALUE
+
+name=	RGB
+type=	NO_VALUE
+
+name=	Input Black
+type=	OneD
+
+name=	Input White
+type=	OneD
+
+name=	Gamma
+type=	OneD
+
+name=	Output Black
+type=	OneD
+
+name=	Output White
+type=	OneD
+
+name=	RGB
+type=	NO_VALUE
+
+name=	Red
+type=	NO_VALUE
+
+name=	Red Input Black
+type=	OneD
+
+name=	Red Input White
+type=	OneD
+
+name=	Red Gamma
+type=	OneD
+
+name=	Red Output Black
+type=	OneD
+
+name=	Red Output White
+type=	OneD
+
+name=	Red
+type=	NO_VALUE
+
+name=	Green
+type=	NO_VALUE
+
+name=	Green Input Black
+type=	OneD
+
+name=	Green Input White
+type=	OneD
+
+name=	Green Gamma
+type=	OneD
+
+name=	Green Output Black
+type=	OneD
+
+name=	Green Output White
+type=	OneD
+
+name=	Green
+type=	NO_VALUE
+
+name=	Blue
+type=	NO_VALUE
+
+name=	Blue Input Black
+type=	OneD
+
+name=	Blue Input White
+type=	OneD
+
+name=	Blue Gamma
+type=	OneD
+
+name=	Blue Output Black
+type=	OneD
+
+name=	Blue Output White
+type=	OneD
+
+name=	Blue
+type=	NO_VALUE
+
+name=	Alpha
+type=	NO_VALUE
+
+name=	Alpha Input Black
+type=	OneD
+
+name=	Alpha Input White
+type=	OneD
+
+name=	Alpha Gamma
+type=	OneD
+
+name=	Alpha Output Black
+type=	OneD
+
+name=	Alpha Output White
+type=	OneD
+
+name=	Alpha
+type=	NO_VALUE
+
+

@@ -1,0 +1,27 @@
+[name]
+name=Ramp
+matchName=ADBE Ramp
+
+[properties]
+name=	Start of Ramp
+type=	TwoD_SPATIAL
+
+name=	Start Color
+type=	COLOR
+
+name=	End of Ramp
+type=	TwoD_SPATIAL
+
+name=	End Color
+type=	COLOR
+
+name=	Ramp Shape
+type=	OneD
+
+name=	Ramp Scatter
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

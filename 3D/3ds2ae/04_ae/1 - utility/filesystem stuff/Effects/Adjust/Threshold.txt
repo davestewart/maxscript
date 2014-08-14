@@ -1,0 +1,9 @@
+[name]
+name=Threshold
+matchName=ADBE Threshold
+
+[properties]
+name=	Level
+type=	OneD
+
+

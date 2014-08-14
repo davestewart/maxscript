@@ -1,0 +1,54 @@
+[name]
+name=Audio Waveform
+matchName=ADBE AudWave
+
+[properties]
+name=	Audio Layer
+type=	LAYER_INDEX
+
+name=	Start Point
+type=	TwoD_SPATIAL
+
+name=	End Point
+type=	TwoD_SPATIAL
+
+name=	Path
+type=	MASK_INDEX
+
+name=	Displayed Samples
+type=	OneD
+
+name=	Maximum Height
+type=	OneD
+
+name=	Audio Duration (milliseconds)
+type=	OneD
+
+name=	Audio Offset (milliseconds)
+type=	OneD
+
+name=	Thickness
+type=	OneD
+
+name=	Softness
+type=	OneD
+
+name=	Random Seed (Analog)
+type=	OneD
+
+name=	Inside Color
+type=	COLOR
+
+name=	Outside Color
+type=	COLOR
+
+name=	Waveform Options
+type=	OneD
+
+name=	Display Options
+type=	OneD
+
+name=	Composite On Original
+type=	OneD
+
+

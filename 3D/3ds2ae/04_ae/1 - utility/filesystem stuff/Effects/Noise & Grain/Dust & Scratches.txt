@@ -1,0 +1,15 @@
+[name]
+name=Dust & Scratches
+matchName=ADBE Dust & Scratches
+
+[properties]
+name=	Radius
+type=	OneD
+
+name=	Threshold
+type=	OneD
+
+name=	Operate on Alpha channel
+type=	OneD
+
+

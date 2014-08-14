@@ -1,0 +1,45 @@
+[name]
+name=Parametric EQ
+matchName=ADBE Param EQ
+
+[properties]
+name=	Frequency Response
+type=	NO_VALUE
+
+name=	Band 1 Enabled
+type=	OneD
+
+name=	Frequency
+type=	OneD
+
+name=	Bandwidth
+type=	OneD
+
+name=	Boost/Cut
+type=	OneD
+
+name=	Band 2 Enabled
+type=	OneD
+
+name=	Frequency
+type=	OneD
+
+name=	Bandwidth
+type=	OneD
+
+name=	Boost/Cut
+type=	OneD
+
+name=	Band 3 Enabled
+type=	OneD
+
+name=	Frequency
+type=	OneD
+
+name=	Bandwidth
+type=	OneD
+
+name=	Boost/Cut
+type=	OneD
+
+

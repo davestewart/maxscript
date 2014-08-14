@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>VMS Tidy - Instructions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+var s=1
+function nav(v){
+	document.getElementById('section'+s).className='off'
+	s+=v
+	if(s>3)s=3
+	if(s<1)s=1
+	document.getElementById('section'+s).className='on'
+	}
+
+</script>
+<STYLE type="text/css">
+.ps{
+	font: bold 11px sans-serif;
+	text-decoration: none;
+	color:#81B026;
+	}
+
+a.ps{
+	color:#000000
+	}
+a.ps:hover{
+	color:#FFFFFF;
+	}
+</STYLE>
+<style type="text/css">
+<!--
+body {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	margin: 0px;
+	background: #EEEEEE;
+	width: 400px;
+	overflow: hidden;
+	border: 1px solid #000000;
+}
+td{
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	padding:20px 0px 0px 20px;
+	margin:0px;
+}
+
+.shadow{
+	width:100%; 
+	height:100%; 
+	padding:50px;
+	border-top:2px solid #E7E7E7; 
+	border-left:2px solid #E7E7E7;
+	/*
+	*/
+	}
+h1 {
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 2px dotted #3366CC;
+	margin: 0px 0px 5px -5px;
+	padding: 0px 0px 0px 5px;
+}
+h2 {
+	font-size: 11px;
+	font-weight: bold;
+	color: #3366CC;
+	margin: 40px 0px 5px;
+	padding: 0px;
+}
+p {
+	margin: 0px 0px 10px 10px;
+	padding: 0px;
+}
+li {
+	padding-left: 10px;
+}
+
+.on {
+	margin-top:-60px;
+	display: block;
+}
+.off {
+	display: none;
+}
+div{
+width:350px
+}
+-->
+</style>
+</head>
+<body>
+<table width="100%" height="100%" border="0" cellspacing="5" cellpadding="0" style="height:100%">
+	<tr>
+		<td height="40" valign="top">
+			<h1>VMS Tidy</h1>
+			<div align="right" style="width:100%; margin-right:10px"><A href="javascript:nav(-1)" class="ps">previous</A> | <A href="javascript:nav(1)" class="ps">next</A> </div>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">
+			<div id="section1" class="on"> 
+			<h2>Overview</h2>
+				<p>VMS Tidy is designed to tidy up the mess of code that Visual 
+					Max Script leaves behind.</p>
+				<p>This makes for much quicker prototyping of tools as you can 
+					just jump in and start throwing UI elements around without 
+					worrying that VMS will f*ck it up after each edit.</p>
+				<p>VMS Tidy is an accompanying tool to Visual Max Script that 
+					lets you concentrate on the task of designing functional user 
+					interfaces, before tidying and re-ordering it's output code 
+					to match the visuals.</p>
+			</div>
+
+
+			<div id="section2" class="off">
+				<h2>Getting started</h2>
+				<p> VMS Tidy needs to have some rollout code to work with, so 
+					copy and paste some existing code from an editor window into 
+					the text box, or use the Sample Code included in the interface 
+					for a quick test.</p>
+				<p style="font-weight:normal">Now, click &quot;Tidy...&quot; and 
+					watch the code magically re-arrange itself!</p>
+				<p>Interface elements are rearranged in the order that they are found in the 
+					interface &#8211; reading from left to right, top to bottom, with groups 
+					taking priority, and nesting controls found within them.</p>
+
+
+				<h2>Adding manual line breaks</h2>
+				<p> VMS Tidy is fairly strict about it's tidy-up, but there are 
+					times when you will want to manually start a new block.</p>
+				<p>To insert a line break before a rollout control just add a 
+					comment (--) to the end of the line.</p>
+				<h2>Other controls</h2>
+				<p>Click &quot;Edit...&quot; to open the newly tided code in a 
+					new (blank) rollout, so you can continue to add, edit, or 
+					move items easily, using the Visual Max Script editor.</p>
+				<p>Click &quot;Test...&quot; to create a new (exactly sized) rollout and check 
+					that everything has worked.</p>
+				<p>Use the &quot;Sample Code&quot; drop down to view and test sample layouts straight away.
+					This is meant for learning purposes only.</p>
+			
+			</div>
+		
+			<div id="section3" class="off">
+
+				<h2>Working methodology</h2>
+				<p> It's up to you how you want to work with VMS Tidy. You can tidy existing 
+					code, or start a rollout from scratch by clicking &quot;Edit...&quot;.</p>
+				<p>To start a new User Interface you may like to:</p>
+				<ul>
+					<li> Create a new script by clicking &quot;Edit...&quot;</li>
+					<li> Open it in Visual Max Script and start designing visually</li>
+					<li> Once happy, name the controls logically</li>
+					<li> When finished, paste the script into VMS Tidy and tidy it</li>
+					<li> Re-output the code and start associating handlers and functions to 
+						rollout controls.</li>
+				</ul>
+
+				<h2>What VMS Tidy isn't</h2>
+				<p>VMS Tidy is not a visual code designer, or a replacement for the Visual Max Script Editor.</p>
+
+
+				<h2>Script info</h2>
+				<p> Author: Dave Stewart<br>
+					Created: 18th Feb 2005<br>
+					Version: 1.0<br>
+					Max Version: 6.0+ (Not tested in previous versions)</p>
+				<p> Please report any <a class="ps" href="mailto:3dsmax@pondskata.com?subject=Bug report: VMS Tidy&body=">bugs</a>...<br>
+				</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td height="20" align="right" valign="middle" style="padding:0px; padding-right:10px">
+			<SPAN class="ps" style="font-size:9px">pondskata : <A href="http://www.pondskata.com" class="ps" style="font-size:9px" title="Launch pondskata.com..." target="_blank">surf</A> | <A href="mailto:3dsmax@pondskata.com&subject=re: VMS Tidy&body=" class="ps" style="font-size:9px" title="Drop me a mail...">chat</A></SPAN>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

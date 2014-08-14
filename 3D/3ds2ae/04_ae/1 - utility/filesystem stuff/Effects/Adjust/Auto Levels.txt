@@ -1,0 +1,21 @@
+[name]
+name=Auto Levels
+matchName=ADBE AutoLevels
+
+[properties]
+name=	Temporal Smoothing (seconds)
+type=	OneD
+
+name=	Scene Detect
+type=	OneD
+
+name=	Black Clip
+type=	OneD
+
+name=	White Clip
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

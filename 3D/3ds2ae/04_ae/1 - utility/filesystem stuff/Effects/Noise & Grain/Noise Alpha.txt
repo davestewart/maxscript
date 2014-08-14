@@ -1,0 +1,33 @@
+[name]
+name=Noise Alpha
+matchName=ADBE Noise Alpha2
+
+[properties]
+name=	Noise
+type=	OneD
+
+name=	Amount
+type=	OneD
+
+name=	Original Alpha
+type=	OneD
+
+name=	Overflow
+type=	OneD
+
+name=	Contextual Control
+type=	OneD
+
+name=	Noise Options (Animation)
+type=	NO_VALUE
+
+name=	Cycle Noise
+type=	OneD
+
+name=	Cycle (in Revolutions)
+type=	OneD
+
+name=	Cycle (in Revolutions)
+type=	NO_VALUE
+
+

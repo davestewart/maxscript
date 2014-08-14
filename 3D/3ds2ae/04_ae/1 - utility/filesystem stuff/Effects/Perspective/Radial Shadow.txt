@@ -1,0 +1,33 @@
+[name]
+name=Radial Shadow
+matchName=ADBE Radial Shadow
+
+[properties]
+name=	Shadow Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Light Source
+type=	TwoD_SPATIAL
+
+name=	Projection Distance
+type=	OneD
+
+name=	Softness
+type=	OneD
+
+name=	Render
+type=	OneD
+
+name=	Color Influence
+type=	OneD
+
+name=	Shadow Only
+type=	OneD
+
+name=	Resize Layer
+type=	OneD
+
+

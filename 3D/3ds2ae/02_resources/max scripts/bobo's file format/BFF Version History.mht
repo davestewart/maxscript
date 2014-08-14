@@ -1,0 +1,154 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: BFF
+Date: Fri, 5 Nov 2004 19:54:25 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.scriptspot.com/bobo/darkmoon/bff/history.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1441
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>BFF</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2800.1476" name=3DGENERATOR>
+<META content=3D"Borislav Petrov" name=3DAuthor></HEAD>
+<BODY text=3D#ffffff vLink=3D#c0c0c0 aLink=3D#ff0000 link=3D#c0c0c0=20
+bgColor=3D#000000>&nbsp;=20
+<DIV align=3Dleft>
+<TABLE height=3D215 width=3D636 align=3Dleft border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <H1><FONT size=3D+4><I>BFF Version =
+History</I></FONT></H1></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT=20
+      face=3DArial,Helvetica><FONT color=3D#ffffff>VERSION=20
+    HISTORY</FONT></FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D249>
+      <UL>
+        <LI><FONT face=3DArial,Helvetica>v0.4.2 - Fixed Broken Mesh =
+Import code. A=20
+        recent function name change was not performed completely. Meshes =
+would=20
+        fail to import with 0.4.1 scenes.<BR>&nbsp;&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v0.4.1 - Support for Editable =
+Poly added.=20
+        Data will be still exported as Editable Mesh but an attempt to =
+convert=20
+        to Editable Poly in the target application will be made. Should =
+this=20
+        attempt fail (for example, in 3ds max 3), the object will remain =
+an=20
+        Editable Mesh. <BR>Moved all import functions to the main scene =
+file and=20
+        made them non-optional. In the past, a mesh import function =
+would be=20
+        included only if a mesh has been exported, same with Spline =
+import. In=20
+        this version, the import functions will always be included in =
+the=20
+        exported scene even if not required. This is to let you =
+add/remove=20
+        object loading command lines from the main scene file by hand =
+without=20
+        getting any errors because of missing importer code.<BR>&nbsp; =
+</FONT>
+        <LI><FONT face=3DArial,Helvetica>v0.4.0 - Split the Scene format =
+into=20
+        Scene and Object .ms files; Changed the directory structure; =
+Added=20
+        support for Material Editor materials export; Added ZIP Archive=20
+        support.<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>v.0.3.6 - Fixed a SEVERE bug in =
+material=20
+        export. Basically, all materials were indexed the wrong =
+way.&nbsp;It is=20
+        a wonder nobody notices...<BR></FONT>
+        <LI><FONT face=3DArial,Helvetica>v.0.3.4 - Many game developers =
+asked for=20
+        this. Here it is - User Properties Buffer support! Please let me =
+know if=20
+        you have any troubles with long User Prop Buffers as there were =
+some=20
+        known bugs in the MAX SDK that might cause =
+problems.&nbsp;<BR></FONT>
+        <LI><FONT face=3DArial,Helvetica>v.0.3.3 - Never released this =
+one. Cannot=20
+        actually see what it was for! :o)<BR></FONT>
+        <LI><FONT face=3DArial,Helvetica>v.0.3.2 - Fixed EPoly test. A =
+logical AND=20
+        instead of OR prevented older versions from outputting mesh data =
+from=20
+        EPoly.<BR>&nbsp;&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>v.0.3.1 - Fixed Spline Closing=20
+        code.<BR></FONT>
+        <LI><FONT face=3DArial,Helvetica>v.0.3.0 - Basic Animation=20
+        Support.<BR></FONT>
+        <LI><FONT face=3DArial,Helvetica>v.0.2.9 -Fixed a closing =
+bracket bug in=20
+        the Spline External File Reader function.<BR>&nbsp;&nbsp;</FONT> =
+
+        <LI><FONT face=3DArial,Helvetica>v.0.2.8 - Optional Import =
+Progress=20
+        Window&nbsp; shows details about the process. When disabled, =
+files will=20
+        be partially R2.5 compatible.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.2.7 - Support for Material=20
+        Instancing, Basic Modifier Stack. Fixed Bitmap Filename bug. =
+Tested=20
+        successfully with objects containing over 864.000=20
+        faces.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.2.6 - Support for Native =
+Splines,=20
+        General Object Properties.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.2.3 - Support for =
+Hierarchies. Bone=20
+        Geometry export as meshes.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.2.2 - First version using a =
+main=20
+        scene file and External Geometry .BFF Files. Tested successfully =
+on=20
+        262.144 faces.<BR>&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.1.11 - Fixed Editable_Poly=20
+        class<BR>&nbsp;&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.1.10 - Fixed =
+coordinates/PRS=20
+        bug<BR>&nbsp;&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.1.9 - first public=20
+        Beta<BR>&nbsp;&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.1.6 - implemented Material =
+Tree=20
+        export. Basic mesh and primitives functionality in=20
+        place.<BR>&nbsp;&nbsp;</FONT>=20
+        <LI><FONT face=3DArial,Helvetica>v.0.1.1- Proof of concept =
+(works!)</FONT>=20
+        </LI></UL></TD></TR></TBODY></TABLE></DIV><FONT =
+face=3DArial,Helvetica><BR></FONT>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P> <BR>&nbsp; <BR>&nbsp; <BR>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

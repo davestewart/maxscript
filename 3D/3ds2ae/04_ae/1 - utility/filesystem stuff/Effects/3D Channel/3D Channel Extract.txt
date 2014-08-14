@@ -1,0 +1,15 @@
+[name]
+name=3D Channel Extract
+matchName=ADBE AUX CHANNEL EXTRACT
+
+[properties]
+name=	3D Channel
+type=	OneD
+
+name=	Black Point
+type=	OneD
+
+name=	White Point
+type=	OneD
+
+

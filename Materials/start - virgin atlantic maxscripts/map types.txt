@@ -1,0 +1,15 @@
+#("Anisotropic", "AmbientMap", "DiffuseMap", "SpecularMap", "DiffuseLevelMap", "SpecularLevelMap", "GlossinessMap", "AnisotropyMap", "OrientationMap", "SelfIllumMap", "OpacityMap", "FilterMap", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap)
+
+#("Blinn", "AmbientMap", "DiffuseMap", "SpecularMap", "SpecularLevelMap", "GlossinessMap", "SelfIllumMap", "OpacityMap", "FilterMap", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap")
+
+#("Metal", "AmbientMap", "DiffuseMap", "SpecularMap", "SpecularLevelMap", "GlossinessMap", "SelfIllumMap", "OpacityMap", "FilterMap", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap")
+
+#("Multi-Layer", "AmbientMap", "DiffuseMap", "DiffuseLevelMap", "DiffuseRoughnessMap", "SpecularMap", "SpecularLevelMap", "GlossinessMap", "AnisotropyMap", "OrientationMap", "specularMap2", "SpecularLevelMap2", "GlossinessMap2", "AnisotropyMap2", "OrientationMap2", "SelfIllumMap", "OpacityMap", "FilterMap", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap")
+
+#("Oren-Nayar-Blinn", "AmbientMap", "DiffuseMap", "SpecularMap", "GlossinessMap", "SpecularLevelMap", "SelfIllumMap", "OpacityMap", "FilterMap", "DiffuseLevelMap", "DiffuseRoughnessMap", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap")
+
+#("Phong", "AmbientMap", "DiffuseMap", "SpecularMap", "SpecularLevelMap", "GlossinessMap", "SelfIllumMap", "OpacityMap", "FilterMap", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap")
+
+#("Strauss", "DiffuseMap", "GlossinessMap", "MetalnessMap", "OpacityMap", "FilterMap", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap")
+
+#("Translucent", "AmbientMap", "DiffuseMap", "SpecularMap", "GlossinessMap", "SpecularLevelMap ", "SelfIllumMap", "OpacityMap", "FilterMap", "DiffuseLevel", "TranslucentColor", "BumpMap", "ReflectionMap", "RefractionMap", "DisplacementMap")

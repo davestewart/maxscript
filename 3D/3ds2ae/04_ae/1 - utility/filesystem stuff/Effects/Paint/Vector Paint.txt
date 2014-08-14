@@ -1,0 +1,45 @@
+[name]
+name=Vector Paint
+matchName=ADBE Vector Paint
+
+[properties]
+name=	Brush Settings
+type=	NO_VALUE
+
+name=	Playback Mode
+type=	OneD
+
+name=	Playback Speed
+type=	OneD
+
+name=	Wiggle Control
+type=	NO_VALUE
+
+name=	Enable Wiggling
+type=	OneD
+
+name=	Wiggles/sec
+type=	OneD
+
+name=	Displacement Variation
+type=	OneD
+
+name=	Displacement Detail
+type=	OneD
+
+name=	Pressure Variation
+type=	OneD
+
+name=	Pressure Detail
+type=	OneD
+
+name=	Individual Stroke Seeds
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Composite Paint
+type=	OneD
+
+

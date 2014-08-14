@@ -1,0 +1,14 @@
+case 4812 : str="NO_VALUE"; break;
+case 4813 : str="ThreeD_SPATIAL"; break;
+case 4814 : str="ThreeD"; break;
+case 4815 : str="TwoD_SPATIAL"; break;
+case 4816 : str="TwoD"; break;
+case 4817 : str="OneD"; break;
+case 4818 : str="COLOR"; break;
+case 4819 : str="CUSTOM_VALUE"; break;
+case 4820 : str="MARKER"; break;
+case 4821 : str="LAYER_INDEX"; break;
+case 4822 : str="MASK_INDEX"; break;
+case 4823 : str="SHAPE"; break;
+case 4824 : str="TEXT_DOCUMENT"; break;
+

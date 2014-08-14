@@ -1,0 +1,18 @@
+[name]
+name=Venetian Blinds
+matchName=ADBE Venetian Blinds
+
+[properties]
+name=	Transition Completion
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Width
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+

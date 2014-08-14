@@ -1,0 +1,21 @@
+[name]
+name=Radial Blur
+matchName=ADBE Radial Blur
+
+[properties]
+name=	
+type=	NO_VALUE
+
+name=	Amount
+type=	OneD
+
+name=	Center
+type=	TwoD_SPATIAL
+
+name=	Type
+type=	OneD
+
+name=	Antialiasing (Best Quality)
+type=	OneD
+
+

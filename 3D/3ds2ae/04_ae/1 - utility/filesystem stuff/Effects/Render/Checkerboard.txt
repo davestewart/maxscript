@@ -1,0 +1,42 @@
+[name]
+name=Checkerboard
+matchName=ADBE Checkerboard
+
+[properties]
+name=	Anchor
+type=	TwoD_SPATIAL
+
+name=	Size From
+type=	OneD
+
+name=	Corner
+type=	TwoD_SPATIAL
+
+name=	Width
+type=	OneD
+
+name=	Height
+type=	OneD
+
+name=	Feather
+type=	NO_VALUE
+
+name=	Width
+type=	OneD
+
+name=	Height
+type=	OneD
+
+name=	Height
+type=	NO_VALUE
+
+name=	Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+

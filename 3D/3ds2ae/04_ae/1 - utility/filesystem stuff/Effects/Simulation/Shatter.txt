@@ -1,0 +1,243 @@
+[name]
+name=Shatter
+matchName=APC Shatter
+
+[properties]
+name=	View
+type=	OneD
+
+name=	Render
+type=	OneD
+
+name=	Shape
+type=	NO_VALUE
+
+name=	Pattern
+type=	OneD
+
+name=	Custom Shatter Map
+type=	LAYER_INDEX
+
+name=	White Tiles Fixed
+type=	OneD
+
+name=	Repetitions
+type=	OneD
+
+name=	Direction
+type=	OneD
+
+name=	Origin
+type=	TwoD_SPATIAL
+
+name=	Extrusion Depth
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Force 1
+type=	NO_VALUE
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Depth
+type=	OneD
+
+name=	Radius
+type=	OneD
+
+name=	Strength
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Force 2
+type=	NO_VALUE
+
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Depth
+type=	OneD
+
+name=	Radius
+type=	OneD
+
+name=	Strength
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Gradient
+type=	NO_VALUE
+
+name=	Shatter Threshold
+type=	OneD
+
+name=	Gradient Layer
+type=	LAYER_INDEX
+
+name=	Invert Gradient
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Physics
+type=	NO_VALUE
+
+name=	Rotation Speed
+type=	OneD
+
+name=	Tumble Axis
+type=	OneD
+
+name=	Randomness
+type=	OneD
+
+name=	Viscosity
+type=	OneD
+
+name=	Mass Variance
+type=	OneD
+
+name=	Gravity
+type=	OneD
+
+name=	Gravity Direction
+type=	OneD
+
+name=	Gravity Inclination
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Textures
+type=	NO_VALUE
+
+name=	Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Front Mode
+type=	OneD
+
+name=	Front Layer
+type=	LAYER_INDEX
+
+name=	Side Mode
+type=	OneD
+
+name=	Side Layer
+type=	LAYER_INDEX
+
+name=	Back Mode
+type=	OneD
+
+name=	Back Layer
+type=	LAYER_INDEX
+
+name=	
+type=	NO_VALUE
+
+name=	Camera System
+type=	OneD
+
+name=	Camera Position
+type=	NO_VALUE
+
+name=	X Rotation
+type=	OneD
+
+name=	Y Rotation
+type=	OneD
+
+name=	Z Rotation
+type=	OneD
+
+name=	X,Y Position
+type=	TwoD_SPATIAL
+
+name=	Z Position
+type=	OneD
+
+name=	Focal Length
+type=	OneD
+
+name=	Transform Order
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Corner Pins
+type=	NO_VALUE
+
+name=	Upper Left  Corner
+type=	TwoD_SPATIAL
+
+name=	Upper Right Corner
+type=	TwoD_SPATIAL
+
+name=	Lower Left  Corner
+type=	TwoD_SPATIAL
+
+name=	Lower Right Corner
+type=	TwoD_SPATIAL
+
+name=	Auto Focal Length
+type=	OneD
+
+name=	Focal Length
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Lighting
+type=	NO_VALUE
+
+name=	Light Type
+type=	OneD
+
+name=	Light Intensity
+type=	OneD
+
+name=	Light Color
+type=	COLOR
+
+name=	Light Position
+type=	TwoD_SPATIAL
+
+name=	Light Depth
+type=	OneD
+
+name=	Ambient Light
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Material
+type=	NO_VALUE
+
+name=	Diffuse Reflection
+type=	OneD
+
+name=	Specular Reflection
+type=	OneD
+
+name=	Highlight Sharpness
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

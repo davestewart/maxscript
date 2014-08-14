@@ -1,0 +1,57 @@
+[name]
+name=Liquify
+matchName=ADBE LIQUIFY
+
+[properties]
+name=	Tools
+type=	NO_VALUE
+
+name=	Tool Options
+type=	NO_VALUE
+
+name=	Brush Size
+type=	OneD
+
+name=	Brush Pressure
+type=	OneD
+
+name=	Freeze Area Mask
+type=	MASK_INDEX
+
+name=	Turbulent Jitter
+type=	OneD
+
+name=	Clone Offset
+type=	OneD
+
+name=	Reconstruction Mode
+type=	OneD
+
+name=	Tool Options
+type=	NO_VALUE
+
+name=	View Options
+type=	NO_VALUE
+
+name=	View Mesh
+type=	OneD
+
+name=	Mesh Size
+type=	OneD
+
+name=	Mesh Color
+type=	OneD
+
+name=	View Options
+type=	NO_VALUE
+
+name=	Distortion Mesh
+type=	CUSTOM_VALUE
+
+name=	Distortion Mesh Offset
+type=	TwoD_SPATIAL
+
+name=	Distortion Percentage
+type=	OneD
+
+

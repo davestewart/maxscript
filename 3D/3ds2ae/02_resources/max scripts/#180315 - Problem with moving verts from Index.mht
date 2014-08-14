@@ -1,0 +1,683 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Read topic starting at message #180315
+Date: Wed, 17 Nov 2004 13:04:17 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0000_01C4CCA5.F23BEC20";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180315,15
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- readfull.html --><!-- Copyright (c)2002 Akiva Corporation =
+http://www.webboard.com/ --><HTML><HEAD><TITLE>Read topic starting at =
+message #180315</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<SCRIPT language=3DJavaScript>
+	//<!--
+	var helpwindow =3D null;
+	function openhelpwindow(url)=20
+	{
+	    if ((helpwindow =3D=3D null) || (helpwindow.closed)) {=20
+	         helpwindow =3D =
+window.open(url,"help","width=3D425,height=3D425,resizable,scrollbars,too=
+lbar");
+		}
+		else{
+		   helpwindow.focus();
+	       helpwindow.location =3D url;	=09
+		}
+	}
+	//-->
+	</SCRIPT>
+<LINK href=3D"http://support.discreet.com/wbimages/3dsmax6/wb.css" =
+type=3Dtext/css=20
+rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.2600.0" name=3DGENERATOR></HEAD>
+<BODY text=3D#000000 vLink=3D#333333 aLink=3D#ff0000 link=3D#1111aa =
+bgColor=3D#9f98a1><A=20
+name=3D#top>
+<SCRIPT language=3DJavaScript>
+	//<!--
+	if (self =3D=3D top)
+		document.write('<font Class=3D"bodytext"><b><a href=3D"list">Restore =
+Frames Interface</a></b></font><hr size=3D0>');
+	//-->
+	</SCRIPT>
+<!-- Start HTML here.  DO NOT REMOVE THIS LINE. Subsequent messages =
+start here (no header) --><A=20
+name=3D#180315>
+<TABLE cellPadding=3D3 width=3D"100%" bgColor=3D#9f98a1 border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=3D0 cellPadding=3D1 width=3D"100%" =
+bgColor=3D#ccccdc=20
+        border=3D0><TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+bgColor=3D#9f98a1=20
+            border=3D0>
+              <TBODY>
+              <TR>
+                <TD class=3Dmsgfield>
+                  <TABLE cellPadding=3D2 width=3D"100%" =
+bgColor=3D#bdb5c5>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT class=3Dnotetext><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180315=
+,15#top"><IMG=20
+                        height=3D10 alt=3DTOP hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_top.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>TOP</A> =
+... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15"><I=
+MG=20
+                        height=3D10 alt=3DPost hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_post.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Post</A> =
+... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15,180=
+315"><IMG=20
+                        height=3D10 alt=3DReply hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_reply.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Reply</A> ... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15,180=
+315r"><IMG=20
+                        height=3D10 alt=3DQuote hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Quote.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Reply/Quote</A> ...=20
+                        <IMG height=3D10 alt=3DEmail hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Email.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Email =
+Reply=20
+                        <NOAUTH>... <IMG height=3D10 alt=3DDelete =
+hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Delete.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Delete</DM> ... <IMG=20
+                        height=3D10 alt=3DEdit hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Edit.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Edit =
+</NOAUTH><BR><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180267=
+,15"><IMG=20
+                        height=3D10 alt=3DPrevious hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Previous.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Previous</A> ... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180315=
+,15#180350"><IMG=20
+                        height=3D10 alt=3DNext hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Next.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Next</A> =
+... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180267=
+,15"><IMG=20
+                        height=3D10 alt=3D"Previous Topic" hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_back.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Previous =
+Topic</A> ...=20
+                        <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180324=
+,15"><IMG=20
+                        height=3D10 alt=3D"Next Topic" hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_forward.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Next =
+Topic</A> ... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180315=
+,15e#180315"><IMG=20
+                        height=3D10 alt=3D"Entire Topic" hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_index.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Entire =
+Topic</A>=20
+                        </FONT></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=3D2 cellPadding=3D0 border=3D0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>Topic:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext>Problem with moving =
+verts from=20
+                        Index -- MaxScript Newbie. (1 of 2), Read 6 =
+times <IMG=20
+                        alt=3DNew=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/new.gif">=20
+                        </FONT></TD></TR>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>Conf:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/confintro?1=
+5">MAXScript</A>=20
+                        </FONT></TD></TR>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>From:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext><NOAUTH><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/userpeek?29=
+621"></NOAUTH>Matt=20
+                        Rapelje<NOAUTH></A></NOAUTH> <U><A=20
+                        href=3D"mailto:"></A></U></FONT></TD></TR>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>Date:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext>Tuesday, November 16, =
+2004=20
+                        10:51 PM </FONT></TD></TR></TBODY></TABLE>
+                  <P><!-- This is where the msg body will appear -->
+                  <TABLE cellPadding=3D5 border=3D0>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT class=3Dmsgbody>Whats wrong with this? I =
+am=20
+                        working in Max7 and am a MaxScript =
+Newbie.<BR><BR>--=20
+                        Start<BR>collv =3D getvertselection $<BR>For i =
+in collV do=20
+                        <BR>( <BR>Move i [(i+1), (i+.6), (i+.4)] =
+<BR>)<BR>--=20
+                        End<BR><BR>I get this from the=20
+                        listner:<BR><BR>--Start<BR>#{1..81}<BR>-- Error =
+occurred=20
+                        in i loop<BR>-- Frame:<BR>-- i: 1<BR>-- No =
+""move""=20
+                        function for 1<BR>OK<BR>-- End<BR><BR>But when I =
+select=20
+                        a set of verts and move them in the viewport =
+thing I get=20
+                        this from the listner:<BR><BR>move =
+$.selectedVerts=20
+                        [0,0,11.0086]<BR><BR>So why does the first one =
+not work=20
+                        and what can I do to get it to =
+work?<BR><BR></FONT>
+                        <P><FONT class=3Dbodytext><!-- End loop =
+--></FONT><!-- Try to close as many tags as you can think of to avoid =
+messing up subsequent messages =
+--></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT>=
+</FONT></FONT></FONT></FONT></FONT></A>
+                        <ADDRESS></ADDRESS></B></I></U></BIG>
+                        <BLOCKQUOTE></BLOCKQUOTE>
+                        =
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+                        <H1></H1>
+                        <H2></H2>
+                        <H3></H3>
+                        <H4></H4>
+                        <H5></H5>
+                        <H6></H6><PRE></PRE><PRE></PRE>
+                        =
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TR></TBODY></TA=
+BLE></TEXTAREA></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></=
+TD></TR></TBODY></TABLE></TD></TR></TABLE><!-- Do not close the BODY and =
+HTML tags --><A=20
+name=3D#180350><!-- - -->
+<TABLE cellPadding=3D3 width=3D"100%" bgColor=3D#9f98a1 border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=3D0 cellPadding=3D1 width=3D"100%" =
+bgColor=3D#ccccdc=20
+        border=3D0><TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+bgColor=3D#9f98a1=20
+            border=3D0>
+              <TBODY>
+              <TR>
+                <TD class=3Dmsgfield>
+                  <TABLE cellPadding=3D2 width=3D"100%" =
+bgColor=3D#bdb5c5>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT class=3Dnotetext><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180315=
+,15#top"><IMG=20
+                        height=3D10 alt=3DTOP hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_top.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>TOP</A> =
+... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15"><I=
+MG=20
+                        height=3D10 alt=3DPost hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_post.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Post</A> =
+... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15,180=
+350"><IMG=20
+                        height=3D10 alt=3DReply hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_reply.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Reply</A> ... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15,180=
+350r"><IMG=20
+                        height=3D10 alt=3DQuote hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Quote.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Reply/Quote</A> ...=20
+                        <IMG height=3D10 alt=3DEmail hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Email.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Email =
+Reply=20
+                        <NOAUTH>... <IMG height=3D10 alt=3DDelete =
+hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Delete.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Delete</DM> ... <IMG=20
+                        height=3D10 alt=3DEdit hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Edit.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Edit =
+</NOAUTH><BR><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180315=
+,15#180315"><IMG=20
+                        height=3D10 alt=3DPrevious hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Previous.gif"=20
+                        width=3D10 align=3DabsMiddle =
+border=3D0>Previous</A> ... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180324=
+,15"><IMG=20
+                        height=3D10 alt=3DNext hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_Next.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Next</A> =
+... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180267=
+,15"><IMG=20
+                        height=3D10 alt=3D"Previous Topic" hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_back.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Previous =
+Topic</A> ...=20
+                        <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180324=
+,15"><IMG=20
+                        height=3D10 alt=3D"Next Topic" hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_forward.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Next =
+Topic</A> ... <A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180350=
+,15e#180350"><IMG=20
+                        height=3D10 alt=3D"Entire Topic" hspace=3D3=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/a_index.gif"=20
+                        width=3D10 align=3DabsMiddle border=3D0>Entire =
+Topic</A>=20
+                        </FONT></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=3D2 cellPadding=3D0 border=3D0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>Topic:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext>Problem with moving =
+verts from=20
+                        Index -- MaxScript Newbie. (2 of 2), Read 2 =
+times <IMG=20
+                        alt=3DNew=20
+                        =
+src=3D"http://support.discreet.com/wbimages/3dsmax6/new.gif">=20
+                        </FONT></TD></TR>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>Conf:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/confintro?1=
+5">MAXScript</A>=20
+                        </FONT></TD></TR>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>From:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext><NOAUTH><A=20
+                        =
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/userpeek?52=
+86"></NOAUTH>Joshua=20
+                        Newman<NOAUTH></A></NOAUTH> <U><A=20
+                        href=3D"mailto:"></A></U></FONT></TD></TR>
+                    <TR>
+                      <TD vAlign=3Dtop align=3Dright><FONT=20
+                        class=3Dbodytext><B>Date:</B> </FONT></TD>
+                      <TD><FONT class=3Dbodytext>Wednesday, November 17, =
+2004=20
+                        03:00 AM </FONT></TD></TR></TBODY></TABLE>
+                  <P><!-- This is where the msg body will appear -->
+                  <TABLE cellPadding=3D5 border=3D0>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT class=3Dmsgbody>Hi Matt,<BR><BR>This is =
+because=20
+                        you are not refering to a vertex, but the number =
+of the=20
+                        vertex. <BR>getvertselection $ <BR>#{1,3..5} -- =
+this is=20
+                        a bitarray containing a reference to each =
+selected=20
+                        vertex<BR><BR>(getvertselection $) as=20
+                        array<BR>#[1,3,4,5] -- an array containing the =
+selected=20
+                        vertex<BR><BR>getvert $ ((getvertselection $) as =
+
+                        array)[1]<BR>[0,0,0] -- vertex 1's=20
+                        position<BR><BR>setvert $ ((getvertselection $) =
+as=20
+                        array)[1] [0,0,0<BR>[0,0,0] -- vertex 1's new=20
+                        position<BR><BR>Note also that you should note =
+use $, as=20
+                        the selection may change during the script=20
+                        =
+process.<BR><BR>script:<BR>----------------------------------------------=
+----<BR>obj=3Dselection[1]<BR>collv=3D(getvertselection=20
+                        obj) as array<BR>for i in collv =
+do<BR>(<BR>setvert obj i=20
+                        ((getvert obj i)+[i+1,i+6,i+4])<BR>)<BR>update=20
+                        =
+obj<BR>--------------------------------------------------<BR><BR><BR>Hope=
+=20
+                        this helps!<BR><BR>J. </FONT>
+                        <P><FONT class=3Dbodytext><!-- End loop =
+--></FONT><!-- Try to close as many tags as you can think of to avoid =
+messing up subsequent messages =
+--></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></A>
+                        <ADDRESS></ADDRESS></B></I></U></BIG>
+                        <BLOCKQUOTE></BLOCKQUOTE>
+                        =
+<CENTER></CENTER></CITE></COMMENT></EM></MARQUEE>
+                        <H1></H1>
+                        <H2></H2>
+                        <H3></H3>
+                        <H4></H4>
+                        <H5></H5>
+                        <H6></H6><PRE></PRE><PRE></PRE>
+                        =
+<P></P></S></SMALL></SPAN></STRIKE></STRONG></SUB></SUP></TEXTAREA></TD><=
+/TR></TBODY></TABLE></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TAB=
+LE></TD></TR></TBODY></TABLE>
+<HR SIZE=3D0>
+<FONT class=3Dbodytext><A=20
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15">Po=
+st New=20
+Topic</A> | <A=20
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/post?15,180=
+350">Reply=20
+to: "Problem with moving verts from Index -- MaxScript Newbie."</A> =
+<BR><A=20
+href=3D"http://support.discreet.com/webboard/wbpx.dll/~3dsmax/read?180350=
+,15w#watch">Watch=20
+this Topic</A> </FONT><A name=3Dwatch><BR>&nbsp; <!-- Do not close the =
+BODY and HTML tags --></A></BODY></HTML>
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_top.gif
+
+R0lGODlhCgAKALMAAAAAAP///0lgv05ly0BUpx4nTik1amB103+R24mZ3qSw5tTU1P///wAAAAAA
+AAAAACH5BAEAAAwALAAAAAAKAAoAAAQckMlJ66lTkYUVMhx1HAOILYeJJWrFhpVQwNUCRwA7
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_post.gif
+
+R0lGODlhCgAKAPcAAAAAAP///19NLPzMdq2MUeq+bqqKUGBOLYFpPf3ZmP3anP3do/3jtP3luNTU
+1K+vr1RUVP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABEALAAAAAAKAAoA
+AAg8ACMIHLhgoMEIDRIUOIhQwQADCAw2cEjggAMHAicOqHgxI0WLGCMwCLAR5EAIAR6YHAgAgICO
+By+GNBgQADs=
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_reply.gif
+
+R0lGODlhCgAKALMAAAAAAP///0lgv09nzjZHjR4nTio2bGB102+C14mZ3pKh4Z+s5NTU1P///wAA
+AAAAACH5BAEAAA0ALAAAAAAKAAoAAAQfsMlJpVIpidrOIAVTKSAjTssQnlNimBzyctJMN+xNRQA7
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_Quote.gif
+
+R0lGODlhCgAKALMAAAAAAP///0lgv09nzjZHjR4nTio2bGB102+C14mZ3pKh4Z+s5KSw5tTU1P//
+/wAAACH5BAEAAA4ALAAAAAAKAAoAAAQm0MlJlUpJUHkGKc2mfE04LQNoTolRbg7iOoxWS7Pc6JI5
+zxtTIwIAOw==
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_Email.gif
+
+R0lGODlhCgAKALMAAAAAAP///0lgv09nzh4nTik1aomZ3u3t7dTU1P///wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAkALAAAAAAKAAoAAAQkMMlJaw0m6xOSCUM4BAXijSFYniM4rIYorkJh34SZIHzP
+W5UIADs=
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_Delete.gif
+
+R0lGODlhCgAKALMAAAAAAP////sAANcAAM8AAK8AAKwAAIYAAP8YGP8jI/9AQP9GRv9hYdTU1P//
+/wAAACH5BAEAAA4ALAAAAAAKAAoAAAQf0MlJq3VMSUWqSEnRNFUyjNUyDEKFGKNxVKhTXzgVAQA7
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_Edit.gif
+
+R0lGODlhCgAKAPcAAAAAAP///19NLPzMdq2MUWBOLf3anP3jtP3luF4wMPd/f+Z2dqdWVn9BQfmf
+n/qpqfu9vdTU1MnJya+vr3x8fFRUVP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABYALAAAAAAKAAoA
+AAhBAC0IHPhgoEELEBwsOGgBgQQFDBoYRGBgAIUEESIIpDiAQIGMGyt6BGnhQICOHzUKrBBgQkqD
+AAAIIGkwo0qDAQEAOw==
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_Previous.gif
+
+R0lGODlhCgAKALMAAAAAAP///0lgv09nzk5ly0BUpx4nTik1amB103+R24mZ3qSw5tTU1P///wAA
+AAAAACH5BAEAAA0ALAAAAAAKAAoAAAQesMlJq53otlWYXUlXgQOBKIrQIMXhvobHzDSt3VMEADs=
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_Next.gif
+
+R0lGODlhCgAKALMAAAAAAP///0lgv09nzk5lyyo2bCk1an+R24mZ3pKh4aSw5tTU1P///wAAAAAA
+AAAAACH5BAEAAAwALAAAAAAKAAoAAAQdkMlJq53pyiR0Ip2kIEhyDKAkGGxbFNIiz7NmTxEAOw==
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_back.gif
+
+R0lGODlhCgAKALMAAAAAAP///zVFi0BUpx4nTio2bCk1amB103+R26Sw5tTU1P///wAAAAAAAAAA
+AAAAACH5BAEAAAsALAAAAAAKAAoAAAQecMlJq731TD3TUIsHhsiXIAZ4DEYhsMSozPSM3VQEADs=
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_forward.gif
+
+R0lGODlhCgAKALMAAAAAAP///0lgvzVFi05ly0BUpyo2bCk1aomZ3pKh4dTU1P///wAAAAAAAAAA
+AAAAACH5BAEAAAsALAAAAAAKAAoAAAQccMlJq70yTU2TyN+EEF9CTsJhDIVqTEosx1hNRQA7
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/a_index.gif
+
+R0lGODlhCgAKALMAAAAAAP///09nzkNXrmd81dTU1P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAYALAAAAAAKAAoAAAQc0MhJDREYD1q6L9KVCdv0eeFIcidoqaXUuhUVAQA7
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/new.gif
+
+R0lGODlhFQAKAPcAAAAAAAAAMwAzADMAAAAzMzMAMzMzADMzMwAAZgBmAGYAAAAzZgBmMzNmADMA
+ZmYAM2YzADNmMzMzZmYzMwBmZmYAZmZmAAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kA
+M5kzADOZMzMzmZkzM2ZmZgBmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmMwAAzADM
+AMwAADPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzALB4ADMzzJmZADPMM5kAmQCZmcwzM5kzmZmZ
+MzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM5mZZmaZmZlmmWbMZmZmzMxm
+ZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAAAAADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/
+AP8AM/8zADP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAGb/
+MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/
+AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM8xmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+Z
+ZgD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM/+ZmZn/mZmZ/8z/
+Zsxm/2bM//9mzGb/zP/MZszMzP8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M/9m
+/2b/////Zsz/zMzM///MzJn///+Z////mcz////M////zP///wAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANgALAAAAAAVAAoA
+AAg5ALEJHEiwoMGDCBMqVPhjYMMfEB8SbOiQokSHEzNKjCjw4cWOHT9ii8gRI0iKJlGCPFnS4sKX
+2AICADs=
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://support.discreet.com/wbimages/3dsmax6/wb.css
+
+TD {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TEXTAREA {
+	FONT-FAMILY: "Courier New", Courier, monospace
+}
+BODY {
+	FONT-SIZE: small; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.treeforum {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.treemsg {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.treenav {
+	FONT-SIZE: xx-small; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tree {
+	FONT-SIZE: xx-small; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.topics {
+=09
+}
+.headtext {
+	FONT-SIZE: medium
+}
+.bodytext {
+	FONT-SIZE: x-small
+}
+.normaltext {
+	FONT-SIZE: x-small
+}
+.notetext {
+	FONT-SIZE: xx-small
+}
+.bigwarn {
+	FONT-SIZE: small; COLOR: red
+}
+.smallwarn {
+	FONT-SIZE: x-small; COLOR: red
+}
+.msgbody {
+	FONT-SIZE: x-small
+}
+.msgfield {
+	BACKGROUND-COLOR: #dcdad8
+}
+.toolbartext {
+	MARGIN-TOP: 3px; FONT-WEIGHT: bold; FONT-SIZE: x-small; FONT-FAMILY: =
+Arial, Helvetica, sans-serif
+}
+A.tool:link {
+	COLOR: silver
+}
+A.tool:active {
+	COLOR: #f0ffff
+}
+A.tool:visited {
+	COLOR: silver
+}
+A.tool:hover {
+	COLOR: #f0f8ff
+}
+
+------=_NextPart_000_0000_01C4CCA5.F23BEC20--

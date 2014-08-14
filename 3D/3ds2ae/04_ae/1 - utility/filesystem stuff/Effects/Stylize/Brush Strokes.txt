@@ -1,0 +1,27 @@
+[name]
+name=Brush Strokes
+matchName=ADBE Brush Strokes
+
+[properties]
+name=	Stroke Angle
+type=	OneD
+
+name=	Brush Size
+type=	OneD
+
+name=	Stroke Length
+type=	OneD
+
+name=	Stroke Density
+type=	OneD
+
+name=	Stroke Randomness
+type=	OneD
+
+name=	Paint Surface
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.freetoon.com/prestonblair/intro/top.html -->
+<HTML><HEAD><TITLE>top</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<SCRIPT language=JavaScript>
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(18);
+    document.MM_Time["doublebounce"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "doublebounce";
+    document.MM_Time[0].fps = 1;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 1;
+    document.MM_Time[0][0].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 2;
+    document.MM_Time[0][1].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][2] = new String("behavior");
+    document.MM_Time[0][2].frame = 3;
+    document.MM_Time[0][2].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][3] = new String("behavior");
+    document.MM_Time[0][3].frame = 4;
+    document.MM_Time[0][3].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][4] = new String("behavior");
+    document.MM_Time[0][4].frame = 5;
+    document.MM_Time[0][4].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][5] = new String("behavior");
+    document.MM_Time[0][5].frame = 6;
+    document.MM_Time[0][5].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][6] = new String("behavior");
+    document.MM_Time[0][6].frame = 7;
+    document.MM_Time[0][6].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][7] = new String("behavior");
+    document.MM_Time[0][7].frame = 8;
+    document.MM_Time[0][7].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][8] = new String("behavior");
+    document.MM_Time[0][8].frame = 9;
+    document.MM_Time[0][8].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][9] = new String("behavior");
+    document.MM_Time[0][9].frame = 10;
+    document.MM_Time[0][9].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][10] = new String("behavior");
+    document.MM_Time[0][10].frame = 11;
+    document.MM_Time[0][10].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][11] = new String("behavior");
+    document.MM_Time[0][11].frame = 12;
+    document.MM_Time[0][11].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][12] = new String("behavior");
+    document.MM_Time[0][12].frame = 13;
+    document.MM_Time[0][12].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][13] = new String("behavior");
+    document.MM_Time[0][13].frame = 14;
+    document.MM_Time[0][13].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][14] = new String("behavior");
+    document.MM_Time[0][14].frame = 15;
+    document.MM_Time[0][14].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][15] = new String("behavior");
+    document.MM_Time[0][15].frame = 16;
+    document.MM_Time[0][15].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0][16] = new String("behavior");
+    document.MM_Time[0][16].frame = 18;
+    document.MM_Time[0][16].value = "MM_timelineGoto('doublebounce','1')";
+    document.MM_Time[0][17] = new String("behavior");
+    document.MM_Time[0][17].frame = 17;
+    document.MM_Time[0][17].value = "MM_swapImage('doublebounce098','','098-doublebounce.gif',1)";
+    document.MM_Time[0].lastFrame = 18;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 5.50.4134.600" name=GENERATOR></HEAD>
+<BODY text=#000099 vLink=#993399 aLink=#ff33ff link=#ff3333 bgColor=#ffffff 
+leftMargin=0 topMargin=0 
+onload="MM_preloadImages('top/098-doublebounce.gif');MM_timelinePlay('doublebounce')" 
+marginheight="0" marginwidth="0">
+<TABLE cellSpacing=0 cellPadding=0 width=600 border=0>
+  <TBODY>
+  <TR>
+    <TD align=right width="70%" bgColor=#ffffff height=12><FONT 
+      face="Verdana, Arial, Helvetica, sans-serif" color=#cc0033 size=1><B>HELP 
+      ME MAINTAIN THIS SITE, PLEASE CLICK HERE &gt;<BR></B></FONT><B><FONT 
+      size=1><FONT face="Verdana, Arial, Helvetica, sans-serif"><BR>AIDEZ-MOI A 
+      ENTRETENIR CE SITE, SVP CLIQUEZ ICI &gt;</FONT></FONT></B></TD>
+    <TD vAlign=center align=middle width="30%" height=12><A target=_blank 
+      href="http://plpartners.starnetsystems.net/qb/ClickServlet?pid=412468&amp;cid=6510"><IMG 
+      alt="CASINO online" src="top_files/banner.gif" 
+border=0></A></TD></TR></TBODY></TABLE></BODY></HTML>

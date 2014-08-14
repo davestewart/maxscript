@@ -1,0 +1,27 @@
+[name]
+name=Tone
+matchName=ADBE Aud Tone
+
+[properties]
+name=	Waveform options
+type=	OneD
+
+name=	Frequency 1
+type=	OneD
+
+name=	Frequency 2
+type=	OneD
+
+name=	Frequency 3
+type=	OneD
+
+name=	Frequency 4
+type=	OneD
+
+name=	Frequency 5
+type=	OneD
+
+name=	Level
+type=	OneD
+
+

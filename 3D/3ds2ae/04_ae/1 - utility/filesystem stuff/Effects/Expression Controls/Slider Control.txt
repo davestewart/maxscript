@@ -1,0 +1,9 @@
+[name]
+name=Slider Control
+matchName=ADBE Slider Control
+
+[properties]
+name=	Slider
+type=	OneD
+
+

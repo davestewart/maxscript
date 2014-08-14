@@ -1,0 +1,43 @@
+<project version="Crimson Editor 3.60">
+	<category name="jsx" expanded="yes">
+		<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\jsx\maxObjects.jsx" />
+		<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\jsx\object constructor 11.jsx" />
+	</category>
+	<category name="ms" expanded="yes">
+		<category name="core" expanded="yes">
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\core\data functions 09.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\core\filestream functions 01.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\core\jsx.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\core\utility.ms" />
+		</category>
+		<category name="rollouts" expanded="yes">
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro animation 08.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro effects 01.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro options 01.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro render 02.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro settings 06.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro test.ms" />
+			<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\ro tools 01.ms" />
+		</category>
+		<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\aeBridge.ms" />
+	</category>
+	<category name="ms dev" expanded="yes">
+		<localfile path="E:\03_Scripting\3ds2ae\03_3ds\dev\animation\bone rotation 02.ms" />
+	</category>
+</project>
+
+<workspace version="Crimson Editor 3.60">
+	<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\jsx\object constructor 11.jsx" linenum="126" placement="0:1:-1:-1:-4:-20:209:209:957:805" />
+	<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\jsx\maxObjects.jsx" linenum="128" placement="0:1:-1:-1:-4:-20:228:228:980:828" />
+	<localfile path="E:\03_Scripting\maxScript\max 5\cameraToViewport.ms" linenum="29" placement="0:1:-1:-1:-4:-20:57:57:809:660" />
+	<localfile path="E:\03_Scripting\maxScript\max 5\ray stuff 01.ms" linenum="1" placement="0:1:-1:-1:-4:-20:114:114:866:717" />
+	<localfile path="E:\03_Scripting\maxScript\max 4\selection set changed\sel_change_03.ms" linenum="25" placement="0:1:-1:-1:-4:-20:95:95:847:698" />
+	<localfile path="E:\03_Scripting\maxScript\max 4\spline inout point tool\splineInOut 01.ms" linenum="1" placement="0:1:-1:-1:-4:-20:114:114:866:717" />
+	<localfile path="E:\03_Scripting\maxScript\max 4\view text\view_text 03.ms" linenum="1" placement="0:1:-1:-1:-4:-20:133:133:885:736" />
+	<localfile path="H:\research\3dsmax\scripts\Wad-O-MXSWads!-v1_02\Wad-O-Functions!-v1_50\Group&HierarchyStuff\MAXr3Script-copyhierarchy.ms" linenum="20" placement="0:1:-1:-1:-4:-20:247:247:999:844" />
+	<localfile path="E:\03_Scripting\maxScript\max 5\vertigo\vertigo 01.ms" linenum="1" placement="0:1:-1:-1:-4:-20:57:57:809:654" />
+	<localfile path="H:\research\3dsmax\scripts\Wad-O-MXSWads!-v1_02\Wad-O-Functions!-v1_50\DavidMiller-PixelRatio-v01\DavidMiller-PixelRatio-v01.ms" linenum="17" placement="0:1:-1:-1:-4:-20:76:76:828:673" />
+	<localfile path="E:\03_Scripting\3ds2ae\04_ae\5 - effects\posToEffect 01.jsx" linenum="5" placement="0:1:-1:-1:-4:-20:209:209:961:812" />
+	<localfile path="E:\03_Scripting\3ds2ae\03_3ds\rollout code\aeBridge.ms" linenum="16" placement="2:3:-1:-1:-4:-22:209:209:961:812" />
+</workspace>
+

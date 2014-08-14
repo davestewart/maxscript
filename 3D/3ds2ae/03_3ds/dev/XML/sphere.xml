@@ -1,0 +1,11 @@
+<object name="Sphere01" classOf="Sphere" isAnimated="true" id="1">
+<baseObject classOf="Sphere">
+  <radius classOf="Float">27.4143</radius> 
+  <segments classOf="Integer">32</segments> 
+  <smooth classOf="BooleanClass">true</smooth> 
+  <hemisphere classOf="Float">0.0</hemisphere> 
+  <Slice_From classOf="Float">0.0</Slice_From> 
+  <Slice_To classOf="Float">0.0</Slice_To> 
+  </baseObject>
+  <modifiers /> 
+</object>

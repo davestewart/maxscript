@@ -1,0 +1,24 @@
+[name]
+name=Optics Compensation
+matchName=ADBE Optics Compensation
+
+[properties]
+name=	Field Of View (FOV)
+type=	OneD
+
+name=	Reverse Lens Distortion
+type=	OneD
+
+name=	FOV Orientation
+type=	OneD
+
+name=	View Center
+type=	TwoD_SPATIAL
+
+name=	Optimal Pixels (Invalidates Rev
+type=	OneD
+
+name=	Resize
+type=	OneD
+
+

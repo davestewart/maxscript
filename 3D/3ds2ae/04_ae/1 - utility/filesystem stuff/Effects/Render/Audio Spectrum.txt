@@ -1,0 +1,75 @@
+[name]
+name=Audio Spectrum
+matchName=ADBE AudSpect
+
+[properties]
+name=	Audio Layer
+type=	LAYER_INDEX
+
+name=	Start Point
+type=	TwoD_SPATIAL
+
+name=	End Point
+type=	TwoD_SPATIAL
+
+name=	Path
+type=	MASK_INDEX
+
+name=	Use Polar Path
+type=	OneD
+
+name=	Start Frequency
+type=	OneD
+
+name=	End Frequency
+type=	OneD
+
+name=	Frequency bands
+type=	OneD
+
+name=	Maximum Height
+type=	OneD
+
+name=	Audio Duration (milliseconds)
+type=	OneD
+
+name=	Audio Offset (milliseconds)
+type=	OneD
+
+name=	Thickness
+type=	OneD
+
+name=	Softness
+type=	OneD
+
+name=	Inside Color
+type=	COLOR
+
+name=	Outside Color
+type=	COLOR
+
+name=	Blend Overlapping Colors
+type=	OneD
+
+name=	Hue Interpolation
+type=	OneD
+
+name=	Dynamic Hue Phase
+type=	OneD
+
+name=	Color Symmetry
+type=	OneD
+
+name=	Display Options
+type=	OneD
+
+name=	Side Options
+type=	OneD
+
+name=	Duration Averaging
+type=	OneD
+
+name=	Composite On Original
+type=	OneD
+
+

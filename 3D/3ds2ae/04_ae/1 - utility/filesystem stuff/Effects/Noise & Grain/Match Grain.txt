@@ -1,0 +1,315 @@
+[name]
+name=Match Grain
+matchName=VISINF Grain Duplication
+
+[properties]
+name=	Viewing Mode
+type=	OneD
+
+name=	Noise Source Layer
+type=	LAYER_INDEX
+
+name=	Preview Region
+type=	NO_VALUE
+
+name=	Center
+type=	TwoD_SPATIAL
+
+name=	Width
+type=	OneD
+
+name=	Height
+type=	OneD
+
+name=	Show Box
+type=	OneD
+
+name=	Box Color
+type=	COLOR
+
+name=	
+type=	NO_VALUE
+
+name=	Compensate for Existing Noise
+type=	OneD
+
+name=	Tweaking
+type=	NO_VALUE
+
+name=	Intensity
+type=	OneD
+
+name=	Size
+type=	OneD
+
+name=	Softness
+type=	OneD
+
+name=	Aspect Ratio
+type=	OneD
+
+name=	Channel Intensities
+type=	NO_VALUE
+
+name=	Red Intensity
+type=	OneD
+
+name=	Green Intensity
+type=	OneD
+
+name=	Blue Intensity
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Channel Size
+type=	NO_VALUE
+
+name=	Red Size
+type=	OneD
+
+name=	Green Size
+type=	OneD
+
+name=	Blue Size
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Color
+type=	NO_VALUE
+
+name=	Monochromatic
+type=	OneD
+
+name=	Saturation
+type=	OneD
+
+name=	Tint Amount
+type=	OneD
+
+name=	Tint Color
+type=	COLOR
+
+name=	
+type=	NO_VALUE
+
+name=	Application
+type=	NO_VALUE
+
+name=	Blending Mode
+type=	OneD
+
+name=	Shadows
+type=	OneD
+
+name=	Midtones
+type=	OneD
+
+name=	Highlights
+type=	OneD
+
+name=	Midpoint
+type=	OneD
+
+name=	Channel Balance
+type=	NO_VALUE
+
+name=	Red Shadows
+type=	OneD
+
+name=	Red Midtones
+type=	OneD
+
+name=	Red Highlights
+type=	OneD
+
+name=	Green Shadows
+type=	OneD
+
+name=	Green Midtones
+type=	OneD
+
+name=	Green Highlights
+type=	OneD
+
+name=	Blue Shadows
+type=	OneD
+
+name=	Blue Midtones
+type=	OneD
+
+name=	Blue Highlights
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Sampling
+type=	NO_VALUE
+
+name=	Source Frame
+type=	OneD
+
+name=	Number of Samples
+type=	OneD
+
+name=	Sample Size
+type=	OneD
+
+name=	Sample Box Color
+type=	COLOR
+
+name=	Sample Selection
+type=	OneD
+
+name=	Noise Sample Points
+type=	NO_VALUE
+
+name=	1
+type=	TwoD_SPATIAL
+
+name=	2
+type=	TwoD_SPATIAL
+
+name=	3
+type=	TwoD_SPATIAL
+
+name=	4
+type=	TwoD_SPATIAL
+
+name=	5
+type=	TwoD_SPATIAL
+
+name=	6
+type=	TwoD_SPATIAL
+
+name=	7
+type=	TwoD_SPATIAL
+
+name=	8
+type=	TwoD_SPATIAL
+
+name=	9
+type=	TwoD_SPATIAL
+
+name=	10
+type=	TwoD_SPATIAL
+
+name=	
+type=	NO_VALUE
+
+name=	Intensity
+type=	NO_VALUE
+
+name=	1
+type=	TwoD_SPATIAL
+
+name=	2
+type=	TwoD_SPATIAL
+
+name=	3
+type=	TwoD_SPATIAL
+
+name=	4
+type=	TwoD_SPATIAL
+
+name=	5
+type=	TwoD_SPATIAL
+
+name=	6
+type=	TwoD_SPATIAL
+
+name=	7
+type=	TwoD_SPATIAL
+
+name=	8
+type=	TwoD_SPATIAL
+
+name=	9
+type=	TwoD_SPATIAL
+
+name=	10
+type=	TwoD_SPATIAL
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+name=	Animation
+type=	NO_VALUE
+
+name=	Animation Speed
+type=	OneD
+
+name=	Animate Smoothly
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Blend with Original
+type=	NO_VALUE
+
+name=	Amount
+type=	OneD
+
+name=	Combine Match and Mask Using
+type=	OneD
+
+name=	Blur Matte
+type=	OneD
+
+name=	Color Matching
+type=	NO_VALUE
+
+name=	Match Color Using
+type=	OneD
+
+name=	Matching Color
+type=	COLOR
+
+name=	Matching Tolerance
+type=	OneD
+
+name=	Matching Softness
+type=	OneD
+
+name=	Invert Match
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Masking Layer
+type=	NO_VALUE
+
+name=	Mask Layer
+type=	LAYER_INDEX
+
+name=	Masking Mode
+type=	OneD
+
+name=	If Mask Size Differs
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	
+type=	NO_VALUE
+
+

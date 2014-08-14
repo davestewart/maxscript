@@ -1,0 +1,243 @@
+[name]
+name=Card Dance
+matchName=APC CardDanceCam
+
+[properties]
+name=	Rows & Columns
+type=	OneD
+
+name=	Rows
+type=	OneD
+
+name=	Columns
+type=	OneD
+
+name=	Back Layer
+type=	LAYER_INDEX
+
+name=	Gradient Layer 1
+type=	LAYER_INDEX
+
+name=	Gradient Layer 2
+type=	LAYER_INDEX
+
+name=	Rotation Order
+type=	OneD
+
+name=	Transformation Order
+type=	OneD
+
+name=	X Position
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Y Position
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Z Position
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	X Rotation
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Y Rotation
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Z Rotation
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	X Scale
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Y Scale
+type=	NO_VALUE
+
+name=	Source
+type=	OneD
+
+name=	Multiplier
+type=	OneD
+
+name=	Offset
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Camera System
+type=	OneD
+
+name=	Camera Position
+type=	NO_VALUE
+
+name=	X Rotation
+type=	OneD
+
+name=	Y Rotation
+type=	OneD
+
+name=	Z Rotation
+type=	OneD
+
+name=	X,Y Position
+type=	TwoD_SPATIAL
+
+name=	Z Position
+type=	OneD
+
+name=	Focal Length
+type=	OneD
+
+name=	Transform Order
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Corner Pins
+type=	NO_VALUE
+
+name=	Upper Left  Corner
+type=	TwoD_SPATIAL
+
+name=	Upper Right Corner
+type=	TwoD_SPATIAL
+
+name=	Lower Left  Corner
+type=	TwoD_SPATIAL
+
+name=	Lower Right Corner
+type=	TwoD_SPATIAL
+
+name=	Auto Focal Length
+type=	OneD
+
+name=	Focal Length
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Lighting
+type=	NO_VALUE
+
+name=	Light Type
+type=	OneD
+
+name=	Light Intensity
+type=	OneD
+
+name=	Light Color
+type=	COLOR
+
+name=	Light Position
+type=	TwoD_SPATIAL
+
+name=	Light Depth
+type=	OneD
+
+name=	Ambient Light
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Material
+type=	NO_VALUE
+
+name=	Diffuse Reflection
+type=	OneD
+
+name=	Specular Reflection
+type=	OneD
+
+name=	Highlight Sharpness
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+

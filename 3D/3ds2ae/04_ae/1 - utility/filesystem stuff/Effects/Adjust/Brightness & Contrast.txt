@@ -1,0 +1,12 @@
+[name]
+name=Brightness & Contrast
+matchName=ADBE Brightness & Contrast 2
+
+[properties]
+name=	Brightness
+type=	OneD
+
+name=	Contrast
+type=	OneD
+
+

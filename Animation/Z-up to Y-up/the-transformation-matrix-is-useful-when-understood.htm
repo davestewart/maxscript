@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="shortcut icon" href="http://blog.duber.cz/wp-content/themes/tranquility-10/favicon.ico" />
+	<title>The transformation matrix is very useful, when understood. | duber's blog</title>
+	
+	<meta name="generator" content="WordPress 2.3.2" /> <!-- leave this for stats please -->
+
+	<style type="text/css" media="screen">
+		@import url( http://blog.duber.cz/wp-content/themes/tranquility-10/style.css );
+	</style>
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://blog.duber.cz/feed" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://blog.duber.cz/feed/rss" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://blog.duber.cz/feed/atom" />
+	
+	<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+	<script type="text/javascript" src="http://blog.duber.cz/wp-content/themes/tranquility-10/swfobject.js"></script>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	<script type="text/javascript">_uacct = "UA-3550186-2"; urchinTracker();</script>
+	
+	<link rel="pingback" href="http://blog.duber.cz/xmlrpc.php" />
+    	<link rel='archives' title='June 2008' href='http://blog.duber.cz/2008/06' />
+	<link rel='archives' title='May 2008' href='http://blog.duber.cz/2008/05' />
+	<link rel='archives' title='April 2008' href='http://blog.duber.cz/2008/04' />
+	<link rel='archives' title='March 2008' href='http://blog.duber.cz/2008/03' />
+	<link rel='archives' title='February 2008' href='http://blog.duber.cz/2008/02' />
+	<link rel='archives' title='January 2008' href='http://blog.duber.cz/2008/01' />
+		<meta name='NextGEN' content='0.74' />
+
+<style type="text/css" media="screen">@import "http://blog.duber.cz/wp-content/plugins/nextgen-gallery/css/nggallery.css";</style>	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.duber.cz/xmlrpc.php?rsd" />
+ <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.duber.cz/wp-includes/wlwmanifest.xml" /> <script type='text/javascript' src='http://blog.duber.cz/wp-content/plugins/nextgen-gallery/js/swfobject.js?ver=1.5'></script>
+
+<!-- all in one seo pack 1.4.5.2 [395,487] -->
+<meta name="description" content="An article about transformation matrices in 3ds Max and Maya and their relation to each other." />
+<meta name="keywords" content="matrix, matrices, transformation, 3ds, max, 3ds max, maya, conversion, translation, xformmat, xform, calculation, matrix3, 16, double, 16 double,,16,16 double,3ds,3ds max,calculation,conversion,double,matrices,matrix3,max,maya,transformation,translation,xform,xformmat" />
+<script type='text/javascript' src='http://blog.duber.cz/wp-includes/js/tw-sack.js?ver=1.6.1'></script>
+<script type="text/javascript" src="http://blog.duber.cz/wp-content/plugins/flash-video-player/swfobject.js"></script>
+
+	<!-- begin lightbox scripts -->
+	<script type="text/javascript">
+    //<![CDATA[
+    document.write('<link rel="stylesheet" href="http://blog.duber.cz/wp-content/plugins/lightbox-2/Themes/duber/lightbox.css" type="text/css" media="screen" />');
+    //]]>
+    </script>
+	<script type="text/javascript" src="http://blog.duber.cz/wp-content/plugins/lightbox-2/lightbox2/prototype.js"></script>
+	<script type="text/javascript" src="http://blog.duber.cz/wp-content/plugins/lightbox-2/lightbox2/scriptaculous.js"></script>
+	<script type="text/javascript" src="http://blog.duber.cz/wp-content/plugins/lightbox-2/lightbox2/lightbox.js"></script>
+	<!-- end lightbox scripts -->
+</head>
+
+<body>
+	<div id="rap">
+		<div id="header">
+			<div id="flash">
+				<img src="http://blog.duber.cz/wp-content/themes/tranquility-10/duber_logo.gif" alt="flower" />
+			</div>
+			
+			<h1><a href="http://blog.duber.cz/">duber&#8217;s blog</a></h1>
+			<h2>a blog about cg, my hobbies, opinions, interests&#8230;</h2>
+		</div>
+
+		
+<!-- begin sidebar -->
+<ul id="menu">
+
+	<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>
+		<ul>
+			<li class="cat-item cat-item-7"><a href="http://blog.duber.cz/category/3ds-max" title="my primary dcc platform, one of my primary blog topics">3ds Max</a>
+	<ul class='children'>
+	<li class="cat-item cat-item-52"><a href="http://blog.duber.cz/category/3ds-max/finalrender" title="anything related to finalRender Stage-1 that I want to share with the world">finalRender</a>
+</li>
+	<li class="cat-item cat-item-121"><a href="http://blog.duber.cz/category/3ds-max/maxscript" title="everything about maxscripting">maxscript</a>
+</li>
+	</ul>
+</li>
+	<li class="cat-item cat-item-106"><a href="http://blog.duber.cz/category/maya" title="another superb dcc platform that I&#039;m trying to conquer">Maya</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blog.duber.cz/category/misc" title="all the stuff that doesn&#039;t fit in the other categories">miscellaneous</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://blog.duber.cz/category/opinions" title="yes, like it or not, I do have my own opinion on certain topics!">opinions</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://blog.duber.cz/category/photos" title="I like taking pictures with my Canon 400D, this is where I share some of the better ones I shot ;)">photos</a>
+</li>
+	<li class="cat-item cat-item-247"><a href="http://blog.duber.cz/category/python" title="an awesome scripting language that I recently discovered and started learning">Python</a>
+</li>
+	<li class="cat-item cat-item-105"><a href="http://blog.duber.cz/category/software" title="anything related to software that I use or at least know of">software</a>
+</li>
+	<li class="cat-item cat-item-157"><a href="http://blog.duber.cz/category/technical" title="everything technical">technical</a>
+</li>
+	<li class="cat-item cat-item-253"><a href="http://blog.duber.cz/category/videotutorials" title="View all posts filed under videotutorials">videotutorials</a>
+</li>
+		</ul>
+</li>
+<li id="archives" class="widget widget_archives"><h2 class="widgettitle">Archives</h2>
+		<ul>
+			<li><a href='http://blog.duber.cz/2008/06' title='June 2008'>June 2008</a></li>
+	<li><a href='http://blog.duber.cz/2008/05' title='May 2008'>May 2008</a></li>
+	<li><a href='http://blog.duber.cz/2008/04' title='April 2008'>April 2008</a></li>
+	<li><a href='http://blog.duber.cz/2008/03' title='March 2008'>March 2008</a></li>
+	<li><a href='http://blog.duber.cz/2008/02' title='February 2008'>February 2008</a></li>
+	<li><a href='http://blog.duber.cz/2008/01' title='January 2008'>January 2008</a></li>
+		</ul>
+</li>
+<li id="links" class="widget widget_links"><h2 class="widgettitle">Friends</h2>
+
+	<ul>
+<li><a href="http://blitz1.cgsociety.org/gallery/" rel="friend met co-worker" title="great artist, superb lighting TD, admirable dude">Blitz</a></li>
+<li><a href="http://imdb.com/name/nm0117806/" rel="friend met co-worker" title="a great dude, head of 3D at UPP, director, animator">Buf</a></li>
+<li><a href="http://blog.visualfx.cz/" rel="friend met co-worker" title="XSI guru, great army dude ;)">Francesco</a></li>
+<li><a href="http://www.janjinda.com" rel="friend met co-worker colleague" title="a friend and a collegue of mine">IcemanJ</a></li>
+<li><a href="http://www.johnbruk.com/" rel="friend met co-worker" title="amazing mattepainter">JohnBruk</a></li>
+<li><a href="http://www.tomaskral.cz/" rel="friend met co-worker" title="an on-line portfolio of Tomas Kral">Tomáš Král</a></li>
+
+	</ul>
+</li>
+
+<li id="links" class="widget widget_links"><h2 class="widgettitle">Professional</h2>
+
+	<ul>
+<li><a href="http://www.duber.cz/training-and-tutorials" rel="me" title="training DVDs I created for aspiring artists in the field of 3D graphics">duber DVDs</a></li>
+<li><a href="http://www.duber.cz" rel="me" title="my personal and professional portfolio for CG - digital content creation worldwide services">duber studio</a></li>
+<li><a href="http://www.duber.tv" title="A site dedicated to free CG training on behalf of duber studio">duber training videos</a></li>
+<li><a href="http://www.dynavision.cz" title="an ad agency in the LED screen domain in the Czech Republic">dynavision</a></li>
+<li><a href="http://imdb.com/title/tt1041804/" title="the current movie I work on with UPP">Nutcracker: The Untold Story</a></li>
+
+	</ul>
+</li>
+
+<li id="links" class="widget widget_links"><h2 class="widgettitle">Recommended</h2>
+
+	<ul>
+<li><a href="http://www.3dtotal.com" title="Great site with dedicated galleries etc&#8230;">3DTotal</a></li>
+<li><a href="http://www.scriptspot.com/bobo/" title="Borislav Petrov&#8217;s corner. The best MAXScripter I know, period.">Boboland</a></li>
+<li><a href="http://www.cgchannel.com" title="A great site with great news and job postings.">CGChannel</a></li>
+<li><a href="http://forums.cgsociety.org/" title="If you don&#8217;t know this site, you don&#8217;t know CG">CGTalk</a></li>
+<li><a href="http://www.highend3d.com/" title="A great site with many plugins and scripts for Maya and other DCC applications.">Highend3d</a></li>
+<li><a href="http://www.scriptspot.com" title="A mandatory site for anyone who uses 3ds Max">ScriptSpot</a></li>
+
+	</ul>
+</li>
+
+		<li id="subscribe2widget" class="widget widget_subscribe2widget">			<h2 class="widgettitle">Subscribe</h2>
+			<div class="search">
+			<form method="post" action="">Your email:&#160;<input type="text" name="email" value="" size="20" />&#160;<br /><input type="radio" name="s2_action" value="subscribe" checked="checked" /> Subscribe <input type="radio" name="s2_action" value="unsubscribe" /> Unsubscribe &#160;<input type="submit" value="Send" /></form>
+
+			</div>
+		</li>
+		<li id="search" class="widget widget_search">			<form id="searchform" method="get" action="http://blog.duber.cz">
+			<div>
+			<input type="text" name="s" id="s" size="15" /><br />
+			<input type="submit" value="Search" />
+			</div>
+			</form>
+		</li>
+	<li id="pages" class="widget widget_pages">		<h2 class="widgettitle">Pages</h2>
+		<ul>
+			<li class="page_item page-item-2"><a href="http://blog.duber.cz/about" title="about">about</a></li>
+<li class="page_item page-item-4"><a href="http://blog.duber.cz/contact" title="contact">contact</a></li>
+		</ul>
+	</li>
+		<li id="meta" class="widget widget_meta">			<h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="http://blog.duber.cz/wp-login.php">Login</a></li>
+			<li><a href="http://blog.duber.cz/feed" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://blog.duber.cz/comments/feed" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+		</li>
+	
+</ul>
+<!-- end sidebar -->
+		
+		<div id="content">
+<!-- end header -->
+
+
+<!---->
+	
+<div class="post" id="post-61">
+	<h3 class="storytitle"><a href="http://blog.duber.cz/3ds-max/the-transformation-matrix-is-useful-when-understood" rel="bookmark">The transformation matrix is very useful, when understood.</a></h3>
+	<div class="meta">loocas | <a href="http://blog.duber.cz/category/3ds-max" title="View all posts in 3ds Max" rel="category tag">3ds Max</a>, <a href="http://blog.duber.cz/category/maya" title="View all posts in Maya" rel="category tag">Maya</a>, <a href="http://blog.duber.cz/category/3ds-max/maxscript" title="View all posts in maxscript" rel="category tag">maxscript</a>, <a href="http://blog.duber.cz/category/technical" title="View all posts in technical" rel="category tag">technical</a> | Monday, June 2nd, 2008 </div>
+	
+	<div class="storycontent">
+		<p><img src='http://blog.duber.cz/wp-content/uploads/matrix_banner.png' alt='Matrix banner' /></p>
+<p>The matrix in a 3D space has nothing to do with Neo&#8217;s hassle with sentinels, no, instead these are extremely useful and helpful <em>vector arrays</em> that make up a position, rotation and a scale of any object in your scene. Recently I&#8217;ve been <em>re-inventing the wheel</em> when I needed to write a system that&#8217;d allow me to instantly and without any user input transfer objects from Max to Maya and XSI. The reason for matrices in this case lies in the convenience of the whole matrix storing the object&#8217;s entire transformation information, which is, essentially, all that you need in order to accurately describe object&#8217;s exact position, rotation and scale in a 3D space.</p>
+<p><span id="more-61"></span></p>
+<p>The other reason is that Max is the only software (of these three) that has a differently aligned coordinate system. As opposed to XSI and Maya, Max&#8217;s <em>world up direction</em> is the Z axis, while Maya&#8217;s and XSI&#8217;s (default) <em>world up direction</em> is the Y axis. So, obviously, you cannot assume that when you move a box in Max 25 units along the X, Y and Z and rotate it 25 degrees along the, let&#8217;s say, Z axis, you&#8217;d get to the very same location and orientation when transferred to Maya or XSI. Not a chance!</p>
+<p>So, how do you solve this problem? Well, thankfully, we have the transform matrix! As I said, every single entity in the 3D space (be it whatever, geometry objects, helpers, nulls, groups, vertices etc&#8230;) has its own transformation matrix so that it is explicitly given where the object is situated in the 3D space. There are many types of matrices, but the one we&#8217;re most interested in are the transform matrices. To cut the crap, a matrix is an <em>array</em> of values. This isn&#8217;t the most precise description of what a matrix is, but in a 3D package, the matrices are returned as a special type of an array. Let&#8217;s take a look at what you get when you ask Max and Maya for a special kind of a matrix an identity matrix. This is the matrix that describes the world&#8217;s coordinate system, it&#8217;s position, rotation and scale. This is the very basic matrix that every object, immediately after creation, transforms in it.</p>
+<p>When you invoke a <code>matrix3 1</code> in Max, it returns this value: <code>(matrix3 [1,0,0] [0,1,0] [0,0,1] [0,0,0])</code> This is the identity matrix in Max. The very same identity matrix in Maya, as far as I know, cannot be created this way (but I&#8217;m almost 100% sure I just don&#8217;t know about the way yet), however, it can be queried from an object. If you create any object that&#8217;s perfectly aligned to the world and you ask for its matrix by invoking (in MEL) <code>xform -q -m `ls -sl`;</code> (assuming you&#8217;ve slected the object) you&#8217;ll get this: <code>Result: 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</code> It may not seem so, but these two matrices are equal and, further more, are the very same, the only difference is that Maya returns a <em>16 double</em> value while Max returns a <em>matrix3</em> value. The other reason is that Maya&#8217;s matrix is a  square matrix of order 4-by-4 (4&#215;4), while Max&#8217;s matrix is of order 4-by-3 (4&#215;3), the last column is omitted as it&#8217;s always the same and has no special meaning for the user. So, how come they&#8217;re &#8220;the same&#8221;? Well, if you look at it this way:</p>
+<p><img src='http://blog.duber.cz/wp-content/uploads/max_maya_matrix.png' alt='Max and Maya matrices' /></p>
+<p>it should be clear that these identity matrices are exactly the same both in Max and Maya. There is one little problem, however. As I stated before, Maya&#8217;s and XSI&#8217;s default world&#8217;s up axis is the Y axis as opposed to Max&#8217;s Z axis. So, even though these identity matrices look exactly the same, they cannot be transferred between the packages as they are as that&#8217;d produce unwanted object transformation. What I needed for my project was a one-way conversion. I needed to <em>transform</em> Max&#8217;s transformation matrix into Maya&#8217;s transformation matrix. Thankfully it&#8217;s simpler than you might think. Generally, all you need to do is to transform your input transformation matrix into the Maya&#8217;s space, which can be done either from within Maya or directly within Max, or even outside in a separate program.</p>
+<p>How exactly do you do that? And what is the Maya&#8217;s transformation matrix expressed inside Max? First things first. You have to know the Maya&#8217;s world transformation matrix relative to Max&#8217;s first in order to transform into that space. This can be easily generated in Max as all you have to do is to align a point helper (point helper because it can display it&#8217;s local axis tripod), manually, in Max so that it reflect&#8217;s Maya&#8217;s default Y axis as the world up axis. Then you ask for its transformation property, which will return this interesting value: <code>(matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,0,0])</code> That&#8217;s it! That was the hardest part of the whole problem :) Now you have Maya&#8217;s world transformation matrix inside Max, it can&#8217;t get any more exciting than that! Oks, just kidding, it actually does get more exciting than that! ;) Now it&#8217;s just a matter of transforming your transformation matrices into this space. How to go about this is simple. Thanks to a quick research on the internet and a few mathematical articles, I came across this formula:<br />
+<code>(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;mayaMatrix = (matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,0,0])<br />
+&nbsp;&nbsp;&nbsp;&nbsp;inputMatrix = $foo.transform<br />
+&nbsp;&nbsp;&nbsp;&nbsp;theResultingMatrix = mayaMatrix * inputMatrix * inverse mayaMatrix<br />
+)</code></p>
+<p>or, if you read user documentation ;) you come across this handy function:</p>
+<p><code>(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;mayaMatrix = (matrix3 [1,0,0] [0,0,1] [0,-1,0] [0,0,0])<br />
+&nbsp;&nbsp;&nbsp;&nbsp;inputMatrix = $foo.transform<br />
+&nbsp;&nbsp;&nbsp;&nbsp;theResultingMatrix = xFormMat inputMatrix mayaMatrix<br />
+)</code></p>
+<p>(note: the local scope of this script is introduced just to make sure we won&#8217;t accidentally mess any existing variables up in your current namespace. If you don&#8217;t know what I&#8217;m talking about, just disregard this comment ;) )</p>
+<p>The resulting matrix is an explicit transform matrix in Maya&#8217;s world space. It doesn&#8217;t get any more exciting than this! ;) So, at the end of the day I wrote a function that&#8217;ll also format the matrix3 value in a 16 double value so that Maya understands it and I could start seamlessly transforming objects from Max in Maya (I&#8217;ll leave this part to you). It may not seem too useful at first, but think of the possibilities! Besides I needed this conversion system for a much larger project I&#8217;m working on at the current studio that hired me. Let me put it this way: in the end, it&#8217;ll save us a lot of time, worrying, sleepless nights and company&#8217;s money! ;)</p>
+<p>Here&#8217;s a screenshot proving the concept:</p>
+<p><a href="http://blog.duber.cz/wp-content/gallery/screenshots/max_maya_matrix_proof.png" rel="lightbox[61]"  title="max_maya_matrix_proof.png"><img src='http://blog.duber.cz/wp-content/gallery/screenshots/thumbs/thumbs_max_maya_matrix_proof.png' alt='max_maya_matrix_proof.png' title='max_maya_matrix_proof.png' /></a></p>
+<p><strong>Recommended education:</strong></p>
+<p><a href="http://en.wikipedia.org/wiki/Matrix_%28mathematics%29">Matrix (mathematics)</a><br />
+<a href="http://en.wikipedia.org/wiki/Transformation_matrix">Transformation Matrix</a><br />
+<a href="http://easyweb.easynet.co.uk/~mrmeanie/matrix/matrices.htm">Matrix Math</a><br />
+<a href="http://paulneale.com/tutorials/matrix/TransformMatrix.htm">Paul Neale&#8217;s Transform Matrix tutorial</a><br />
+<a href="http://cg-academy.net/pages/topic_maxscript/dvds_MAXScript_advanced_01/dvds_maxscript_advanced_01.php">The Matrix: Explained by Bobo</a></p>
+	</div>
+	
+	<div class="feedback">
+                        	</div>
+
+</div>
+
+
+<h2 id="comments">No Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+	<p>No comments yet.</p>
+
+<p><a href='http://blog.duber.cz/3ds-max/the-transformation-matrix-is-useful-when-understood/feed'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+	<a href="http://blog.duber.cz/3ds-max/the-transformation-matrix-is-useful-when-understood/trackback" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://blog.duber.cz/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type="hidden" name="comment_post_ID" value="61" />
+</p>
+<script type="text/javascript">
+//<![CDATA[
+	function gethash(){
+		document.getElementById('commentform').onsubmit = null;
+		if(document.getElementById('submit')) document.getElementById('submit').value='Please wait...';
+		var mysack = new sack("http://blog.duber.cz/wp-content/plugins/captcha-free.php");
+		mysack.execute = 1;
+		mysack.method = 'POST';
+		mysack.onError = function() { alert('Unable to get Captcha-Free Hash!') };
+		mysack.setVar('post_id', 61);
+		mysack.runAJAX();
+		return false;
+	}
+	function gothash(myhash){
+		document.getElementById('captchafree').value = myhash;
+		// Workaround for Wordpress' retarded choice of naming the submit button same as a JS function name >:-(
+		document.getElementById('submit').click();
+	}
+	document.getElementById('commentform').onsubmit = gethash;
+//]]>
+</script>
+<input type="hidden" id="captchafree" name="captchafree" value="" />
+<p><small><noscript><strong>Please note:</strong> JavaScript is required to post comments.</noscript> <a href="http://wordpresssupplies.com/wordpress-plugins/captcha-free/">Spam protection by WP Captcha-Free</a></small></p>
+
+</form>
+
+
+
+
+
+<!-- begin footer -->
+</div>
+
+</div>
+
+<div class="credit">
+	<p>Powered by <a href='http://wordpress.org/' title='Powered by WordPress, state-of-the-art semantic personal publishing platform.'><strong>WordPress</strong></a> | Theme by <a href="http://www.roytanck.com">Roy Tanck</a></p>
+</div>
+
+
+
+</body>
+</html>

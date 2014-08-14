@@ -1,0 +1,12 @@
+[name]
+name=Offset
+matchName=ADBE Offset
+
+[properties]
+name=	Shift Center To
+type=	TwoD_SPATIAL
+
+name=	Blend With Original
+type=	OneD
+
+

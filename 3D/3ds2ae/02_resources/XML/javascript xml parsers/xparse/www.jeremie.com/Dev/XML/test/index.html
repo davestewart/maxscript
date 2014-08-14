@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<TITLE>Xparse: Live Test</TITLE>
+<SCRIPT SRC="../xparse.js"></SCRIPT>
+<SCRIPT>
+function loadurl()
+{
+	window.frames["xml"].document.forms['myForm'].src.value = "Loading...";
+	window.frames["header"].location = "http://www.jeremie.com/Dev/XML/test.jer?url=" + window.frames["xml"].document.forms['urlForm'].url.value;
+}
+
+var newdoc = new String();
+function show()
+{
+	window.frames["tree"].document.open("text/html");
+	window.frames["tree"].document.write('<BODY BGCOLOR="#F0F0F8"><PRE><FONT SIZE="+1">' + newdoc + '</FONT></PRE></BODY>');
+	window.frames["tree"].document.close();
+}
+
+var grove = new Array();
+function process()
+{
+	grove = Xparse(window.frames["xml"].document.forms['myForm'].elements['src'].value);
+	if(window.frames["xml"].document.forms['myForm'].type[1].checked)
+	{
+		newdoc = retag(grove);
+	}
+	if(window.frames["xml"].document.forms['myForm'].type[0].checked)
+	{
+		newdoc = dotag(grove);
+	}
+	window.setTimeout("show();",0);
+}
+
+
+function dotag(tag)
+{
+	var result = new String();
+	if(tag.show)
+	{
+		result += '<A HREF="javascript:parent.flip(' + tag.uid + ');"><IMG SRC="folder_open.gif" BORDER="0" ALIGN="absmiddle" HSPACE="2" VSPACE="0" HEIGHT="22" WIDTH="27"></A>';
+		result += tag.name + "\n";
+		for(var i = 0; i < tag.contents.length; i++)
+		{
+			if(tag.contents[i].type == "element")
+			{
+				result += '<DIR COMPACT>';
+				result += dotag(tag.contents[i]);
+				result += '</DIR>';
+			}
+			if(tag.contents[i].type == "chardata" && strip(tag.contents[i].value).length > 0)
+			{
+				result += '<DIR COMPACT>';
+				result += '<IMG SRC="text.gif" BORDER="0" ALIGN="absmiddle" HSPACE="2" VSPACE="0" HEIGHT="22" WIDTH="20">';
+				result += entity(tag.contents[i].value) + "\n";
+				result += '</DIR>';
+			}
+			if(tag.contents[i].type == "pi")
+			{
+				result += '<DIR COMPACT>';
+				result += '<IMG SRC="pi.gif" BORDER="0" ALIGN="absmiddle" HSPACE="2" VSPACE="0" HEIGHT="22" WIDTH="20">';
+				result += entity(tag.contents[i].value) + "\n";
+				result += '</DIR>';
+			}
+			if(tag.contents[i].type == "comment")
+			{
+				result += '<DIR COMPACT>';
+				result += '<IMG SRC="comment.gif" BORDER="0" ALIGN="absmiddle" HSPACE="2" VSPACE="0" HEIGHT="22" WIDTH="20">';
+				result += entity(tag.contents[i].value) + "\n";
+				result += '</DIR>';
+			}
+		}
+	}
+	else
+	{
+		result += '<A HREF="javascript:parent.flip(' + tag.uid + ');"><IMG SRC="folder.gif" BORDER="0" ALIGN="absmiddle" HSPACE="2" VSPACE="0" HEIGHT="22" WIDTH="20"></A>';
+		result += tag.name + "\n";
+	}
+	return result;
+}
+
+function flip(id)
+{
+	if(grove.index[id].show){
+		grove.index[id].show = true;
+	}else{
+		grove.index[id].show = false;
+	}
+	grove.index[id].show = grove.index[id].show ^ true;
+	newdoc = dotag(grove);
+	window.setTimeout("show();",0);
+}
+
+function strip(str)
+{
+	var A = new Array();
+
+	A = str.split("\n");
+	str = A.join("");
+	A = str.split(" ");
+	str = A.join("");
+	A = str.split("\t");
+	str = A.join("");
+
+	return str;
+}
+
+function entity(str)
+{
+	var A = new Array();
+
+	A = str.split("&");
+	str = A.join("&amp;");
+	A = str.split("<");
+	str = A.join("&lt;");
+	A = str.split(">");
+	str = A.join("&gt;");
+
+	return str;
+}
+
+
+function retag(tag)
+{
+	var result = new String();
+	result += "<FONT COLOR='blue'>&lt;</FONT><FONT COLOR='red'>" + tag.name;
+	for(attrib in tag.attributes)
+	{
+		result += " " + attrib + '="' + tag.attributes[attrib] + '"';
+	}
+	result += "</FONT><FONT COLOR='blue'>&gt;</FONT>";
+	for(var i=0;i < tag.contents.length;i++)
+	{
+		if(tag.contents[i].type=="element")
+		{
+			result += retag(tag.contents[i]);
+		}
+		else
+		{
+			if(tag.contents[i].type == "comment")
+			{
+				result += "<FONT COLOR='blue'>&lt;</FONT><FONT COLOR='green'>!--" + entity(tag.contents[i].value) + "--</FONT><FONT COLOR='blue'>&gt;</FONT>";
+			}
+			else
+			{
+				if(tag.contents[i].type == "pi")
+				{
+					result += "<FONT COLOR='blue'>&lt;</FONT><FONT COLOR='yellow'>?" + entity(tag.contents[i].value) + "?</FONT><FONT COLOR='blue'>&gt;</FONT>";
+				}
+				else
+				{
+					result += entity(tag.contents[i].value);
+				}
+			}
+		}
+	}
+	result += "<FONT COLOR='blue'>&lt;</FONT><FONT COLOR='red'>/" + tag.name + "</FONT><FONT COLOR='blue'>&gt;</FONT>";
+	return result;
+}
+
+</SCRIPT>
+</HEAD>
+<FRAMESET ROWS="100,*" BORDER="0" FRAMEBORDER="no">
+	<FRAME NAME="header" SRC="../test.html" SCROLLING="no">
+	<FRAMESET COLS="60%,40%">
+		<FRAME NAME="xml" SRC="xml.html">
+		<FRAME NAME="tree" SRC="null.html">
+	</FRAMESET>
+</FRAMESET>

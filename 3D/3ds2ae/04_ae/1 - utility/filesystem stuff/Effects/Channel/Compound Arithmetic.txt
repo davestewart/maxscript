@@ -1,0 +1,24 @@
+[name]
+name=Compound Arithmetic
+matchName=ADBE Compound Arithmetic
+
+[properties]
+name=	Second Source Layer
+type=	LAYER_INDEX
+
+name=	Operator
+type=	OneD
+
+name=	Operate on Channels
+type=	OneD
+
+name=	Overflow Behavior
+type=	OneD
+
+name=	Stretch Second Source to Fit
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

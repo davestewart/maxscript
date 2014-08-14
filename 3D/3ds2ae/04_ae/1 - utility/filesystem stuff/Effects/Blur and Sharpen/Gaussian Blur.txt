@@ -1,0 +1,12 @@
+[name]
+name=Gaussian Blur
+matchName=ADBE Gaussian Blur
+
+[properties]
+name=	Blurriness
+type=	OneD
+
+name=	Blur Dimensions
+type=	OneD
+
+

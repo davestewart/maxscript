@@ -1,0 +1,27 @@
+[name]
+name=Ripple
+matchName=ADBE Ripple
+
+[properties]
+name=	Radius
+type=	OneD
+
+name=	Center of Ripple
+type=	TwoD_SPATIAL
+
+name=	Type of Conversion
+type=	OneD
+
+name=	Wave Speed
+type=	OneD
+
+name=	Wave Width
+type=	OneD
+
+name=	Wave Height
+type=	OneD
+
+name=	Ripple Phase
+type=	OneD
+
+

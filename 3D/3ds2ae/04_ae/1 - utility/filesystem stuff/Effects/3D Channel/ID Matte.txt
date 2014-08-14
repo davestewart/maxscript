@@ -1,0 +1,21 @@
+[name]
+name=ID Matte
+matchName=ADBE ID MATTE
+
+[properties]
+name=	Aux. Channel
+type=	OneD
+
+name=	ID Selection
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+name=	Invert
+type=	OneD
+
+name=	Use Coverage
+type=	OneD
+
+

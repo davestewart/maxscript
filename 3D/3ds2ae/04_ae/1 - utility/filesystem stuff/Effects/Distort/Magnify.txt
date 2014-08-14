@@ -1,0 +1,36 @@
+[name]
+name=Magnify
+matchName=ADBE Magnify
+
+[properties]
+name=	Shape
+type=	OneD
+
+name=	Center
+type=	TwoD_SPATIAL
+
+name=	Magnification
+type=	OneD
+
+name=	Link
+type=	OneD
+
+name=	Size
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+name=	Opacity
+type=	OneD
+
+name=	Scaling
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+name=	Resize Layer
+type=	OneD
+
+

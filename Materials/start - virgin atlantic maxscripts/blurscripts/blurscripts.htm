@@ -1,0 +1,1619 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="Neil Blevins, soulburn@blur.com">
+  <meta name="GENERATOR"
+ content="Mozilla/4.72 [en] (WinNT; U) [Netscape]">
+  <title>BlurScripts</title>
+</head>
+<body style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);"
+ link="#33ccff" vlink="#3366ff" alink="#3366ff">
+<b><font color="#ffffff"><font size="+4">BlurScripts</font></font></b>
+<p><b><font color="#ffffff">LAST UPDATED:</font> NOV 13TH 2004</b>
+</p>
+<p>Welcome to BlurScripts, a collection of MAXScripts written
+primarily for studio use, and available free to anyone who wants them.
+</p>
+<p><b><font color="#ffffff">The Disclaimers:</font></b>
+</p>
+<p>These scripts are provided as is, and Blur can not be held
+responsible
+for lost time, work or damage to your computer that results from usage
+of these scripts. We can promise you they've been used at blur studio
+in
+production by a whole bunch of people and they all seem to work fine.
+</p>
+<p>If you wish to use a piece of this code in your own work, please
+include
+the original author's name in your script as a contributor.
+For a more complete agreement, please read these <a
+ href="http://www.blur.com/blurbeta/beta/template_offline/_contents/license.html">words
+from our lawyers.</a>
+</p>
+<p><b><font color="#ffffff">Installation (<blink>READ CAREFULLY</blink>
+or the scripts may not run properly):</font></b>
+</p>
+<p>Pick the script pack for the version of max you're running.
+</p>
+<p>Although there's a large list of available scripts, you will notice
+there is only a single downloadable file, BSPack_rx_v0xx.zip. A lot of
+the
+BlurScripts rely on each other to function properly, and I just don't
+have
+time to break up each script into its own little zip, so I'm releasing
+script updates in Pack form. All you have
+to do is download the zip, then extract then into your 3dsmax root
+directory,
+for example, c:\3dsmax, make sure you have recurse subdirectories on.
+The zip will
+then install a bunch of files and directories, here's a short list of
+what
+it will install assuming your max root directory is c:\3dsmax
+</p>
+<ul>
+  <li>c:\3dsmax\scripts\BlurScripts: This will contain all the scripts
+themselves.</li>
+  <li>c:\3dsmax\scripts\BlurMats: A series of materials required by
+many scripts.</li>
+  <li>c:\3dsmax\scripts\startup: 1 file will be added to this
+directory, BSStartup.
+Loads scripted plugins.</li>
+  <li>c:\3dsmax\ui\icons: Adds 4 icon images, which are the icons for
+the macroscript
+versions of the blurscripts.</li>
+  <li>c:\3dsmax\ui\macroscripts: 1 file is added called
+BlurScripts.mcr. The file
+is a set of pointers to the scripts\blurscripts directory. IE, if you
+delete
+the blurscripts directory, this macroscript file will not be able to
+find
+any of the scripts, and all your blurscript icons will not work.</li>
+</ul>
+To uninstall the blurscript pack, just delete all the files mentioned
+above.
+To install a new updated pack, just download the new zip and unzip them
+again into your 3dsmax directory, saying overwrite current files. Feel
+free to install only certain scripts if you wish, but do so at your own
+risk, and don't ask us how to go about doing it. Packs are a complete
+install,
+so there's no need to download all the Packs, just the most recent one.
+To actually use these scripts in the max interface, please consult your
+3dsmax manual, all scripts can be run either through the maxscript run
+script menu at the top of the screen, or by customizing your toolbars,
+keyboard or quadmenu in Customize, Customize User Interface. The
+category
+name is BlurScripts.
+<p>Lastly, some of these scripts require a few third party plugins in
+order
+to work. To have everything work properly, please install the required
+plugins listed in the table below. If you don't, most of the scripts
+will
+still run, but a few won't.
+</p>
+<p><b><font color="#ffffff">Trouble Shooting:</font></b>
+</p>
+<p>If you're getting errors when starting these scripts, please try
+answering
+the following questions...
+</p>
+<p>1) Are all the scripts in the directories listed above?
+<br>
+2) Have all scripts listed in the Files To Delete section below been
+deleted?
+<br>
+3) Go to configure paths, is your default script directory
+maxroot\scripts?
+<br>
+4) Is your default scripts startup directory maxroot\scripts\startup?
+<br>
+5) Did you install the blurpack appropriate for the version of max I'm
+running?
+</p>
+<p><b><font color="#ffffff">Files To Delete:</font></b>
+</p>
+<p>If you've installed previous BSPacks, and are now installing a new
+one, you
+may wish to check to make sure all of the following previous BlurScript
+files
+have been deleted (all assuming your 3dsmax directory is c:\3dsmax)...
+</p>
+<p>c:\3dsmax\scripts\blurscripts\BSDefaults.ms
+<br>
+c:\3dsmax\scripts\startup\BSLib.ms
+<br>
+c:\3dsmax\scripts\startup\BSDefaults.ms
+<br>
+c:\3dsmax\scripts\blurscripts\BlurPrimatives.ms
+<br>
+c:\3dsmax\scripts\blurscripts\BlurPrimatives_images.bmp
+<br>
+c:\3dsmax\scripts\blurscripts\RandomScale.ms
+<br>
+c:\3dsmax\scripts\blurscripts\GradientConverter.ms
+<br>
+c:\3dsmax\scripts\blurscripts\RemoveModifier.ms
+<br>
+c:\3dsmax\scripts\blurscripts\DepthMatte.ms
+<br>
+c:\3dsmax\scripts\blurscripts\ShaderConverter.ms
+<br>
+c:\3dsmax\scripts\blurscripts\CameraClipper.ms
+<br>
+&nbsp;
+<table border="1" cellspacing="0" cellpadding="4">
+  <tbody>
+    <tr>
+      <td> <dt><b><font color="#ffffff"><font size="+1">Name</font></font></b></dt>
+      </td>
+      <td> <dt><b><font color="#ffffff"><font size="+1">Date</font></font></b></dt>
+      </td>
+      <td><b><font color="#ffffff"><font size="+1">Description</font></font></b></td>
+      <td><b><font color="#ffffff"><font size="+1">Required Plugins</font></font></b></td>
+    </tr>
+    <tr bgcolor="#333333">
+      <td><font color="#cccccc"><a href="bspack_r6_r7_v001.zip">bspack_r6_r7_v001.zip</a></font></td>
+      <td>11/13/04</td>
+      <td>The blurpack for use with max 6 and 7. There are no new
+scripts in this pack that aren't in the r4 and 5 pack, it's just
+compatability.<br>
+      </td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a> <br>
+      <a href="http://www.metamotion.com/" target="_new">Famous Faces</a>
+      <br>
+      <a href="http://www.rezn8.com/gearhead/" target="_new">Layerman</a>
+      <br>
+      <a href="http://www.digimation.com" target="_new">Shag:Hair</a> <br>
+      <a href="http://www.max3d.com/%7Eterralux/" target="_new">Solidify</a>
+      <br>
+      <a href="http://www.digimation.com" target="_new">Stitch</a> <br>
+ToonAssistant</td>
+    </tr>
+    <tr bgcolor="#333333">
+      <td><font color="#cccccc"><a href="bspack_r4_r5_v031.zip">bspack_r4_r5_v031.zip</a></font></td>
+      <td>11/13/04</td>
+      <td>The blurpack for use with max 4.2 and 5.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a> <br>
+      <a href="http://www.metamotion.com/" target="_new">Famous Faces</a>
+      <br>
+      <a href="http://www.rezn8.com/gearhead/" target="_new">Layerman</a>
+      <br>
+      <a href="http://www.digimation.com" target="_new">Shag:Hair</a> <br>
+      <a href="http://www.max3d.com/%7Eterralux/" target="_new">Solidify</a>
+      <br>
+      <a href="http://www.digimation.com" target="_new">Stitch</a> <br>
+ToonAssistant</td>
+    </tr>
+    <tr bgcolor="#333333">
+      <td><font color="#cccccc"><a
+ href="http://www.blur.com/Tech/zip/bspack_r42.zip">bspack_r42.zip</a></font></td>
+      <td>06/28/02 </td>
+      <td>The blurpack for use with max 4.2.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a> <br>
+      <a href="http://www.metamotion.com/" target="_new">Famous Faces</a>
+      <br>
+      <a href="http://www.rezn8.com/gearhead/" target="_new">Layerman</a>
+      <br>
+      <a href="http://www.digimation.com" target="_new">Shag:Hair</a> <br>
+      <a href="http://www.max3d.com/%7Eterralux/" target="_new">Solidify</a>
+      <br>
+      <a href="http://www.digimation.com" target="_new">Stitch</a> <br>
+ToonAssistant</td>
+    </tr>
+    <tr bgcolor="#333333">
+      <td><a href="http://www.blur.com/Tech/zip/bspack_r4.zip">Pack_R4.zip</a></td>
+      <td>--</td>
+      <td>The blurpack for use with max 4.0. For anyone who hasn't
+upgraded to 4.2, these are totally
+unsupported,
+and will recieve no updates.</td>
+      <td>--</td>
+    </tr>
+    <tr bgcolor="#333333">
+      <td><a href="http://www.blur.com/Tech/zip/bspack_r3.zip">Pack_R3.zip</a></td>
+      <td>--</td>
+      <td>A collection of R3 compatable scripts, these are totally
+unsupported,
+and will recieve no updates.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ActiveMtlSlot</td>
+      <td><br>
+      </td>
+      <td>Prints the current Active Material Slot Index to the Listener.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>AnimatedAlign</td>
+      <td><br>
+      </td>
+      <td>Align one object to another object at each requested frame
+range. Does one key per frame.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>AssignAtmMatte</td>
+      <td><br>
+      </td>
+      <td>Assigns a matte material to selected objects for use with
+compositing. Use
+on objects that will be used to render out an atmospheric pass.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>AssignObjectMatte</td>
+      <td><br>
+      </td>
+      <td>Assigns a matte material to selected objects for use with
+compositing.
+Use on objects that are being used to block non Matte objects and that
+don't need to cast or receive shadows.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>AssignSceneMatte</td>
+      <td><br>
+      </td>
+      <td>Assigns a matte material to selected objects for use with
+compositing.
+Use on objects that are part of your scenery (ie, objects that should
+receive
+shadows from non Matte objects such as ground planes).</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>AtmPass</td>
+      <td><br>
+      </td>
+      <td>Lets you create several different kinds of atmospheric
+passes. For example,
+you can saves an image sequence that represents the current environment
+ranges in the scene by changing all objects in the scene to a matte
+material
+and rendering the scene with white fog. Good for doing postprocess fog
+and
+postprocess depth of field.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>AttachSelection</td>
+      <td><br>
+      </td>
+      <td>Takes a selection of objects and attaches them into one
+object.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>BBoxMaker</td>
+      <td><br>
+      </td>
+      <td>Creates bounding boxes for selected objects.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>BigBrother</td>
+      <td><br>
+      </td>
+      <td>Creates a list of various scene properties, to show what
+parts of the
+scene the animator may wish to optimize, like shadow maps that don't
+need
+to be as big, or uncollapsed modifier stacks that are too deep, etc.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>BipedCataloguer</td>
+      <td><br>
+      </td>
+      <td>Point this script at a directory of .bip files and it will
+generate AVIs showing
+what each .bip does. This makes it handy when working with multiple
+.bips in
+production because you can look at a directory of AVIs to find the
+proper file.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a></td>
+    </tr>
+    <tr>
+      <td>BitmapFilteringControl</td>
+      <td><br>
+      </td>
+      <td>Allows you to change the filtering type ons everal bitmaps at
+the same time.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>BlankMat</td>
+      <td><br>
+      </td>
+      <td>Quickly assigns a default material to your whole scene.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Blinders</td>
+      <td><br>
+      </td>
+      <td>Helps with projects such as ride films, where there's a lot
+of geometry
+that gets processed needlessly. Basically, if an object isn't visible
+to
+the camera at a given frame, (like you've already passed it and it's
+behind
+the camera now) it's still getting analyzed during the preparing
+objects
+stage, wasting render time. This wasted time can become tremendous when
+you have a really large environment, as in when you're doing tunnel
+blast
+scenes for ride films. So, what you do is create a box that follows
+your
+camera, everything inside this box at a given frame will be given a
+visibility
+track with a value of 1, everything outside the box will be given a
+visibility
+track with a value of 0, so now objects are only visible if it's near
+the
+camera inside the box.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>BlurPrimitives</td>
+      <td><br>
+      </td>
+      <td>Creates a few primitives I've wanted in the past.</td>
+      <td><a href="http://www.max3d.com/%7Eterralux/software.html"
+ target="_new">Solidify</a></td>
+    </tr>
+    <tr>
+      <td>BoxSkeleton</td>
+      <td><br>
+      </td>
+      <td>Creates a set of boxes and attaches them to the bones of a
+biped.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a></td>
+    </tr>
+    <tr>
+      <td>BSLib</td>
+      <td><br>
+      </td>
+      <td>A set of useful functions required for many of the
+blurscripts to run.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>BSRun</td>
+      <td><br>
+      </td>
+      <td>Allows you to quickly choose a blurscript from a dropdown
+list and
+run it.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>CameraControl</td>
+      <td><br>
+      </td>
+      <td>Changes Camera settings for several cameras at the same time.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>CameraMaker</td>
+      <td><br>
+      </td>
+      <td>Changes your view from a perspective to a camera view in one
+click
+(including creating the camera).</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>CameraMapApplier</td>
+      <td><br>
+      </td>
+      <td>Applies the camera map modifier to all selected objects, and
+applies
+parameters to them. Useful because if you apply an instance of the
+camera
+map modifier to a bunch of objects, the map isn't ligned up properly,
+and
+it takes too much time assigning individual camera map modifiers to
+several
+objects.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>CameraTransfer</td>
+      <td><br>
+      </td>
+      <td>Takes a camera and outputs it's movement to a textfile, which
+can then be
+read in by the same script and applied to a camera. This is useful
+for transfering camera information between different packages (in the
+future) or different releases of max, for example, converting an r4
+camera
+to r3.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ChamferConverter</td>
+      <td><br>
+      </td>
+      <td>Converts a box to a chamferbox, and vice versa, and a
+cylinder to a
+chamfer cylinder to a cylinder and vice versa.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ChangeBitmaps</td>
+      <td><br>
+      </td>
+      <td>Allows you to do search and replace in the names of bitmaps
+in your scene.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>CStudioGlobalTCB</td>
+      <td><br>
+      </td>
+      <td>Allows you to change the TCB values globally on selected
+portions of
+a Biped</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a></td>
+    </tr>
+    <tr>
+      <td>ClearMedit</td>
+      <td><br>
+      </td>
+      <td>Clears slots in the materials editor with a default standard
+or raytraced
+material.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>CollapseSubObjectMaterial</td>
+      <td><br>
+      </td>
+      <td>Takes an object that has a multi/subobject material, and
+collapses the material
+to use only the subobject materials that are assigned to face IDs on
+the object.
+Modifies the object as well, consolidation material IDs and collapsing
+it to an
+editable mesh. Great for cleaning up nasty subobject materials on
+characters
+or buildings that have been attached several billion times.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>DisplayInstances</td>
+      <td><br>
+      </td>
+      <td>Displays a list of all other objects in your scene that are
+an instance of your currently selected object.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>DisplayMat</td>
+      <td><br>
+      </td>
+      <td>Pick an object, run the script, this will show you the
+material assigned to the object.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>DisplayMatID</td>
+      <td><br>
+      </td>
+      <td>Displays all material IDs used by the faces in a particular
+object.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>DisplayUsedMapChannels</td>
+      <td><br>
+      </td>
+      <td>Displays all map channels that the selected material slot
+requires.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Do</td>
+      <td><br>
+      </td>
+      <td>Allows you to change properties in an object or in a
+selection of similar
+objects or its modifiers.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>DoClassic</td>
+      <td><br>
+      </td>
+      <td>Allows you to change properties in an object or in a
+selection of similar
+objects or its modifiers. This script was originally called Do.ms,
+Do.ms now
+has dropdown list of paramaters instead of the manual textfield.
+However,
+the dropdown method doesn't work for every paramater that can still be
+affected by manually entering text, so if there's a parameter you wish
+to
+change and Do does not access it, use DoClassic.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ExpertModeControls</td>
+      <td><br>
+      </td>
+      <td>Moves common animation controls into a floater and stores all
+selection
+sets in a fast and convenient listbox.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>FigureModeControl</td>
+      <td><br>
+      </td>
+      <td>When executed it stores all Bips in a floater where they can
+interactively be
+placed in and out of figure mode. This is a time saver especially with
+large
+scenes with lots of characters.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a></td>
+    </tr>
+    <tr>
+      <td>FindByMaterial</td>
+      <td><br>
+      </td>
+      <td>Like SelectByMaterial, but instead just gives you a list of
+all scene
+objects that have the currently selected meditslot material assigned to
+it.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>GetMat</td>
+      <td><br>
+      </td>
+      <td>Quickly gets the material from the currently selected object
+and places
+it into the selected material slot.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>GlobalMotionBlur</td>
+      <td><br>
+      </td>
+      <td>Applies image motionblur to every visible object in the scene
+except
+to particle systems.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>GoAway</td>
+      <td><br>
+      </td>
+      <td>Takes selected objects and makes them nonrenderable and
+see-through
+with one click. Good for quickly dispatching with particle emitters or
+other object you want to disappear from your final render.&nbsp;</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>GodsEyeView</td>
+      <td><br>
+      </td>
+      <td>Quickly makes an ortho camera from one of three vantage
+points. Good
+if you say want to quickly setup a camera aligned to an orthoview, or
+good if
+you want to render some elements flat.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>GradientUtilities</td>
+      <td><br>
+      </td>
+      <td>Does several things related to Gradients. First, Coverts a
+standard Gradient
+texmap to a Gradient Ramp with similar parameters. Second, lets you
+make
+several Gradient Ramp Presets that I've needed from time to time. Only
+one
+preset exists at the current time.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>IsolateByMaterial</td>
+      <td><br>
+      </td>
+      <td>Like SelectByMaterial, but instead selects all objects in the
+scene
+that has the currently selected meditslot material assigned to it (even
+if those objects are hidden) and then hides everything else,
+effectively
+isolating the objects in your scene that have the current material
+applied
+to them.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>IWantMyMom!</td>
+      <td><br>
+      </td>
+      <td>Selects all objects visible in the scene that are parented to
+the world
+(ie, that aren't linked to any other object). Useful for linking a set
+of objects to a dummy without destroying their original hierarchy.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>KeyMaker</td>
+      <td><br>
+      </td>
+      <td>Creates keys on each key for all selected tracks between the
+start and end time.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>KillAnimation</td>
+      <td><br>
+      </td>
+      <td>Simply kills any and all animation for any object you have
+selected.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>KillDuplicateMaterials</td>
+      <td><br>
+      </td>
+      <td>Goes through your scene, and will remove all materials that
+have duplicate
+names. Does not work on subobject materials.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>KillLayerMan</td>
+      <td><br>
+      </td>
+      <td>Destroys all layerman information for the entire scene, both
+at the object
+level and the scene level by destroying the perisstent lm info in the
+scene.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>KillMaterial</td>
+      <td><br>
+      </td>
+      <td>Simply removes all materials from your selected objects.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>KillMissingModifiers</td>
+      <td><br>
+      </td>
+      <td>Removes all missing modifiers from selected objects.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>LightControl</td>
+      <td><br>
+      </td>
+      <td>A lightboy type interface that lets you change multiple
+parameters
+in your scene lights quickly and easily. This is basically our
+LightUtilities
+script but without the extra floater, to be used in case you don't want
+all the other utilities, just the LightControl Floater.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>LightIncludeExcludeManager</td>
+      <td><br>
+      </td>
+      <td>Copies and pastes Include / Exclude lists for scene lights.
+Good if say you
+copy the values, merge new lights or objects or lights into your scene,
+then
+pastes those values back in. Based off scene names, not nodes.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>LightUtilities</td>
+      <td><br>
+      </td>
+      <td>A whole bunch of useful utilities relating to lights,
+including a lightboy
+type floater, utilities for turning your scene lights on and off en
+masse,
+removing unnecesary attenuation range clutter, and a viewer to let you
+view the influence of a particular light.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MakeUnique</td>
+      <td><br>
+      </td>
+      <td>Takes a selected object and makes it unique (ie, if it's an
+instance
+of another object, it will no longer be an instance). Originally found
+as part of Blur's Object utilities, now here it is in script form.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MapCollector</td>
+      <td><br>
+      </td>
+      <td>Lets you collector all the bitmaps from your scene, place
+them into a directory,
+and change your scene to reflect the new location of the maps. Several
+utilities
+already do this, however, this one affects all maps, including
+backgrounds,
+fog, light projector maps, etc.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MaterialControl</td>
+      <td><br>
+      </td>
+      <td>Allows you to change various parameters on lots of materials.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MaterialConverter</td>
+      <td><br>
+      </td>
+      <td>Coverts many different kinds of materials to other kinds of
+materials,
+including changing Raytraced to Standard and vice versa.</td>
+      <td>ToonAssistant</td>
+    </tr>
+    <tr>
+      <td>MaterialRipper</td>
+      <td><br>
+      </td>
+      <td>Takes any max file in a specified directory (or recursively
+through
+a directory tree) and adds all scene materials to a matlib you specify.
+If the matlib does not exist, it will create it, otherwise, it'll add
+to
+the one that's already there.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MaterialStuffer</td>
+      <td><br>
+      </td>
+      <td>Moves groups of materials to and from the current material
+library,
+the scene selection, the scene materials and medit. For example, with
+one
+click you can put up to 24 scene materials and place them in medit.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MaterialToWirecolor</td>
+      <td><br>
+      </td>
+      <td>Takes all selected objects and makes their wireframe color
+the same as
+the diffuse color of any materials the objects may have applied.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MatIDCopyPaste</td>
+      <td><br>
+      </td>
+      <td>Copies and pastes MatIDs from one object to another. Both
+objects must have
+the same face count.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MergeTwo</td>
+      <td><br>
+      </td>
+      <td>Same as a normal merge, except creates a selectionset
+automatically
+from whatever you merged in.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MeshsmoothControl</td>
+      <td><br>
+      </td>
+      <td>Will change various meshsmooth values globally for all
+selected objects.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>MissingUVWSelect</td>
+      <td><br>
+      </td>
+      <td>Takes your selected objects and selects any objects among
+them that do not
+have a UVW mapping modifier present. Useful for finding objects that
+may
+require mapping coordinates in order to render. Will only select
+geometry,
+not lights or helper, etc. Written for Flappy.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ModelHairControl</td>
+      <td><br>
+      </td>
+      <td>Allows you to change parameters among selected Shag:Hair
+model hairs</td>
+      <td><a href="http://www.digimation.com" target="_new">Shag:Hair</a></td>
+    </tr>
+    <tr>
+      <td>ModifierManager</td>
+      <td><br>
+      </td>
+      <td>Allows you to add a modifer to selected objects (each
+modifier is a seperate
+modifier, not an instance of the same modifier which happens if you
+multiselect
+objects and apply a modifier in the modifier panel), and to delete
+modifiers
+from selected objects (Any selected objects will have their modifier
+stacks
+checked, and any modifier that you specify in there will be deleted.)
+Replaces RemoveModifier.</td>
+      <td><a href="http://www.max3d.com/%7Eterralux/" target="_new">Solidify</a></td>
+    </tr>
+    <tr>
+      <td>MotionBlurSelect</td>
+      <td><br>
+      </td>
+      <td>Allows you to select objects based on the type of motionblur
+you have
+applied to them. The object must be visible for it to work</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>NewNoise</td>
+      <td><br>
+      </td>
+      <td>The same as the regular noise modifier, except it strips away
+some
+unnecessary features (not unnecessary in all situations, just in most)
+and binds the x y z of strength into a single spinner that affects all
+axes equally.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>NoiseControllerRandomSeed</td>
+      <td><br>
+      </td>
+      <td>Takes all selected objects and finds any noise controllers in
+them
+and gives those controllers a random seed</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ObjectLock</td>
+      <td><br>
+      </td>
+      <td>Locks or unlocked the transform, rotation and scale of an
+object by
+turning on or off all the objects transform locks in one click. Thanks
+to Grant Adam for the original code.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ObjectReplacer</td>
+      <td><br>
+      </td>
+      <td>Takes a replacer object and replaces alls elected objects
+with that object.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ParticleControl</td>
+      <td><br>
+      </td>
+      <td>Will change various particle system related values globally
+for all
+selected systems, even between dissimilar particle systems.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ParticleConverter</td>
+      <td><br>
+      </td>
+      <td>Will convert a SuperSpray, Pcloud or PArray to any other of
+the three
+systems, keeping as many parameters as it can with the conversion.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ParticlePercent</td>
+      <td><br>
+      </td>
+      <td>Lets you globally/locally adjust the percentage of particles
+displayed in the
+viewport based on presets.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>PatchControl</td>
+      <td><br>
+      </td>
+      <td>Allows you to control Patch object parameters globally and
+locally across multiple
+selected patch objects in a scene.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>PivotPlacer</td>
+      <td><br>
+      </td>
+      <td>A quick and painless way to place an object's pivot at 27
+places on
+the object's bounding box. Two modes exist, local, that aligns the
+pivot
+with the "local" bounding box (ie, it takes rotational information into
+account), or world that'll align the pivot with the object's bounding
+box
+with respect to the world axis.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Planter</td>
+      <td><br>
+      </td>
+      <td>Takes a selection of objects and aligns them to a ground
+object. Good for
+taking rocks and scattering them on an uneven ground surface, etc.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>PolyEdgeCount</td>
+      <td><br>
+      </td>
+      <td>Prints to the listener the number of edges a selected polygon
+has.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>PolygonCount</td>
+      <td><br>
+      </td>
+      <td>Count the number of polys in your scene and in your
+selection, placing
+the results in your interface.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>PolyIterDown</td>
+      <td><br>
+      </td>
+      <td>Takes a Polyobject and decreases its iterations down one
+level.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>PolyIterUp</td>
+      <td><br>
+      </td>
+      <td>Takes a Polyobject and increases its iterations up one level.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>PrepFamous</td>
+      <td><br>
+      </td>
+      <td>Turns the tedious process of preparing a character for use
+with Famous
+Faces.</td>
+      <td><a href="http://www.metamotion.com/" target="_new">Famous
+Faces</a></td>
+    </tr>
+    <tr>
+      <td>ProceduralMapScale</td>
+      <td><br>
+      </td>
+      <td>Takes all procedural maps in a material and multiplies, adds
+or changes their
+size based on a value. Good for quickly changing the size of all
+procedurals
+in a material at the same time. Works on BlurGradient, BlurNoise,
+Camoflage,
+Cellular, Dent, DynoSkin, Electric, Gradient, Marble, Noise, Smoke,
+Splat,
+Speckle, and Stucco.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>QuickMaterial</td>
+      <td><br>
+      </td>
+      <td>Just a quick 1 button solution for getting some commonly used
+materials
+(well, material I use commonly) without the need for a default material
+library, like an all black material, all white, face mapped smoke, etc.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>QuickMeasure</td>
+      <td><br>
+      </td>
+      <td>Allows you to quickly measure the distance between two mouse
+clicks.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RandomFaceSelect</td>
+      <td><br>
+      </td>
+      <td>Takes any Editable Mesh or Editable Poly, collapses it, and
+then randomly
+selects faces based on a weight or percentage value.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RandomFaceRemover</td>
+      <td><br>
+      </td>
+      <td>Takes any mesh object, converts it to an editable mesh, then
+rendomly
+removes faces based on a weight or percentage faces removed. Made to
+remove
+random faces from a particle emitter object, hence randomizing where
+particles
+tend to be emitted.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RandomMapPhase</td>
+      <td><br>
+      </td>
+      <td>Whichever material in the material editor you choose, this
+script will
+go in and find all maps within that material that have a phase variable
+and assign a random number to it. This is useful if say you have two
+rocks,
+both with the same texture on it that contains several levels of
+procedural
+noise. By cloning the material, applying it to the second rock, then
+using
+this script, the two rocks will now have similar looking textures, but
+look different from each other due to the phase difference.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RandomMat</td>
+      <td><br>
+      </td>
+      <td>Takes a set of materials and randomly applies them to your
+current scene selection.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RandomSelect</td>
+      <td><br>
+      </td>
+      <td>Takes any selection and deselects objects at random based on
+a weight,
+number or percentage. Good for selecting random objects from a set and
+then later applying modifiers or materials to them.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RandomTrackTiming</td>
+      <td><br>
+      </td>
+      <td>Takes any tracks you have selected and randomly moves all the
+keys
+in the track forward or backwards by a random amount. Good if, say, you
+have 100 birds with the same wing flapping animation, this will change
+the timing from where they start flapping (without actually changing
+the
+length of time to do one full flap).</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RandomTransform</td>
+      <td><br>
+      </td>
+      <td>Lets you move, rotate and scale a series of objects by random
+amounts.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ReloadAllBitmaps</td>
+      <td><br>
+      </td>
+      <td>Reloads all bitmaps that exist in all scene materials and
+medit slots.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ReloadSelectedSlot</td>
+      <td><br>
+      </td>
+      <td>Reloads all bitmaps that exist in the material in your
+currently selected
+material slot.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RemoveNoiseAnimation</td>
+      <td><br>
+      </td>
+      <td>Ever get pissed off when you apply a noise modifier to an
+object, open
+trackview and say show animated and you see the noise phase has already
+been animated for you even though you have no desire to see it since
+you
+don't need it animated anyways? Well, me to. This takes any phase
+animation
+in any noise modifier in any selected object and deletes the keys.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Renamer</td>
+      <td><br>
+      </td>
+      <td>Allows you to rename the materials or objects in your scene
+in various
+ways (prefix, total rename, append number, etc). Originally called
+MaterialRenamer,
+now the name has changed and functionality includes the ability to
+rename
+selections of objects as well.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RenderCam</td>
+      <td><br>
+      </td>
+      <td>When running (and on is pressed) will output a sequence of
+rendered
+images of whatever was in your camera view at the current interval
+time.
+Useful for outputing a sequential set of images showing the progress of
+you building your scene. Minimize the script (don't close it) to let it
+run without cluttering your view. Just hit the off button to turn the
+timer
+on after you've setup your other defaults, or hit render now to do a
+render
+of the current scene without waiting for the timer.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>RenderSettingsControl</td>
+      <td><br>
+      </td>
+      <td>Allows you to change various parameters in the rendering
+dialogue. Also lets
+you save these parameters out as files to be used later.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ResetViewports</td>
+      <td><br>
+      </td>
+      <td>Resets all the viewports in your scene to the default.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ScaleByDistance</td>
+      <td><br>
+      </td>
+      <td>Scales a series of objects based on the distance between two
+mouseclicks.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SceneCapture</td>
+      <td><br>
+      </td>
+      <td>Select objects in your scene that you want to retain. Press
+CaptureState to
+capture the scene in its current state. Press hide to hide all objects
+except
+the current selection. Unhide returns the scene to the initial state.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SceneRipper</td>
+      <td><br>
+      </td>
+      <td>Takes any max file in a specified directory (or recursively
+through
+a directory tree) and merges into your current scene any object with a
+specified wildcard.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SelectBipedRoot</td>
+      <td><br>
+      </td>
+      <td>Select any part of a biped and run the script, it now selects
+the biped's
+root.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a></td>
+    </tr>
+    <tr>
+      <td>SelectByLightIncludeExclude</td>
+      <td><br>
+      </td>
+      <td>Select a light, and the script selects everything that is in
+the light's
+include or exclude list. It also prints whether these objects are
+included
+or excluded in the listener.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SelectByNoMaterial</td>
+      <td><br>
+      </td>
+      <td>Checks every object in your scene, if no material is applied
+the object is selected.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SelectedVerticesToStitchPointGroup</td>
+      <td><br>
+      </td>
+      <td>Copies selections from the editable mesh or editable poly
+level and makes
+stitch Point groups from them.</td>
+      <td><a href="http://www.digimation.com" target="_new">Stitch</a></td>
+    </tr>
+    <tr>
+      <td>SelectEntireBiped</td>
+      <td><br>
+      </td>
+      <td>If you select any piece of a biped and then run this script,
+it will
+select the entire biped.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a></td>
+    </tr>
+    <tr>
+      <td>SelectEntireBipedExceptRoot</td>
+      <td><br>
+      </td>
+      <td>If you select any piece of a biped and then run this script,
+it will select
+the entire biped except for the root.</td>
+      <td><a
+ href="http://www2.discreet.com/products/d_products.html?prod=cs"
+ target="_new">Character
+Studio</a></td>
+    </tr>
+    <tr>
+      <td>SelectInstances</td>
+      <td><br>
+      </td>
+      <td>Select any object, and run this script, it will select any
+objects in your scene that's an instance of your current object.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SelectNonSmoothedFaces</td>
+      <td><br>
+      </td>
+      <td>Takes an object, and selects all faces in the object that
+contain no
+smothing group.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ShowCameras</td>
+      <td><br>
+      </td>
+      <td>Made for hotkey use, if any cameras are visible, the script
+hides the cameras,
+if all cameras are hidden, it makes all cameras visible. Good for
+quickly
+hiding and unhiding all your scene cameras. Note: While there is a
+toggle under
+display to show or hide cameras, if you hide a cameras and then uncheck
+that
+box, the cameras is still not shown because you manually hid it. This
+script
+does not have that limitation.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ShowLights</td>
+      <td><br>
+      </td>
+      <td>Made for hotkey use, if any lights are visible, the script
+hides the lights,
+if all lights are hidden, it makes all light visible. Good for quickly
+hiding and unhiding all your scene lights. Note: While there is a
+toggle under
+display to show or hide lights, if you hide a light and then uncheck
+that
+box, the light is still not shown because you manually hid it. This
+script
+does not have that limitation.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SimpleScatter</td>
+      <td><br>
+      </td>
+      <td>A simple scatter. Takes a selected object, makes n instances
+of it, moves them
+around randomly within a distance you specify, rotates them randomly
+around
+the z axis, and scales them between 10% and 200% their original size.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SmokeThis</td>
+      <td><br>
+      </td>
+      <td>Makes a superspray, or pcloud with a material that simulates
+smoke.
+This is a quick way to create some smoke for your scene, go into the
+material
+afterwards to tweak its color, density, etc manually.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SplineControl</td>
+      <td><br>
+      </td>
+      <td>Allows you to change various parameters on splines.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>StackBottom</td>
+      <td><br>
+      </td>
+      <td>Takes you directly to the bottom of the stack.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>StackControl</td>
+      <td><br>
+      </td>
+      <td>Lets you quickly move to different parts of the stack.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>StackDown</td>
+      <td><br>
+      </td>
+      <td>Takes you one modifier lower then your currently selected
+modifier.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>StackTop</td>
+      <td><br>
+      </td>
+      <td>Takes you directly to the top of the stack.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>StackUp</td>
+      <td><br>
+      </td>
+      <td>Takes you one modifier higher then your currently selected
+modifier.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>StitchBatch</td>
+      <td><br>
+      </td>
+      <td>Lets you run stitch simulations on a bunch of objects over a
+bunch of
+files in a batch process.</td>
+      <td><a href="http://www.digimation.com" target="_new">Stitch</a></td>
+    </tr>
+    <tr>
+      <td>SubdivisionControl</td>
+      <td><br>
+      </td>
+      <td>Will change various meshsmooth values globally for all
+selected objects. You
+can also copy the display settings to render settings, and vice versa.
+Can
+work on meshsmooth modifiers or polyobjects, or both.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>SwapMaterials</td>
+      <td><br>
+      </td>
+      <td>Simple down and dirty way to store two materials to assign to
+objects in your scene.
+Quickens the process of swapping materials for mattes.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Sym</td>
+      <td><br>
+      </td>
+      <td>Takes any selected objects and instances and mirrors them
+across the
+x axis in one button press. A very simple script, I wrote it primarily
+for people like me who are modeling cars, buildings, helicopters,
+whatever,
+and want to build everything on one side and then make frequent
+previews
+of what the model will look like with both sides (and who don't want to
+click on many buttons).</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>TargetSync</td>
+      <td><br>
+      </td>
+      <td>Takes all your cameras and lights in the scene, and changes
+the name of their
+targets to properly reflect the name of their parent camera or light.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>TextureMapViewer</td>
+      <td><br>
+      </td>
+      <td>Takes a Map that's in your mat editor and applies to it to
+selection
+of objects, renders the scene, then reassigns the old material back to
+your objects. This is useful if say you have a procedural mask (like
+noise)
+that's deep inside a map tree, and you just want to see what the map by
+itself will look like on your final object. Think of it as something
+similar
+to the "Show Map In Viewport" function, except it works with
+procedurals
+and does a full render.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ThreePoint</td>
+      <td><br>
+      </td>
+      <td>Quickly sets up a 3-point lighting setup in your scene.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Tracer</td>
+      <td><br>
+      </td>
+      <td>The user draws a top, front and side view of an object, scans
+in the pictures,
+and then this script will create 3 planes in your viewport with your
+three
+pictures on them, allowing the user to use the reference photos as a
+guide
+for building their 3d model.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>TrackviewReady</td>
+      <td><br>
+      </td>
+      <td>Similar to Trackview selected, except also only shows
+animated tracks
+and it's already unrolled.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>TransformTools</td>
+      <td><br>
+      </td>
+      <td>Lots of little useful tools to help transform things quickly.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>VertexPlacer</td>
+      <td><br>
+      </td>
+      <td>Allows you to change the x y or z position of a selection of
+vertexes
+at the same time.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>ViewCamera</td>
+      <td><br>
+      </td>
+      <td>Lets you change your active view to any camera you wish. This
+has several
+advantages over the current change viewport to camera options in max.
+First,
+the list it offers is alphebetical. There's also more room horizontally
+to see the full name of the camera. And it also resizes itself to the
+number
+of cameras present, so avoiding unnecessary scrolling.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>WhoIncludesMe</td>
+      <td><br>
+      </td>
+      <td>Makes a list of lights that have the picked object in their
+Include list.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>WipeLayermanData</td>
+      <td><br>
+      </td>
+      <td>Destroys all layerman information for selected objects.</td>
+      <td><a href="http://www.rezn8.com/gearhead/" target="_new">Layerman</a></td>
+    </tr>
+    <tr>
+      <td>WireJumble</td>
+      <td><br>
+      </td>
+      <td>Makes a user definable number of wires (lines) of variable
+thickness
+that travel through various target objects. Useful for making jumbles
+of
+wires that go from place to place in your scene without the need to
+model
+them, and provides more power in placement then the scatter compound
+object
+since it can give each wire a random thickness and allows multiple
+targets,
+not just an emitter object.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>XRefBoxMode</td>
+      <td><br>
+      </td>
+      <td>Toggles boxmode on and off for scene xrefs.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>XRefHidden</td>
+      <td><br>
+      </td>
+      <td>Toggles hidden on and off for scene xrefs.</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>XRefUpdate</td>
+      <td><br>
+      </td>
+      <td>Refreshes scene xrefs.</td>
+      <td>--</td>
+    </tr>
+  </tbody>
+</table>
+</p>
+</body>
+</html>

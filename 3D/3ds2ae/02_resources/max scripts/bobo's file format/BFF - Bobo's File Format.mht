@@ -1,0 +1,233 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: BFF
+Date: Fri, 5 Nov 2004 19:54:49 -0000
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.scriptspot.com/bobo/darkmoon/bff/
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1441
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>BFF</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2800.1476" name=3DGENERATOR>
+<META content=3D"Borislav Petrov" name=3DAuthor></HEAD>
+<BODY text=3D#ffffff vLink=3D#c0c0c0 aLink=3D#ff0000 link=3D#c0c0c0=20
+bgColor=3D#000000>&nbsp;=20
+<DIV align=3Dleft>
+<TABLE height=3D215 width=3D636 align=3Dleft border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <H1><FONT size=3D+4><I>BFF - Bobo's File Format</I></FONT></H1>
+      <P><I><FONT size=3D5>(formerly known as Back From =
+Five)</FONT></I></P>
+      <H3><FONT face=3DArial,Helvetica>MaxScript 0.4.2=20
+      (09/24/2003)</FONT></H3><FONT face=3DArial,Helvetica>Copyright (c) =
+2002-2003=20
+      by Borislav Petrov</FONT></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D41></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT=20
+      face=3DArial,Helvetica><FONT color=3D#ffffff>SHORT=20
+      DESCRIPTION</FONT></FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104><B><I><FONT face=3DArial,Helvetica>BFF=20
+      </FONT></I></B><FONT face=3DArial,Helvetica><B><I>&nbsp;</I></B>is =
+a=20
+      MAXScript based object exporter under development.</FONT> =
+<BR><FONT=20
+      face=3DArial,Helvetica>It lets you</FONT> <FONT=20
+      face=3DArial,Helvetica>transfer basic object information between =
+different=20
+      versions of 3ds max using a MAXScript intermediate format.</FONT>=20
+      <P><FONT face=3DArial,Helvetica>No importer is =
+required!</FONT></P></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D41><FONT face=3DArial,Helvetica>The script =
+was=20
+      developed mainly to move data from <B>3ds max 5</B> back to <B>3D =
+Studio=20
+      MAX R3.1</B> in a game development pipeline. Still, it supports =
+large data=20
+      sets. It has been <B>successfully tested with objects over 800.000 =
+faces=20
+      </B>and with<B> large number of objects</B> (1000+) and should =
+work with=20
+      even bigger assets.<BR>&nbsp; </FONT></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT=20
+      face=3DArial,Helvetica><FONT color=3D#ffffff>WHY NOT USE ONE OF =
+THE EXISTING=20
+      EXPORTERS?</FONT></FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104>
+      <UL>
+        <LI><FONT face=3DArial,Helvetica><B>.OBJ </B>does not translate =
+all=20
+        max-specific properties</FONT>=20
+        <LI><FONT face=3DArial,Helvetica><B>.ASE </B>can only export, =
+the=20
+        unsupported importer is not available for all Max =
+versions</FONT>=20
+        <LI><FONT face=3DArial,Helvetica><B>.3DS </B>is the main =
+transfer data=20
+        format in the max world, but&nbsp;</FONT>=20
+        <UL>
+          <LI><FONT face=3DArial,Helvetica>3DS does not preserve UV =
+coordinates=20
+          completely (supports only one TVertex per Mesh Vertex, one =
+Texture=20
+          Channel) - BFF supports all 100 Channels with multiple =
+TVertices per=20
+          Vertex.</FONT>=20
+          <LI><FONT face=3DArial,Helvetica>3DS has a data limit of 64K =
+faces per=20
+          object. BFF supports arbitrary object size.</FONT>=20
+          <LI><FONT face=3DArial,Helvetica>3DS does not preserve max =
+procedural=20
+          maps. BFF supports the complete max material tree.</FONT>=20
+          <LI><FONT face=3DArial,Helvetica>3DS supports meshes only. BFF =
+supports=20
+          EditableSplines and procedural primitives, has (limited) =
+modifier=20
+          stack support and can be extended to support Patches, NURBS=20
+          etc.</FONT> </LI></UL></LI></UL></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT =
+face=3DArial,Helvetica>WHAT=20
+      IS NEW IN THE LATEST VERSION?</FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104><FONT face=3DArial,Helvetica>The =
+following=20
+      improvements have been made to BFF:</FONT>
+      <UL>
+        <LI><FONT face=3DArial,Helvetica>Scene format has been split =
+into Scene=20
+        and Object .ms files. This lets you quickly disable the loading =
+of=20
+        single objects by remarking single lines from the main file and =
+enables=20
+        the import of very <B>large scenes with thousands of objects</B> =
+which=20
+        used to cause MAXScript memory problems in previous =
+versions.<BR>&nbsp;=20
+        </FONT>
+        <LI><FONT face=3DArial,Helvetica>The directory structure has =
+been changed=20
+        to a more logical hierarchy.<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>Support for Material Editor =
+materials=20
+        export has been added and enabled by default.<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>ZIP Archive support has been =
+added. Now=20
+        you can optionally archive all files of an exported scene to a =
+single=20
+        ZIP file to move to another machine.<BR>&nbsp; </FONT>
+        <LI><FONT face=3DArial,Helvetica>Editable Poly support has been =
+enabled=20
+        through Editable Mesh conversion on import. This means that the =
+data=20
+        will be exported in the Editable Mesh format and a conversion to =
+
+        Editable Poly class will be attempted when the scene is being =
+imported.=20
+        If the target platform supports Editable Poly objects (3ds max =
+4, 5 and=20
+        6 do), the object will end up as EPoly. If it does not support =
+such=20
+        objects (3ds max 2.5 and 3 do not), the object will end up as =
+Editable=20
+        Mesh as in older BFF versions.</FONT> </LI></UL>
+      <P>&nbsp;</P></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT =
+face=3DArial,Helvetica>BFF=20
+      TOPICS</FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104><FONT face=3DArial,Helvetica><A=20
+      =
+href=3D"http://www.scriptspot.com/bobo/darkmoon/bff/installation.html">BF=
+F=20
+      Installation</A></FONT>
+      <P><FONT face=3DArial,Helvetica><A=20
+      =
+href=3D"http://www.scriptspot.com/bobo/darkmoon/bff/using.html">Using =
+BFF to=20
+      export and import 3ds max scenes</A></FONT></P>
+      <P><FONT face=3DArial,Helvetica><A=20
+      =
+href=3D"http://www.scriptspot.com/bobo/darkmoon/bff/specs.html">BFF File =
+
+      Specifications</A></FONT></P>
+      <P><FONT face=3DArial,Helvetica><A=20
+      =
+href=3D"http://www.scriptspot.com/bobo/darkmoon/bff/history.html">BFF=20
+      Version History</A></FONT></P>
+      <P><FONT face=3DArial,Helvetica><A=20
+      =
+href=3D"http://www.scriptspot.com/bobo/darkmoon/bff/features.html">BFF=20
+      Features List</A></FONT></P></TD></TR>
+  <TR>
+    <TD width=3D628 bgColor=3D#334466 height=3D21><B><FONT=20
+      face=3DArial,Helvetica><FONT color=3D#ffffff>PUBLIC BETA=20
+      DOWNLOAD</FONT></FONT></B></TD></TR>
+  <TR>
+    <TD width=3D628 height=3D104><FONT face=3DArial,Helvetica>Download =
+<A=20
+      =
+href=3D"http://www.scriptspot.com/bobo/darkmoon/bff/BFF0_4_2.zip">BFF=20
+      v.0.4.2</A> (new W.I.P. version)</FONT>
+      <P><FONT face=3DArial,Helvetica>Download <A=20
+      =
+href=3D"http://www.scriptspot.com/bobo/darkmoon/bff/BackFromFive0_3_6.zip=
+">BFF=20
+      v.0.3.6</A> (old stable version)</FONT></P>
+      <P><FONT face=3DArial,Helvetica>DISCLAIMER:&nbsp;<BR>This is Beta=20
+      software.&nbsp;<BR>It might not do what you expect it =
+to.&nbsp;<BR>But=20
+      sometimes it could save your behind ;o)</FONT> <BR><FONT=20
+      =
+face=3DArial,Helvetica>&nbsp;</FONT></P></TD></TR></TBODY></TABLE></DIV>
+<P><BR></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P> <BR>&nbsp; <BR>&nbsp; <BR>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

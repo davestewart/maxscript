@@ -1,0 +1,5 @@
+name "Transformation Presets"
+version 1
+extract to $usermacros
+run "$usermacros/Animation Tools-TransformPresets.mcr"
+clear temp

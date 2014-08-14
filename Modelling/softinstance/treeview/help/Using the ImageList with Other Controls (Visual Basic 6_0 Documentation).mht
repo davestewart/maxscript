@@ -1,0 +1,667 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Using the ImageList with Other Controls (Visual Basic 6.0 Documentation)
+Date: Fri, 13 Jan 2006 00:03:59 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C617D4.DA6CD930"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C617D4.DA6CD930
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file://E:\03_Scripting\maxScript\max 5\softinstance\treeview\help\vbconusingimagelistwithothercontrols.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Using the ImageList with Other Controls (Visual Basic =
+6.0 Documentation)</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"  See Also" name=3DDescription>
+<META content=3Dall name=3DRobots>
+<META content=3D"" name=3DKeywords>
+<META content=3Den-us name=3DMS.LOCALE>
+<META content=3Dmsdn name=3DAuthor><LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/vbconusingimagelistwithothercontrols_files/ie4.css"=20
+type=3Dtext/css rel=3Dstylesheet><LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/vbconusingimagelistwithothercontrols_files/ie5.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<STYLE>BODY {
+	MARGIN: 0px; FONT-FAMILY: verdana,arial,helvetica
+}
+</STYLE>
+<LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/vbconusingimagelistwithothercontrols_files/default.css"=20
+type=3Dtext/css rel=3Dstylesheet><xml id=3DxmlPageContext><eyebrow =
+findmenu=3D"false">
+	<item label=3D"MSDN Home" url=3D"/default.asp"/>
+	<item label=3D"MSDN Library" url=3D"/library/default.asp"/>
+	<item label=3D"Visual Tools and Languages" id=3D"msdnlib1128" =
+xmlsrc=3D"/library/en-us/toc/msdnlib/msdnlib1128_.xml"/><item =
+label=3D"Visual Studio 6.0" id=3D"msdnlib1130"/><item label=3D"Visual =
+Basic 6.0" url=3D"/nhp/default.asp?contentid=3D28000520" =
+id=3D"msdnlib1131" =
+xmlsrc=3D"/library/en-us/toc/msdnlib/msdnlib1131_.xml"/><item =
+label=3D"Product Documentation" id=3D"msdnlib1132"/><item label=3D"Using =
+Visual Basic" id=3D"vbcon9833" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon9833_.xml"/><item =
+label=3D"Component Tools Guide (Pro, Enterprise only)" =
+url=3D"/library/en-us/vbcon98/html/vbconComponentToolsGuide.asp" =
+id=3D"vbcon98545"/><item label=3D"Using the ActiveX Controls" =
+url=3D"/library/en-us/vbcon98/html/vbconusingtheactivexcontrols.asp" =
+id=3D"vbcon98557" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon98557_.xml"/><item =
+label=3D"Using the ImageList Control" =
+url=3D"/library/en-us/vbcon98/html/vbconusingimagelistcontrol.asp" =
+id=3D"vbcon98570" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon98570_.xml"/><item =
+label=3D"Using the ImageList with Other Controls" =
+url=3D"/library/en-us/vbcon98/html/vbconusingimagelistwithothercontrols.a=
+sp" id=3D"vbcon98571"/></eyebrow></xml>
+<META content=3D"MSHTML 6.00.2900.2802" name=3DGENERATOR></HEAD>
+<BODY text=3D#000000 bgColor=3D#ffffff leftMargin=3D0 topMargin=3D0 =
+MARGINHEIGHT=3D"0"=20
+MARGINWIDTH=3D"0">
+<TABLE height=3D24 cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+bgColor=3D#ffffff=20
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD class=3Deyebrow vAlign=3Dcenter align=3Dleft =
+width=3D"100%">&nbsp;&nbsp; <A=20
+      class=3Dsmall href=3D"http://msdn.microsoft.com/default.asp" =
+target=3D_top>MSDN=20
+      Home</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      href=3D"http://msdn.microsoft.com/library/default.asp" =
+target=3D_top>MSDN=20
+      Library</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/nhp/default.=
+asp?contentid=3D28000520"=20
+      target=3D_top>Visual Basic 6.0</A>&nbsp;&gt;&nbsp; <A =
+class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconComponentToolsGuide.asp"=20
+      target=3D_top>Component Tools Guide (Pro, Enterprise=20
+      only)</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconusingtheactivexcontrols.asp"=20
+      target=3D_top>Using the ActiveX Controls</A>&nbsp;&gt;&nbsp; <A =
+class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconusingimagelistcontrol.asp"=20
+      target=3D_top>Using the ImageList Control</A><A=20
+      =
+href=3D"http://msdn.microsoft.com/library/en-us/vbcon98/html/"></A>=20
+  </TD></TR></TBODY></TABLE>
+<TABLE class=3DclsContainer style=3D"TABLE-LAYOUT: fixed" =
+cellSpacing=3D0=20
+cellPadding=3D15 width=3D"100%" border=3D0 float=3D"left">
+  <TBODY>
+  <TR>
+    <TD =
+vAlign=3Dtop><!--TOOLBAR_START--><!--TOOLBAR_EXEMPT--><!--TOOLBAR_END--><=
+!-----------------><!--BEGIN_CONTENT--><!-----------------><!--REMOVED =
+HH1.x ALINK-->
+      <P align=3Dright><FONT size=3D1><I>Visual Basic =
+Concepts</I></FONT></P>
+      <H1><A name=3Dvbconusingimagelistwithothercontrols></A>Using the =
+ImageList=20
+      with Other Controls</H1>
+      <P><A=20
+      =
+href=3D"http://msdn.microsoft.com/library/en-us/vbcon98/dt_vbconUsingImag=
+eListWithOtherControlsC.asp">See=20
+      Also</A></P>
+      <P>You can use the ImageList control as a repository of images for =
+use by=20
+      other Windows Common Controls and by controls with a Picture =
+property.</P>
+      <H2>Using the ImageList with Other Windows Common Controls</H2>
+      <P>The ImageList control can be used to supply images for the =
+following=20
+      controls using certain of their properties, as listed in the =
+following=20
+      table.</P>
+      <TABLE cols=3D3 cellPadding=3D5 rules=3Drows border=3D1 =
+frame=3Dbelow>
+        <TBODY>
+        <TR vAlign=3Dtop>
+          <TD class=3Dlabel width=3D"31%"><B>Windows <BR>Common =
+Control</B></TD>
+          <TD class=3Dlabel width=3D"22%"><B>Control Object</B></TD>
+          <TD class=3Dlabel width=3D"47%"><B>Properties Settable with =
+ImageList=20
+            Images</B></TD></TR>
+        <TR vAlign=3Dtop>
+          <TD width=3D"31%">ImageCombo control</TD>
+          <TD width=3D"22%">ComboItem</TD>
+          <TD width=3D"47%">Image and SelImage</TD></TR>
+        <TR vAlign=3Dtop>
+          <TD width=3D"31%">ListView control</TD>
+          <TD width=3D"22%">ListItem</TD>
+          <TD width=3D"47%">SmallIcon and Icon properties</TD></TR>
+        <TR vAlign=3Dtop>
+          <TD width=3D"31%">TreeView control</TD>
+          <TD width=3D"22%">Node</TD>
+          <TD width=3D"47%">Image and SelectedImage properties</TD></TR>
+        <TR vAlign=3Dtop>
+          <TD width=3D"31%">Toolbar control</TD>
+          <TD width=3D"22%">Button</TD>
+          <TD width=3D"47%">Image property</TD></TR>
+        <TR vAlign=3Dtop>
+          <TD width=3D"31%">Toolbar control</TD>
+          <TD width=3D"22%">Button</TD>
+          <TD width=3D"47%">HotImageList property</TD></TR>
+        <TR vAlign=3Dtop>
+          <TD width=3D"31%">Toolbar control</TD>
+          <TD width=3D"22%">Button</TD>
+          <TD width=3D"47%">DisabledImageList property</TD></TR>
+        <TR vAlign=3Dtop>
+          <TD width=3D"31%">TabStrip control</TD>
+          <TD width=3D"22%">Tab</TD>
+          <TD width=3D"47%">Image property</TD></TR></TBODY></TABLE><BR>
+      <P><B><B>For More Information</B></B>&nbsp;&nbsp;&nbsp;For =
+examples of=20
+      using the ImageList with the ImageCombo, TreeView, ListView, =
+Toolbar, and=20
+      TabStrip controls, see the scenario topics for those controls. =
+(For=20
+      example, see "TreeView Control Scenario: Bind the TreeView to the=20
+      Biblio.mdb Database.")</P>
+      <P>To use the ImageList with these controls, you must first =
+associate the=20
+      ImageList with the other control, and then assign either the Key =
+or Index=20
+      property to one of the properties listed in the table above. This =
+can be=20
+      done at design time or run time. All of the Windows Common =
+controls,=20
+      except the ListView control (discussed in this topic), have an =
+ImageList=20
+      property that can be set with the name of the ImageList control =
+you are=20
+      using.</P>
+      <P class=3Dindent><B><B>Important</B></B>&nbsp;&nbsp;&nbsp;You =
+should=20
+      populate the ImageList control with images before you associate it =
+with=20
+      another control. Once you have associated an ImageList with a =
+control, and=20
+      assigned any image to a property of the control, the ImageList =
+control=20
+      will not allow you to add any more images.</P>
+      <P class=3Dlabel><B>To associate the ImageList control with the =
+TreeView,=20
+      TabStrip, or Toolbar control at design time</B>=20
+      <OL>
+        <LI>Right-click on the control using images from the ImageList =
+control=20
+        and click <B>Properties</B> to display the <B>Property Pages</B> =
+dialog=20
+        box.<BR><BR>
+        <LI>On the <B>General</B> tab, select the name of the ImageList =
+control=20
+        from the <B>ImageList </B>box. </LI></OL>
+      <P>To associate the ImageList control at run time, you might use =
+the=20
+      following code:</P><PRE><CODE>' Associate an ImageList named =
+"imlImages" with a
+' TreeView control named "tvwDB."
+Set tvwDB.ImageList =3D imlImages
+</CODE></PRE>
+      <P>Once you have associated an ImageList control with another =
+control, you=20
+      can set properties for various objects using either the Key or =
+Index=20
+      property of an image in the ImageList control. For example, the =
+following=20
+      code sets the Image property of a TreeView control's Node object =
+to an=20
+      ImageList image with the Key property =
+"leaf."</P><PRE><CODE>Private Sub Form_Load()
+   ' The TreeView is named "tvwData."=20
+   ' Add a node and set its Image property.
+   ' The Key value of the image is "leaf."
+   tvwData.Nodes.Add , ,"1 node","Top","leaf"  =20
+End Sub
+</CODE></PRE>
+      <H3>Using the ImageList Control with the ListView Control</H3>
+      <P>The ListView control can use two ImageList controls =
+simultaneously.=20
+      Instead of having a single ImageList property, the ListView =
+control has an=20
+      Icons and a SmallIcons property, each of which can be associated =
+with an=20
+      ImageList control. This can be done at design time or at run =
+time.</P>
+      <P class=3Dlabel><B>To associate two ImageList controls with the =
+ListView=20
+      control at design time</B>=20
+      <OL>
+        <LI>Right-click on the ListView control and click <B>Properties =
+</B>to=20
+        display the <B>Property Pages</B>.<BR><BR>
+        <LI>Click the <B>ImageLists </B>tab.<BR><BR>
+        <LI>In the <B>Normal </B>box, select the name of an ImageList=20
+        control.<BR><BR>
+        <LI>In the <B>Small</B> box, select the name of another =
+ImageList=20
+        control. </LI></OL>
+      <P>You can also assign the ImageList controls at run time with =
+code like=20
+      that shown in the following example:</P><PRE><CODE>' Assuming the =
+ListView control is named "lvwDB", the=20
+' first ImageList is named "imlSmallImages," and the
+' second is named "imlImages."
+Set lvwDB.SmallIcons =3D imlSmallImages
+Set lvwDB.Icons =3D imlImages
+</CODE></PRE>
+      <P>The ImageList control used depends on the display mode =
+determined in=20
+      the View property of the ListView control. When the ListView =
+control is in=20
+      Icon view, it uses the images supplied by the ImageList named in =
+the Icons=20
+      property. In any of the other views (List, Report, or SmallIcon), =
+the=20
+      ListView uses the images from the ImageList named in the =
+SmallIcons=20
+      property.</P>
+      <P><B><B>For More Information</B></B>&nbsp;&nbsp;&nbsp;For details =
+about=20
+      the ListView control see "Using the ListView Control" later in =
+this=20
+      chapter.</P>
+      <H3>Assigning ListImage Objects By Index or Key Property</H3>
+      <P>After you have associated the ImageList control with one of the =
+Windows=20
+      Common Controls, you can specify a particular image using the =
+image's=20
+      Index or Key property.</P>
+      <P>For example, if you are using the ImageList with a TreeView =
+control,=20
+      the following code will assign the third ListImage object (which =
+has an=20
+      Index value of 3) to a new Node object's Image =
+property:</P><PRE><CODE>' The TreeView control is named "tvwDB."
+' The fifth argument of the Add method
+' specifies an image by either the ListImage
+' object's Index or Key property.
+tvwDB.Nodes.Add , , ,"node x", 3
+</CODE></PRE>
+      <P>On the other hand, you could use the Key property to achieve =
+the same=20
+      end:</P><PRE><CODE>' Assuming the Key property is "open."
+tvwDB.Nodes.Add , , ,"node x", "open"
+</CODE></PRE>
+      <P>Because the ListImage object's Key property must be a unique =
+string, at=20
+      run time, you can then use the Key property instead of the Index =
+property=20
+      to reference the image. This results in code that is easier to =
+read.</P>
+      <P class=3Dindent><B><B>Tip</B></B>&nbsp;&nbsp;&nbsp;Because the =
+Key must be=20
+      a unique string, using a descriptive name for each ListImage =
+object will=20
+      make your code easier to read and debug.</P>
+      <H2>Using the ImageList Control with Controls Not Part of the =
+Windows=20
+      Common Controls</H2>
+      <P>You can also use the ImageList as an image repository for =
+objects which=20
+      have a Picture property. These include the following:=20
+      <UL type=3Ddisc>
+        <LI>CommandButton control<BR><BR>
+        <LI>OptionButton control<BR><BR>
+        <LI>Image control<BR><BR>
+        <LI>PictureBox control<BR><BR>
+        <LI>CheckBox control<BR><BR>
+        <LI>Form object <BR><BR>
+        <LI>Panel object (StatusBar control) </LI></UL>
+      <P>The ListImage object's Picture property returns a Picture =
+object, which=20
+      can be assigned to another control's Picture property. For =
+example, the=20
+      following code will display the third ListImage object in a =
+PictureBox=20
+      control named "picBox":</P><PRE><CODE>Set picBox.Picture =3D =
+ImageList1.ListImages(3).Picture
+</CODE></PRE><!-----------------><!--END_CONTENT--><!-----------------></=
+TD></TR></TBODY></TABLE>
+<TABLE id=3DidFooter style=3D"WIDTH: 100%; BACKGROUND-COLOR: white" =
+cellSpacing=3D0=20
+cellPadding=3D0 border=3D0>
+  <TBODY>
+  <TR vAlign=3Dcenter>
+    <TD id=3DidFooterRow1=20
+    style=3D"WIDTH: 100%; HEIGHT: 20px; BACKGROUND-COLOR: #003399"=20
+      noWrap>&nbsp;<A onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: bold xx-small Verdana; CURSOR: hand; COLOR: =
+#ffffff; TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://register.microsoft.com/contactus30/contactus.asp?domain=3D=
+msdn"=20
+      target=3D_top>Contact Us</A> &nbsp;<SPAN=20
+      style=3D"FONT: bold xx-small Verdana; COLOR: =
+#ffffff">&nbsp;|</SPAN>=20
+      &nbsp;<A onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: bold xx-small Verdana; CURSOR: hand; COLOR: =
+#ffffff; TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      href=3D"mailto:?subject=3DAn article from MSDN&amp;body=3DHere is =
+an interesting article from MSDN:  =
+http://msdn.microsoft.com/library/en-us/vbcon98/html/vbconusingimagelistw=
+ithothercontrols.asp"=20
+      target=3D_top>E-Mail this Page</A> &nbsp;<SPAN=20
+      style=3D"FONT: bold xx-small Verdana; COLOR: =
+#ffffff">&nbsp;|</SPAN>=20
+      &nbsp;<A onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: bold xx-small Verdana; CURSOR: hand; COLOR: =
+#ffffff; TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      href=3D"http://msdn.microsoft.com/flash/" target=3D_top>MSDN Flash =
+
+      Newsletter</A> </TD></TR>
+  <TR vAlign=3Dcenter>
+    <TD id=3DidFooterRow2=20
+    style=3D"WIDTH: 100%; HEIGHT: 30px; BACKGROUND-COLOR: #003399" =
+noWrap><SPAN=20
+      style=3D"FONT: xx-small Verdana; COLOR: #ffffff">&nbsp;=A9 2003 =
+Microsoft=20
+      Corporation. All rights reserved.&nbsp;</SPAN> &nbsp;<A=20
+      onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: xx-small Verdana; CURSOR: hand; COLOR: #ffffff; =
+TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://msdn.microsoft.com/isapi/gomscom.asp?target=3D/info/cpyrig=
+ht.htm"=20
+      target=3D_top>Terms of Use</A>&nbsp;&nbsp;<A=20
+      onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: xx-small Verdana; CURSOR: hand; COLOR: #ffffff; =
+TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://msdn.microsoft.com/isapi/gomscom.asp?target=3D/info/privac=
+y.htm"=20
+      target=3D_top>Privacy Statement </A>&nbsp;&nbsp;<A=20
+      onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: xx-small Verdana; CURSOR: hand; COLOR: #ffffff; =
+TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://msdn.microsoft.com/isapi/gomscom.asp?target=3D/enable/"=20
+      target=3D_top>Accessibility =
+</A></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0000_01C617D4.DA6CD930
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/vbconusingimagelistwithothercontrols_files/ie4.css
+
+BODY {
+	MARGIN: 0px; FONT-FAMILY: verdana,arial,helvetica
+}
+TABLE.clsContainer {
+	HEIGHT: 78%
+}
+A:link {
+	COLOR: #003399
+}
+A:visited {
+	COLOR: #660099
+}
+A:hover {
+	COLOR: #ff3300
+}
+H1 {
+	FONT-SIZE: 165%; MARGIN: 0px
+}
+H2 {
+	MARGIN-TOP: 1em; FONT-SIZE: 125%; MARGIN-BOTTOM: 0px
+}
+H3 {
+	FONT-SIZE: 115%; MARGIN-BOTTOM: 0px
+}
+H4 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+H5 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+H6 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+DIV.clsDocBody {
+	MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px
+}
+TD {
+	FONT-SIZE: 68%
+}
+TH {
+	FONT-SIZE: 68%
+}
+P {
+	MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 1em; LINE-HEIGHT: 1.5em
+}
+PRE {
+	PADDING-RIGHT: 5pt; MARGIN-TOP: 1em; PADDING-LEFT: 5pt; BACKGROUND: =
+#eeeeee; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 5pt; MARGIN-LEFT: 0px; =
+PADDING-TOP: 5pt
+}
+SPAN.db PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+SPAN.ci PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+SPAN.di PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+PRE.clsCode {
+	FONT-SIZE: 110%; FONT-FAMILY: 'courier new',courier,serif
+}
+CODE.clsText {
+	FONT-SIZE: 110%; FONT-FAMILY: 'courier new',courier,serif
+}
+PRE.clsCCCode {
+	FONT-SIZE: 120%; BACKGROUND: none transparent scroll repeat 0% 0%; =
+FONT-FAMILY: 'courier new',courier,serif
+}
+PRE.clsSyntax {
+	FONT-SIZE: 100%; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+HR {
+	COLOR: #cccccc; HEIGHT: 1px
+}
+UL {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 25px
+}
+OL {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 25px
+}
+UL LI {
+	MARGIN-BOTTOM: 0.5em; LINE-HEIGHT: 1.5em
+}
+UL LI LI {
+	LIST-STYLE-TYPE: disc
+}
+OL LI {
+	MARGIN-BOTTOM: 0.7em
+}
+INPUT.clsButton {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; MARGIN-LEFT: 5px; COLOR: #ffffff; =
+BACKGROUND-COLOR: #6699cc
+}
+P.small {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+normal; FONT-VARIANT: normal
+}
+P.smallWhite {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+P.author {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+italic; FONT-VARIANT: normal
+}
+P.NoLeftMar {
+	MARGIN-LEFT: -15px
+}
+A.small {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+normal; FONT-VARIANT: normal; TEXT-DECORATION: underline
+}
+A.smallWhite {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal; TEXT-DECORATION: =
+underline
+}
+.CODE {
+	FONT-WEIGHT: normal
+}
+.CODE2 {
+	FONT-WEIGHT: normal; BACKGROUND-COLOR: #cccccc
+}
+.DATE {
+	COLOR: #999999
+}
+.VRULE {
+	BORDER-LEFT: #cccccc 1px solid
+}
+TITLE.open {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+TITLE.closed {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #000000; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+TABLE.DATA {
+	PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 5px; =
+PADDING-BOTTOM: 5px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 5px; =
+BORDER-COLLAPSE: collapse
+}
+TH.DATA {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; =
+BACKGROUND-COLOR: #eeeeee
+}
+TD.DATA {
+	BORDER-RIGHT: #cccccc 1px solid; FONT-WEIGHT: normal; BORDER-BOTTOM: =
+#cccccc 1px solid
+}
+TABLE.clsCCDCInfo {
+	BACKGROUND-COLOR: #eeeeee
+}
+.LOCATION {
+	FONT-WEIGHT: normal; FONT-SIZE: 24px; COLOR: #cccccc; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.footer {
+	FONT: bold xx-small Verdana
+}
+.footer:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.footer:hover {
+	COLOR: #ff3300
+}
+DIV.artstyle {
+	FONT-WEIGHT: normal; FONT-SIZE: 7pt; COLOR: #000000; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, =
+sans-serif
+}
+TABLE.clsStd TH {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px; BACKGROUND-COLOR: #ddd; =
+TEXT-ALIGN: left
+}
+TABLE.clsStd TD {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px; BACKGROUND-COLOR: #eee
+}
+P.clsRef {
+	MARGIN-TOP: 12pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 0em
+}
+
+------=_NextPart_000_0000_01C617D4.DA6CD930
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/vbconusingimagelistwithothercontrols_files/ie5.css
+
+BODY {
+	FONT-FAMILY: verdana
+}
+TABLE.clsComment {
+	FONT-FAMILY: verdana
+}
+TABLE.clsNavLinks A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsComment A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsTeasers A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsNavLinks TD {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: x-small; =
+PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-BOTTOM: #000000 1px solid; =
+FONT-FAMILY: verdana
+}
+TABLE.clsNavLinks TD TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: =
+0px; PADDING-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; =
+BORDER-BOTTOM: 0px
+}
+DIV.clsError {
+	FONT-SIZE: 68%
+}
+TABLE DIV.clsContainer {
+	BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 68%; PADDING-BOTTOM: 10px; =
+WIDTH: 100%; PADDING-TOP: 10px; POSITION: relative; BACKGROUND-COLOR: =
+#cccccc
+}
+TABLE TABLE DIV.clsContainer {
+	BORDER-TOP: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+TD.clsHDN TABLE {
+	DISPLAY: none
+}
+SPAN.clsRespond {
+	PADDING-RIGHT: 10px; WIDTH: 50%; TEXT-ALIGN: right
+}
+SPAN.clsSig {
+	WIDTH: 49%
+}
+SPAN.clsToggle {
+	LEFT: 2px; POSITION: absolute; TOP: 0.65em
+}
+
+------=_NextPart_000_0000_01C617D4.DA6CD930
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/vbconusingimagelistwithothercontrols_files/default.css
+
+.eyebrow {
+	BORDER-RIGHT: #999999 0px solid; BORDER-TOP: #999999 0px solid; =
+BORDER-LEFT: #999999 0px solid; BORDER-BOTTOM: #999999 1px solid; =
+BACKGROUND-COLOR: #ffffff
+}
+
+------=_NextPart_000_0000_01C617D4.DA6CD930--

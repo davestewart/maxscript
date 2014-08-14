@@ -1,0 +1,57 @@
+[name]
+name=Color Difference Key
+matchName=ADBE Color Difference Key
+
+[properties]
+name=	Preview
+type=	NO_VALUE
+
+name=	View
+type=	OneD
+
+name=	Key Color
+type=	COLOR
+
+name=	Color Matching Accuracy
+type=	OneD
+
+name=	Partial A In Black
+type=	OneD
+
+name=	Partial A In White
+type=	OneD
+
+name=	Partial A Gamma
+type=	OneD
+
+name=	Partial A Out Black
+type=	OneD
+
+name=	Partial A Out White
+type=	OneD
+
+name=	Partial B In Black
+type=	OneD
+
+name=	Partial B In White
+type=	OneD
+
+name=	Partial B Gamma
+type=	OneD
+
+name=	Partial B Out Black
+type=	OneD
+
+name=	Partial B Out White
+type=	OneD
+
+name=	Matte In Black
+type=	OneD
+
+name=	Matte In White
+type=	OneD
+
+name=	Matte Gamma
+type=	OneD
+
+

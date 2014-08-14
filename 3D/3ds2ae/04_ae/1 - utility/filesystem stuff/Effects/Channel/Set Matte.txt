@@ -1,0 +1,24 @@
+[name]
+name=Set Matte
+matchName=ADBE Set Matte2
+
+[properties]
+name=	Take Matte From Layer
+type=	LAYER_INDEX
+
+name=	Use For Matte
+type=	OneD
+
+name=	Invert Matte
+type=	OneD
+
+name=	If Layer Sizes Differ
+type=	OneD
+
+name=	Composite Matte with Original
+type=	OneD
+
+name=	Premultiply Matte Layer
+type=	OneD
+
+

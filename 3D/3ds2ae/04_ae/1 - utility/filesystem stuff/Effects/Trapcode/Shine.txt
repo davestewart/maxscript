@@ -1,0 +1,102 @@
+[name]
+name=Shine
+matchName=tc Shine
+
+[properties]
+name=	Pre-Process
+type=	NO_VALUE
+
+name=	Threshold
+type=	OneD
+
+name=	Use Mask
+type=	OneD
+
+name=	Mask Radius
+type=	OneD
+
+name=	Mask Feather
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Source Point
+type=	TwoD_SPATIAL
+
+name=	Ray Length
+type=	OneD
+
+name=	Shimmer
+type=	NO_VALUE
+
+name=	Amount
+type=	OneD
+
+name=	Detail
+type=	OneD
+
+name=	Source Point affects Shimmer
+type=	OneD
+
+name=	Radius
+type=	OneD
+
+name=	Reduce flickering
+type=	OneD
+
+name=	Phase
+type=	OneD
+
+name=	Use Loop
+type=	OneD
+
+name=	Revolutions in Loop
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Boost Light
+type=	OneD
+
+name=	Colorize
+type=	NO_VALUE
+
+name=	Colorize...
+type=	OneD
+
+name=	Base On...
+type=	OneD
+
+name=	Highligts
+type=	COLOR
+
+name=	Mid High
+type=	COLOR
+
+name=	Midtones
+type=	COLOR
+
+name=	Mid Low
+type=	COLOR
+
+name=	Shadows
+type=	COLOR
+
+name=	Edge Thickness
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Source Opacity [%]
+type=	OneD
+
+name=	Shine Opacity [%]
+type=	OneD
+
+name=	Transfer Mode
+type=	OneD
+
+

@@ -1,0 +1,15 @@
+[name]
+name=Mosaic
+matchName=ADBE Mosaic
+
+[properties]
+name=	Horizontal Blocks
+type=	OneD
+
+name=	Vertical Blocks
+type=	OneD
+
+name=	Sharp Colors
+type=	OneD
+
+

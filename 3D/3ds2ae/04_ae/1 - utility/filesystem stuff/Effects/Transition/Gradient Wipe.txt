@@ -1,0 +1,21 @@
+[name]
+name=Gradient Wipe
+matchName=ADBE Gradient Wipe
+
+[properties]
+name=	Transition Completion
+type=	OneD
+
+name=	Transition Softness
+type=	OneD
+
+name=	Gradient Layer
+type=	LAYER_INDEX
+
+name=	Gradient Placement
+type=	OneD
+
+name=	Invert Gradient
+type=	OneD
+
+

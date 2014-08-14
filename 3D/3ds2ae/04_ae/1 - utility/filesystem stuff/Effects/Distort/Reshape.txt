@@ -1,0 +1,27 @@
+[name]
+name=Reshape
+matchName=ADBE RESHAPE
+
+[properties]
+name=	Source Mask
+type=	MASK_INDEX
+
+name=	Destination Mask
+type=	MASK_INDEX
+
+name=	Boundary Mask
+type=	MASK_INDEX
+
+name=	Percent
+type=	OneD
+
+name=	Elasticity
+type=	OneD
+
+name=	Correspondence Points
+type=	CUSTOM_VALUE
+
+name=	Interpolation Method
+type=	OneD
+
+

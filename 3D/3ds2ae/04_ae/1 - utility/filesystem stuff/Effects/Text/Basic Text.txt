@@ -1,0 +1,39 @@
+[name]
+name=Basic Text
+matchName=ADBE Basic Text2
+
+[properties]
+name=	Position
+type=	TwoD_SPATIAL
+
+name=	Fill and Stroke
+type=	NO_VALUE
+
+name=	Display Options
+type=	OneD
+
+name=	Fill Color
+type=	COLOR
+
+name=	Stroke Color
+type=	COLOR
+
+name=	Stroke Width
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Size
+type=	OneD
+
+name=	Tracking
+type=	OneD
+
+name=	Line Spacing
+type=	OneD
+
+name=	Composite On Original
+type=	OneD
+
+

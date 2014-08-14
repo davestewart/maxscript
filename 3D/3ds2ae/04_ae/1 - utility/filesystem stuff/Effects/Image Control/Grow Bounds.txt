@@ -1,0 +1,9 @@
+[name]
+name=Grow Bounds
+matchName=ADBE GROW BOUNDS
+
+[properties]
+name=	Pixels
+type=	OneD
+
+

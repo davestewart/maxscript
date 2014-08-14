@@ -1,0 +1,34 @@
+<object name="Sphere01" classOf="Sphere" isAnimated="true" id="1">
+
+  <transform classOf="prs">
+
+    <position classOf="Point3">
+      <controller classOf="bezier_position">
+        <keys>
+          <key time="0f" selected="false" value="[6,39,0]" inTangent="[0,0,0]" outTangent="[0,0,0]" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" /> 
+          <key time="100f" selected="false" value="[56,234,0]" inTangent="[0,0,0]" outTangent="[0,0,0]" x_locked="true" y_locked="true" z_locked="true" constantVelocity="false" /> 
+        </keys>
+      </controller>
+    </position>
+
+    <rotation classOf="Quat">
+      <controller classOf="tcb_rotation" /> 
+    </rotation>
+
+    <scale classOf="Point3">
+      <controller classOf="bezier_scale" /> 
+    </scale>
+
+  </transform>
+
+  <baseObject	classOf="Sphere">
+    <radius 	classOf="Float">  27.4143  </radius> 
+    <segments 	classOf="Integer">  32</segments> 
+    <smooth 	classOf="BooleanClass"> true</smooth> 
+    <hemisphere classOf="Float">  0.0  </hemisphere> 
+    <Slice_From classOf="Float">  0.0  </Slice_From> 
+    <Slice_To 	classOf="Float">  0.0  </Slice_To> 
+  </baseObject>
+  <modifiers /> 
+</object>
+  

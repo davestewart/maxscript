@@ -1,0 +1,96 @@
+[name]
+name=Colorama
+matchName=APC Colorama
+
+[properties]
+name=	Input Phase
+type=	NO_VALUE
+
+name=	Get Phase From
+type=	OneD
+
+name=	Add Phase
+type=	LAYER_INDEX
+
+name=	Add Phase From
+type=	OneD
+
+name=	Add Mode
+type=	OneD
+
+name=	Phase Shift
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Output Cycle
+type=	NO_VALUE
+
+name=	Use Preset Palette
+type=	OneD
+
+name=	Output Cycle
+type=	CUSTOM_VALUE
+
+name=	Cycle Repetitions
+type=	OneD
+
+name=	Interpolate Palette
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Modify
+type=	NO_VALUE
+
+name=	Modify
+type=	OneD
+
+name=	Modify Alpha
+type=	OneD
+
+name=	Change Empty Pixels
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Pixel Selection
+type=	NO_VALUE
+
+name=	Matching Color
+type=	COLOR
+
+name=	Matching Tolerance
+type=	OneD
+
+name=	Matching Softness
+type=	OneD
+
+name=	Matching Mode
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Masking
+type=	NO_VALUE
+
+name=	Mask Layer
+type=	LAYER_INDEX
+
+name=	Masking Mode
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Composite Over Layer
+type=	OneD
+
+name=	Blend With Original
+type=	OneD
+
+

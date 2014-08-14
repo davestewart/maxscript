@@ -1,0 +1,882 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--
+// =========================================================================
+//
+// contributedAddOns-xpath-documentation.html - XPath add-on for XML for <SCRIPT> documentation
+//
+// =========================================================================
+//
+// Copyright (C) 2003 - David Joham (djoham@yahoo.com)
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-->
+
+
+<head>
+    <title>
+        XML for &lt;SCRIPT&gt; Cross Platform XML Parsing in JavaScript - XPath Contributed Add-on Documentation
+    </title>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
+</head>
+
+<body onload="configureJSNavigation()">
+    <div>
+        <a name="backToTop"></a>
+    </div>
+
+
+    <form name="frmForm" id="frmForm" method="get" action="noaction">
+        <!-- logo -->
+        <div id="logo" class="titleLogo">
+            <img src="./images/titleImage.jpg" width="459" height="75" alt="XML for &lt;SCRIPT&gt; logo">
+        </div>
+
+        <!-- main page square -->
+        <div class="mainContentArea">
+            <br>
+        </div>
+
+        <!-- navigation bar -->
+        <div class="leftImage"></div>
+
+        <!-- credit where credit is due -->
+        <p>
+            <a href="http://validator.w3.org/check/referer"><img src="./images/valid-html401.png" class="validHTMLImage" alt="HTML 4.01 strict HTML" /></a><br />
+            <a href="http://www.sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=14016&amp;type=1" class="sourceForgeImage" alt="Visit Sourceforge.net" title="Visit Sourceforge.net"/></a><br>
+        </p>
+        <p>
+        <div class="linkBar">
+            <div class="hoverNavigation"><a class="navigation" href="./../index.html">Home</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./documentation.html">Documentation</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./caseStudies.html">Case&nbsp;Studies</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./sampleApplications.html" >Sample&nbsp;Code&nbsp;(Parsers)</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./tools.html">Sample&nbsp;Code&nbsp;(Tools)</a></div>
+            <div class="currentLocation">Contributed&nbsp;Add-ons</div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./contributedAddOns.html">Overview</a></div>
+            <div class="hoverNavigationCurrentLocationIndentMinusNode">XPath</div>
+            <div class="hoverNavigationIndentSubNodeSpacer"><div class="hoverNavigationIndentSubNode"><a class="navigation" href="./contributedAddOns-xpath.html">Overview</a></div></div>
+            <div class="hoverNavigationIndentSubNodeSpacer"><div class="hoverNavigationCurrentLocationIndentSubNode">Documentation</div></div>
+            <div class="hoverNavigationIndentSubNodeSpacer"><div class="lastHoverNavigationIndentSubNode"><a class="navigation" href="./contributedAddOns-xpath-sampleApplications.html">Sample Code</a></div></div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./contributedAddOns-linkChecker.html">Link&nbsp;Checker</a></div>
+            <div class="lastHoverNavigationIndent"><a class="navigation" href="./contributedAddOns-recordset.html">Recordset Wrapper</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./testSuites.html">Test&nbsp;Suites</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./history.html">History</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./mailingLists.html">Mailing&nbsp;Lists</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./download.html">Download</a></div>
+        </div>
+
+
+        <div  class="contentDiv">
+            <div class="contentDivBackground">
+                <div class="pageHeader">
+                    Contributed Add-ons - XPath - Documentation
+                </div>
+
+                <div>
+                    <p style="margin-top: 15px">
+                        This page is the XPath Contributed Add-on Documentation main page.
+                    </p>
+
+                    <p>
+                        With the XPath Contributed Add-on, the following is added to the W3C DOM
+                        parser:
+                    </p>
+
+                    <ul>
+                        <li>
+                            DOMNode is extended to support a new function (selectNodeSet) that allows
+                            for XPath expressions to be used on that node's child nodes.
+                        </li>
+                        <li style="margin-top: 10px">
+                            A new class, XPATHNodeSet that descends from <a href="documentation-w3cdom-DOMNodeList.html">DOMNodeList</a>
+                            that is the result of the new DOMNode.selectNodeSet call. In addition to the
+                            capabilities provided by DOMNodeList, this class includes new functionality
+                            specific to filtering an XPath result set.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Full documentation of the XPath Contributed Add-on follows:
+                    </p>
+
+                    <dl>
+                        <dt>
+                            CONTENTS<br>
+                        </dt>
+                        <dd>
+                            <a href="#xpathgettingstarted">How do I get started with XPath?</a>
+                        </dd>
+                        <dd>
+                            <a href="#xpathsupportedexpressions">What XPath expressions are supported?</a>
+                        </dd>
+                        <dd>
+                            <a href="#xpathhowcomplete">How complete is the XPath processor?</a>
+                        </dd>
+                        <dd>
+                            <a href="#xpathfilestoinclude">What files do I need to include to use XPATH?</a>
+                        </dd>
+                        <dd>
+                            <a href="#xpathlimitations">What are the known limitations with the XPath processor?</a>
+                        </dd>
+                        <dd>
+                            &nbsp;
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt>
+                                    DOMNode Extensions<br>
+                                </dt>
+                                <dd>
+                                    <a href="#xpathselectnodeset">DOMNode - selectNodeSet method</a>
+                                </dd>
+                            </dl>
+                        </dd>
+                        <dd>
+                            &nbsp;
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt>
+                                    XPATHNodeSet <br>
+                                </dt>
+                                <dd>
+                                    <a href="#xpathobjectdescription">XPATHNodeSet object description</a>
+                                </dd>
+                                <dd>
+                                    &nbsp;
+                                </dd>
+                                <dt>
+                                    XPATHNodeSet (Native Methods)<br>
+                                </dt>
+                                <dd>
+                                    <a href="#xpathgetnameditems">XPATHNodeSet - getNamedItems method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#xpathgettypeditems">XPATHNodeSet - getTypedItems method</a>
+                                </dd>
+                                <dd>
+                                    &nbsp;
+                                </dd>
+                                <dt>
+                                    XPATHNodeSet (Inherited Methods)<br>
+                                </dt>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNodeList.html#DOMNodeListGetLength">DOMNodeList - getLength method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNodeList.html#DOMNodeListItem">DOMNodeList - item method</a>
+                                </dd>
+                            </dl>
+                        </dd>
+                    </dl>
+
+                    <!--*************************************************************************************
+                    *
+                    *           How do I get started with XPath?
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathgettingstarted"></a>
+                    <div class="docTitle">
+                        How do I get started with XPath?
+                    </div>
+
+                    <p>
+                        It's actually very easy. A nice
+                        <a href="http://www.zvon.org/xxl/XPathTutorial/General/examples.html">XPath tutorial</a>
+                        is available from zvon.org for those not familiar with XPath.
+                    </p>
+
+                    <p>
+                        XML for &lt;SCRIPT&gt;'s XPath Contributed Add-on extends the W3C DOMNode class
+                        to incorporate a new method (selectNodeSet) in which an XPath expression can be
+                        applied to the node's children and a new class (XPATHNodeSet) returned based on
+                        the results of the XPath expression. Please see the following example for a
+                        demonstration.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE:</span> A large number of sample XPath example expressions are
+                        available by viewing the <a href="contributedAddOns-xpath-sampleApplications.html">XPath Sample Code Page</a>
+                        and launching the "XPath Sample Application - Sample Queries" application.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOT&gt;"<br>
+                            + "&lt;TAG1&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the document root<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node via XPath<br>
+                            <br>
+                            //start by calling selectNodeSet<br>
+                            //remember, docRoot is a DOMNode<br>
+                            var result = docRoot.selectNodeSet("//TAG1");<br>
+                            <br>
+                            //get the TAG1 node from the XPATHNodeSet<br>
+                            var tag1 = result.item(0);<br>
+                            <br>
+                            //get the "Hello World" text<br>
+                            var textNode = tag1.getFirstChild();<br>
+                            <br>
+                            //the following should be "Hello World"<br>
+                            alert(textNode.toString());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           What XPath Expressionts are supported?
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathsupportedexpressions"></a>
+                    <div class="docTitle">
+                        What XPath expressions are supported?
+                    </div>
+
+                    <p>
+                        Although the XPath Contributed Add-on does not attempt to be fully
+                        W3C complient, most of the common XPath expressions are supported. The
+                        list of supported expressions is shown below:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Ordinal queries like //tag1[1]
+                        </li>
+                        <li>
+                            position() queries like //tag1[position()=1]
+                        </li>
+                        <li>
+                            last() queries like //tag1[position=()last()]
+                        </li>
+                        <li>
+                            not() queries like //tag1[not(position()=1)]
+                        </li>
+                        <li>
+                            text() queries like //tag1/text()
+                        </li>
+                        <li>
+                            comment() queries like //tag1/comment()
+                        </li>
+                        <li>
+                            node() queries like //tag1/node()
+                        </li>
+                        <li>
+                            processing-instruction() queries like //tag1/processing-instruction()
+                        </li>
+                        <li>
+                            wild card queries like //tag1/*
+                        </li>
+                        <li>
+                            attribute queries like //@* or //@id
+                        </li>
+                        <li>
+                            attribute subqueries like //tag1[@id=1]
+                        </li>
+                        <li>
+                            count() subqueries like //tag1[count(a)=3]
+                        </li>
+                    </ul>
+
+
+                    <p>
+                        <span class="accent">NOTE: </span>The XPath processor does not support
+                        the use of the "or" (|) operator.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE:</span> A large number of sample XPath example expressions are
+                        available by viewing the <a href="contributedAddOns-xpath-sampleApplications.html">XPath Sample Code Page</a>
+                        and launching the "XPath Sample Application - Sample Queries" application.
+                    </p>
+
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           How complete is the XPath processor?
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathhowcomplete"></a>
+                    <div class="docTitle">
+                        How complete is the XPath processor?
+                    </div>
+
+                    <p>
+                        While providing support for what should be the
+                        majority of the functionality needed for the most common uses of XPath, please
+                        keep in mind that the XPath Contributed Add-on is not fully compliant to the
+                        W3C XPath specificication and has known limitations. Please read the documentation
+                        and ensure any XPath expressions you intend to use are supported before using the
+                        XPath Contributed Add-on.
+                    </p>
+
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           What files do I need to include to use XPATH?
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathfilestoinclude"></a>
+                    <div class="docTitle">
+                        What files do I need to include to use XPATH?
+                    </div>
+
+                    <p>
+                        In order to use XML for &lt;SCRIPT&gt;'s XPath Contributed Add-on, you must include the
+                        following .js file in your HTML Pages. The .js file starting with "tiny" has been
+                        compressed for faster downloads and are functionally identical to their non-compressed
+                        counterparts. The non compressed files may be found in the
+                        contributedAdd-ons/xpath/xpathProcessorSource directory. The
+                        compressed files may be found in the contributedAddonsjsXMLParser/compressed directory.
+                    </p>
+
+                    <p>
+                        The XPath Contributed Add-on has been "crunched" using the
+                        Creativyst<sup>&#174;</sup>JavaScript Compressor
+                        at <a href="http://www.creativyst.com/Prod/3/">creativyst.com</a>.
+                    </p>
+
+
+
+                    <ul>
+                        <li>
+                            xmlxpath.js (or tinyxmlxpath.js)
+                        </li>
+                    </ul>
+
+                    <p>
+                        <span class="accent">NOTE: </span>XML for &lt;SCRIPT&gt;'s XPath processor is
+                        only designed to work with the W3C Parser. It does not function with the
+                        Classic DOM parser. If you are using the Classic DOM parser, please use that
+                        parser's TagPath functionality which is similar to XPath.
+                    </p>
+
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           What are the known limitations with the XPath processor?
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathlimitations"></a>
+                    <div class="docTitle">
+                        What are the known limitations with the XPath processor?
+                    </div>
+
+                    <p>
+                        XML for &lt;SCRIPT&gt;'s XPath Contributed Add-on has the following known limitations:
+                    </p>
+
+                    <ul>
+                        <li>
+                            No native support for namespaces (see workaround below)
+                        </li>
+                        <li>
+                            Not fully compliant to the W3C Spec (see the <a href="#xpathsupportedexpressions">list of supported XPath expressions</a>)
+                        </li>
+                        <li>
+                            Wild-card searches do not always work as expected. For example, the expression
+                            //*[count(*)=3] should return any node that has three children. This expression
+                            does not work in the XPath Contributed Add-on.
+                        </li>
+                    </ul>
+
+                    <p>
+                        <span class="accent">NOTE: </span>Even though the XPath Contributed Add-on does not
+                        natively support namespaces, it is still possible to use XPath with namespaces if
+                        namespace information is included as part of the XPath expression. See the example below.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ns1:ROOT xmlns:ns1=\"foo\"&gt;"<br>
+                            + "&lt;ns1:TAG1&gt;"<br>
+                            + "&lt;ns1:A&gt;data&lt;/ns1:A&gt;"<br>
+                            + "&lt;ns1:B&gt;data&lt;/ns1:B&gt;"<br>
+                            + "&lt;ns1:A&gt;data&lt;/ns1:A&gt;"<br>
+                            + "&lt;ns1:B&gt;data&lt;/ns1:B&gt;"<br>
+                            + "&lt;ns1:A&gt;data&lt;/ns1:A&gt;"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ns1:ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the document root<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //start by calling selectNodeSet<br>
+                            //to return all the nodes under ns1:TAG1<br>
+                            //remember, docRoot is a DOMNode<br>
+                            var xpNSAll = docRoot.selectNodeSet("//ns1:TAG1/*");<br>
+                            <br>
+                            //the following should be 5<br>
+                            alert(xpNSAll.getLength());<br>
+                            <br>
+                            //now get only the "A" nodes<br>
+                            var xpNSANodes = xpNSAll.getNamedItems("ns1:A");<br>
+                            <br>
+                            //the following should be 3<br>
+                            alert(xpNSANodes.getLength());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMNode - selectNodeSet method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathselectnodeset"></a>
+                    <div class="docTitle">
+                        DOMNode - selectNodeSet method
+                    </div>
+
+                    <p>
+                        domNode.selectNodeSet(&lt;XPathExpression&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String - The XPath expression to execute on the DOMNode
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="#xpathobjectdescription">XPATHNodeSet</a> - The XPATHNodeSet with the
+                        results of the XPath query.<br>
+                        <br>
+                        - or -<br>
+                        <br>
+                        null - if an error was reported during the execution of the expression
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        XML for &lt;SCRIPT&gt;'s XPath Contributed Add-on extends the W3C DOMNode class
+                        to incorporate a new method (selectNodeSet) in which an XPath expression can be
+                        applied to the node's children and a new class (XPATHNodeSet) returned based on
+                        the results of the XPath expression.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>An XPath expression that returns zero nodes is
+                        not considered an error condition. In this case, DOMNode.selectNodeSet will return
+                        an XPATHNodeSet with zero items.
+                    </p>
+
+
+                    <p>
+                        <span class="accent">NOTE:</span> A large number of sample XPath example expressions are
+                        available by viewing the <a href="contributedAddOns-xpath-sampleApplications.html">XPath Sample Code Page</a>
+                        and launching the "XPath Sample Application - Sample Queries" application.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOT&gt;"<br>
+                            + "&lt;TAG1&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the document root<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node via XPath<br>
+                            <br>
+                            //start by calling selectNodeSet<br>
+                            //remember, docRoot is a DOMNode<br>
+                            var result = docRoot.selectNodeSet("//TAG1");<br>
+                            <br>
+                            //get the TAG1 node from the XPATHNodeSet<br>
+                            var tag1 = result.item(0);<br>
+                            <br>
+                            //get the "Hello World" text<br>
+                            var textNode = tag1.getFirstChild();<br>
+                            <br>
+                            //the following should be "Hello World"<br>
+                            alert(textNode.toString());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           XPATHNodeSet object description
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathobjectdescription"></a>
+                    <div class="docTitle">
+                        XPATHNodeSet object description
+                    </div>
+
+                    <p>
+                        XPATHNodeSet descends from <a href="documentation-w3cdom-DOMNodeList.html">DOMNodeList</a>
+                        and is the object returned when DOMNode.selectNodeSet is called. In addition to the
+                        capabilities provided by DOMNodeList, this class includes new functionality
+                        specific to filtering an XPath result set.
+                    </p>
+
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           XPATHNodeSet - getNamedItems method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathgetnameditems"></a>
+                    <div class="docTitle">
+                        XPATHNodeSet - getNamedItems method
+                    </div>
+
+                    <p>
+                        XPATHNodeSet.getNamedItems(&lt;name&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String - The name of the DOMNodes to search for
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="#xpathobjectdescription">XPATHNodeSet</a> - The XPATHNodeSet with the
+                        results of the query.<br>
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        getNamedItems allows developers to get a subset of the nodes inside an XPATHNodeSet
+                        based on the node names of the DOMNodes in the original XPATHNodeSet.
+                    </p>
+
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOT&gt;"<br>
+                            + "&lt;TAG1&gt;"<br>
+                            + "&lt;A&gt;data&lt;/A&gt;"<br>
+                            + "&lt;B&gt;data&lt;/B&gt;"<br>
+                            + "&lt;A&gt;data&lt;/A&gt;"<br>
+                            + "&lt;B&gt;data&lt;/B&gt;"<br>
+                            + "&lt;A&gt;data&lt;/A&gt;"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the document root<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //start by calling selectNodeSet<br>
+                            //to return all the nodes under TAG1<br>
+                            //remember, docRoot is a DOMNode<br>
+                            var xpNSAll = docRoot.selectNodeSet("//TAG1/*");<br>
+                            <br>
+                            //the following should be 5<br>
+                            alert(xpNSAll.getLength());<br>
+                            <br>
+                            //now get only the "A" nodes<br>
+                            var xpNSANodes = xpNSAll.getNamedItems("A");<br>
+                            <br>
+                            //the following should be 3<br>
+                            alert(xpNSANodes.getLength());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           XPATHNodeSet - getTypedItems method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="xpathgettypeditems"></a>
+                    <div class="docTitle">
+                        XPATHNodeSet - getTypedItems method
+                    </div>
+
+                    <p>
+                        XPATHNodeSet.getTypedItems(&lt;type&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String - The type of DOMNode to search for
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="#xpathobjectdescription">XPATHNodeSet</a> - The XPATHNodeSet with the
+                        results of the query.<br>
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        getTypedItems allows developers to get a subset of the nodes inside an XPATHNodeSet
+                        based on the node type of the DOMNodes in the original XPATHNodeSet. The available
+                        types to search on are:
+                    </p>
+
+                    <ul>
+                        <li>
+                            "text"
+                        </li>
+                        <li>
+                            "comment"
+                        </li>
+                        <li>
+                            "processing-instruction"
+                        </li>
+                        <li>
+                            "node"
+                        </li>
+                    </ul>
+
+                    <p>
+                        If a type other than the ones above is passed in, an empty XPATHNodeSet is returned.
+                    </p>
+
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOT&gt;"<br>
+                            + "&lt;TAG1&gt;"<br>
+                            + "text node"<br>
+                            + "&lt;!--comment node--&gt;"<br>
+                            + "&lt;? piTarget piData ?&gt;"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the document root<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //start by calling selectNodeSet<br>
+                            //to return all the nodes under TAG1<br>
+                            //remember, docRoot is a DOMNode<br>
+                            var xpNSAll = docRoot.selectNodeSet("//TAG1/*");<br>
+                            <br>
+                            //now get only the text node<br>
+                            var xpNSTextItem = xpNSAll.getTypedItems("text");<br>
+                            <br>
+                            //the following should be "text node"<br>
+                            alert(xpNSTextItem.item(0).getData());<br>
+                            <br>
+                            //now get the comment node<br>
+                            var xpNSCommentItem = xpNSAll.getTypedItems("comment");<br>
+                            <br>
+                            //the following should be "comment node"<br>
+                            alert(xpNSCommentItem.item(0).getData());<br>
+                            <br>
+                            //now get the processing instruction node<br>
+                            var pi = "processing-instruction";<br>
+                            var xpNSPIItem = xpNSAll.getTypedItems(pi);<br>
+                            <br>
+                            //the following should be "piData"<br>
+                            alert(xpNSPIItem.item(0).getData());<br>
+                            <br>
+                            //get all nodes <br>
+                            var xpNSNodeItems = xpNSAll.getTypedItems("node");<br>
+                            <br>
+                            //the following should be 3<br>
+                            alert(xpNSNodeItems.getLength());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+
+                     <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

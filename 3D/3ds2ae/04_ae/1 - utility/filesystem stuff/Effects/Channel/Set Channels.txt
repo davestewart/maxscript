@@ -1,0 +1,33 @@
+[name]
+name=Set Channels
+matchName=ADBE Set Channels
+
+[properties]
+name=	Source Layer 1
+type=	LAYER_INDEX
+
+name=	Set Red To Source 1's
+type=	OneD
+
+name=	Source Layer 2
+type=	LAYER_INDEX
+
+name=	Set Green To Source 2's
+type=	OneD
+
+name=	Source Layer 3
+type=	LAYER_INDEX
+
+name=	Set Blue To Source 3's
+type=	OneD
+
+name=	Source Layer 4
+type=	LAYER_INDEX
+
+name=	Set Alpha To Source 4's
+type=	OneD
+
+name=	If Layer Sizes Differ
+type=	OneD
+
+

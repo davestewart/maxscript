@@ -1,0 +1,27 @@
+[name]
+name=Matte Choker
+matchName=ADBE Matte Choker
+
+[properties]
+name=	Geometric Softness 1
+type=	OneD
+
+name=	Choke 1
+type=	OneD
+
+name=	Gray Level Softness 1
+type=	OneD
+
+name=	Geometric Softness 2
+type=	OneD
+
+name=	Choke 2
+type=	OneD
+
+name=	Gray Level Softness 2
+type=	OneD
+
+name=	Iterations
+type=	OneD
+
+

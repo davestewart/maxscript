@@ -1,0 +1,93 @@
+[name]
+name=Scribble
+matchName=ADBE Scribble Fill
+
+[properties]
+name=	Scribble
+type=	OneD
+
+name=	Mask
+type=	MASK_INDEX
+
+name=	Fill Type
+type=	OneD
+
+name=	Edge Options
+type=	NO_VALUE
+
+name=	Edge Width
+type=	OneD
+
+name=	End Cap
+type=	OneD
+
+name=	Join
+type=	OneD
+
+name=	Miter Limit
+type=	OneD
+
+name=	Start/End Apply To
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Angle
+type=	OneD
+
+name=	Stroke Width
+type=	OneD
+
+name=	Stroke Options
+type=	NO_VALUE
+
+name=	Curviness
+type=	OneD
+
+name=	Curviness Variation
+type=	OneD
+
+name=	Spacing
+type=	OneD
+
+name=	Spacing Variation
+type=	OneD
+
+name=	Path Overlap
+type=	OneD
+
+name=	Path Overlap Variation
+type=	OneD
+
+name=	
+type=	NO_VALUE
+
+name=	Start
+type=	OneD
+
+name=	End
+type=	OneD
+
+name=	Fill Paths Sequentially
+type=	OneD
+
+name=	Wiggle Type
+type=	OneD
+
+name=	Wiggles/Second
+type=	OneD
+
+name=	Random Seed
+type=	OneD
+
+name=	Composite
+type=	OneD
+
+

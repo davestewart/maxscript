@@ -1,0 +1,9 @@
+[name]
+name=Checkbox Control
+matchName=ADBE Checkbox Control
+
+[properties]
+name=	Checkbox
+type=	OneD
+
+

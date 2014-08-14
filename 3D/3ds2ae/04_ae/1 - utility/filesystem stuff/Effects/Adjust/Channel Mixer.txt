@@ -1,0 +1,45 @@
+[name]
+name=Channel Mixer
+matchName=ADBE CHANNEL MIXER
+
+[properties]
+name=	Red-Red
+type=	OneD
+
+name=	Red-Green
+type=	OneD
+
+name=	Red-Blue
+type=	OneD
+
+name=	Red-Const
+type=	OneD
+
+name=	Green-Red
+type=	OneD
+
+name=	Green-Green
+type=	OneD
+
+name=	Green-Blue
+type=	OneD
+
+name=	Green-Const
+type=	OneD
+
+name=	Blue-Red
+type=	OneD
+
+name=	Blue-Green
+type=	OneD
+
+name=	Blue-Blue
+type=	OneD
+
+name=	Blue-Const
+type=	OneD
+
+name=	Monochrome
+type=	OneD
+
+

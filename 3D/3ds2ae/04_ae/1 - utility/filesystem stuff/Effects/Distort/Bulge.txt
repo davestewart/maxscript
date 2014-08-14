@@ -1,0 +1,27 @@
+[name]
+name=Bulge
+matchName=ADBE Bulge
+
+[properties]
+name=	Horizontal Radius
+type=	OneD
+
+name=	Vertical Radius
+type=	OneD
+
+name=	Bulge Center
+type=	TwoD_SPATIAL
+
+name=	Bulge Height
+type=	OneD
+
+name=	Taper Radius
+type=	OneD
+
+name=	Antialiasing (Best Qual Only)
+type=	OneD
+
+name=	Pinning
+type=	OneD
+
+

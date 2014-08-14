@@ -1,0 +1,27 @@
+[name]
+name=Displacement Map
+matchName=ADBE Displacement Map
+
+[properties]
+name=	Displacement Map Layer
+type=	LAYER_INDEX
+
+name=	Use For Horizontal Displacement
+type=	OneD
+
+name=	Max Horizontal Displacement
+type=	OneD
+
+name=	Use For Vertical Displacement
+type=	OneD
+
+name=	Max Vertical Displacement
+type=	OneD
+
+name=	Displacement Map Behavior
+type=	OneD
+
+name=	Edge Behavior
+type=	OneD
+
+

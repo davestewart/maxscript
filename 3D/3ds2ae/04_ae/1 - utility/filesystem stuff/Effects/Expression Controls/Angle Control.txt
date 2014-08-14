@@ -1,0 +1,9 @@
+[name]
+name=Angle Control
+matchName=ADBE Angle Control
+
+[properties]
+name=	Angle
+type=	OneD
+
+

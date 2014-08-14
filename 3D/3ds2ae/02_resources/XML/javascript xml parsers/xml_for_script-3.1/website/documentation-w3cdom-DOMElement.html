@@ -1,0 +1,1774 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--
+// =========================================================================
+//
+// documentation-w3cdom-DOMElement.html - W3C DOM Parser DOMElement Object Documentation for XML for <SCRIPT>
+//
+// =========================================================================
+//
+// Copyright (C) 2001, 2002, 2003 - David Joham (djoham@yahoo.com)
+//
+// Some information sourced from http://xml.apache.org/xerces2-j/javadocs/api/index.html
+// this information is Copyright © 1999-2003 Apache XML Project. All Rights Reserved.
+//
+// Additional inspiration and fact cross-checking from http://www.devguru.com
+// a site I found very useful
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-->
+
+
+<head>
+    <title>
+        XML for &lt;SCRIPT&gt; Cross Platform XML Parsing in JavaScript - W3C DOM Parser DOMElement Object Documentation
+    </title>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
+</head>
+
+<body onload="configureJSNavigation()">
+    <div>
+        <a name="backToTop"></a>
+    </div>
+
+    <form name="frmForm" id="frmForm" method="get" action="noaction">
+        <!-- logo -->
+        <div id="logo" class="titleLogo">
+            <img src="./images/titleImage.jpg" width="459" height="75" alt="XML for &lt;SCRIPT&gt; logo">
+        </div>
+
+        <!-- main page square -->
+        <div class="mainContentArea">
+            <br>
+        </div>
+
+        <!-- navigation bar -->
+        <div class="leftImage"></div>
+
+        <!-- credit where credit is due -->
+        <p>
+            <a href="http://validator.w3.org/check/referer"><img src="./images/valid-html401.png" class="validHTMLImage" alt="HTML 4.01 strict HTML" /></a><br />
+            <a href="http://www.sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=14016&amp;type=1" class="sourceForgeImage" alt="Visit Sourceforge.net" title="Visit Sourceforge.net"/></a><br>
+        </p>
+        <p>
+        <div class="linkBar">
+            <div class="hoverNavigation"><a class="navigation" href="./../index.html">Home</a></div>
+            <div class="currentLocation">Documentation</div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation.html">Overview</a></div>
+			<div class="hoverNavigationIndent"><a class="navigation" href="./documentation-faq.html">FAQ</a></div>
+            <div class="hoverNavigationCurrentLocationIndent">W3C DOM</div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation-classicdom.html">Classic DOM</a></div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation-sax.html">SAX</a></div>
+            <div class="hoverNavigationIndent"><a class="navigation" href="./documentation-xmlproxies.html">Server-Side&nbsp;Proxies</a></div>
+            <div class="lastHoverNavigationIndent"><a class="navigation" href="./documentation-tools.html">Tools</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./caseStudies.html">Case&nbsp;Studies</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./sampleApplications.html" >Sample&nbsp;Code&nbsp;(Parsers)</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./tools.html">Sample&nbsp;Code&nbsp;(Tools)</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./contributedAddOns.html">Contributed&nbsp;Add-ons</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./testSuites.html">Test&nbsp;Suites</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./history.html">History</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./mailingLists.html">Mailing&nbsp;Lists</a></div>
+            <div class="hoverNavigation"><a class="navigation" href="./download.html">Download</a></div>
+        </div>
+
+
+        <div  class="contentDiv">
+            <div class="contentDivBackground">
+
+                <div class="pageHeader">
+                    W3C DOM Parser DOMElement Object Documentation
+                </div>
+
+
+                <div>
+                    <p style="margin-top: 15px">
+                        This page contains the XML for &lt;SCRIPT&gt; DOMElement object documentation.
+                    </p>
+
+                    <p class="w3cReturnHome">
+                        <a href="documentation-w3cdom.html">Return to W3C DOM Parser Documentation Main Page</a>
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>DOMElement descends from
+                        <a href="documentation-w3cdom-DOMNode.html">DOMNode</a> and inherits
+                        all of the properties and methods of the DOMNode object
+                    </p>
+
+                    <dl>
+                        <dt>
+                            CONTENTS<br>
+                        </dt>
+                        <dd>
+                            <a href="#objectDescription">DOMElement - object description</a>
+                        </dd>
+                        <dd>
+                            &nbsp;
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt>
+                                    Native Methods:
+                                </dt>
+                                <dd>
+                                    <a href="#DOMElementGetTagName">DOMElement - getTagName method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementGetAttribute">DOMElement - getAttribute method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementSetAttribute">DOMElement - setAttribute method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementRemoveAttribute">DOMElement - removeAttribute method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementGetAttributeNode">DOMElement - getAttributeNode method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementSetAttributeNode">DOMElement - setAttributeNode method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementRemoveAttributeNode">DOMElement - removeAttributeNode method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementHasAttribute">DOMElement - hasAttribute method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementGetAttributeNS">DOMElement - getAttributeNS method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementSetAttributeNS">DOMElement - setAttributeNS method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementRemoveAttributeNS">DOMElement - removeAttributeNS method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementGetAttributeNodeNS">DOMElement - getAttributeNodeNS method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementSetAttributeNodeNS">DOMElement - setAttributeNodeNS method</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementHasAttributeNS">DOMElement - hasAttributeNS methood</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementGetElementsByTagName">DOMElement - getElementsByTagName</a>
+                                </dd>
+                                <dd>
+                                    <a href="#DOMElementGetElementsByTagNameNS">DOMElement - getElementsByTagNameNS</a>
+                                </dd>
+                            </dl>
+                        </dd>
+                        <dd>
+                            &nbsp;
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt>
+                                    Inherited Methods:
+                                </dt>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodenodeName">DOMNode - getNodeName method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodenodeValue">DOMNode - getNodeValue method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodesetNodeValue">DOMNode - setNodeValue method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodenodeType">DOMNode - getNodeType method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodeparentNode">DOMNode - getParentNode method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodechildNodes">DOMNode - getChildNodes method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodefirstChild">DOMNode - getFirstChild method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodelastChild">DOMNode - getLastChild method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodepreviousSibling">DOMNode - getPreviousSibling method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodenextSibling">DOMNode - getNextSibling method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodeattributes">DOMNode - getAttributes method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodenamespaceURI">DOMNode - getNamespaceURI method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodeprefix">DOMNode - getPrefix method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodelocalName">DOMNode - getLocalName method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodeownerDocument">DOMNode - getOwnerDocument method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodeinsertBefore">DOMNode - insertBefore method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodereplaceChild">DOMNode - replaceChild method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNoderemoveChild">DOMNode - removeChild method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodeappendChild">DOMNode - appendChild method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodehasChildNodes">DOMNode - hasChildNodes method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodecloneNode">DOMNode - cloneNode method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodegetElementsByTagName">DOMNode - getElementsByTagName method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodegetElementsByTagNameNS">DOMNode - getElementsByTagNameNS method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodesetPrefix">DOMNode - setPrefix method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodenormalize">DOMNode - normalize method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodeisSupported">DOMNode - isSupported method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodegetXML">DOMNode - getXML method</a>
+                                </dd>
+                                <dd>
+                                    <a href="documentation-w3cdom-DOMNode.html#DOMNodehasAttributes">DOMNode - hasAttributes method</a>
+                                </dd>
+                            </dl>
+                        </dd>
+                    </dl>
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - object description
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="objectDescription"></a>
+                    <div class="docTitle">
+                        DOMElement - object description
+                    </div>
+
+                    <p>
+                        The DOMElement interface represents an element in an XML document.
+                        Elements may have attributes associated with them; since the DOMElement
+                        interface inherits from DOMNode, the generic DOMNode interface attribute
+                        attributes may be used to retrieve the set of all attributes for an element.
+                        There are methods on the DOMElement interface to retrieve either a DOMAttr
+                        object by name or an attribute value by name.
+                    </p>
+
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - getTagName method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementGetTagName"></a>
+                    <div class="docTitle">
+                        DOMElement - getTagName method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1 and Level 2 (namespaces)
+                    </div>
+
+                    <p>
+                        domElement.getTagName();
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        String - the tag name of the element
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The getTagName method will return the name of the element. For XML streams that
+                        use namespaces, the value returned will be a fully qualified name (i.e. a QNAME)
+                        that includes the namespace information.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOT&gt;"<br>
+                            + "&lt;ns1:TAG1 xmlns:ns1=\"http://xmljs.sf.net/ns1\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the document root<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = docRoot.getFirstChild();<br>
+                            <br>
+                            //the following should be "ROOT"<br>
+                            alert(docRoot.getTagName());<br>
+                            <br>
+                            //get the TAG1 node (with its namespace information)<br>
+                            var tag1 = docRoot.getFirstChild();<br>
+                            <br>
+                            //the following should be "ns1:TAG1"<br>
+                            alert(tag1.getTagName());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - getAttribute method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementGetAttribute"></a>
+                    <div class="docTitle">
+                        DOMElement - getAttribute method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.getAttribute(&lt;attributeName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String attributeName - the name of the attribute to return
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        String - the value of the queried attribute or "" if the attribute is not found
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The getAttribute method will return the value of the attribute who's name is passed
+                        into the method. If the name is not found, getAttribute will return a blank (empty)
+                        string.
+                    </p>
+                    <p>
+                        <span class="accent">NOTE: </span>To get an attribute from within a namespace,
+                        use the <a href="#DOMElementGetAttributeNS">getAttributeNS</a> method.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\"?&gt;"<br>
+                            + "&lt;ROOT id=\"root\"&gt;"<br>
+                            + "&lt;TAG1 foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE by its id<br>
+                            var rootNode = domDoc.getElementById("root");<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //the following should be "fooValue"<br>
+                            alert(tag1.getAttribute("foo"));<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - setAttribute method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementSetAttribute"></a>
+                    <div class="docTitle">
+                        DOMElement - setAttribute method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.setAttribute(&lt;attributeName&gt;, &lt;attribteValue&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String attributeName - the name of the attribute add or modify<br>
+                        String attributeValue - the value to assign the attribute
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMException.html#invalid_character_error">DOMException.INVALID_CHARACTER_ERR</a> - Thrown if the string contains an illegal character       <br>
+                        <a href="documentation-w3cdom-DOMException.html#no_modification_allowed_error">DOMException.NO_MODIFICATION_ALLOWED_ERR</a> - Thrown if the DOMElement is read only       <br>
+                    </div>
+
+                    <p>
+                        The setAttribute method adds or updates an attribute. If an attribute with
+                        &lt;attributeName&gt; is already present in the element, its value is changed
+                        to be that of the &lt;attributeValue&gt; parameter.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>To set an attribute within a namespace,
+                        use the <a href="#DOMElementSetAttributeNS">setAttributeNS</a> method.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ROOT id=\"root\"&gt;"<br>
+                            + "&lt;TAG1 foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE by its id<br>
+                            var rootNode = domDoc.getElementById("root");<br>
+                            <br>
+                            //get TAG1<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //the following should be "fooValue"<br>
+                            alert(tag1.getAttribute("foo"));<br>
+                            <br>
+                            //set the "foo" attribute's value to "newFooValue"<br>
+                            tag1.setAttribute("foo", "newFooValue");<br>
+                            <br>
+                            //create a new attribute called "newAttrib"<br>
+                            //with a value of "newAttribValue"<br>
+                            tag1.setAttribute("newAttrib", "newAttribValue");<br>
+                            <br>
+                            //the following should be<br>
+                            //"&lt;TAG1 foo="newFooValue" newAttrib="newAttribValue"&gt;<br>
+                            //Hello World<br>
+                            //&lt;/TAG1&gt;"<br>
+                            alert(tag1.getXML());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - removeAttribute method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementRemoveAttribute"></a>
+                    <div class="docTitle">
+                        DOMElement - removeAttribute method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.removeAttribute(&lt;attributeName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String attributeName - the name of the attribute to remove
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> - the DOMAttr that was removed or null if not found
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMException.html#no_modification_allowed_error">DOMException.NO_MODIFICATION_ALLOWED_ERR</a> - Thrown if the DOMElement is read only       <br>
+                    </div>
+
+                    <p>
+                        The removeAttribute method removes the attribute specified by &lt;attributeName&gt;
+                        from the DOMElement.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>To remove an attribute from within a namespace,
+                        use the <a href="#DOMElementRemoveAttributeNS">removeAttributeNS</a> method.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ROOT id=\"root\"&gt;"<br>
+                            + "&lt;TAG1 foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE by its id<br>
+                            var rootNode = domDoc.getElementById("root");<br>
+                            <br>
+                            //get TAG1<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //the following should be "fooValue"<br>
+                            alert(tag1.getAttribute("foo"));<br>
+                            <br>
+                            //remove the "foo" attribute<br>
+                            var retVal = tag1.removeAttribute("foo");<br>
+                            <br>
+                            //the following should be "fooValue"<br>
+                            alert(retVal.getValue());<br>
+                            <br>
+                            //the following should be<br>
+                            //&lt;TAG1&gt;<br>
+                            //Hello World<br>
+                            //&lt;/TAG1&gt;<br>
+                            alert(tag1.getXML());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - getAttributeNode method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementGetAttributeNode"></a>
+                    <div class="docTitle">
+                        DOMElement - getAttributeNode method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.getAttributeNode(&lt;attributeName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String attributeName - the name of the attribute to return
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> - the attribute corresponding to &lt;attributeName&gt;
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The getAttributeNode method will return the DOMAttr object representing the attribute
+                        that corresponds to the &lt;attributeName&gt; passed in. If no attribute that corresponds
+                        to &lt;attributeName&gt; is found, getAttributeNode will return null.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>To retrieve an attribute from within a namespace,
+                        use the <a href="#DOMElementGetAttributeNodeNS">getAttributeNodeNS</a> method.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ROOT id=\"root\"&gt;"<br>
+                            + "&lt;TAG1 foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE by its id<br>
+                            var rootNode = domDoc.getElementById("root");<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //get the DOMAttr that represents the "foo" attribute<br>
+                            var domAttr = tag1.getAttributeNode("foo");<br>
+                            <br>
+                            //the following should be "fooValue"<br>
+                            alert(domAttr.getValue());<br>
+                            <br>
+                            //search for an attribute that does not exist<br>
+                            var notThere = tag1.getAttributeNode("notThere");<br>
+                            <br>
+                            //the following should be "true"<br>
+                            alert(notThere == null);<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - setAttributeNode method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementSetAttributeNode"></a>
+                    <div class="docTitle">
+                        DOMElement - setAttributeNode method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.setAttributeNode(&lt;newAttribute&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> newAttribute - the DOMAttr object to be added to the element
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> - the replaced DOMAttr object or null if the DOMAttr was successfully added to the DOMElement
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMException.html#wrong_document_error">DOMException.WRONG_DOCUMENT_ERR</a> - Thrown if newNode was created from a different DOMDocument       <br>
+                        <a href="documentation-w3cdom-DOMException.html#no_modification_allowed_error">DOMException.NO_MODIFICATION_ALLOWED_ERR</a> - Thrown if the DOMElement is read only       <br>
+                        <a href="documentation-w3cdom-DOMException.html#in_use_attribute_error">DOMException.INUSE_ATTRIBUTE_ERR</a> - Raised if newAttribute is a DOMAttr that is already an attribute of another DOMElement object. DOMAttr nodes must explicitly be cloned to re-use them in other elements.       <br>
+                    </div>
+
+                    <p>
+                        The setAttributeNode method adds or updates an attribute in a DOMElement.
+                        If a DOMAttr exists within the DOMElement with the same name as the name in the
+                        DOMAttr object passed in, that DOMAttr object is replaced with the new DOMAttr.
+                        Otherwise, the new DOMAttr object is simply added to the DOMElement.
+                    </p>
+
+                    <p>
+                        If the new DOMAttr object replaces a DOMAttr object in the DOMElement, the replaced
+                        DOMAttr object is returned. Otherwise, setAttributeNode returns null.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>To set an attribute within a namespace,
+                        use the <a href="#DOMElementSetAttributeNodeNS">setAttributeNodeNS</a> method.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ROOT&gt;"<br>
+                            + "&lt;TAG1&gt;"<br>
+                            + "Hello"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get the root node<br>
+                            var docRoot = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the "TAG1" element<br>
+                            var tag1 = docRoot.getElementsByTagName("TAG1").item(0);<br>
+                            <br>
+                            //create a new DOMAttr node<br>
+                            var newAttribute = domDoc.createAttribute("attribute");<br>
+                            <br>
+                            //set the attribute's value<br>
+                            newAttribute.setNodeValue("value1");<br>
+                            <br>
+                            //add the attribute to the DOMElement<br>
+                            var retVal = tag1.setAttributeNode(newAttribute);<br>
+                            <br>
+                            //the following should be "true" since the<br>
+                            //attribute did not replace another in the<br>
+                            //DOMElement<br>
+                            alert(retVal==null);<br>
+                            <br>
+                            //create another attribute, with the same name<br>
+                            var newAttribute2 = domDoc.createAttribute("attribute");<br>
+                            <br>
+                            //set it's value<br>
+                            newAttribute2.setNodeValue("value2");<br>
+                            <br>
+                            //now add this new attribute to the DOMElement<br>
+                            //it should replace the first DOMAttr and return it<br>
+                            retVal = tag1.setAttributeNode(newAttribute2);<br>
+                            <br>
+                            //make sure we got the correct DOMAttr back and that<br>
+                            //the document has been correctly modified<br>
+                            //the DOMAttr we get back should be newAttribute<br>
+                            <br>
+                            //the following should be "true"<br>
+                            alert(retVal == newAttribute);<br>
+                            <br>
+                            //the following should be<br>
+                            //&lt;?xml version="1.0"?&gt;<br>
+                            //&lt;ROOT&gt;<br>
+                            //&lt;TAG1 attribute="value2"&gt;<br>
+                            //Hello<br>
+                            //&lt;/TAG1&gt;<br>
+                            //&lt;/ROOT>"<br>
+                            alert(domDoc.getXML());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - removeAttributeNode method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementRemoveAttributeNode"></a>
+                    <div class="docTitle">
+                        DOMElement - removeAttributeNode method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.removeAttributeNode(&lt;attributeNode&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> - the DOMAttr to remove from the element
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> - the attribute that was removed
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMException.html#no_modification_allowed_error">DOMException.NO_MODIFICATION_ALLOWED_ERR</a> - Thrown if the DOMElement is read only       <br>
+                        <a href="documentation-w3cdom-DOMException.html#not_found_error">DOMException.NOT_FOUND_ERR</a> - Thrown if attributeNode is not found       <br>
+                    </div>
+
+                    <p>
+                        The removeAttributeNode method will remove the attribute specified by &lt;attributeNode&gt;
+                        from the DOMElement.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>To remove an attribute within a namespace,
+                        use the <a href="#DOMElementRemoveAttributeNS">removeAttributeNS</a> method.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ROOT id=\"root\"&gt;"<br>
+                            + "&lt;TAG1 foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE by its id<br>
+                            var rootNode = domDoc.getElementById("root");<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //get the DOMAttr that represents the "foo" attribute<br>
+                            var domAttr = tag1.getAttributeNode("foo");<br>
+                            <br>
+                            //now remove it from the DOMElement<br>
+                            var retVal = tag1.removeAttributeNode(domAttr);<br>
+                            <br>
+                            //retVal is the removed attribute, in this<br>
+                            //case it should be equal to domAttr. Check and<br>
+                            //make sure this is true<br>
+                            <br>
+                            //the following should be "true"<br>
+                            alert(retVal == domAttr);<br>
+                            <br>
+                            //with the attribute removed,<br>
+                            //the following should be<br>
+                            //&lt;TAG1&gt;<br>
+                            //Hello World<br>
+                            //&lt;/TAG1&gt;<br>
+                            alert(tag1.getXML());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - hasAttribute method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementHasAttribute"></a>
+                    <div class="docTitle">
+                        DOMElement - hasAttribute method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.hasAttribute(&lt;attributeName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String attributeName - the attribute who's existance is to be queried
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        boolean - true if the attribute exists, false otherwise
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The hasAttribute method provides a simple way to query a DOMElement to
+                        determine if it has an attribute with the name specified.
+                    </p>
+
+                    <p>
+                        <span class="accent">NOTE: </span>To query for an attribute within a namespace,
+                        use the <a href="#DOMElementHasAttributeNS">hasAttributeNS</a> method.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ROOT id=\"root\"&gt;"<br>
+                            + "&lt;TAG1 foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/TAG1&gt;"<br>
+                            + "&lt;/ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE by its id<br>
+                            var rootNode = domDoc.getElementById("root");<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //the following should be "true"<br>
+                            alert(tag1.hasAttribute("foo"));<br>
+                            <br>
+                            //the following should be "false"<br>
+                            alert(tag1.hasAttribute("notThere"));<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - getAttributeNS method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementGetAttributeNS"></a>
+                    <div class="docTitle">
+                        DOMElement - getAttributeNS method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 2
+                    </div>
+
+                    <p>
+                        domElement.getAttributeNS(&lt;namespaceURI&gt;, &lt;localName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String namespaceURI - The namespace to search in<br>
+                        String localName - the attribute name to search for
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        String - the value of the queried attribute or "" if the attribute is not found
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The getAttributeNS method will return the value of the attribute in the
+                        specified namespace who's name is passed into the method. If the name
+                        is not found in the namespace, getAttributeNS will return a blank (empty)
+                        string.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ns1:ROOT xmlns:ns1=\"http://xmljs.sf.net/ns1\" &gt;"<br>
+                            + "&lt;ns1:TAG1 ns1:foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ns1:ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE <br>
+                            var rootNode = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //get the attribute value in the<br>
+                            //http://xmljs.sf.net/ns1 namespace with the<br>
+                            //local name of "foo"<br>
+                            var ns1 = "http://xmljs.sf.net/ns1";<br>
+                            var retVal = tag1.getAttributeNS(ns1, "foo");<br>
+                            <br>
+                            //the following should be "fooValue"<br>
+                            alert(retVal);<br>
+                             <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - setAttributeNS method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementSetAttributeNS"></a>
+                    <div class="docTitle">
+                        DOMElement - setAttributeNS method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 2
+                    </div>
+
+                    <p>
+                        domElement.setAttributeNS(&lt;namespaceURI&gt;, &lt;QName&gt;, &lt;value&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String namespaceURI - The namespace to insert the new attribute into<br>
+                        String QName - the fully qualified name (&lt;prefix&gt;:&lt;localName&gt;) of the attribute<br>
+                        String value - the value of the new attribute
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMException.html#invalid_character_error">DOMException.INVALID_CHARACTER_ERR</a> - Thrown if the string contains an illegal character       <br>
+                        <a href="documentation-w3cdom-DOMException.html#no_modification_allowed_error">DOMException.NO_MODIFICATION_ALLOWED_ERR</a> - Thrown if the DOMElement is read only       <br>
+                        <a href="documentation-w3cdom-DOMException.html#namespace_error">DOMException.NAMESPACE_ERR</a> - Thrown if the namespace is invalid       <br>
+                    </div>
+
+                    <p>
+                        The setAttributeNS method adds or updates an attribute in the specified namespace.
+                        If an attribute with &lt;QName&gt; is already present in the element
+                        in the specified namespace, its value is changed to be that of the &lt;value&gt; parameter.
+                    </p>
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ns1:ROOT xmlns:ns1=\"http://xmljs.sf.net/ns1\" &gt;"<br>
+                            + "&lt;ns1:TAG1 ns1:foo=\"origValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ns1:ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE <br>
+                            var rootNode = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //the following should be "origValue"<br>
+                            var ns1="http://xmljs.sf.net/ns1";<br>
+                            alert(tag1.getAttributeNS(ns1, "foo"));<br>
+                            <br>
+                            //now update that attribute with a new value<br>
+                            tag1.setAttributeNS(ns1, "ns1:foo", "newFooValue");<br>
+                            <br>
+                            //the following should be "newFooValue"<br>
+                            alert(tag1.getAttributeNS(ns1, "foo"));<br>
+                            <br>
+                            //add a new attribute in the ns1 namespace<br>
+                            tag1.setAttributeNS(ns1, "ns1:newAttribute", "newAttributeValue");<br>
+                            <br>
+                            //confirm everything went OK.<br>
+                            <br>
+                            //the following should be "newAttributeValue"<br>
+                            alert(tag1.getAttributeNS(ns1, "newAttribute"));<br>
+                            <br>
+                            //with the attribute added,<br>
+                            //the following should be<br>
+                            //&lt;ns1:TAG1 ns1:foo="newFooValue" ns1:newAttribute="newAttributeValue"&gt;<br>
+                            //Hello World<br>
+                            //&lt;/ns1:TAG1&gt;<br>
+                            alert(tag1.getXML());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - removeAttributeNS method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementRemoveAttributeNS"></a>
+                    <div class="docTitle">
+                        DOMElement - removeAttributeNS method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 2
+                    </div>
+
+                    <p>
+                        domElement.removeAttributeNS(&lt;namespaceURI&gt;, &lt;localName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String namespaceURI - The namespace to insert the new attribute into<br>
+                        String localName - the local name of the attribute to remove<br>
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMException.html#not_found_error">DOMException.NOT_FOUND_ERR</a> - Raised if the DOMNode was not found       <br>
+                        <a href="documentation-w3cdom-DOMException.html#no_modification_allowed_error">DOMException.NO_MODIFICATION_ALLOWED_ERR</a> - Raised if this DOMElement is readonly       <br>
+                    </div>
+
+                    <p>
+                        The removeAttribute method removes the attribute specified by &lt;localName&gt;
+                        and &lt;namespaceURI&gt; from the DOMElement.
+                    </p>
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ns1:ROOT xmlns:ns1=\"http://xmljs.sf.net/ns1\" &gt;"<br>
+                            + "&lt;ns1:TAG1 ns1:foo=\"origValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ns1:ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE <br>
+                            var rootNode = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //remove the "ns1:foo" attribute<br>
+                            var ns1 = "http://xmljs.sf.net/ns1";<br>
+                            tag1.removeAttributeNS(ns1, "foo");<br>
+                            <br>
+                            //with the attribute removed,<br>
+                            //the following should be<br>
+                            //&lt;ns1:TAG1&gt;<br>
+                            //Hello World<br>
+                            //&lt;/ns1:TAG1&gt;<br>
+                            alert(tag1.getXML());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - getAttributeNodeNS method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementGetAttributeNodeNS"></a>
+                    <div class="docTitle">
+                        DOMElement - getAttributeNodeNS method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 2
+                    </div>
+
+                    <p>
+                        domElement.getAttributeNodeNS(&lt;namespaceURI&gt;, &lt;localName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String namespaceURI - The namespace to search in<br>
+                        String localName - the attribute name to search for
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> - the attribute corresponding to &lt;localName&gt; in the specified namespace
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The getAttributeNodeNS method will return the DOMAttr object represented by
+                        the &lt;localName&gt; and &lt;namespaceURI&gt; passed into the method.
+                        If the DOMAttr is not found in the DOMElement, getAttributeNodeNS will return a null.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ns1:ROOT xmlns:ns1=\"http://xmljs.sf.net/ns1\" &gt;"<br>
+                            + "&lt;ns1:TAG1 ns1:foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ns1:ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE<br>
+                            var rootNode = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //get the attribute value in the<br>
+                            //http://xmljs.sf.net/ns1 namespace with the<br>
+                            //local name of "foo"<br>
+                            var ns1 = "http://xmljs.sf.net/ns1";<br>
+                            var domAttrNS = tag1.getAttributeNodeNS(ns1, "foo");<br>
+                            <br>
+                            //the following should be "fooValue"<br>
+                            alert(domAttrNS.getValue());<br>
+                            <br>
+                            //search for an attribute that does not exist<br>
+                            var notThere = tag1.getAttributeNodeNS(ns1, "notThere");<br>
+                            <br>
+                            //the following should be "true"<br>
+                            alert(notThere == null);<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - setAttributeNodeNS method
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementSetAttributeNodeNS"></a>
+                    <div class="docTitle">
+                        DOMElement - setAttributeNodeNS method
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 2
+                    </div>
+
+                    <p>
+                        domElement.setAttributeNodeNS(&lt;newAttribute&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> newAttribute - the DOMAttr object to be added to the element
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMAttr.html">DOMAttr</a> - the replaced DOMAttr object or null if the DOMAttr was successfully added to the DOMElement
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        <a href="documentation-w3cdom-DOMException.html#no_modification_allowed_error">DOMException.NO_MODIFICATION_ALLOWED_ERR</a> - Thrown if the DOMElement is read only       <br>
+                        <a href="documentation-w3cdom-DOMException.html#wrong_document_error">DOMException.WRONG_DOCUMENT_ERR</a> - Thrown if newAttribute was created from a different DOMDocument       <br>
+                        <a href="documentation-w3cdom-DOMException.html#in_use_attribute_error">DOMException.INUSE_ATTRIBUTE_ERR</a> - Raised if newAttribute is a DOMAttr that is already an attribute of another DOMElement object. DOMAttr nodes must explicitly be cloned to re-use them in other elements.       <br>
+                    </div>
+
+                    <p>
+                        The setAttributeNodeNS method adds or updates an attribute in a DOMElement.
+                        If a DOMAttr exists within the DOMElement with the same name and namespace as the
+                        DOMAttr object passed in, that DOMAttr object is replaced with the new DOMAttr.
+                        Otherwise, the new DOMAttr object is simply added to the DOMElement.
+                    </p>
+
+                    <p>
+                        If the new DOMAttr object replaces a DOMAttr object in the DOMElement, the replaced
+                        DOMAttr object is returned. Otherwise, setAttributeNodeNS returns null.
+                    </p>
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ns1:ROOT xmlns:ns1=\"http://xmljs.sf.net/ns1\" &gt;"<br>
+                            + "&lt;ns1:TAG1&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ns1:ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE<br>
+                            var rootNode = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            //create a new attribute in the ns1 namespace<br>
+                            var ns1 = "http://xmljs.sf.net/ns1";<br>
+                            var newAttr1 = domDoc.createAttributeNS(ns1, "ns1:newAttr");<br>
+                            <br>
+                            //set the attribute's value<br>
+                            newAttr1.setNodeValue("newAttrValue1");<br>
+                            <br>
+                            //add it to the DOMElement<br>
+                            var retVal = tag1.setAttributeNodeNS(newAttr1);<br>
+                            <br>
+                            //since the new attribute didn't replace an<br>
+                            //existing attribute, the retVal should be null<br>
+                            //the following should be "true"<br>
+                            alert(retVal == null);<br>
+                            <br>
+                            //now create another new attribute<br>
+                            var newAttr2 = domDoc.createAttributeNS(ns1, "ns1:newAttr");<br>
+                            <br>
+                            //set the attribute's value<br>
+                            newAttr2.setNodeValue("newAttrValue2");<br>
+                            <br>
+                            //now replace the existing attribute "ns1:newAttr"<br>
+                            //with the new attribute we just created<br>
+                            <br>
+                            retVal = tag1.setAttributeNodeNS(newAttr2);<br>
+                            <br>
+                            //since we replaced a node, the following should be<br>
+                            //true (the replaced node was the first attribute<br>
+                            //we created)<br>
+                            //the following should be "true"<br>
+                            alert(retVal == newAttr1);<br>
+                            <br>
+                            //the following should be<br>
+                            //"&lt;ns1:TAG1 ns1:newAttr="newAttrValue2"&gt;<br>
+                            //Hello World<br>
+                            //&lt;/ns1:TAG1&gt;<br>
+                            alert(tag1.getXML());<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - hasAttributeNS methood
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementHasAttributeNS"></a>
+                    <div class="docTitle">
+                        DOMElement - hasAttributeNS methood
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        domElement.hasAttributeNS(&lt;namespaceURI&gt;, &lt;localName&gt;);
+                    </p>
+
+                    <div class="param">accepts:</div>
+                    <div class="indentOne">
+                        String namespaceURI - The namespace to search in<br>
+                        String localName - the attribute name to search for
+                    </div>
+
+                    <br>
+
+                    <div class="param">returns:</div>
+                    <div class="indentOne">
+                        boolean - true if the attribute exists, false otherwise
+                    </div>
+
+                    <br>
+                    <div class="param">throws:</div>
+                    <div class="indentOne">
+                        N/A
+                    </div>
+
+                    <p>
+                        The hasAttributeNS method provides a simple way to query a DOMElement to
+                        determine if it has an attribute with the name and namespace specified.
+                    </p>
+
+
+                    <div class="accent">
+                        Example:
+                    </div>
+
+                    <div>
+                        <div>function xmljsDOMExample() {</div>
+                        <div class="indentOne">
+                            var xml;<br>
+                            xml = ""<br>
+                            + "&lt;?xml version=\"1.0\" ?&gt;"<br>
+                            + "&lt;ns1:ROOT xmlns:ns1=\"http://xmljs.sf.net/ns1\" &gt;"<br>
+                            + "&lt;ns1:TAG1 ns1:foo=\"fooValue\"&gt;"<br>
+                            + "Hello World"<br>
+                            + "&lt;/ns1:TAG1&gt;"<br>
+                            + "&lt;/ns1:ROOT&gt;";<br>
+                            <br>
+                            //instantiate the W3C DOM Parser<br>
+                            var parser = new DOMImplementation();<br>
+                            <br>
+                            //load the XML into the parser and get the DOMDocument<br>
+                            var domDoc = parser.loadXML(xml);<br>
+                            <br>
+                            //get ROOTNODE<br>
+                            var rootNode = domDoc.getDocumentElement();<br>
+                            <br>
+                            //get the TAG1 node<br>
+                            var tag1 = rootNode.getFirstChild();<br>
+                            <br>
+                            var ns1 = "http://xmljs.sf.net/ns1";<br>
+                            <br>
+                            //the following should be "true"<br>
+                            alert(tag1.hasAttributeNS(ns1, "foo"));<br>
+                            <br>
+                            //the following should be "false"<br>
+                            alert(tag1.hasAttributeNS(ns1, "notThere"));<br>
+                            <br>
+                            //the following should be "false"<br>
+                            alert(tag1.hasAttributeNS("badNamespaceURI", "foo"));<br>
+                            <br>
+                            //the following should be "false"<br>
+                            //(the attribute name should be a localName, not a QName<br>
+                            alert(tag1.hasAttributeNS(ns1, "ns1:foo"));<br>
+                            <br>
+                        </div>
+                        }// end function xmljsDOMExample<br>
+                        <br>
+                    </div>
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - getElementsByTagName
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementGetElementsByTagName"></a>
+                    <div class="docTitle">
+                        DOMElement - getElementsByTagName
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 1
+                    </div>
+
+                    <p>
+                        <span class="accent">NOTE: </span>The W3C specification includes
+                        getElementsByTagName only for DOMElements and DOMDocuments. XML for &lt;SCRIPT&gt; implements
+                        getElementsByTagName for all DOMNodes.
+                    </p>
+
+                    <p>
+                        You may find documentation on the getElementsByTagName by viewing the
+                        <a class="documentationLink" href="documentation-w3cdom-DOMNode.html#DOMNodegetElementsByTagName">DOMNode getElementsByTagName documentation</a>.
+                    </p>
+
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+                    <!--*************************************************************************************
+                    *
+                    *           DOMElement - getElementsByTagNameNS
+                    *
+                    ******************************************************************************************-->
+
+                    <a name="DOMElementGetElementsByTagNameNS"></a>
+                    <div class="docTitle">
+                        DOMElement - getElememtnsByTagNameNS
+                    </div>
+                    <div class="accent">
+                        W3C DOM Level 2
+                    </div>
+
+                    <p>
+                        <span class="accent">NOTE: </span>The W3C specification includes
+                        getElementsByTagNameNS only for DOMElements and DOMDocuments. XML for &lt;SCRIPT&gt; implements
+                        getElementsByTagNameNS for all DOMNodes.
+                    </p>
+
+                    <p>
+                        You may find documentation on the getElementByTagNameNS by viewing the
+                        <a class="documentationLink" href="documentation-w3cdom-DOMNode.html#DOMNodegetElementsByTagNameNS">DOMNode getElementsByTagName documentation</a>.
+                    </p>
+
+                    <div class="backToTop">
+                        <a href="#backToTop">Back to Top</a>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+</body>
+</html>

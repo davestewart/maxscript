@@ -1,0 +1,21 @@
+[name]
+name=Arithmetic
+matchName=ADBE Arithmetic
+
+[properties]
+name=	Operator
+type=	OneD
+
+name=	Red Value
+type=	OneD
+
+name=	Green Value
+type=	OneD
+
+name=	Blue Value
+type=	OneD
+
+name=	Clipping
+type=	OneD
+
+

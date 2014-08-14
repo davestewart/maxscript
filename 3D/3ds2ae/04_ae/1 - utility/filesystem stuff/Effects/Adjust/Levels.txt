@@ -1,0 +1,27 @@
+[name]
+name=Levels
+matchName=ADBE Easy Levels
+
+[properties]
+name=	Channel:
+type=	OneD
+
+name=	Histogram
+type=	CUSTOM_VALUE
+
+name=	Input Black
+type=	OneD
+
+name=	Input White
+type=	OneD
+
+name=	Gamma
+type=	OneD
+
+name=	Output Black
+type=	OneD
+
+name=	Output White
+type=	OneD
+
+

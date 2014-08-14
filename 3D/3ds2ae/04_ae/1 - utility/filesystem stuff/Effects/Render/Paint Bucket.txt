@@ -1,0 +1,36 @@
+[name]
+name=Paint Bucket
+matchName=ADBE Paint Bucket
+
+[properties]
+name=	Fill Point
+type=	TwoD_SPATIAL
+
+name=	Fill Selector
+type=	OneD
+
+name=	Tolerance
+type=	OneD
+
+name=	View Threshold
+type=	OneD
+
+name=	Stroke
+type=	OneD
+
+name=	Contextual Slider
+type=	OneD
+
+name=	Invert Fill
+type=	OneD
+
+name=	Color
+type=	COLOR
+
+name=	Opacity
+type=	OneD
+
+name=	Blending Mode
+type=	OneD
+
+

@@ -1,0 +1,1444 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: XML for <SCRIPT> Cross Platform XML Parser in JavaScript
+Date: Thu, 18 Nov 2004 01:47:07 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0000_01C4CD10.831811A0";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C4CD10.831811A0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://xmljs.sourceforge.net/index.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!--=0A=
+// =
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=0A=
+//=0A=
+// index.html - website base for xml.js=0A=
+//=0A=
+// =
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=0A=
+//=0A=
+// Copyright (C) 2001, 2003 - David Joham (djoham@yahoo.com)=0A=
+//=0A=
+// This library is free software; you can redistribute it and/or=0A=
+// modify it under the terms of the GNU Lesser General Public=0A=
+// License as published by the Free Software Foundation; either=0A=
+// version 2.1 of the License, or (at your option) any later version.=0A=
+=0A=
+// This library is distributed in the hope that it will be useful,=0A=
+// but WITHOUT ANY WARRANTY; without even the implied warranty of=0A=
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU=0A=
+// Lesser General Public License for more details.=0A=
+=0A=
+// You should have received a copy of the GNU Lesser General Public=0A=
+// License along with this library; if not, write to the Free Software=0A=
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  =
+USA=0A=
+=0A=
+--><HTML><HEAD><TITLE>XML for <SCRIPT> Cross Platform XML Parser in =
+JavaScript</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"javascript xml parser" name=3Ddescription>
+<META content=3D"javascript xpath parser" name=3Ddescription>
+<META content=3D"javascript xml parsing" name=3Ddescription><LINK=20
+href=3D"http://xmljs.sourceforge.net/website/stylesheets/styles.css" =
+type=3Dtext/css=20
+rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.2600.0" name=3DGENERATOR></HEAD>
+<BODY onload=3DconfigureJSNavigation()>
+<FORM id=3DfrmForm name=3DfrmForm action=3Dnoaction method=3Dget><!-- =
+logo -->
+<DIV class=3DtitleLogo id=3Dlogo><IMG height=3D75 alt=3D"XML for =
+<SCRIPT> logo"=20
+src=3D"http://xmljs.sourceforge.net/website/images/titleImage.jpg" =
+width=3D459>=20
+</DIV><!-- main page square -->
+<DIV class=3DmainContentArea><BR></DIV><!-- navigation bar -->
+<DIV class=3DleftImage></DIV><!-- credit where credit is due -->
+<P><A href=3D"http://validator.w3.org/check/referer"><IMG =
+class=3DvalidHTMLImage=20
+title=3D"HTML 4.01 strict HTML" alt=3D"HTML 4.01 strict HTML"=20
+src=3D"http://xmljs.sourceforge.net/website/images/valid-html401.png"></A=
+><BR><A=20
+href=3D"http://www.sourceforge.net/"><IMG class=3DsourceForgeImage=20
+title=3D"Visit Sourceforge.net" alt=3D"Visit Sourceforge.net"=20
+src=3D"http://sourceforge.net/sflogo.php?group_id=3D14016&amp;type=3D1"><=
+/A><BR></P>
+<DIV class=3DlinkBar>
+<DIV class=3DcurrentLocation>Home</DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/documentation.html">Document=
+ation</A></DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/caseStudies.html">Case&nbsp;=
+Studies</A></DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/sampleApplications.html">Sam=
+ple&nbsp;Code&nbsp;(Parsers)</A></DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/tools.html">Sample&nbsp;Code=
+&nbsp;(Tools)</A></DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/contributedAddOns.html">Cont=
+ributed&nbsp;Add-ons</A></DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/testSuites.html">Test&nbsp;S=
+uites</A></DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/history.html">History</A></D=
+IV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/mailingLists.html">Mailing&n=
+bsp;Lists</A></DIV>
+<DIV class=3DhoverNavigation><A class=3Dnavigation=20
+href=3D"http://xmljs.sourceforge.net/website/download.html">Download</A><=
+/DIV></DIV>
+<DIV class=3DcontentDiv style=3D"POSITION: absolute">
+<DIV class=3DcontentDivBackground>
+<DIV class=3DpageHeader>Cross Platform XML Parsing in JavaScript </DIV>
+<P>XML for &lt;SCRIPT&gt; is a powerful, standards-compliant JavaScript =
+XML=20
+parser that is designed to help web application designers implement =
+cross=20
+platform applications that take advantage of client-side manipulation of =
+XML=20
+data. XML for &lt;SCRIPT&gt; provides a full suite of tools, including: =
+</P>
+<UL>
+  <LI>A standards-compliant W3C DOM Level 2 processor=20
+  <LI>An XPath processor=20
+  <LI>A standards-compliant SAX processor=20
+  <LI>A simple (classic) DOM processor=20
+  <LI>Proxies for XML retrieval from any domain=20
+  <LI>Utilities for XML and application development </LI></UL>
+<P>XML for &lt;SCRIPT&gt; is <A style=3D"FONT-WEIGHT: bold"=20
+href=3D"http://www.gnu.org/">Free software</A> and is distrubuted under =
+the <A=20
+style=3D"FONT-WEIGHT: bold"=20
+href=3D"http://www.gnu.org/copyleft/lesser.html#TOC1">terms of the GNU =
+Lesser=20
+General Public Licence (LGPL) </A>, an <A style=3D"FONT-WEIGHT: bold"=20
+href=3D"http://www.opensource.org/">open source</A> license. </P>
+<P>The ultimate goal of n-tier architecture is to separate the content =
+of an=20
+application from its presentation. Unfortunately, most server-side =
+technologies=20
+in use today do not make this goal easily attainable. It is not uncommon =
+to see=20
+code such as the following in server-side scripts: </P>
+<DIV class=3DcenterCode>&lt;input type=3D"text"=20
+value=3D"&lt;%out.println(vrblName);%&gt;"&gt; </DIV>
+<P>XML for &lt;SCRIPT&gt; seeks to simplify web application development =
+by=20
+providing developers the ability to send the data for their application =
+in XML=20
+while the presentation is sent in HTML and style sheets. This XML can =
+then be=20
+manipulated to initially populate any necessary form elements as well as =
+store=20
+changes to the data. When finished with the manipulation of the data, =
+the=20
+resulting XML string can then be sent back to the server. Since the data =
+
+exchange is now 100% XML, the server can then process the new string =
+with its=20
+own parser and take the appropriate actions. </P>
+<P>The benefits of this architecture are many. </P>
+<UL>
+  <LI>Server side code intermixed with HTML code can be reduced to =
+almost=20
+  nothing.=20
+  <LI>Client side code is simplified by having all form initialization =
+in one=20
+  place=20
+  <LI>Applications are now free to maintain their own data, reducing =
+annoying=20
+  round-trips to the server=20
+  <LI>Server side processing is simplified by having all relevant form =
+data be=20
+  submitted in XML </LI></UL>
+<P>In effect, XML for &lt;SCRIPT&gt; allows n-tier client side =
+application=20
+development to become a reality. </P>
+<P>XML for &lt;SCRIPT&gt; is maintained by David Joham =
+(djoham[at]yahoo[dot]com)=20
+with help from developers around the world. </P></DIV></DIV><!-- what's =
+new! -->
+<DIV class=3DcontentDiv style=3D"LEFT: 775px; WIDTH: 170px; POSITION: =
+absolute">
+<DIV class=3DcontentDivBackground style=3D"WIDTH: 160px">
+<DIV class=3DpageHeader style=3D"FONT-STYLE: italic">New! </DIV>
+<P style=3D"TEXT-ALIGN: center">Version 3.1 Adds </P>
+<DIV class=3Dwhatsnew>XPath Contributed Add-on </DIV>
+<DIV class=3Dwhatsnew>W3C Parser Bug Fixes </DIV>
+<P style=3D"MARGIN-TOP: 25px; TEXT-ALIGN: center">Version 3.0 Added </P>
+<DIV class=3Dwhatsnew>W3C DOM Processing </DIV>
+<DIV class=3Dwhatsnew>Updated Documentation </DIV>
+<DIV class=3Dwhatsnew>More Pre-Built proxies </DIV>
+<DIV class=3Dwhatsnew>Proxy-less XML Loading </DIV>
+<DIV class=3Dwhatsnew>New Site Layout </DIV>
+<DIV class=3Dwhatsnew>A Mailing List </DIV>
+<DIV class=3Dwhatsnew>More Contributed Add-ons </DIV>
+<DIV style=3D"MARGIN-TOP: 15px; TEXT-ALIGN: center"><A =
+class=3DdocumentationLink=20
+href=3D"http://xmljs.sourceforge.net/website/history.html#changelog3dot1"=
+>Change=20
+Log</A> </DIV>
+<DIV class=3DpageHeader style=3D"MARGIN-TOP: 20px; FONT-STYLE: =
+italic">Support!=20
+</DIV>
+<P>XML for &lt;SCRIPT&gt; is Free Software and requires absolutely no =
+licensing=20
+fees to use or redistribute. Donations to help support the future =
+development of=20
+XML for &lt;SCRIPT&gt; are appreciated however. To donate, click the =
+"Support=20
+This Project" link below. Thank you! </P>
+<DIV style=3D"TEXT-ALIGN: center"><A=20
+href=3D"http://www.sourceforge.net/donate/index.php?group_id=3D14016"><IM=
+G=20
+style=3D"BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none"=20
+alt=3D"Support This Project"=20
+src=3D"http://xmljs.sourceforge.net/website/images/project-support.jpg"><=
+/A>=20
+</DIV></DIV></DIV></FORM>
+<SCRIPT src=3D"http://xmljs.sourceforge.net/website/scripts/scripts.js"=20
+type=3Dtext/javascript></SCRIPT>
+</BODY></HTML>
+
+------=_NextPart_000_0000_01C4CD10.831811A0
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://xmljs.sourceforge.net/website/images/titleImage.jpg
+
+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
+
+------=_NextPart_000_0000_01C4CD10.831811A0
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://xmljs.sourceforge.net/website/images/valid-html401.png
+
+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
+
+------=_NextPart_000_0000_01C4CD10.831811A0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://sourceforge.net/sflogo.php?group_id=14016&type=1
+
+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
+MTA4
+
+------=_NextPart_000_0000_01C4CD10.831811A0
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://xmljs.sourceforge.net/website/images/project-support.jpg
+
+/9j/4AAQSkZJRgABAQEBLAEsAAD//gAXQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q/9sAQwABAQEBAQEB
+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+/9sAQwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+AQEBAQEBAQEBAQEB/8AAEQgAIABYAwEiAAIRAQMRAf/EABwAAAICAwEBAAAAAAAAAAAAAAYIBwkA
+AgoFBP/EACsQAAEFAQEAAQIGAgIDAAAAAAYCAwQFBwEIEgkRABMUFRYhFyIYIyYxOP/EABgBAAMB
+AQAAAAAAAAAAAAAAAAMEBgUB/8QALBEAAwACAQQBAwALAAAAAAAAAQIDBBESAAUTIQYUIjEVIzIz
+QUNRYWJxkf/aAAwDAQACEQMRAD8Au28N/SW+l36X+ln4Xf2Xwv5nvSPRfE/l4kONBGsrG871m/Jr
+/Ewe2ISufqub14xpEgnuLZ+Ra3N84Srs7udIkPXMqaqRNdlUj/Ua+kwFfTmtB0tost8/a15UOiOK
+HjRuY+YvN7uiY+a28lyOM55qt9By2upyykJXG26QG039LW2M66YjjxrGdvrOARkNz3m/1mZYR9Nb
+6PoblkYev9L0Ty55ObfDCIF1gpZu8rocLygcNbVgoziG9SZRDHTPRcpUX6poj8+hAM+sS8upgDWC
++nGc0Klee9N6x6QwWy827vsNHu+Q+iqtWaX2z3HnzZ6MjHNN0Dzdgb2UC1S4JefcGHsfjP8AqnTc
++0/zmd6OBFYnr+FmMldvp+eGWVVFZqsn3D5n2PtveZdkyshly3fGlR1EzDGa8pma5NXqolRyToHQ
+RQWooHEmJ7r8++Pdn77D47l3qM+rY0bOqxGNh0zERsVcijVTg9FfynlxQRUN7czTI57uBmLd79v+
+PPmDnef33i/MXnpHeJ5zveq6lecpVxP9fZPep/7Fd+DfzXxSUyJYeeAirGFFczzn4+5Hj1FISW45
+GxvyDP0YXEiZ2taGTc0yiAOSdNCgMm7ei6xo5KxKnEyFs2z9dLcTuaCE/v6rAmh9JgcPJlrbaXfC
+Q/eLQhCmm/laUkSY51hCVtJV2KuV1SFocdfWhlrv5qWVOOPtkC+qxHOpOUliQw31jQMhMcQLB0WP
+c9w8VWGWeKnYKQy7Gp9tCUWd6G1uiIc7C7bIgzENQzdADjue6WNUdXblnfNuezDWjyK2RYtBEpzs
+y1Xx1crNdD7WVlVS37SO+0C7DBi0+qrMtkyWTYk0uXpQMpnRwJleUyjrWSbGxqhfx7Vw4ZmmOoyU
+GYsjvUueevL7feK6nvF+Y/PX9dT3nFdV3mc9S2jny535u9QnvO/fne/ZXObpDMXT3/548w/2lSep
+X5e8+85zvec/63UKzX5pd/2SpDH2RI471tKko/35xoMo9O4oAY8e5wD7t6+y5VBm+sX6dSp85zfJ
+dotSXT9/+mVSVIZhwyO+w5nCq2mjWCaZdHD7uoBUuqz4gLbFqhJ6yhuY0ohie2QusC88J39P9GR3
+qj0WekBL58DXBl6v9YC4P5/8JB1hc+6K9e41SRSk9Yk2f6iQlsi9E/T8dBFqO+V8uRqs0NIHz9Qd
+wuHK/RPxDrJWc3DMzKaBiJY1FAEwCdhCp91nGWqFI9zyTQrPttios018ouXJIZp/bPDdSeKhgeO9
+svkSc/1vSeqD8Y6nrffPfmJziuJR1pvzH58+PX1c5xTKEs5yp1C1/djnOcU24t1fGo6nFcea/BBK
+yzMmBqmM3/OPl1I4QkxQK1FpzzZ5vU49fhVWD3hVD/bkgarSN2rqtIDrHtlZw41ZLRas9gzpKYF0
+zDmLL/cNIDWGO299/wAhL+IBTfJ7ZBgzcYYf87ZTJwHRsQLNP3nAlz9SRX2mz7pW5DpKCSkcx3G0
+qsfU2st22v30ceIbrWohIvThvonn4JynVtj9P6SeB+u6KezZemHFzoQBdiBzmuRidH2UXEekTSmv
+L86Is/0JQ0PfwKTS11TsBleQDGjmzryoIypkZj1mv0YnPyKtWdqMeJlZthQiHYdZAleaHkODspJB
+5ZedW+PM9uWKCgWz1Lu3iaNiWWaTRpMLiU3oC8WLFUcgll9a6wQJoKiffXPmXytBqqvuPfr5DXnf
+y7LVFRvOb2mw5O5yNDB3JczpbnVHckSOtxFdqWYX7Xc8prqTGqpgjIAsXjs1r/cH8lP/ALtAdsGW
+a3z15knyIDKLe3pVQruvgAk2wGrNMymmu8qCBqqu+1MqpJE16h4hG7a1mHSfduiEQyR9z/bvZIpq
+hUKeHaq8PZmg2QVPhz/MHnbc8r1gXhGgxr5SUkYPo+tHottlW5Y1o+gpJyA7vTQbqiSobvjAgsfa
+edd2qo0cRrNbyMDExfdxUYHxDJqeaRwKzRvXXpPcM/oRtvKfWPmU0yepHss2cPo7UiyvfRAgctRw
+pyR2vL8PNDGMSiXKzgitTDLNs/amwTxhJipDe1LUZyD+CBoetbXTN7msi1O3mjFQwM2dCpXDg7Iy
+mdnUvlNVUbxPoKV1oA9Ih6GEciZwTapVdhXnilsI+T6DKgWtB52xAfuK6cwL3S4djT29KCw7ekms
+OtNciWVVYsSY7zCrKqlJeTGlcz8bexNWRp4d6QMUT9FsmCcBPlwp+qmRIbnEmDGBX6aEuzsjAw0Q
+nq63jEFpI2I32lapfAouimCbrW9ZsB13QyPPxpTZmkjOvB2G2TZPElVJB3+CP4j+vWxNmeU3ZDNm
+UM0yeTIxVSVZgFBIOwSFUf4jrqp87+eqn0z9NL6WMF69oAy5y/z/AOQjSGbyM1EzY8rqGmxUJs5l
+LmpNfdbl5iSySepDSuMWVzV3VyJgRXUeghWkAtuTCNsmelef7bwvgU703vhF5yZLMeZKkZzk+e5I
+BXYsSaGX5PnIQBkmd2EnP8hcz/XCX0ULU2o3xBXhZqQ0tGLg4QAFAiHRtHrjcH89fWe8JeWvBnkg
+KL9nqSbRwHy1gIjfZsFdVekcIsoMrEKS4GrFUdxqBR2tPZxZUeci6sKxiPIiOxX3+OcW12hX2x9V
+if7mM6m3LyweCcxFHX5YDlzJDEmqgzZbbzP8qMpbLvYtuWdiPqRCjc69XUSH50ZhU7rqJLU5n/Ee
+x9w7vDveXhu3ccUY7o4tkSTnFce0C8pb08nQHaoHqKUnkeZGKiS7h8E+Md377h/JszAN+6Y307zu
+uVkLKrY5x3xXtGdUSngpIUAXx+YVtK5rB1mjCsiuEDvhPHiLOBIwMNIpSM0BtPPu6rUjiM2SC0Pn
+COxHKsFlZzbTyUFq3zmxoBI+zfR/2dqYWZ+U6voMIj1QZ84ZMrfSNSP9O9WnqPi31C1I6phbXeNO
+sdT1DKk9QlClLj8QhDDzq1qbR+pShtebr1fJKBcbBC30VdlgCGWTlyHBJIdSrofFrNVLXjcVdRHs
+Jb77cGlo6xiELU7j66cRbsCVsZgVKSwjVZC3+bc459uJOBrnOJRznOWkf7c7z5fLnE9cVzieq71a
+eJ+CUdW5ziP7+/418GWVNMhsugq9MvJaQQ0YLB8h2jvySkVImw9LNVAICgDrf7ZDPlLIPcKyraub
+lvLxWrZVxnyqPjhmtj4vFliyjxziJSXjObOqh2ss8wB1VtO0VWf2wodHrT2e72YVgNmVjErNCNyT
+KfPura2LBInZTA7RW4VqakwLSiaHGgYqlcYuZH6CnlTv0yfxN2sZhk+R5Ro2jlmW7yMaTEcwwabw
+Es1YUpdF83GevxPby48Xe583AYl7o85VH5Qzrah0GjguB3d7l27DcWNbSa9FHoBbT9Q+khsUmzrI
+X1AdpbGzE9BBZ8tt0fsVSRHVc+Kcr0Gl7Hu4VpCbSRgBqTD65yIn7jWIs1WNRJg2sWHNjiELUchr
+ksphk4gxyO2603xFlG538p7vVOtcWtTnUNuL4jvUuckc4lKOfbvW+9e7XHyK2LrktGXCKhFSjMeN
+PJQjX2KXXihJ3sAKfR11zJw8m2RzTJMZcIDigdqHjflYL/LDUmVA57RtBagoSOuguJ5tCR3csEGO
+0mogtOQe3vP+BZ7pR9OADkM9r5gcHpBT33qbzKKmGNQglrJhmEHBBHNHZr3qcCnUvpDIohYbTKl6
+HJ1X4qfyfjd3hGNabK04tG6M6Y8x2RN6MeC9yKsJoJm7mOVCWg0JOQyPLYF5gzVfnqRo93WHWhSP
+fh6mYcYnaZ1f55muhGtqNYvRlnfpUbyG7nE+X6KBiBVPrnKtBSmhAyQiHOdl18+ESZ1dGVIR2eWa
+MPz6qBZh2qZ3MG9ICrVhNiKFVRLcmuzgVvRcZbf/AFnCQP7L+Ckdd5ZR0fNCm+tuN94lf2+LyVOJ
+V1xL/wCX1XF9S8hKo7gDh5rceOY01R9qeLM1AxBJfX3KE9BdbLbH40B0D9HZ7Mu+4vJE/dmatRnB
+cOBVnbmApI/Bb2zBOM1mo6CqfLB6gzj1QyReLvVmY6gz5RvD8SzDY9CArk+BKQE9KeU6u33ODWPe
+dwvUoge5XaEQ/wAgt5WR54Gws8x3fwGk2k3s9AO7PzBWJ/Ju96rvVdQrqlKc5zq+K4txx13nO/fr
+aFISlfFMPKS65IQ6txT63v1KnEwb0TF2EtoZIg5KGJKpbPxnRW1tSFc6hx5pxLilsPOI71TCo3WW
+oS3Oo/Ilx20sq97/ADbnX9f+dDP9c7z7JsYjaf7Wtzvfy0L43znycV1KUpTxvneoT92/y0NN48KR
+NWerWNWmV3zPAogQ+mGwGBGvet+/7dO4eLbHaxpdri1FcMxbYCwWIBDHa7Yhyp2AfXrXU1bAQdfy
+PUGPl37O56aN/HiU9+/5g3ZI4pS+r+X/ALVz785zvPt3vf77znO5+FuN9VCyIKMKGnLKSztbkWv6
+quroU5mRMnTrGqlwocSLHbUp19+TKfZZbaaQtfVL+/x+KVd5n4fljXuCZSdwG2So/HILre9fnR/5
+0WuTjQKpa8ZMQWC0qiMVOgDpmB0T6/31/9k=
+
+------=_NextPart_000_0000_01C4CD10.831811A0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://xmljs.sourceforge.net/website/stylesheets/styles.css
+
+A {
+	COLOR: #101862; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #101862; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: underline
+}
+A.documentationLink {
+	WHITE-SPACE: nowrap
+}
+A.navigation {
+	COLOR: #ffffff
+}
+A.navigation:visited {
+	COLOR: #ffffff
+}
+A.navigation:hover {
+	COLOR: red
+}
+BODY {
+	FONT-SIZE: 12px; BACKGROUND: url(../images/page_background.gif) =
+#5765ae; MARGIN: 0px; FONT-FAMILY: =
+verdana,geneva,arial,helvetica,sans-serif
+}
+DIV.accent {
+	FONT-WEIGHT: bolder; COLOR: #101862
+}
+DIV.backToTop {
+	MARGIN-BOTTOM: 5px; BACKGROUND-COLOR: #bfc9f2; TEXT-ALIGN: right
+}
+DIV.caseStudyImage {
+	TEXT-ALIGN: center
+}
+DIV.centerCode {
+	TEXT-ALIGN: center
+}
+DIV.contentDiv {
+	BORDER-RIGHT: #333 2px solid; PADDING-RIGHT: 0px; BORDER-TOP: #333 2px =
+solid; PADDING-LEFT: 0px; Z-INDEX: 1; LEFT: 269px; BACKGROUND-IMAGE: =
+url(../images/content_background.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; =
+BORDER-LEFT: #333 2px solid; WIDTH: 495px; CURSOR: default; PADDING-TOP: =
+0px; BORDER-BOTTOM: #333 2px solid; BACKGROUND-REPEAT: repeat; POSITION: =
+relative; TOP: 107px
+}
+UNKNOWN {
+	POSITION: absolute
+}
+DIV.contentDivBackground {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; Z-INDEX: 3; LEFT: 0px; =
+BACKGROUND-IMAGE: url(../images/content_gradiant.gif); PADDING-BOTTOM: =
+5px; MARGIN: 0px; WIDTH: 485px; CURSOR: default; PADDING-TOP: 5px; =
+BACKGROUND-REPEAT: repeat-x; POSITION: relative; TOP: 0px
+}
+DIV.currentLocation {
+	PADDING-RIGHT: 60px; MARGIN-TOP: 5px; PADDING-LEFT: 20px; FONT-WEIGHT: =
+bolder; BACKGROUND-IMAGE: url(../images/navigation-minus.gif); =
+PADDING-BOTTOM: 3px; MARGIN-LEFT: 15px; COLOR: #34d2ff; PADDING-TOP: =
+5px; BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: nowrap
+}
+DIV.docTitle {
+	MARGIN-TOP: 40px; FONT-WEIGHT: bolder; MARGIN-BOTTOM: 10px; COLOR: =
+#101862; BORDER-BOTTOM: #101862 1px solid
+}
+DIV.header {
+	FONT-WEIGHT: bolder
+}
+DIV.hoverNavigation {
+	BORDER-RIGHT: 1px; PADDING-RIGHT: 60px; BORDER-TOP: 1px; MARGIN-TOP: =
+5px; PADDING-LEFT: 20px; BACKGROUND-IMAGE: =
+url(../images/navigation-plus.gif); MARGIN-BOTTOM: 5px; PADDING-BOTTOM: =
+5px; MARGIN-LEFT: 15px; BORDER-LEFT: 1px; WIDTH: 114px; PADDING-TOP: =
+5px; BORDER-BOTTOM: 1px; BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: =
+nowrap
+}
+DIV.hoverNavigationIndentPlusNode {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 15px; BACKGROUND-IMAGE: =
+url(../images/navigation-plus.gif); PADDING-BOTTOM: 5px; MARGIN-LEFT: =
+32px; WIDTH: 114px; PADDING-TOP: 5px; BACKGROUND-REPEAT: no-repeat; =
+WHITE-SPACE: nowrap
+}
+DIV.hoverNavigationIndent {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: =
+url(../images/navigation-node.gif); PADDING-BOTTOM: 5px; MARGIN-LEFT: =
+36px; BORDER-LEFT: white 1px solid; WIDTH: 114px; PADDING-TOP: 5px; =
+BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: nowrap
+}
+DIV.hoverNavigationIndentSubNode {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: =
+url(../images/navigation-node.gif); PADDING-BOTTOM: 5px; MARGIN-LEFT: =
+10px; BORDER-LEFT: white 1px solid; WIDTH: 114px; PADDING-TOP: 5px; =
+BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: nowrap
+}
+DIV.hoverNavigationIndentSubNodeSpacer {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; MARGIN-LEFT: 36px; =
+BORDER-LEFT: white 1px solid; WIDTH: 114px; BACKGROUND-REPEAT: =
+no-repeat; WHITE-SPACE: nowrap
+}
+DIV.hoverNavigationCurrentLocationIndent {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; FONT-WEIGHT: bolder; =
+BACKGROUND-IMAGE: url(../images/navigation-node.gif); PADDING-BOTTOM: =
+5px; MARGIN-LEFT: 36px; BORDER-LEFT: white 1px solid; WIDTH: 213px; =
+COLOR: #34d2ff; PADDING-TOP: 5px; BACKGROUND-REPEAT: no-repeat; =
+WHITE-SPACE: nowrap
+}
+DIV.hoverNavigationCurrentLocationIndentMinusNode {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 15px; FONT-WEIGHT: bolder; =
+BACKGROUND-IMAGE: url(../images/navigation-minus.gif); PADDING-BOTTOM: =
+5px; MARGIN-LEFT: 32px; WIDTH: 213px; COLOR: #34d2ff; PADDING-TOP: 5px; =
+BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: nowrap
+}
+DIV.lastHoverNavigationIndent {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: =
+url(../images/navigation-lastnode.gif); PADDING-BOTTOM: 5px; =
+MARGIN-LEFT: 36px; WIDTH: 114px; PADDING-TOP: 5px; BACKGROUND-REPEAT: =
+no-repeat; WHITE-SPACE: nowrap
+}
+DIV.lastHoverNavigationIndentSubNode {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: =
+url(../images/navigation-lastnode.gif); PADDING-BOTTOM: 5px; =
+MARGIN-LEFT: 10px; WIDTH: 114px; PADDING-TOP: 5px; BACKGROUND-REPEAT: =
+no-repeat; WHITE-SPACE: nowrap
+}
+DIV.hoverNavigationCurrentLocationIndentSubNode {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; FONT-WEIGHT: bolder; =
+BACKGROUND-IMAGE: url(../images/navigation-node.gif); PADDING-BOTTOM: =
+5px; MARGIN-LEFT: 10px; BORDER-LEFT: white 1px solid; WIDTH: 114px; =
+COLOR: #34d2ff; PADDING-TOP: 5px; BACKGROUND-REPEAT: no-repeat; =
+WHITE-SPACE: nowrap
+}
+DIV.lastHoverNavigationCurrentLocationIndentSubNode {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; FONT-WEIGHT: bolder; =
+BACKGROUND-IMAGE: url(../images/navigation-lastnode.gif); =
+PADDING-BOTTOM: 5px; MARGIN-LEFT: 10px; WIDTH: 114px; COLOR: #34d2ff; =
+PADDING-TOP: 5px; BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: nowrap
+}
+DIV.lastHoverNavigationCurrentLocationIndent {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 10px; FONT-WEIGHT: bolder; =
+BACKGROUND-IMAGE: url(../images/navigation-lastnode.gif); =
+PADDING-BOTTOM: 5px; MARGIN-LEFT: 36px; WIDTH: 213px; COLOR: #34d2ff; =
+PADDING-TOP: 5px; BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: nowrap
+}
+DIV.indentFour {
+	PADDING-LEFT: 40px
+}
+DIV.indentOne {
+	PADDING-LEFT: 10px
+}
+DIV.indentThree {
+	PADDING-LEFT: 30px
+}
+DIV.indentTwo {
+	PADDING-LEFT: 20px
+}
+DIV.leftImage {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 2; LEFT: 10px; =
+BACKGROUND-IMAGE: url(../images/menu.jpg); PADDING-BOTTOM: 0px; MARGIN: =
+0px 10px 0px 0px; WIDTH: 240px; CURSOR: default; PADDING-TOP: 0px; =
+BACKGROUND-REPEAT: no-repeat; POSITION: absolute; TOP: 11px; HEIGHT: =
+796px
+}
+DIV.linkBar {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 3; LEFT: 40px; =
+PADDING-BOTTOM: 0px; MARGIN: 0px 10px 0px 0px; WIDTH: 213px; =
+PADDING-TOP: 0px; POSITION: absolute; TOP: 215px
+}
+DIV.mainContentArea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 1; LEFT: 0px; =
+BACKGROUND-IMAGE: url(../images/page_gradiant.gif); PADDING-BOTTOM: 0px; =
+MARGIN: 0px; WIDTH: 100%; CURSOR: default; PADDING-TOP: 0px; =
+BACKGROUND-REPEAT: repeat-x; POSITION: absolute; TOP: 0px; HEIGHT: 600px
+}
+DIV.pageHeader {
+	FONT-WEIGHT: bolder; COLOR: #101862; BORDER-BOTTOM: #101862 1px solid; =
+TEXT-ALIGN: center
+}
+DIV.param {
+	FONT-WEIGHT: bolder; COLOR: #101862
+}
+DIV.popupCommandLink {
+	PADDING-RIGHT: 60px; MARGIN-TOP: 5px; PADDING-LEFT: 15px; =
+MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 5px; WIDTH: 213px; PADDING-TOP: 5px; =
+WHITE-SPACE: nowrap
+}
+DIV.titleLogo {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 3; LEFT: 287px; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 459px; CURSOR: default; =
+PADDING-TOP: 0px; POSITION: absolute; TOP: 12px; HEIGHT: 75px
+}
+DIV.whatsnew {
+	PADDING-LEFT: 15px; BACKGROUND-IMAGE: url(../images/bluebullet.gif); =
+MARGIN-BOTTOM: 10px; BACKGROUND-REPEAT: no-repeat
+}
+DT {
+	FONT-WEIGHT: bolder
+}
+IMG.navImage {
+	LEFT: 0px; WIDTH: 175px; POSITION: absolute; TOP: 10px; HEIGHT: 796px
+}
+IMG.sourceForgeImage {
+	Z-INDEX: 3; LEFT: 95px; WIDTH: 88px; BORDER-TOP-STYLE: none; =
+BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; POSITION: absolute; =
+TOP: 120px; HEIGHT: 31px; BORDER-BOTTOM-STYLE: none
+}
+IMG.thumbnailImage {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; BORDER-BOTTOM-STYLE: none
+}
+IMG.titlePicture {
+	LEFT: 250px; BORDER-BOTTOM: black 2px solid; POSITION: absolute; TOP: =
+10px
+}
+IMG.validHTMLImage {
+	Z-INDEX: 3; LEFT: 95px; WIDTH: 88px; BORDER-TOP-STYLE: none; =
+BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; POSITION: absolute; =
+TOP: 80px; HEIGHT: 31px; BORDER-BOTTOM-STYLE: none
+}
+INPUT.launchButton {
+	BORDER-RIGHT: #101c73 2px solid; BORDER-TOP: #101c73 2px solid; =
+BORDER-LEFT: #101c73 2px solid; CURSOR: pointer; COLOR: #101c73; =
+BORDER-BOTTOM: #101c73 2px solid
+}
+P.w3cReturnHome {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; BORDER-LEFT: black 1px solid; =
+PADDING-TOP: 5px; BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: center
+}
+SPAN.accent {
+	FONT-WEIGHT: bolder; COLOR: #101862
+}
+SPAN.boldHeading {
+	FONT-WEIGHT: bolder
+}
+SPAN.boldBlueHeading {
+	FONT-WEIGHT: bold; COLOR: #101c73
+}
+SPAN.classicDomTestSuiteTabText {
+	FONT-WEIGHT: bolder; LEFT: 210px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.classicDomSamplesTabText {
+	FONT-WEIGHT: bolder; LEFT: 210px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.saxTestSuiteTabText {
+	FONT-WEIGHT: bolder; LEFT: 328px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.saxSamplesTabText {
+	FONT-WEIGHT: bolder; LEFT: 328px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.saxDocumentationTabText {
+	FONT-WEIGHT: bolder; LEFT: 328px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.domTabText {
+	FONT-WEIGHT: bolder; LEFT: 230px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.faqTabText {
+	FONT-WEIGHT: bolder; LEFT: 140px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.generalTabText {
+	FONT-WEIGHT: bolder; LEFT: 30px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.toolSamplesIntroductionTabText {
+	FONT-WEIGHT: bolder; LEFT: 11px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.toolsTabText {
+	FONT-WEIGHT: bolder; LEFT: 420px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.w3cDomTestSuiteTabText {
+	FONT-WEIGHT: bolder; LEFT: 125px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.w3cDomSamplesTabText {
+	FONT-WEIGHT: bolder; LEFT: 125px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.xmlIOEscapeXMLTablText {
+	FONT-WEIGHT: bolder; LEFT: 300px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.xmlIOLoadXMLTabText {
+	FONT-WEIGHT: bolder; LEFT: 118px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.xmlIOProxyTestSuiteTabText {
+	FONT-WEIGHT: bolder; LEFT: 404px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.xmlIOSaveXMLTabText {
+	FONT-WEIGHT: bolder; LEFT: 214px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+SPAN.xmlRecordsetTabText {
+	FONT-WEIGHT: bolder; LEFT: 118px; CURSOR: pointer; COLOR: white; =
+POSITION: absolute; TOP: 10px
+}
+LI {
+	MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px
+}
+
+------=_NextPart_000_0000_01C4CD10.831811A0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://xmljs.sourceforge.net/website/scripts/scripts.js
+
+// =
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=0A=
+//=0A=
+// scripts.js - scripts to handle functionality of the main web site=0A=
+//=0A=
+// =
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=0A=
+//=0A=
+// Copyright (C) 2001, 2002, 2003 - David Joham (djoham@yahoo.com)=0A=
+//=0A=
+// This library is free software; you can redistribute it and/or=0A=
+// modify it under the terms of the GNU Lesser General Public=0A=
+// License as published by the Free Software Foundation; either=0A=
+// version 2.1 of the License, or (at your option) any later version.=0A=
+=0A=
+// This library is distributed in the hope that it will be useful,=0A=
+// but WITHOUT ANY WARRANTY; without even the implied warranty of=0A=
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU=0A=
+// Lesser General Public License for more details.=0A=
+=0A=
+// You should have received a copy of the GNU Lesser General Public=0A=
+// License along with this library; if not, write to the Free Software=0A=
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  =
+USA=0A=
+=0A=
+function configureJSNavigation() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: configureJSNavigation()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:  sets up the navigation divs so that they can be =
+clicked on rather=0A=
+                  than always having to click on the link.=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    //the area that we're interested in is the linkBar div. Get all the =
+divs=0A=
+    //first and then find the linkBar=0A=
+    if (document.getElementById) {=0A=
+        try {=0A=
+            var divs =3D document.getElementsByTagName("div");=0A=
+            var intCount =3D divs.length;=0A=
+=0A=
+            for (intLoop =3D 0; intLoop < intCount; intLoop++) {=0A=
+                var div =3D divs[intLoop];=0A=
+                var attributes =3D div.attributes;=0A=
+                try {=0A=
+                    if (attributes.getNamedItem("class").value =3D=3D =
+"linkBar") {=0A=
+                        //we've found the linkBar=0A=
+                        //we're interested in all of the hoverNavigation =
+divs under the linkBar div=0A=
+=0A=
+                        //linkBar variable is only for code clarity=0A=
+                        var linkBar =3D divs.item(intLoop);=0A=
+                        var linkDivs =3D linkBar.childNodes;=0A=
+                        var intCount2 =3D linkDivs.length;=0A=
+                        for (intLoop2 =3D 0; intLoop2 < intCount2; =
+intLoop2++) {=0A=
+                            var linkDiv =3D linkDivs.item(intLoop2);=0A=
+                            try {=0A=
+                                var classType =3D =
+linkDiv.attributes.getNamedItem("class").value;=0A=
+                                if ( =
+classType.toLowerCase().indexOf("hover") > -1) {=0A=
+                                    //we've found a hoverNavigation div. =
+Get the href value of its=0A=
+                                    //link child node and then set its =
+onclick event=0A=
+                                    var link =3D link =3D =
+linkDiv.getElementsByTagName("a").item(0);=0A=
+                                    if (link !=3D null) {=0A=
+                                        var command =3D "linkDiv.onclick =
+=3D function(){location.replace(\"" + link + "\")}";=0A=
+                                        eval(command);=0A=
+                                    }=0A=
+                                }=0A=
+                            }=0A=
+                            catch (e) {=0A=
+                                //alert("1" + e);=0A=
+                                //no op=0A=
+                            }=0A=
+                        }=0A=
+=0A=
+                        //we're done=0A=
+                        break;=0A=
+                    }=0A=
+                }=0A=
+                catch (ee) {=0A=
+                    //no op=0A=
+                    //alert("2" + ee);=0A=
+                }=0A=
+            }=0A=
+        }=0A=
+        catch (eee) {=0A=
+            //something went horribly wrong. The user will have to click =
+the links=0A=
+            //alert("3" + eee);=0A=
+        }=0A=
+    }=0A=
+} //end function configureJSNavigation=0A=
+=0A=
+=0A=
+function launch4xClassicDomSample() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launch4xClassicDomSample()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:  opens a new window with the 4x sample application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../sampleApplications/classicDom/domSampleApplication4xBro=
+wsers/index.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+=0A=
+} // end function launch4xDomSample=0A=
+=0A=
+function launchClassicDOMTestSuite() {=0A=
+=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchClassicDOMTestSuite()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the DOM test suite as the=0A=
+                         active page=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    window.open("./../testSuites/classicDomTest/domTestSuite.html", =
+"hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchDOMTestSuite=0A=
+=0A=
+=0A=
+function launchModernClassicDomSample() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchModernClassicDomSample()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the modern sample application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../sampleApplications/classicDom/domSampleApplicationModer=
+nBrowsers/contactManager.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchModernDomSample=0A=
+=0A=
+=0A=
+function launchProxyTestSuite() {=0A=
+=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchProxyTestSuite()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the proxy test suite as the=0A=
+                         active page=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    window.open("./../testSuites/proxyTest/proxyTestSuite.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchDOMTestSuite=0A=
+=0A=
+=0A=
+=0A=
+function launchSAXSample1() {=0A=
+=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchSAXSample1=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the SAX Sample application 1=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../sampleApplications/sax/saxSampleApplication1/saxSampleA=
+pplication1.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dyes,status=3Dno,t=
+itlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchSAXSample1=0A=
+=0A=
+=0A=
+function launchSAXTestSuite() {=0A=
+=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchSAXTestSuite()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the SAX test suite as the=0A=
+                         active page=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    window.open("./../testSuites/saxTest/saxTestSuite.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchSAXTestSuite=0A=
+=0A=
+=0A=
+function launchSAXTreeViewSample() {=0A=
+=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchSAXTreeViewSample=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the SAX Tree View sample=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../sampleApplications/sax/saxTreeViewSample/saxTreeViewSam=
+ple.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dyes,status=3Dno,t=
+itlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchSAXTreeViewSample=0A=
+=0A=
+=0A=
+=0A=
+function launchTagPathClassicDomSample() {=0A=
+=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchTagPathClassicDomSample=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the TagPath DOM Sample as the=0A=
+                         active page=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../sampleApplications/classicDom/domSampleApplicationTagPa=
+th/domTagPathExample.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchTagPathDomSample=0A=
+=0A=
+=0A=
+function launchW3CDomSampleContactManager() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchW3CDomSampleContactManager()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the W3C Contact Manager =
+Sample Application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../sampleApplications/w3cDom/contactManager/contactManager=
+.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+=0A=
+} // end function launch W3CDomSampleContactManager=0A=
+=0A=
+=0A=
+function launchW3CDOMLevel1TestSuite() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchW3CDOMLevel1TestSuite()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the W3C DOM Level 1 test =
+suite=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../testSuites/w3cDomTest/DOMLevel1/w3cDomTestSuite.html", =
+"hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launch launchW3CDOMLevel1TestSuite=0A=
+=0A=
+=0A=
+=0A=
+function launchW3CDOMLevel2TestSuite() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchW3CDOMLevel2TestSuite()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the W3C DOM Level 2 test =
+suite=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../testSuites/w3cDomTest/DOMLevel2/w3cDom2TestSuite.html",=
+ "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launch launchW3CDOMLevel2TestSuite=0A=
+=0A=
+=0A=
+function launchW3CDOMSampleApplicationsTestSuite() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchW3CDOMSampleApplicationsTestSuite()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the W3C DOM Sample =
+Applications test suite=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../testSuites/w3cDomTest/DOMSampleApps/w3cDomSampleAppsTes=
+tSuite.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launch launchW3CDOMLevel2TestSuite=0A=
+=0A=
+=0A=
+=0A=
+function launchXMLEscapeSample() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchXMLEscapeSample()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the XMLEscape sample=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    window.open("./../toolSamples/xmlEscape/xmlEscape.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchXMLEscapeSample=0A=
+=0A=
+=0A=
+=0A=
+function launchXMLIOCookieSample() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchXMLIOSample()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the XMLIO cookie sample =
+application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    window.open("./../toolSamples/xmlIOCookies/xmlIOCookies.html", =
+"hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchXMLIOCookieSample=0A=
+=0A=
+=0A=
+=0A=
+function launchXMLIOLoadLocalDataSample() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchXMLIOLoadLocalDataSample()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the XMLIOLoadLocalData =
+sample application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../toolSamples/xmlLoadLocalData/xmlIOLoadLocalData.html", =
+"hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+=0A=
+} // end function launchXMLIOLoadLocalDataSample=0A=
+=0A=
+=0A=
+=0A=
+function launchXMLIOProxySample() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchXMLProxySample()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the XMLIO Proxy sample =
+application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    window.open("./../toolSamples/xmlIOProxy/xmlIOProxy.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+} // end function launchXMLIOProxySample=0A=
+=0A=
+=0A=
+function launchXPathContactManagerSampleApp() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchXPathContactManagerSampleApp()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the XPath Contact Manager =
+Sample Application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../contributedAdd-ons/xpath/sampleApplications/contactMana=
+ger/contactManager.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+=0A=
+} // end function launch launchXPathSampleContactManager=0A=
+=0A=
+=0A=
+=0A=
+function launchXPathQueryExamplesSampleApp() {=0A=
+    =
+/************************************************************************=
+***********=0A=
+    function: launchXPathQueryExamplesSampleApp()=0A=
+=0A=
+    author: djoham@yahoo.com=0A=
+=0A=
+    Description:    opens a new window with the XPath examples sample =
+application=0A=
+=0A=
+    =
+*************************************************************************=
+***********/=0A=
+=0A=
+    =
+window.open("./../contributedAdd-ons/xpath/sampleApplications/samplePaths=
+/xpathexamples.html", "hndl", =
+"location=3Dno,menubar=3Dno,resizable=3Dno,scrollbars=3Dno,status=3Dno,ti=
+tlebar=3Dno,toolbar=3Dno,width=3D800,height=3D500");=0A=
+=0A=
+}=0A=
+=0A=
+=0A=
+=0A=
+=0A=
+=0A=
+=0A=
+
+------=_NextPart_000_0000_01C4CD10.831811A0--

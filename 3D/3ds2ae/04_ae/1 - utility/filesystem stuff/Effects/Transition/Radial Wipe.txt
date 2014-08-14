@@ -1,0 +1,21 @@
+[name]
+name=Radial Wipe
+matchName=ADBE Radial Wipe
+
+[properties]
+name=	Transition Completion
+type=	OneD
+
+name=	Start Angle
+type=	OneD
+
+name=	Wipe Center
+type=	TwoD_SPATIAL
+
+name=	Wipe
+type=	OneD
+
+name=	Feather
+type=	OneD
+
+

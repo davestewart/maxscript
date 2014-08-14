@@ -1,0 +1,836 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Using the ImageList Control (Visual Basic 6.0 Documentation)
+Date: Fri, 13 Jan 2006 00:02:28 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C617D4.A42F59B0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C617D4.A42F59B0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file://E:\03_Scripting\maxScript\max 5\softinstance\treeview\help\Using the ImageList Control_files\rightframe_files\vbconusingimagelistcontrol.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Using the ImageList Control (Visual Basic 6.0 =
+Documentation)</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"  See Also" name=3DDescription>
+<META content=3Dall name=3DRobots>
+<META content=3D"" name=3DKeywords>
+<META content=3Den-us name=3DMS.LOCALE>
+<META content=3Dmsdn name=3DAuthor><LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingim=
+agelistcontrol_files/ie4.css"=20
+type=3Dtext/css rel=3Dstylesheet><LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingim=
+agelistcontrol_files/ie5.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<STYLE>BODY {
+	MARGIN: 0px; FONT-FAMILY: verdana,arial,helvetica
+}
+</STYLE>
+<LINK=20
+href=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/h=
+elp/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingim=
+agelistcontrol_files/default.css"=20
+type=3Dtext/css rel=3Dstylesheet><xml id=3DxmlPageContext><eyebrow =
+findmenu=3D"false">
+	<item label=3D"MSDN Home" url=3D"/default.asp"/>
+	<item label=3D"MSDN Library" url=3D"/library/default.asp"/>
+	<item label=3D"Visual Tools and Languages" id=3D"msdnlib1128" =
+xmlsrc=3D"/library/en-us/toc/msdnlib/msdnlib1128_.xml"/><item =
+label=3D"Visual Studio 6.0" id=3D"msdnlib1130"/><item label=3D"Visual =
+Basic 6.0" url=3D"/nhp/default.asp?contentid=3D28000520" =
+id=3D"msdnlib1131" =
+xmlsrc=3D"/library/en-us/toc/msdnlib/msdnlib1131_.xml"/><item =
+label=3D"Product Documentation" id=3D"msdnlib1132"/><item label=3D"Using =
+Visual Basic" id=3D"vbcon9833" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon9833_.xml"/><item =
+label=3D"Component Tools Guide (Pro, Enterprise only)" =
+url=3D"/library/en-us/vbcon98/html/vbconComponentToolsGuide.asp" =
+id=3D"vbcon98545"/><item label=3D"Using the ActiveX Controls" =
+url=3D"/library/en-us/vbcon98/html/vbconusingtheactivexcontrols.asp" =
+id=3D"vbcon98557" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon98557_.xml"/><item =
+label=3D"Using the ImageList Control" =
+url=3D"/library/en-us/vbcon98/html/vbconusingimagelistcontrol.asp" =
+id=3D"vbcon98570" =
+xmlsrc=3D"/library/en-us/toc/vbcon98/vbcon98570_.xml"/></eyebrow></xml>
+<META content=3D"MSHTML 6.00.2900.2802" name=3DGENERATOR></HEAD>
+<BODY text=3D#000000 bgColor=3D#ffffff leftMargin=3D0 topMargin=3D0 =
+MARGINHEIGHT=3D"0"=20
+MARGINWIDTH=3D"0">
+<TABLE height=3D24 cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+bgColor=3D#ffffff=20
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD class=3Deyebrow vAlign=3Dcenter align=3Dleft =
+width=3D"100%">&nbsp;&nbsp; <A=20
+      class=3Dsmall href=3D"http://msdn.microsoft.com/default.asp" =
+target=3D_top>MSDN=20
+      Home</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      href=3D"http://msdn.microsoft.com/library/default.asp" =
+target=3D_top>MSDN=20
+      Library</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/nhp/default.=
+asp?contentid=3D28000520"=20
+      target=3D_top>Visual Basic 6.0</A>&nbsp;&gt;&nbsp; <A =
+class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconComponentToolsGuide.asp"=20
+      target=3D_top>Component Tools Guide (Pro, Enterprise=20
+      only)</A>&nbsp;&gt;&nbsp; <A class=3Dsmall=20
+      =
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/vbcon98/html/vbconusingtheactivexcontrols.asp"=20
+      target=3D_top>Using the ActiveX Controls</A><A=20
+      =
+href=3D"http://msdn.microsoft.com/library/en-us/vbcon98/html/"></A>=20
+  </TD></TR></TBODY></TABLE>
+<TABLE class=3DclsContainer style=3D"TABLE-LAYOUT: fixed" =
+cellSpacing=3D0=20
+cellPadding=3D15 width=3D"100%" border=3D0 float=3D"left">
+  <TBODY>
+  <TR>
+    <TD =
+vAlign=3Dtop><!--TOOLBAR_START--><!--TOOLBAR_EXEMPT--><!--TOOLBAR_END--><=
+!-----------------><!--BEGIN_CONTENT--><!-----------------><!--REMOVED =
+HH1.x ALINK-->
+      <P align=3Dright><FONT size=3D1><I>Visual Basic =
+Concepts</I></FONT></P>
+      <H1><A name=3Dvbconusingimagelistcontrol></A>Using the ImageList=20
+Control</H1>
+      <P><A=20
+      =
+href=3D"http://msdn.microsoft.com/library/en-us/vbcon98/dt_vbconUsingImag=
+eListControlC.asp">See=20
+      Also</A></P>
+      <P>An ImageList control contains a collection of images that can =
+be used=20
+      by other Windows Common Controls =97 specifically, the ListView, =
+TreeView,=20
+      TabStrip, and Toolbar controls. For example, the ImageList control =
+can=20
+      store all the images that appear on a Toolbar control's =
+buttons.</P>
+      <P>The ImageList control can also be used with controls that =
+assign a=20
+      Picture object to a Picture property, such as the PictureBox, =
+Image, and=20
+      CommandButton controls.</P>
+      <P>Using the ImageList control as a single repository saves you=20
+      development time by allowing you to write code that refers to a =
+single,=20
+      consistent catalog of images. Instead of writing code that loads =
+bitmaps=20
+      or icons (using the LoadPicture function), you can populate the =
+ImageList=20
+      once, assign Key values if you wish, and write code that uses the =
+Key or=20
+      Index properties to refer to images.</P>
+      <P>The control uses bitmap (.gif), cursor (.cur), icon (.ico), =
+JPEG=20
+      (.jpg), or GIF (.gif) files in a collection of ListImage objects. =
+You can=20
+      add and remove images at design time or run time. The ListImage =
+object has=20
+      the standard collection object properties: Key and Index. It also =
+has=20
+      standard methods, such as Add, Remove, and Clear.</P>
+      <P><B><B>For More =
+Information</B></B>&nbsp;&nbsp;&nbsp;"Programming with=20
+      Objects," in the <I>Visual Basic Programmer's Guide,</I> offers=20
+      introductory information about working with objects and =
+collections.</P>
+      <P>Finally, the control features the Overlay, Draw, and =
+ExtractIcon=20
+      methods, which allow you to create composite images, draw images =
+on=20
+      objects with an hDC property (such as the Form and Printer =
+objects), and=20
+      create an icon from a bitmap stored in the control.</P>
+      <H2>Possible Uses</H2>
+      <UL type=3Ddisc>
+        <LI>To store the images that represent open folders, closed =
+folders, and=20
+        documents. These images can then be dynamically assigned to the =
+TreeView=20
+        control's Node object to represent its different states as it =
+expands or=20
+        collapses, or whether or not it is a document or a =
+folder.<BR><BR>
+        <LI>To store images that represent common computer operations, =
+such as=20
+        saving, opening, and printing files. These images can then be =
+assigned=20
+        to Button objects on a Toolbar control used by your =
+application.<BR><BR>
+        <LI>To store images for drag-and-drop operations, such as =
+MousePointer=20
+        icons, and DragIcons. </LI></UL>
+      <H2>Managing ListImage Objects and ListImages Collections</H2>
+      <P>The ImageList control contains the ListImages collection of =
+ListImage=20
+      objects, each of which can be referred to by its Index or Key =
+property=20
+      value. You can add or remove images to the control at design time =
+or run=20
+      time.</P>
+      <H3>Adding ListImage Objects at Design Time</H3>
+      <P>To add an image to at design time, use the ImageList control's =
+Property=20
+      Pages dialog box.</P>
+      <P class=3Dlabel><B>To add ListImage objects at design time</B>=20
+      <OL>
+        <LI>Right-click the ImageList control and click =
+Properties.<BR><BR>
+        <LI>Click the Images tab to display the ImageList control's =
+Property=20
+        Pages, as shown below.=20
+        <P class=3Dlabel><B>ImageList control Property Pages dialog =
+box</B>=20
+        <P><IMG alt=3D""=20
+        =
+src=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/he=
+lp/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingima=
+gelistcontrol_files/avtct052.gif"=20
+        border=3D0></P>
+        <LI>Click <B>Insert Picture </B>to display the <B>Select Picture =
+
+        </B>dialog box.<BR><BR>
+        <LI>Use the dialog box to find either bitmap or icon files, and =
+click=20
+        <B>Open</B>.=20
+        <P class=3Datl><B><B>Note</B></B>&nbsp;&nbsp;&nbsp;You can =
+select multiple=20
+        bitmap or icon files.</P>
+        <LI>Assign a unique Key property setting by clicking in the =
+<B>Key=20
+        </B>box and typing a string.<BR><BR>
+        <LI>Optional. Assign a Tag property setting by clicking in the =
+<B>Tag=20
+        </B>box and typing a string. The Tag property doesn't have to be =
+
+        unique.<BR><BR>
+        <LI>Repeat steps 3 through 6 until you have populated the =
+control with=20
+        the desired images. </LI></OL>
+      <H3>Adding ListImage Objects at Run Time</H3>
+      <P>To add an image at run time, use the Add method for the =
+ListImages=20
+      collection in conjunction with the LoadPicture function. The =
+following=20
+      example occurs in a form's Load event; an ImageList control named=20
+      "imlImages" is loaded with a single bitmap:</P><PRE><CODE>Private =
+Sub Form_Load()
+   ' Assuming the path is correct, the open.gif=20
+   ' picture will be added to the ListImages
+   ' collection. The Key property will also be
+   ' assigned the value "open"
+   imlImages.ListImages. _
+   Add ,"open", LoadPicture("c:\bitmaps\open.gif")
+End Sub
+</CODE></PRE>
+      <P>Assigning a unique Key property value to the ListImage object =
+allows=20
+      you to create code that is easier to read. When assigning the =
+image to a=20
+      property, you can use its Key value instead of its Index value. =
+Thus,=20
+      assigning an image to a property might result in code like the=20
+      following:</P><PRE><CODE>' Assign an image to a TreeView control =
+Node object.
+' The unique key of the image is "open".
+TreeView1.Nodes.Add , , ,"Folder1","open"
+</CODE></PRE>
+      <H2>Determining Image Sizes</H2>
+      <P>You can insert any size image into the <B>ImageList</B> =
+control.=20
+      However, the size of the image displayed by the second control =
+depends on=20
+      one factor: whether or not the second control is also a Windows =
+Common=20
+      control bound to the <B>ImageList</B> control.</P>
+      <P>When the <B>ImageList</B> control is bound to another Windows =
+Common=20
+      Control, images of different sizes can be added to the control, =
+however=20
+      the size of the image displayed in the associated Windows Common =
+Control=20
+      will be constrained to the size of the first image added to the=20
+      <B>ImageList</B>. For example, if you add an image that is 16 by =
+16 pixels=20
+      to an <B>ImageList</B> control, then bind the <B>ImageList</B> to =
+a=20
+      <B>TreeView</B> control (to be displayed with <B>Node</B> =
+objects), all=20
+      images stored in the <B>ImageList</B> control will be displayed at =
+16 by=20
+      16 pixels, even if they are much larger or smaller.</P>
+      <P>On the other hand, if you display images using the =
+<B>Picture</B>=20
+      object, any image stored in the <B>ImageList </B>control will be =
+displayed=20
+      at its original size, no matter how small or large. </P>
+      <P class=3Dindent><B><B>Note</B></B>&nbsp;&nbsp;&nbsp;An exception =
+is when=20
+      you use an image from the ImageList control with the Image =
+control.=20
+      Setting the Image control's Stretch property to True will cause =
+the image=20
+      to resize to fit the control.</P>
+      <P>At design time, you can specify the height and width, in =
+pixels, of=20
+      images in the control by choosing a size from the General tab of =
+the=20
+      ImageList control's Property Pages dialog box. You can choose a=20
+      predetermined size, or click Custom and set the image size by =
+typing the=20
+      size you desire in the Height and Width<B> </B>boxes. This can =
+only be=20
+      done when the ImageList contains no images. Attempting to change =
+the size=20
+      after the control contains images will result in an error.</P>
+      <H2>Methods That Allow You to Create Composite Images</H2>
+      <P>You can use the ImageList control to create a composite image =
+(a=20
+      picture object) from two images by using the Overlay method in =
+conjunction=20
+      with the MaskColor property. For example, if you have an =
+"international=20
+      no" image (a circle with a diagonal bar inside it), you can lay =
+that image=20
+      over any other image, as shown:</P>
+      <P><IMG alt=3D""=20
+      =
+src=3D"file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/he=
+lp/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingima=
+gelistcontrol_files/avtct053.gif"=20
+      border=3D0></P>
+      <P>The syntax for the Overlay method requires two arguments. The =
+first=20
+      argument specifies the underlying image; the second argument =
+specifies the=20
+      image that overlays the first. Both arguments can be either the =
+Index or=20
+      the Key property of a ListImage object.</P>
+      <P>Thus the code to achieve the effect above is as =
+follows:</P><PRE><CODE>' The composite image appears in a PictureBox=20
+' control named "picOver". The Index value of=20
+' the cigarette image is 2; the index value of the=20
+' "no" symbol is 1.
+ImageList1.MaskColor =3D vbGreen
+Set picOver.Picture =3D ImageList1.Overlay(2, 1)
+</CODE></PRE>
+      <P>You could also use the Key property of the images, resulting in =
+this=20
+      code:</P><PRE><CODE>' Assuming the first image's Key is "smokes", =
+and the
+' second is "no".
+Set picOver.Picture =3D ImageList1.Overlay("smokes","no")
+</CODE></PRE>
+      <P>The code example above also illustrates how the MaskColor =
+property=20
+      works. In brief, the MaskColor property specifies the color which =
+will=20
+      become transparent when an image is overlaid over another. The =
+"no" image=20
+      has a green background color. Thus, when the code specifies that =
+the=20
+      MaskColor will be vbGreen (an intrinsic constant), the green in =
+the image=20
+      becomes transparent in the composite =
+image.</P><!-----------------><!--END_CONTENT--><!-----------------></TD>=
+</TR></TBODY></TABLE>
+<TABLE id=3DidFooter style=3D"WIDTH: 100%; BACKGROUND-COLOR: white" =
+cellSpacing=3D0=20
+cellPadding=3D0 border=3D0>
+  <TBODY>
+  <TR vAlign=3Dcenter>
+    <TD id=3DidFooterRow1=20
+    style=3D"WIDTH: 100%; HEIGHT: 20px; BACKGROUND-COLOR: #003399"=20
+      noWrap>&nbsp;<A onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: bold xx-small Verdana; CURSOR: hand; COLOR: =
+#ffffff; TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://register.microsoft.com/contactus30/contactus.asp?domain=3D=
+msdn"=20
+      target=3D_top>Contact Us</A> &nbsp;<SPAN=20
+      style=3D"FONT: bold xx-small Verdana; COLOR: =
+#ffffff">&nbsp;|</SPAN>=20
+      &nbsp;<A onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: bold xx-small Verdana; CURSOR: hand; COLOR: =
+#ffffff; TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      href=3D"mailto:?subject=3DAn article from MSDN&amp;body=3DHere is =
+an interesting article from MSDN:  =
+http://msdn.microsoft.com/library/en-us/vbcon98/html/vbconusingimagelistc=
+ontrol.asp"=20
+      target=3D_top>E-Mail this Page</A> &nbsp;<SPAN=20
+      style=3D"FONT: bold xx-small Verdana; COLOR: =
+#ffffff">&nbsp;|</SPAN>=20
+      &nbsp;<A onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: bold xx-small Verdana; CURSOR: hand; COLOR: =
+#ffffff; TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      href=3D"http://msdn.microsoft.com/flash/" target=3D_top>MSDN Flash =
+
+      Newsletter</A> </TD></TR>
+  <TR vAlign=3Dcenter>
+    <TD id=3DidFooterRow2=20
+    style=3D"WIDTH: 100%; HEIGHT: 30px; BACKGROUND-COLOR: #003399" =
+noWrap><SPAN=20
+      style=3D"FONT: xx-small Verdana; COLOR: #ffffff">&nbsp;=A9 2003 =
+Microsoft=20
+      Corporation. All rights reserved.&nbsp;</SPAN> &nbsp;<A=20
+      onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: xx-small Verdana; CURSOR: hand; COLOR: #ffffff; =
+TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://msdn.microsoft.com/isapi/gomscom.asp?target=3D/info/cpyrig=
+ht.htm"=20
+      target=3D_top>Terms of Use</A>&nbsp;&nbsp;<A=20
+      onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: xx-small Verdana; CURSOR: hand; COLOR: #ffffff; =
+TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://msdn.microsoft.com/isapi/gomscom.asp?target=3D/info/privac=
+y.htm"=20
+      target=3D_top>Privacy Statement </A>&nbsp;&nbsp;<A=20
+      onmouseover=3D"this.style.color =3D '#FFCC00'"=20
+      style=3D"FONT: xx-small Verdana; CURSOR: hand; COLOR: #ffffff; =
+TEXT-DECORATION: none"=20
+      onmouseout=3D"this.style.color =3D '#FFFFFF'"=20
+      =
+href=3D"http://msdn.microsoft.com/isapi/gomscom.asp?target=3D/enable/"=20
+      target=3D_top>Accessibility =
+</A></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0000_01C617D4.A42F59B0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingimagelistcontrol_files/avtct052.gif
+
+R0lGODdhogE6AfcAAAAAAIAAAACAAICAAAAAgIAAgACAgICAgMDAwP8AAAD/AP//AAAA//8A/wD/
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAogE6AQAI/wAfCBxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIUeEBAA8QiBxJsqTJkyhTqlzJsqXLlzBjypxJs6bN
+mzhz6tzJM+XHkASCCh1KtKjRo0iTKl3KtKnTp1CjSp1KtarVq1izat1qFMFPBFzDih1LtqzZs2jT
+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
+
+------=_NextPart_000_0000_01C617D4.A42F59B0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingimagelistcontrol_files/avtct053.gif
+
+R0lGODdhGAE9APcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD/
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGAE9AAAI/wAVCBxI
+sKBBggASKlwI4KDDhwoeSJxIsaLFixgzatzIsaPHjyBDiuTIsORIixBTLkzAsqXLBAtTQjxJs6bN
+mzhzilz58uVCmjIPJuxJtGfCoAZ1Kl3KtKnToUWjwgQwEqlAhVKzslRoNaLTr2DDip2IVatUhSCt
+AjDLdqvVsXDjyh25tq1Zqh6DQrV7t6HMuYADC36wl2/WhB1l1jXc1u/MwZAjN13M+C5HlWxLltXq
+2KHkz6BrUj6reXRUvBkhmvbJ1SHP049Dy56tcbXLnxhfF0V98aHtrZ31/ob5kLbx4xKHIwZZ2Ghq
+oaeDd21+2zPy66B/L6erHSP03V19w/9Oir384O430Vc0qD2868PkzcuPq170YZQId0t3r2B4y+Dz
+BSiWbdvZx9l6+RnF33ecFSRgUwc8uBpvBh5IUYIKLojhXQQ9yFSEARKIk38+XXgVeBoOpB2KXnmo
+0wEgmidieqftNpGKRO3nXnsTDuSiUjDON+GIpxGW440n+pQijiya5tiPS8WInZNE2piccxIlqeSS
+7TG5JZRAynikTfUN+YCW/y3Z33gbutUimDZJeR2VBYZUX4RUntljil0W1OOcFEIo53FmEhYoSadJ
+ieeRa26pYZ/sKUgoXnVGKV+eFFWaUXeKXllio9U9yiaDaRJakaY3dYocpg8wwEByh57/WmSQE4FI
+JahpLggpqW4ZFyuqI0WoKqFGgfhqq8cCq52wFdnq3J47jvoelrMBMChZsYIE4rC0TRjhscdmGiin
+D8gZ5IRO6iqteCV2yyxFrsIarETCclttsTC+Gq5F2y1b7r+10upkutGyqBi1slkbpLESxWtoSAsD
+XOuqRiV0AAMXS8wvdf+ZO7GzrGU43bqqIUwTWjopHCS4G38UsbnXfpanQhi/y++s/25b7rsDi4zU
+rge3SyawJ1mcb6ubZkvRy0vT2i3CRkecaZE50/ouyLcR/DPJmAktGtEnW4vxqzE/rJHH9GqcsMmG
+wii1ejozq7ORITsadI78sRq20kMD/1Cz2uJmJHfaUj/ttbhuL6pf0/RKjfV/WneNd95sc8d3eirb
+3LJF9cadtq+VYwsjettZPbinWfvM7uSUH1402DlFrfmpFHp+NbGub0w1to3vvHOMPds9Leut32Z5
+abhNljngvAfc+O07Ic9Qhf8hauXGpjtNd+qq+8n11qFvJP30YMnOvLy9+z77R+MnT9eYueGcG16J
+k4V35N4bXHypmF+ufP1lW87COjen8C2rcOKin9NuhT8vda9g1RkR7L5ivgAq7Hlly07otFPBTCHg
+g5Vi4AOBtr9e9S8yHZwfBqdUOfWkEAAIOMAHF0AhEaqOhBCM4Aklk0LaKTCD4mvfBHdrAz/Usc18
+MPzgARaQgAOgZkhoclMUQ6UmgknQf3DpIWE+iIAh1kaIWCSi1+pDO7fBEEZMdJv92jVF4uBKeKLK
+0BWrtTxbxXCGYUThmMh4EYsl8QAJWAAgKTUmB0LuezmUIpyCWL8kxjCNeYQMunZHkoQ8cpBrNP9e
+ltp4FjUZUpGLZOToYrjEJmqvgHaJZNua+ET4fbKTnnxjrt4UyqQ5UYmBxKSYGrO3TAqtTYgMD4E6
+VMuOKOSSMAlRZlJ2vTMB84FxFF4x2WctVkrIQrErojNfScUqDpOY0/QIygTkH1UmrZnb5KYbPQm0
+cLqzj5QkUzzTqU4dCZNk78zn1NBZtHnSs572VAwO9UnQ7VUsbP78pzqnIkzlFKeg+lROJDlWPe+s
+Tj9Hcc1m9OcgiEb0MOPcGEUratGLkkYzmUmJRwlKIuCg1DIauVtlGqTSlX50pjCNqUBxGp2g2JSl
+LTXMBNXCU2ge5KcFDSov86KWkWYmo0hBalIrndqXPOZNqVnjj1Q9StXFieRRG81Ra7S6Va6GtWJe
+xA+XpOfJsiJ1fDgJCAA7
+
+------=_NextPart_000_0000_01C617D4.A42F59B0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingimagelistcontrol_files/ie4.css
+
+BODY {
+	MARGIN: 0px; FONT-FAMILY: verdana,arial,helvetica
+}
+TABLE.clsContainer {
+	HEIGHT: 78%
+}
+A:link {
+	COLOR: #003399
+}
+A:visited {
+	COLOR: #660099
+}
+A:hover {
+	COLOR: #ff3300
+}
+H1 {
+	FONT-SIZE: 165%; MARGIN: 0px
+}
+H2 {
+	MARGIN-TOP: 1em; FONT-SIZE: 125%; MARGIN-BOTTOM: 0px
+}
+H3 {
+	FONT-SIZE: 115%; MARGIN-BOTTOM: 0px
+}
+H4 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+H5 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+H6 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 0px
+}
+DIV.clsDocBody {
+	MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px
+}
+TD {
+	FONT-SIZE: 68%
+}
+TH {
+	FONT-SIZE: 68%
+}
+P {
+	MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 1em; LINE-HEIGHT: 1.5em
+}
+PRE {
+	PADDING-RIGHT: 5pt; MARGIN-TOP: 1em; PADDING-LEFT: 5pt; BACKGROUND: =
+#eeeeee; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 5pt; MARGIN-LEFT: 0px; =
+PADDING-TOP: 5pt
+}
+SPAN.db PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+SPAN.ci PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+SPAN.di PRE {
+	BACKGROUND: #eeeeee; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt
+}
+PRE.clsCode {
+	FONT-SIZE: 110%; FONT-FAMILY: 'courier new',courier,serif
+}
+CODE.clsText {
+	FONT-SIZE: 110%; FONT-FAMILY: 'courier new',courier,serif
+}
+PRE.clsCCCode {
+	FONT-SIZE: 120%; BACKGROUND: none transparent scroll repeat 0% 0%; =
+FONT-FAMILY: 'courier new',courier,serif
+}
+PRE.clsSyntax {
+	FONT-SIZE: 100%; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+HR {
+	COLOR: #cccccc; HEIGHT: 1px
+}
+UL {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 25px
+}
+OL {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 25px
+}
+UL LI {
+	MARGIN-BOTTOM: 0.5em; LINE-HEIGHT: 1.5em
+}
+UL LI LI {
+	LIST-STYLE-TYPE: disc
+}
+OL LI {
+	MARGIN-BOTTOM: 0.7em
+}
+INPUT.clsButton {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; MARGIN-LEFT: 5px; COLOR: #ffffff; =
+BACKGROUND-COLOR: #6699cc
+}
+P.small {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+normal; FONT-VARIANT: normal
+}
+P.smallWhite {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+P.author {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+italic; FONT-VARIANT: normal
+}
+P.NoLeftMar {
+	MARGIN-LEFT: -15px
+}
+A.small {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; LINE-HEIGHT: normal; FONT-STYLE: =
+normal; FONT-VARIANT: normal; TEXT-DECORATION: underline
+}
+A.smallWhite {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal; TEXT-DECORATION: =
+underline
+}
+.CODE {
+	FONT-WEIGHT: normal
+}
+.CODE2 {
+	FONT-WEIGHT: normal; BACKGROUND-COLOR: #cccccc
+}
+.DATE {
+	COLOR: #999999
+}
+.VRULE {
+	BORDER-LEFT: #cccccc 1px solid
+}
+TITLE.open {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #ffffff; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+TITLE.closed {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; COLOR: #000000; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+TABLE.DATA {
+	PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 5px; =
+PADDING-BOTTOM: 5px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 5px; =
+BORDER-COLLAPSE: collapse
+}
+TH.DATA {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; =
+BACKGROUND-COLOR: #eeeeee
+}
+TD.DATA {
+	BORDER-RIGHT: #cccccc 1px solid; FONT-WEIGHT: normal; BORDER-BOTTOM: =
+#cccccc 1px solid
+}
+TABLE.clsCCDCInfo {
+	BACKGROUND-COLOR: #eeeeee
+}
+.LOCATION {
+	FONT-WEIGHT: normal; FONT-SIZE: 24px; COLOR: #cccccc; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.footer {
+	FONT: bold xx-small Verdana
+}
+.footer:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.footer:hover {
+	COLOR: #ff3300
+}
+DIV.artstyle {
+	FONT-WEIGHT: normal; FONT-SIZE: 7pt; COLOR: #000000; LINE-HEIGHT: =
+normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, =
+sans-serif
+}
+TABLE.clsStd TH {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px; BACKGROUND-COLOR: #ddd; =
+TEXT-ALIGN: left
+}
+TABLE.clsStd TD {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; =
+VERTICAL-ALIGN: top; PADDING-TOP: 2px; BACKGROUND-COLOR: #eee
+}
+P.clsRef {
+	MARGIN-TOP: 12pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 0em
+}
+
+------=_NextPart_000_0000_01C617D4.A42F59B0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingimagelistcontrol_files/ie5.css
+
+BODY {
+	FONT-FAMILY: verdana
+}
+TABLE.clsComment {
+	FONT-FAMILY: verdana
+}
+TABLE.clsNavLinks A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsComment A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsTeasers A {
+	FONT-WEIGHT: bold; COLOR: #003399; TEXT-DECORATION: none
+}
+TABLE.clsNavLinks TD {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: x-small; =
+PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-BOTTOM: #000000 1px solid; =
+FONT-FAMILY: verdana
+}
+TABLE.clsNavLinks TD TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: =
+0px; PADDING-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; =
+BORDER-BOTTOM: 0px
+}
+DIV.clsError {
+	FONT-SIZE: 68%
+}
+TABLE DIV.clsContainer {
+	BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 68%; PADDING-BOTTOM: 10px; =
+WIDTH: 100%; PADDING-TOP: 10px; POSITION: relative; BACKGROUND-COLOR: =
+#cccccc
+}
+TABLE TABLE DIV.clsContainer {
+	BORDER-TOP: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+TD.clsHDN TABLE {
+	DISPLAY: none
+}
+SPAN.clsRespond {
+	PADDING-RIGHT: 10px; WIDTH: 50%; TEXT-ALIGN: right
+}
+SPAN.clsSig {
+	WIDTH: 49%
+}
+SPAN.clsToggle {
+	LEFT: 2px; POSITION: absolute; TOP: 0.65em
+}
+
+------=_NextPart_000_0000_01C617D4.A42F59B0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/03_Scripting/maxScript/max%205/softinstance/treeview/help/Using%20the%20ImageList%20Control_files/rightframe_files/vbconusingimagelistcontrol_files/default.css
+
+.eyebrow {
+	BORDER-RIGHT: #999999 0px solid; BORDER-TOP: #999999 0px solid; =
+BORDER-LEFT: #999999 0px solid; BORDER-BOTTOM: #999999 1px solid; =
+BACKGROUND-COLOR: #ffffff
+}
+
+------=_NextPart_000_0000_01C617D4.A42F59B0--
